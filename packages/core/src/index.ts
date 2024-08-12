@@ -126,6 +126,11 @@ class IntegrationFramework {
     return omitBy(pluginActions, (value) => value.isHidden);
   }
 
+  async connectedPlugins() {
+    const plugins = this.availablePlugins();
+    return plugins;
+  }
+
   async executeAction({
     pluginName = CORE_PLUGIN_NAME,
     action,
