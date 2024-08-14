@@ -29,6 +29,7 @@ export { IntegrationPlugin } from './plugin';
 export { IntegrationCredentialType } from './types';
 export { FieldTypes, DataIntegration } from '@prisma-app/client';
 export { IntegrationAuth } from './authenticator';
+export * from './utils';
 
 class IntegrationFramework {
   //global events grouped by plugin
