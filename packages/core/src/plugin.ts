@@ -1,4 +1,5 @@
 import {
+  EventHandler,
   IntegrationAction,
   IntegrationCredentialType,
   IntegrationEvent,
@@ -6,6 +7,8 @@ import {
 import { ZodSchema } from 'zod';
 import { PluginError } from './utils/errors';
 import { DataLayer } from './data-access';
+import { IntegrationAuth } from './authenticator';
+import { inngestClient } from './inngest';
 
 export type PluginConfig = {
   name: string;
@@ -23,6 +26,7 @@ export class IntegrationPlugin {
   config: Omit<PluginConfig, 'name' | 'logoUrl'> & { [key: string]: any } = {};
   events: Record<string, IntegrationEvent> = {};
   actions: Record<string, IntegrationAction<any>> = {};
+  eventHandlers: EventHandler[] = [];
 
   constructor(config: PluginConfig) {
     if (!config?.name) {
@@ -47,8 +51,10 @@ export class IntegrationPlugin {
     this.dataLayer = dataLayer;
   }
 
-  getEventHandlers(): any[] {
-    return [];
+  defineEventHandlers() {}
+
+  getEventHandlers() {
+    return this.eventHandlers;
   }
 
   defineActions() {}
@@ -76,40 +82,44 @@ export class IntegrationPlugin {
     return this.getEvent(name).key;
   }
 
-  //   async sendEvent({
-  //     name,
-  //     data,
-  //     user,
-  //   }: {
-  //     name: string
-  //     data: Record<string, any>
-  //     user?: {
-  //       userId?: string
-  //       workspaceId?: string
-  //       [key: string]: any
-  //     }
-  //   }) {
-  //     const event = await inngest.send({
-  //       name: name as any,
-  //       data: data as any,
-  //       user: user as any,
-  //     })
+  async sendEvent({
+    name,
+    data,
+    user,
+  }: {
+    name: string;
+    data: Record<string, any>;
+    user?: {
+      userId?: string;
+      workspaceId?: string;
+      [key: string]: any;
+    };
+  }) {
+    const event = await inngestClient.send({
+      name: name as any,
+      data: data as any,
+      user: user as any,
+    });
 
-  //     const integrationEvent = Object.values(this.events).find(
-  //       (e) => e.key === name
-  //     )
+    const integrationEvent = Object.values(this.events).find(
+      (e) => e.key === name
+    );
 
-  //     if (integrationEvent?.triggerProperties) {
-  //       await inngest.send({
-  //         name: "workflow/run-automations",
-  //         data: {
-  //           trigger: integrationEvent.triggerProperties.type,
-  //           payload: data,
-  //         },
-  //         user: user as any,
-  //       })
-  //     }
+    if (integrationEvent?.triggerProperties) {
+      await inngestClient.send({
+        name: 'workflow/run-automations',
+        data: {
+          trigger: integrationEvent.triggerProperties.type,
+          payload: data,
+        },
+        user: user as any,
+      });
+    }
 
-  //     return event
-  //   }
+    return event;
+  }
+
+  getAuthenticator(): IntegrationAuth {
+    throw new PluginError('Authenticator not implemented');
+  }
 }

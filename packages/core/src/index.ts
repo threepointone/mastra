@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { IntegrationPlugin } from './plugin';
 import {
+  EventHandler,
   IntegrationAction,
   IntegrationActionExcutorParams,
   IntegrationContext,
@@ -10,6 +11,8 @@ import { omitBy } from 'lodash';
 import { DataLayer } from './data-access';
 import { AutomationBlueprint } from './workflows/types';
 import { blueprintRunner } from './workflows/runner';
+import { Inngest } from 'inngest';
+import { inngest } from './inngest/client';
 
 export interface Config {
   name: string;
@@ -30,12 +33,13 @@ export { IntegrationPlugin } from './plugin';
 export { IntegrationCredentialType } from './types';
 export { FieldTypes, DataIntegration } from '@prisma/client';
 export { IntegrationAuth } from './authenticator';
+export { inngestClient } from './inngest';
 
 class IntegrationFramework {
   //global events grouped by plugin
   globalEvents: Map<string, Record<string, IntegrationEvent>> = new Map();
   // global event handlers
-  globalEventHandlers: any[] = [];
+  globalEventHandlers: EventHandler[] = [];
   // global actions grouped by plugin
   globalActions: Map<string, Record<string, IntegrationAction<any>>> =
     new Map();
@@ -64,6 +68,17 @@ class IntegrationFramework {
       .map(({ plugin }) => plugin);
   }
 
+  authenticatablePlugins() {
+    return this.availablePlugins().filter(({ plugin }) => {
+      try {
+        plugin.getAuthenticator();
+        return true;
+      } catch (e) {
+        return false;
+      }
+    });
+  }
+
   registerPlugin(pluginDefinition: IntegrationPlugin) {
     const { name } = pluginDefinition;
     pluginDefinition.attachDataLayer({ dataLayer: this.dataLayer });
@@ -83,6 +98,8 @@ class IntegrationFramework {
       actions: Object.values(pluginDefinition.getActions()),
       pluginName: name,
     });
+
+    pluginDefinition.defineEventHandlers();
 
     this.globalEventHandlers.push(...pluginDefinition.getEventHandlers());
   }
@@ -153,6 +170,27 @@ class IntegrationFramework {
     return this.globalEventHandlers;
   }
 
+  inngestFunctions() {
+    const eventHandlersInngestFunctions = this.globalEventHandlers.map((eh) => {
+      return inngest.createFunction(
+        {
+          id: eh.id,
+        },
+        {
+          event: eh.event as any,
+        },
+        eh.executor
+      );
+    });
+
+    const functions = [...eventHandlersInngestFunctions];
+
+    console.log('getting functions', {
+      functions,
+    });
+    return functions;
+  }
+
   getActions() {
     return this.globalActions;
   }
@@ -202,6 +240,17 @@ class IntegrationFramework {
 
     return actionExecutor.executor(payload);
   }
+
+
+  authenticator(pluginName: string) {
+    const plugin = this.getPlugin(pluginName);
+    if (!plugin) {
+      throw new Error(`No plugin exists for ${pluginName}`);
+    }
+
+    return plugin.getAuthenticator();
+  }
+
 
   async runBlueprint({
     blueprint,
@@ -257,7 +306,9 @@ export function createFramework(config: Config) {
   }
 
   const dataLayer = new DataLayer({ db });
-  const framework = new IntegrationFramework({ dataLayer });
+  const framework = new IntegrationFramework({
+    dataLayer,
+  });
 
   // Register plugins
   config.plugins.forEach((plugin) => {

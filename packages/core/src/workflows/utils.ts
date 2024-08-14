@@ -564,24 +564,23 @@ export const filterChecks = {
     operator,
     comparator,
   }: {
-    filterField: string;
+    filterField: any;
     operator: FilterOperator;
     comparator: string;
   }) => {
     if (!filterField) return false;
     const datesAreEqual = dateFns.isEqual(
-      filterField,
-      new Date(comparator).toDateString()
+      new Date(filterField),
+      new Date(comparator)
     );
     const dateIsAfter = dateFns.isAfter(
-      filterField,
-      new Date(comparator).toDateString()
+      new Date(filterField),
+      new Date(comparator)
     );
     const dateIsBefore = dateFns.isBefore(
-      filterField,
-      new Date(comparator).toDateString()
+      new Date(filterField),
+      new Date(comparator)
     );
-
     switch (operator) {
       case 'EQUAL':
         return datesAreEqual;

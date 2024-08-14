@@ -1,5 +1,6 @@
 import { OAuth2Token } from '@badgateway/oauth2-client';
 import { ZodObject, ZodSchema } from 'zod';
+import { BaseContext } from 'inngest/types';
 
 export type EventSchema = ZodObject<any>;
 
@@ -106,3 +107,11 @@ export type OAuthToken = OAuth2Token & { [key: string]: any };
 export type APIKey = { apiKey: string } & { [key: string]: any };
 export type CredentialValue = OAuthToken | APIKey;
 export type AuthToken = Omit<OAuthToken, 'refreshToken'> | APIKey;
+
+export type EventHandler = {
+  id: string;
+  event: string;
+  executor: ({ event, step }: BaseContext<any>) => Promise<any>;
+  onFailure?: ({ event, step }: BaseContext<any>) => Promise<any>;
+  cancelOn?: { event: string; if: string }[];
+};
