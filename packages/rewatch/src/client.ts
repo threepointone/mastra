@@ -1,6 +1,5 @@
 import { IntegrationError } from '@arkw/core';
 // @ts-ignore
-// @ts-nocheck
 import { GraphQLClient } from 'graphql-request';
 
 import { Sdk, getSdk, WebhookEvent } from './sdk';
