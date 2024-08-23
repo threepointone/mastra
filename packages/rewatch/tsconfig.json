@@ -5,7 +5,7 @@
     "lib": ["dom", "esnext"],
     "types": ["@types/jest", "node"],
     "target": "ES6",
-    "module": "ES2022",
+    "module": "ESNext",
     "allowImportingTsExtensions": false,
     "strict": true,
     "noEmit": true,

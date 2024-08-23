@@ -8,7 +8,7 @@ export async function generate() {
   // Add your code here
 
   dotenv.config();
-  const configPath = path.join(process.cwd(), 'src/arkw.config.ts');
+  const configPath = path.join(process.cwd(), 'arkw.config.ts');
   const { config } = await import(configPath);
 
   const corePath = path.join(process.cwd(), 'node_modules/@arkw/core');

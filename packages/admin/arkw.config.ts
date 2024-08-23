@@ -1,7 +1,7 @@
 import { Config, IntegrationFieldTypeEnum } from '@arkw/core';
 import { GoogleIntegration } from '@arkw/google';
 import { MailchimpIntegration } from '@arkw/mailchimp';
-import { RewatchIntegration } from '@arkw/rewatch';
+// import { RewatchIntegration } from '@arkw/rewatch';
 import { SlackIntegration } from '@arkw/slack';
 import { createId } from '@paralleldrive/cuid2';
 import { z } from 'zod';
@@ -203,7 +203,7 @@ export const config: Config = {
         REDIRECT_URI,
       },
     }),
-    new RewatchIntegration(),
+    // new RewatchIntegration(),
     new SlackIntegration({
       config: {
         CLIENT_ID: process.env.SLACK_CLIENT_ID!,
