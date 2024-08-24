@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import { execa, ExecaError } from 'execa';
 import path from 'path';
 
@@ -58,4 +59,12 @@ export async function migrate(createOnly = false, dbUrl: string) {
     }
   }
   return false;
+}
+
+export async function migrateCommand() {
+  dotenv.config();
+  const configPath = path.join(process.cwd(), 'arkw.config.ts');
+  const { config } = await import(configPath);
+
+  await migrate(false, config.db.uri);
 }

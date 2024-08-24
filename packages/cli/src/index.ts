@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import { dev } from './commands/dev.js';
 import { generate } from './commands/generate.js';
 import { init } from './commands/init.js';
+import { migrateCommand } from './commands/migrate.js';
 
 //add the following line
 const program = new Command();
@@ -28,6 +29,11 @@ program
   .command('generate')
   .description('Generate types')
   .action(() => generate());
+
+program
+  .command('migrate')
+  .description('Migrate DB')
+  .action(() => migrateCommand());
 
 program.parse(process.argv);
 

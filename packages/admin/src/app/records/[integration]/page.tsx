@@ -16,7 +16,7 @@ export default async function Integration({ params }: { params: { integration: s
   const indexEntityType = Object.values(integration.entityTypes)[0];
 
   if (indexEntityType) {
-    redirect(`/records/${integrationName.toLowerCase()}/${indexEntityType.toLowerCase()}`);
+    redirect(`/records/${(integrationName as string).toLowerCase()}/${indexEntityType.toLowerCase()}`);
   }
 
   // usage

@@ -3,6 +3,7 @@ import { GoogleIntegration } from '@arkw/google';
 import { MailchimpIntegration } from '@arkw/mailchimp';
 // import { RewatchIntegration } from '@arkw/rewatch';
 import { SlackIntegration } from '@arkw/slack';
+import { StripeIntegration } from '@arkw/stripe';
 import { createId } from '@paralleldrive/cuid2';
 import { z } from 'zod';
 
@@ -218,6 +219,11 @@ export const config: Config = {
         CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET!,
         REDIRECT_URI,
         TOPIC: process.env.GOOGLE_MAIL_TOPIC!,
+      },
+    }),
+    new StripeIntegration({
+      config: {
+        SECRET_KEY: process.env.STRIPE_SECRET_KEY!,
       },
     }),
   ],
