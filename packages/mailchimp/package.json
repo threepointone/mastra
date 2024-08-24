@@ -44,6 +44,7 @@
     "@tsconfig/recommended": "^1.0.7",
     "@types/jest": "^29.5.12",
     "@types/lodash": "^4.17.7",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.20",
     "@types/node": "^22.1.0",
     "dts-cli": "^2.0.5",
     "husky": "^9.1.4",
@@ -58,6 +59,7 @@
   "license": "ISC",
   "dependencies": {
     "@arkw/core": "workspace:*",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "zod": "^3.23.8"
   }
 }
