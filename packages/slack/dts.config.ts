@@ -1,3 +1,4 @@
+
 import image from '@rollup/plugin-image';
 
 export default {
@@ -6,3 +7,4 @@ export default {
     return config;
   },
 };
+        

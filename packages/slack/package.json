@@ -12,6 +12,7 @@
   "scripts": {
     "analyze": "size-limit --why",
     "build": "dts build",
+    "build:dev": "dts watch",
     "lint": "dts lint",
     "prepare": "dts build",
     "size": "size-limit",
@@ -40,7 +41,6 @@
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-image": "^3.0.3",
     "@size-limit/preset-small-lib": "^11.1.4",
-    "@slack/web-api": "^7.3.1",
     "@tsconfig/recommended": "^1.0.7",
     "@types/jest": "^29.5.12",
     "@types/lodash": "^4.17.7",
