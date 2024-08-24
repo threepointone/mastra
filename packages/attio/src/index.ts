@@ -1,5 +1,7 @@
 
 import { Integration, IntegrationAuth } from '@arkw/core';
+import { createClient, type NormalizeOAS } from 'fets'
+import type openapi from './openapi'
 
 type AttioConfig = {
   CLIENT_ID: string;
@@ -23,6 +25,13 @@ export class AttioIntegration extends Integration {
     this.config = config;
   }
 
+  async getProxy({ referenceId }: { referenceId: string }) {
+    const client = createClient<NormalizeOAS<typeof openapi>>({
+      endpoint: "https://api.attio.com"
+    })
+    return client
+  }
+
   getAuthenticator() {
     return new IntegrationAuth({
       dataAccess: this.dataLayer!,
@@ -43,5 +52,4 @@ export class AttioIntegration extends Integration {
     });
   }
 }
-    
-    
+

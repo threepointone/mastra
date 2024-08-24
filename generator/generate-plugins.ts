@@ -66,9 +66,9 @@ export default {
         })
 
 
-        fs.writeFileSync(indexPath, int)
+        // fs.writeFileSync(indexPath, int)
 
-        console.log(int)
+        console.log(entry)
 
     })
 }
