@@ -38,6 +38,34 @@ export class StripeIntegration extends Integration {
         }),
         handler: stripeSync,
       },
+      'stripe/account.application.authorized': {
+        schema: z.object({}),
+        handler: stripeSync,
+      },
+      'stripe/account.application.deauthorized': {
+        schema: z.object({}),
+        handler: stripeSync,
+      },
+      'stripe/customer.created': {
+        schema: z.object({}),
+        handler: stripeSync,
+      },
+      'stripe/customer.deleted': {
+        schema: z.object({}),
+        handler: stripeSync,
+      },
+      'stripe/transfer.created': {
+        schema: z.object({}),
+        handler: stripeSync,
+      },
+      'stripe/transfer.reversed': {
+        schema: z.object({}),
+        handler: stripeSync,
+      },
+      'stripe/transfer.updated': {
+        schema: z.object({}),
+        handler: stripeSync,
+      },
     };
 
     return this.events;
