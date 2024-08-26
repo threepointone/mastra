@@ -10,13 +10,15 @@
     "src"
   ],
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
+    "analyze": "scripty",
+    "build": "scripty",
+    "dev": "scripty",
     "lint": "dts lint",
     "prepare": "dts build",
+    "clean": "rimraf dist *.tsbuildinfo",
     "size": "size-limit",
     "start": "dts watch",
-    "test": "jest",
+    "test": "scripty",
     "graphql:codegen:rewatch": "graphql-codegen -c graphql.config.ts -p rewatch"
   },
   "husky": {
@@ -65,5 +67,8 @@
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",
     "zod": "^3.23.8"
+  },
+  "scripty": {
+    "path": "../../scripts/packages"
   }
 }

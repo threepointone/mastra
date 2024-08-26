@@ -1,7 +1,6 @@
 import { OAuth2Token } from '@badgateway/oauth2-client';
 import { BaseContext } from 'inngest';
-import { ZodObject, ZodSchema, any } from 'zod';
-import { DataLayer } from './data-access';
+import { ZodSchema } from 'zod';
 import { Integration } from './integration';
 
 export type FrameWorkConfig = {
@@ -30,7 +29,7 @@ export type frameWorkIcon = {
   alt: string;
 };
 
-export type IntegrationEventTriggerProperties<T = unknown, U = unknown> = {
+export type IntegrationEventTriggerProperties<T = unknown> = {
   schema?: ZodSchema<T>;
   outputSchema?:
     | ZodSchema<T>

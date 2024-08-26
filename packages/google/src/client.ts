@@ -37,7 +37,7 @@ export class GoogleClient {
     this.token = token;
   }
 
-  async getOAuth() {
+  getOAuth() {
     return new google.auth.OAuth2({
       credentials: {
         access_token: this.token,
@@ -46,7 +46,7 @@ export class GoogleClient {
   }
 
   async getTokenInfo(): Promise<TokenInfo> {
-    const oauth = await this.getOAuth();
+    const oauth = this.getOAuth();
     const tokenInfo = oauth.getTokenInfo(this.token);
     return tokenInfo;
   }

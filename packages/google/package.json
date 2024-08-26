@@ -10,14 +10,16 @@
     "src"
   ],
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
+    "analyze": "scripty",
+    "build": "scripty",
+    "dev": "scripty",
+    "clean": "rimraf dist *.tsbuildinfo",
     "build:dev": "dts watch",
     "lint": "dts lint",
     "prepare": "dts build",
     "size": "size-limit",
     "start": "dts watch",
-    "test": "jest"
+    "test": "scripty"
   },
   "husky": {
     "hooks": {
@@ -64,6 +66,9 @@
     "ts-jest": "^29.2.4",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4"
+  },
+  "scripty": {
+    "path": "../../scripts/packages"
   },
   "keywords": [],
   "author": "",

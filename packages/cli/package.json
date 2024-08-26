@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "analyze": "scripty",
     "build": "npx tsc",
+    "clean": "rimraf dist *.tsbuildinfo",
     "build:dev": "npx tsc --watch",
     "init": "npx tsx src/index.ts init",
     "dev": "npx tsx src/index.ts dev",
@@ -33,5 +35,8 @@
     "@types/tcp-port-used": "^1.0.4",
     "dotenv": "^16.3.1",
     "typescript": "^5.5.4"
+  },
+  "scripty": {
+    "path": "../../scripts/packages"
   }
 }

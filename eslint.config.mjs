@@ -13,7 +13,6 @@ recommendedConfig: js.configs.recommended,
 
 export default [
   ...compat.config({
-    // root: true,
     env: {
       es2021: true,
     },
@@ -31,10 +30,11 @@ export default [
       'prefer-const': 'error',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/no-unsafe-return': 'error',
     },
   }),
-  {ignores: ["**/eslint.config.*", "**/tests/*.ts", "dist", "node_modules"]},
+  {ignores: ["**/eslint.config.*", "**/*.test.ts", "**/tests/*.ts", "dist", "node_modules"]},
   { files: ['**/src/*.ts', '**/src/*.js'] }
 ];

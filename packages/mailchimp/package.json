@@ -10,14 +10,16 @@
     "src"
   ],
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
+    "analyze": "scripty",
+    "build": "scripty",
+    "dev": "scripty",
     "build:dev": "dts watch",
     "lint": "dts lint",
+    "clean": "rimraf dist *.tsbuildinfo",
     "prepare": "dts build",
     "size": "size-limit",
     "start": "dts watch",
-    "test": "jest"
+    "test": "scripty"
   },
   "husky": {
     "hooks": {
@@ -61,5 +63,8 @@
     "@arkw/core": "workspace:*",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "zod": "^3.23.8"
+  },
+  "scripty": {
+    "path": "../../scripts/packages"
   }
 }

@@ -2,6 +2,7 @@
   "extends": "../tsconfig.settings.json",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["node", "jest"],
     "allowJs": true,
     "skipLibCheck": true,
     "composite": true,

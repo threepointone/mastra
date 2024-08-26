@@ -10,15 +10,17 @@
     "src"
   ],
   "scripts": {
+    "analyze": "scripty",
     "check": "tsc --noEmit",
-    "analyze": "size-limit --why",
     "build": "dts build && cp ./src/prisma/* ./dist/prisma",
     "build:dev": "dts watch",
     "lint": "dts lint",
+    "dev": "scripty",
+    "clean": "rimraf dist *.tsbuildinfo",
     "prepare": "dts build",
     "size": "size-limit",
     "start": "dts watch",
-    "test": "jest",
+    "test": "scripty",
     "generate": "node --env-file .env ./src/prisma/gen.js && npx prisma generate --schema=./src/prisma/schema.prisma",
     "synchronize": "npx prisma db push --schema=./src/prisma/schema.prisma --force-reset",
     "postinstall": "pnpm generate"
@@ -77,5 +79,8 @@
     "ts-jest": "^29.2.4",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4"
+  },
+  "scripty": {
+    "path": "../../scripts/packages"
   }
 }

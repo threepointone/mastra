@@ -72,6 +72,7 @@ export function evaluateCondition({
             triggerId: andCond.blockId || triggerId,
           });
         }
+        return true;
       })
       .every(Boolean);
   }
@@ -94,6 +95,7 @@ export function evaluateCondition({
             triggerId: orCond.blockId || triggerId,
           });
         }
+        return false;
       })
       .some(Boolean);
   }
