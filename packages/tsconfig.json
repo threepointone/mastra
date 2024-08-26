@@ -1,0 +1,11 @@
+{
+	"references": [
+		{ "path": "./admin" },
+		{ "path": "./cli" },
+		{ "path": "./core" },
+		{ "path": "./google" },
+		{ "path": "./mailchimp" },
+		{ "path": "./slack" },
+		{ "path": "./rewatch" },
+	]
+}

@@ -1,6 +1,6 @@
 import retry from 'async-retry-ng';
 import { TokenInfo } from 'google-auth-library';
-import { google, gmail_v1, calendar_v3 } from 'googleapis';
+import { google, gmail_v1 } from 'googleapis';
 
 import PostalMime from '../node_modules/postal-mime';
 
@@ -230,7 +230,7 @@ export class GoogleClient {
       threadBatchCursor += BATCH_SIZE;
     }
 
-    let sortedMessages = threadMessages.sort(
+    const sortedMessages = threadMessages.sort(
       (a, b) => new Date(a.date as string).getTime() - new Date(b.date as string).getTime(),
     );
 
@@ -250,7 +250,7 @@ export class GoogleClient {
    * @returns
    */
   aggregateMessagesFromHistory = async ({ gmailHistory }: { gmailHistory: gmail_v1.Schema$History[] }) => {
-    let messages: Email[] = [];
+    const messages: Email[] = [];
 
     for (const history of gmailHistory) {
       const deletedMessageIds = new Set(
@@ -302,7 +302,7 @@ export class GoogleClient {
     return google.calendar({
       version: 'v3',
       auth: await this.getOAuth(),
-    } as any) as calendar_v3.Calendar;
+    } as any);
   }
 
   async subscribeToGCAL({ webhookUrl, channelId }: { webhookUrl: string; channelId: string }) {
@@ -361,7 +361,7 @@ export class GoogleClient {
   async getEventsForCalendar(calendarEventOptions: GetCalendarEventsProps) {
     const calendar = await this.getCalendarInstance();
     const { startDate, endDate, calendarId, orderBy, singleEvents } = calendarEventOptions;
-    let eventsList: CalendarEvent[] = [];
+    const eventsList: CalendarEvent[] = [];
     let nextPageToken: string = '';
 
     do {
@@ -402,7 +402,7 @@ export class GoogleClient {
   async findGoogleContactsHavingEmailAddress(): Promise<Record<string, GoogleConnection>> {
     const service = await this.getPeopleInstance();
     let nextPageToken = '';
-    let connectionsMap: Record<string, GoogleConnection> = {};
+    const connectionsMap: Record<string, GoogleConnection> = {};
 
     do {
       const result = await service.people.connections.list({
@@ -429,7 +429,7 @@ export class GoogleClient {
     return connectionsMap;
   }
 
-  /* 
+  /*
   custom
   */
 
@@ -467,7 +467,7 @@ export class GoogleClient {
         if (!recipient.address || recipient.address == options.connectedEmail) {
           continue;
         }
-        let isRecordExistingInCache = options.recordSearchCache.has(recipient.address);
+        const isRecordExistingInCache = options.recordSearchCache.has(recipient.address);
         if (!isRecordExistingInCache) {
           if (!recipient.address) return null;
 
@@ -540,14 +540,14 @@ export class GoogleClient {
     const isSinglePersonSync = person !== undefined;
 
     // getting events from all calendars for 1 year ago and 6 months in the future
-    let currentDate = new Date();
+    const currentDate = new Date();
 
     // Get the minDate (1 year ago)
-    let minDate = new Date(currentDate);
+    const minDate = new Date(currentDate);
     minDate.setFullYear(minDate.getFullYear() - 1);
 
     // Get the maxDate (6 months later)
-    let maxDate = new Date(currentDate);
+    const maxDate = new Date(currentDate);
     maxDate.setMonth(maxDate.getMonth() + 6);
 
     // get calendar
@@ -563,7 +563,7 @@ export class GoogleClient {
       singleEvents: true,
     });
 
-    let peopleRecordsToCreate: Record<string, any>[] = [];
+    const peopleRecordsToCreate: Record<string, any>[] = [];
     let contacts: Record<string, GoogleConnection> = {};
 
     try {
@@ -575,7 +575,7 @@ export class GoogleClient {
     const eventResponseMap: Record<string, boolean> = {};
 
     // array of savable events
-    let eventsToSave: CalendarEvent[] = [];
+    const eventsToSave: CalendarEvent[] = [];
 
     for (const event of calendarEvents) {
       if (!event.attendees) continue;
@@ -595,7 +595,7 @@ export class GoogleClient {
       }
 
       for (const attendee of event.attendees) {
-        if (connectedEmail && haveSameDomain(connectedEmail as string, attendee.email)) {
+        if (connectedEmail && haveSameDomain(connectedEmail, attendee.email)) {
           continue;
         }
         const recordName = await nameForContact({
