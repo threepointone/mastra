@@ -23,7 +23,7 @@ export const IntegrationListRow = ({
   OAuthConnectionRoute,
   isAPIKeyConnection,
 }: IntegrationListRowProps) => {
-  const [isConnecting, setIsConnecting] = useState(false);
+  const [_, setIsConnecting] = useState(false);
   const [isConnectingManually, setIsConnectingManually] = useState(false);
 
   const link = null;

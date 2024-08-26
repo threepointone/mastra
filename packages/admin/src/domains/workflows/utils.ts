@@ -280,7 +280,7 @@ export const constructWorkflowContextBluePrint = (blueprint: BlueprintWithRelati
     actionsObj?: WorkflowContextProps['actions'];
     parentActionId?: string;
   }) {
-    const { subActions, ...rest } = action;
+    const { subActions } = action;
     action.parentActionId = parentActionId;
     workflowContextActions[action.id] = action as WorkflowContextAction;
 

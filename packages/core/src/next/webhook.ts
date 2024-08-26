@@ -10,7 +10,7 @@ export const makeWebhook = (framework: Framework) => {
       req,
       webhookQueryParams
     );
-    const { data, error, success } = params;
+    const { data, error } = params;
 
     if (error) {
       return NextResponse.json({ error, status: 400 });

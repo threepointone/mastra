@@ -99,7 +99,7 @@ export const workflowsColumns = ({
     id: 'updatedAt',
     header: 'Updated',
     cell: ({ row }) => {
-      const { updatedAt, isLoading, id } = row.original;
+      const { updatedAt, isLoading } = row.original;
       if (isLoading) {
         return <Skeleton className="h-3 w-[50px] rounded-[2px]" />;
       }

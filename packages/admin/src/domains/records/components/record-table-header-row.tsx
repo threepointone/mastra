@@ -13,7 +13,7 @@ export const convertRowsToTanStack = (selected: Row<any>[]) => {
 };
 
 export function HeaderRow<TData, TValue>({ headerRow }: { headerRow: HeaderGroup<TData> }) {
-  const { table, setRowSelection, getRowLockCondition } = useTableContext();
+  const { table, setRowSelection } = useTableContext();
 
   if (!table) return <></>;
   const rows = table?.getRowModel()?.rows;

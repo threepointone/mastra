@@ -21,7 +21,7 @@ export const BodyRow = forwardRef<
     tableRef: RefObject<HTMLDivElement>;
   }
 >(({ virtualRow, currentRowId, tableRef }, ref) => {
-  const { setRowSelection, table, getRowLockCondition } = useTableContext();
+  const { table, getRowLockCondition } = useTableContext();
   let tableRowRef = useRef<HTMLTableRowElement>(null);
   const rows = table?.getRowModel().rows;
   const headers = table?.getAllColumns();

@@ -83,8 +83,8 @@ export const TableProvider = <TData, TValue>({
     columnResizeMode: 'onChange',
   });
 
-  const columnSizingInfo = table.getState().columnSizingInfo;
-  const columnSizing = table.getState().columnSizing;
+  // const columnSizingInfo = table.getState().columnSizingInfo;
+  // const columnSizing = table.getState().columnSizing;
 
   const columnSizeVars = useMemo(() => {
     const headers = table.getFlatHeaders();

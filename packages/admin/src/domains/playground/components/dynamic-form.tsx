@@ -33,7 +33,6 @@ function DynamicForm<T extends ZodSchema>() {
     handleSubmit,
     setValue,
     watch,
-    reset,
     trigger,
     formState: { errors },
   } = useForm<z.infer<T>>({

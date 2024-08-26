@@ -35,7 +35,7 @@ export function ConditionBox({
   isNew,
   isInConditionForm,
 }: ConditionBoxProps) {
-  const { updateLogicActionCondition, addNewBlankAction, blueprintInfo, attemptedPublish } = useWorkflowContext();
+  const { updateLogicActionCondition, addNewBlankAction, attemptedPublish } = useWorkflowContext();
   const { and, or } = condition;
   const extras = and || or;
 

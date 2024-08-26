@@ -8,6 +8,7 @@ function getFramework() {
     return createFramework(config);
   } catch (error) {
     console.error('Error loading config:', error);
+    return undefined
   }
 }
 

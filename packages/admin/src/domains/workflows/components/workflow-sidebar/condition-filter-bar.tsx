@@ -57,7 +57,7 @@ export const ConditionFilterBar = ({
   parentCondition,
   isLastCondition,
 }: ConditionFilterProps) => {
-  const { actions, trigger, updateLogicActionCondition, updateAction, blueprintInfo } = useWorkflowContext();
+  const { actions, trigger, updateLogicActionCondition, updateAction } = useWorkflowContext();
   const { blockId } = condition;
   const selectedBlock =
     trigger.id === blockId ? (trigger as WorkflowTrigger) : (actions[blockId || ''] as WorkflowAction);

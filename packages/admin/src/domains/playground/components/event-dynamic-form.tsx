@@ -80,7 +80,6 @@ function EventDynamicForm<T extends ZodSchema>() {
   }
 
   async function handleTriggerEvent() {
-    const parser = selectedEvent?.schema;
     let values = formValues;
 
     try {
