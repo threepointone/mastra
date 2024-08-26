@@ -102,9 +102,8 @@ export class RecordService<T extends typeof prisma> {
     });
 
     try {
-      const records = await this.db.$queryRawUnsafe<RecordDataType[]>(
-        sqlStatement
-      );
+      const records =
+        await this.db.$queryRawUnsafe<RecordDataType[]>(sqlStatement);
 
       return records;
     } catch (e) {

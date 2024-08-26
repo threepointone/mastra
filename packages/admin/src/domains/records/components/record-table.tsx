@@ -51,9 +51,7 @@ const Header = React.memo(() => {
 
   return (
     <TableHeader className="border-arkw-border-1 bg-arkw-bg-2 sticky top-0 z-10 border-[0.5px]">
-      {headerGroups?.map((headerRow, i) => (
-        <HeaderRow headerRow={headerRow} key={i} />
-      ))}
+      {headerGroups?.map((headerRow, i) => <HeaderRow headerRow={headerRow} key={i} />)}
     </TableHeader>
   );
 });

@@ -1,7 +1,8 @@
-import baseConfig from "../../eslint.config.mjs"
 import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+import baseConfig from '../../eslint.config.mjs';
 
 // mimic CommonJS variables -- not needed if using CommonJS
 const __filename = fileURLToPath(import.meta.url);

@@ -40,13 +40,16 @@ export function EventPlaygroundSidebar() {
     );
   }
 
-  const groupByIntegrationName = frameworkEvents?.reduce((acc, fwAct) => {
-    return {
-      ...acc,
-      // TODO: update to be grouped by integration name
-      ['system']: [...(acc['system'] || []), fwAct],
-    };
-  }, {} as { [key: string]: RefinedIntegrationEventTriggerProperties[] });
+  const groupByIntegrationName = frameworkEvents?.reduce(
+    (acc, fwAct) => {
+      return {
+        ...acc,
+        // TODO: update to be grouped by integration name
+        ['system']: [...(acc['system'] || []), fwAct],
+      };
+    },
+    {} as { [key: string]: RefinedIntegrationEventTriggerProperties[] },
+  );
 
   return (
     <>

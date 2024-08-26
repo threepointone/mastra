@@ -41,12 +41,15 @@ export function ActionPlaygroundSidebar() {
     );
   }
 
-  const groupByIntegrationName = frameworkActions?.reduce((acc, fwAct) => {
-    return {
-      ...acc,
-      [fwAct.integrationName]: [...(acc[fwAct.integrationName] || []), fwAct],
-    };
-  }, {} as { [key: string]: RefinedIntegrationAction[] });
+  const groupByIntegrationName = frameworkActions?.reduce(
+    (acc, fwAct) => {
+      return {
+        ...acc,
+        [fwAct.integrationName]: [...(acc[fwAct.integrationName] || []), fwAct],
+      };
+    },
+    {} as { [key: string]: RefinedIntegrationAction[] },
+  );
 
   return (
     <>

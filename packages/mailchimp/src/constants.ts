@@ -100,13 +100,16 @@ const MAILCHIMP_MEMBER_TO_PERSON = {
 };
 
 export const mapMailchimpMemberToPersonRecord = (member: MailchimpMember) => {
-  return Object.entries(MAILCHIMP_MEMBER_TO_PERSON).reduce((acc, [key, path]) => {
-    acc[key] = typeof path === 'function' ? path(member) : getPath(member, path);
+  return Object.entries(MAILCHIMP_MEMBER_TO_PERSON).reduce(
+    (acc, [key, path]) => {
+      acc[key] = typeof path === 'function' ? path(member) : getPath(member, path);
 
-    if (acc[key]) {
-      acc[key] = acc[key].trim();
-    }
+      if (acc[key]) {
+        acc[key] = acc[key].trim();
+      }
 
-    return acc;
-  }, {} as Record<string, any>);
+      return acc;
+    },
+    {} as Record<string, any>,
+  );
 };

@@ -176,9 +176,8 @@ export class IntegrationAuth {
   }: {
     connectionId: string;
   }): Promise<AuthToken> {
-    const credential = await this.dataAccess.getCredentialsByConnectionId(
-      connectionId
-    );
+    const credential =
+      await this.dataAccess.getCredentialsByConnectionId(connectionId);
 
     if (credential.type === IntegrationCredentialType.API_KEY) {
       return credential.value as APIKey;
@@ -244,9 +243,8 @@ export class IntegrationAuth {
   async revokeAuth({ connectionId }: { connectionId: string }) {
     const oauthClient = this.getClient();
 
-    const credential = await this.dataAccess.getCredentialsByConnectionId(
-      connectionId
-    );
+    const credential =
+      await this.dataAccess.getCredentialsByConnectionId(connectionId);
 
     const token = credential.value as OAuthToken;
 

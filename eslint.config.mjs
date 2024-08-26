@@ -1,5 +1,5 @@
-import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-recommendedConfig: js.configs.recommended,
+  recommendedConfig: js.configs.recommended,
 });
 
 export default [
@@ -35,6 +35,6 @@ export default [
       '@typescript-eslint/no-unsafe-return': 'error',
     },
   }),
-  {ignores: ["**/eslint.config.*", "**/*.test.ts", "**/tests/*.ts", "dist", "node_modules"]},
-  { files: ['**/src/*.ts', '**/src/*.js'] }
+  { ignores: ['**/eslint.config.*', '**/*.test.ts', '**/tests/*.ts', 'dist', 'node_modules'] },
+  { files: ['**/src/*.ts', '**/src/*.js'] },
 ];

@@ -253,7 +253,7 @@ describe('run blueprint', () => {
       status: 'PUBLISHED',
       runs: [],
       ...props,
-    } as any);
+    }) as any;
 
   const testFrameworkName = 'TEST_FRAMEWORK';
 
