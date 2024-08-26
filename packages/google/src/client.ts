@@ -2,33 +2,17 @@ import retry from 'async-retry-ng';
 import { TokenInfo } from 'google-auth-library';
 import { google, gmail_v1 } from 'googleapis';
 
+
+
 import PostalMime from '../node_modules/postal-mime';
+
+
 
 import { GMAIL_API_URL, Labels } from './constants';
 import { GmailMessageNotFound } from './errors';
-import {
-  arrangeEmailsInOrderOfCreation,
-  buildGetMessagesQuery,
-  getValidRecipientAddresses,
-  haveSameDomain,
-  isEmailValidForSync,
-  isSentEmail,
-  nameForContact,
-} from './helpers';
-import {
-  CalendarEvent,
-  CalendarType,
-  GoogleConnection,
-  Email,
-  EmailRequestBody,
-  GetCalendarEventsProps,
-  GooglePeopleData,
-  ListCalendarEventsResponse,
-  MessagesByThread,
-  ThreadResponse,
-  CreateEmailType,
-  EmailAddress,
-} from './types';
+import { arrangeEmailsInOrderOfCreation, buildGetMessagesQuery, getValidRecipientAddresses, haveSameDomain, isEmailValidForSync, isSentEmail, nameForContact } from './helpers';
+import { CalendarEvent, CalendarType, GoogleConnection, Email, EmailRequestBody, GetCalendarEventsProps, GooglePeopleData, ListCalendarEventsResponse, MessagesByThread, ThreadResponse, CreateEmailType, EmailAddress } from './types';
+
 
 export class GoogleClient {
   private token: string;
@@ -55,7 +39,7 @@ export class GoogleClient {
    * Gmail APIs
    */
 
-  async subscribeToGmail({ topic }: { topic: string }) {
+  async subscribeToGmail({ topic }: { topic: string }): Promise<unknown> {
     const gmail = await this.getGmailInstance();
     const response = await gmail.users.watch({
       userId: 'me',
@@ -305,7 +289,7 @@ export class GoogleClient {
     } as any);
   }
 
-  async subscribeToGCAL({ webhookUrl, channelId }: { webhookUrl: string; channelId: string }) {
+  async subscribeToGCAL({ webhookUrl, channelId }: { webhookUrl: string; channelId: string }):Promise<unknown> {
     const info = await this.getTokenInfo();
 
     const calendarId = info.email;

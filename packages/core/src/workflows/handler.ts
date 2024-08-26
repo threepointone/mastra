@@ -57,7 +57,7 @@ export const createWorkflowHandler = ({
     { event: 'workflow/run-automations' },
     async ({ event, step }) => {
       try {
-        const { trigger, payload, blueprintId } = event.data;
+        const { trigger, payload } = event.data;
         const { referenceId } = event.user;
 
         const getBlueprintsDirPath = async () => {

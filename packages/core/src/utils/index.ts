@@ -1,13 +1,12 @@
-import { Prisma } from '@prisma-app/client';
 import { z } from 'zod';
 import _ from 'lodash';
 
 import { SchemaFieldOptions } from '../types';
 
-type TypedInstance<T> = {
-  type: T;
-  id: string;
-};
+// type TypedInstance<T> = {
+//   type: T;
+//   id: string;
+// };
 
 /**
  * Extract schema options for the provided schema - Builds a map of fieldname to field options

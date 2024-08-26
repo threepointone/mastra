@@ -12,12 +12,13 @@
   "scripts": {
     "analyze": "scripty",
     "build": "scripty",
-    "lint": "dts lint",
-    "prepare": "dts build",
-    "size": "size-limit",
-    "start": "dts watch",
-    "test": "scripty",
-    "clean": "rimraf dist *.tsbuildinfo"
+    "dev": "scripty",
+    "lint": "scripty",
+    "prepare": "scripty",
+    "clean": "scripty",
+    "size": "scripty",
+    "start": "scripty",
+    "test": "scripty"
   },
   "husky": {
     "hooks": {

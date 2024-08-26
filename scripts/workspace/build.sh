@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 echo "┏━━━ 📦 Building Workspace ━━━━━━━━━━━━━━━━━━━"
-pnpm tsc -b packages
+pnpm lerna run build --stream

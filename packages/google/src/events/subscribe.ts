@@ -94,7 +94,7 @@ const gcalSubscribeAction = async ({
     const response = await client.subscribeToGCAL({
       webhookUrl: webhook_url,
       channelId: connectionId,
-    });
+    }) as any;
 
     console.log(`subscribed to Google Calendar`);
 

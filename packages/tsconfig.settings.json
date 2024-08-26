@@ -3,7 +3,7 @@
   "include": ["src", "types"],
   "compilerOptions": {
     "lib": ["dom", "esnext"],
-    "types": [],
+    "types": ["node"],
     "target": "ES6",
     "module": "ES2022",
     "allowImportingTsExtensions": false,

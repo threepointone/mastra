@@ -7,7 +7,7 @@
   "scripts": {
     "analyze": "scripty",
     "build": "npx tsc",
-    "clean": "rimraf dist *.tsbuildinfo",
+    "clean": "scripty",
     "build:dev": "npx tsc --watch",
     "init": "npx tsx src/index.ts init",
     "dev": "npx tsx src/index.ts dev",

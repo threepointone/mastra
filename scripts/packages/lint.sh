@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-echo "┏━━━ 🕵️‍♀️ LINT: eslint ━━━━━━━"
-pnpm eslint
+echo "┏━━━ 🕵️‍♀️ LINT: dts lint ━━━━━━━"
+dts lint

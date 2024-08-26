@@ -26,7 +26,7 @@ export type IntegrationConfig = {
 /**
  * @params T - The type of the client that the integration provides
  */
-export abstract class Integration<T = unknown> {
+export class Integration<T = unknown> {
   name: string;
   logoUrl: string;
   dataLayer?: DataLayer;
@@ -55,11 +55,17 @@ export abstract class Integration<T = unknown> {
     return this.config;
   }
 
-  abstract getProxy(params: { referenceId: string }): Promise<any>;
+  async getProxy(params: { referenceId: string }): Promise<any> {
+    throw new IntegrationError('Proxy not implemented');
+  }
 
-  abstract getAuthenticator(): IntegrationAuth;
+  getAuthenticator(): IntegrationAuth {
+    throw new IntegrationError('Authenticator not implemented');
+  }
 
-  abstract makeClient(params: { referenceId: string }): Promise<T>;
+  makeClient = async (params: { referenceId: string }): Promise<T> => {
+    throw new IntegrationError('Client not implemented');
+  };
 
   attachDataLayer({ dataLayer }: { dataLayer: DataLayer }) {
     this.dataLayer = dataLayer;
@@ -99,12 +105,14 @@ export abstract class Integration<T = unknown> {
     return this.events as Record<string, IntegrationEvent<T>>;
   }
 
-  abstract query(props: {
+  async query(props: {
     referenceId: string;
     entityType: any;
     filters?: FilterObject;
     sort?: string[];
-  }): Promise<any>;
+  }): Promise<any> {
+    return [];
+  }
 
   getEvent(name: string) {
     const event = this.events[name];
@@ -115,13 +123,15 @@ export abstract class Integration<T = unknown> {
     return event;
   }
 
-  abstract processWebhookRequest(params: {
+  async processWebhookRequest(params: {
     reqBody: any;
     event: string;
     connectionsBySubscriptionId: (
       subscriptionId: string
     ) => Promise<Connection[]>;
-  }): Promise<void>;
+  }) {
+    throw new Error('Not implemented');
+  }
 
   async sendEvent<T = Record<string, any>>({
     key,
@@ -166,9 +176,9 @@ export abstract class Integration<T = unknown> {
     try {
       const authenticator = this.getAuthenticator();
       const bearer = await authenticator.getAuthToken({
-        connectionId: connection?.id || '',
+        connectionId: connection?.id!,
       });
-      const desiredScopes: string[] = this?.config.scopes ?? [];
+      const desiredScopes = this?.config.scopes ?? [];
       if (desiredScopes.length) {
         const actualScopes = bearer.scope ?? [];
         const isMissingScopes = !desiredScopes.every((desired: string) =>
@@ -179,7 +189,6 @@ export abstract class Integration<T = unknown> {
         }
       }
     } catch (e) {
-      console.error(e);
       return IntegrationErrors.BROKEN_CONNECTION;
     }
 

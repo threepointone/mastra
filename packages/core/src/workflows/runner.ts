@@ -223,6 +223,7 @@ export function resolveCondition({
       triggerId,
     });
   }
+  return true;
 }
 
 export function resolvePath({

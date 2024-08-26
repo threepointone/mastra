@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-echo "┏━━━ 🔍 Analyze packages ━━━━━━━━━━━━━━━━━━━"
+echo "┏━━━ 🔍 Analyzing packages ━━━━━━━━━━━━━━━━━━━"
 pnpm lerna run analyze --stream

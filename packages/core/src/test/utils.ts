@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { Integration } from '../src/integration';
-import { IntegrationAction, IntegrationEvent } from '../src';
+import { IntegrationAction, IntegrationEvent } from '../types';
+import { Integration } from '../integration';
 
 export const createMockAction = (props: {
   type: string;
