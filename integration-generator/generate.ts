@@ -3,6 +3,32 @@ import fs from 'fs'
 import { parse } from 'yaml'
 import { createIntegration, createPackageJson, createTsConfig } from './template'
 import { sources } from './source'
+import { PropertyType } from '../packages/core/node_modules/@prisma-app/client'
+
+function buildFieldDefs(schemas) {
+    const typeToType = {
+        'string': PropertyType.SINGLE_LINE_TEXT,
+    }
+
+    return Object.entries(schemas).map(([name, schema]) => {
+        const props = Object.entries((schema as any)?.properties || {}).map(([k, p]) => {
+            console.log(k, p.type)
+            return {
+                name: k,
+                displayName: k,
+                order: 0,
+                type: typeToType[p.type] || PropertyType.SINGLE_LINE_TEXT,
+
+            }
+        })
+
+        if (props.length === 0) {
+            return ``
+        }
+
+        return `export const ${name}Fields = ${JSON.stringify(props, null, 2)}`
+    }).join('\n\n')
+}
 
 async function main() {
     for (const source of sources) {
@@ -60,7 +86,15 @@ async function main() {
             let openapi = await openapispecRes.text()
 
             if (openapi_url.endsWith('.yaml')) {
-                openapi = JSON.stringify(parse(openapi), null, 2)
+
+
+                const apiobj = parse(openapi)
+
+                const fieldDefs = buildFieldDefs((apiobj as any).components.schemas)
+
+                fs.writeFileSync(path.join(srcPath, 'constants.ts'), fieldDefs)
+
+                openapi = JSON.stringify(apiobj, null, 2)
             }
 
             fs.writeFileSync(path.join(srcPath, 'openapi.ts'), `

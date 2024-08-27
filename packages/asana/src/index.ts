@@ -37,15 +37,15 @@ export class AsanaIntegration extends Integration {
     const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
 
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: "https://app.asana.com/api/1.0",
+      endpoint: "",
       globalParams: {
         headers: {
           Authorization: `Bearer ${credential?.value}`
         }
       }
     })
-
-    return client as NormalizeOAS<typeof openapi>
+    
+    return client
   }
 
   getAuthenticator() {

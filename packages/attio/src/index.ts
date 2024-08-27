@@ -37,14 +37,14 @@ export class AttioIntegration extends Integration {
     const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
 
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: "https://api.attio.com",
+      endpoint: "",
       globalParams: {
         headers: {
           Authorization: `Bearer ${credential?.value}`
         }
       }
     })
-
+    
     return client
   }
 
