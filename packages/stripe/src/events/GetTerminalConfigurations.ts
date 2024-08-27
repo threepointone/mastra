@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { terminal.configurationFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTerminalConfigurations: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `terminal.configuration`,
-                                properties: [],
+                                properties: terminal.configurationFields,
                             });
                         },
                 })

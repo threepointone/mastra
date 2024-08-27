@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { customerFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetCustomersSearch: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `customer`,
-                                properties: [],
+                                properties: customerFields,
                             });
                         },
                 })

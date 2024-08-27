@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { WebhookResponseFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getWebhooks: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `WebhookResponse`,
-                                properties: [],
+                                properties: WebhookResponseFields,
                             });
                         },
                 })

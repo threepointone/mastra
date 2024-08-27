@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { radar.early_fraud_warningFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetRadarEarlyFraudWarnings: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `radar.early_fraud_warning`,
-                                properties: [],
+                                properties: radar.early_fraud_warningFields,
                             });
                         },
                 })

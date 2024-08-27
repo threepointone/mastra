@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { planFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetPlans: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `plan`,
-                                properties: [],
+                                properties: planFields,
                             });
                         },
                 })

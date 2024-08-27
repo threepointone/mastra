@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { file_linkFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetFileLinks: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `file_link`,
-                                properties: [],
+                                properties: file_linkFields,
                             });
                         },
                 })

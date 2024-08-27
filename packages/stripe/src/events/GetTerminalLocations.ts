@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { terminal.locationFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTerminalLocations: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `terminal.location`,
-                                properties: [],
+                                properties: terminal.locationFields,
                             });
                         },
                 })

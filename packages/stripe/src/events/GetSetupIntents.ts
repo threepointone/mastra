@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { setup_intentFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetSetupIntents: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `setup_intent`,
-                                properties: [],
+                                properties: setup_intentFields,
                             });
                         },
                 })

@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { promotion_codeFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetPromotionCodes: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `promotion_code`,
-                                properties: [],
+                                properties: promotion_codeFields,
                             });
                         },
                 })

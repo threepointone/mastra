@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { shipping_rateFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetShippingRates: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `shipping_rate`,
-                                properties: [],
+                                properties: shipping_rateFields,
                             });
                         },
                 })

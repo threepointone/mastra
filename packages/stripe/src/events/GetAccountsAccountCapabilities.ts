@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { capabilityFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetAccountsAccountCapabilities: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `capability`,
-                                properties: [],
+                                properties: capabilityFields,
                             });
                         },
                 })

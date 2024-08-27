@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { SectionCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getSectionsForProject: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `SectionCompact`,
-                                properties: [],
+                                properties: SectionCompactFields,
                             });
                         },
                 })

@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { StatusUpdateCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getStatusesForObject: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `StatusUpdateCompact`,
-                                properties: [],
+                                properties: StatusUpdateCompactFields,
                             });
                         },
                 })

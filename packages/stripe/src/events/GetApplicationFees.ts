@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { application_feeFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetApplicationFees: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `application_fee`,
-                                properties: [],
+                                properties: application_feeFields,
                             });
                         },
                 })

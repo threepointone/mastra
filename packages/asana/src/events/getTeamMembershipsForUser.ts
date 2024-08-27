@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { TeamMembershipCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getTeamMembershipsForUser: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `TeamMembershipCompact`,
-                                properties: [],
+                                properties: TeamMembershipCompactFields,
                             });
                         },
                 })

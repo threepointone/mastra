@@ -14,9 +14,6 @@ function buildSyncFunc({ name, paths }) {
     }).filter(Boolean).filter(({ method }) => {
         return method?.responses?.['200']?.content?.['application/json']?.schema?.properties?.data?.type === 'array'
     }).map(({ method, path }) => {
-
-        console.log(method)
-
         const entityType = method?.responses?.['200']?.content?.['application/json']?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '')
         return {
             path,
@@ -33,34 +30,58 @@ function buildSyncFunc({ name, paths }) {
             funcName: method.operationId,
         }
     })
-
-
-    
 }
 
 
 function buildFieldDefs(schemas) {
     const typeToType = {
-        string: PropertyType.SINGLE_LINE_TEXT,
+        string: `PropertyType.SINGLE_LINE_TEXT`,
     };
+
+    function makeProps(properties: Record<string, any>) {
+        const props = Object.entries(properties || {}).map(([k, p]) => {
+            return `{
+                name: '${k}',
+                displayName: '${k}',
+                order: 0,
+                type: ${typeToType[p.type] || `PropertyType.SINGLE_LINE_TEXT`} ,
+            }`;
+        });
+
+        if (props.length === 0) {
+            return [];
+        }
+
+        return props
+    }
+
+    function makeProperties({ s }) {
+        let props: string[] = []
+
+        if (s.properties) {
+            props = [...props, ...makeProps(s.properties)]
+        } else if (s.allOf) {
+            props = [...props, ...s.allOf.flatMap((s) => makeProperties({ s })) ]
+        } else if (s.$ref) {
+            const refName = s.$ref.replace('#/components/schemas/', '')
+            const newS = schemas[refName]
+            console.log(newS)
+            props = [...props, ...makeProperties({ s: newS })]
+        }
+
+        return props
+    }
 
     return Object.entries(schemas)
         .map(([name, schema]) => {
-            const props = Object.entries((schema as any)?.properties || {}).map(([k, p]) => {
-                console.log(k, p.type);
-                return {
-                    name: k,
-                    displayName: k,
-                    order: 0,
-                    type: typeToType[p.type] || PropertyType.SINGLE_LINE_TEXT,
-                };
-            });
+        
+            const props = makeProperties({ s: schema })
 
-            if (props.length === 0) {
-                return ``;
-            }
+            console.log(props)
 
-            return `export const ${name}Fields = ${JSON.stringify(props, null, 2)}`;
+            return `
+            export const ${name}Fields = [${props.join(',\n')}];
+            `;
         })
         .join('\n\n');
 }
@@ -130,7 +151,10 @@ async function main() {
 
                 if (schemas) {
                     const fieldDefs = buildFieldDefs(schemas);
-                    fs.writeFileSync(path.join(srcPath, 'constants.ts'), fieldDefs);
+                    fs.writeFileSync(path.join(srcPath, 'constants.ts'), `
+                    import { PropertyType } from '@arkw/core';
+                    ${fieldDefs}
+                    `);
                 }
 
                 if (!fs.existsSync(path.join(srcPath, 'events'))) {
@@ -140,11 +164,12 @@ async function main() {
 
                 const funcMap = buildSyncFunc({ name, paths: (apiobj as any).paths })
 
-                syncFuncImports = funcMap.map(({funcName}) => `import { ${funcName} } from './events/${funcName}'`).join('\n')
+                syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n')
 
                 funcMap.forEach(({ funcName, entityType, path: pathApi }) => {
                     fs.writeFileSync(path.join(srcPath, 'events', `${funcName}.ts`), `
                     import { EventHandler } from '@arkw/core';
+                    import { ${entityType}Fields } from '../constants';
                     import { ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration } from '..';
 
                     export const ${funcName}: EventHandler<${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration> = ({
@@ -176,14 +201,14 @@ async function main() {
                                 referenceId,
                                 data: records,
                                 type: \`${entityType}\`,
-                                properties: [],
+                                properties: ${entityType}Fields,
                             });
                         },
                 })
                 `)
                 })
 
-                syncFuncs= `this.events = {${funcMap.map(({eventDef}) => eventDef).join('\n')}}`
+                syncFuncs = `this.events = {${funcMap.map(({ eventDef }) => eventDef).join('\n')}}`
 
                 openapi = JSON.stringify(apiobj, null, 2);
             }

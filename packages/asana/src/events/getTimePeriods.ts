@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { TimePeriodCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getTimePeriods: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `TimePeriodCompact`,
-                                properties: [],
+                                properties: TimePeriodCompactFields,
                             });
                         },
                 })

@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { AuditLogEventFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getAuditLogEvents: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `AuditLogEvent`,
-                                properties: [],
+                                properties: AuditLogEventFields,
                             });
                         },
                 })

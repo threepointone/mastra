@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { radar.value_listFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetRadarValueLists: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `radar.value_list`,
-                                properties: [],
+                                properties: radar.value_listFields,
                             });
                         },
                 })

@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { issuing.disputeFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetIssuingDisputes: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `issuing.dispute`,
-                                properties: [],
+                                properties: issuing.disputeFields,
                             });
                         },
                 })

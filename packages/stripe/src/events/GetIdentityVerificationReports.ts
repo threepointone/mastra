@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { identity.verification_reportFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetIdentityVerificationReports: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `identity.verification_report`,
-                                properties: [],
+                                properties: identity.verification_reportFields,
                             });
                         },
                 })

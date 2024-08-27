@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { EventResponseFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getEvents: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `EventResponse`,
-                                properties: [],
+                                properties: EventResponseFields,
                             });
                         },
                 })

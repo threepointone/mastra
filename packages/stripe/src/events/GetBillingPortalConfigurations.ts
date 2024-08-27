@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { billing_portal.configurationFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetBillingPortalConfigurations: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `billing_portal.configuration`,
-                                properties: [],
+                                properties: billing_portal.configurationFields,
                             });
                         },
                 })

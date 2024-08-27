@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { country_specFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetCountrySpecs: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `country_spec`,
-                                properties: [],
+                                properties: country_specFields,
                             });
                         },
                 })

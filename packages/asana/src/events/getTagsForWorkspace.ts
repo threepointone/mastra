@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { TagCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getTagsForWorkspace: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `TagCompact`,
-                                properties: [],
+                                properties: TagCompactFields,
                             });
                         },
                 })

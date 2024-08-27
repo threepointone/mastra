@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { quoteFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetQuotes: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `quote`,
-                                properties: [],
+                                properties: quoteFields,
                             });
                         },
                 })

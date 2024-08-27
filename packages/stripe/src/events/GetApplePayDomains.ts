@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { apple_pay_domainFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetApplePayDomains: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `apple_pay_domain`,
-                                properties: [],
+                                properties: apple_pay_domainFields,
                             });
                         },
                 })

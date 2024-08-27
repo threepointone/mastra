@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { balance_transactionFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetBalanceHistory: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `balance_transaction`,
-                                properties: [],
+                                properties: balance_transactionFields,
                             });
                         },
                 })

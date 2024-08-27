@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { tax_rateFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTaxRates: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `tax_rate`,
-                                properties: [],
+                                properties: tax_rateFields,
                             });
                         },
                 })

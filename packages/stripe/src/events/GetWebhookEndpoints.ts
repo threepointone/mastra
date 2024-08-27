@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { webhook_endpointFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetWebhookEndpoints: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `webhook_endpoint`,
-                                properties: [],
+                                properties: webhook_endpointFields,
                             });
                         },
                 })

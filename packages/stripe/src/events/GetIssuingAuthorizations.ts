@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { issuing.authorizationFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetIssuingAuthorizations: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `issuing.authorization`,
-                                properties: [],
+                                properties: issuing.authorizationFields,
                             });
                         },
                 })

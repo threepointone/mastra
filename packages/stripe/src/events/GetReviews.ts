@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { reviewFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetReviews: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `review`,
-                                properties: [],
+                                properties: reviewFields,
                             });
                         },
                 })

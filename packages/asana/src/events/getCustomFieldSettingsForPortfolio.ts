@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { CustomFieldSettingResponseFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getCustomFieldSettingsForPortfolio: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `CustomFieldSettingResponse`,
-                                properties: [],
+                                properties: CustomFieldSettingResponseFields,
                             });
                         },
                 })

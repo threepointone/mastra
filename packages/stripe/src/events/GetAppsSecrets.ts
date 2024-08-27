@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { apps.secretFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetAppsSecrets: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `apps.secret`,
-                                properties: [],
+                                properties: apps.secretFields,
                             });
                         },
                 })

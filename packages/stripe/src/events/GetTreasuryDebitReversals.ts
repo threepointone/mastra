@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { treasury.debit_reversalFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTreasuryDebitReversals: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `treasury.debit_reversal`,
-                                properties: [],
+                                properties: treasury.debit_reversalFields,
                             });
                         },
                 })

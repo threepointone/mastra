@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { treasury.inbound_transferFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTreasuryInboundTransfers: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `treasury.inbound_transfer`,
-                                properties: [],
+                                properties: treasury.inbound_transferFields,
                             });
                         },
                 })

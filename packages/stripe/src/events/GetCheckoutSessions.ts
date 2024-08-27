@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { checkout.sessionFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetCheckoutSessions: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `checkout.session`,
-                                properties: [],
+                                properties: checkout.sessionFields,
                             });
                         },
                 })

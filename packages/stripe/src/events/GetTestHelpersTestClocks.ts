@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { test_helpers.test_clockFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTestHelpersTestClocks: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `test_helpers.test_clock`,
-                                properties: [],
+                                properties: test_helpers.test_clockFields,
                             });
                         },
                 })

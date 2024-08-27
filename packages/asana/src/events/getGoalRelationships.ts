@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { GoalRelationshipCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getGoalRelationships: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `GoalRelationshipCompact`,
-                                properties: [],
+                                properties: GoalRelationshipCompactFields,
                             });
                         },
                 })

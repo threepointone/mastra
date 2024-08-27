@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { treasury.financial_accountFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTreasuryFinancialAccounts: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `treasury.financial_account`,
-                                properties: [],
+                                properties: treasury.financial_accountFields,
                             });
                         },
                 })

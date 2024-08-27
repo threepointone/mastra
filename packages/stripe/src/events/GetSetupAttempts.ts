@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { setup_attemptFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetSetupAttempts: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `setup_attempt`,
-                                properties: [],
+                                properties: setup_attemptFields,
                             });
                         },
                 })

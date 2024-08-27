@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { transfer_reversalFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTransfersIdReversals: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `transfer_reversal`,
-                                properties: [],
+                                properties: transfer_reversalFields,
                             });
                         },
                 })

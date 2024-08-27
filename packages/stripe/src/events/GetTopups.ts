@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { topupFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTopups: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `topup`,
-                                properties: [],
+                                properties: topupFields,
                             });
                         },
                 })

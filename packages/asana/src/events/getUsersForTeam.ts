@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { UserCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getUsersForTeam: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `UserCompact`,
-                                properties: [],
+                                properties: UserCompactFields,
                             });
                         },
                 })

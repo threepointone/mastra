@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { scheduled_query_runFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetSigmaScheduledQueryRuns: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `scheduled_query_run`,
-                                properties: [],
+                                properties: scheduled_query_runFields,
                             });
                         },
                 })

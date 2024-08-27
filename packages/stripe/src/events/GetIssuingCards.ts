@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { issuing.cardFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetIssuingCards: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `issuing.card`,
-                                properties: [],
+                                properties: issuing.cardFields,
                             });
                         },
                 })

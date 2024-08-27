@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { AsanaNamedResourceFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const typeaheadForWorkspace: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `AsanaNamedResource`,
-                                properties: [],
+                                properties: AsanaNamedResourceFields,
                             });
                         },
                 })

@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { reporting.report_runFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetReportingReportRuns: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `reporting.report_run`,
-                                properties: [],
+                                properties: reporting.report_runFields,
                             });
                         },
                 })

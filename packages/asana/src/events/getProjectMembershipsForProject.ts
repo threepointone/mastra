@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { ProjectMembershipCompactFields } from '../constants';
                     import { AsanaIntegration } from '..';
 
                     export const getProjectMembershipsForProject: EventHandler<AsanaIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `ProjectMembershipCompact`,
-                                properties: [],
+                                properties: ProjectMembershipCompactFields,
                             });
                         },
                 })

@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { chargeFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetChargesSearch: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `charge`,
-                                properties: [],
+                                properties: chargeFields,
                             });
                         },
                 })

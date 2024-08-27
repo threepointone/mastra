@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { terminal.readerFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetTerminalReaders: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `terminal.reader`,
-                                properties: [],
+                                properties: terminal.readerFields,
                             });
                         },
                 })

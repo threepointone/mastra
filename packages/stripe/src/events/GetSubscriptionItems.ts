@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { subscription_itemFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetSubscriptionItems: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `subscription_item`,
-                                properties: [],
+                                properties: subscription_itemFields,
                             });
                         },
                 })

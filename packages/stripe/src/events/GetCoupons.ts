@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { couponFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetCoupons: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `coupon`,
-                                properties: [],
+                                properties: couponFields,
                             });
                         },
                 })

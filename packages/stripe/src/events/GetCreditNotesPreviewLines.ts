@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { credit_note_line_itemFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetCreditNotesPreviewLines: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `credit_note_line_item`,
-                                properties: [],
+                                properties: credit_note_line_itemFields,
                             });
                         },
                 })

@@ -1,5 +1,6 @@
 
                     import { EventHandler } from '@arkw/core';
+                    import { exchange_rateFields } from '../constants';
                     import { StripeIntegration } from '..';
 
                     export const GetExchangeRates: EventHandler<StripeIntegration> = ({
@@ -31,7 +32,7 @@
                                 referenceId,
                                 data: records,
                                 type: `exchange_rate`,
-                                properties: [],
+                                properties: exchange_rateFields,
                             });
                         },
                 })
