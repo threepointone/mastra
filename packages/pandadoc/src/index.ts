@@ -27,8 +27,14 @@ export class PandadocIntegration extends Integration {
 
 
   async getProxy({ referenceId }: { referenceId: string }) {
+    // exchange referenceId for access token
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: ""
+      endpoint: "",
+      globalParams: {
+        headers: {
+          Authorization: 'Bearer PUT ACCESS TOKEN HERE'
+        }
+      }
     })
     return client
   }

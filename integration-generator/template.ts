@@ -121,9 +121,24 @@ export class ${name}Integration extends Integration {
 
 
   async getProxy({ referenceId }: { referenceId: string }) {
+    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId })
+
+    if (!connection) {
+      throw new Error(\`Connection not found for referenceId: \${referenceId}\`)
+    }
+
+    // TODO: HANDLE REFRESH TOKEN IF EXPIRED
+    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
+
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: ""
+      endpoint: "https://api.attio.com",
+      globalParams: {
+        headers: {
+          Authorization: \`Bearer \${credential?.value}\`
+        }
+      }
     })
+    
     return client
   }
 
