@@ -71878,5 +71878,5 @@
       "summary": "DocuSign eNotary makes the notarization process fully digital\nfor senders, signers, and notaries.\nIt enables a notary public to act as an in-person witness\nto electronic signing of documents.\n"
     }
   ]
-}
+} as const
             

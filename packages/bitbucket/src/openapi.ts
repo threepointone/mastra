@@ -28407,5 +28407,5 @@
     ]
   },
   "x-revision": "823a155d590f"
-}
+} as const
             

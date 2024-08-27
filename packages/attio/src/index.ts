@@ -28,7 +28,7 @@ export class AttioIntegration extends Integration {
 
   async getProxy({ referenceId }: { referenceId: string }) {
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: ""
+      endpoint: "https://api.attio.com"
     })
     return client
   }

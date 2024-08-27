@@ -1,3 +1,485 @@
 
-            export default "{\n    \"swagger\": \"2.0\",\n    \"info\": {\n        \"title\": \"Sage One Core API - ES\",\n        \"version\": \"1.0\",\n        \"description\": \"Documentation of the Sage One Core API.\"\n    },\n    \"host\": \"api-qa.sageapim.com\",\n    \"basePath\": \"/es/sageone/core/v3\",\n    \"schemes\": [\n        \"https\"\n    ],\n    \"securityDefinitions\": {\n        \"apiKeyHeader\": {\n            \"type\": \"apiKey\",\n            \"name\": \"Ocp-Apim-Subscription-Key\",\n            \"in\": \"header\"\n        },\n        \"apiKeyQuery\": {\n            \"type\": \"apiKey\",\n            \"name\": \"subscription-key\",\n            \"in\": \"query\"\n        }\n    },\n    \"security\": [\n        {\n            \"apiKeyHeader\": []\n        },\n        {\n            \"apiKeyQuery\": []\n        }\n    ],\n    \"paths\": {\n        \"/business\": {\n            \"get\": {\n                \"description\": \"Show business information\",\n                \"operationId\": \"getBusiness\",\n                \"summary\": \"Show business information\",\n                \"tags\": [\n                    \"business\"\n                ],\n                \"produces\": [\n                    \"application/json\"\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"Show business information\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/Business\"\n                        },\n                        \"examples\": {\n                            \"application/json\": \"{\\r\\n  \\\"created_at\\\": \\\"string\\\",\\r\\n  \\\"updated_at\\\": \\\"string\\\",\\r\\n  \\\"displayed_as\\\": \\\"string\\\",\\r\\n  \\\"id\\\": \\\"string\\\",\\r\\n  \\\"name\\\": \\\"string\\\",\\r\\n  \\\"address_line_1\\\": \\\"string\\\",\\r\\n  \\\"address_line_2\\\": \\\"string\\\",\\r\\n  \\\"city\\\": \\\"string\\\",\\r\\n  \\\"postal_code\\\": \\\"string\\\",\\r\\n  \\\"country\\\": {\\r\\n    \\\"id\\\": \\\"string\\\",\\r\\n    \\\"displayed_as\\\": \\\"string\\\"\\r\\n  },\\r\\n  \\\"region\\\": \\\"string\\\",\\r\\n  \\\"telephone\\\": \\\"string\\\",\\r\\n  \\\"mobile\\\": \\\"string\\\",\\r\\n  \\\"website\\\": \\\"string\\\",\\r\\n  \\\"is_demo\\\": true,\\r\\n  \\\"subscriptions\\\": [\\r\\n    {\\r\\n      \\\"created_at\\\": \\\"string\\\",\\r\\n      \\\"updated_at\\\": \\\"string\\\",\\r\\n      \\\"displayed_as\\\": \\\"string\\\",\\r\\n      \\\"id\\\": \\\"string\\\",\\r\\n      \\\"active\\\": true,\\r\\n      \\\"status\\\": \\\"string\\\"\\r\\n    }\\r\\n  ]\\r\\n}\"\n                        }\n                    }\n                }\n            },\n            \"put\": {\n                \"description\": \"Updates business information\",\n                \"operationId\": \"putBusiness\",\n                \"summary\": \"Updates business information\",\n                \"tags\": [\n                    \"business\"\n                ],\n                \"parameters\": [\n                    {\n                        \"name\": \"putBusiness\",\n                        \"in\": \"body\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/putBusiness\"\n                        }\n                    }\n                ],\n                \"consumes\": [\n                    \"application/json\"\n                ],\n                \"produces\": [\n                    \"application/json\"\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"Updates business information\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/Business\"\n                        },\n                        \"examples\": {\n                            \"application/json\": \"{\\r\\n  \\\"created_at\\\": \\\"string\\\",\\r\\n  \\\"updated_at\\\": \\\"string\\\",\\r\\n  \\\"displayed_as\\\": \\\"string\\\",\\r\\n  \\\"id\\\": \\\"string\\\",\\r\\n  \\\"name\\\": \\\"string\\\",\\r\\n  \\\"address_line_1\\\": \\\"string\\\",\\r\\n  \\\"address_line_2\\\": \\\"string\\\",\\r\\n  \\\"city\\\": \\\"string\\\",\\r\\n  \\\"postal_code\\\": \\\"string\\\",\\r\\n  \\\"country\\\": {\\r\\n    \\\"id\\\": \\\"string\\\",\\r\\n    \\\"displayed_as\\\": \\\"string\\\"\\r\\n  },\\r\\n  \\\"region\\\": \\\"string\\\",\\r\\n  \\\"telephone\\\": \\\"string\\\",\\r\\n  \\\"mobile\\\": \\\"string\\\",\\r\\n  \\\"website\\\": \\\"string\\\",\\r\\n  \\\"is_demo\\\": true,\\r\\n  \\\"subscriptions\\\": [\\r\\n    {\\r\\n      \\\"created_at\\\": \\\"string\\\",\\r\\n      \\\"updated_at\\\": \\\"string\\\",\\r\\n      \\\"displayed_as\\\": \\\"string\\\",\\r\\n      \\\"id\\\": \\\"string\\\",\\r\\n      \\\"active\\\": true,\\r\\n      \\\"status\\\": \\\"string\\\"\\r\\n    }\\r\\n  ]\\r\\n}\"\n                        }\n                    }\n                }\n            }\n        },\n        \"/user\": {\n            \"get\": {\n                \"description\": \"Show user information\",\n                \"operationId\": \"getUser\",\n                \"summary\": \"Show user information\",\n                \"tags\": [\n                    \"user\"\n                ],\n                \"produces\": [\n                    \"application/json\"\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"Show user information\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/User\"\n                        },\n                        \"examples\": {\n                            \"application/json\": \"{\\r\\n  \\\"created_at\\\": \\\"string\\\",\\r\\n  \\\"updated_at\\\": \\\"string\\\",\\r\\n  \\\"displayed_as\\\": \\\"string\\\",\\r\\n  \\\"id\\\": \\\"string\\\",\\r\\n  \\\"first_name\\\": \\\"string\\\",\\r\\n  \\\"last_name\\\": \\\"string\\\",\\r\\n  \\\"initials\\\": \\\"string\\\",\\r\\n  \\\"email\\\": \\\"string\\\",\\r\\n  \\\"locale\\\": \\\"string\\\",\\r\\n  \\\"business_owner\\\": true\\r\\n}\"\n                        }\n                    }\n                }\n            },\n            \"put\": {\n                \"description\": \"Updates user information\",\n                \"operationId\": \"putUser\",\n                \"summary\": \"Updates user information\",\n                \"tags\": [\n                    \"user\"\n                ],\n                \"parameters\": [\n                    {\n                        \"name\": \"putUser\",\n                        \"in\": \"body\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/putUser\"\n                        }\n                    }\n                ],\n                \"consumes\": [\n                    \"application/json\"\n                ],\n                \"produces\": [\n                    \"application/json\"\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"Updates user information\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/User\"\n                        },\n                        \"examples\": {\n                            \"application/json\": \"{\\r\\n  \\\"created_at\\\": \\\"string\\\",\\r\\n  \\\"updated_at\\\": \\\"string\\\",\\r\\n  \\\"displayed_as\\\": \\\"string\\\",\\r\\n  \\\"id\\\": \\\"string\\\",\\r\\n  \\\"first_name\\\": \\\"string\\\",\\r\\n  \\\"last_name\\\": \\\"string\\\",\\r\\n  \\\"initials\\\": \\\"string\\\",\\r\\n  \\\"email\\\": \\\"string\\\",\\r\\n  \\\"locale\\\": \\\"string\\\",\\r\\n  \\\"business_owner\\\": true\\r\\n}\"\n                        }\n                    }\n                }\n            }\n        },\n        \"/me\": {\n            \"get\": {\n                \"description\": \"This resource allows you to read summary information about the authenticated user account\",\n                \"operationId\": \"getMe\",\n                \"summary\": \"This resource allows you to read summary information about the authenticated user account\",\n                \"tags\": [\n                    \"me\"\n                ],\n                \"produces\": [\n                    \"application/json\"\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"This resource allows you to read summary information about the authenticated user account\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/Me\"\n                        },\n                        \"examples\": {\n                            \"application/json\": \"{\\r\\n  \\\"user\\\": {\\r\\n    \\\"created_at\\\": \\\"string\\\",\\r\\n    \\\"updated_at\\\": \\\"string\\\",\\r\\n    \\\"displayed_as\\\": \\\"string\\\",\\r\\n    \\\"id\\\": \\\"string\\\",\\r\\n    \\\"first_name\\\": \\\"string\\\",\\r\\n    \\\"last_name\\\": \\\"string\\\",\\r\\n    \\\"initials\\\": \\\"string\\\",\\r\\n    \\\"email\\\": \\\"string\\\",\\r\\n    \\\"locale\\\": \\\"string\\\",\\r\\n    \\\"business_owner\\\": true\\r\\n  },\\r\\n  \\\"business\\\": {\\r\\n    \\\"created_at\\\": \\\"string\\\",\\r\\n    \\\"updated_at\\\": \\\"string\\\",\\r\\n    \\\"displayed_as\\\": \\\"string\\\",\\r\\n    \\\"id\\\": \\\"string\\\",\\r\\n    \\\"name\\\": \\\"string\\\",\\r\\n    \\\"address_line_1\\\": \\\"string\\\",\\r\\n    \\\"address_line_2\\\": \\\"string\\\",\\r\\n    \\\"city\\\": \\\"string\\\",\\r\\n    \\\"postal_code\\\": \\\"string\\\",\\r\\n    \\\"country\\\": {\\r\\n      \\\"id\\\": \\\"string\\\",\\r\\n      \\\"displayed_as\\\": \\\"string\\\"\\r\\n    },\\r\\n    \\\"region\\\": \\\"string\\\",\\r\\n    \\\"telephone\\\": \\\"string\\\",\\r\\n    \\\"mobile\\\": \\\"string\\\",\\r\\n    \\\"website\\\": \\\"string\\\",\\r\\n    \\\"is_demo\\\": true,\\r\\n    \\\"subscriptions\\\": [\\r\\n      {\\r\\n        \\\"created_at\\\": \\\"string\\\",\\r\\n        \\\"updated_at\\\": \\\"string\\\",\\r\\n        \\\"displayed_as\\\": \\\"string\\\",\\r\\n        \\\"id\\\": \\\"string\\\",\\r\\n        \\\"active\\\": true,\\r\\n        \\\"status\\\": \\\"string\\\"\\r\\n      }\\r\\n    ]\\r\\n  }\\r\\n}\"\n                        }\n                    }\n                }\n            }\n        },\n        \"/business_relationships\": {\n            \"get\": {\n                \"description\": \"Show businesses available for the current user\",\n                \"operationId\": \"getBusinessRelationships\",\n                \"summary\": \"Show businesses available for the current user\",\n                \"tags\": [\n                    \"business_relationships\"\n                ],\n                \"produces\": [\n                    \"application/json\"\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"Show businesses available for the current user\",\n                        \"schema\": {\n                            \"$ref\": \"#/definitions/BusinessRelationshipArray\"\n                        },\n                        \"examples\": {\n                            \"application/json\": \"[\\r\\n  {\\r\\n    \\\"id\\\": \\\"string\\\",\\r\\n    \\\"name\\\": \\\"string\\\"\\r\\n  }\\r\\n]\"\n                        }\n                    }\n                }\n            }\n        }\n    },\n    \"definitions\": {\n        \"Business\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"created_at\": {\n                    \"type\": \"string\",\n                    \"format\": \"date-time\",\n                    \"description\": \"The datetime when the item was created\"\n                },\n                \"updated_at\": {\n                    \"type\": \"string\",\n                    \"format\": \"date-time\",\n                    \"description\": \"The datetime when the item was last updated\"\n                },\n                \"displayed_as\": {\n                    \"type\": \"string\",\n                    \"description\": \"Display text for the item\"\n                },\n                \"id\": {\n                    \"type\": \"string\",\n                    \"description\": \"The unique identifier for the business\"\n                },\n                \"name\": {\n                    \"type\": \"string\",\n                    \"description\": \"The name of the business\"\n                },\n                \"address_line_1\": {\n                    \"type\": \"string\",\n                    \"description\": \"The first line of the business address\"\n                },\n                \"address_line_2\": {\n                    \"type\": \"string\",\n                    \"description\": \"The first line of the business address\"\n                },\n                \"city\": {\n                    \"type\": \"string\",\n                    \"description\": \"The business address town/city\"\n                },\n                \"postal_code\": {\n                    \"type\": \"string\",\n                    \"description\": \"The business address postal code/zipcode\"\n                },\n                \"country\": {\n                    \"$ref\": \"#/definitions/Country\",\n                    \"description\": \"The business address country\"\n                },\n                \"region\": {\n                    \"type\": \"string\",\n                    \"description\": \"The business address state/province/region\"\n                },\n                \"telephone\": {\n                    \"type\": \"string\",\n                    \"description\": \"The telephone of the business\"\n                },\n                \"mobile\": {\n                    \"type\": \"string\",\n                    \"description\": \"The mobile of the business\"\n                },\n                \"website\": {\n                    \"type\": \"string\",\n                    \"description\": \"The website of the business\"\n                },\n                \"is_demo\": {\n                    \"type\": \"boolean\",\n                    \"description\": \"Indicates whether the business is for demo purposes\"\n                },\n                \"subscriptions\": {\n                    \"type\": \"array\",\n                    \"items\": {\n                        \"$ref\": \"#/definitions/Subscription\"\n                    },\n                    \"description\": \"The business subscriptions\"\n                }\n            },\n            \"description\": \"Updates business information\"\n        },\n        \"Country\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"type\": \"string\",\n                    \"description\": \"The unique identifier for the country\"\n                },\n                \"displayed_as\": {\n                    \"type\": \"string\",\n                    \"description\": \"Display text for the country\"\n                }\n            }\n        },\n        \"Subscription\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"created_at\": {\n                    \"type\": \"string\",\n                    \"format\": \"date-time\",\n                    \"description\": \"The datetime when the item was created\"\n                },\n                \"updated_at\": {\n                    \"type\": \"string\",\n                    \"format\": \"date-time\",\n                    \"description\": \"The datetime when the item was last updated\"\n                },\n                \"displayed_as\": {\n                    \"type\": \"string\",\n                    \"description\": \"Display text for the item\"\n                },\n                \"id\": {\n                    \"type\": \"string\",\n                    \"description\": \"The unique identifier for the subscription\"\n                },\n                \"active\": {\n                    \"type\": \"boolean\",\n                    \"description\": \"Indicates whether the subscription is active\"\n                },\n                \"status\": {\n                    \"type\": \"string\"\n                }\n            }\n        },\n        \"putBusiness\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"name\": {\n                    \"type\": \"string\",\n                    \"description\": \"The name of the business\"\n                },\n                \"address_line_1\": {\n                    \"type\": \"string\",\n                    \"description\": \"The first line of the business address\"\n                },\n                \"address_line_2\": {\n                    \"type\": \"string\",\n                    \"description\": \"The second line of the business address\"\n                },\n                \"city\": {\n                    \"type\": \"string\",\n                    \"description\": \"The business address town/city\"\n                },\n                \"region\": {\n                    \"type\": \"string\",\n                    \"description\": \"The business address state/province/region\"\n                },\n                \"postal_code\": {\n                    \"type\": \"string\",\n                    \"description\": \"The business address postal code/zipcode\"\n                },\n                \"telephone\": {\n                    \"type\": \"string\",\n                    \"description\": \"The telephone of the business\"\n                },\n                \"mobile\": {\n                    \"type\": \"string\",\n                    \"description\": \"The mobile of the business\"\n                },\n                \"website\": {\n                    \"type\": \"string\",\n                    \"description\": \"The website of the business\"\n                }\n            },\n            \"description\": \"Updates business information\"\n        },\n        \"User\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"created_at\": {\n                    \"type\": \"string\",\n                    \"format\": \"date-time\",\n                    \"description\": \"The datetime when the item was created\"\n                },\n                \"updated_at\": {\n                    \"type\": \"string\",\n                    \"format\": \"date-time\",\n                    \"description\": \"The datetime when the item was last updated\"\n                },\n                \"displayed_as\": {\n                    \"type\": \"string\",\n                    \"description\": \"Display text for the item\"\n                },\n                \"id\": {\n                    \"type\": \"string\",\n                    \"description\": \"The unique identifier for the user\"\n                },\n                \"first_name\": {\n                    \"type\": \"string\",\n                    \"description\": \"The first name of the user\"\n                },\n                \"last_name\": {\n                    \"type\": \"string\",\n                    \"description\": \"The last name of the user\"\n                },\n                \"initials\": {\n                    \"type\": \"string\",\n                    \"description\": \"The initials of the user\"\n                },\n                \"email\": {\n                    \"type\": \"string\",\n                    \"description\": \"The email address of the user\"\n                },\n                \"locale\": {\n                    \"type\": \"string\",\n                    \"description\": \"The locale of the user\"\n                },\n                \"business_owner\": {\n                    \"type\": \"boolean\",\n                    \"description\": \"Is the current user the business owner?\"\n                }\n            },\n            \"description\": \"Updates user information\"\n        },\n        \"putUser\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"first_name\": {\n                    \"type\": \"string\",\n                    \"description\": \"The first name of the user\"\n                },\n                \"last_name\": {\n                    \"type\": \"string\",\n                    \"description\": \"The last name of the user\"\n                },\n                \"initials\": {\n                    \"type\": \"string\",\n                    \"description\": \"The initials of the use\"\n                },\n                \"locale\": {\n                    \"type\": \"string\",\n                    \"description\": \"The locale of the user\"\n                }\n            },\n            \"description\": \"Updates user information\"\n        },\n        \"Me\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"user\": {\n                    \"$ref\": \"#/definitions/User\",\n                    \"description\": \"The authenticated user\"\n                },\n                \"business\": {\n                    \"$ref\": \"#/definitions/Business\",\n                    \"description\": \"The authenticated business\"\n                }\n            },\n            \"description\": \"This resource allows you to read summary information about the authenticated user account\"\n        },\n        \"BusinessRelationship\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"type\": \"string\",\n                    \"description\": \"The unique identifier for the business\"\n                },\n                \"name\": {\n                    \"type\": \"string\",\n                    \"description\": \"The name of the business\"\n                }\n            },\n            \"description\": \"Show businesses available for the current user\"\n        },\n        \"BusinessRelationshipArray\": {\n            \"type\": \"array\",\n            \"items\": {\n                \"$ref\": \"#/definitions/BusinessRelationship\"\n            }\n        }\n    },\n    \"tags\": [\n        {\n            \"name\": \"business\",\n            \"description\": \"Operations about businesses\"\n        },\n        {\n            \"name\": \"user\",\n            \"description\": \"Operations about users\"\n        },\n        {\n            \"name\": \"me\",\n            \"description\": \"Operations about mes\"\n        },\n        {\n            \"name\": \"business_relationships\",\n            \"description\": \"Operations about business_relationships\"\n        }\n    ]\n}"
+            export default {
+    "swagger": "2.0",
+    "info": {
+        "title": "Sage One Core API - ES",
+        "version": "1.0",
+        "description": "Documentation of the Sage One Core API."
+    },
+    "host": "api-qa.sageapim.com",
+    "basePath": "/es/sageone/core/v3",
+    "schemes": [
+        "https"
+    ],
+    "securityDefinitions": {
+        "apiKeyHeader": {
+            "type": "apiKey",
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header"
+        },
+        "apiKeyQuery": {
+            "type": "apiKey",
+            "name": "subscription-key",
+            "in": "query"
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ],
+    "paths": {
+        "/business": {
+            "get": {
+                "description": "Show business information",
+                "operationId": "getBusiness",
+                "summary": "Show business information",
+                "tags": [
+                    "business"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show business information",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        },
+                        "examples": {
+                            "application/json": "{\r\n  \"created_at\": \"string\",\r\n  \"updated_at\": \"string\",\r\n  \"displayed_as\": \"string\",\r\n  \"id\": \"string\",\r\n  \"name\": \"string\",\r\n  \"address_line_1\": \"string\",\r\n  \"address_line_2\": \"string\",\r\n  \"city\": \"string\",\r\n  \"postal_code\": \"string\",\r\n  \"country\": {\r\n    \"id\": \"string\",\r\n    \"displayed_as\": \"string\"\r\n  },\r\n  \"region\": \"string\",\r\n  \"telephone\": \"string\",\r\n  \"mobile\": \"string\",\r\n  \"website\": \"string\",\r\n  \"is_demo\": true,\r\n  \"subscriptions\": [\r\n    {\r\n      \"created_at\": \"string\",\r\n      \"updated_at\": \"string\",\r\n      \"displayed_as\": \"string\",\r\n      \"id\": \"string\",\r\n      \"active\": true,\r\n      \"status\": \"string\"\r\n    }\r\n  ]\r\n}"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates business information",
+                "operationId": "putBusiness",
+                "summary": "Updates business information",
+                "tags": [
+                    "business"
+                ],
+                "parameters": [
+                    {
+                        "name": "putBusiness",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/putBusiness"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updates business information",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        },
+                        "examples": {
+                            "application/json": "{\r\n  \"created_at\": \"string\",\r\n  \"updated_at\": \"string\",\r\n  \"displayed_as\": \"string\",\r\n  \"id\": \"string\",\r\n  \"name\": \"string\",\r\n  \"address_line_1\": \"string\",\r\n  \"address_line_2\": \"string\",\r\n  \"city\": \"string\",\r\n  \"postal_code\": \"string\",\r\n  \"country\": {\r\n    \"id\": \"string\",\r\n    \"displayed_as\": \"string\"\r\n  },\r\n  \"region\": \"string\",\r\n  \"telephone\": \"string\",\r\n  \"mobile\": \"string\",\r\n  \"website\": \"string\",\r\n  \"is_demo\": true,\r\n  \"subscriptions\": [\r\n    {\r\n      \"created_at\": \"string\",\r\n      \"updated_at\": \"string\",\r\n      \"displayed_as\": \"string\",\r\n      \"id\": \"string\",\r\n      \"active\": true,\r\n      \"status\": \"string\"\r\n    }\r\n  ]\r\n}"
+                        }
+                    }
+                }
+            }
+        },
+        "/user": {
+            "get": {
+                "description": "Show user information",
+                "operationId": "getUser",
+                "summary": "Show user information",
+                "tags": [
+                    "user"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show user information",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        },
+                        "examples": {
+                            "application/json": "{\r\n  \"created_at\": \"string\",\r\n  \"updated_at\": \"string\",\r\n  \"displayed_as\": \"string\",\r\n  \"id\": \"string\",\r\n  \"first_name\": \"string\",\r\n  \"last_name\": \"string\",\r\n  \"initials\": \"string\",\r\n  \"email\": \"string\",\r\n  \"locale\": \"string\",\r\n  \"business_owner\": true\r\n}"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates user information",
+                "operationId": "putUser",
+                "summary": "Updates user information",
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "name": "putUser",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/putUser"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updates user information",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        },
+                        "examples": {
+                            "application/json": "{\r\n  \"created_at\": \"string\",\r\n  \"updated_at\": \"string\",\r\n  \"displayed_as\": \"string\",\r\n  \"id\": \"string\",\r\n  \"first_name\": \"string\",\r\n  \"last_name\": \"string\",\r\n  \"initials\": \"string\",\r\n  \"email\": \"string\",\r\n  \"locale\": \"string\",\r\n  \"business_owner\": true\r\n}"
+                        }
+                    }
+                }
+            }
+        },
+        "/me": {
+            "get": {
+                "description": "This resource allows you to read summary information about the authenticated user account",
+                "operationId": "getMe",
+                "summary": "This resource allows you to read summary information about the authenticated user account",
+                "tags": [
+                    "me"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This resource allows you to read summary information about the authenticated user account",
+                        "schema": {
+                            "$ref": "#/definitions/Me"
+                        },
+                        "examples": {
+                            "application/json": "{\r\n  \"user\": {\r\n    \"created_at\": \"string\",\r\n    \"updated_at\": \"string\",\r\n    \"displayed_as\": \"string\",\r\n    \"id\": \"string\",\r\n    \"first_name\": \"string\",\r\n    \"last_name\": \"string\",\r\n    \"initials\": \"string\",\r\n    \"email\": \"string\",\r\n    \"locale\": \"string\",\r\n    \"business_owner\": true\r\n  },\r\n  \"business\": {\r\n    \"created_at\": \"string\",\r\n    \"updated_at\": \"string\",\r\n    \"displayed_as\": \"string\",\r\n    \"id\": \"string\",\r\n    \"name\": \"string\",\r\n    \"address_line_1\": \"string\",\r\n    \"address_line_2\": \"string\",\r\n    \"city\": \"string\",\r\n    \"postal_code\": \"string\",\r\n    \"country\": {\r\n      \"id\": \"string\",\r\n      \"displayed_as\": \"string\"\r\n    },\r\n    \"region\": \"string\",\r\n    \"telephone\": \"string\",\r\n    \"mobile\": \"string\",\r\n    \"website\": \"string\",\r\n    \"is_demo\": true,\r\n    \"subscriptions\": [\r\n      {\r\n        \"created_at\": \"string\",\r\n        \"updated_at\": \"string\",\r\n        \"displayed_as\": \"string\",\r\n        \"id\": \"string\",\r\n        \"active\": true,\r\n        \"status\": \"string\"\r\n      }\r\n    ]\r\n  }\r\n}"
+                        }
+                    }
+                }
+            }
+        },
+        "/business_relationships": {
+            "get": {
+                "description": "Show businesses available for the current user",
+                "operationId": "getBusinessRelationships",
+                "summary": "Show businesses available for the current user",
+                "tags": [
+                    "business_relationships"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show businesses available for the current user",
+                        "schema": {
+                            "$ref": "#/definitions/BusinessRelationshipArray"
+                        },
+                        "examples": {
+                            "application/json": "[\r\n  {\r\n    \"id\": \"string\",\r\n    \"name\": \"string\"\r\n  }\r\n]"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Business": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The datetime when the item was created"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The datetime when the item was last updated"
+                },
+                "displayed_as": {
+                    "type": "string",
+                    "description": "Display text for the item"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The unique identifier for the business"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the business"
+                },
+                "address_line_1": {
+                    "type": "string",
+                    "description": "The first line of the business address"
+                },
+                "address_line_2": {
+                    "type": "string",
+                    "description": "The first line of the business address"
+                },
+                "city": {
+                    "type": "string",
+                    "description": "The business address town/city"
+                },
+                "postal_code": {
+                    "type": "string",
+                    "description": "The business address postal code/zipcode"
+                },
+                "country": {
+                    "$ref": "#/definitions/Country",
+                    "description": "The business address country"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "The business address state/province/region"
+                },
+                "telephone": {
+                    "type": "string",
+                    "description": "The telephone of the business"
+                },
+                "mobile": {
+                    "type": "string",
+                    "description": "The mobile of the business"
+                },
+                "website": {
+                    "type": "string",
+                    "description": "The website of the business"
+                },
+                "is_demo": {
+                    "type": "boolean",
+                    "description": "Indicates whether the business is for demo purposes"
+                },
+                "subscriptions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Subscription"
+                    },
+                    "description": "The business subscriptions"
+                }
+            },
+            "description": "Updates business information"
+        },
+        "Country": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The unique identifier for the country"
+                },
+                "displayed_as": {
+                    "type": "string",
+                    "description": "Display text for the country"
+                }
+            }
+        },
+        "Subscription": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The datetime when the item was created"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The datetime when the item was last updated"
+                },
+                "displayed_as": {
+                    "type": "string",
+                    "description": "Display text for the item"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The unique identifier for the subscription"
+                },
+                "active": {
+                    "type": "boolean",
+                    "description": "Indicates whether the subscription is active"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "putBusiness": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the business"
+                },
+                "address_line_1": {
+                    "type": "string",
+                    "description": "The first line of the business address"
+                },
+                "address_line_2": {
+                    "type": "string",
+                    "description": "The second line of the business address"
+                },
+                "city": {
+                    "type": "string",
+                    "description": "The business address town/city"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "The business address state/province/region"
+                },
+                "postal_code": {
+                    "type": "string",
+                    "description": "The business address postal code/zipcode"
+                },
+                "telephone": {
+                    "type": "string",
+                    "description": "The telephone of the business"
+                },
+                "mobile": {
+                    "type": "string",
+                    "description": "The mobile of the business"
+                },
+                "website": {
+                    "type": "string",
+                    "description": "The website of the business"
+                }
+            },
+            "description": "Updates business information"
+        },
+        "User": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The datetime when the item was created"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The datetime when the item was last updated"
+                },
+                "displayed_as": {
+                    "type": "string",
+                    "description": "Display text for the item"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The unique identifier for the user"
+                },
+                "first_name": {
+                    "type": "string",
+                    "description": "The first name of the user"
+                },
+                "last_name": {
+                    "type": "string",
+                    "description": "The last name of the user"
+                },
+                "initials": {
+                    "type": "string",
+                    "description": "The initials of the user"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "The email address of the user"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The locale of the user"
+                },
+                "business_owner": {
+                    "type": "boolean",
+                    "description": "Is the current user the business owner?"
+                }
+            },
+            "description": "Updates user information"
+        },
+        "putUser": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "description": "The first name of the user"
+                },
+                "last_name": {
+                    "type": "string",
+                    "description": "The last name of the user"
+                },
+                "initials": {
+                    "type": "string",
+                    "description": "The initials of the use"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The locale of the user"
+                }
+            },
+            "description": "Updates user information"
+        },
+        "Me": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "$ref": "#/definitions/User",
+                    "description": "The authenticated user"
+                },
+                "business": {
+                    "$ref": "#/definitions/Business",
+                    "description": "The authenticated business"
+                }
+            },
+            "description": "This resource allows you to read summary information about the authenticated user account"
+        },
+        "BusinessRelationship": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The unique identifier for the business"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the business"
+                }
+            },
+            "description": "Show businesses available for the current user"
+        },
+        "BusinessRelationshipArray": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/BusinessRelationship"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "business",
+            "description": "Operations about businesses"
+        },
+        {
+            "name": "user",
+            "description": "Operations about users"
+        },
+        {
+            "name": "me",
+            "description": "Operations about mes"
+        },
+        {
+            "name": "business_relationships",
+            "description": "Operations about business_relationships"
+        }
+    ]
+} as const
             

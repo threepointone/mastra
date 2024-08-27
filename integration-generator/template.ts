@@ -84,6 +84,7 @@ export function createTsConfig() {
             "noFallthroughCasesInSwitch": true,
             "declaration": true,
             "sourceMap": true,
+            "disableSizeLimit": true,
             "moduleResolution": "Node"
         }
     }

@@ -1,3 +1,3 @@
 
-            export default "404: Not Found"
+            export default 404: Not Found as const
             

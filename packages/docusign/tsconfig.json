@@ -24,6 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
     "sourceMap": true,
+    "disableSizeLimit": true,
     "moduleResolution": "Node"
   }
 }

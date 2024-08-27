@@ -1963,5 +1963,5 @@
       "type": "object"
     }
   }
-}
+} as const
             

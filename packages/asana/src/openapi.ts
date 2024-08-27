@@ -17196,5 +17196,5 @@
   "x-readme": {
     "proxy-enabled": false
   }
-}
+} as const
             

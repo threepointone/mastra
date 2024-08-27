@@ -60,11 +60,11 @@ async function main() {
             let openapi = await openapispecRes.text()
 
             if (openapi_url.endsWith('.yaml')) {
-                openapi = parse(openapi)
+                openapi = JSON.stringify(parse(openapi), null, 2)
             }
 
             fs.writeFileSync(path.join(srcPath, 'openapi.ts'), `
-            export default ${JSON.stringify(openapi, null, 2)}
+            export default ${openapi} as const
             `)
 
         } catch (e) {

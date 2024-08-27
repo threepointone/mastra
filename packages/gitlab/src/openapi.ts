@@ -20448,5 +20448,5 @@
       "type": "object"
     }
   }
-}
+} as const
             
