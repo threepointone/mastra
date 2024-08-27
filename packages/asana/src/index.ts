@@ -1,7 +1,58 @@
 
 import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
+import { z } from 'zod'
 import type openapi from './openapi'
+import { getAttachmentsForObject } from './events/getAttachmentsForObject'
+import { getEvents } from './events/getEvents'
+import { getGoalRelationships } from './events/getGoalRelationships'
+import { getGoals } from './events/getGoals'
+import { getParentGoalsForGoal } from './events/getParentGoalsForGoal'
+import { getPortfolioMemberships } from './events/getPortfolioMemberships'
+import { getPortfolios } from './events/getPortfolios'
+import { getCustomFieldSettingsForPortfolio } from './events/getCustomFieldSettingsForPortfolio'
+import { getItemsForPortfolio } from './events/getItemsForPortfolio'
+import { getPortfolioMembershipsForPortfolio } from './events/getPortfolioMembershipsForPortfolio'
+import { getProjectTemplates } from './events/getProjectTemplates'
+import { getProjects } from './events/getProjects'
+import { getCustomFieldSettingsForProject } from './events/getCustomFieldSettingsForProject'
+import { getProjectMembershipsForProject } from './events/getProjectMembershipsForProject'
+import { getProjectStatusesForProject } from './events/getProjectStatusesForProject'
+import { getSectionsForProject } from './events/getSectionsForProject'
+import { getTasksForProject } from './events/getTasksForProject'
+import { getTasksForSection } from './events/getTasksForSection'
+import { getStatusesForObject } from './events/getStatusesForObject'
+import { getTags } from './events/getTags'
+import { getTasksForTag } from './events/getTasksForTag'
+import { getTasks } from './events/getTasks'
+import { getDependenciesForTask } from './events/getDependenciesForTask'
+import { getDependentsForTask } from './events/getDependentsForTask'
+import { getProjectsForTask } from './events/getProjectsForTask'
+import { getSubtasksForTask } from './events/getSubtasksForTask'
+import { getTagsForTask } from './events/getTagsForTask'
+import { getTeamMemberships } from './events/getTeamMemberships'
+import { getProjectTemplatesForTeam } from './events/getProjectTemplatesForTeam'
+import { getProjectsForTeam } from './events/getProjectsForTeam'
+import { getTeamMembershipsForTeam } from './events/getTeamMembershipsForTeam'
+import { getUsersForTeam } from './events/getUsersForTeam'
+import { getTimePeriods } from './events/getTimePeriods'
+import { getTasksForUserTaskList } from './events/getTasksForUserTaskList'
+import { getUsers } from './events/getUsers'
+import { getFavoritesForUser } from './events/getFavoritesForUser'
+import { getTeamMembershipsForUser } from './events/getTeamMembershipsForUser'
+import { getTeamsForUser } from './events/getTeamsForUser'
+import { getWorkspaceMembershipsForUser } from './events/getWorkspaceMembershipsForUser'
+import { getWebhooks } from './events/getWebhooks'
+import { getWorkspaces } from './events/getWorkspaces'
+import { getAuditLogEvents } from './events/getAuditLogEvents'
+import { getCustomFieldsForWorkspace } from './events/getCustomFieldsForWorkspace'
+import { getProjectsForWorkspace } from './events/getProjectsForWorkspace'
+import { getTagsForWorkspace } from './events/getTagsForWorkspace'
+import { searchTasksForWorkspace } from './events/searchTasksForWorkspace'
+import { getTeamsForWorkspace } from './events/getTeamsForWorkspace'
+import { typeaheadForWorkspace } from './events/typeaheadForWorkspace'
+import { getUsersForWorkspace } from './events/getUsersForWorkspace'
+import { getWorkspaceMembershipsForWorkspace } from './events/getWorkspaceMembershipsForWorkspace'
 
 type AsanaConfig = {
   CLIENT_ID: string;
@@ -23,6 +74,460 @@ export class AsanaIntegration extends Integration {
     });
 
     this.config = config;
+  }
+
+  registerEvents() {
+    this.events = {
+             'asana.AttachmentCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getAttachmentsForObject,
+            },
+        
+
+             'asana.EventResponse/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getEvents,
+            },
+        
+
+             'asana.GoalRelationshipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getGoalRelationships,
+            },
+        
+
+             'asana.GoalCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getGoals,
+            },
+        
+
+             'asana.GoalCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getParentGoalsForGoal,
+            },
+        
+
+             'asana.PortfolioMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getPortfolioMemberships,
+            },
+        
+
+             'asana.PortfolioCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getPortfolios,
+            },
+        
+
+             'asana.CustomFieldSettingResponse/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getCustomFieldSettingsForPortfolio,
+            },
+        
+
+             'asana.ProjectCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getItemsForPortfolio,
+            },
+        
+
+             'asana.PortfolioMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getPortfolioMembershipsForPortfolio,
+            },
+        
+
+             'asana.ProjectTemplateCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjectTemplates,
+            },
+        
+
+             'asana.ProjectCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjects,
+            },
+        
+
+             'asana.CustomFieldSettingResponse/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getCustomFieldSettingsForProject,
+            },
+        
+
+             'asana.ProjectMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjectMembershipsForProject,
+            },
+        
+
+             'asana.ProjectStatusCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjectStatusesForProject,
+            },
+        
+
+             'asana.SectionCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getSectionsForProject,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTasksForProject,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTasksForSection,
+            },
+        
+
+             'asana.StatusUpdateCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getStatusesForObject,
+            },
+        
+
+             'asana.TagCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTags,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTasksForTag,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTasks,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getDependenciesForTask,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getDependentsForTask,
+            },
+        
+
+             'asana.ProjectCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjectsForTask,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getSubtasksForTask,
+            },
+        
+
+             'asana.TagCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTagsForTask,
+            },
+        
+
+             'asana.TeamMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTeamMemberships,
+            },
+        
+
+             'asana.ProjectTemplateCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjectTemplatesForTeam,
+            },
+        
+
+             'asana.ProjectCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjectsForTeam,
+            },
+        
+
+             'asana.TeamMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTeamMembershipsForTeam,
+            },
+        
+
+             'asana.UserCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getUsersForTeam,
+            },
+        
+
+             'asana.TimePeriodCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTimePeriods,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTasksForUserTaskList,
+            },
+        
+
+             'asana.UserCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getUsers,
+            },
+        
+
+             'asana.AsanaNamedResource/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getFavoritesForUser,
+            },
+        
+
+             'asana.TeamMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTeamMembershipsForUser,
+            },
+        
+
+             'asana.TeamCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTeamsForUser,
+            },
+        
+
+             'asana.WorkspaceMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getWorkspaceMembershipsForUser,
+            },
+        
+
+             'asana.WebhookResponse/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getWebhooks,
+            },
+        
+
+             'asana.WorkspaceCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getWorkspaces,
+            },
+        
+
+             'asana.AuditLogEvent/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getAuditLogEvents,
+            },
+        
+
+             'asana.CustomFieldResponse/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getCustomFieldsForWorkspace,
+            },
+        
+
+             'asana.ProjectCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getProjectsForWorkspace,
+            },
+        
+
+             'asana.TagCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTagsForWorkspace,
+            },
+        
+
+             'asana.TaskCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: searchTasksForWorkspace,
+            },
+        
+
+             'asana.TeamCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getTeamsForWorkspace,
+            },
+        
+
+             'asana.AsanaNamedResource/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: typeaheadForWorkspace,
+            },
+        
+
+             'asana.UserCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getUsersForWorkspace,
+            },
+        
+
+             'asana.WorkspaceMembershipCompact/sync': {
+                schema: z.object({
+                    emails: z.record(z.any()),
+                    entityType: z.string(),
+                }),
+                handler: getWorkspaceMembershipsForWorkspace,
+            },
+        }
+    return this.events;
   }
 
 

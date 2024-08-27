@@ -91,11 +91,13 @@ export function createTsConfig() {
 
 }
 
-export function createIntegration({ name, server, authEndpoint, tokenEndpoint }: { name: string, server: string, authEndpoint: string, tokenEndpoint: string }) {
+export function createIntegration({ name, server, authEndpoint, tokenEndpoint, syncFuncImports, syncFuncs }: { syncFuncImports: string, syncFuncs: string, name: string, server: string, authEndpoint: string, tokenEndpoint: string }) {
     return `
 import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
+import { z } from 'zod'
 import type openapi from './openapi'
+${syncFuncImports}
 
 type ${name}Config = {
   CLIENT_ID: string;
@@ -117,6 +119,11 @@ export class ${name}Integration extends Integration {
     });
 
     this.config = config;
+  }
+
+  registerEvents() {
+    ${syncFuncs}
+    return this.events;
   }
 
 

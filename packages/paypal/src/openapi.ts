@@ -27,23 +27,23 @@
   
 
 
-  <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-efd2f2257c96.css" /><link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-6b1e37da2254.css" /><link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed-aa16bfa90fb8.css" /><link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_high_contrast-f4daad25d8cf.css" /><link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-a4629b2e906b.css" /><link data-color-theme="light_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind-afcc3a6a38dd.css" /><link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_high_contrast-79bca7145393.css" /><link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia-fe4137b54b26.css" /><link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia-1911f0cf0db4.css" />
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-8500c2c7ce5f.css" />
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-9f7b2e63c497.css" />
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-a3245ebd79bb.css" />
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-cf4e90581e80.css" />
-  <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/repository-992e95451f25.css" />
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/code-34406d39e629.css" />
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-fec97922b76c.css" /><link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-e8b003732d38.css" /><link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed-6d24db1ffce7.css" /><link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_high_contrast-c8248a39525e.css" /><link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-c13e778ea0a8.css" /><link data-color-theme="light_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind-2da29a60d573.css" /><link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_high_contrast-561528aab3a6.css" /><link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia-c45e7322eede.css" /><link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia-d3ff9822923b.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-ebd37ecbf27d.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-3f55af1462e6.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-9df818901729.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-9b61c4eeea0e.css" />
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/repository-0f7cf89e325a.css" />
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/code-7e14c25064d5.css" />
 
   
 
 
-  <script type="application/json" id="client-env">{"locale":"en","featureFlags":["ab_test_homepage_what_is_copilot_video","code_vulnerability_scanning","copilot_beta_features_opt_in","copilot_chat_conversation_intent_knowledge_search_skill","copilot_chat_static_thread_suggestions","copilot_completion_new_domain","copilot_conversational_ux_history_refs","copilot_followup_to_agent","copilot_implicit_context","copilot_smell_icebreaker_ux","custom_inp","experimentation_azure_variant_endpoint","failbot_handle_non_errors","geojson_azure_maps","ghas_copilot_agents_ga_web_updates","ghost_pilot_confidence_truncation_25","ghost_pilot_confidence_truncation_40","ghost_pilot_stream_handling","hovercard_accessibility","hovercard_longer_activate_timeout","marketing_pages_search_explore_provider","remove_child_patch","sample_network_conn_type","site_metered_billing_update","ignore_hidden_in_quote_reply"]}</script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-b365de620364.js"></script>
+  <script type="application/json" id="client-env">{"locale":"en","featureFlags":["ab_test_homepage_what_is_copilot_video","code_vulnerability_scanning","copilot_beta_features_opt_in","copilot_chat_conversation_intent_knowledge_search_skill","copilot_chat_static_thread_suggestions","copilot_completion_new_domain","copilot_conversational_ux_history_refs","copilot_followup_to_agent","copilot_implicit_context","copilot_smell_icebreaker_ux","custom_inp","experimentation_azure_variant_endpoint","failbot_handle_non_errors","geojson_azure_maps","ghas_copilot_agents_ga_web_updates","ghost_pilot_confidence_truncation_25","ghost_pilot_stream_handling","hovercard_accessibility","hovercard_longer_activate_timeout","marketing_pages_search_explore_provider","remove_child_patch","sample_network_conn_type","site_metered_billing_update","ignore_hidden_in_quote_reply"]}</script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-9de48ca91256.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_dompurify_dist_purify_js-89a69c248502.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover_js-56729c905fe2.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_smoothscroll-polyfill_di-75db2e-686488490524.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/environment-4a62f2832289.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_arianotify-polyfill_ariaNotify-polyfill_js-node_modules_github_mi-247092-627b030d3acc.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/environment-924e60bca7d2.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_selector-observer_dist_index_esm_js-f690fd9ae3d5.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_focus-zone_js-c9086a4fb62b.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_relative-time-element_dist_index_js-7b95699705bc.js"></script>
@@ -71,7 +71,7 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_updatable-content_updatable-content_ts-a2009221d154.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_task-list_ts-app_assets_modules_github_onfocus_ts-app_ass-421cec-f0e1d31bff9a.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_sticky-scroll-into-view_ts-112600808cf9.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_modules_github_behaviors_include-467754-8b1a4442f9b3.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_modules_github_behaviors_include-467754-5f8784803937.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_commenting_edit_ts-app_assets_modules_github_behaviors_ht-83c235-4accd4baf37d.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_blob-anchor_ts-app_assets_modules_github_filter-sort_ts-app_assets_-6deafe-fc95155e233a.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/behaviors-717439266b6b.js"></script>
@@ -83,7 +83,7 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/codespaces-005e47f4f276.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_github_filter--0879fe-bcfcfd976be7.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_repositories_get-repo-element_ts-78999cbaea69.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/repositories-5fb096854483.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/repositories-238986a8c80a.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_catalyst_lib_inde-dbbea9-e73b311a14f1.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/code-menu-a8d08997ac4f.js"></script>
   
@@ -104,7 +104,7 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_anchored-position_js-node_modules_primer_react-4d507b-85f1dac4ce7d.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_scroll-into-view_js-node_modules_primer_react_-2c7aca-e1e4b91acf9c.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_react-core_create-browser-history_ts-ui_packages_safe-storage_safe-storage_ts-ui_-682c2c-40bb20608465.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_react-core_register-app_ts-d92f692cd90a.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_react-core_register-app_ts-6857ea187add.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_paths_index_ts-9eb3412d85a7.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_ref-selector_RefSelector_tsx-7b0796d1324c.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_commit-attribution_index_ts-ui_packages_commit-checks-status_index_ts-ui_packages-f45efb-62ec013f60c5.js"></script>
@@ -112,7 +112,7 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_code-view-shared_hooks_use-canonical-object_ts-ui_packages_code-view-shared_hooks-9a3d65-064fc11c67cb.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_repos-file-tree-view_repos-file-tree-view_ts-ui_packages_feature-request_FeatureR-ec5225-ec38d5ad4ab9.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-code-view-11c4233e17e1.js"></script>
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/react-code-view.234ae39ff1fa1232236c.module.css" />
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/react-code-view.5cd91984ea3db66bbc7b.module.css" />
 
     <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-lib-7b7b5264f6c1.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_primer_octicons-react_di-b40d97-06881c63f955.js"></script>
@@ -128,7 +128,7 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_Dialog_js-node_modules_primer_react_lib-esm_Feature-cdf735-892e8f58058f.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_react-core_create-browser-history_ts-ui_packages_safe-storage_safe-storage_ts-ui_-682c2c-40bb20608465.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/notifications-subscriptions-menu-be1efa498152.js"></script>
-<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/notifications-subscriptions-menu.572fff1cb5c3caef1ac9.module.css" />
+<link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/notifications-subscriptions-menu.1bcff9205c241e99cff2.module.css" />
 
 
   <title>paypal-rest-api-specifications/openapi at main · paypal/paypal-rest-api-specifications · GitHub</title>
@@ -143,7 +143,7 @@
   <meta name="current-catalog-service-hash" content="f3abb0cc802f3d7b95fc8762b94bdcb13bf39634c40c357301c4aa1d67a256fb">
 
 
-  <meta name="request-id" content="E2D4:2020D8:45EB6B4:471A217:66CE0626" data-pjax-transient="true"/><meta name="html-safe-nonce" content="2e6c1bc963acaf2bd95ce62dcd01d8390f5f5db972ef0751d300f7ac93172890" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJFMkQ0OjIwMjBEODo0NUVCNkI0OjQ3MUEyMTc6NjZDRTA2MjYiLCJ2aXNpdG9yX2lkIjoiODU1NjUwODkzMzQzNDI0NjY5NSIsInJlZ2lvbl9lZGdlIjoic2VhIiwicmVnaW9uX3JlbmRlciI6InNlYSJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="e97aba762845ddd7122e4cfbe9523d7ba2abc4059cc2ccc8726bc3ed9ac8a7c8" data-pjax-transient="true"/>
+  <meta name="request-id" content="EDE6:1238:CE07D:DE8AB:66CE1B83" data-pjax-transient="true"/><meta name="html-safe-nonce" content="99499db362de95d96f9d518d4c717d041c22392976694021e3c9319c152f8607" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJFREU2OjEyMzg6Q0UwN0Q6REU4QUI6NjZDRTFCODMiLCJ2aXNpdG9yX2lkIjoiODgxNTk3NzkxNTA1OTQxMTg0NCIsInJlZ2lvbl9lZGdlIjoic2VhIiwicmVnaW9uX3JlbmRlciI6InNlYSJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="b474fa6487d18fb40b66605573c189766710a68d21708a92de91f73257c8dc72" data-pjax-transient="true"/>
 
 
     <meta name="hovercard-subject-tag" content="repository:673944158" data-turbo-transient>
@@ -196,10 +196,10 @@
         <meta name="expected-hostname" content="github.com">
 
 
-  <meta http-equiv="x-pjax-version" content="4fea5a09ab337c4e0c9dd64b3d6124d10b1061b6134d0c45c17230acce072004" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-version" content="8c0d6494e751895c2b0a70e1a8265d1b10c605ebde5e0246b0324cadb8bb6019" data-turbo-track="reload">
   <meta http-equiv="x-pjax-csp-version" content="43bc2a0e2750a1219c17b5bf1ec22aae37041bbc018bc5e27bb7708f80e7ab88" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-css-version" content="3bddeecd217c9b627de89c7a824955a1321308c0ee3fba8ed9b26be0da006e2b" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-js-version" content="03ab16f895494834f6a4da602a78fa29a35a4e94febef5d4fc2034cdc51f33fd" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-css-version" content="53da7541d4baee7b8306ac56008d4945ebd39b5ca8cc3ed5d9b77b1c9a191380" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-js-version" content="f0bbfa7dba0d4b708753174cecd0a31945d520175d14a8315ab3551fc2614b4c" data-turbo-track="reload">
 
   <meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
 
@@ -800,7 +800,7 @@
                 
 
 
-<qbsearch-input class="search-input" data-scope="repo:paypal/paypal-rest-api-specifications" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="ZwXJifvToyAqChgycwbBy7mDI5G-R8nHjfmSmICgSBkTEaHoY0_z9ghdv8ORfnMXpY0RsnR4a8bfILyKr1MJkg" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="paypal/paypal-rest-api-specifications" data-current-org="paypal" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
+<qbsearch-input class="search-input" data-scope="repo:paypal/paypal-rest-api-specifications" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="RXA9W-A7fq3nr6jgUwvMESPL8wP-8fi9t65FGSjr1e6VJ8nZAQNp9SMuooeDCUspgZ5ugxW7LaFV_nHZNWKzDg" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="paypal/paypal-rest-api-specifications" data-current-org="paypal" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
   <div
     class="search-input-container search-with-dialog position-relative d-flex flex-row flex-items-center mr-4 rounded"
     data-action="click:qbsearch-input#searchInputContainerClicked"
@@ -865,7 +865,7 @@
           ></div>
           <div class="QueryBuilder-InputWrapper">
             <div aria-hidden="true" class="QueryBuilder-Sizer" data-target="query-builder.sizer"></div>
-            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-acb66ecf-d023-40fd-8c77-8c7ce184bceb" data-target="query-builder.input" data-action="
+            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-b9b88652-a20a-406e-8514-01161423f161" data-target="query-builder.input" data-action="
           input:query-builder#inputChange
           blur:query-builder#inputBlur
           keydown:query-builder#inputKeydown
@@ -1102,7 +1102,7 @@
                   id="query-builder-test-results"
                 ></ul>
         </div>
-      <div class="FormControl-inlineValidation" id="validation-acb66ecf-d023-40fd-8c77-8c7ce184bceb" hidden="hidden">
+      <div class="FormControl-inlineValidation" id="validation-b9b88652-a20a-406e-8514-01161423f161" hidden="hidden">
         <span class="FormControl-inlineValidation--visual">
           <svg aria-hidden="true" height="12" viewBox="0 0 12 12" version="1.1" width="12" data-view-component="true" class="octicon octicon-alert-fill">
     <path d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 0 1-1.146 1.954H1.33A1.313 1.313 0 0 1 .183 9.058ZM7 7V3H5v4Zm-1 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path>
@@ -1145,7 +1145,7 @@
   
 </div>
       <scrollable-region data-labelled-by="feedback-dialog-title">
-        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="KG/ZhPlrRH5OXR+RWhipObyXzWh/Q5hDDiIf5Ysb0Suhfm5f/Go6npektX4F3xBo8ZF74migReiguTLFtknN1Q==" />
+        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="SYivusucnpmTSsCu41HR2uli6AsXfFnjkWyN71Tx0B/WUiWScVOSZzObgjS5Vn6sl/JQwbSXKTeAOrwRElMBYg==" />
           <p>We read every piece of feedback, and take your input very seriously.</p>
           <textarea name="feedback" class="form-control width-full mb-2" style="height: 120px" id="feedback"></textarea>
           <input name="include_email" id="include_email" aria-label="Include my email address so I can be contacted" class="form-control mr-2" type="checkbox">
@@ -1183,7 +1183,7 @@
         <div data-view-component="true" class="Overlay-body">        <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
         <div hidden class="create-custom-scope-form" data-target="custom-scopes.createCustomScopeForm">
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="6oduOZ2qmqKqou6WF2wMsRDIF4t5X/Qhe9LUI9qaSCL9UMiYPgJYx6lOxcRuXxqaZRdFDXiEwxcIvN3D8MGi6w==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="EBPNnwkho78POf+ygN6Rob9cdT7Zu1c+y//RQIs2iGCISBFVUwk+EcBHIdPXuqhrS/7WztAL9zhHaGPXd1PMHg==" />
           <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
           <input type="hidden" id="custom_scope_id" name="custom_scope_id" data-target="custom-scopes.customScopesIdField">
@@ -1201,7 +1201,7 @@
                 placeholder="github-ruby"
                 required
                 maxlength="50">
-              <input type="hidden" data-csrf="true" value="QqHPGNuSJ/W6NbS4DPY5oS+gqfyzLuV2JImVGRIe/M4FtpZlCoDrDo9LfDU9hWIAxjmZUmrhzbY17r5TXEZhZw==" />
+              <input type="hidden" data-csrf="true" value="Du/SRKJqKrhY8e0F/Gt4dXIBWcWghVHwRFDGpInnMMjcWH6C1wtaWTEiPHg1PLFAoRCu6w5PBbHnsabzTEy/eg==" />
             </auto-check>
           </div>
 
@@ -1275,10 +1275,10 @@
         <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
         <span class="js-stale-session-flash-switched" hidden>You switched accounts on another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
 
-    <button id="icon-button-f7b78347-853e-41e7-8896-9e6617d7df27" aria-labelledby="tooltip-9e637eb1-1f2d-4cbf-a148-e457edfa94bf" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+    <button id="icon-button-a4f7247f-d8a7-4980-8ba8-82edd66a2b34" aria-labelledby="tooltip-e4fdee78-4c8e-4f98-9e9f-5bdf5333c238" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
     <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
 </svg>
-</button><tool-tip id="tooltip-9e637eb1-1f2d-4cbf-a148-e457edfa94bf" for="icon-button-f7b78347-853e-41e7-8896-9e6617d7df27" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-e4fdee78-4c8e-4f98-9e9f-5bdf5333c238" for="icon-button-a4f7247f-d8a7-4980-8ba8-82edd66a2b34" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
 
 
   
@@ -1381,7 +1381,7 @@
             <a href="/login?return_to=%2Fpaypal%2Fpaypal-rest-api-specifications" rel="nofollow" id="repository-details-watch-button" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/paypal/paypal-rest-api-specifications/tree/main/openapi&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5aff93919a130584c9f2b85da633f5d4ba0e767fdffe7211b3209e1b1e372e8c" aria-label="You must be signed in to change notification settings" data-view-component="true" class="btn-sm btn">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-bell mr-2">
     <path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"></path>
 </svg>Notifications
-</a>    <tool-tip id="tooltip-79a4f985-b73a-4146-8162-a22c49d3a778" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-74157014-a7c7-442e-8f73-442cffc411eb" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
 
     </li>
 
@@ -1477,22 +1477,22 @@
 </ul>
     <div style="visibility:hidden;" data-view-component="true" class="UnderlineNav-actions js-responsive-underlinenav-overflow position-absolute pr-3 pr-md-4 pr-lg-5 right-0">      <action-menu data-select-variant="none" data-view-component="true">
   <focus-group direction="vertical" mnemonics retain>
-    <button id="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-button" popovertarget="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-overlay" aria-controls="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-list" aria-haspopup="true" aria-labelledby="tooltip-0cf7ef3e-f2ad-4fcf-9884-f2a17fdb0082" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
+    <button id="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-button" popovertarget="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-overlay" aria-controls="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-list" aria-haspopup="true" aria-labelledby="tooltip-fe6fcff0-5b5c-4e5a-abf4-999a97b5cd6e" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
     <path d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
 </svg>
-</button><tool-tip id="tooltip-0cf7ef3e-f2ad-4fcf-9884-f2a17fdb0082" for="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
+</button><tool-tip id="tooltip-fe6fcff0-5b5c-4e5a-abf4-999a97b5cd6e" for="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
 
 
-<anchored-position id="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-overlay" anchor="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
+<anchored-position id="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-overlay" anchor="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
   <div data-view-component="true" class="Overlay Overlay--size-auto">
     
       <div data-view-component="true" class="Overlay-body Overlay-body--paddingNone">          <action-list>
   <div data-view-component="true">
-    <ul aria-labelledby="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-button" id="action-menu-2dbd350f-f381-42ab-aaf1-7028b85a0cf2-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
+    <ul aria-labelledby="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-button" id="action-menu-071c594b-0076-4427-ab3f-0a0018eee1f5-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
         <li hidden="hidden" data-menu-item="i0code-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-44d57608-50f6-41a3-8abb-37977b0865ad" href="/paypal/paypal-rest-api-specifications" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-e7514d5d-ca87-436a-a18f-0fee9682c963" href="/paypal/paypal-rest-api-specifications" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-code">
     <path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path>
@@ -1508,7 +1508,7 @@
         <li hidden="hidden" data-menu-item="i1pull-requests-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-03e1e9cc-bcb9-462a-b2d1-73b7156410b3" href="/paypal/paypal-rest-api-specifications/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-bc073a38-3c57-474e-89f2-4c18da2c8fe7" href="/paypal/paypal-rest-api-specifications/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-git-pull-request">
     <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path>
@@ -1524,7 +1524,7 @@
         <li hidden="hidden" data-menu-item="i2actions-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-81d9c2a8-3916-41d8-b17d-8781b9a5c697" href="/paypal/paypal-rest-api-specifications/actions" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-e6f13974-e272-4b83-b72a-472fc19d281a" href="/paypal/paypal-rest-api-specifications/actions" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-play">
     <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm4.879-2.773 4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559V5.442a.25.25 0 0 1 .379-.215Z"></path>
@@ -1540,7 +1540,7 @@
         <li hidden="hidden" data-menu-item="i3security-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-96bf4897-71d4-4afd-a70c-8c27f32e202d" href="/paypal/paypal-rest-api-specifications/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-b2e3548e-d56a-4b61-b68f-a23be3cecfbe" href="/paypal/paypal-rest-api-specifications/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-shield">
     <path d="M7.467.133a1.748 1.748 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.697 1.697 0 0 1-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 0 1 1.217-1.667Zm.61 1.429a.25.25 0 0 0-.153 0l-5.25 1.68a.25.25 0 0 0-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.34 4.366 3.297a.196.196 0 0 0 .154 0c2.245-.956 3.582-2.104 4.366-3.298C13.225 9.666 13.5 8.36 13.5 7V3.48a.251.251 0 0 0-.174-.237l-5.25-1.68ZM8.75 4.75v3a.75.75 0 0 1-1.5 0v-3a.75.75 0 0 1 1.5 0ZM9 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
@@ -1556,7 +1556,7 @@
         <li hidden="hidden" data-menu-item="i4insights-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-93873615-b222-4c35-a4c6-0d436208ddc6" href="/paypal/paypal-rest-api-specifications/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-c8b5cb0c-951d-4aaf-88d5-8b8d6ec92169" href="/paypal/paypal-rest-api-specifications/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-graph">
     <path d="M1.5 1.75V13.5h13.75a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75V1.75a.75.75 0 0 1 1.5 0Zm14.28 2.53-5.25 5.25a.75.75 0 0 1-1.06 0L7 7.06 4.28 9.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.25-3.25a.75.75 0 0 1 1.06 0L10 7.94l4.72-4.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path>
@@ -1611,7 +1611,7 @@
   data-alternate="false"
 >
   
-  <script type="application/json" data-target="react-app.embeddedData">{"payload":{"allShortcutsEnabled":false,"path":"openapi","repo":{"id":673944158,"defaultBranch":"main","name":"paypal-rest-api-specifications","ownerLogin":"paypal","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2023-08-02T19:26:26.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/476675?v=4","public":true,"private":false,"isOrgOwned":true},"currentUser":null,"refInfo":{"name":"main","listCacheKey":"v0:1706997071.0","canEdit":false,"refType":"branch","currentOid":"ec4d8f36a6ab0abcc3865e1072aaddc85ea14d5c"},"tree":{"items":[{"name":"billing_subscriptions_v1.json","path":"openapi/billing_subscriptions_v1.json","contentType":"file"},{"name":"catalogs_products_v1.json","path":"openapi/catalogs_products_v1.json","contentType":"file"},{"name":"checkout_orders_v1.json","path":"openapi/checkout_orders_v1.json","contentType":"file"},{"name":"checkout_orders_v2.json","path":"openapi/checkout_orders_v2.json","contentType":"file"},{"name":"customer_disputes_v1.json","path":"openapi/customer_disputes_v1.json","contentType":"file"},{"name":"customer_partner_referrals_v1.json","path":"openapi/customer_partner_referrals_v1.json","contentType":"file"},{"name":"customer_partner_referrals_v2.json","path":"openapi/customer_partner_referrals_v2.json","contentType":"file"},{"name":"invoicing_v1.json","path":"openapi/invoicing_v1.json","contentType":"file"},{"name":"invoicing_v2.json","path":"openapi/invoicing_v2.json","contentType":"file"},{"name":"notifications_webhooks_v1.json","path":"openapi/notifications_webhooks_v1.json","contentType":"file"},{"name":"payment-experience_web_experience_profiles_v1.json","path":"openapi/payment-experience_web_experience_profiles_v1.json","contentType":"file"},{"name":"payments_payment_v1.json","path":"openapi/payments_payment_v1.json","contentType":"file"},{"name":"payments_payment_v2.json","path":"openapi/payments_payment_v2.json","contentType":"file"},{"name":"payments_payouts_batch_v1.json","path":"openapi/payments_payouts_batch_v1.json","contentType":"file"},{"name":"reporting_transactions_v1.json","path":"openapi/reporting_transactions_v1.json","contentType":"file"},{"name":"shipping_shipment_tracking_v1.json","path":"openapi/shipping_shipment_tracking_v1.json","contentType":"file"},{"name":"vault_payment_tokens_v3.json","path":"openapi/vault_payment_tokens_v3.json","contentType":"file"}],"templateDirectorySuggestionUrl":null,"readme":null,"totalCount":17,"showBranchInfobar":false},"fileTree":{"":{"items":[{"name":".github","path":".github","contentType":"directory"},{"name":"docs","path":"docs","contentType":"directory"},{"name":"openapi","path":"openapi","contentType":"directory"},{"name":".gitignore","path":".gitignore","contentType":"file"},{"name":".spectral.yaml","path":".spectral.yaml","contentType":"file"},{"name":"LICENSE","path":"LICENSE","contentType":"file"},{"name":"README.md","path":"README.md","contentType":"file"},{"name":"openapitools.json","path":"openapitools.json","contentType":"file"},{"name":"package-lock.json","path":"package-lock.json","contentType":"file"},{"name":"package.json","path":"package.json","contentType":"file"},{"name":"redocly.yaml","path":"redocly.yaml","contentType":"file"}],"totalCount":11}},"fileTreeProcessingTime":2.0331770000000002,"foldersToFetch":[],"treeExpanded":true,"symbolsExpanded":false,"csrf_tokens":{"/paypal/paypal-rest-api-specifications/branches":{"post":"_VbN2zbHjWIAHpiB6b7XhppZujeBwZsQPjZ1Fm-T8aIXjxKo79V5qZTnp8HohskmF0E_VQ73h787kWCPK1KkFw"},"/paypal/paypal-rest-api-specifications/branches/fetch_and_merge/main":{"post":"-rPjt4kW6kieQEnpb-_btrXZRxJdTxLFoEGWxDwxZdAUXa7sjHoPc0GtjjL6cZd2gF1j4fCfP71PwWLIizmwww"},"/paypal/paypal-rest-api-specifications/branches/fetch_and_merge/main?discard_changes=true":{"post":"uwealVHz5DFxsJnk6-iI1PuVMLvsTIoMxGwhq6WCaLtV6dfOVJ8BCq5dXj9-dsQUzhEUSEGcp3Qr7NWnEoq9qA"}}},"title":"paypal-rest-api-specifications/openapi at main · paypal/paypal-rest-api-specifications","appPayload":{"helpUrl":"https://docs.github.com","findFileWorkerPath":"/assets-cdn/worker/find-file-worker-1583894afd38.js","findInFileWorkerPath":"/assets-cdn/worker/find-in-file-worker-03b87d52cf57.js","githubDevUrl":null,"enabled_features":{"code_nav_ui_events":false,"overview_shared_code_dropdown_button":false,"react_blob_overlay":false,"copilot_conversational_ux_embedding_update":false,"copilot_smell_icebreaker_ux":true,"copilot_workspace":false}}}</script>
+  <script type="application/json" data-target="react-app.embeddedData">{"payload":{"allShortcutsEnabled":false,"path":"openapi","repo":{"id":673944158,"defaultBranch":"main","name":"paypal-rest-api-specifications","ownerLogin":"paypal","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2023-08-02T19:26:26.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/476675?v=4","public":true,"private":false,"isOrgOwned":true},"currentUser":null,"refInfo":{"name":"main","listCacheKey":"v0:1706997071.0","canEdit":false,"refType":"branch","currentOid":"ec4d8f36a6ab0abcc3865e1072aaddc85ea14d5c"},"tree":{"items":[{"name":"billing_subscriptions_v1.json","path":"openapi/billing_subscriptions_v1.json","contentType":"file"},{"name":"catalogs_products_v1.json","path":"openapi/catalogs_products_v1.json","contentType":"file"},{"name":"checkout_orders_v1.json","path":"openapi/checkout_orders_v1.json","contentType":"file"},{"name":"checkout_orders_v2.json","path":"openapi/checkout_orders_v2.json","contentType":"file"},{"name":"customer_disputes_v1.json","path":"openapi/customer_disputes_v1.json","contentType":"file"},{"name":"customer_partner_referrals_v1.json","path":"openapi/customer_partner_referrals_v1.json","contentType":"file"},{"name":"customer_partner_referrals_v2.json","path":"openapi/customer_partner_referrals_v2.json","contentType":"file"},{"name":"invoicing_v1.json","path":"openapi/invoicing_v1.json","contentType":"file"},{"name":"invoicing_v2.json","path":"openapi/invoicing_v2.json","contentType":"file"},{"name":"notifications_webhooks_v1.json","path":"openapi/notifications_webhooks_v1.json","contentType":"file"},{"name":"payment-experience_web_experience_profiles_v1.json","path":"openapi/payment-experience_web_experience_profiles_v1.json","contentType":"file"},{"name":"payments_payment_v1.json","path":"openapi/payments_payment_v1.json","contentType":"file"},{"name":"payments_payment_v2.json","path":"openapi/payments_payment_v2.json","contentType":"file"},{"name":"payments_payouts_batch_v1.json","path":"openapi/payments_payouts_batch_v1.json","contentType":"file"},{"name":"reporting_transactions_v1.json","path":"openapi/reporting_transactions_v1.json","contentType":"file"},{"name":"shipping_shipment_tracking_v1.json","path":"openapi/shipping_shipment_tracking_v1.json","contentType":"file"},{"name":"vault_payment_tokens_v3.json","path":"openapi/vault_payment_tokens_v3.json","contentType":"file"}],"templateDirectorySuggestionUrl":null,"readme":null,"totalCount":17,"showBranchInfobar":false},"fileTree":{"":{"items":[{"name":".github","path":".github","contentType":"directory"},{"name":"docs","path":"docs","contentType":"directory"},{"name":"openapi","path":"openapi","contentType":"directory"},{"name":".gitignore","path":".gitignore","contentType":"file"},{"name":".spectral.yaml","path":".spectral.yaml","contentType":"file"},{"name":"LICENSE","path":"LICENSE","contentType":"file"},{"name":"README.md","path":"README.md","contentType":"file"},{"name":"openapitools.json","path":"openapitools.json","contentType":"file"},{"name":"package-lock.json","path":"package-lock.json","contentType":"file"},{"name":"package.json","path":"package.json","contentType":"file"},{"name":"redocly.yaml","path":"redocly.yaml","contentType":"file"}],"totalCount":11}},"fileTreeProcessingTime":2.1184540000000003,"foldersToFetch":[],"treeExpanded":true,"symbolsExpanded":false,"csrf_tokens":{"/paypal/paypal-rest-api-specifications/branches":{"post":"oNrGNoThuGvnbW3cTKX-wPFoXGjonWF3Jk7m5KnBy-b7Prd6QvKkizGPtGHGZ4v-vCdaUTpFd-WD9uBlBe2OPQ"},"/paypal/paypal-rest-api-specifications/branches/fetch_and_merge/main":{"post":"D5V3A9eKmv76ojhpFPmB92inzd3LhaKIjHMre6rrDSN-3ULUBw6QRjojn93ZDhs4ZYTNVxjuxvqn7fEm3pkteg"},"/paypal/paypal-rest-api-specifications/branches/fetch_and_merge/main?discard_changes=true":{"post":"gw8pWyaJrZwG1-DOLYWcdeIb7TMK7mUhNJSEGrzYvcDyRxyM9g2nJMZWR3rgcga67zjtudmFAVMfCl5HyKqdmQ"}}},"title":"paypal-rest-api-specifications/openapi at main · paypal/paypal-rest-api-specifications","appPayload":{"helpUrl":"https://docs.github.com","findFileWorkerPath":"/assets-cdn/worker/find-file-worker-1583894afd38.js","findInFileWorkerPath":"/assets-cdn/worker/find-in-file-worker-03b87d52cf57.js","githubDevUrl":null,"enabled_features":{"code_nav_ui_events":false,"overview_shared_code_dropdown_button":false,"react_blob_overlay":false,"copilot_conversational_ux_embedding_update":false,"copilot_smell_icebreaker_ux":true,"copilot_workspace":false}}}</script>
   <div data-target="react-app.reactRoot"></div>
 </react-app>
 </turbo-frame>

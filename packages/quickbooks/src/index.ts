@@ -1,7 +1,9 @@
 
 import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
+import { z } from 'zod'
 import type openapi from './openapi'
+
 
 type QuickbooksConfig = {
   CLIENT_ID: string;
@@ -23,6 +25,11 @@ export class QuickbooksIntegration extends Integration {
     });
 
     this.config = config;
+  }
+
+  registerEvents() {
+    
+    return this.events;
   }
 
 
