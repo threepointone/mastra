@@ -4,11 +4,35 @@
 
                     export const GetTaxCodes: EventHandler<StripeIntegration> = ({
   eventKey,
-  integrationInstance: { name, dataLayer },
+  integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
 }) => ({        
                         id: `${name}-sync-tax_code`,
                         event: eventKey,
-                        executor: async ({ event, step }: any) => {},
+                        executor: async ({ event, step }: any) => {
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
+                            const response = await proxy['/v1/tax_codes'].get()
+
+                            if (!response.ok) {
+                            return
+                            }
+
+                            const d = await response.json()
+
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `tax_code`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `tax_code`,
+                                properties: [],
+                            });
+                        },
                 })
                 

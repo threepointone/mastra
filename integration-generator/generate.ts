@@ -142,19 +142,43 @@ async function main() {
 
                 syncFuncImports = funcMap.map(({funcName}) => `import { ${funcName} } from './events/${funcName}'`).join('\n')
 
-                funcMap.forEach(({ funcName, entityType }) => {
+                funcMap.forEach(({ funcName, entityType, path: pathApi }) => {
                     fs.writeFileSync(path.join(srcPath, 'events', `${funcName}.ts`), `
                     import { EventHandler } from '@arkw/core';
                     import { ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration } from '..';
 
                     export const ${funcName}: EventHandler<${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration> = ({
   eventKey,
-  integrationInstance: { name, dataLayer },
+  integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
 }) => ({        
                         id: \`\${name}-sync-${entityType}\`,
                         event: eventKey,
-                        executor: async ({ event, step }: any) => {},
+                        executor: async ({ event, step }: any) => {
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
+                            const response = await proxy['${pathApi}'].get()
+
+                            if (!response.ok) {
+                            return
+                            }
+
+                            const d = await response.json()
+
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: \`${entityType}\`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: \`${entityType}\`,
+                                properties: [],
+                            });
+                        },
                 })
                 `)
                 })

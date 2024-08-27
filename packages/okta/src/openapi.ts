@@ -38,8 +38,8 @@
   
 
 
-  <script type="application/json" id="client-env">{"locale":"en","featureFlags":["ab_test_homepage_what_is_copilot_video","code_vulnerability_scanning","copilot_beta_features_opt_in","copilot_chat_conversation_intent_knowledge_search_skill","copilot_chat_static_thread_suggestions","copilot_completion_new_domain","copilot_conversational_ux_history_refs","copilot_followup_to_agent","copilot_implicit_context","copilot_smell_icebreaker_ux","custom_inp","experimentation_azure_variant_endpoint","failbot_handle_non_errors","geojson_azure_maps","ghas_copilot_agents_ga_web_updates","ghost_pilot_confidence_truncation_25","ghost_pilot_stream_handling","hovercard_accessibility","hovercard_longer_activate_timeout","marketing_pages_search_explore_provider","remove_child_patch","sample_network_conn_type","site_metered_billing_update","ignore_hidden_in_quote_reply"]}</script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-9de48ca91256.js"></script>
+  <script type="application/json" id="client-env">{"locale":"en","featureFlags":["ab_test_homepage_what_is_copilot_video","code_vulnerability_scanning","copilot_beta_features_opt_in","copilot_chat_conversation_intent_knowledge_search_skill","copilot_chat_static_thread_suggestions","copilot_completion_new_domain","copilot_conversational_ux_history_refs","copilot_followup_to_agent","copilot_implicit_context","copilot_smell_icebreaker_ux","custom_inp","experimentation_azure_variant_endpoint","failbot_handle_non_errors","geojson_azure_maps","ghas_copilot_agents_ga_web_updates","ghost_pilot_confidence_truncation_25","ghost_pilot_confidence_truncation_40","ghost_pilot_stream_handling","hovercard_accessibility","hovercard_longer_activate_timeout","marketing_pages_search_explore_provider","remove_child_patch","sample_network_conn_type","site_metered_billing_update","ignore_hidden_in_quote_reply"]}</script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-d960bc35e8c0.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_dompurify_dist_purify_js-89a69c248502.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover_js-56729c905fe2.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_arianotify-polyfill_ariaNotify-polyfill_js-node_modules_github_mi-247092-627b030d3acc.js"></script>
@@ -56,7 +56,7 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_primer_view-co-3959a9-75f3254c34d2.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_onfocus_ts-ui_packages_trusted-types-policies_policy_ts-ui_packages-6fe316-9d50d6f10c3d.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/github-elements-221b0e7d77a3.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/element-registry-c3e8ab0d2ab2.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/element-registry-3765510eae21.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_github_hydro-analytics-client_-7901e7-dc88587c14ed.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_braintree_browser-detection_dist_browser-detection_js-node_modules_stack-68835d-a18220f1db8d.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_lit-html_lit-html_js-ce7225a304c5.js"></script>
@@ -143,7 +143,7 @@
   <meta name="current-catalog-service-hash" content="f3abb0cc802f3d7b95fc8762b94bdcb13bf39634c40c357301c4aa1d67a256fb">
 
 
-  <meta name="request-id" content="EF37:35BAC1:17B5F0F:1812CB5:66CE1E90" data-pjax-transient="true"/><meta name="html-safe-nonce" content="a4b8deb8730abc21f9d3507bb0defb2b9f69e90e830d48b4ea7939ab354dab5a" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJFRjM3OjM1QkFDMToxN0I1RjBGOjE4MTJDQjU6NjZDRTFFOTAiLCJ2aXNpdG9yX2lkIjoiODgwMTI4NjY0MDEyMTAyODI0MCIsInJlZ2lvbl9lZGdlIjoic2VhIiwicmVnaW9uX3JlbmRlciI6InNlYSJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="15b5a73e224a1707ee7f59c83ca0db2d30bec2f6fd1856814d33ae73d9fcc0ad" data-pjax-transient="true"/>
+  <meta name="request-id" content="F1A2:2020D8:4E8A823:4FD5822:66CE2278" data-pjax-transient="true"/><meta name="html-safe-nonce" content="a8c7818b533c47fb8edb6330db29fe8568bb3f32cbc1a5a00048ebb0f9c29f1d" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJGMUEyOjIwMjBEODo0RThBODIzOjRGRDU4MjI6NjZDRTIyNzgiLCJ2aXNpdG9yX2lkIjoiNjgzNDg3MzI3NTQ1MDc0Mjk2IiwicmVnaW9uX2VkZ2UiOiJzZWEiLCJyZWdpb25fcmVuZGVyIjoic2VhIn0=" data-pjax-transient="true"/><meta name="visitor-hmac" content="9e415e323456000c5f5fd47324ab07079afeeb21d9f12252b9d1d38f4f8648c3" data-pjax-transient="true"/>
 
 
     <meta name="hovercard-subject-tag" content="repository:321454682" data-turbo-transient>
@@ -196,10 +196,10 @@
         <meta name="expected-hostname" content="github.com">
 
 
-  <meta http-equiv="x-pjax-version" content="8c0d6494e751895c2b0a70e1a8265d1b10c605ebde5e0246b0324cadb8bb6019" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-version" content="d40290073999d3247f56c85158450384f50cf85ccfbad9ca854e40a9a576c870" data-turbo-track="reload">
   <meta http-equiv="x-pjax-csp-version" content="43bc2a0e2750a1219c17b5bf1ec22aae37041bbc018bc5e27bb7708f80e7ab88" data-turbo-track="reload">
   <meta http-equiv="x-pjax-css-version" content="53da7541d4baee7b8306ac56008d4945ebd39b5ca8cc3ed5d9b77b1c9a191380" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-js-version" content="f0bbfa7dba0d4b708753174cecd0a31945d520175d14a8315ab3551fc2614b4c" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-js-version" content="34bcf5766aa59ec1eccc552f3cfaba56912ec36c0c8438fbcd83d38b97b2dcbd" data-turbo-track="reload">
 
   <meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
 
@@ -245,7 +245,7 @@
 </span>      
       
       <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_Dialog_Dialog_js-node_modules_primer_react_lib-esm_-bd7638-683c833a31df.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-15a4cf222dbb.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/keyboard-shortcuts-dialog-79c3278f3445.js"></script>
 
 <react-partial
   partial-name="keyboard-shortcuts-dialog"
@@ -800,7 +800,7 @@
                 
 
 
-<qbsearch-input class="search-input" data-scope="repo:okta/okta-management-openapi-spec" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="KLumoEKLGOeti0abgRWtoVu4uAxOEEmJiFzpmdBIZ5T5Z_Xhuxj-4_ZOQJJ2DlI0ZDBmBFxH5f1UC4pwg2pk1w" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="okta/okta-management-openapi-spec" data-current-org="okta" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
+<qbsearch-input class="search-input" data-scope="repo:okta/okta-management-openapi-spec" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="eIPuFYOhxDGeD9SZudyxIBR9GHs8vB8uZFbg-wKj5RdbBpT0l48w5WPYoQwjqIU9hR0IsyYROcLQY8IDYyYmLw" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="okta/okta-management-openapi-spec" data-current-org="okta" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
   <div
     class="search-input-container search-with-dialog position-relative d-flex flex-row flex-items-center mr-4 rounded"
     data-action="click:qbsearch-input#searchInputContainerClicked"
@@ -865,7 +865,7 @@
           ></div>
           <div class="QueryBuilder-InputWrapper">
             <div aria-hidden="true" class="QueryBuilder-Sizer" data-target="query-builder.sizer"></div>
-            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-2e162d96-694a-4ab8-bed6-4f3324eef84b" data-target="query-builder.input" data-action="
+            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-ac8eb8c8-8924-41d8-a8db-81427cf7f650" data-target="query-builder.input" data-action="
           input:query-builder#inputChange
           blur:query-builder#inputBlur
           keydown:query-builder#inputKeydown
@@ -1102,7 +1102,7 @@
                   id="query-builder-test-results"
                 ></ul>
         </div>
-      <div class="FormControl-inlineValidation" id="validation-2e162d96-694a-4ab8-bed6-4f3324eef84b" hidden="hidden">
+      <div class="FormControl-inlineValidation" id="validation-ac8eb8c8-8924-41d8-a8db-81427cf7f650" hidden="hidden">
         <span class="FormControl-inlineValidation--visual">
           <svg aria-hidden="true" height="12" viewBox="0 0 12 12" version="1.1" width="12" data-view-component="true" class="octicon octicon-alert-fill">
     <path d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 0 1-1.146 1.954H1.33A1.313 1.313 0 0 1 .183 9.058ZM7 7V3H5v4Zm-1 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path>
@@ -1145,7 +1145,7 @@
   
 </div>
       <scrollable-region data-labelled-by="feedback-dialog-title">
-        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="nox0QkGCNkfVgm4mUXyy1oCdA1iD6o8TP8/VnrVWtDBwS0t/Qo1HfQXgRKUeddfyqgvSwzmrLbC4p2l2MjaKrQ==" />
+        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="7ogmAH/0qSJ+XoTI9TgNCHBbKxPDt5BEMHw/WX3RVsEsJbKRVSSC2MNgn5hTjdH10mbgPYctjFP85vEpctIn0g==" />
           <p>We read every piece of feedback, and take your input very seriously.</p>
           <textarea name="feedback" class="form-control width-full mb-2" style="height: 120px" id="feedback"></textarea>
           <input name="include_email" id="include_email" aria-label="Include my email address so I can be contacted" class="form-control mr-2" type="checkbox">
@@ -1183,7 +1183,7 @@
         <div data-view-component="true" class="Overlay-body">        <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
         <div hidden class="create-custom-scope-form" data-target="custom-scopes.createCustomScopeForm">
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="KtPbFmgT5kqHUlETMrCX25yFOsb5bT6h2eQnKi/Q/qERkfaMPjHZo3Qp45hRa/ke8QPBVmpj2tffBlcTtiKlhw==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="t6jF5xtFX+DC4OPWboP/oU4XqyjGWg5Q20j9OefWZ+WjiFOjQAO9SrnNJPQ2S3nq+jkdpUQqkscPEAfCfVKPrw==" />
           <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
           <input type="hidden" id="custom_scope_id" name="custom_scope_id" data-target="custom-scopes.customScopesIdField">
@@ -1201,7 +1201,7 @@
                 placeholder="github-ruby"
                 required
                 maxlength="50">
-              <input type="hidden" data-csrf="true" value="UenSboQlg7oayrsfemibdH8z4CXRjz6QgennpUwocOLgHKwnYFduuhD+YyRqDm4ymis/P1VyxCI9FGc9PwMfsw==" />
+              <input type="hidden" data-csrf="true" value="qu8OtcsUbHvGbSIzX5qB9OQIWcGP3Lfkgv/CViMBTHt57+2Xi7uhA5SEcUArTlDGK3mK9zq4ySE/Jnpa2iF6QQ==" />
             </auto-check>
           </div>
 
@@ -1275,10 +1275,10 @@
         <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
         <span class="js-stale-session-flash-switched" hidden>You switched accounts on another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
 
-    <button id="icon-button-6e99a98c-08e9-43f7-a016-ef3fbced4b98" aria-labelledby="tooltip-1dc89fe6-0d7c-4f43-a197-279e851669ad" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+    <button id="icon-button-4f85762a-288c-4121-95b7-886b2780dcf6" aria-labelledby="tooltip-8be57f2d-3edf-4d46-9995-b1461b34702a" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
     <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
 </svg>
-</button><tool-tip id="tooltip-1dc89fe6-0d7c-4f43-a197-279e851669ad" for="icon-button-6e99a98c-08e9-43f7-a016-ef3fbced4b98" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-8be57f2d-3edf-4d46-9995-b1461b34702a" for="icon-button-4f85762a-288c-4121-95b7-886b2780dcf6" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
 
 
   
@@ -1381,7 +1381,7 @@
             <a href="/login?return_to=%2Fokta%2Fokta-management-openapi-spec" rel="nofollow" id="repository-details-watch-button" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/okta/okta-management-openapi-spec/tree/master/dist/current&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="d0c93da17272c73a6cb28cb64ba4a22f535db297c9a258b363f8069339d86adf" aria-label="You must be signed in to change notification settings" data-view-component="true" class="btn-sm btn">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-bell mr-2">
     <path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"></path>
 </svg>Notifications
-</a>    <tool-tip id="tooltip-3b0b02dc-0737-4d96-9e5e-3b6bdfc1f577" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-a0e6aec7-9ce8-4e90-8087-0e93508a48bc" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
 
     </li>
 
@@ -1477,22 +1477,22 @@
 </ul>
     <div style="visibility:hidden;" data-view-component="true" class="UnderlineNav-actions js-responsive-underlinenav-overflow position-absolute pr-3 pr-md-4 pr-lg-5 right-0">      <action-menu data-select-variant="none" data-view-component="true">
   <focus-group direction="vertical" mnemonics retain>
-    <button id="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-button" popovertarget="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-overlay" aria-controls="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-list" aria-haspopup="true" aria-labelledby="tooltip-74c80d3f-b237-4afd-b212-c028d5616cf8" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
+    <button id="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-button" popovertarget="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-overlay" aria-controls="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-list" aria-haspopup="true" aria-labelledby="tooltip-e03feb5d-53bb-4f0e-b40a-fd5621534463" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
     <path d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
 </svg>
-</button><tool-tip id="tooltip-74c80d3f-b237-4afd-b212-c028d5616cf8" for="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
+</button><tool-tip id="tooltip-e03feb5d-53bb-4f0e-b40a-fd5621534463" for="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
 
 
-<anchored-position id="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-overlay" anchor="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
+<anchored-position id="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-overlay" anchor="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
   <div data-view-component="true" class="Overlay Overlay--size-auto">
     
       <div data-view-component="true" class="Overlay-body Overlay-body--paddingNone">          <action-list>
   <div data-view-component="true">
-    <ul aria-labelledby="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-button" id="action-menu-4c720176-bac5-45cb-ab5a-11680d0575b7-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
+    <ul aria-labelledby="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-button" id="action-menu-5ca54ecc-8244-4beb-b408-29a7a8f0782b-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
         <li hidden="hidden" data-menu-item="i0code-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-cc3cae00-31d2-4f8b-9f5a-0648907bd6ab" href="/okta/okta-management-openapi-spec" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-fa9dfefe-4947-4eff-abfd-8601baf1aed4" href="/okta/okta-management-openapi-spec" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-code">
     <path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path>
@@ -1508,7 +1508,7 @@
         <li hidden="hidden" data-menu-item="i1issues-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-7270bc46-3bdd-4068-a92e-0da46d9f395c" href="/okta/okta-management-openapi-spec/issues" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-234f0378-fac8-445f-ab82-c4e9389fb27a" href="/okta/okta-management-openapi-spec/issues" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-issue-opened">
     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
@@ -1524,7 +1524,7 @@
         <li hidden="hidden" data-menu-item="i2pull-requests-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-5af0d308-9751-41ca-83a2-675a39bb4d89" href="/okta/okta-management-openapi-spec/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-6cc0f80f-d762-449e-8e18-6abff903ed1c" href="/okta/okta-management-openapi-spec/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-git-pull-request">
     <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path>
@@ -1540,7 +1540,7 @@
         <li hidden="hidden" data-menu-item="i3security-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-1c482f3a-a985-4853-bfdb-7f50dede2bf0" href="/okta/okta-management-openapi-spec/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-1f1e1d3c-3fdd-4c61-83ac-33fc8b17b228" href="/okta/okta-management-openapi-spec/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-shield">
     <path d="M7.467.133a1.748 1.748 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.697 1.697 0 0 1-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 0 1 1.217-1.667Zm.61 1.429a.25.25 0 0 0-.153 0l-5.25 1.68a.25.25 0 0 0-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.34 4.366 3.297a.196.196 0 0 0 .154 0c2.245-.956 3.582-2.104 4.366-3.298C13.225 9.666 13.5 8.36 13.5 7V3.48a.251.251 0 0 0-.174-.237l-5.25-1.68ZM8.75 4.75v3a.75.75 0 0 1-1.5 0v-3a.75.75 0 0 1 1.5 0ZM9 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
@@ -1556,7 +1556,7 @@
         <li hidden="hidden" data-menu-item="i4insights-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-1ea2afb4-b0ee-4f80-a262-d764fb658004" href="/okta/okta-management-openapi-spec/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-1eb647b5-52e1-4dd8-aa70-2e6475074eb3" href="/okta/okta-management-openapi-spec/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-graph">
     <path d="M1.5 1.75V13.5h13.75a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75V1.75a.75.75 0 0 1 1.5 0Zm14.28 2.53-5.25 5.25a.75.75 0 0 1-1.06 0L7 7.06 4.28 9.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.25-3.25a.75.75 0 0 1 1.06 0L10 7.94l4.72-4.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path>
@@ -1611,7 +1611,7 @@
   data-alternate="false"
 >
   
-  <script type="application/json" data-target="react-app.embeddedData">{"payload":{"allShortcutsEnabled":false,"path":"dist/current","repo":{"id":321454682,"defaultBranch":"master","name":"okta-management-openapi-spec","ownerLogin":"okta","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2020-12-14T19:42:39.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/362460?v=4","public":true,"private":false,"isOrgOwned":true},"currentUser":null,"refInfo":{"name":"master","listCacheKey":"v0:1724682644.0","canEdit":false,"refType":"branch","currentOid":"7a121437fcf51ea23f07a504d15b980aaa0cd567"},"tree":{"items":[{"name":".gitkeep","path":"dist/current/.gitkeep","contentType":"file"},{"name":"idp-minimal.yaml","path":"dist/current/idp-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-minimal.yaml","path":"dist/current/idp-noEnums-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance.yaml","path":"dist/current/idp-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"idp-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-oneOfInheritance.yaml","path":"dist/current/idp-oneOfInheritance.yaml","contentType":"file"},{"name":"management-minimal.yaml","path":"dist/current/management-minimal.yaml","contentType":"file"},{"name":"management-noEnums-minimal.yaml","path":"dist/current/management-noEnums-minimal.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/management-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance.yaml","path":"dist/current/management-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"management-oneOfInheritance-noExamples.yaml","path":"dist/current/management-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-oneOfInheritance.yaml","path":"dist/current/management-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-minimal.yaml","path":"dist/current/oauth-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-minimal.yaml","path":"dist/current/oauth-noEnums-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance.yaml","path":"dist/current/oauth-oneOfInheritance.yaml","contentType":"file"}],"templateDirectorySuggestionUrl":null,"readme":null,"totalCount":19,"showBranchInfobar":false},"fileTree":{"dist":{"items":[{"name":"2024.06.1","path":"dist/2024.06.1","contentType":"directory"},{"name":"2024.07.0","path":"dist/2024.07.0","contentType":"directory"},{"name":"current","path":"dist/current","contentType":"directory"},{"name":"legacy-v1-swagger","path":"dist/legacy-v1-swagger","contentType":"directory"}],"totalCount":4},"":{"items":[{"name":".circleci","path":".circleci","contentType":"directory"},{"name":"dist","path":"dist","contentType":"directory"},{"name":".bacon.yml","path":".bacon.yml","contentType":"file"},{"name":"CHANGELOG.md","path":"CHANGELOG.md","contentType":"file"},{"name":"README.md","path":"README.md","contentType":"file"}],"totalCount":5}},"fileTreeProcessingTime":2.550897,"foldersToFetch":[],"treeExpanded":true,"symbolsExpanded":false,"csrf_tokens":{"/okta/okta-management-openapi-spec/branches":{"post":"QIozAt8YwqXmVWjorDXwxcqxENjVHU02a17fMHaOCLqCoUgjmXpU5Z5KIGqwbRL2Z8yca2u1y0pKpG3Mhj76MA"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master":{"post":"MrJVfwPp-EPu6jipaqbzq1mDVRpQbbVUdRQFUFDZLOK13cBRo6Gy6hq48x5qSsrrgXh0bo3I1VEslt02Yd6Wxw"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master?discard_changes=true":{"post":"XJkGzZe3DoourmHqP52-SBWUStRo-l6SgpnYHUz8IZHb9pPjN_9EI9r8ql0_cYcIzW9roLVfPpfbGwB7ffubtA"}}},"title":"okta-management-openapi-spec/dist/current at master · okta/okta-management-openapi-spec","appPayload":{"helpUrl":"https://docs.github.com","findFileWorkerPath":"/assets-cdn/worker/find-file-worker-1583894afd38.js","findInFileWorkerPath":"/assets-cdn/worker/find-in-file-worker-03b87d52cf57.js","githubDevUrl":null,"enabled_features":{"code_nav_ui_events":false,"overview_shared_code_dropdown_button":false,"react_blob_overlay":false,"copilot_conversational_ux_embedding_update":false,"copilot_smell_icebreaker_ux":true,"copilot_workspace":false}}}</script>
+  <script type="application/json" data-target="react-app.embeddedData">{"payload":{"allShortcutsEnabled":false,"path":"dist/current","repo":{"id":321454682,"defaultBranch":"master","name":"okta-management-openapi-spec","ownerLogin":"okta","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2020-12-14T19:42:39.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/362460?v=4","public":true,"private":false,"isOrgOwned":true},"currentUser":null,"refInfo":{"name":"master","listCacheKey":"v0:1724682644.0","canEdit":false,"refType":"branch","currentOid":"7a121437fcf51ea23f07a504d15b980aaa0cd567"},"tree":{"items":[{"name":".gitkeep","path":"dist/current/.gitkeep","contentType":"file"},{"name":"idp-minimal.yaml","path":"dist/current/idp-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-minimal.yaml","path":"dist/current/idp-noEnums-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance.yaml","path":"dist/current/idp-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"idp-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-oneOfInheritance.yaml","path":"dist/current/idp-oneOfInheritance.yaml","contentType":"file"},{"name":"management-minimal.yaml","path":"dist/current/management-minimal.yaml","contentType":"file"},{"name":"management-noEnums-minimal.yaml","path":"dist/current/management-noEnums-minimal.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/management-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance.yaml","path":"dist/current/management-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"management-oneOfInheritance-noExamples.yaml","path":"dist/current/management-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-oneOfInheritance.yaml","path":"dist/current/management-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-minimal.yaml","path":"dist/current/oauth-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-minimal.yaml","path":"dist/current/oauth-noEnums-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance.yaml","path":"dist/current/oauth-oneOfInheritance.yaml","contentType":"file"}],"templateDirectorySuggestionUrl":null,"readme":null,"totalCount":19,"showBranchInfobar":false},"fileTree":{"dist":{"items":[{"name":"2024.06.1","path":"dist/2024.06.1","contentType":"directory"},{"name":"2024.07.0","path":"dist/2024.07.0","contentType":"directory"},{"name":"current","path":"dist/current","contentType":"directory"},{"name":"legacy-v1-swagger","path":"dist/legacy-v1-swagger","contentType":"directory"}],"totalCount":4},"":{"items":[{"name":".circleci","path":".circleci","contentType":"directory"},{"name":"dist","path":"dist","contentType":"directory"},{"name":".bacon.yml","path":".bacon.yml","contentType":"file"},{"name":"CHANGELOG.md","path":"CHANGELOG.md","contentType":"file"},{"name":"README.md","path":"README.md","contentType":"file"}],"totalCount":5}},"fileTreeProcessingTime":2.649804,"foldersToFetch":[],"treeExpanded":true,"symbolsExpanded":false,"csrf_tokens":{"/okta/okta-management-openapi-spec/branches":{"post":"MF6aH5VuEfrPvJ3FCD59UXOBg4sOZkcwb3HUYZndCAY_AYxbFwyoAzkiQBR-C1hkp9ImpMbnWjXKD823CyuKvA"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master":{"post":"FQu_wAgCCcsStK4zsvBQbB6pNnd_jLI83dZztLUaSKyYb6_NS-MXFxkA6vm-XL2Xzg6KHHt9vuTZkDxGzkWinA"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master?discard_changes=true":{"post":"4Fst8L0haaT_1awcOFJoPXvI_ZVX6A9JVmp11D3dLOxtPz39_sB3ePRh6NY0_oXGq29B_lMZA5FSLDomRoLG3A"}}},"title":"okta-management-openapi-spec/dist/current at master · okta/okta-management-openapi-spec","appPayload":{"helpUrl":"https://docs.github.com","findFileWorkerPath":"/assets-cdn/worker/find-file-worker-1583894afd38.js","findInFileWorkerPath":"/assets-cdn/worker/find-in-file-worker-03b87d52cf57.js","githubDevUrl":null,"enabled_features":{"code_nav_ui_events":false,"overview_shared_code_dropdown_button":false,"react_blob_overlay":false,"copilot_conversational_ux_embedding_update":false,"copilot_smell_icebreaker_ux":true,"copilot_workspace":false}}}</script>
   <div data-target="react-app.reactRoot"></div>
 </react-app>
 </turbo-frame>
