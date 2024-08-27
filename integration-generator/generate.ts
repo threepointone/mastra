@@ -10,14 +10,17 @@ import { createIntegration, createPackageJson, createTsConfig } from './template
 
 function buildSyncFunc({ name, paths }) {
     return Object.entries(paths).map(([path, methods]) => {
-        console.log(methods)
         return { path, method: (methods as any).get }
     }).filter(Boolean).filter(({ method }) => {
         return method?.responses?.['200']?.content?.['application/json']?.schema?.properties?.data?.type === 'array'
     }).map(({ method, path }) => {
+
+        console.log(method)
+
         const entityType = method?.responses?.['200']?.content?.['application/json']?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '')
         return {
             path,
+            entityType,
             eventDef: `
              '${name.toLowerCase()}.${entityType}/sync': {
                 schema: z.object({
@@ -139,12 +142,20 @@ async function main() {
 
                 syncFuncImports = funcMap.map(({funcName}) => `import { ${funcName} } from './events/${funcName}'`).join('\n')
 
-                funcMap.forEach(({ funcName}) => {
+                funcMap.forEach(({ funcName, entityType }) => {
                     fs.writeFileSync(path.join(srcPath, 'events', `${funcName}.ts`), `
                     import { EventHandler } from '@arkw/core';
                     import { ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration } from '..';
 
-                    export const ${funcName}: EventHandler<${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration> = ()=>{}
+                    export const ${funcName}: EventHandler<${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration> = ({
+  eventKey,
+  integrationInstance: { name, dataLayer },
+  makeWebhookUrl,
+}) => ({        
+                        id: \`\${name}-sync-${entityType}\`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {},
+                })
                 `)
                 })
 

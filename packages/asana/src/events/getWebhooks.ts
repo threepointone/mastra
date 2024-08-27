@@ -2,5 +2,13 @@
                     import { EventHandler } from '@arkw/core';
                     import { AsanaIntegration } from '..';
 
-                    export const getWebhooks: EventHandler<AsanaIntegration> = ()=>{}
+                    export const getWebhooks: EventHandler<AsanaIntegration> = ({
+  eventKey,
+  integrationInstance: { name, dataLayer },
+  makeWebhookUrl,
+}) => ({        
+                        id: `${name}-sync-WebhookResponse`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {},
+                })
                 
