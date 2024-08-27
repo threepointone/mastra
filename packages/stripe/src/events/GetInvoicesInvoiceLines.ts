@@ -1,39 +1,39 @@
+import { EventHandler } from '@arkw/core';
 
-                    import { EventHandler } from '@arkw/core';
-                    import { line_itemFields } from '../constants';
-                    import { StripeIntegration } from '..';
+import { line_itemFields } from '../constants';
 
-                    export const GetInvoicesInvoiceLines: EventHandler<StripeIntegration> = ({
+import { StripeIntegration } from '..';
+
+export const GetInvoicesInvoiceLines: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
-                        id: `${name}-sync-line_item`,
-                        event: eventKey,
-                        executor: async ({ event, step }: any) => {
-                            const { referenceId } = event.user;
-                            const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/invoices/{invoice}/lines'].get()
+}) => ({
+  id: `${name}-sync-line_item`,
+  event: eventKey,
+  executor: async ({ event, step }: any) => {
+    const { referenceId } = event.user;
+    const proxy = await getProxy({ referenceId });
+    const response = await proxy['/v1/invoices/{invoice}/lines'].get();
 
-                            if (!response.ok) {
-                            return
-                            }
+    if (!response.ok) {
+      return;
+    }
 
-                            const d = await response.json()
+    const d = await response.json();
 
-                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-                                externalId: _externalId,
-                                data: d2,
-                                entityType: `line_item`,
-                            }));
+    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+      externalId: _externalId,
+      data: d2,
+      entityType: `line_item`,
+    }));
 
-                            await dataLayer?.syncData({
-                                name,
-                                referenceId,
-                                data: records,
-                                type: `line_item`,
-                                properties: line_itemFields,
-                            });
-                        },
-                })
-                
+    await dataLayer?.syncData({
+      name,
+      referenceId,
+      data: records,
+      type: `line_item`,
+      properties: line_itemFields,
+    });
+  },
+});

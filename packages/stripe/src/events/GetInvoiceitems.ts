@@ -1,39 +1,39 @@
+import { EventHandler } from '@arkw/core';
 
-                    import { EventHandler } from '@arkw/core';
-                    import { invoiceitemFields } from '../constants';
-                    import { StripeIntegration } from '..';
+import { invoiceitemFields } from '../constants';
 
-                    export const GetInvoiceitems: EventHandler<StripeIntegration> = ({
+import { StripeIntegration } from '..';
+
+export const GetInvoiceitems: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
-                        id: `${name}-sync-invoiceitem`,
-                        event: eventKey,
-                        executor: async ({ event, step }: any) => {
-                            const { referenceId } = event.user;
-                            const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/invoiceitems'].get()
+}) => ({
+  id: `${name}-sync-invoiceitem`,
+  event: eventKey,
+  executor: async ({ event, step }: any) => {
+    const { referenceId } = event.user;
+    const proxy = await getProxy({ referenceId });
+    const response = await proxy['/v1/invoiceitems'].get();
 
-                            if (!response.ok) {
-                            return
-                            }
+    if (!response.ok) {
+      return;
+    }
 
-                            const d = await response.json()
+    const d = await response.json();
 
-                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-                                externalId: _externalId,
-                                data: d2,
-                                entityType: `invoiceitem`,
-                            }));
+    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+      externalId: _externalId,
+      data: d2,
+      entityType: `invoiceitem`,
+    }));
 
-                            await dataLayer?.syncData({
-                                name,
-                                referenceId,
-                                data: records,
-                                type: `invoiceitem`,
-                                properties: invoiceitemFields,
-                            });
-                        },
-                })
-                
+    await dataLayer?.syncData({
+      name,
+      referenceId,
+      data: records,
+      type: `invoiceitem`,
+      properties: invoiceitemFields,
+    });
+  },
+});

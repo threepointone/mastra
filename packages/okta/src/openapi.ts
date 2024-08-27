@@ -39,7 +39,7 @@
 
 
   <script type="application/json" id="client-env">{"locale":"en","featureFlags":["ab_test_homepage_what_is_copilot_video","code_vulnerability_scanning","copilot_beta_features_opt_in","copilot_chat_conversation_intent_knowledge_search_skill","copilot_chat_static_thread_suggestions","copilot_completion_new_domain","copilot_conversational_ux_history_refs","copilot_followup_to_agent","copilot_implicit_context","copilot_smell_icebreaker_ux","custom_inp","experimentation_azure_variant_endpoint","failbot_handle_non_errors","geojson_azure_maps","ghas_copilot_agents_ga_web_updates","ghost_pilot_confidence_truncation_25","ghost_pilot_stream_handling","hovercard_accessibility","hovercard_longer_activate_timeout","marketing_pages_search_explore_provider","remove_child_patch","sample_network_conn_type","site_metered_billing_update","ignore_hidden_in_quote_reply"]}</script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-d960bc35e8c0.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-4c751705dd42.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_dompurify_dist_purify_js-89a69c248502.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover_js-56729c905fe2.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_arianotify-polyfill_ariaNotify-polyfill_js-node_modules_github_mi-247092-627b030d3acc.js"></script>
@@ -143,7 +143,7 @@
   <meta name="current-catalog-service-hash" content="f3abb0cc802f3d7b95fc8762b94bdcb13bf39634c40c357301c4aa1d67a256fb">
 
 
-  <meta name="request-id" content="F675:1272:9CE5C9:9FE63C:66CE2B1A" data-pjax-transient="true"/><meta name="html-safe-nonce" content="5a4d7656ad6241a2a0a1fbd4a87de8bf786f3cb0bca8764fa8c5515b2211e548" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJGNjc1OjEyNzI6OUNFNUM5OjlGRTYzQzo2NkNFMkIxQSIsInZpc2l0b3JfaWQiOiI3NDIyMTk0MTQ1MjMxOTUxNCIsInJlZ2lvbl9lZGdlIjoic2VhIiwicmVnaW9uX3JlbmRlciI6InNlYSJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="9d9554feab30222cc06f0d5cf65e2de17a34642c61ef59d9e502379fef48a1b1" data-pjax-transient="true"/>
+  <meta name="request-id" content="F855:1272:AAF0C5:AE22FB:66CE2E39" data-pjax-transient="true"/><meta name="html-safe-nonce" content="2967fd6ff82298d1bb011d7b090a781a6d351c30e8e1ae907b97e4ccd1e28576" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJGODU1OjEyNzI6QUFGMEM1OkFFMjJGQjo2NkNFMkUzOSIsInZpc2l0b3JfaWQiOiI0NTg0NDA5NjY5MDQwOTgzNjEiLCJyZWdpb25fZWRnZSI6InNlYSIsInJlZ2lvbl9yZW5kZXIiOiJzZWEifQ==" data-pjax-transient="true"/><meta name="visitor-hmac" content="3b052216a593c6c481cf324deec8b7b8c9a7e9622a22baaf2ebbbfe3838294a7" data-pjax-transient="true"/>
 
 
     <meta name="hovercard-subject-tag" content="repository:321454682" data-turbo-transient>
@@ -196,10 +196,10 @@
         <meta name="expected-hostname" content="github.com">
 
 
-  <meta http-equiv="x-pjax-version" content="d40290073999d3247f56c85158450384f50cf85ccfbad9ca854e40a9a576c870" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-version" content="2c108a393dfd099a746693e68603f52eec2c9ea4991fc8aaed21f6918d485e45" data-turbo-track="reload">
   <meta http-equiv="x-pjax-csp-version" content="43bc2a0e2750a1219c17b5bf1ec22aae37041bbc018bc5e27bb7708f80e7ab88" data-turbo-track="reload">
   <meta http-equiv="x-pjax-css-version" content="53da7541d4baee7b8306ac56008d4945ebd39b5ca8cc3ed5d9b77b1c9a191380" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-js-version" content="34bcf5766aa59ec1eccc552f3cfaba56912ec36c0c8438fbcd83d38b97b2dcbd" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-js-version" content="85803bf1721279f9d2c3d859027022bacd35d2ddad24b9e28b2faa3c1a34bc4d" data-turbo-track="reload">
 
   <meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
 
@@ -800,7 +800,7 @@
                 
 
 
-<qbsearch-input class="search-input" data-scope="repo:okta/okta-management-openapi-spec" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="4IVPFkBwI0DhAQBzrKY5uYuckHz8PLkZhU_cZEq55FbvUTv3v9aOFHrh964mJJ_lSQ5mr3P9EefiDZ002-et9A" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="okta/okta-management-openapi-spec" data-current-org="okta" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
+<qbsearch-input class="search-input" data-scope="repo:okta/okta-management-openapi-spec" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="bj3oIRMnamkzof_znt_RniZ3zjfLZ-Y1szVP3OwVsfeOAvvPBfp_14xYMatO_YYUEVEL5tScSQ06PfvYbha4Zw" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="okta/okta-management-openapi-spec" data-current-org="okta" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
   <div
     class="search-input-container search-with-dialog position-relative d-flex flex-row flex-items-center mr-4 rounded"
     data-action="click:qbsearch-input#searchInputContainerClicked"
@@ -865,7 +865,7 @@
           ></div>
           <div class="QueryBuilder-InputWrapper">
             <div aria-hidden="true" class="QueryBuilder-Sizer" data-target="query-builder.sizer"></div>
-            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-89b3181e-6db3-4edf-8cb3-9c1a943e78bf" data-target="query-builder.input" data-action="
+            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-aa2f8dc7-bb4c-4af2-ba95-88d9c4c292db" data-target="query-builder.input" data-action="
           input:query-builder#inputChange
           blur:query-builder#inputBlur
           keydown:query-builder#inputKeydown
@@ -1102,7 +1102,7 @@
                   id="query-builder-test-results"
                 ></ul>
         </div>
-      <div class="FormControl-inlineValidation" id="validation-89b3181e-6db3-4edf-8cb3-9c1a943e78bf" hidden="hidden">
+      <div class="FormControl-inlineValidation" id="validation-aa2f8dc7-bb4c-4af2-ba95-88d9c4c292db" hidden="hidden">
         <span class="FormControl-inlineValidation--visual">
           <svg aria-hidden="true" height="12" viewBox="0 0 12 12" version="1.1" width="12" data-view-component="true" class="octicon octicon-alert-fill">
     <path d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 0 1-1.146 1.954H1.33A1.313 1.313 0 0 1 .183 9.058ZM7 7V3H5v4Zm-1 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path>
@@ -1145,7 +1145,7 @@
   
 </div>
       <scrollable-region data-labelled-by="feedback-dialog-title">
-        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="6E+AYUjehnc3DJM0yp1QopkRa1+Xu+fXopYNJ3m+HKmZ8YnDoUabRQ51bAPZrRnHn1kgqc59aStR1+tM0M+pDg==" />
+        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="sHkGurdAhBIxg0ONbNheJ1MsQ7PxCBxOAhQ5v9rN3i5Ka8BYSCku4uLJiZE7Tz9tmTctOtazEakD5p7ZtT2gsQ==" />
           <p>We read every piece of feedback, and take your input very seriously.</p>
           <textarea name="feedback" class="form-control width-full mb-2" style="height: 120px" id="feedback"></textarea>
           <input name="include_email" id="include_email" aria-label="Include my email address so I can be contacted" class="form-control mr-2" type="checkbox">
@@ -1183,7 +1183,7 @@
         <div data-view-component="true" class="Overlay-body">        <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
         <div hidden class="create-custom-scope-form" data-target="custom-scopes.createCustomScopeForm">
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="Xzso0xa/khVzT9n9drKbdgn6n+O3EfJ9E2CbgnXbsGCrAQJ5jsIwRo89hO17tQu6n+hQgbwiOC5rfN6Hk/pr+A==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="OhZKHSLXeBa5MIlUW9p1ZNNAD9bm8U9u5Y6araAnQMMNzyrbREuxIdAiMO2Cedub3ixbtD9eT5ymwpQMZq9XqQ==" />
           <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
           <input type="hidden" id="custom_scope_id" name="custom_scope_id" data-target="custom-scopes.customScopesIdField">
@@ -1201,7 +1201,7 @@
                 placeholder="github-ruby"
                 required
                 maxlength="50">
-              <input type="hidden" data-csrf="true" value="k4jS83Tub0YruHy0wUjdkhbtQ/j1vpW5WBWyZQh3TVAoVg6NKE6XI7HnRuCZLIsl3KrQa/1UwPXSTrcY9koExg==" />
+              <input type="hidden" data-csrf="true" value="/QebK/tGyBjGgvNmyLDB3aKpOyA0KS5RxnO7l551EAvydeYqidV72+Q/y4BImOgPD0BNcQEyG90gF9nerVN8vQ==" />
             </auto-check>
           </div>
 
@@ -1275,10 +1275,10 @@
         <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
         <span class="js-stale-session-flash-switched" hidden>You switched accounts on another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
 
-    <button id="icon-button-9113524d-3744-4930-ab69-ef59f1641b36" aria-labelledby="tooltip-531d10d7-4a63-4966-8aeb-0e38d611843a" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+    <button id="icon-button-8cd9eec9-6edd-452c-b0b5-f853cd847724" aria-labelledby="tooltip-1faab656-44b2-4253-b305-f302b98071a5" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
     <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
 </svg>
-</button><tool-tip id="tooltip-531d10d7-4a63-4966-8aeb-0e38d611843a" for="icon-button-9113524d-3744-4930-ab69-ef59f1641b36" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-1faab656-44b2-4253-b305-f302b98071a5" for="icon-button-8cd9eec9-6edd-452c-b0b5-f853cd847724" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
 
 
   
@@ -1381,7 +1381,7 @@
             <a href="/login?return_to=%2Fokta%2Fokta-management-openapi-spec" rel="nofollow" id="repository-details-watch-button" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/okta/okta-management-openapi-spec/tree/master/dist/current&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="d0c93da17272c73a6cb28cb64ba4a22f535db297c9a258b363f8069339d86adf" aria-label="You must be signed in to change notification settings" data-view-component="true" class="btn-sm btn">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-bell mr-2">
     <path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"></path>
 </svg>Notifications
-</a>    <tool-tip id="tooltip-76f82405-390d-4ee9-9cab-53e0595d0f98" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-1d058439-38a8-4c6f-a5be-a653dec8a015" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
 
     </li>
 
@@ -1477,22 +1477,22 @@
 </ul>
     <div style="visibility:hidden;" data-view-component="true" class="UnderlineNav-actions js-responsive-underlinenav-overflow position-absolute pr-3 pr-md-4 pr-lg-5 right-0">      <action-menu data-select-variant="none" data-view-component="true">
   <focus-group direction="vertical" mnemonics retain>
-    <button id="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-button" popovertarget="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-overlay" aria-controls="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-list" aria-haspopup="true" aria-labelledby="tooltip-a1bbc8b5-641a-40ae-8bbc-e1868ec24c6c" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
+    <button id="action-menu-418b331d-7555-4d67-9a40-c14da491002e-button" popovertarget="action-menu-418b331d-7555-4d67-9a40-c14da491002e-overlay" aria-controls="action-menu-418b331d-7555-4d67-9a40-c14da491002e-list" aria-haspopup="true" aria-labelledby="tooltip-71bc9495-c2fa-434f-95a4-173428b8c574" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
     <path d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
 </svg>
-</button><tool-tip id="tooltip-a1bbc8b5-641a-40ae-8bbc-e1868ec24c6c" for="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
+</button><tool-tip id="tooltip-71bc9495-c2fa-434f-95a4-173428b8c574" for="action-menu-418b331d-7555-4d67-9a40-c14da491002e-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
 
 
-<anchored-position id="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-overlay" anchor="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
+<anchored-position id="action-menu-418b331d-7555-4d67-9a40-c14da491002e-overlay" anchor="action-menu-418b331d-7555-4d67-9a40-c14da491002e-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
   <div data-view-component="true" class="Overlay Overlay--size-auto">
     
       <div data-view-component="true" class="Overlay-body Overlay-body--paddingNone">          <action-list>
   <div data-view-component="true">
-    <ul aria-labelledby="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-button" id="action-menu-e420709a-2dcc-4d8b-9008-11e3de5cede3-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
+    <ul aria-labelledby="action-menu-418b331d-7555-4d67-9a40-c14da491002e-button" id="action-menu-418b331d-7555-4d67-9a40-c14da491002e-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
         <li hidden="hidden" data-menu-item="i0code-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-24774a8d-9f2c-4e29-a3eb-141d23cbcc34" href="/okta/okta-management-openapi-spec" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-55aed94e-c6b2-437a-95c8-e18672a3ebf2" href="/okta/okta-management-openapi-spec" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-code">
     <path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path>
@@ -1508,7 +1508,7 @@
         <li hidden="hidden" data-menu-item="i1issues-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-6e07e8fd-efde-48d5-8ed4-3a9636fe3abb" href="/okta/okta-management-openapi-spec/issues" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-e96dc4b8-cff6-45a3-9f75-4bcaaad42ce1" href="/okta/okta-management-openapi-spec/issues" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-issue-opened">
     <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
@@ -1524,7 +1524,7 @@
         <li hidden="hidden" data-menu-item="i2pull-requests-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-228be627-1724-40f8-95eb-a03913289251" href="/okta/okta-management-openapi-spec/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-ba93a554-3bf1-4089-a60e-5afdd798ce7b" href="/okta/okta-management-openapi-spec/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-git-pull-request">
     <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path>
@@ -1540,7 +1540,7 @@
         <li hidden="hidden" data-menu-item="i3security-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-e4b3cec9-cf72-40e6-a43c-cd27a9f31900" href="/okta/okta-management-openapi-spec/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-80249475-1bef-4ced-b66e-0a36ebddd9f9" href="/okta/okta-management-openapi-spec/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-shield">
     <path d="M7.467.133a1.748 1.748 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.697 1.697 0 0 1-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 0 1 1.217-1.667Zm.61 1.429a.25.25 0 0 0-.153 0l-5.25 1.68a.25.25 0 0 0-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.34 4.366 3.297a.196.196 0 0 0 .154 0c2.245-.956 3.582-2.104 4.366-3.298C13.225 9.666 13.5 8.36 13.5 7V3.48a.251.251 0 0 0-.174-.237l-5.25-1.68ZM8.75 4.75v3a.75.75 0 0 1-1.5 0v-3a.75.75 0 0 1 1.5 0ZM9 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
@@ -1556,7 +1556,7 @@
         <li hidden="hidden" data-menu-item="i4insights-tab" data-targets="action-list.items" role="none" data-view-component="true" class="ActionListItem">
     
     
-    <a tabindex="-1" id="item-90a4a82f-2837-411f-ab64-d122f24af935" href="/okta/okta-management-openapi-spec/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+    <a tabindex="-1" id="item-9ebfdb88-8795-4b63-bab9-963943a92907" href="/okta/okta-management-openapi-spec/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
         <span class="ActionListItem-visual ActionListItem-visual--leading">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-graph">
     <path d="M1.5 1.75V13.5h13.75a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75V1.75a.75.75 0 0 1 1.5 0Zm14.28 2.53-5.25 5.25a.75.75 0 0 1-1.06 0L7 7.06 4.28 9.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.25-3.25a.75.75 0 0 1 1.06 0L10 7.94l4.72-4.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path>
@@ -1611,7 +1611,7 @@
   data-alternate="false"
 >
   
-  <script type="application/json" data-target="react-app.embeddedData">{"payload":{"allShortcutsEnabled":false,"path":"dist/current","repo":{"id":321454682,"defaultBranch":"master","name":"okta-management-openapi-spec","ownerLogin":"okta","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2020-12-14T19:42:39.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/362460?v=4","public":true,"private":false,"isOrgOwned":true},"currentUser":null,"refInfo":{"name":"master","listCacheKey":"v0:1724682644.0","canEdit":false,"refType":"branch","currentOid":"7a121437fcf51ea23f07a504d15b980aaa0cd567"},"tree":{"items":[{"name":".gitkeep","path":"dist/current/.gitkeep","contentType":"file"},{"name":"idp-minimal.yaml","path":"dist/current/idp-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-minimal.yaml","path":"dist/current/idp-noEnums-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance.yaml","path":"dist/current/idp-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"idp-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-oneOfInheritance.yaml","path":"dist/current/idp-oneOfInheritance.yaml","contentType":"file"},{"name":"management-minimal.yaml","path":"dist/current/management-minimal.yaml","contentType":"file"},{"name":"management-noEnums-minimal.yaml","path":"dist/current/management-noEnums-minimal.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/management-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance.yaml","path":"dist/current/management-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"management-oneOfInheritance-noExamples.yaml","path":"dist/current/management-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-oneOfInheritance.yaml","path":"dist/current/management-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-minimal.yaml","path":"dist/current/oauth-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-minimal.yaml","path":"dist/current/oauth-noEnums-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance.yaml","path":"dist/current/oauth-oneOfInheritance.yaml","contentType":"file"}],"templateDirectorySuggestionUrl":null,"readme":null,"totalCount":19,"showBranchInfobar":false},"fileTree":{"dist":{"items":[{"name":"2024.06.1","path":"dist/2024.06.1","contentType":"directory"},{"name":"2024.07.0","path":"dist/2024.07.0","contentType":"directory"},{"name":"current","path":"dist/current","contentType":"directory"},{"name":"legacy-v1-swagger","path":"dist/legacy-v1-swagger","contentType":"directory"}],"totalCount":4},"":{"items":[{"name":".circleci","path":".circleci","contentType":"directory"},{"name":"dist","path":"dist","contentType":"directory"},{"name":".bacon.yml","path":".bacon.yml","contentType":"file"},{"name":"CHANGELOG.md","path":"CHANGELOG.md","contentType":"file"},{"name":"README.md","path":"README.md","contentType":"file"}],"totalCount":5}},"fileTreeProcessingTime":2.8003080000000002,"foldersToFetch":[],"treeExpanded":true,"symbolsExpanded":false,"csrf_tokens":{"/okta/okta-management-openapi-spec/branches":{"post":"ftAz-PyuY2Kif_qb-0k5ZLj3M09v5fje64PwED8SS3zxjp-HWkfqZg9zO9KIESmKlYnpPdr1Wu4qCjgX528RHw"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master":{"post":"nJly4JhjKil-OgfH4WmmNSSo4p55drVj5LiYisQY9gYfaS1uvC1iozf9FYfUeXw1WqlPh-VYKzN55IajMRL-xw"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master?discard_changes=true":{"post":"LDu_K_OQpu7JYWs-9E670fBS_kGhqff67Stsu9CGWtOvy-Cl197uZICmeX7BXmHRjlNTWD2Haapwd3KSJYxSEg"}}},"title":"okta-management-openapi-spec/dist/current at master · okta/okta-management-openapi-spec","appPayload":{"helpUrl":"https://docs.github.com","findFileWorkerPath":"/assets-cdn/worker/find-file-worker-1583894afd38.js","findInFileWorkerPath":"/assets-cdn/worker/find-in-file-worker-03b87d52cf57.js","githubDevUrl":null,"enabled_features":{"code_nav_ui_events":false,"overview_shared_code_dropdown_button":false,"react_blob_overlay":false,"copilot_conversational_ux_embedding_update":false,"copilot_smell_icebreaker_ux":true,"copilot_workspace":false}}}</script>
+  <script type="application/json" data-target="react-app.embeddedData">{"payload":{"allShortcutsEnabled":false,"path":"dist/current","repo":{"id":321454682,"defaultBranch":"master","name":"okta-management-openapi-spec","ownerLogin":"okta","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2020-12-14T19:42:39.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/362460?v=4","public":true,"private":false,"isOrgOwned":true},"currentUser":null,"refInfo":{"name":"master","listCacheKey":"v0:1724682644.0","canEdit":false,"refType":"branch","currentOid":"7a121437fcf51ea23f07a504d15b980aaa0cd567"},"tree":{"items":[{"name":".gitkeep","path":"dist/current/.gitkeep","contentType":"file"},{"name":"idp-minimal.yaml","path":"dist/current/idp-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-minimal.yaml","path":"dist/current/idp-noEnums-minimal.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-noEnums-oneOfInheritance.yaml","path":"dist/current/idp-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"idp-oneOfInheritance-noExamples.yaml","path":"dist/current/idp-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"idp-oneOfInheritance.yaml","path":"dist/current/idp-oneOfInheritance.yaml","contentType":"file"},{"name":"management-minimal.yaml","path":"dist/current/management-minimal.yaml","contentType":"file"},{"name":"management-noEnums-minimal.yaml","path":"dist/current/management-noEnums-minimal.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/management-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-noEnums-oneOfInheritance.yaml","path":"dist/current/management-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"management-oneOfInheritance-noExamples.yaml","path":"dist/current/management-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"management-oneOfInheritance.yaml","path":"dist/current/management-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-minimal.yaml","path":"dist/current/oauth-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-minimal.yaml","path":"dist/current/oauth-noEnums-minimal.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-noEnums-oneOfInheritance.yaml","path":"dist/current/oauth-noEnums-oneOfInheritance.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance-noExamples.yaml","path":"dist/current/oauth-oneOfInheritance-noExamples.yaml","contentType":"file"},{"name":"oauth-oneOfInheritance.yaml","path":"dist/current/oauth-oneOfInheritance.yaml","contentType":"file"}],"templateDirectorySuggestionUrl":null,"readme":null,"totalCount":19,"showBranchInfobar":false},"fileTree":{"dist":{"items":[{"name":"2024.06.1","path":"dist/2024.06.1","contentType":"directory"},{"name":"2024.07.0","path":"dist/2024.07.0","contentType":"directory"},{"name":"current","path":"dist/current","contentType":"directory"},{"name":"legacy-v1-swagger","path":"dist/legacy-v1-swagger","contentType":"directory"}],"totalCount":4},"":{"items":[{"name":".circleci","path":".circleci","contentType":"directory"},{"name":"dist","path":"dist","contentType":"directory"},{"name":".bacon.yml","path":".bacon.yml","contentType":"file"},{"name":"CHANGELOG.md","path":"CHANGELOG.md","contentType":"file"},{"name":"README.md","path":"README.md","contentType":"file"}],"totalCount":5}},"fileTreeProcessingTime":3.047323,"foldersToFetch":[],"treeExpanded":true,"symbolsExpanded":false,"csrf_tokens":{"/okta/okta-management-openapi-spec/branches":{"post":"NmBNzrkY70086Z1ZnpfT2ZsqgtNdO6BTwceT4aHreh3LyxphX7ABMt96b4TSRVrWbd_DqZR2-vBGMUnes4LPsw"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master":{"post":"WHhR5uCI365YQPBDCu8fRHnYfN7U_RZsKl1zdmAggeR3jBNaDE8pJn7Bf1EfX4F7MhN9QjLSHsR3CTffaV5r5g"},"/okta/okta-management-openapi-spec/branches/fetch_and_merge/master?discard_changes=true":{"post":"H4wdOXPI7kL8BHpa3p1_VL6X3RPOzWCQK3-9OHgUhfgweF-Fnw8YytqF9UjLLeFr9VzcjyjiaDh2K_mRcWpv-g"}}},"title":"okta-management-openapi-spec/dist/current at master · okta/okta-management-openapi-spec","appPayload":{"helpUrl":"https://docs.github.com","findFileWorkerPath":"/assets-cdn/worker/find-file-worker-1583894afd38.js","findInFileWorkerPath":"/assets-cdn/worker/find-in-file-worker-03b87d52cf57.js","githubDevUrl":null,"enabled_features":{"code_nav_ui_events":false,"overview_shared_code_dropdown_button":false,"react_blob_overlay":false,"copilot_conversational_ux_embedding_update":false,"copilot_smell_icebreaker_ux":true,"copilot_workspace":false}}}</script>
   <div data-target="react-app.reactRoot"><style data-styled="true" data-styled-version="5.3.6">.jUaXMC{font-weight:600;font-size:32px;margin:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:14px;}/*!sc*/
 .jUaXMC:where([data-variant='large']){font:var(--text-title-shorthand-large,600 32px / 1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji");}/*!sc*/
 .jUaXMC:where([data-variant='medium']){font:var(--text-title-shorthand-medium,600 20px / 1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji");}/*!sc*/

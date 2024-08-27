@@ -135,6 +135,15 @@ importers:
         specifier: ^5
         version: 5.5.4
 
+  integration-generator:
+    dependencies:
+      execa:
+        specifier: ^9.3.1
+        version: 9.3.1
+      yaml:
+        specifier: ^2.5.0
+        version: 2.5.0
+
   packages/admin:
     dependencies:
       '@arkw/core':

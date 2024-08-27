@@ -1,39 +1,39 @@
+import { EventHandler } from '@arkw/core';
 
-                    import { EventHandler } from '@arkw/core';
-                    import { WorkspaceMembershipCompactFields } from '../constants';
-                    import { AsanaIntegration } from '..';
+import { WorkspaceMembershipCompactFields } from '../constants';
 
-                    export const getWorkspaceMembershipsForUser: EventHandler<AsanaIntegration> = ({
+import { AsanaIntegration } from '..';
+
+export const getWorkspaceMembershipsForUser: EventHandler<AsanaIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
-                        id: `${name}-sync-WorkspaceMembershipCompact`,
-                        event: eventKey,
-                        executor: async ({ event, step }: any) => {
-                            const { referenceId } = event.user;
-                            const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/users/{user_gid}/workspace_memberships'].get()
+}) => ({
+  id: `${name}-sync-WorkspaceMembershipCompact`,
+  event: eventKey,
+  executor: async ({ event, step }: any) => {
+    const { referenceId } = event.user;
+    const proxy = await getProxy({ referenceId });
+    const response = await proxy['/users/{user_gid}/workspace_memberships'].get();
 
-                            if (!response.ok) {
-                            return
-                            }
+    if (!response.ok) {
+      return;
+    }
 
-                            const d = await response.json()
+    const d = await response.json();
 
-                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-                                externalId: _externalId,
-                                data: d2,
-                                entityType: `WorkspaceMembershipCompact`,
-                            }));
+    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+      externalId: _externalId,
+      data: d2,
+      entityType: `WorkspaceMembershipCompact`,
+    }));
 
-                            await dataLayer?.syncData({
-                                name,
-                                referenceId,
-                                data: records,
-                                type: `WorkspaceMembershipCompact`,
-                                properties: WorkspaceMembershipCompactFields,
-                            });
-                        },
-                })
-                
+    await dataLayer?.syncData({
+      name,
+      referenceId,
+      data: records,
+      type: `WorkspaceMembershipCompact`,
+      properties: WorkspaceMembershipCompactFields,
+    });
+  },
+});

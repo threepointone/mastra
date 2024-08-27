@@ -1,39 +1,39 @@
+import { EventHandler } from '@arkw/core';
 
-                    import { EventHandler } from '@arkw/core';
-                    import { credit_noteFields } from '../constants';
-                    import { StripeIntegration } from '..';
+import { credit_noteFields } from '../constants';
 
-                    export const GetCreditNotes: EventHandler<StripeIntegration> = ({
+import { StripeIntegration } from '..';
+
+export const GetCreditNotes: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
-                        id: `${name}-sync-credit_note`,
-                        event: eventKey,
-                        executor: async ({ event, step }: any) => {
-                            const { referenceId } = event.user;
-                            const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/credit_notes'].get()
+}) => ({
+  id: `${name}-sync-credit_note`,
+  event: eventKey,
+  executor: async ({ event, step }: any) => {
+    const { referenceId } = event.user;
+    const proxy = await getProxy({ referenceId });
+    const response = await proxy['/v1/credit_notes'].get();
 
-                            if (!response.ok) {
-                            return
-                            }
+    if (!response.ok) {
+      return;
+    }
 
-                            const d = await response.json()
+    const d = await response.json();
 
-                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-                                externalId: _externalId,
-                                data: d2,
-                                entityType: `credit_note`,
-                            }));
+    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+      externalId: _externalId,
+      data: d2,
+      entityType: `credit_note`,
+    }));
 
-                            await dataLayer?.syncData({
-                                name,
-                                referenceId,
-                                data: records,
-                                type: `credit_note`,
-                                properties: credit_noteFields,
-                            });
-                        },
-                })
-                
+    await dataLayer?.syncData({
+      name,
+      referenceId,
+      data: records,
+      type: `credit_note`,
+      properties: credit_noteFields,
+    });
+  },
+});

@@ -1,39 +1,39 @@
+import { EventHandler } from '@arkw/core';
 
-                    import { EventHandler } from '@arkw/core';
-                    import { SectionCompactFields } from '../constants';
-                    import { AsanaIntegration } from '..';
+import { SectionCompactFields } from '../constants';
 
-                    export const getSectionsForProject: EventHandler<AsanaIntegration> = ({
+import { AsanaIntegration } from '..';
+
+export const getSectionsForProject: EventHandler<AsanaIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
-                        id: `${name}-sync-SectionCompact`,
-                        event: eventKey,
-                        executor: async ({ event, step }: any) => {
-                            const { referenceId } = event.user;
-                            const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/projects/{project_gid}/sections'].get()
+}) => ({
+  id: `${name}-sync-SectionCompact`,
+  event: eventKey,
+  executor: async ({ event, step }: any) => {
+    const { referenceId } = event.user;
+    const proxy = await getProxy({ referenceId });
+    const response = await proxy['/projects/{project_gid}/sections'].get();
 
-                            if (!response.ok) {
-                            return
-                            }
+    if (!response.ok) {
+      return;
+    }
 
-                            const d = await response.json()
+    const d = await response.json();
 
-                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-                                externalId: _externalId,
-                                data: d2,
-                                entityType: `SectionCompact`,
-                            }));
+    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+      externalId: _externalId,
+      data: d2,
+      entityType: `SectionCompact`,
+    }));
 
-                            await dataLayer?.syncData({
-                                name,
-                                referenceId,
-                                data: records,
-                                type: `SectionCompact`,
-                                properties: SectionCompactFields,
-                            });
-                        },
-                })
-                
+    await dataLayer?.syncData({
+      name,
+      referenceId,
+      data: records,
+      type: `SectionCompact`,
+      properties: SectionCompactFields,
+    });
+  },
+});

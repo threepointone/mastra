@@ -1,6 +1,3 @@
+import { PropertyType } from '@arkw/core';
 
-                    import { PropertyType } from '@arkw/core';
-                    
-            export const Questions_CollectionFields = [];
-            
-                    
+export const Questions_CollectionFields = [];

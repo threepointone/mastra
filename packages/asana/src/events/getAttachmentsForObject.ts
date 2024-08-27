@@ -1,38 +1,39 @@
-
 import { EventHandler } from '@arkw/core';
+
 import { AttachmentCompactFields } from '../constants';
+
 import { AsanaIntegration } from '..';
 
 export const getAttachmentsForObject: EventHandler<AsanaIntegration> = ({
-    eventKey,
-    integrationInstance: { name, dataLayer, getProxy },
-    makeWebhookUrl,
+  eventKey,
+  integrationInstance: { name, dataLayer, getProxy },
+  makeWebhookUrl,
 }) => ({
-    id: `${name}-sync-AttachmentCompact`,
-    event: eventKey,
-    executor: async ({ event, step }: any) => {
-        const { referenceId } = event.user;
-        const proxy = await getProxy({ referenceId })
-        const response = await proxy['/attachments'].get()
+  id: `${name}-sync-AttachmentCompact`,
+  event: eventKey,
+  executor: async ({ event, step }: any) => {
+    const { referenceId } = event.user;
+    const proxy = await getProxy({ referenceId });
+    const response = await proxy['/attachments'].get();
 
-        if (!response.ok) {
-            return
-        }
+    if (!response.ok) {
+      return;
+    }
 
-        const d = await response.json()
+    const d = await response.json();
 
-        const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-            externalId: _externalId,
-            data: d2,
-            entityType: `AttachmentCompact`,
-        }));
+    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+      externalId: _externalId,
+      data: d2,
+      entityType: `AttachmentCompact`,
+    }));
 
-        await dataLayer?.syncData({
-            name,
-            referenceId,
-            data: records,
-            type: `AttachmentCompact`,
-            properties: AttachmentCompactFields,
-        });
-    },
-})
+    await dataLayer?.syncData({
+      name,
+      referenceId,
+      data: records,
+      type: `AttachmentCompact`,
+      properties: AttachmentCompactFields,
+    });
+  },
+});

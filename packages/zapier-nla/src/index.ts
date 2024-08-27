@@ -28,7 +28,7 @@ export class Zapier-nlaIntegration extends Integration {
   }
 
   registerEvents() {
-    
+    this.events = {}
     return this.events;
   }
 

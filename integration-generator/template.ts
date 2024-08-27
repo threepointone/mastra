@@ -1,98 +1,107 @@
 export function createPackageJson(name: string) {
-    return {
-        "name": `@arkw/${name}`,
-        "version": "1.0.0",
-        "description": "",
-        "main": "dist/index.js",
-        "module": "dist/mylib.esm.js",
-        "typings": "dist/index.d.ts",
-        "files": [
-            "dist",
-            "src"
-        ],
-        "scripts": {
-            "analyze": "size-limit --why",
-            "build": "dts build",
-            "build:dev": "dts watch",
-            "lint": "dts lint",
-            "prepare": "dts build",
-            "size": "size-limit",
-            "start": "dts watch",
-            "test": "jest"
-        },
-        "husky": {
-            "hooks": {
-                "pre-commit": "dts lint"
-            }
-        },
-        "engines": {
-            "node": ">=20 <22"
-        },
-        "size-limit": [
-            {
-                "path": "dist/mylib.cjs.production.min.js",
-                "limit": "10 KB"
-            },
-            {
-                "path": "dist/mylib.esm.js",
-                "limit": "10 KB"
-            }
-        ],
-        "devDependencies": {
-            "@jest/globals": "^29.7.0",
-            "@rollup/plugin-image": "^3.0.3",
-            "@size-limit/preset-small-lib": "^11.1.4",
-            "@tsconfig/recommended": "^1.0.7",
-            "@types/jest": "^29.5.12",
-            "@types/lodash": "^4.17.7",
-            "@types/node": "^22.1.0",
-            "dts-cli": "^2.0.5",
-            "husky": "^9.1.4",
-            "jest": "^29.7.0",
-            "size-limit": "^11.1.4",
-            "ts-jest": "^29.2.4",
-            "tslib": "^2.6.3",
-            "typescript": "^5.5.4"
-        },
-        "keywords": [],
-        "author": "",
-        "license": "ISC",
-        "dependencies": {
-            "@arkw/core": "workspace:*",
-            "fets": "*",
-            "zod": "^3.23.8"
-        }
-    }
-
+  return {
+    name: `@arkw/${name}`,
+    version: '1.0.0',
+    description: '',
+    main: 'dist/index.js',
+    module: 'dist/mylib.esm.js',
+    typings: 'dist/index.d.ts',
+    files: ['dist', 'src'],
+    scripts: {
+      analyze: 'size-limit --why',
+      build: 'dts build',
+      'build:dev': 'dts watch',
+      lint: 'dts lint',
+      prepare: 'dts build',
+      size: 'size-limit',
+      start: 'dts watch',
+      test: 'jest',
+    },
+    husky: {
+      hooks: {
+        'pre-commit': 'dts lint',
+      },
+    },
+    engines: {
+      node: '>=20 <22',
+    },
+    'size-limit': [
+      {
+        path: 'dist/mylib.cjs.production.min.js',
+        limit: '10 KB',
+      },
+      {
+        path: 'dist/mylib.esm.js',
+        limit: '10 KB',
+      },
+    ],
+    devDependencies: {
+      '@jest/globals': '^29.7.0',
+      '@rollup/plugin-image': '^3.0.3',
+      '@size-limit/preset-small-lib': '^11.1.4',
+      '@tsconfig/recommended': '^1.0.7',
+      '@types/jest': '^29.5.12',
+      '@types/lodash': '^4.17.7',
+      '@types/node': '^22.1.0',
+      'dts-cli': '^2.0.5',
+      husky: '^9.1.4',
+      jest: '^29.7.0',
+      'size-limit': '^11.1.4',
+      'ts-jest': '^29.2.4',
+      tslib: '^2.6.3',
+      typescript: '^5.5.4',
+    },
+    keywords: [],
+    author: '',
+    license: 'ISC',
+    dependencies: {
+      '@arkw/core': 'workspace:*',
+      fets: '*',
+      zod: '^3.23.8',
+    },
+  };
 }
 
 export function createTsConfig() {
-    return {
-        "extends": "@tsconfig/recommended/tsconfig.json",
-        "include": ["src", "types"],
-        "compilerOptions": {
-            "lib": ["dom", "esnext"],
-            "types": ["@types/jest", "node"],
-            "target": "ES6",
-            "module": "ES2022",
-            "allowImportingTsExtensions": false,
-            "strict": true,
-            "noEmit": true,
-            "esModuleInterop": true,
-            "noUnusedLocals": true,
-            "noImplicitReturns": true,
-            "noFallthroughCasesInSwitch": true,
-            "declaration": true,
-            "sourceMap": true,
-            "disableSizeLimit": true,
-            "moduleResolution": "Node"
-        }
-    }
-
+  return {
+    extends: '@tsconfig/recommended/tsconfig.json',
+    include: ['src', 'types'],
+    compilerOptions: {
+      lib: ['dom', 'esnext'],
+      types: ['@types/jest', 'node'],
+      target: 'ES6',
+      module: 'ES2022',
+      allowImportingTsExtensions: false,
+      strict: true,
+      noEmit: true,
+      esModuleInterop: true,
+      noUnusedLocals: true,
+      noImplicitReturns: true,
+      noFallthroughCasesInSwitch: true,
+      declaration: true,
+      sourceMap: true,
+      disableSizeLimit: true,
+      moduleResolution: 'Node',
+    },
+  };
 }
 
-export function createIntegration({ name, server, authEndpoint, tokenEndpoint, syncFuncImports, syncFuncs }: { syncFuncImports: string, syncFuncs: string, name: string, server: string, authEndpoint: string, tokenEndpoint: string }) {
-    return `
+export function createIntegration({
+  name,
+  server,
+  authEndpoint,
+  tokenEndpoint,
+  syncFuncImports,
+  syncFuncs,
+}: {
+  syncFuncImports: string;
+  syncFuncs: string;
+  name: string;
+  server: string;
+  authEndpoint: string;
+  tokenEndpoint: string;
+}) {
+  return `
 import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
@@ -170,5 +179,5 @@ export class ${name}Integration extends Integration {
   }
 }
     
-    `
+    `;
 }
