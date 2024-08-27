@@ -11,9 +11,14 @@
                         id: `${name}-sync-terminal.location`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
+                            const { ending_before,expand,limit,starting_after,   } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/terminal/locations'].get()
+
+                         
+                            const response = await proxy['/v1/terminal/locations'].get({
+                                query: {ending_before,expand,limit,starting_after,},
+                                 })
 
                             if (!response.ok) {
                             return

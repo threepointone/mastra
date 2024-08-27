@@ -12,9 +12,14 @@ export const getSubtasksForTask: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-TaskCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { limit, offset, task_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/tasks/{task_gid}/subtasks'].get();
+
+    const response = await proxy['/tasks/{task_gid}/subtasks'].get({
+      query: { limit, offset },
+      params: { task_gid },
+    });
 
     if (!response.ok) {
       return;

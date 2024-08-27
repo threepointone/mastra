@@ -12,9 +12,45 @@ export const GetCreditNotesPreviewLines: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-credit_note_line_item`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const {
+      amount,
+      credit_amount,
+      ending_before,
+      expand,
+      invoice,
+      limit,
+      lines,
+      memo,
+      metadata,
+      out_of_band_amount,
+      reason,
+      refund,
+      refund_amount,
+      shipping_cost,
+      starting_after,
+    } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/credit_notes/preview/lines'].get();
+
+    const response = await proxy['/v1/credit_notes/preview/lines'].get({
+      query: {
+        amount,
+        credit_amount,
+        ending_before,
+        expand,
+        invoice,
+        limit,
+        lines,
+        memo,
+        metadata,
+        out_of_band_amount,
+        reason,
+        refund,
+        refund_amount,
+        shipping_cost,
+        starting_after,
+      },
+    });
 
     if (!response.ok) {
       return;

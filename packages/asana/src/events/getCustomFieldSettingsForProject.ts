@@ -12,9 +12,13 @@ export const getCustomFieldSettingsForProject: EventHandler<AsanaIntegration> = 
   id: `${name}-sync-CustomFieldSettingResponse`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { project_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/projects/{project_gid}/custom_field_settings'].get();
+
+    const response = await proxy['/projects/{project_gid}/custom_field_settings'].get({
+      params: { project_gid },
+    });
 
     if (!response.ok) {
       return;

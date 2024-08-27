@@ -11,9 +11,14 @@
                         id: `${name}-sync-identity.verification_session`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
+                            const { created,ending_before,expand,limit,starting_after,status,   } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/identity/verification_sessions'].get()
+
+                         
+                            const response = await proxy['/v1/identity/verification_sessions'].get({
+                                query: {created,ending_before,expand,limit,starting_after,status,},
+                                 })
 
                             if (!response.ok) {
                             return

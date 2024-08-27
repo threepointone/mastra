@@ -12,9 +12,11 @@ export const getEvents: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-EventResponse`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const {} = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/events'].get();
+
+    const response = await proxy['/events'].get({});
 
     if (!response.ok) {
       return;

@@ -12,9 +12,13 @@ export const getTeamMembershipsForTeam: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-TeamMembershipCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { team_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/teams/{team_gid}/team_memberships'].get();
+
+    const response = await proxy['/teams/{team_gid}/team_memberships'].get({
+      params: { team_gid },
+    });
 
     if (!response.ok) {
       return;

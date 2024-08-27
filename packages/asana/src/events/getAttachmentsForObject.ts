@@ -12,9 +12,13 @@ export const getAttachmentsForObject: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-AttachmentCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { limit, offset, parent } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/attachments'].get();
+
+    const response = await proxy['/attachments'].get({
+      query: { limit, offset, parent },
+    });
 
     if (!response.ok) {
       return;

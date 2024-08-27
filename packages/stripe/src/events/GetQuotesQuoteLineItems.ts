@@ -1,39 +1,44 @@
-import { EventHandler } from '@arkw/core';
 
-import { itemFields } from '../constants';
+                    import { EventHandler } from '@arkw/core';
+                    import { itemFields } from '../constants';
+                    import { StripeIntegration } from '..';
 
-import { StripeIntegration } from '..';
-
-export const GetQuotesQuoteLineItems: EventHandler<StripeIntegration> = ({
+                    export const GetQuotesQuoteLineItems: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({
-  id: `${name}-sync-item`,
-  event: eventKey,
-  executor: async ({ event, step }: any) => {
-    const { referenceId } = event.user;
-    const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/quotes/{quote}/line_items'].get();
+}) => ({        
+                        id: `${name}-sync-item`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { ending_before,expand,limit,quote,starting_after, quote,  } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
 
-    if (!response.ok) {
-      return;
-    }
+                         
+                            const response = await proxy['/v1/quotes/{quote}/line_items'].get({
+                                query: {ending_before,expand,limit,quote,starting_after,},
+                                params: {quote,} })
 
-    const d = await response.json();
+                            if (!response.ok) {
+                            return
+                            }
 
-    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-      externalId: _externalId,
-      data: d2,
-      entityType: `item`,
-    }));
+                            const d = await response.json()
 
-    await dataLayer?.syncData({
-      name,
-      referenceId,
-      data: records,
-      type: `item`,
-      properties: itemFields,
-    });
-  },
-});
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `item`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `item`,
+                                properties: itemFields,
+                            });
+                        },
+                })
+                

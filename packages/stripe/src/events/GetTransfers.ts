@@ -12,9 +12,13 @@ export const GetTransfers: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-transfer`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { created, destination, ending_before, expand, limit, starting_after, transfer_group } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/transfers'].get();
+
+    const response = await proxy['/v1/transfers'].get({
+      query: { created, destination, ending_before, expand, limit, starting_after, transfer_group },
+    });
 
     if (!response.ok) {
       return;

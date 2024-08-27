@@ -12,9 +12,14 @@ export const getProjectStatusesForProject: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-ProjectStatusCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { project_path_gid, pretty, fields, limit, offset, project_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/projects/{project_gid}/project_statuses'].get();
+
+    const response = await proxy['/projects/{project_gid}/project_statuses'].get({
+      query: { project_path_gid, pretty, fields, limit, offset },
+      params: { project_gid },
+    });
 
     if (!response.ok) {
       return;

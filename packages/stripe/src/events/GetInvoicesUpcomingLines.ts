@@ -12,9 +12,65 @@ export const GetInvoicesUpcomingLines: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-line_item`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const {
+      automatic_tax,
+      coupon,
+      currency,
+      customer,
+      customer_details,
+      discounts,
+      ending_before,
+      expand,
+      invoice_items,
+      limit,
+      schedule,
+      starting_after,
+      subscription,
+      subscription_billing_cycle_anchor,
+      subscription_cancel_at,
+      subscription_cancel_at_period_end,
+      subscription_cancel_now,
+      subscription_default_tax_rates,
+      subscription_items,
+      subscription_proration_behavior,
+      subscription_proration_date,
+      subscription_resume_at,
+      subscription_start_date,
+      subscription_trial_end,
+      subscription_trial_from_plan,
+    } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/invoices/upcoming/lines'].get();
+
+    const response = await proxy['/v1/invoices/upcoming/lines'].get({
+      query: {
+        automatic_tax,
+        coupon,
+        currency,
+        customer,
+        customer_details,
+        discounts,
+        ending_before,
+        expand,
+        invoice_items,
+        limit,
+        schedule,
+        starting_after,
+        subscription,
+        subscription_billing_cycle_anchor,
+        subscription_cancel_at,
+        subscription_cancel_at_period_end,
+        subscription_cancel_now,
+        subscription_default_tax_rates,
+        subscription_items,
+        subscription_proration_behavior,
+        subscription_proration_date,
+        subscription_resume_at,
+        subscription_start_date,
+        subscription_trial_end,
+        subscription_trial_from_plan,
+      },
+    });
 
     if (!response.ok) {
       return;

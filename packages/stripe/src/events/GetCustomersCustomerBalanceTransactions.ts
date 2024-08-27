@@ -1,39 +1,44 @@
-import { EventHandler } from '@arkw/core';
 
-import { customer_balance_transactionFields } from '../constants';
+                    import { EventHandler } from '@arkw/core';
+                    import { customer_balance_transactionFields } from '../constants';
+                    import { StripeIntegration } from '..';
 
-import { StripeIntegration } from '..';
-
-export const GetCustomersCustomerBalanceTransactions: EventHandler<StripeIntegration> = ({
+                    export const GetCustomersCustomerBalanceTransactions: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({
-  id: `${name}-sync-customer_balance_transaction`,
-  event: eventKey,
-  executor: async ({ event, step }: any) => {
-    const { referenceId } = event.user;
-    const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/customers/{customer}/balance_transactions'].get();
+}) => ({        
+                        id: `${name}-sync-customer_balance_transaction`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { customer,ending_before,expand,limit,starting_after, customer,  } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
 
-    if (!response.ok) {
-      return;
-    }
+                         
+                            const response = await proxy['/v1/customers/{customer}/balance_transactions'].get({
+                                query: {customer,ending_before,expand,limit,starting_after,},
+                                params: {customer,} })
 
-    const d = await response.json();
+                            if (!response.ok) {
+                            return
+                            }
 
-    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-      externalId: _externalId,
-      data: d2,
-      entityType: `customer_balance_transaction`,
-    }));
+                            const d = await response.json()
 
-    await dataLayer?.syncData({
-      name,
-      referenceId,
-      data: records,
-      type: `customer_balance_transaction`,
-      properties: customer_balance_transactionFields,
-    });
-  },
-});
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `customer_balance_transaction`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `customer_balance_transaction`,
+                                properties: customer_balance_transactionFields,
+                            });
+                        },
+                })
+                

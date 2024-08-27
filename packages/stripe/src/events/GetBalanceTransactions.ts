@@ -12,9 +12,13 @@ export const GetBalanceTransactions: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-balance_transaction`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { created, currency, ending_before, expand, limit, payout, source, starting_after, type } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/balance_transactions'].get();
+
+    const response = await proxy['/v1/balance_transactions'].get({
+      query: { created, currency, ending_before, expand, limit, payout, source, starting_after, type },
+    });
 
     if (!response.ok) {
       return;

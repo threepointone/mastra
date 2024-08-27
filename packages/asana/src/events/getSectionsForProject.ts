@@ -12,9 +12,14 @@ export const getSectionsForProject: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-SectionCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { limit, offset, project_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/projects/{project_gid}/sections'].get();
+
+    const response = await proxy['/projects/{project_gid}/sections'].get({
+      query: { limit, offset },
+      params: { project_gid },
+    });
 
     if (!response.ok) {
       return;

@@ -12,9 +12,13 @@ export const GetApplePayDomains: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-apple_pay_domain`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { domain_name, ending_before, expand, limit, starting_after } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/apple_pay/domains'].get();
+
+    const response = await proxy['/v1/apple_pay/domains'].get({
+      query: { domain_name, ending_before, expand, limit, starting_after },
+    });
 
     if (!response.ok) {
       return;

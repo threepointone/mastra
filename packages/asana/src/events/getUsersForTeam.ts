@@ -12,9 +12,13 @@ export const getUsersForTeam: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-UserCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { team_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/teams/{team_gid}/users'].get();
+
+    const response = await proxy['/teams/{team_gid}/users'].get({
+      params: { team_gid },
+    });
 
     if (!response.ok) {
       return;

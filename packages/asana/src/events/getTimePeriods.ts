@@ -12,9 +12,13 @@ export const getTimePeriods: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-TimePeriodCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { start_on, end_on, workspace } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/time_periods'].get();
+
+    const response = await proxy['/time_periods'].get({
+      query: { start_on, end_on, workspace },
+    });
 
     if (!response.ok) {
       return;

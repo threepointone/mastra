@@ -12,9 +12,39 @@ export const GetSubscriptions: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-subscription`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const {
+      collection_method,
+      created,
+      current_period_end,
+      current_period_start,
+      customer,
+      ending_before,
+      expand,
+      limit,
+      price,
+      starting_after,
+      status,
+      test_clock,
+    } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/subscriptions'].get();
+
+    const response = await proxy['/v1/subscriptions'].get({
+      query: {
+        collection_method,
+        created,
+        current_period_end,
+        current_period_start,
+        customer,
+        ending_before,
+        expand,
+        limit,
+        price,
+        starting_after,
+        status,
+        test_clock,
+      },
+    });
 
     if (!response.ok) {
       return;

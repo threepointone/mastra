@@ -11,9 +11,14 @@
                         id: `${name}-sync-test_helpers.test_clock`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
+                            const { ending_before,expand,limit,starting_after,   } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/test_helpers/test_clocks'].get()
+
+                         
+                            const response = await proxy['/v1/test_helpers/test_clocks'].get({
+                                query: {ending_before,expand,limit,starting_after,},
+                                 })
 
                             if (!response.ok) {
                             return

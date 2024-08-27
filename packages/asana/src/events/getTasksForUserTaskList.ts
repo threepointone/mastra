@@ -12,9 +12,13 @@ export const getTasksForUserTaskList: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-TaskCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { user_task_list_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/user_task_lists/{user_task_list_gid}/tasks'].get();
+
+    const response = await proxy['/user_task_lists/{user_task_list_gid}/tasks'].get({
+      params: { user_task_list_gid },
+    });
 
     if (!response.ok) {
       return;

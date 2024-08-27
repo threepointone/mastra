@@ -12,9 +12,14 @@ export const getTagsForWorkspace: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-TagCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { limit, offset, workspace_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/workspaces/{workspace_gid}/tags'].get();
+
+    const response = await proxy['/workspaces/{workspace_gid}/tags'].get({
+      query: { limit, offset },
+      params: { workspace_gid },
+    });
 
     if (!response.ok) {
       return;

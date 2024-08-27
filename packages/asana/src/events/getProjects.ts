@@ -12,9 +12,13 @@ export const getProjects: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-ProjectCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { limit, offset, workspace, team, archived_query_param } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/projects'].get();
+
+    const response = await proxy['/projects'].get({
+      query: { limit, offset, workspace, team, archived_query_param },
+    });
 
     if (!response.ok) {
       return;

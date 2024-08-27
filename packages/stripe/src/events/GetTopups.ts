@@ -12,9 +12,13 @@ export const GetTopups: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-topup`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { amount, created, ending_before, expand, limit, starting_after, status } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/topups'].get();
+
+    const response = await proxy['/v1/topups'].get({
+      query: { amount, created, ending_before, expand, limit, starting_after, status },
+    });
 
     if (!response.ok) {
       return;

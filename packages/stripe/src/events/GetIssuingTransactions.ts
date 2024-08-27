@@ -11,9 +11,14 @@
                         id: `${name}-sync-issuing.transaction`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
+                            const { card,cardholder,created,ending_before,expand,limit,starting_after,type,   } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/issuing/transactions'].get()
+
+                         
+                            const response = await proxy['/v1/issuing/transactions'].get({
+                                query: {card,cardholder,created,ending_before,expand,limit,starting_after,type,},
+                                 })
 
                             if (!response.ok) {
                             return

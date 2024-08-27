@@ -12,9 +12,11 @@ export const getWorkspaces: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-WorkspaceCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const {} = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/workspaces'].get();
+
+    const response = await proxy['/workspaces'].get({});
 
     if (!response.ok) {
       return;

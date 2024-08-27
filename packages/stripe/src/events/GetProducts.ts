@@ -12,9 +12,13 @@ export const GetProducts: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-product`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { active, created, ending_before, expand, ids, limit, shippable, starting_after, url } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/products'].get();
+
+    const response = await proxy['/v1/products'].get({
+      query: { active, created, ending_before, expand, ids, limit, shippable, starting_after, url },
+    });
 
     if (!response.ok) {
       return;

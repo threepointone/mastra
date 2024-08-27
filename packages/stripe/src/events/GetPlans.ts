@@ -12,9 +12,13 @@ export const GetPlans: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-plan`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { active, created, ending_before, expand, limit, product, starting_after } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/plans'].get();
+
+    const response = await proxy['/v1/plans'].get({
+      query: { active, created, ending_before, expand, limit, product, starting_after },
+    });
 
     if (!response.ok) {
       return;

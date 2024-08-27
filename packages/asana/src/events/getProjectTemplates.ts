@@ -12,9 +12,13 @@ export const getProjectTemplates: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-ProjectTemplateCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { workspace_query_param, team_query_param, limit, offset } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/project_templates'].get();
+
+    const response = await proxy['/project_templates'].get({
+      query: { workspace_query_param, team_query_param, limit, offset },
+    });
 
     if (!response.ok) {
       return;

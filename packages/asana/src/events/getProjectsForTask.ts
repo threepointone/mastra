@@ -12,9 +12,13 @@ export const getProjectsForTask: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-ProjectCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { task_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/tasks/{task_gid}/projects'].get();
+
+    const response = await proxy['/tasks/{task_gid}/projects'].get({
+      params: { task_gid },
+    });
 
     if (!response.ok) {
       return;

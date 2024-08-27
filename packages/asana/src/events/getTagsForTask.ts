@@ -12,9 +12,13 @@ export const getTagsForTask: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-TagCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { task_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/tasks/{task_gid}/tags'].get();
+
+    const response = await proxy['/tasks/{task_gid}/tags'].get({
+      params: { task_gid },
+    });
 
     if (!response.ok) {
       return;

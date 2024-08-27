@@ -12,9 +12,13 @@ export const GetExchangeRates: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-exchange_rate`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { ending_before, expand, limit, starting_after } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/exchange_rates'].get();
+
+    const response = await proxy['/v1/exchange_rates'].get({
+      query: { ending_before, expand, limit, starting_after },
+    });
 
     if (!response.ok) {
       return;

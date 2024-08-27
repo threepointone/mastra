@@ -11,9 +11,14 @@
                         id: `${name}-sync-treasury.debit_reversal`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
+                            const { ending_before,expand,financial_account,limit,received_debit,resolution,starting_after,status,   } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
-                            const response = await proxy['/v1/treasury/debit_reversals'].get()
+
+                         
+                            const response = await proxy['/v1/treasury/debit_reversals'].get({
+                                query: {ending_before,expand,financial_account,limit,received_debit,resolution,starting_after,status,},
+                                 })
 
                             if (!response.ok) {
                             return

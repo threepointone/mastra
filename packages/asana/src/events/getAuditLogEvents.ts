@@ -12,9 +12,13 @@ export const getAuditLogEvents: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-AuditLogEvent`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { workspace_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/workspaces/{workspace_gid}/audit_log_events'].get();
+
+    const response = await proxy['/workspaces/{workspace_gid}/audit_log_events'].get({
+      params: { workspace_gid },
+    });
 
     if (!response.ok) {
       return;

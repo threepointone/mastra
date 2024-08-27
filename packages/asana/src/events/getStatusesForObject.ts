@@ -12,9 +12,13 @@ export const getStatusesForObject: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-StatusUpdateCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { parent, created_since } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/status_updates'].get();
+
+    const response = await proxy['/status_updates'].get({
+      query: { parent, created_since },
+    });
 
     if (!response.ok) {
       return;

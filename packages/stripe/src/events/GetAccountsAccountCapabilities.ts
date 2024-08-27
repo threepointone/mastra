@@ -1,39 +1,44 @@
-import { EventHandler } from '@arkw/core';
 
-import { capabilityFields } from '../constants';
+                    import { EventHandler } from '@arkw/core';
+                    import { capabilityFields } from '../constants';
+                    import { StripeIntegration } from '..';
 
-import { StripeIntegration } from '..';
-
-export const GetAccountsAccountCapabilities: EventHandler<StripeIntegration> = ({
+                    export const GetAccountsAccountCapabilities: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({
-  id: `${name}-sync-capability`,
-  event: eventKey,
-  executor: async ({ event, step }: any) => {
-    const { referenceId } = event.user;
-    const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/accounts/{account}/capabilities'].get();
+}) => ({        
+                        id: `${name}-sync-capability`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { account,expand, account,  } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
 
-    if (!response.ok) {
-      return;
-    }
+                         
+                            const response = await proxy['/v1/accounts/{account}/capabilities'].get({
+                                query: {account,expand,},
+                                params: {account,} })
 
-    const d = await response.json();
+                            if (!response.ok) {
+                            return
+                            }
 
-    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-      externalId: _externalId,
-      data: d2,
-      entityType: `capability`,
-    }));
+                            const d = await response.json()
 
-    await dataLayer?.syncData({
-      name,
-      referenceId,
-      data: records,
-      type: `capability`,
-      properties: capabilityFields,
-    });
-  },
-});
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `capability`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `capability`,
+                                properties: capabilityFields,
+                            });
+                        },
+                })
+                

@@ -12,9 +12,13 @@ export const GetPaymentIntents: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-payment_intent`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { created, customer, ending_before, expand, limit, starting_after } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/payment_intents'].get();
+
+    const response = await proxy['/v1/payment_intents'].get({
+      query: { created, customer, ending_before, expand, limit, starting_after },
+    });
 
     if (!response.ok) {
       return;

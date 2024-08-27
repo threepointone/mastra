@@ -12,9 +12,13 @@ export const GetInvoiceitems: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-invoiceitem`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { created, customer, ending_before, expand, invoice, limit, pending, starting_after } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/invoiceitems'].get();
+
+    const response = await proxy['/v1/invoiceitems'].get({
+      query: { created, customer, ending_before, expand, invoice, limit, pending, starting_after },
+    });
 
     if (!response.ok) {
       return;

@@ -12,9 +12,13 @@ export const getUsersForWorkspace: EventHandler<AsanaIntegration> = ({
   id: `${name}-sync-UserCompact`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { workspace_gid } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/workspaces/{workspace_gid}/users'].get();
+
+    const response = await proxy['/workspaces/{workspace_gid}/users'].get({
+      params: { workspace_gid },
+    });
 
     if (!response.ok) {
       return;

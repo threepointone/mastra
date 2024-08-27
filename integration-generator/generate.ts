@@ -6,6 +6,31 @@ import { parse } from 'yaml';
 import { sources } from './source';
 import { createIntegration, createPackageJson, createTsConfig } from './template';
 
+function extractParams(pattern: string, path: string): Record<string, string | undefined> {
+  // Convert pattern to regular expression
+  const regexPattern = pattern
+    .replace(/{([^}]+)}/g, '([^/]+)') // Convert {param} to a capturing group
+    .replace(/\//g, '\\/'); // Escape slashes
+
+  const regex = new RegExp(`^${regexPattern}$`);
+  const match = path.match(regex);
+
+  if (!match) {
+    return {};
+  }
+
+  // Extract parameter names from the pattern
+  const paramNames = (pattern.match(/{([^}]+)}/g) || []).map(param => param.replace(/[{}]/g, ''));
+
+  // Map matches to parameters
+  const params: Record<string, string | undefined> = {};
+  paramNames.forEach((name, index) => {
+    params[name] = `string`;
+  });
+
+  return params;
+}
+
 function buildSyncFunc({ name, paths }) {
   return Object.entries(paths)
     .map(([path, methods]) => {
@@ -15,19 +40,62 @@ function buildSyncFunc({ name, paths }) {
     .filter(({ method }) => {
       return method?.responses?.['200']?.content?.['application/json']?.schema?.properties?.data?.type === 'array';
     })
-    .map(({ method, path }) => {
+    ?.map(({ method, path }) => {
+      const params = method?.parameters;
+
+      const apiParams = extractParams(path, path);
+
+      const apiParamsZod = Object.entries(apiParams || {}).map(([k, v]) => {
+        return `${k}: z.string()`;
+      });
+
+      const zodParams =
+        params
+          ?.map(p => {
+            if (p?.name) {
+              const typeToSchema = {
+                string: 'z.string()',
+                integer: 'z.number()',
+                boolean: 'z.boolean()',
+              };
+              return `${p.name}: ${typeToSchema[p.schema.type] || 'z.string()'}`;
+            } else if (p?.$ref) {
+              return `${p.$ref.replace('#/components/parameters/', '')}: z.string()`;
+            }
+          })
+          .filter(Boolean) || [];
+
+      const totalZodParams = [...zodParams, ...apiParamsZod];
+
+      console.log(path, params, apiParams);
+      const queryParams =
+        params?.map(p => {
+          if (p?.name) {
+            return `${p.name},`;
+          } else if (p?.$ref) {
+            return `${p.$ref.replace('#/components/parameters/', '')},`;
+          }
+        }) || [];
+
+      const requestParams = Object.entries(apiParams || {})?.map(([k]) => `${k},`);
+
       const entityType = method?.responses?.['200']?.content?.[
         'application/json'
       ]?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
+
       return {
         path,
         entityType,
+        queryParams,
+        requestParams,
         eventDef: `
-             '${name.toLowerCase()}.${entityType}/sync': {
-                schema: z.object({
-                    emails: z.record(z.any()),
-                    entityType: z.string(),
-                }),
+             '${name.toLowerCase()}.${method.operationId.replace('get', '')}/sync': {
+                schema: ${
+                  totalZodParams?.length
+                    ? `z.object({
+                  ${totalZodParams.join(',\n')}})`
+                    : `z.object({})`
+                },
                 handler: ${method.operationId},
             },
         `,
@@ -169,7 +237,7 @@ async function main() {
           .map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`)
           .join('\n');
 
-        funcMap.forEach(({ funcName, entityType, path: pathApi }) => {
+        funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
           fs.writeFileSync(
             path.join(srcPath, 'events', `${funcName}.ts`),
             `
@@ -187,9 +255,16 @@ async function main() {
                         id: \`\${name}-sync-${entityType}\`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
+                            const { ${queryParams.length ? queryParams?.join('') : ''} ${
+              requestParams.length ? requestParams?.join('') : ``
+            }  } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
-                            const response = await proxy['${pathApi}'].get()
+
+                         
+                            const response = await proxy['${pathApi}'].get({
+                                ${queryParams?.length ? `query: {${queryParams?.join('')}},` : ''}
+                                ${requestParams?.length ? `params: {${requestParams?.join('')}}` : ''} })
 
                             if (!response.ok) {
                             return

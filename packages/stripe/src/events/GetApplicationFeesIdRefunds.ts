@@ -1,39 +1,44 @@
-import { EventHandler } from '@arkw/core';
 
-import { fee_refundFields } from '../constants';
+                    import { EventHandler } from '@arkw/core';
+                    import { fee_refundFields } from '../constants';
+                    import { StripeIntegration } from '..';
 
-import { StripeIntegration } from '..';
-
-export const GetApplicationFeesIdRefunds: EventHandler<StripeIntegration> = ({
+                    export const GetApplicationFeesIdRefunds: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({
-  id: `${name}-sync-fee_refund`,
-  event: eventKey,
-  executor: async ({ event, step }: any) => {
-    const { referenceId } = event.user;
-    const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/application_fees/{id}/refunds'].get();
+}) => ({        
+                        id: `${name}-sync-fee_refund`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { ending_before,expand,id,limit,starting_after, id,  } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
 
-    if (!response.ok) {
-      return;
-    }
+                         
+                            const response = await proxy['/v1/application_fees/{id}/refunds'].get({
+                                query: {ending_before,expand,id,limit,starting_after,},
+                                params: {id,} })
 
-    const d = await response.json();
+                            if (!response.ok) {
+                            return
+                            }
 
-    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-      externalId: _externalId,
-      data: d2,
-      entityType: `fee_refund`,
-    }));
+                            const d = await response.json()
 
-    await dataLayer?.syncData({
-      name,
-      referenceId,
-      data: records,
-      type: `fee_refund`,
-      properties: fee_refundFields,
-    });
-  },
-});
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `fee_refund`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `fee_refund`,
+                                properties: fee_refundFields,
+                            });
+                        },
+                })
+                

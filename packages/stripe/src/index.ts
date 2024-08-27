@@ -136,866 +136,1367 @@ export class StripeIntegration extends Integration {
 
   registerEvents() {
     this.events = {
-      'stripe.account/sync': {
+      'stripe.GetAccounts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetAccounts,
       },
 
-      'stripe.capability/sync': {
+      'stripe.GetAccountsAccountCapabilities/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account: z.string(),
+          expand: z.string(),
+          account: z.string(),
         }),
         handler: GetAccountsAccountCapabilities,
       },
 
-      'stripe.undefined/sync': {
+      'stripe.GetAccountsAccountExternalAccounts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          account: z.string(),
         }),
         handler: GetAccountsAccountExternalAccounts,
       },
 
-      'stripe.person/sync': {
+      'stripe.GetAccountsAccountPeople/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          relationship: z.string(),
+          starting_after: z.string(),
+          account: z.string(),
         }),
         handler: GetAccountsAccountPeople,
       },
 
-      'stripe.person/sync': {
+      'stripe.GetAccountsAccountPersons/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          relationship: z.string(),
+          starting_after: z.string(),
+          account: z.string(),
         }),
         handler: GetAccountsAccountPersons,
       },
 
-      'stripe.apple_pay_domain/sync': {
+      'stripe.GetApplePayDomains/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          domain_name: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetApplePayDomains,
       },
 
-      'stripe.application_fee/sync': {
+      'stripe.GetApplicationFees/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          charge: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetApplicationFees,
       },
 
-      'stripe.fee_refund/sync': {
+      'stripe.GetApplicationFeesIdRefunds/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          id: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          id: z.string(),
         }),
         handler: GetApplicationFeesIdRefunds,
       },
 
-      'stripe.apps.secret/sync': {
+      'stripe.GetAppsSecrets/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          scope: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetAppsSecrets,
       },
 
-      'stripe.balance_transaction/sync': {
+      'stripe.GetBalanceHistory/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          currency: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payout: z.string(),
+          source: z.string(),
+          starting_after: z.string(),
+          type: z.string(),
         }),
         handler: GetBalanceHistory,
       },
 
-      'stripe.balance_transaction/sync': {
+      'stripe.GetBalanceTransactions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          currency: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payout: z.string(),
+          source: z.string(),
+          starting_after: z.string(),
+          type: z.string(),
         }),
         handler: GetBalanceTransactions,
       },
 
-      'stripe.billing_portal.configuration/sync': {
+      'stripe.GetBillingPortalConfigurations/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          ending_before: z.string(),
+          expand: z.string(),
+          is_default: z.boolean(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetBillingPortalConfigurations,
       },
 
-      'stripe.charge/sync': {
+      'stripe.GetCharges/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payment_intent: z.string(),
+          starting_after: z.string(),
+          transfer_group: z.string(),
         }),
         handler: GetCharges,
       },
 
-      'stripe.charge/sync': {
+      'stripe.GetChargesSearch/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          page: z.string(),
+          query: z.string(),
         }),
         handler: GetChargesSearch,
       },
 
-      'stripe.refund/sync': {
+      'stripe.GetChargesChargeRefunds/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          charge: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          charge: z.string(),
         }),
         handler: GetChargesChargeRefunds,
       },
 
-      'stripe.checkout.session/sync': {
+      'stripe.GetCheckoutSessions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          customer_details: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payment_intent: z.string(),
+          payment_link: z.string(),
+          starting_after: z.string(),
+          subscription: z.string(),
         }),
         handler: GetCheckoutSessions,
       },
 
-      'stripe.item/sync': {
+      'stripe.GetCheckoutSessionsSessionLineItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          session: z.string(),
+          starting_after: z.string(),
+          session: z.string(),
         }),
         handler: GetCheckoutSessionsSessionLineItems,
       },
 
-      'stripe.country_spec/sync': {
+      'stripe.GetCountrySpecs/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetCountrySpecs,
       },
 
-      'stripe.coupon/sync': {
+      'stripe.GetCoupons/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetCoupons,
       },
 
-      'stripe.credit_note/sync': {
+      'stripe.GetCreditNotes/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          invoice: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetCreditNotes,
       },
 
-      'stripe.credit_note_line_item/sync': {
+      'stripe.GetCreditNotesPreviewLines/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          amount: z.number(),
+          credit_amount: z.number(),
+          ending_before: z.string(),
+          expand: z.string(),
+          invoice: z.string(),
+          limit: z.number(),
+          lines: z.string(),
+          memo: z.string(),
+          metadata: z.string(),
+          out_of_band_amount: z.number(),
+          reason: z.string(),
+          refund: z.string(),
+          refund_amount: z.number(),
+          shipping_cost: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetCreditNotesPreviewLines,
       },
 
-      'stripe.credit_note_line_item/sync': {
+      'stripe.GetCreditNotesCreditNoteLines/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          credit_note: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          credit_note: z.string(),
         }),
         handler: GetCreditNotesCreditNoteLines,
       },
 
-      'stripe.customer/sync': {
+      'stripe.GetCustomers/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          email: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          test_clock: z.string(),
         }),
         handler: GetCustomers,
       },
 
-      'stripe.customer/sync': {
+      'stripe.GetCustomersSearch/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          page: z.string(),
+          query: z.string(),
         }),
         handler: GetCustomersSearch,
       },
 
-      'stripe.customer_balance_transaction/sync': {
+      'stripe.GetCustomersCustomerBalanceTransactions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerBalanceTransactions,
       },
 
-      'stripe.bank_account/sync': {
+      'stripe.GetCustomersCustomerBankAccounts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerBankAccounts,
       },
 
-      'stripe.card/sync': {
+      'stripe.GetCustomersCustomerCards/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerCards,
       },
 
-      'stripe.customer_cash_balance_transaction/sync': {
+      'stripe.GetCustomersCustomerCashBalanceTransactions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerCashBalanceTransactions,
       },
 
-      'stripe.payment_method/sync': {
+      'stripe.GetCustomersCustomerPaymentMethods/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          type: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerPaymentMethods,
       },
 
-      'stripe.undefined/sync': {
+      'stripe.GetCustomersCustomerSources/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          object: z.string(),
+          starting_after: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerSources,
       },
 
-      'stripe.subscription/sync': {
+      'stripe.GetCustomersCustomerSubscriptions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerSubscriptions,
       },
 
-      'stripe.tax_id/sync': {
+      'stripe.GetCustomersCustomerTaxIds/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          customer: z.string(),
         }),
         handler: GetCustomersCustomerTaxIds,
       },
 
-      'stripe.dispute/sync': {
+      'stripe.GetDisputes/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          charge: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payment_intent: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetDisputes,
       },
 
-      'stripe.event/sync': {
+      'stripe.GetEvents/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          delivery_success: z.boolean(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          type: z.string(),
+          types: z.string(),
         }),
         handler: GetEvents,
       },
 
-      'stripe.exchange_rate/sync': {
+      'stripe.GetExchangeRates/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetExchangeRates,
       },
 
-      'stripe.file_link/sync': {
+      'stripe.GetFileLinks/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          expired: z.boolean(),
+          file: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetFileLinks,
       },
 
-      'stripe.file/sync': {
+      'stripe.GetFiles/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          purpose: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetFiles,
       },
 
-      'stripe.financial_connections.account/sync': {
+      'stripe.GetFinancialConnectionsAccounts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account_holder: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          session: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetFinancialConnectionsAccounts,
       },
 
-      'stripe.financial_connections.account_owner/sync': {
+      'stripe.GetFinancialConnectionsAccountsAccountOwners/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          ownership: z.string(),
+          starting_after: z.string(),
+          account: z.string(),
         }),
         handler: GetFinancialConnectionsAccountsAccountOwners,
       },
 
-      'stripe.identity.verification_report/sync': {
+      'stripe.GetIdentityVerificationReports/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          type: z.string(),
+          verification_session: z.string(),
         }),
         handler: GetIdentityVerificationReports,
       },
 
-      'stripe.identity.verification_session/sync': {
+      'stripe.GetIdentityVerificationSessions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetIdentityVerificationSessions,
       },
 
-      'stripe.invoiceitem/sync': {
+      'stripe.GetInvoiceitems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          invoice: z.string(),
+          limit: z.number(),
+          pending: z.boolean(),
+          starting_after: z.string(),
         }),
         handler: GetInvoiceitems,
       },
 
-      'stripe.invoice/sync': {
+      'stripe.GetInvoices/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          collection_method: z.string(),
+          created: z.string(),
+          customer: z.string(),
+          due_date: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
+          subscription: z.string(),
         }),
         handler: GetInvoices,
       },
 
-      'stripe.invoice/sync': {
+      'stripe.GetInvoicesSearch/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          page: z.string(),
+          query: z.string(),
         }),
         handler: GetInvoicesSearch,
       },
 
-      'stripe.line_item/sync': {
+      'stripe.GetInvoicesUpcomingLines/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          automatic_tax: z.string(),
+          coupon: z.string(),
+          currency: z.string(),
+          customer: z.string(),
+          customer_details: z.string(),
+          discounts: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          invoice_items: z.string(),
+          limit: z.number(),
+          schedule: z.string(),
+          starting_after: z.string(),
+          subscription: z.string(),
+          subscription_billing_cycle_anchor: z.string(),
+          subscription_cancel_at: z.string(),
+          subscription_cancel_at_period_end: z.boolean(),
+          subscription_cancel_now: z.boolean(),
+          subscription_default_tax_rates: z.string(),
+          subscription_items: z.string(),
+          subscription_proration_behavior: z.string(),
+          subscription_proration_date: z.number(),
+          subscription_resume_at: z.string(),
+          subscription_start_date: z.number(),
+          subscription_trial_end: z.string(),
+          subscription_trial_from_plan: z.boolean(),
         }),
         handler: GetInvoicesUpcomingLines,
       },
 
-      'stripe.line_item/sync': {
+      'stripe.GetInvoicesInvoiceLines/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          invoice: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          invoice: z.string(),
         }),
         handler: GetInvoicesInvoiceLines,
       },
 
-      'stripe.issuing.authorization/sync': {
+      'stripe.GetIssuingAuthorizations/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          card: z.string(),
+          cardholder: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetIssuingAuthorizations,
       },
 
-      'stripe.issuing.cardholder/sync': {
+      'stripe.GetIssuingCardholders/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          email: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          phone_number: z.string(),
+          starting_after: z.string(),
+          status: z.string(),
+          type: z.string(),
         }),
         handler: GetIssuingCardholders,
       },
 
-      'stripe.issuing.card/sync': {
+      'stripe.GetIssuingCards/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          cardholder: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          exp_month: z.number(),
+          exp_year: z.number(),
+          expand: z.string(),
+          last4: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
+          type: z.string(),
         }),
         handler: GetIssuingCards,
       },
 
-      'stripe.issuing.dispute/sync': {
+      'stripe.GetIssuingDisputes/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
+          transaction: z.string(),
         }),
         handler: GetIssuingDisputes,
       },
 
-      'stripe.issuing.settlement/sync': {
+      'stripe.GetIssuingSettlements/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetIssuingSettlements,
       },
 
-      'stripe.issuing.transaction/sync': {
+      'stripe.GetIssuingTransactions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          card: z.string(),
+          cardholder: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          type: z.string(),
         }),
         handler: GetIssuingTransactions,
       },
 
-      'stripe.financial_connections.account/sync': {
+      'stripe.GetLinkedAccounts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account_holder: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          session: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetLinkedAccounts,
       },
 
-      'stripe.financial_connections.account_owner/sync': {
+      'stripe.GetLinkedAccountsAccountOwners/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          account: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          ownership: z.string(),
+          starting_after: z.string(),
+          account: z.string(),
         }),
         handler: GetLinkedAccountsAccountOwners,
       },
 
-      'stripe.payment_intent/sync': {
+      'stripe.GetPaymentIntents/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetPaymentIntents,
       },
 
-      'stripe.payment_intent/sync': {
+      'stripe.GetPaymentIntentsSearch/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          page: z.string(),
+          query: z.string(),
         }),
         handler: GetPaymentIntentsSearch,
       },
 
-      'stripe.payment_link/sync': {
+      'stripe.GetPaymentLinks/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetPaymentLinks,
       },
 
-      'stripe.item/sync': {
+      'stripe.GetPaymentLinksPaymentLinkLineItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payment_link: z.string(),
+          starting_after: z.string(),
+          payment_link: z.string(),
         }),
         handler: GetPaymentLinksPaymentLinkLineItems,
       },
 
-      'stripe.payment_method/sync': {
+      'stripe.GetPaymentMethods/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          type: z.string(),
         }),
         handler: GetPaymentMethods,
       },
 
-      'stripe.payout/sync': {
+      'stripe.GetPayouts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          arrival_date: z.string(),
+          created: z.string(),
+          destination: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetPayouts,
       },
 
-      'stripe.plan/sync': {
+      'stripe.GetPlans/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          product: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetPlans,
       },
 
-      'stripe.price/sync': {
+      'stripe.GetPrices/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          created: z.string(),
+          currency: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          lookup_keys: z.string(),
+          product: z.string(),
+          recurring: z.string(),
+          starting_after: z.string(),
+          type: z.string(),
         }),
         handler: GetPrices,
       },
 
-      'stripe.price/sync': {
+      'stripe.GetPricesSearch/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          page: z.string(),
+          query: z.string(),
         }),
         handler: GetPricesSearch,
       },
 
-      'stripe.product/sync': {
+      'stripe.GetProducts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          ids: z.string(),
+          limit: z.number(),
+          shippable: z.boolean(),
+          starting_after: z.string(),
+          url: z.string(),
         }),
         handler: GetProducts,
       },
 
-      'stripe.product/sync': {
+      'stripe.GetProductsSearch/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          page: z.string(),
+          query: z.string(),
         }),
         handler: GetProductsSearch,
       },
 
-      'stripe.promotion_code/sync': {
+      'stripe.GetPromotionCodes/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          code: z.string(),
+          coupon: z.string(),
+          created: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetPromotionCodes,
       },
 
-      'stripe.quote/sync': {
+      'stripe.GetQuotes/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
+          test_clock: z.string(),
         }),
         handler: GetQuotes,
       },
 
-      'stripe.item/sync': {
+      'stripe.GetQuotesQuoteComputedUpfrontLineItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          quote: z.string(),
+          starting_after: z.string(),
+          quote: z.string(),
         }),
         handler: GetQuotesQuoteComputedUpfrontLineItems,
       },
 
-      'stripe.item/sync': {
+      'stripe.GetQuotesQuoteLineItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          quote: z.string(),
+          starting_after: z.string(),
+          quote: z.string(),
         }),
         handler: GetQuotesQuoteLineItems,
       },
 
-      'stripe.radar.early_fraud_warning/sync': {
+      'stripe.GetRadarEarlyFraudWarnings/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          charge: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payment_intent: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetRadarEarlyFraudWarnings,
       },
 
-      'stripe.radar.value_list_item/sync': {
+      'stripe.GetRadarValueListItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          value: z.string(),
+          value_list: z.string(),
         }),
         handler: GetRadarValueListItems,
       },
 
-      'stripe.radar.value_list/sync': {
+      'stripe.GetRadarValueLists/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          alias: z.string(),
+          contains: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetRadarValueLists,
       },
 
-      'stripe.refund/sync': {
+      'stripe.GetRefunds/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          charge: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payment_intent: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetRefunds,
       },
 
-      'stripe.reporting.report_run/sync': {
+      'stripe.GetReportingReportRuns/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetReportingReportRuns,
       },
 
-      'stripe.reporting.report_type/sync': {
+      'stripe.GetReportingReportTypes/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
         }),
         handler: GetReportingReportTypes,
       },
 
-      'stripe.review/sync': {
+      'stripe.GetReviews/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetReviews,
       },
 
-      'stripe.setup_attempt/sync': {
+      'stripe.GetSetupAttempts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          setup_intent: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetSetupAttempts,
       },
 
-      'stripe.setup_intent/sync': {
+      'stripe.GetSetupIntents/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          attach_to_self: z.boolean(),
+          created: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          payment_method: z.string(),
+          starting_after: z.string(),
         }),
         handler: GetSetupIntents,
       },
 
-      'stripe.shipping_rate/sync': {
+      'stripe.GetShippingRates/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          created: z.string(),
+          currency: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetShippingRates,
       },
 
-      'stripe.scheduled_query_run/sync': {
+      'stripe.GetSigmaScheduledQueryRuns/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetSigmaScheduledQueryRuns,
       },
 
-      'stripe.source_transaction/sync': {
+      'stripe.GetSourcesSourceSourceTransactions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          source: z.string(),
+          starting_after: z.string(),
+          source: z.string(),
         }),
         handler: GetSourcesSourceSourceTransactions,
       },
 
-      'stripe.subscription_item/sync': {
+      'stripe.GetSubscriptionItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          subscription: z.string(),
         }),
         handler: GetSubscriptionItems,
       },
 
-      'stripe.usage_record_summary/sync': {
+      'stripe.GetSubscriptionItemsSubscriptionItemUsageRecordSummaries/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          subscription_item: z.string(),
+          subscription_item: z.string(),
         }),
         handler: GetSubscriptionItemsSubscriptionItemUsageRecordSummaries,
       },
 
-      'stripe.subscription_schedule/sync': {
+      'stripe.GetSubscriptionSchedules/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          canceled_at: z.string(),
+          completed_at: z.string(),
+          created: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          released_at: z.string(),
+          scheduled: z.boolean(),
+          starting_after: z.string(),
         }),
         handler: GetSubscriptionSchedules,
       },
 
-      'stripe.subscription/sync': {
+      'stripe.GetSubscriptions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          collection_method: z.string(),
+          created: z.string(),
+          current_period_end: z.string(),
+          current_period_start: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          price: z.string(),
+          starting_after: z.string(),
+          status: z.string(),
+          test_clock: z.string(),
         }),
         handler: GetSubscriptions,
       },
 
-      'stripe.subscription/sync': {
+      'stripe.GetSubscriptionsSearch/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          page: z.string(),
+          query: z.string(),
         }),
         handler: GetSubscriptionsSearch,
       },
 
-      'stripe.tax.calculation_line_item/sync': {
+      'stripe.GetTaxCalculationsCalculationLineItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          calculation: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          calculation: z.string(),
         }),
         handler: GetTaxCalculationsCalculationLineItems,
       },
 
-      'stripe.tax.transaction_line_item/sync': {
+      'stripe.GetTaxTransactionsTransactionLineItems/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          transaction: z.string(),
+          transaction: z.string(),
         }),
         handler: GetTaxTransactionsTransactionLineItems,
       },
 
-      'stripe.tax_code/sync': {
+      'stripe.GetTaxCodes/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetTaxCodes,
       },
 
-      'stripe.tax_rate/sync': {
+      'stripe.GetTaxRates/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          active: z.boolean(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          inclusive: z.boolean(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetTaxRates,
       },
 
-      'stripe.terminal.configuration/sync': {
+      'stripe.GetTerminalConfigurations/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          is_account_default: z.boolean(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetTerminalConfigurations,
       },
 
-      'stripe.terminal.location/sync': {
+      'stripe.GetTerminalLocations/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetTerminalLocations,
       },
 
-      'stripe.terminal.reader/sync': {
+      'stripe.GetTerminalReaders/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          device_type: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          location: z.string(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTerminalReaders,
       },
 
-      'stripe.test_helpers.test_clock/sync': {
+      'stripe.GetTestHelpersTestClocks/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetTestHelpersTestClocks,
       },
 
-      'stripe.topup/sync': {
+      'stripe.GetTopups/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          amount: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTopups,
       },
 
-      'stripe.transfer/sync': {
+      'stripe.GetTransfers/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          destination: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          transfer_group: z.string(),
         }),
         handler: GetTransfers,
       },
 
-      'stripe.transfer_reversal/sync': {
+      'stripe.GetTransfersIdReversals/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          id: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          id: z.string(),
         }),
         handler: GetTransfersIdReversals,
       },
 
-      'stripe.treasury.credit_reversal/sync': {
+      'stripe.GetTreasuryCreditReversals/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          received_credit: z.string(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTreasuryCreditReversals,
       },
 
-      'stripe.treasury.debit_reversal/sync': {
+      'stripe.GetTreasuryDebitReversals/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          received_debit: z.string(),
+          resolution: z.string(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTreasuryDebitReversals,
       },
 
-      'stripe.treasury.financial_account/sync': {
+      'stripe.GetTreasuryFinancialAccounts/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetTreasuryFinancialAccounts,
       },
 
-      'stripe.treasury.inbound_transfer/sync': {
+      'stripe.GetTreasuryInboundTransfers/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTreasuryInboundTransfers,
       },
 
-      'stripe.treasury.outbound_payment/sync': {
+      'stripe.GetTreasuryOutboundPayments/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          customer: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTreasuryOutboundPayments,
       },
 
-      'stripe.treasury.outbound_transfer/sync': {
+      'stripe.GetTreasuryOutboundTransfers/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTreasuryOutboundTransfers,
       },
 
-      'stripe.treasury.received_credit/sync': {
+      'stripe.GetTreasuryReceivedCredits/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          linked_flows: z.string(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTreasuryReceivedCredits,
       },
 
-      'stripe.treasury.received_debit/sync': {
+      'stripe.GetTreasuryReceivedDebits/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
+          status: z.string(),
         }),
         handler: GetTreasuryReceivedDebits,
       },
 
-      'stripe.treasury.transaction_entry/sync': {
+      'stripe.GetTreasuryTransactionEntries/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          effective_at: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          order_by: z.string(),
+          starting_after: z.string(),
+          transaction: z.string(),
         }),
         handler: GetTreasuryTransactionEntries,
       },
 
-      'stripe.treasury.transaction/sync': {
+      'stripe.GetTreasuryTransactions/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          created: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          financial_account: z.string(),
+          limit: z.number(),
+          order_by: z.string(),
+          starting_after: z.string(),
+          status: z.string(),
+          status_transitions: z.string(),
         }),
         handler: GetTreasuryTransactions,
       },
 
-      'stripe.webhook_endpoint/sync': {
+      'stripe.GetWebhookEndpoints/sync': {
         schema: z.object({
-          emails: z.record(z.any()),
-          entityType: z.string(),
+          ending_before: z.string(),
+          expand: z.string(),
+          limit: z.number(),
+          starting_after: z.string(),
         }),
         handler: GetWebhookEndpoints,
       },

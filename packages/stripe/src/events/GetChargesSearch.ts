@@ -12,9 +12,13 @@ export const GetChargesSearch: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-charge`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { expand, limit, page, query } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/charges/search'].get();
+
+    const response = await proxy['/v1/charges/search'].get({
+      query: { expand, limit, page, query },
+    });
 
     if (!response.ok) {
       return;

@@ -12,9 +12,13 @@ export const GetPricesSearch: EventHandler<StripeIntegration> = ({
   id: `${name}-sync-price`,
   event: eventKey,
   executor: async ({ event, step }: any) => {
+    const { expand, limit, page, query } = event.data;
     const { referenceId } = event.user;
     const proxy = await getProxy({ referenceId });
-    const response = await proxy['/v1/prices/search'].get();
+
+    const response = await proxy['/v1/prices/search'].get({
+      query: { expand, limit, page, query },
+    });
 
     if (!response.ok) {
       return;
