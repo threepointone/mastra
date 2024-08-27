@@ -3,6 +3,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
+    "dts-cli": "^2.0.5",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
