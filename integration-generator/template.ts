@@ -92,6 +92,7 @@ export function createTsConfig() {
 export function createIntegration({ name, server, authEndpoint, tokenEndpoint }: { name: string, server: string, authEndpoint: string, tokenEndpoint: string }) {
     return `
 import { Integration, IntegrationAuth } from '@arkw/core';
+import type openapi from './openapi'
 
 type ${name}Config = {
   CLIENT_ID: string;
@@ -113,6 +114,14 @@ export class ${name}Integration extends Integration {
     });
 
     this.config = config;
+  }
+
+
+  async getProxy({ referenceId }: { referenceId: string }) {
+    const client = createClient<NormalizeOAS<typeof openapi>>({
+      endpoint: ""
+    })
+    return client
   }
 
   getAuthenticator() {
