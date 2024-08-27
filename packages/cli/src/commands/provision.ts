@@ -1,24 +1,21 @@
 import { execa } from 'execa';
 import path from 'path';
 import prompt from 'prompt';
+import { check } from 'tcp-port-used';
 
-import fs from 'fs';
 import fse from 'fs-extra/esm';
 
-import { config as defaultConfig } from '../starter-files/config.js';
 import { FileEnvService } from '../services/service.fileEnv.js';
-import { replaceValuesInFile, copyStarterFile, sanitizeForDockerName, getInfraPorts } from '../utils.js';
+import { copyStarterFile, replaceValuesInFile } from '../utils.js';
 
-const DOCKER_COMPOSE_FILE = 'arkw.docker-compose.yaml';
-const ARKW_CONFIG_FILE = 'arkw.config.ts';
+const DOCKER_COMPOSE_FILENAME = 'arkw.docker-compose.yaml';
 
 export async function provision(projectName: string) {
   const sanitizedProjectName = sanitizeForDockerName(projectName);
 
   const { postgresPort, inngestPort } = await getInfraPorts();
 
-  await setupConfig({ postgresPort, sanitizedProjectName });
-  await setupRoutes();
+  await setupConfigFile({ postgresPort, sanitizedProjectName });
 
   const { userInputDbUrl, userInputInngestUrl } = await promptUserForInfra();
 
@@ -33,12 +30,9 @@ export async function provision(projectName: string) {
   });
 
   if (shouldRunDocker) {
+    console.log('Starting Docker containers...');
     try {
-      await execa(
-        'docker', 
-        ['compose', '-f', DOCKER_COMPOSE_FILE, 'up', '-d'], 
-        { stdio: 'inherit' }
-      );
+      await execa('docker', ['compose', '-f', DOCKER_COMPOSE_FILENAME, 'up', '-d'], { stdio: 'inherit' });
       console.log('Docker containers started successfully.');
     } catch (error) {
       console.error('Failed to start Docker containers:', error);
@@ -62,12 +56,12 @@ export function prepareDockerComposeFile({
   postgresPort: number;
   inngestPort: number;
 }) {
-  let inngestUrl = `http://localhost:${inngestPort}`;
+  let inngestUrl: string;
   let dbUrl = `postgresql://postgres:postgres@localhost:${postgresPort}/arkwright?schema=arkw`;
 
   const editDockerComposeFile = () => {
     replaceValuesInFile({
-      filePath: DOCKER_COMPOSE_FILE,
+      filePath: DOCKER_COMPOSE_FILENAME,
       replacements: [
         { replace: sanitizedProjectName, search: 'REPLACE_PROJECT_NAME' },
         { replace: `${postgresPort}`, search: 'REPLACE_DB_PORT' },
@@ -76,11 +70,17 @@ export function prepareDockerComposeFile({
     });
   };
 
+  //we could just specify that the schema is arkwright in the last case
+  //if they have both the dburl and in
+
   if (userInputDbUrl === '' && userInputInngestUrl === '') {
-    copyStarterFile('docker-compose-pg-inngest.yaml', DOCKER_COMPOSE_FILE);
+    console.log('Creating new PostgreSQL instance and Inngest server...');
+    copyStarterFile('docker-compose-pg-inngest.yaml', DOCKER_COMPOSE_FILENAME);
     editDockerComposeFile();
+    inngestUrl = `http://localhost:${inngestPort}`;
   } else if (userInputDbUrl === '' && userInputInngestUrl !== '') {
-    copyStarterFile('docker-compose-pg-only.yaml', DOCKER_COMPOSE_FILE);
+    console.log('Setting up new Inngest server...');
+    copyStarterFile('docker-compose-pg-only.yaml', DOCKER_COMPOSE_FILENAME);
     editDockerComposeFile();
     inngestUrl = String(userInputInngestUrl);
   } else if (userInputDbUrl !== '' && userInputInngestUrl === '') {
@@ -91,36 +91,6 @@ export function prepareDockerComposeFile({
   }
 
   return { dbUrl, inngestUrl };
-}
-
-export async function setupRoutes() {
-  const { routeRegistrationPath } = defaultConfig;
-  const tsconfigPath = path.resolve(process.cwd(), 'tsconfig.json');
-  const tsconfig = JSON.parse(fs.readFileSync(tsconfigPath, 'utf8'));
-  const arkwConfigAlias = '@arkw/config';
-
-
-  if (!tsconfig.compilerOptions) {
-    tsconfig.compilerOptions = {};
-  }
-
-  if (!tsconfig.compilerOptions.paths) {
-    tsconfig.compilerOptions.paths = {};
-  }
-
-  if (!(arkwConfigAlias in tsconfig.compilerOptions.paths)) {
-    tsconfig.compilerOptions.paths[arkwConfigAlias] = [ARKW_CONFIG_FILE];
-    fs.writeFileSync('tsconfig.json', JSON.stringify(tsconfig, null, 2));
-  }
-
-  const apiPath = path.join(`src/app`, routeRegistrationPath, '[...arkw]/route.ts');
-
-  if (fs.existsSync(apiPath)) {
-    console.log('Routes file already exists');
-    return;
-  }
-
-  copyStarterFile('api.ts', apiPath);
 }
 
 async function promptUserForInfra() {
@@ -148,17 +118,17 @@ async function promptUserForInfra() {
   return { userInputDbUrl, userInputInngestUrl };
 }
 
-async function setupConfig({
+async function setupConfigFile({
   postgresPort,
   sanitizedProjectName,
 }: {
   postgresPort: number;
   sanitizedProjectName: string;
 }) {
-  copyStarterFile('config.ts', ARKW_CONFIG_FILE);
+  copyStarterFile('config.ts', 'arkw.config.ts');
 
   replaceValuesInFile({
-    filePath: ARKW_CONFIG_FILE,
+    filePath: 'arkw.config.ts',
     replacements: [
       {
         search: 'REPLACE_DB_PORT',
@@ -181,4 +151,60 @@ export async function setupEnvFile({ inngestUrl, dbUrl }: { inngestUrl: string; 
   await fileEnvService.setEnvValue('INNGEST_URL', inngestUrl);
   await fileEnvService.setEnvValue('DB_URL', dbUrl);
   await fileEnvService.setEnvValue('APP_URL', 'http://localhost:3000');
+}
+
+const isPortOpen = async (port: number): Promise<boolean> => {
+  return new Promise((resolve, reject) => {
+    check(port).then((inUse: boolean) => {
+      resolve(!inUse);
+    });
+  });
+};
+
+const getNextOpenPort = async (startFrom: number = 2222): Promise<number> => {
+  for (const port of Array.from({ length: 20 }, (_, i) => startFrom + i)) {
+    const isOpen = await isPortOpen(port);
+    if (isOpen) {
+      return port;
+    }
+  }
+  throw new Error('No open ports found after 20 attempts');
+};
+
+async function getInfraPorts() {
+  let postgresPort = 5432;
+  let inngestPort = 8288;
+  const dbPortOpen = await isPortOpen(postgresPort);
+  const inngestPortOpen = await isPortOpen(inngestPort);
+
+  if (!dbPortOpen) {
+    postgresPort = (await getNextOpenPort(postgresPort)) as number;
+  }
+
+  if (!inngestPortOpen) {
+    inngestPort = (await getNextOpenPort(inngestPort)) as number;
+  }
+
+  return { postgresPort, inngestPort };
+}
+
+function sanitizeForDockerName(name: string): string {
+  // Convert to lowercase
+  let sanitized = name.toLowerCase();
+
+  // Replace any non-alphanumeric characters (excluding dashes) with dashes
+  sanitized = sanitized.replace(/[^a-z0-9-]/g, '-');
+
+  // Trim dashes from the start and end
+  sanitized = sanitized.replace(/^-+|-+$/g, '');
+
+  // Ensure name is between 2 and 255 characters
+  if (sanitized.length < 2) {
+    throw new Error('Name must be at least 2 characters long.');
+  }
+  if (sanitized.length > 255) {
+    sanitized = sanitized.substring(0, 255);
+  }
+
+  return sanitized;
 }
