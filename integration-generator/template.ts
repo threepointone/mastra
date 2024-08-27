@@ -59,6 +59,7 @@ export function createPackageJson(name: string) {
         "license": "ISC",
         "dependencies": {
             "@arkw/core": "workspace:*",
+            "fets": "*",
             "zod": "^3.23.8"
         }
     }
@@ -92,6 +93,7 @@ export function createTsConfig() {
 export function createIntegration({ name, server, authEndpoint, tokenEndpoint }: { name: string, server: string, authEndpoint: string, tokenEndpoint: string }) {
     return `
 import { Integration, IntegrationAuth } from '@arkw/core';
+import { createClient, type NormalizeOAS } from 'fets'
 import type openapi from './openapi'
 
 type ${name}Config = {

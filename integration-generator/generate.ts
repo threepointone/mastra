@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs'
+import { parse } from 'yaml'
 import { createIntegration, createPackageJson, createTsConfig } from './template'
 import { sources } from './source'
 
@@ -10,8 +11,14 @@ async function main() {
         const token_url = source["Token URL"]
         const openapi_url = source["OpenAPI integration"]
 
+        if (['admin', 'cli', 'core', 'google', 'mailchimp', 'rewatch', 'slack', 'twitter-v2'].includes(name)) {
+            console.log(`Skipping ${name} because it is a reserved name`)
+            continue
+        }
+
         if (!authorization_url) {
-            return
+            console.log(`Skipping ${name} because it does not have an authorization URL`)
+            continue
         }
 
         const modulePath = path.join(process.cwd(), 'packages', name)
@@ -19,8 +26,6 @@ async function main() {
 
         if (!fs.existsSync(modulePath)) {
             fs.mkdirSync(modulePath)
-        } else {
-            return
         }
 
         // write package.json
@@ -50,12 +55,22 @@ async function main() {
             fs.mkdirSync(srcPath)
         }
 
-        const openapispecRes = await fetch(openapi_url)
-        const openapi = await openapispecRes.text()
+        try {
+            const openapispecRes = await fetch(openapi_url)
+            let openapi = await openapispecRes.text()
 
-        fs.writeFileSync(path.join(srcPath, 'openapi.ts'), `
-        export default ${openapi}
-        `)
+            if (openapi_url.endsWith('.yaml')) {
+                openapi = parse(openapi)
+            }
+
+            fs.writeFileSync(path.join(srcPath, 'openapi.ts'), `
+            export default ${JSON.stringify(openapi, null, 2)}
+            `)
+
+        } catch (e) {
+            console.error(`Failed to fetch OpenAPI spec for ${name}`, e)
+            continue
+        }
 
         const indexPath = path.join(srcPath, 'index.ts')
 

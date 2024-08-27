@@ -30,7 +30,7 @@ export const sources = [
       "Proxy URL": "https://app.attio.com",
       "Authorization URL": "https://app.attio.com/authorize",
       "Category": "crm",
-      "OpenAPI integration": "https://developers.attio.com/openapi"
+      "OpenAPI integration": "https://developers.attio.com/openapi/655e2ce3ace07f065aa1dd14"
     },
     {
       "Integration Name": "bitbucket",
@@ -63,7 +63,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/tree/main/APIs/braze.com/1.0.0"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/tree/main/APIs/braze.com/1.0.0"
     },
     {
       "Integration Name": "brex",
@@ -74,7 +74,7 @@ export const sources = [
       "Proxy URL": "https://platform.brexapis.com",
       "Authorization URL": "https://accounts-api.brex.com/oauth2/default/v1/authorize",
       "Category": "banking",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/brex.io/2021.12/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/brex.io/2021.12/openapi.yaml"
     },
     {
       "Integration Name": "clickup",
@@ -85,7 +85,7 @@ export const sources = [
       "Proxy URL": "https://api.clickup.com",
       "Authorization URL": "https://app.clickup.com/api",
       "Category": "productivity, ticketing",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/clickup.com/1.0.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/clickup.com/1.0.0/openapi.yaml"
     },
     {
       "Integration Name": "confluence",
@@ -107,7 +107,7 @@ export const sources = [
       "Proxy URL": "https://api.digitalocean.com",
       "Authorization URL": "https://cloud.digitalocean.com/v1/oauth/authorize",
       "Category": "dev-tools",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/digitalocean.com/2.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/digitalocean.com/2.0/openapi.yaml"
     },
     {
       "Integration Name": "docusign",
@@ -118,7 +118,7 @@ export const sources = [
       "Proxy URL": "https://www.docusign.net",
       "Authorization URL": "https://account.docusign.com/oauth/auth",
       "Category": "legal",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/docusign.net/v2.1/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/docusign.net/v2.1/openapi.yaml"
     },
     {
       "Integration Name": "github",
@@ -140,7 +140,7 @@ export const sources = [
       "Proxy URL": "https://gitlab.com",
       "Authorization URL": "https://gitlab.com/oauth/authorize",
       "Category": "dev-tools, ticketing",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/gitlab.com/v3/swagger.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/gitlab.com/v3/swagger.yaml"
     },
     {
       "Integration Name": "google",
@@ -228,7 +228,7 @@ export const sources = [
       "Proxy URL": "https://api.gusto.com",
       "Authorization URL": "https://api.gusto.com/oauth/authorize",
       "Category": "hr",
-      "OpenAPI integration": "https://github.com/Gusto-API/api.gusto.dev/blob/master/reference/Gusto-API.v1.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/Gusto-API/api.gusto.dev/blob/master/reference/Gusto-API.v1.yaml"
     },
     {
       "Integration Name": "harvest",
@@ -250,7 +250,7 @@ export const sources = [
       "Proxy URL": "https://docsapi.helpscout.net",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/haydenfulghum/helpscoutswagger/blob/master/helpscout.json"
+      "OpenAPI integration": "https://raw.githubusercontent.com/haydenfulghum/helpscoutswagger/blob/master/helpscout.json"
     },
     {
       "Integration Name": "instagram",
@@ -261,7 +261,7 @@ export const sources = [
       "Proxy URL": "https://graph.instagram.com",
       "Authorization URL": "https://api.instagram.com/oauth/authorize",
       "Category": "marketing, social",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/instagram.com/1.0.0/swagger.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/instagram.com/1.0.0/swagger.yaml"
     },
     {
       "Integration Name": "jira",
@@ -283,7 +283,7 @@ export const sources = [
       "Proxy URL": "https://a.klaviyo.com",
       "Authorization URL": "",
       "Category": "marketing",
-      "OpenAPI integration": "https://github.com/klaviyo/openapi/blob/main/openapi/stable.json"
+      "OpenAPI integration": "https://raw.githubusercontent.com/klaviyo/openapi/blob/main/openapi/stable.json"
     },
     {
       "Integration Name": "mailchimp",
@@ -294,7 +294,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "https://login.mailchimp.com/oauth2/authorize",
       "Category": "marketing, surveys",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/mailchimp.com/3.0.55/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/mailchimp.com/3.0.55/openapi.yaml"
     },
     {
       "Integration Name": "Netlify",
@@ -305,7 +305,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/netlify.com/2.16.0/swagger.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/netlify.com/2.16.0/swagger.yaml"
     },
     {
       "Integration Name": "okta",
@@ -327,7 +327,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/openai.com/1.2.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/openai.com/1.2.0/openapi.yaml"
     },
     {
       "Integration Name": "oura",
@@ -338,7 +338,7 @@ export const sources = [
       "Proxy URL": "https://api.ouraring.com",
       "Authorization URL": "https://cloud.ouraring.com/oauth/authorize",
       "Category": "sports",
-      "OpenAPI integration": "https://github.com/jordan-chalupka/ouraring/blob/master/ouraring_openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/jordan-chalupka/ouraring/blob/master/ouraring_openapi.yaml"
     },
     {
       "Integration Name": "pagerduty",
@@ -349,7 +349,7 @@ export const sources = [
       "Proxy URL": "https://api.pagerduty.com",
       "Authorization URL": "https://app.pagerduty.com/oauth/authorize",
       "Category": "dev-tools",
-      "OpenAPI integration": "https://github.com/PagerDuty/api-schema/blob/main/reference/REST/openapiv3.json"
+      "OpenAPI integration": "https://raw.githubusercontent.com/PagerDuty/api-schema/blob/main/reference/REST/openapiv3.json"
     },
     {
       "Integration Name": "pandadoc",
@@ -360,7 +360,7 @@ export const sources = [
       "Proxy URL": "https://api.pandadoc.com",
       "Authorization URL": "https://app.pandadoc.com/oauth2/authorize",
       "Category": "legal",
-      "OpenAPI integration": "https://github.com/PandaDoc/pandadoc-openapi-specification/blob/main/openapi.json"
+      "OpenAPI integration": "https://raw.githubusercontent.com/PandaDoc/pandadoc-openapi-specification/blob/main/openapi.json"
     },
     {
       "Integration Name": "Paylocity",
@@ -371,7 +371,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/paylocity.com/2/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/paylocity.com/2/openapi.yaml"
     },
     {
       "Integration Name": "paypal",
@@ -393,7 +393,7 @@ export const sources = [
       "Proxy URL": "https://app.pendo.io",
       "Authorization URL": "",
       "Category": "analytics",
-      "OpenAPI integration": "https://github.com/Band-Aid/pendo-openapi/blob/main/api/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/Band-Aid/pendo-openapi/blob/main/api/openapi.yaml"
     },
     {
       "Integration Name": "peopledatalabs",
@@ -415,7 +415,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/pinecone.io/20230406.1/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/pinecone.io/20230406.1/openapi.yaml"
     },
     {
       "Integration Name": "pinterest",
@@ -481,7 +481,7 @@ export const sources = [
       "Proxy URL": "https://api.salesloft.com",
       "Authorization URL": "https://accounts.salesloft.com/oauth/authorize",
       "Category": "marketing",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/salesloft.com/v2/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/salesloft.com/v2/openapi.yaml"
     },
     {
       "Integration Name": "sendgrid",
@@ -492,7 +492,7 @@ export const sources = [
       "Proxy URL": "https://api.sendgrid.com",
       "Authorization URL": "",
       "Category": "marketing",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/sendgrid.com/1.0.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/sendgrid.com/1.0.0/openapi.yaml"
     },
     {
       "Integration Name": "shopify",
@@ -514,7 +514,7 @@ export const sources = [
       "Proxy URL": "https://slack.com/api",
       "Authorization URL": "https://slack.com/oauth/v2/authorize",
       "Category": "productivity",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/slack.com/1.7.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/slack.com/1.7.0/openapi.yaml"
     },
     {
       "Integration Name": "spotify",
@@ -525,7 +525,7 @@ export const sources = [
       "Proxy URL": "https://api.spotify.com",
       "Authorization URL": "https://accounts.spotify.com/authorize",
       "Category": "other",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/spotify.com/1.0.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/spotify.com/1.0.0/openapi.yaml"
     },
     {
       "Integration Name": "squareup",
@@ -536,7 +536,7 @@ export const sources = [
       "Proxy URL": "https://connect.squareup.com",
       "Authorization URL": "https://connect.squareup.com/oauth2/authorize",
       "Category": "payment",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/squareup.com/2.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/squareup.com/2.0/openapi.yaml"
     },
     {
       "Integration Name": "stackexchange",
@@ -547,7 +547,7 @@ export const sources = [
       "Proxy URL": "https://api.stackexchange.com",
       "Authorization URL": "https://stackoverflow.com/oauth",
       "Category": "knowledge-base, support",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/stackexchange.com/2.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/stackexchange.com/2.0/openapi.yaml"
     },
     {
       "Integration Name": "stripe",
@@ -558,7 +558,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "https://connect.stripe.com/oauth/authorize",
       "Category": "payment",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/stripe.com/2022-11-15/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/stripe.com/2022-11-15/openapi.yaml"
     },
     {
       "Integration Name": "trello",
@@ -569,7 +569,7 @@ export const sources = [
       "Proxy URL": "https://api.trello.com",
       "Authorization URL": "https://trello.com/1/OAuthAuthorizeToken",
       "Category": "productivity, ticketing",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/trello.com/1.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/trello.com/1.0/openapi.yaml"
     },
     {
       "Integration Name": "twilio",
@@ -591,7 +591,7 @@ export const sources = [
       "Proxy URL": "https://api.twitter.com",
       "Authorization URL": "https://api.twitter.com/oauth/authorize",
       "Category": "marketing, social",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/twitter.com/current/2.62/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/twitter.com/current/2.62/openapi.yaml"
     },
     {
       "Integration Name": "Vercel",
@@ -602,7 +602,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/vercel.com/0.0.1/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/vercel.com/0.0.1/openapi.yaml"
     },
     {
       "Integration Name": "vimeo",
@@ -613,7 +613,7 @@ export const sources = [
       "Proxy URL": "https://api.vimeo.com",
       "Authorization URL": "https://api.vimeo.com/oauth/authorize",
       "Category": "video",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/vimeo.com/3.4/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/vimeo.com/3.4/openapi.yaml"
     },
     {
       "Integration Name": "webflow",
@@ -624,7 +624,7 @@ export const sources = [
       "Proxy URL": "https://api.webflow.com",
       "Authorization URL": "https://webflow.com/oauth/authorize",
       "Category": "dev-tools, design, cms",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/webflow.com/2023-03-23T154040Z/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/webflow.com/2023-03-23T154040Z/openapi.yaml"
     },
     {
       "Integration Name": "xero",
@@ -668,6 +668,6 @@ export const sources = [
       "Proxy URL": "https://api.zoom.us/v2",
       "Authorization URL": "https://zoom.us/oauth/authorize",
       "Category": "video",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/zoom.us/2.0.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/zoom.us/2.0.0/openapi.yaml"
     }
   ]
