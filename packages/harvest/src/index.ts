@@ -1,8 +1,9 @@
-import { Integration, IntegrationAuth } from '@arkw/core';
-import { createClient, type NormalizeOAS } from 'fets';
-import { z } from 'zod';
 
-import type openapi from './openapi';
+import { Integration, IntegrationAuth } from '@arkw/core';
+import { createClient, type NormalizeOAS } from 'fets'
+import { z } from 'zod'
+import type openapi from './openapi'
+
 
 type HarvestConfig = {
   CLIENT_ID: string;
@@ -20,37 +21,38 @@ export class HarvestIntegration extends Integration {
     super({
       ...config,
       name: 'HARVEST',
-      logoUrl: 'TODO',
+      logoUrl: "TODO",
     });
 
     this.config = config;
   }
 
   registerEvents() {
-    this.events = {};
+    this.events = {}
     return this.events;
   }
 
+
   async getProxy({ referenceId }: { referenceId: string }) {
-    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId });
+    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId })
 
     if (!connection) {
-      throw new Error(`Connection not found for referenceId: ${referenceId}`);
+      throw new Error(`Connection not found for referenceId: ${referenceId}`)
     }
 
     // TODO: HANDLE REFRESH TOKEN IF EXPIRED
-    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id);
+    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
 
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: '',
+      endpoint: "",
       globalParams: {
         headers: {
-          Authorization: `Bearer ${credential?.value}`,
-        },
-      },
-    });
-
-    return client;
+          Authorization: `Bearer ${credential?.value}`
+        }
+      }
+    })
+    
+    return client
   }
 
   getAuthenticator() {
@@ -73,3 +75,5 @@ export class HarvestIntegration extends Integration {
     });
   }
 }
+    
+    

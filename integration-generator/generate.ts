@@ -37,10 +37,12 @@ function buildSyncFunc({ name, paths }) {
       return { path, method: (methods as any).get };
     })
     .filter(Boolean)
-    .filter(({ method }) => {
+    .filter(({ method, path }) => {
+      console.log(name, path, method?.responses['200'].content['application/json']);
       return method?.responses?.['200']?.content?.['application/json']?.schema?.properties?.data?.type === 'array';
     })
     ?.map(({ method, path }) => {
+      console.log(name, path, method);
       const params = method?.parameters;
 
       const apiParams = extractParams(path, path);
@@ -67,7 +69,6 @@ function buildSyncFunc({ name, paths }) {
 
       const totalZodParams = [...zodParams, ...apiParamsZod];
 
-      console.log(path, params, apiParams);
       const queryParams =
         params?.map(p => {
           if (p?.name) {
@@ -210,44 +211,49 @@ async function main() {
 
     try {
       const openapispecRes = await fetch(openapi_url);
-      let openapi = await openapispecRes.text();
+      let apiobj = await openapispecRes.text();
+      let openapi = apiobj;
 
       if (openapi_url.endsWith('.yaml')) {
-        const apiobj = parse(openapi);
-        const schemas = (apiobj as any)?.components?.schemas;
+        apiobj = parse(apiobj);
+        openapi = JSON.stringify(apiobj, null, 2);
+      } else {
+        apiobj = JSON.parse(apiobj);
+      }
 
-        if (schemas) {
-          const fieldDefs = buildFieldDefs(schemas);
-          fs.writeFileSync(
-            path.join(srcPath, 'constants.ts'),
-            `
+      const schemas = (apiobj as any)?.components?.schemas;
+      const paths = (apiobj as any)?.paths || {}
+
+      if (schemas) {
+        const fieldDefs = buildFieldDefs(schemas);
+        fs.writeFileSync(
+          path.join(srcPath, 'constants.ts'),
+          `
                     import { PropertyType } from '@arkw/core';
                     ${fieldDefs}
                     `,
-          );
-        }
+        );
+      }
 
-        if (!fs.existsSync(path.join(srcPath, 'events'))) {
-          fs.mkdirSync(path.join(srcPath, 'events'));
-        }
+      if (!fs.existsSync(path.join(srcPath, 'events'))) {
+        fs.mkdirSync(path.join(srcPath, 'events'));
+      }
 
-        const funcMap = buildSyncFunc({ name, paths: (apiobj as any)?.paths || {} });
+      const funcMap = buildSyncFunc({ name, paths });
 
-        syncFuncImports = funcMap
-          .map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`)
-          .join('\n');
+      syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 
-        funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
-          fs.writeFileSync(
-            path.join(srcPath, 'events', `${funcName}.ts`),
-            `
+      funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
+        fs.writeFileSync(
+          path.join(srcPath, 'events', `${funcName}.ts`),
+          `
                     import { EventHandler } from '@arkw/core';
                     import { ${entityType}Fields } from '../constants';
                     import { ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration } from '..';
 
                     export const ${funcName}: EventHandler<${
-              name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
-            }Integration> = ({
+            name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+          }Integration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
@@ -256,8 +262,8 @@ async function main() {
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
                             const { ${queryParams.length ? queryParams?.join('') : ''} ${
-              requestParams.length ? requestParams?.join('') : ``
-            }  } = event.data;
+            requestParams.length ? requestParams?.join('') : ``
+          }  } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
@@ -288,13 +294,10 @@ async function main() {
                         },
                 })
                 `,
-          );
-        });
+        );
+      });
 
-        syncFuncs = `this.events = {${funcMap.map(({ eventDef }) => eventDef).join('\n')}}`;
-
-        openapi = JSON.stringify(apiobj, null, 2);
-      }
+      syncFuncs = `this.events = {${funcMap.map(({ eventDef }) => eventDef).join('\n')}}`;
 
       fs.writeFileSync(
         path.join(srcPath, 'openapi.ts'),
@@ -327,9 +330,9 @@ async function main() {
     fs.writeFileSync(indexPath, int);
   }
 
-  const p = execa('pnpm', ['prettier:format']);
+  // const p = execa('pnpm', ['prettier:format']);
 
-  p.stdout?.pipe(process.stdout);
+  // p.stdout?.pipe(process.stdout);
 }
 
 function getPathFromUrl(url: string): string {

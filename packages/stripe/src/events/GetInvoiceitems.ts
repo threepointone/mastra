@@ -1,43 +1,44 @@
-import { EventHandler } from '@arkw/core';
 
-import { invoiceitemFields } from '../constants';
+                    import { EventHandler } from '@arkw/core';
+                    import { invoiceitemFields } from '../constants';
+                    import { StripeIntegration } from '..';
 
-import { StripeIntegration } from '..';
-
-export const GetInvoiceitems: EventHandler<StripeIntegration> = ({
+                    export const GetInvoiceitems: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({
-  id: `${name}-sync-invoiceitem`,
-  event: eventKey,
-  executor: async ({ event, step }: any) => {
-    const { created, customer, ending_before, expand, invoice, limit, pending, starting_after } = event.data;
-    const { referenceId } = event.user;
-    const proxy = await getProxy({ referenceId });
+}) => ({        
+                        id: `${name}-sync-invoiceitem`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { created,customer,ending_before,expand,invoice,limit,pending,starting_after,   } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
 
-    const response = await proxy['/v1/invoiceitems'].get({
-      query: { created, customer, ending_before, expand, invoice, limit, pending, starting_after },
-    });
+                         
+                            const response = await proxy['/v1/invoiceitems'].get({
+                                query: {created,customer,ending_before,expand,invoice,limit,pending,starting_after,},
+                                 })
 
-    if (!response.ok) {
-      return;
-    }
+                            if (!response.ok) {
+                            return
+                            }
 
-    const d = await response.json();
+                            const d = await response.json()
 
-    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-      externalId: _externalId,
-      data: d2,
-      entityType: `invoiceitem`,
-    }));
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `invoiceitem`,
+                            }));
 
-    await dataLayer?.syncData({
-      name,
-      referenceId,
-      data: records,
-      type: `invoiceitem`,
-      properties: invoiceitemFields,
-    });
-  },
-});
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `invoiceitem`,
+                                properties: invoiceitemFields,
+                            });
+                        },
+                })
+                

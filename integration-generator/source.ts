@@ -240,7 +240,7 @@ export const sources = [
     'Authorization URL': 'https://api.gusto.com/oauth/authorize',
     Category: 'hr',
     'OpenAPI integration':
-      'https://raw.githubusercontent.com/Gusto-API/api.gusto.dev/blob/master/reference/Gusto-API.v1.yaml',
+      'https://raw.githubusercontent.com/Gusto-API/api.gusto.dev/master/reference/Gusto-API.v1.yaml',
   },
   {
     'Integration Name': 'harvest',
@@ -381,7 +381,7 @@ export const sources = [
     'Authorization URL': 'https://app.pandadoc.com/oauth2/authorize',
     Category: 'legal',
     'OpenAPI integration':
-      'https://raw.githubusercontent.com/PandaDoc/pandadoc-openapi-specification/blob/main/openapi.json',
+      'https://raw.githubusercontent.com/PandaDoc/pandadoc-openapi-specification/main/openapi.json',
   },
   {
     'Integration Name': 'Paylocity',
@@ -426,7 +426,8 @@ export const sources = [
     'Proxy URL': 'https://api.peopledatalabs.com',
     'Authorization URL': '',
     Category: 'analytics',
-    'OpenAPI integration': 'https://github.com/peopledatalabs/openAPI-specifications/blob/main/pdl-specs.json',
+    'OpenAPI integration':
+      'https://raw.githubusercontent.com/peopledatalabs/openAPI-specifications/blob/main/pdl-specs.json',
   },
   {
     'Integration Name': 'Pinecone',
@@ -449,7 +450,7 @@ export const sources = [
     'Proxy URL': 'https://api.pinterest.com',
     'Authorization URL': 'https://www.pinterest.com/oauth',
     Category: 'design, marketing, social, video',
-    'OpenAPI integration': 'https://github.com/pinterest/api-description/blob/main/v5/openapi.json',
+    'OpenAPI integration': 'https://raw.githubusercontent.com/pinterest/api-description/main/v5/openapi.json',
   },
   {
     'Integration Name': 'posthog',
