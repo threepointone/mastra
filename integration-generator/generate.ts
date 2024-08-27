@@ -4,10 +4,11 @@ import { createIntegration, createPackageJson, createTsConfig } from './template
 import { sources } from './source'
 
 async function main() {
-    sources.forEach((source) => {
+    for (const source of sources) {
         const name = source["Integration Name"]
         const authorization_url = source["Authorization URL"]
         const token_url = source["Token URL"]
+        const openapi_url = source["OpenAPI integration"]
 
         if (!authorization_url) {
             return
@@ -49,6 +50,13 @@ async function main() {
             fs.mkdirSync(srcPath)
         }
 
+        const openapispecRes = await fetch(openapi_url)
+        const openapi = await openapispecRes.text()
+
+        fs.writeFileSync(path.join(srcPath, 'openapi.ts'), `
+        export default ${openapi}
+        `)
+
         const indexPath = path.join(srcPath, 'index.ts')
 
         const server = new URL(authorization_url)
@@ -68,7 +76,7 @@ async function main() {
         fs.writeFileSync(indexPath, int)
 
 
-    })
+    }
 }
 
 function getPathFromUrl(url: string): string {

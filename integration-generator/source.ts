@@ -8,7 +8,7 @@ export const sources = [
       "Proxy URL": "",
       "Authorization URL": "",
       "Category": "",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/tree/main/APIs/apple.com/app-store-connect/1.4.1"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/apple.com/app-store-connect/1.4.1/openapi.yaml"
     },
     {
       "Integration Name": "asana",
@@ -19,7 +19,7 @@ export const sources = [
       "Proxy URL": "https://app.asana.com",
       "Authorization URL": "https://app.asana.com/-/oauth_authorize",
       "Category": "productivity, ticketing",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/asana.com/1.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/asana.com/1.0/openapi.yaml"
     },
     {
       "Integration Name": "attio",
@@ -41,7 +41,7 @@ export const sources = [
       "Proxy URL": "https://api.bitbucket.org",
       "Authorization URL": "https://bitbucket.org/site/oauth2/authorize",
       "Category": "dev-tools",
-      "OpenAPI integration": "https://github.com/APIs-guru/openapi-directory/blob/main/APIs/bitbucket.org/2.0/openapi.yaml"
+      "OpenAPI integration": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/bitbucket.org/2.0/openapi.yaml"
     },
     {
       "Integration Name": "box",
