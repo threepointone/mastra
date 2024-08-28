@@ -6,6 +6,26 @@ import { parse } from 'yaml';
 import { sources } from './source';
 import { createIntegration, createPackageJson, createTsConfig } from './template';
 
+function getSchemas(openApiObject) {
+  const schemas = openApiObject?.components?.schemas;
+
+  if (schemas) {
+    return schemas
+  }
+
+  const responses = openApiObject?.components?.responses;
+
+  if (responses) {
+    return Object.entries(responses || {}).reduce((memo, [k, v]) => {
+
+      if (v.content['application/json']?.schema) {
+        memo[k] = v.content['application/json']?.schema
+      }
+      return memo
+    }, {})
+  }
+}
+
 function extractParams(pattern: string, path: string): Record<string, string | undefined> {
   // Convert pattern to regular expression
   const regexPattern = pattern
@@ -45,16 +65,16 @@ function buildSyncFunc({ name, paths, schemas }) {
     .filter(({ method, path }) => {
       const jsonContent = method?.responses?.['200']?.content?.['application/json'];
       const allContent = method?.responses?.['200']?.content?.['*/*'];
-      const content = jsonContent || allContent;
+      const responseContent = { schema: { $ref: method?.responses?.['200']?.$ref } }
+      const content = jsonContent || allContent || responseContent;
 
       return content?.schema?.properties?.data?.type === 'array' || content?.schema?.$ref;
     })
     ?.map(({ method, path }) => {
       const jsonContent = method?.responses?.['200']?.content?.['application/json'];
       const allContent = method?.responses?.['200']?.content?.['*/*'];
-      const content = jsonContent || allContent;
-
-      console.log(name, path, method, content?.schema?.$ref);
+      const responseContent = { schema: { $ref: method?.responses?.['200']?.$ref } }
+      const content = jsonContent || allContent || responseContent;
 
       const params = method?.parameters;
 
@@ -63,6 +83,8 @@ function buildSyncFunc({ name, paths, schemas }) {
       const apiParamsZod = Object.entries(apiParams || {}).map(([k, v]) => {
         return `${k}: z.string()`;
       });
+
+      console.log(apiParams, params)
 
       const zodParams =
         params
@@ -94,8 +116,10 @@ function buildSyncFunc({ name, paths, schemas }) {
       const requestParams = Object.entries(apiParams || {})?.map(([k]) => `${k},`);
 
       const entityType =
-        content?.schema?.$ref?.replace('#/components/schemas/', '') ||
+        content?.schema?.$ref?.replace('#/components/schemas/', '').replace('#/components/responses/', '') ||
         content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
+
+      const operationId = method.operationId?.replace('get', '') || content?.schema?.$ref.replace('#/components/responses/', '')
 
       return {
         path,
@@ -103,17 +127,17 @@ function buildSyncFunc({ name, paths, schemas }) {
         queryParams,
         requestParams,
         eventDef: `
-             '${name.toLowerCase()}.${method.operationId.replace('get', '')}/sync': {
+             '${name.toLowerCase()}.${operationId}/sync': {
                 schema: ${
                   totalZodParams?.length
                     ? `z.object({
                   ${totalZodParams.join(',\n')}})`
                     : `z.object({})`
                 },
-                handler: ${method.operationId},
+                handler: ${operationId},
             },
         `,
-        funcName: method.operationId,
+        funcName: operationId,
       };
     });
 }
@@ -170,6 +194,9 @@ function buildFieldDefs(schemas) {
 async function main() {
   for (const source of sources) {
     const name = source['Integration Name'];
+    // if (name !== 'zoho') {
+    //   continue;
+    // }
     const authorization_url = source['Authorization URL'];
     const token_url = source['Token URL'];
     const openapi_url = source['OpenAPI integration'];
@@ -234,7 +261,9 @@ async function main() {
         apiobj = JSON.parse(apiobj);
       }
 
-      const schemas = (apiobj as any)?.components?.schemas;
+      const schemas = getSchemas((apiobj as any))
+
+      
       const paths = (apiobj as any)?.paths || {};
 
       if (schemas) {
@@ -246,6 +275,8 @@ async function main() {
                     ${fieldDefs}
                     `,
         );
+
+
       }
 
       if (!fs.existsSync(path.join(srcPath, 'events'))) {
@@ -253,8 +284,6 @@ async function main() {
       }
 
       const funcMap = buildSyncFunc({ name, paths, schemas });
-
-      console.log(funcMap);
 
       syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 

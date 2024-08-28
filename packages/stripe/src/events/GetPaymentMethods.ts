@@ -1,43 +1,44 @@
-import { EventHandler } from '@arkw/core';
 
-import { payment_methodFields } from '../constants';
+                    import { EventHandler } from '@arkw/core';
+                    import { payment_methodFields } from '../constants';
+                    import { StripeIntegration } from '..';
 
-import { StripeIntegration } from '..';
-
-export const GetPaymentMethods: EventHandler<StripeIntegration> = ({
+                    export const GetPaymentMethods: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({
-  id: `${name}-sync-payment_method`,
-  event: eventKey,
-  executor: async ({ event, step }: any) => {
-    const { customer, ending_before, expand, limit, starting_after, type } = event.data;
-    const { referenceId } = event.user;
-    const proxy = await getProxy({ referenceId });
+}) => ({        
+                        id: `${name}-sync-payment_method`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { customer,ending_before,expand,limit,starting_after,type,   } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
 
-    const response = await proxy['/v1/payment_methods'].get({
-      query: { customer, ending_before, expand, limit, starting_after, type },
-    });
+                         
+                            const response = await proxy['/v1/payment_methods'].get({
+                                query: {customer,ending_before,expand,limit,starting_after,type,},
+                                 })
 
-    if (!response.ok) {
-      return;
-    }
+                            if (!response.ok) {
+                            return
+                            }
 
-    const d = await response.json();
+                            const d = await response.json()
 
-    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-      externalId: _externalId,
-      data: d2,
-      entityType: `payment_method`,
-    }));
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `payment_method`,
+                            }));
 
-    await dataLayer?.syncData({
-      name,
-      referenceId,
-      data: records,
-      type: `payment_method`,
-      properties: payment_methodFields,
-    });
-  },
-});
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `payment_method`,
+                                properties: payment_methodFields,
+                            });
+                        },
+                })
+                

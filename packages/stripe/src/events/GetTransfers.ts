@@ -1,43 +1,44 @@
-import { EventHandler } from '@arkw/core';
 
-import { transferFields } from '../constants';
+                    import { EventHandler } from '@arkw/core';
+                    import { transferFields } from '../constants';
+                    import { StripeIntegration } from '..';
 
-import { StripeIntegration } from '..';
-
-export const GetTransfers: EventHandler<StripeIntegration> = ({
+                    export const GetTransfers: EventHandler<StripeIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({
-  id: `${name}-sync-transfer`,
-  event: eventKey,
-  executor: async ({ event, step }: any) => {
-    const { created, destination, ending_before, expand, limit, starting_after, transfer_group } = event.data;
-    const { referenceId } = event.user;
-    const proxy = await getProxy({ referenceId });
+}) => ({        
+                        id: `${name}-sync-transfer`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { created,destination,ending_before,expand,limit,starting_after,transfer_group,   } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
 
-    const response = await proxy['/v1/transfers'].get({
-      query: { created, destination, ending_before, expand, limit, starting_after, transfer_group },
-    });
+                         
+                            const response = await proxy['/v1/transfers'].get({
+                                query: {created,destination,ending_before,expand,limit,starting_after,transfer_group,},
+                                 })
 
-    if (!response.ok) {
-      return;
-    }
+                            if (!response.ok) {
+                            return
+                            }
 
-    const d = await response.json();
+                            const d = await response.json()
 
-    const records = d?.data?.map(({ _externalId, ...d2 }) => ({
-      externalId: _externalId,
-      data: d2,
-      entityType: `transfer`,
-    }));
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `transfer`,
+                            }));
 
-    await dataLayer?.syncData({
-      name,
-      referenceId,
-      data: records,
-      type: `transfer`,
-      properties: transferFields,
-    });
-  },
-});
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `transfer`,
+                                properties: transferFields,
+                            });
+                        },
+                })
+                

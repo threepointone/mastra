@@ -1,9 +1,19 @@
-import { Integration, IntegrationAuth } from '@arkw/core';
-import { createClient, type NormalizeOAS } from 'fets';
-import { z } from 'zod';
 
-import { CompanyIdDataset } from './events/CompanyIdDataset';
-import type openapi from './openapi';
+import { Integration, IntegrationAuth } from '@arkw/core';
+import { createClient, type NormalizeOAS } from 'fets'
+import { z } from 'zod'
+import type openapi from './openapi'
+import { CompanyDeepsearchName } from './events/CompanyDeepsearchName'
+import { CompanyDeepsearchNumber } from './events/CompanyDeepsearchNumber'
+import { CompanyMonitorList } from './events/CompanyMonitorList'
+import { CompanyMonitorId } from './events/CompanyMonitorId'
+import { CompanyNotificationList } from './events/CompanyNotificationList'
+import { CompanySearchNumber } from './events/CompanySearchNumber'
+import { CompanyIdAnnouncements } from './events/CompanyIdAnnouncements'
+import { CompanyIdSuper } from './events/CompanyIdSuper'
+import { CompanyIdDataset } from './events/CompanyIdDataset'
+import { ProductNotifier } from './events/ProductNotifier'
+import { ProductStatus } from './events/ProductStatus'
 
 type BrexConfig = {
   CLIENT_ID: string;
@@ -21,7 +31,7 @@ export class BrexIntegration extends Integration {
     super({
       ...config,
       name: 'BREX',
-      logoUrl: 'TODO',
+      logoUrl: "TODO",
     });
 
     this.config = config;
@@ -29,41 +39,130 @@ export class BrexIntegration extends Integration {
 
   registerEvents() {
     this.events = {
-      'brex.CompanyIdDataset/sync': {
-        schema: z.object({
-          id: z.string(),
-          check_stock_listing: z.boolean(),
-          dataset: z.string(),
-          lang: z.string(),
-          id: z.string(),
-          dataset: z.string(),
-        }),
-        handler: CompanyIdDataset,
-      },
-    };
+             'brex.CompanyDeepsearchName/sync': {
+                schema: z.object({
+                  'country': z.string(),
+'name': z.string(),
+country: z.string(),
+name: z.string()}),
+                handler: CompanyDeepsearchName,
+            },
+        
+
+             'brex.CompanyDeepsearchNumber/sync': {
+                schema: z.object({
+                  'country': z.string(),
+'number': z.string(),
+country: z.string(),
+number: z.string()}),
+                handler: CompanyDeepsearchNumber,
+            },
+        
+
+             'brex.CompanyMonitorList/sync': {
+                schema: z.object({}),
+                handler: CompanyMonitorList,
+            },
+        
+
+             'brex.CompanyMonitorId/sync': {
+                schema: z.object({
+                  'id': z.string(),
+id: z.string()}),
+                handler: CompanyMonitorId,
+            },
+        
+
+             'brex.CompanyNotificationList/sync': {
+                schema: z.object({}),
+                handler: CompanyNotificationList,
+            },
+        
+
+             'brex.CompanySearchNumber/sync': {
+                schema: z.object({
+                  'country': z.string(),
+'number': z.string(),
+'limit': z.number(),
+country: z.string(),
+number: z.string()}),
+                handler: CompanySearchNumber,
+            },
+        
+
+             'brex.CompanyIdAnnouncements/sync': {
+                schema: z.object({
+                  'id': z.string(),
+'limit': z.number(),
+'offset': z.number(),
+'data': z.boolean(),
+id: z.string()}),
+                handler: CompanyIdAnnouncements,
+            },
+        
+
+             'brex.CompanyIdSuper/sync': {
+                schema: z.object({
+                  'id': z.string(),
+'country': z.string(),
+'lang': z.string(),
+id: z.string(),
+country: z.string()}),
+                handler: CompanyIdSuper,
+            },
+        
+
+             'brex.CompanyIdDataset/sync': {
+                schema: z.object({
+                  'id': z.string(),
+'check_stock_listing': z.boolean(),
+'dataset': z.string(),
+'lang': z.string(),
+id: z.string(),
+dataset: z.string()}),
+                handler: CompanyIdDataset,
+            },
+        
+
+             'brex.ProductNotifier/sync': {
+                schema: z.object({
+                  'notifierId': z.string(),
+notifierId: z.string()}),
+                handler: ProductNotifier,
+            },
+        
+
+             'brex.ProductStatus/sync': {
+                schema: z.object({
+                  'orderId': z.string(),
+orderId: z.string()}),
+                handler: ProductStatus,
+            },
+        }
     return this.events;
   }
 
+
   async getProxy({ referenceId }: { referenceId: string }) {
-    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId });
+    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId })
 
     if (!connection) {
-      throw new Error(`Connection not found for referenceId: ${referenceId}`);
+      throw new Error(`Connection not found for referenceId: ${referenceId}`)
     }
 
     // TODO: HANDLE REFRESH TOKEN IF EXPIRED
-    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id);
+    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
 
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: '',
+      endpoint: "",
       globalParams: {
         headers: {
-          Authorization: `Bearer ${credential?.value}`,
-        },
-      },
-    });
-
-    return client;
+          Authorization: `Bearer ${credential?.value}`
+        }
+      }
+    })
+    
+    return client
   }
 
   getAuthenticator() {
@@ -86,3 +185,5 @@ export class BrexIntegration extends Integration {
     });
   }
 }
+    
+    

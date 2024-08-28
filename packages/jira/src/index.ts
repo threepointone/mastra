@@ -3,198 +3,198 @@ import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import type openapi from './openapi'
-import { getBanner } from './events/getBanner'
-import { getCustomFieldConfiguration } from './events/getCustomFieldConfiguration'
-import { getApplicationRole } from './events/getApplicationRole'
-import { getAttachmentMeta } from './events/getAttachmentMeta'
-import { getAttachment } from './events/getAttachment'
+import { Banner } from './events/Banner'
+import { CustomFieldConfiguration } from './events/CustomFieldConfiguration'
+import { ApplicationRole } from './events/ApplicationRole'
+import { AttachmentMeta } from './events/AttachmentMeta'
+import { Attachment } from './events/Attachment'
 import { expandAttachmentForHumans } from './events/expandAttachmentForHumans'
 import { expandAttachmentForMachines } from './events/expandAttachmentForMachines'
-import { getAuditRecords } from './events/getAuditRecords'
-import { getAllSystemAvatars } from './events/getAllSystemAvatars'
-import { getBulkEditableFields } from './events/getBulkEditableFields'
-import { getBulkOperationProgress } from './events/getBulkOperationProgress'
-import { getAllUserDataClassificationLevels } from './events/getAllUserDataClassificationLevels'
-import { getCommentPropertyKeys } from './events/getCommentPropertyKeys'
-import { getCommentProperty } from './events/getCommentProperty'
+import { AuditRecords } from './events/AuditRecords'
+import { AllSystemAvatars } from './events/AllSystemAvatars'
+import { BulkEditableFields } from './events/BulkEditableFields'
+import { BulkOperationProgress } from './events/BulkOperationProgress'
+import { AllUserDataClassificationLevels } from './events/AllUserDataClassificationLevels'
+import { CommentPropertyKeys } from './events/CommentPropertyKeys'
+import { CommentProperty } from './events/CommentProperty'
 import { findComponentsForProjects } from './events/findComponentsForProjects'
-import { getComponent } from './events/getComponent'
-import { getComponentRelatedIssues } from './events/getComponentRelatedIssues'
-import { getConfiguration } from './events/getConfiguration'
-import { getSelectedTimeTrackingImplementation } from './events/getSelectedTimeTrackingImplementation'
-import { getSharedTimeTrackingConfiguration } from './events/getSharedTimeTrackingConfiguration'
-import { getCustomFieldOption } from './events/getCustomFieldOption'
-import { getAllDashboards } from './events/getAllDashboards'
-import { getAllAvailableDashboardGadgets } from './events/getAllAvailableDashboardGadgets'
-import { getDashboardsPaginated } from './events/getDashboardsPaginated'
-import { getAllGadgets } from './events/getAllGadgets'
-import { getDashboardItemPropertyKeys } from './events/getDashboardItemPropertyKeys'
-import { getDashboardItemProperty } from './events/getDashboardItemProperty'
-import { getDashboard } from './events/getDashboard'
-import { getPolicy } from './events/getPolicy'
-import { getPolicies } from './events/getPolicies'
-import { getFieldsPaginated } from './events/getFieldsPaginated'
-import { getTrashedFieldsPaginated } from './events/getTrashedFieldsPaginated'
-import { getContextsForField } from './events/getContextsForField'
-import { getDefaultValues } from './events/getDefaultValues'
-import { getIssueTypeMappingsForContexts } from './events/getIssueTypeMappingsForContexts'
-import { getProjectContextMapping } from './events/getProjectContextMapping'
-import { getOptionsForContext } from './events/getOptionsForContext'
-import { getContextsForFieldDeprecated } from './events/getContextsForFieldDeprecated'
-import { getScreensForField } from './events/getScreensForField'
-import { getAllIssueFieldOptions } from './events/getAllIssueFieldOptions'
-import { getSelectableIssueFieldOptions } from './events/getSelectableIssueFieldOptions'
-import { getVisibleIssueFieldOptions } from './events/getVisibleIssueFieldOptions'
-import { getIssueFieldOption } from './events/getIssueFieldOption'
-import { getAllFieldConfigurations } from './events/getAllFieldConfigurations'
-import { getFieldConfigurationItems } from './events/getFieldConfigurationItems'
-import { getAllFieldConfigurationSchemes } from './events/getAllFieldConfigurationSchemes'
-import { getFieldConfigurationSchemeMappings } from './events/getFieldConfigurationSchemeMappings'
-import { getFieldConfigurationSchemeProjectMapping } from './events/getFieldConfigurationSchemeProjectMapping'
-import { getDefaultShareScope } from './events/getDefaultShareScope'
-import { getFiltersPaginated } from './events/getFiltersPaginated'
-import { getFilter } from './events/getFilter'
-import { getSharePermission } from './events/getSharePermission'
-import { getGroup } from './events/getGroup'
+import { Component } from './events/Component'
+import { ComponentRelatedIssues } from './events/ComponentRelatedIssues'
+import { Configuration } from './events/Configuration'
+import { SelectedTimeTrackingImplementation } from './events/SelectedTimeTrackingImplementation'
+import { SharedTimeTrackingConfiguration } from './events/SharedTimeTrackingConfiguration'
+import { CustomFieldOption } from './events/CustomFieldOption'
+import { AllDashboards } from './events/AllDashboards'
+import { AllAvailableDashboardGadgets } from './events/AllAvailableDashboardGadgets'
+import { DashboardsPaginated } from './events/DashboardsPaginated'
+import { AllGadgets } from './events/AllGadgets'
+import { DashboardItemPropertyKeys } from './events/DashboardItemPropertyKeys'
+import { DashboardItemProperty } from './events/DashboardItemProperty'
+import { Dashboard } from './events/Dashboard'
+import { Policy } from './events/Policy'
+import { Policies } from './events/Policies'
+import { FieldsPaginated } from './events/FieldsPaginated'
+import { TrashedFieldsPaginated } from './events/TrashedFieldsPaginated'
+import { ContextsForField } from './events/ContextsForField'
+import { DefaultValues } from './events/DefaultValues'
+import { IssueTypeMappingsForContexts } from './events/IssueTypeMappingsForContexts'
+import { ProjectContextMapping } from './events/ProjectContextMapping'
+import { OptionsForContext } from './events/OptionsForContext'
+import { ContextsForFieldDeprecated } from './events/ContextsForFieldDeprecated'
+import { ScreensForField } from './events/ScreensForField'
+import { AllIssueFieldOptions } from './events/AllIssueFieldOptions'
+import { SelectableIssueFieldOptions } from './events/SelectableIssueFieldOptions'
+import { VisibleIssueFieldOptions } from './events/VisibleIssueFieldOptions'
+import { IssueFieldOption } from './events/IssueFieldOption'
+import { AllFieldConfigurations } from './events/AllFieldConfigurations'
+import { FieldConfigurationItems } from './events/FieldConfigurationItems'
+import { AllFieldConfigurationSchemes } from './events/AllFieldConfigurationSchemes'
+import { FieldConfigurationSchemeMappings } from './events/FieldConfigurationSchemeMappings'
+import { FieldConfigurationSchemeProjectMapping } from './events/FieldConfigurationSchemeProjectMapping'
+import { DefaultShareScope } from './events/DefaultShareScope'
+import { FiltersPaginated } from './events/FiltersPaginated'
+import { Filter } from './events/Filter'
+import { SharePermission } from './events/SharePermission'
+import { Group } from './events/Group'
 import { bulkGetGroups } from './events/bulkGetGroups'
-import { getUsersFromGroup } from './events/getUsersFromGroup'
+import { UsersFromGroup } from './events/UsersFromGroup'
 import { findGroups } from './events/findGroups'
 import { findUsersAndGroups } from './events/findUsersAndGroups'
-import { getLicense } from './events/getLicense'
-import { getCreateIssueMeta } from './events/getCreateIssueMeta'
-import { getCreateIssueMetaIssueTypes } from './events/getCreateIssueMetaIssueTypes'
-import { getCreateIssueMetaIssueTypeId } from './events/getCreateIssueMetaIssueTypeId'
-import { getIssueLimitReport } from './events/getIssueLimitReport'
-import { getIssuePickerResource } from './events/getIssuePickerResource'
-import { getIssue } from './events/getIssue'
-import { getChangeLogs } from './events/getChangeLogs'
-import { getComments } from './events/getComments'
-import { getComment } from './events/getComment'
-import { getEditIssueMeta } from './events/getEditIssueMeta'
-import { getIssuePropertyKeys } from './events/getIssuePropertyKeys'
-import { getIssueProperty } from './events/getIssueProperty'
-import { getRemoteIssueLinks } from './events/getRemoteIssueLinks'
-import { getRemoteIssueLinkById } from './events/getRemoteIssueLinkById'
-import { getTransitions } from './events/getTransitions'
-import { getVotes } from './events/getVotes'
-import { getIssueWatchers } from './events/getIssueWatchers'
-import { getIssueWorklog } from './events/getIssueWorklog'
-import { getWorklog } from './events/getWorklog'
-import { getWorklogPropertyKeys } from './events/getWorklogPropertyKeys'
-import { getWorklogProperty } from './events/getWorklogProperty'
-import { getIssueLink } from './events/getIssueLink'
-import { getIssueLinkTypes } from './events/getIssueLinkTypes'
-import { getIssueLinkType } from './events/getIssueLinkType'
-import { getIssueSecuritySchemes } from './events/getIssueSecuritySchemes'
-import { getSecurityLevels } from './events/getSecurityLevels'
-import { getSecurityLevelMembers } from './events/getSecurityLevelMembers'
+import { License } from './events/License'
+import { CreateIssueMeta } from './events/CreateIssueMeta'
+import { CreateIssueMetaIssueTypes } from './events/CreateIssueMetaIssueTypes'
+import { CreateIssueMetaIssueTypeId } from './events/CreateIssueMetaIssueTypeId'
+import { IssueLimitReport } from './events/IssueLimitReport'
+import { IssuePickerResource } from './events/IssuePickerResource'
+import { Issue } from './events/Issue'
+import { ChangeLogs } from './events/ChangeLogs'
+import { Comments } from './events/Comments'
+import { Comment } from './events/Comment'
+import { EditIssueMeta } from './events/EditIssueMeta'
+import { IssuePropertyKeys } from './events/IssuePropertyKeys'
+import { IssueProperty } from './events/IssueProperty'
+import { RemoteIssueLinks } from './events/RemoteIssueLinks'
+import { RemoteIssueLinkById } from './events/RemoteIssueLinkById'
+import { Transitions } from './events/Transitions'
+import { Votes } from './events/Votes'
+import { IssueWatchers } from './events/IssueWatchers'
+import { IssueWorklog } from './events/IssueWorklog'
+import { Worklog } from './events/Worklog'
+import { WorklogPropertyKeys } from './events/WorklogPropertyKeys'
+import { WorklogProperty } from './events/WorklogProperty'
+import { IssueLink } from './events/IssueLink'
+import { IssueLinkTypes } from './events/IssueLinkTypes'
+import { IssueLinkType } from './events/IssueLinkType'
+import { IssueSecuritySchemes } from './events/IssueSecuritySchemes'
+import { SecurityLevels } from './events/SecurityLevels'
+import { SecurityLevelMembers } from './events/SecurityLevelMembers'
 import { searchProjectsUsingSecuritySchemes } from './events/searchProjectsUsingSecuritySchemes'
 import { searchSecuritySchemes } from './events/searchSecuritySchemes'
-import { getIssueSecurityScheme } from './events/getIssueSecurityScheme'
-import { getIssueSecurityLevelMembers } from './events/getIssueSecurityLevelMembers'
-import { getIssueType } from './events/getIssueType'
-import { getIssueTypePropertyKeys } from './events/getIssueTypePropertyKeys'
-import { getIssueTypeProperty } from './events/getIssueTypeProperty'
-import { getAllIssueTypeSchemes } from './events/getAllIssueTypeSchemes'
-import { getIssueTypeSchemesMapping } from './events/getIssueTypeSchemesMapping'
-import { getIssueTypeSchemeForProjects } from './events/getIssueTypeSchemeForProjects'
-import { getIssueTypeScreenSchemes } from './events/getIssueTypeScreenSchemes'
-import { getIssueTypeScreenSchemeMappings } from './events/getIssueTypeScreenSchemeMappings'
-import { getIssueTypeScreenSchemeProjectAssociations } from './events/getIssueTypeScreenSchemeProjectAssociations'
-import { getProjectsForIssueTypeScreenScheme } from './events/getProjectsForIssueTypeScreenScheme'
-import { getAutoComplete } from './events/getAutoComplete'
-import { getFieldAutoCompleteForQueryString } from './events/getFieldAutoCompleteForQueryString'
-import { getPrecomputations } from './events/getPrecomputations'
-import { getAllLabels } from './events/getAllLabels'
-import { getApproximateLicenseCount } from './events/getApproximateLicenseCount'
-import { getApproximateApplicationLicenseCount } from './events/getApproximateApplicationLicenseCount'
-import { getMyPermissions } from './events/getMyPermissions'
-import { getLocale } from './events/getLocale'
-import { getCurrentUser } from './events/getCurrentUser'
-import { getNotificationSchemes } from './events/getNotificationSchemes'
-import { getNotificationSchemeToProjectMappings } from './events/getNotificationSchemeToProjectMappings'
-import { getNotificationScheme } from './events/getNotificationScheme'
-import { getAllPermissions } from './events/getAllPermissions'
-import { getAllPermissionSchemes } from './events/getAllPermissionSchemes'
-import { getPermissionScheme } from './events/getPermissionScheme'
-import { getPermissionSchemeGrants } from './events/getPermissionSchemeGrants'
-import { getPermissionSchemeGrant } from './events/getPermissionSchemeGrant'
+import { IssueSecurityScheme } from './events/IssueSecurityScheme'
+import { IssueSecurityLevelMembers } from './events/IssueSecurityLevelMembers'
+import { IssueType } from './events/IssueType'
+import { IssueTypePropertyKeys } from './events/IssueTypePropertyKeys'
+import { IssueTypeProperty } from './events/IssueTypeProperty'
+import { AllIssueTypeSchemes } from './events/AllIssueTypeSchemes'
+import { IssueTypeSchemesMapping } from './events/IssueTypeSchemesMapping'
+import { IssueTypeSchemeForProjects } from './events/IssueTypeSchemeForProjects'
+import { IssueTypeScreenSchemes } from './events/IssueTypeScreenSchemes'
+import { IssueTypeScreenSchemeMappings } from './events/IssueTypeScreenSchemeMappings'
+import { IssueTypeScreenSchemeProjectAssociations } from './events/IssueTypeScreenSchemeProjectAssociations'
+import { ProjectsForIssueTypeScreenScheme } from './events/ProjectsForIssueTypeScreenScheme'
+import { AutoComplete } from './events/AutoComplete'
+import { FieldAutoCompleteForQueryString } from './events/FieldAutoCompleteForQueryString'
+import { Precomputations } from './events/Precomputations'
+import { AllLabels } from './events/AllLabels'
+import { ApproximateLicenseCount } from './events/ApproximateLicenseCount'
+import { ApproximateApplicationLicenseCount } from './events/ApproximateApplicationLicenseCount'
+import { MyPermissions } from './events/MyPermissions'
+import { Locale } from './events/Locale'
+import { CurrentUser } from './events/CurrentUser'
+import { NotificationSchemes } from './events/NotificationSchemes'
+import { NotificationSchemeToProjectMappings } from './events/NotificationSchemeToProjectMappings'
+import { NotificationScheme } from './events/NotificationScheme'
+import { AllPermissions } from './events/AllPermissions'
+import { AllPermissionSchemes } from './events/AllPermissionSchemes'
+import { PermissionScheme } from './events/PermissionScheme'
+import { PermissionSchemeGrants } from './events/PermissionSchemeGrants'
+import { PermissionSchemeGrant } from './events/PermissionSchemeGrant'
 import { searchPriorities } from './events/searchPriorities'
-import { getPriority } from './events/getPriority'
-import { getPrioritySchemes } from './events/getPrioritySchemes'
-import { getAvailablePrioritiesByPriorityScheme } from './events/getAvailablePrioritiesByPriorityScheme'
-import { getPrioritiesByPriorityScheme } from './events/getPrioritiesByPriorityScheme'
-import { getProjectsByPriorityScheme } from './events/getProjectsByPriorityScheme'
+import { Priority } from './events/Priority'
+import { PrioritySchemes } from './events/PrioritySchemes'
+import { AvailablePrioritiesByPriorityScheme } from './events/AvailablePrioritiesByPriorityScheme'
+import { PrioritiesByPriorityScheme } from './events/PrioritiesByPriorityScheme'
+import { ProjectsByPriorityScheme } from './events/ProjectsByPriorityScheme'
 import { searchProjects } from './events/searchProjects'
-import { getProjectTypeByKey } from './events/getProjectTypeByKey'
-import { getAccessibleProjectTypeByKey } from './events/getAccessibleProjectTypeByKey'
-import { getProject } from './events/getProject'
-import { getAllProjectAvatars } from './events/getAllProjectAvatars'
-import { getProjectComponentsPaginated } from './events/getProjectComponentsPaginated'
-import { getFeaturesForProject } from './events/getFeaturesForProject'
-import { getProjectPropertyKeys } from './events/getProjectPropertyKeys'
-import { getProjectProperty } from './events/getProjectProperty'
-import { getProjectRole } from './events/getProjectRole'
-import { getProjectVersionsPaginated } from './events/getProjectVersionsPaginated'
-import { getProjectEmail } from './events/getProjectEmail'
-import { getHierarchy } from './events/getHierarchy'
-import { getProjectIssueSecurityScheme } from './events/getProjectIssueSecurityScheme'
-import { getNotificationSchemeForProject } from './events/getNotificationSchemeForProject'
-import { getAssignedPermissionScheme } from './events/getAssignedPermissionScheme'
-import { getSecurityLevelsForProject } from './events/getSecurityLevelsForProject'
-import { getProjectCategoryById } from './events/getProjectCategoryById'
+import { ProjectTypeByKey } from './events/ProjectTypeByKey'
+import { AccessibleProjectTypeByKey } from './events/AccessibleProjectTypeByKey'
+import { Project } from './events/Project'
+import { AllProjectAvatars } from './events/AllProjectAvatars'
+import { ProjectComponentsPaginated } from './events/ProjectComponentsPaginated'
+import { FeaturesForProject } from './events/FeaturesForProject'
+import { ProjectPropertyKeys } from './events/ProjectPropertyKeys'
+import { ProjectProperty } from './events/ProjectProperty'
+import { ProjectRole } from './events/ProjectRole'
+import { ProjectVersionsPaginated } from './events/ProjectVersionsPaginated'
+import { ProjectEmail } from './events/ProjectEmail'
+import { Hierarchy } from './events/Hierarchy'
+import { ProjectIssueSecurityScheme } from './events/ProjectIssueSecurityScheme'
+import { NotificationSchemeForProject } from './events/NotificationSchemeForProject'
+import { AssignedPermissionScheme } from './events/AssignedPermissionScheme'
+import { SecurityLevelsForProject } from './events/SecurityLevelsForProject'
+import { ProjectCategoryById } from './events/ProjectCategoryById'
 import { validateProjectKey } from './events/validateProjectKey'
 import { searchResolutions } from './events/searchResolutions'
-import { getResolution } from './events/getResolution'
-import { getProjectRoleById } from './events/getProjectRoleById'
-import { getProjectRoleActorsForRole } from './events/getProjectRoleActorsForRole'
-import { getScreens } from './events/getScreens'
-import { getScreenSchemes } from './events/getScreenSchemes'
+import { Resolution } from './events/Resolution'
+import { ProjectRoleById } from './events/ProjectRoleById'
+import { ProjectRoleActorsForRole } from './events/ProjectRoleActorsForRole'
+import { Screens } from './events/Screens'
+import { ScreenSchemes } from './events/ScreenSchemes'
 import { searchForIssuesUsingJql } from './events/searchForIssuesUsingJql'
-import { getIssueSecurityLevel } from './events/getIssueSecurityLevel'
-import { getServerInfo } from './events/getServerInfo'
-import { getStatus } from './events/getStatus'
-import { getStatusCategory } from './events/getStatusCategory'
+import { IssueSecurityLevel } from './events/IssueSecurityLevel'
+import { ServerInfo } from './events/ServerInfo'
+import { Status } from './events/Status'
+import { StatusCategory } from './events/StatusCategory'
 import { search } from './events/search'
-import { getTask } from './events/getTask'
-import { getUiModifications } from './events/getUiModifications'
-import { getAvatars } from './events/getAvatars'
-import { getAvatarImageByType } from './events/getAvatarImageByType'
-import { getAvatarImageByID } from './events/getAvatarImageByID'
-import { getAvatarImageByOwner } from './events/getAvatarImageByOwner'
-import { getUser } from './events/getUser'
+import { Task } from './events/Task'
+import { UiModifications } from './events/UiModifications'
+import { Avatars } from './events/Avatars'
+import { AvatarImageByType } from './events/AvatarImageByType'
+import { AvatarImageByID } from './events/AvatarImageByID'
+import { AvatarImageByOwner } from './events/AvatarImageByOwner'
+import { User } from './events/User'
 import { bulkGetUsers } from './events/bulkGetUsers'
-import { getUserEmail } from './events/getUserEmail'
-import { getUserEmailBulk } from './events/getUserEmailBulk'
+import { UserEmail } from './events/UserEmail'
+import { UserEmailBulk } from './events/UserEmailBulk'
 import { findUsersForPicker } from './events/findUsersForPicker'
-import { getUserPropertyKeys } from './events/getUserPropertyKeys'
-import { getUserProperty } from './events/getUserProperty'
+import { UserPropertyKeys } from './events/UserPropertyKeys'
+import { UserProperty } from './events/UserProperty'
 import { findUsersByQuery } from './events/findUsersByQuery'
 import { findUserKeysByQuery } from './events/findUserKeysByQuery'
-import { getVersion } from './events/getVersion'
-import { getVersionRelatedIssues } from './events/getVersionRelatedIssues'
-import { getVersionUnresolvedIssues } from './events/getVersionUnresolvedIssues'
-import { getDynamicWebhooksForApp } from './events/getDynamicWebhooksForApp'
-import { getFailedWebhooks } from './events/getFailedWebhooks'
-import { getWorkflowTransitionRuleConfigurations } from './events/getWorkflowTransitionRuleConfigurations'
-import { getWorkflowsPaginated } from './events/getWorkflowsPaginated'
-import { getWorkflowTransitionProperties } from './events/getWorkflowTransitionProperties'
+import { Version } from './events/Version'
+import { VersionRelatedIssues } from './events/VersionRelatedIssues'
+import { VersionUnresolvedIssues } from './events/VersionUnresolvedIssues'
+import { DynamicWebhooksForApp } from './events/DynamicWebhooksForApp'
+import { FailedWebhooks } from './events/FailedWebhooks'
+import { WorkflowTransitionRuleConfigurations } from './events/WorkflowTransitionRuleConfigurations'
+import { WorkflowsPaginated } from './events/WorkflowsPaginated'
+import { WorkflowTransitionProperties } from './events/WorkflowTransitionProperties'
 import { workflowCapabilities } from './events/workflowCapabilities'
-import { getAllWorkflowSchemes } from './events/getAllWorkflowSchemes'
-import { getWorkflowSchemeProjectAssociations } from './events/getWorkflowSchemeProjectAssociations'
-import { getWorkflowScheme } from './events/getWorkflowScheme'
-import { getDefaultWorkflow } from './events/getDefaultWorkflow'
-import { getWorkflowSchemeDraft } from './events/getWorkflowSchemeDraft'
-import { getDraftDefaultWorkflow } from './events/getDraftDefaultWorkflow'
-import { getWorkflowSchemeDraftIssueType } from './events/getWorkflowSchemeDraftIssueType'
-import { getDraftWorkflow } from './events/getDraftWorkflow'
-import { getWorkflowSchemeIssueType } from './events/getWorkflowSchemeIssueType'
-import { getWorkflow } from './events/getWorkflow'
-import { getIdsOfWorklogsDeletedSince } from './events/getIdsOfWorklogsDeletedSince'
-import { getIdsOfWorklogsModifiedSince } from './events/getIdsOfWorklogsModifiedSince'
-import { AddonPropertiesResource.getAddonProperties_get } from './events/AddonPropertiesResource.getAddonProperties_get'
-import { AddonPropertiesResource.getAddonProperty_get } from './events/AddonPropertiesResource.getAddonProperty_get'
-import { DynamicModulesResource.getModules_get } from './events/DynamicModulesResource.getModules_get'
+import { AllWorkflowSchemes } from './events/AllWorkflowSchemes'
+import { WorkflowSchemeProjectAssociations } from './events/WorkflowSchemeProjectAssociations'
+import { WorkflowScheme } from './events/WorkflowScheme'
+import { DefaultWorkflow } from './events/DefaultWorkflow'
+import { WorkflowSchemeDraft } from './events/WorkflowSchemeDraft'
+import { DraftDefaultWorkflow } from './events/DraftDefaultWorkflow'
+import { WorkflowSchemeDraftIssueType } from './events/WorkflowSchemeDraftIssueType'
+import { DraftWorkflow } from './events/DraftWorkflow'
+import { WorkflowSchemeIssueType } from './events/WorkflowSchemeIssueType'
+import { Workflow } from './events/Workflow'
+import { IdsOfWorklogsDeletedSince } from './events/IdsOfWorklogsDeletedSince'
+import { IdsOfWorklogsModifiedSince } from './events/IdsOfWorklogsModifiedSince'
+import { AddonPropertiesResource.AddonProperties_get } from './events/AddonPropertiesResource.AddonProperties_get'
+import { AddonPropertiesResource.AddonProperty_get } from './events/AddonPropertiesResource.AddonProperty_get'
+import { DynamicModulesResource.Modules_get } from './events/DynamicModulesResource.Modules_get'
 
 type JiraConfig = {
   CLIENT_ID: string;
@@ -222,7 +222,7 @@ export class JiraIntegration extends Integration {
     this.events = {
              'jira.Banner/sync': {
                 schema: z.object({}),
-                handler: getBanner,
+                handler: Banner,
             },
         
 
@@ -237,7 +237,7 @@ export class JiraIntegration extends Integration {
 'startAt': z.number(),
 'maxResults': z.number(),
 fieldIdOrKey: z.string()}),
-                handler: getCustomFieldConfiguration,
+                handler: CustomFieldConfiguration,
             },
         
 
@@ -245,13 +245,13 @@ fieldIdOrKey: z.string()}),
                 schema: z.object({
                   'key': z.string(),
 key: z.string()}),
-                handler: getApplicationRole,
+                handler: ApplicationRole,
             },
         
 
              'jira.AttachmentMeta/sync': {
                 schema: z.object({}),
-                handler: getAttachmentMeta,
+                handler: AttachmentMeta,
             },
         
 
@@ -259,7 +259,7 @@ key: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getAttachment,
+                handler: Attachment,
             },
         
 
@@ -286,7 +286,7 @@ id: z.string()}),
 'filter': z.string(),
 'from': z.string(),
 'to': z.string()}),
-                handler: getAuditRecords,
+                handler: AuditRecords,
             },
         
 
@@ -294,7 +294,7 @@ id: z.string()}),
                 schema: z.object({
                   'type': z.string(),
 type: z.string()}),
-                handler: getAllSystemAvatars,
+                handler: AllSystemAvatars,
             },
         
 
@@ -304,7 +304,7 @@ type: z.string()}),
 'searchText': z.string(),
 'endingBefore': z.string(),
 'startingAfter': z.string()}),
-                handler: getBulkEditableFields,
+                handler: BulkEditableFields,
             },
         
 
@@ -312,7 +312,7 @@ type: z.string()}),
                 schema: z.object({
                   'taskId': z.string(),
 taskId: z.string()}),
-                handler: getBulkOperationProgress,
+                handler: BulkOperationProgress,
             },
         
 
@@ -320,7 +320,7 @@ taskId: z.string()}),
                 schema: z.object({
                   'status': z.string(),
 'orderBy': z.string()}),
-                handler: getAllUserDataClassificationLevels,
+                handler: AllUserDataClassificationLevels,
             },
         
 
@@ -328,7 +328,7 @@ taskId: z.string()}),
                 schema: z.object({
                   'commentId': z.string(),
 commentId: z.string()}),
-                handler: getCommentPropertyKeys,
+                handler: CommentPropertyKeys,
             },
         
 
@@ -338,7 +338,7 @@ commentId: z.string()}),
 'propertyKey': z.string(),
 commentId: z.string(),
 propertyKey: z.string()}),
-                handler: getCommentProperty,
+                handler: CommentProperty,
             },
         
 
@@ -357,7 +357,7 @@ propertyKey: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getComponent,
+                handler: Component,
             },
         
 
@@ -365,25 +365,25 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getComponentRelatedIssues,
+                handler: ComponentRelatedIssues,
             },
         
 
              'jira.Configuration/sync': {
                 schema: z.object({}),
-                handler: getConfiguration,
+                handler: Configuration,
             },
         
 
              'jira.SelectedTimeTrackingImplementation/sync': {
                 schema: z.object({}),
-                handler: getSelectedTimeTrackingImplementation,
+                handler: SelectedTimeTrackingImplementation,
             },
         
 
              'jira.SharedTimeTrackingConfiguration/sync': {
                 schema: z.object({}),
-                handler: getSharedTimeTrackingConfiguration,
+                handler: SharedTimeTrackingConfiguration,
             },
         
 
@@ -391,7 +391,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getCustomFieldOption,
+                handler: CustomFieldOption,
             },
         
 
@@ -400,13 +400,13 @@ id: z.string()}),
                   'filter': z.string(),
 'startAt': z.number(),
 'maxResults': z.number()}),
-                handler: getAllDashboards,
+                handler: AllDashboards,
             },
         
 
              'jira.AllAvailableDashboardGadgets/sync': {
                 schema: z.object({}),
-                handler: getAllAvailableDashboardGadgets,
+                handler: AllAvailableDashboardGadgets,
             },
         
 
@@ -423,7 +423,7 @@ id: z.string()}),
 'maxResults': z.number(),
 'status': z.string(),
 'expand': z.string()}),
-                handler: getDashboardsPaginated,
+                handler: DashboardsPaginated,
             },
         
 
@@ -434,7 +434,7 @@ id: z.string()}),
 'uri': z.string(),
 'gadgetId': z.string(),
 dashboardId: z.string()}),
-                handler: getAllGadgets,
+                handler: AllGadgets,
             },
         
 
@@ -444,7 +444,7 @@ dashboardId: z.string()}),
 'itemId': z.string(),
 dashboardId: z.string(),
 itemId: z.string()}),
-                handler: getDashboardItemPropertyKeys,
+                handler: DashboardItemPropertyKeys,
             },
         
 
@@ -456,7 +456,7 @@ itemId: z.string()}),
 dashboardId: z.string(),
 itemId: z.string(),
 propertyKey: z.string()}),
-                handler: getDashboardItemProperty,
+                handler: DashboardItemProperty,
             },
         
 
@@ -464,20 +464,20 @@ propertyKey: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getDashboard,
+                handler: Dashboard,
             },
         
 
              'jira.Policy/sync': {
                 schema: z.object({}),
-                handler: getPolicy,
+                handler: Policy,
             },
         
 
              'jira.Policies/sync': {
                 schema: z.object({
                   'ids': z.string()}),
-                handler: getPolicies,
+                handler: Policies,
             },
         
 
@@ -490,7 +490,7 @@ id: z.string()}),
 'query': z.string(),
 'orderBy': z.string(),
 'expand': z.string()}),
-                handler: getFieldsPaginated,
+                handler: FieldsPaginated,
             },
         
 
@@ -502,7 +502,7 @@ id: z.string()}),
 'query': z.string(),
 'expand': z.string(),
 'orderBy': z.string()}),
-                handler: getTrashedFieldsPaginated,
+                handler: TrashedFieldsPaginated,
             },
         
 
@@ -515,7 +515,7 @@ id: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 fieldId: z.string()}),
-                handler: getContextsForField,
+                handler: ContextsForField,
             },
         
 
@@ -526,7 +526,7 @@ fieldId: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 fieldId: z.string()}),
-                handler: getDefaultValues,
+                handler: DefaultValues,
             },
         
 
@@ -537,7 +537,7 @@ fieldId: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 fieldId: z.string()}),
-                handler: getIssueTypeMappingsForContexts,
+                handler: IssueTypeMappingsForContexts,
             },
         
 
@@ -548,7 +548,7 @@ fieldId: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 fieldId: z.string()}),
-                handler: getProjectContextMapping,
+                handler: ProjectContextMapping,
             },
         
 
@@ -562,7 +562,7 @@ fieldId: z.string()}),
 'maxResults': z.number(),
 fieldId: z.string(),
 contextId: z.string()}),
-                handler: getOptionsForContext,
+                handler: OptionsForContext,
             },
         
 
@@ -572,7 +572,7 @@ contextId: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 fieldId: z.string()}),
-                handler: getContextsForFieldDeprecated,
+                handler: ContextsForFieldDeprecated,
             },
         
 
@@ -583,7 +583,7 @@ fieldId: z.string()}),
 'maxResults': z.number(),
 'expand': z.string(),
 fieldId: z.string()}),
-                handler: getScreensForField,
+                handler: ScreensForField,
             },
         
 
@@ -593,7 +593,7 @@ fieldId: z.string()}),
 'maxResults': z.number(),
 'fieldKey': z.string(),
 fieldKey: z.string()}),
-                handler: getAllIssueFieldOptions,
+                handler: AllIssueFieldOptions,
             },
         
 
@@ -604,7 +604,7 @@ fieldKey: z.string()}),
 'projectId': z.number(),
 'fieldKey': z.string(),
 fieldKey: z.string()}),
-                handler: getSelectableIssueFieldOptions,
+                handler: SelectableIssueFieldOptions,
             },
         
 
@@ -615,7 +615,7 @@ fieldKey: z.string()}),
 'projectId': z.number(),
 'fieldKey': z.string(),
 fieldKey: z.string()}),
-                handler: getVisibleIssueFieldOptions,
+                handler: VisibleIssueFieldOptions,
             },
         
 
@@ -625,7 +625,7 @@ fieldKey: z.string()}),
 'optionId': z.number(),
 fieldKey: z.string(),
 optionId: z.string()}),
-                handler: getIssueFieldOption,
+                handler: IssueFieldOption,
             },
         
 
@@ -636,7 +636,7 @@ optionId: z.string()}),
 'id': z.string(),
 'isDefault': z.boolean(),
 'query': z.string()}),
-                handler: getAllFieldConfigurations,
+                handler: AllFieldConfigurations,
             },
         
 
@@ -646,7 +646,7 @@ optionId: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 id: z.string()}),
-                handler: getFieldConfigurationItems,
+                handler: FieldConfigurationItems,
             },
         
 
@@ -655,7 +655,7 @@ id: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'id': z.string()}),
-                handler: getAllFieldConfigurationSchemes,
+                handler: AllFieldConfigurationSchemes,
             },
         
 
@@ -664,7 +664,7 @@ id: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'fieldConfigurationSchemeId': z.string()}),
-                handler: getFieldConfigurationSchemeMappings,
+                handler: FieldConfigurationSchemeMappings,
             },
         
 
@@ -673,13 +673,13 @@ id: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'projectId': z.string()}),
-                handler: getFieldConfigurationSchemeProjectMapping,
+                handler: FieldConfigurationSchemeProjectMapping,
             },
         
 
              'jira.DefaultShareScope/sync': {
                 schema: z.object({}),
-                handler: getDefaultShareScope,
+                handler: DefaultShareScope,
             },
         
 
@@ -697,7 +697,7 @@ id: z.string()}),
 'maxResults': z.number(),
 'expand': z.string(),
 'overrideSharePermissions': z.boolean()}),
-                handler: getFiltersPaginated,
+                handler: FiltersPaginated,
             },
         
 
@@ -707,7 +707,7 @@ id: z.string()}),
 'expand': z.string(),
 'overrideSharePermissions': z.boolean(),
 id: z.string()}),
-                handler: getFilter,
+                handler: Filter,
             },
         
 
@@ -717,7 +717,7 @@ id: z.string()}),
 'permissionId': z.number(),
 id: z.string(),
 permissionId: z.string()}),
-                handler: getSharePermission,
+                handler: SharePermission,
             },
         
 
@@ -726,7 +726,7 @@ permissionId: z.string()}),
                   'groupname': z.string(),
 'groupId': z.string(),
 'expand': z.string()}),
-                handler: getGroup,
+                handler: Group,
             },
         
 
@@ -749,7 +749,7 @@ permissionId: z.string()}),
 'includeInactiveUsers': z.boolean(),
 'startAt': z.number(),
 'maxResults': z.number()}),
-                handler: getUsersFromGroup,
+                handler: UsersFromGroup,
             },
         
 
@@ -783,7 +783,7 @@ permissionId: z.string()}),
 
              'jira.License/sync': {
                 schema: z.object({}),
-                handler: getLicense,
+                handler: License,
             },
         
 
@@ -794,7 +794,7 @@ permissionId: z.string()}),
 'issuetypeIds': z.string(),
 'issuetypeNames': z.string(),
 'expand': z.string()}),
-                handler: getCreateIssueMeta,
+                handler: CreateIssueMeta,
             },
         
 
@@ -804,7 +804,7 @@ permissionId: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 projectIdOrKey: z.string()}),
-                handler: getCreateIssueMetaIssueTypes,
+                handler: CreateIssueMetaIssueTypes,
             },
         
 
@@ -816,14 +816,14 @@ projectIdOrKey: z.string()}),
 'maxResults': z.number(),
 projectIdOrKey: z.string(),
 issueTypeId: z.string()}),
-                handler: getCreateIssueMetaIssueTypeId,
+                handler: CreateIssueMetaIssueTypeId,
             },
         
 
              'jira.IssueLimitReport/sync': {
                 schema: z.object({
                   'isReturningKeys': z.boolean()}),
-                handler: getIssueLimitReport,
+                handler: IssueLimitReport,
             },
         
 
@@ -835,7 +835,7 @@ issueTypeId: z.string()}),
 'currentProjectId': z.string(),
 'showSubTasks': z.boolean(),
 'showSubTaskParent': z.boolean()}),
-                handler: getIssuePickerResource,
+                handler: IssuePickerResource,
             },
         
 
@@ -849,7 +849,7 @@ issueTypeId: z.string()}),
 'updateHistory': z.boolean(),
 'failFast': z.boolean(),
 issueIdOrKey: z.string()}),
-                handler: getIssue,
+                handler: Issue,
             },
         
 
@@ -859,7 +859,7 @@ issueIdOrKey: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 issueIdOrKey: z.string()}),
-                handler: getChangeLogs,
+                handler: ChangeLogs,
             },
         
 
@@ -871,7 +871,7 @@ issueIdOrKey: z.string()}),
 'orderBy': z.string(),
 'expand': z.string(),
 issueIdOrKey: z.string()}),
-                handler: getComments,
+                handler: Comments,
             },
         
 
@@ -882,7 +882,7 @@ issueIdOrKey: z.string()}),
 'expand': z.string(),
 issueIdOrKey: z.string(),
 id: z.string()}),
-                handler: getComment,
+                handler: Comment,
             },
         
 
@@ -892,7 +892,7 @@ id: z.string()}),
 'overrideScreenSecurity': z.boolean(),
 'overrideEditableFlag': z.boolean(),
 issueIdOrKey: z.string()}),
-                handler: getEditIssueMeta,
+                handler: EditIssueMeta,
             },
         
 
@@ -900,7 +900,7 @@ issueIdOrKey: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 issueIdOrKey: z.string()}),
-                handler: getIssuePropertyKeys,
+                handler: IssuePropertyKeys,
             },
         
 
@@ -910,7 +910,7 @@ issueIdOrKey: z.string()}),
 'propertyKey': z.string(),
 issueIdOrKey: z.string(),
 propertyKey: z.string()}),
-                handler: getIssueProperty,
+                handler: IssueProperty,
             },
         
 
@@ -919,7 +919,7 @@ propertyKey: z.string()}),
                   'issueIdOrKey': z.string(),
 'globalId': z.string(),
 issueIdOrKey: z.string()}),
-                handler: getRemoteIssueLinks,
+                handler: RemoteIssueLinks,
             },
         
 
@@ -929,7 +929,7 @@ issueIdOrKey: z.string()}),
 'linkId': z.string(),
 issueIdOrKey: z.string(),
 linkId: z.string()}),
-                handler: getRemoteIssueLinkById,
+                handler: RemoteIssueLinkById,
             },
         
 
@@ -942,7 +942,7 @@ linkId: z.string()}),
 'includeUnavailableTransitions': z.boolean(),
 'sortByOpsBarAndStatus': z.boolean(),
 issueIdOrKey: z.string()}),
-                handler: getTransitions,
+                handler: Transitions,
             },
         
 
@@ -950,7 +950,7 @@ issueIdOrKey: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 issueIdOrKey: z.string()}),
-                handler: getVotes,
+                handler: Votes,
             },
         
 
@@ -958,7 +958,7 @@ issueIdOrKey: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 issueIdOrKey: z.string()}),
-                handler: getIssueWatchers,
+                handler: IssueWatchers,
             },
         
 
@@ -971,7 +971,7 @@ issueIdOrKey: z.string()}),
 'startedBefore': z.number(),
 'expand': z.string(),
 issueIdOrKey: z.string()}),
-                handler: getIssueWorklog,
+                handler: IssueWorklog,
             },
         
 
@@ -982,7 +982,7 @@ issueIdOrKey: z.string()}),
 'expand': z.string(),
 issueIdOrKey: z.string(),
 id: z.string()}),
-                handler: getWorklog,
+                handler: Worklog,
             },
         
 
@@ -992,7 +992,7 @@ id: z.string()}),
 'worklogId': z.string(),
 issueIdOrKey: z.string(),
 worklogId: z.string()}),
-                handler: getWorklogPropertyKeys,
+                handler: WorklogPropertyKeys,
             },
         
 
@@ -1004,7 +1004,7 @@ worklogId: z.string()}),
 issueIdOrKey: z.string(),
 worklogId: z.string(),
 propertyKey: z.string()}),
-                handler: getWorklogProperty,
+                handler: WorklogProperty,
             },
         
 
@@ -1012,13 +1012,13 @@ propertyKey: z.string()}),
                 schema: z.object({
                   'linkId': z.string(),
 linkId: z.string()}),
-                handler: getIssueLink,
+                handler: IssueLink,
             },
         
 
              'jira.IssueLinkTypes/sync': {
                 schema: z.object({}),
-                handler: getIssueLinkTypes,
+                handler: IssueLinkTypes,
             },
         
 
@@ -1026,13 +1026,13 @@ linkId: z.string()}),
                 schema: z.object({
                   'issueLinkTypeId': z.string(),
 issueLinkTypeId: z.string()}),
-                handler: getIssueLinkType,
+                handler: IssueLinkType,
             },
         
 
              'jira.IssueSecuritySchemes/sync': {
                 schema: z.object({}),
-                handler: getIssueSecuritySchemes,
+                handler: IssueSecuritySchemes,
             },
         
 
@@ -1043,7 +1043,7 @@ issueLinkTypeId: z.string()}),
 'id': z.string(),
 'schemeId': z.string(),
 'onlyDefault': z.boolean()}),
-                handler: getSecurityLevels,
+                handler: SecurityLevels,
             },
         
 
@@ -1055,7 +1055,7 @@ issueLinkTypeId: z.string()}),
 'schemeId': z.string(),
 'levelId': z.string(),
 'expand': z.string()}),
-                handler: getSecurityLevelMembers,
+                handler: SecurityLevelMembers,
             },
         
 
@@ -1083,7 +1083,7 @@ issueLinkTypeId: z.string()}),
                 schema: z.object({
                   'id': z.number(),
 id: z.string()}),
-                handler: getIssueSecurityScheme,
+                handler: IssueSecurityScheme,
             },
         
 
@@ -1095,7 +1095,7 @@ id: z.string()}),
 'issueSecurityLevelId': z.string(),
 'expand': z.string(),
 issueSecuritySchemeId: z.string()}),
-                handler: getIssueSecurityLevelMembers,
+                handler: IssueSecurityLevelMembers,
             },
         
 
@@ -1103,7 +1103,7 @@ issueSecuritySchemeId: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getIssueType,
+                handler: IssueType,
             },
         
 
@@ -1111,7 +1111,7 @@ id: z.string()}),
                 schema: z.object({
                   'issueTypeId': z.string(),
 issueTypeId: z.string()}),
-                handler: getIssueTypePropertyKeys,
+                handler: IssueTypePropertyKeys,
             },
         
 
@@ -1121,7 +1121,7 @@ issueTypeId: z.string()}),
 'propertyKey': z.string(),
 issueTypeId: z.string(),
 propertyKey: z.string()}),
-                handler: getIssueTypeProperty,
+                handler: IssueTypeProperty,
             },
         
 
@@ -1133,7 +1133,7 @@ propertyKey: z.string()}),
 'orderBy': z.string(),
 'expand': z.string(),
 'queryString': z.string()}),
-                handler: getAllIssueTypeSchemes,
+                handler: AllIssueTypeSchemes,
             },
         
 
@@ -1142,7 +1142,7 @@ propertyKey: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'issueTypeSchemeId': z.string()}),
-                handler: getIssueTypeSchemesMapping,
+                handler: IssueTypeSchemesMapping,
             },
         
 
@@ -1151,7 +1151,7 @@ propertyKey: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'projectId': z.string()}),
-                handler: getIssueTypeSchemeForProjects,
+                handler: IssueTypeSchemeForProjects,
             },
         
 
@@ -1163,7 +1163,7 @@ propertyKey: z.string()}),
 'queryString': z.string(),
 'orderBy': z.string(),
 'expand': z.string()}),
-                handler: getIssueTypeScreenSchemes,
+                handler: IssueTypeScreenSchemes,
             },
         
 
@@ -1172,7 +1172,7 @@ propertyKey: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'issueTypeScreenSchemeId': z.string()}),
-                handler: getIssueTypeScreenSchemeMappings,
+                handler: IssueTypeScreenSchemeMappings,
             },
         
 
@@ -1181,7 +1181,7 @@ propertyKey: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'projectId': z.string()}),
-                handler: getIssueTypeScreenSchemeProjectAssociations,
+                handler: IssueTypeScreenSchemeProjectAssociations,
             },
         
 
@@ -1192,13 +1192,13 @@ propertyKey: z.string()}),
 'maxResults': z.number(),
 'query': z.string(),
 issueTypeScreenSchemeId: z.string()}),
-                handler: getProjectsForIssueTypeScreenScheme,
+                handler: ProjectsForIssueTypeScreenScheme,
             },
         
 
              'jira.AutoComplete/sync': {
                 schema: z.object({}),
-                handler: getAutoComplete,
+                handler: AutoComplete,
             },
         
 
@@ -1208,7 +1208,7 @@ issueTypeScreenSchemeId: z.string()}),
 'fieldValue': z.string(),
 'predicateName': z.string(),
 'predicateValue': z.string()}),
-                handler: getFieldAutoCompleteForQueryString,
+                handler: FieldAutoCompleteForQueryString,
             },
         
 
@@ -1218,7 +1218,7 @@ issueTypeScreenSchemeId: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 'orderBy': z.string()}),
-                handler: getPrecomputations,
+                handler: Precomputations,
             },
         
 
@@ -1226,13 +1226,13 @@ issueTypeScreenSchemeId: z.string()}),
                 schema: z.object({
                   'startAt': z.number(),
 'maxResults': z.number()}),
-                handler: getAllLabels,
+                handler: AllLabels,
             },
         
 
              'jira.ApproximateLicenseCount/sync': {
                 schema: z.object({}),
-                handler: getApproximateLicenseCount,
+                handler: ApproximateLicenseCount,
             },
         
 
@@ -1240,7 +1240,7 @@ issueTypeScreenSchemeId: z.string()}),
                 schema: z.object({
                   'applicationKey': z.string(),
 applicationKey: z.string()}),
-                handler: getApproximateApplicationLicenseCount,
+                handler: ApproximateApplicationLicenseCount,
             },
         
 
@@ -1254,20 +1254,20 @@ applicationKey: z.string()}),
 'projectUuid': z.string(),
 'projectConfigurationUuid': z.string(),
 'commentId': z.string()}),
-                handler: getMyPermissions,
+                handler: MyPermissions,
             },
         
 
              'jira.Locale/sync': {
                 schema: z.object({}),
-                handler: getLocale,
+                handler: Locale,
             },
         
 
              'jira.CurrentUser/sync': {
                 schema: z.object({
                   'expand': z.string()}),
-                handler: getCurrentUser,
+                handler: CurrentUser,
             },
         
 
@@ -1279,7 +1279,7 @@ applicationKey: z.string()}),
 'projectId': z.string(),
 'onlyDefault': z.boolean(),
 'expand': z.string()}),
-                handler: getNotificationSchemes,
+                handler: NotificationSchemes,
             },
         
 
@@ -1289,7 +1289,7 @@ applicationKey: z.string()}),
 'maxResults': z.string(),
 'notificationSchemeId': z.string(),
 'projectId': z.string()}),
-                handler: getNotificationSchemeToProjectMappings,
+                handler: NotificationSchemeToProjectMappings,
             },
         
 
@@ -1298,20 +1298,20 @@ applicationKey: z.string()}),
                   'id': z.number(),
 'expand': z.string(),
 id: z.string()}),
-                handler: getNotificationScheme,
+                handler: NotificationScheme,
             },
         
 
              'jira.AllPermissions/sync': {
                 schema: z.object({}),
-                handler: getAllPermissions,
+                handler: AllPermissions,
             },
         
 
              'jira.AllPermissionSchemes/sync': {
                 schema: z.object({
                   'expand': z.string()}),
-                handler: getAllPermissionSchemes,
+                handler: AllPermissionSchemes,
             },
         
 
@@ -1320,7 +1320,7 @@ id: z.string()}),
                   'schemeId': z.number(),
 'expand': z.string(),
 schemeId: z.string()}),
-                handler: getPermissionScheme,
+                handler: PermissionScheme,
             },
         
 
@@ -1329,7 +1329,7 @@ schemeId: z.string()}),
                   'schemeId': z.number(),
 'expand': z.string(),
 schemeId: z.string()}),
-                handler: getPermissionSchemeGrants,
+                handler: PermissionSchemeGrants,
             },
         
 
@@ -1340,7 +1340,7 @@ schemeId: z.string()}),
 'expand': z.string(),
 schemeId: z.string(),
 permissionId: z.string()}),
-                handler: getPermissionSchemeGrant,
+                handler: PermissionSchemeGrant,
             },
         
 
@@ -1361,7 +1361,7 @@ permissionId: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getPriority,
+                handler: Priority,
             },
         
 
@@ -1375,7 +1375,7 @@ id: z.string()}),
 'onlyDefault': z.boolean(),
 'orderBy': z.string(),
 'expand': z.string()}),
-                handler: getPrioritySchemes,
+                handler: PrioritySchemes,
             },
         
 
@@ -1386,7 +1386,7 @@ id: z.string()}),
 'query': z.string(),
 'schemeId': z.string(),
 'exclude': z.string()}),
-                handler: getAvailablePrioritiesByPriorityScheme,
+                handler: AvailablePrioritiesByPriorityScheme,
             },
         
 
@@ -1396,7 +1396,7 @@ id: z.string()}),
 'maxResults': z.string(),
 'schemeId': z.string(),
 schemeId: z.string()}),
-                handler: getPrioritiesByPriorityScheme,
+                handler: PrioritiesByPriorityScheme,
             },
         
 
@@ -1408,7 +1408,7 @@ schemeId: z.string()}),
 'schemeId': z.string(),
 'query': z.string(),
 schemeId: z.string()}),
-                handler: getProjectsByPriorityScheme,
+                handler: ProjectsByPriorityScheme,
             },
         
 
@@ -1435,7 +1435,7 @@ schemeId: z.string()}),
                 schema: z.object({
                   'projectTypeKey': z.string(),
 projectTypeKey: z.string()}),
-                handler: getProjectTypeByKey,
+                handler: ProjectTypeByKey,
             },
         
 
@@ -1443,7 +1443,7 @@ projectTypeKey: z.string()}),
                 schema: z.object({
                   'projectTypeKey': z.string(),
 projectTypeKey: z.string()}),
-                handler: getAccessibleProjectTypeByKey,
+                handler: AccessibleProjectTypeByKey,
             },
         
 
@@ -1453,7 +1453,7 @@ projectTypeKey: z.string()}),
 'expand': z.string(),
 'properties': z.string(),
 projectIdOrKey: z.string()}),
-                handler: getProject,
+                handler: Project,
             },
         
 
@@ -1461,7 +1461,7 @@ projectIdOrKey: z.string()}),
                 schema: z.object({
                   'projectIdOrKey': z.string(),
 projectIdOrKey: z.string()}),
-                handler: getAllProjectAvatars,
+                handler: AllProjectAvatars,
             },
         
 
@@ -1474,7 +1474,7 @@ projectIdOrKey: z.string()}),
 'componentSource': z.string(),
 'query': z.string(),
 projectIdOrKey: z.string()}),
-                handler: getProjectComponentsPaginated,
+                handler: ProjectComponentsPaginated,
             },
         
 
@@ -1482,7 +1482,7 @@ projectIdOrKey: z.string()}),
                 schema: z.object({
                   'projectIdOrKey': z.string(),
 projectIdOrKey: z.string()}),
-                handler: getFeaturesForProject,
+                handler: FeaturesForProject,
             },
         
 
@@ -1490,7 +1490,7 @@ projectIdOrKey: z.string()}),
                 schema: z.object({
                   'projectIdOrKey': z.string(),
 projectIdOrKey: z.string()}),
-                handler: getProjectPropertyKeys,
+                handler: ProjectPropertyKeys,
             },
         
 
@@ -1500,7 +1500,7 @@ projectIdOrKey: z.string()}),
 'propertyKey': z.string(),
 projectIdOrKey: z.string(),
 propertyKey: z.string()}),
-                handler: getProjectProperty,
+                handler: ProjectProperty,
             },
         
 
@@ -1511,7 +1511,7 @@ propertyKey: z.string()}),
 'excludeInactiveUsers': z.boolean(),
 projectIdOrKey: z.string(),
 id: z.string()}),
-                handler: getProjectRole,
+                handler: ProjectRole,
             },
         
 
@@ -1525,7 +1525,7 @@ id: z.string()}),
 'status': z.string(),
 'expand': z.string(),
 projectIdOrKey: z.string()}),
-                handler: getProjectVersionsPaginated,
+                handler: ProjectVersionsPaginated,
             },
         
 
@@ -1533,7 +1533,7 @@ projectIdOrKey: z.string()}),
                 schema: z.object({
                   'projectId': z.number(),
 projectId: z.string()}),
-                handler: getProjectEmail,
+                handler: ProjectEmail,
             },
         
 
@@ -1541,7 +1541,7 @@ projectId: z.string()}),
                 schema: z.object({
                   'projectId': z.number(),
 projectId: z.string()}),
-                handler: getHierarchy,
+                handler: Hierarchy,
             },
         
 
@@ -1549,7 +1549,7 @@ projectId: z.string()}),
                 schema: z.object({
                   'projectKeyOrId': z.string(),
 projectKeyOrId: z.string()}),
-                handler: getProjectIssueSecurityScheme,
+                handler: ProjectIssueSecurityScheme,
             },
         
 
@@ -1558,7 +1558,7 @@ projectKeyOrId: z.string()}),
                   'projectKeyOrId': z.string(),
 'expand': z.string(),
 projectKeyOrId: z.string()}),
-                handler: getNotificationSchemeForProject,
+                handler: NotificationSchemeForProject,
             },
         
 
@@ -1567,7 +1567,7 @@ projectKeyOrId: z.string()}),
                   'projectKeyOrId': z.string(),
 'expand': z.string(),
 projectKeyOrId: z.string()}),
-                handler: getAssignedPermissionScheme,
+                handler: AssignedPermissionScheme,
             },
         
 
@@ -1575,7 +1575,7 @@ projectKeyOrId: z.string()}),
                 schema: z.object({
                   'projectKeyOrId': z.string(),
 projectKeyOrId: z.string()}),
-                handler: getSecurityLevelsForProject,
+                handler: SecurityLevelsForProject,
             },
         
 
@@ -1583,7 +1583,7 @@ projectKeyOrId: z.string()}),
                 schema: z.object({
                   'id': z.number(),
 id: z.string()}),
-                handler: getProjectCategoryById,
+                handler: ProjectCategoryById,
             },
         
 
@@ -1608,7 +1608,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getResolution,
+                handler: Resolution,
             },
         
 
@@ -1616,7 +1616,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.number(),
 id: z.string()}),
-                handler: getProjectRoleById,
+                handler: ProjectRoleById,
             },
         
 
@@ -1624,7 +1624,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.number(),
 id: z.string()}),
-                handler: getProjectRoleActorsForRole,
+                handler: ProjectRoleActorsForRole,
             },
         
 
@@ -1636,7 +1636,7 @@ id: z.string()}),
 'queryString': z.string(),
 'scope': z.string(),
 'orderBy': z.string()}),
-                handler: getScreens,
+                handler: Screens,
             },
         
 
@@ -1648,7 +1648,7 @@ id: z.string()}),
 'expand': z.string(),
 'queryString': z.string(),
 'orderBy': z.string()}),
-                handler: getScreenSchemes,
+                handler: ScreenSchemes,
             },
         
 
@@ -1671,13 +1671,13 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getIssueSecurityLevel,
+                handler: IssueSecurityLevel,
             },
         
 
              'jira.ServerInfo/sync': {
                 schema: z.object({}),
-                handler: getServerInfo,
+                handler: ServerInfo,
             },
         
 
@@ -1685,7 +1685,7 @@ id: z.string()}),
                 schema: z.object({
                   'idOrName': z.string(),
 idOrName: z.string()}),
-                handler: getStatus,
+                handler: Status,
             },
         
 
@@ -1693,7 +1693,7 @@ idOrName: z.string()}),
                 schema: z.object({
                   'idOrKey': z.string(),
 idOrKey: z.string()}),
-                handler: getStatusCategory,
+                handler: StatusCategory,
             },
         
 
@@ -1713,7 +1713,7 @@ idOrKey: z.string()}),
                 schema: z.object({
                   'taskId': z.string(),
 taskId: z.string()}),
-                handler: getTask,
+                handler: Task,
             },
         
 
@@ -1722,7 +1722,7 @@ taskId: z.string()}),
                   'startAt': z.number(),
 'maxResults': z.number(),
 'expand': z.string()}),
-                handler: getUiModifications,
+                handler: UiModifications,
             },
         
 
@@ -1732,7 +1732,7 @@ taskId: z.string()}),
 'entityId': z.string(),
 type: z.string(),
 entityId: z.string()}),
-                handler: getAvatars,
+                handler: Avatars,
             },
         
 
@@ -1742,7 +1742,7 @@ entityId: z.string()}),
 'size': z.string(),
 'format': z.string(),
 type: z.string()}),
-                handler: getAvatarImageByType,
+                handler: AvatarImageByType,
             },
         
 
@@ -1754,7 +1754,7 @@ type: z.string()}),
 'format': z.string(),
 type: z.string(),
 id: z.string()}),
-                handler: getAvatarImageByID,
+                handler: AvatarImageByID,
             },
         
 
@@ -1766,7 +1766,7 @@ id: z.string()}),
 'format': z.string(),
 type: z.string(),
 entityId: z.string()}),
-                handler: getAvatarImageByOwner,
+                handler: AvatarImageByOwner,
             },
         
 
@@ -1776,7 +1776,7 @@ entityId: z.string()}),
 'username': z.string(),
 'key': z.string(),
 'expand': z.string()}),
-                handler: getUser,
+                handler: User,
             },
         
 
@@ -1794,14 +1794,14 @@ entityId: z.string()}),
              'jira.UserEmail/sync': {
                 schema: z.object({
                   'accountId': z.string()}),
-                handler: getUserEmail,
+                handler: UserEmail,
             },
         
 
              'jira.UserEmailBulk/sync': {
                 schema: z.object({
                   'accountId': z.string()}),
-                handler: getUserEmailBulk,
+                handler: UserEmailBulk,
             },
         
 
@@ -1823,7 +1823,7 @@ entityId: z.string()}),
                   'accountId': z.string(),
 'userKey': z.string(),
 'username': z.string()}),
-                handler: getUserPropertyKeys,
+                handler: UserPropertyKeys,
             },
         
 
@@ -1834,7 +1834,7 @@ entityId: z.string()}),
 'username': z.string(),
 'propertyKey': z.string(),
 propertyKey: z.string()}),
-                handler: getUserProperty,
+                handler: UserProperty,
             },
         
 
@@ -1861,7 +1861,7 @@ propertyKey: z.string()}),
                   'id': z.string(),
 'expand': z.string(),
 id: z.string()}),
-                handler: getVersion,
+                handler: Version,
             },
         
 
@@ -1869,7 +1869,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getVersionRelatedIssues,
+                handler: VersionRelatedIssues,
             },
         
 
@@ -1877,7 +1877,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 id: z.string()}),
-                handler: getVersionUnresolvedIssues,
+                handler: VersionUnresolvedIssues,
             },
         
 
@@ -1885,7 +1885,7 @@ id: z.string()}),
                 schema: z.object({
                   'startAt': z.number(),
 'maxResults': z.number()}),
-                handler: getDynamicWebhooksForApp,
+                handler: DynamicWebhooksForApp,
             },
         
 
@@ -1893,7 +1893,7 @@ id: z.string()}),
                 schema: z.object({
                   'maxResults': z.number(),
 'after': z.number()}),
-                handler: getFailedWebhooks,
+                handler: FailedWebhooks,
             },
         
 
@@ -1907,7 +1907,7 @@ id: z.string()}),
 'withTags': z.string(),
 'draft': z.boolean(),
 'expand': z.string()}),
-                handler: getWorkflowTransitionRuleConfigurations,
+                handler: WorkflowTransitionRuleConfigurations,
             },
         
 
@@ -1920,7 +1920,7 @@ id: z.string()}),
 'queryString': z.string(),
 'orderBy': z.string(),
 'isActive': z.boolean()}),
-                handler: getWorkflowsPaginated,
+                handler: WorkflowsPaginated,
             },
         
 
@@ -1932,7 +1932,7 @@ id: z.string()}),
 'workflowName': z.string(),
 'workflowMode': z.string(),
 transitionId: z.string()}),
-                handler: getWorkflowTransitionProperties,
+                handler: WorkflowTransitionProperties,
             },
         
 
@@ -1949,14 +1949,14 @@ transitionId: z.string()}),
                 schema: z.object({
                   'startAt': z.number(),
 'maxResults': z.number()}),
-                handler: getAllWorkflowSchemes,
+                handler: AllWorkflowSchemes,
             },
         
 
              'jira.WorkflowSchemeProjectAssociations/sync': {
                 schema: z.object({
                   'projectId': z.string()}),
-                handler: getWorkflowSchemeProjectAssociations,
+                handler: WorkflowSchemeProjectAssociations,
             },
         
 
@@ -1965,7 +1965,7 @@ transitionId: z.string()}),
                   'id': z.number(),
 'returnDraftIfExists': z.boolean(),
 id: z.string()}),
-                handler: getWorkflowScheme,
+                handler: WorkflowScheme,
             },
         
 
@@ -1974,7 +1974,7 @@ id: z.string()}),
                   'id': z.number(),
 'returnDraftIfExists': z.boolean(),
 id: z.string()}),
-                handler: getDefaultWorkflow,
+                handler: DefaultWorkflow,
             },
         
 
@@ -1982,7 +1982,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.number(),
 id: z.string()}),
-                handler: getWorkflowSchemeDraft,
+                handler: WorkflowSchemeDraft,
             },
         
 
@@ -1990,7 +1990,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.number(),
 id: z.string()}),
-                handler: getDraftDefaultWorkflow,
+                handler: DraftDefaultWorkflow,
             },
         
 
@@ -2000,7 +2000,7 @@ id: z.string()}),
 'issueType': z.string(),
 id: z.string(),
 issueType: z.string()}),
-                handler: getWorkflowSchemeDraftIssueType,
+                handler: WorkflowSchemeDraftIssueType,
             },
         
 
@@ -2009,7 +2009,7 @@ issueType: z.string()}),
                   'id': z.number(),
 'workflowName': z.string(),
 id: z.string()}),
-                handler: getDraftWorkflow,
+                handler: DraftWorkflow,
             },
         
 
@@ -2020,7 +2020,7 @@ id: z.string()}),
 'returnDraftIfExists': z.boolean(),
 id: z.string(),
 issueType: z.string()}),
-                handler: getWorkflowSchemeIssueType,
+                handler: WorkflowSchemeIssueType,
             },
         
 
@@ -2030,14 +2030,14 @@ issueType: z.string()}),
 'workflowName': z.string(),
 'returnDraftIfExists': z.boolean(),
 id: z.string()}),
-                handler: getWorkflow,
+                handler: Workflow,
             },
         
 
              'jira.IdsOfWorklogsDeletedSince/sync': {
                 schema: z.object({
                   'since': z.number()}),
-                handler: getIdsOfWorklogsDeletedSince,
+                handler: IdsOfWorklogsDeletedSince,
             },
         
 
@@ -2045,7 +2045,7 @@ id: z.string()}),
                 schema: z.object({
                   'since': z.number(),
 'expand': z.string()}),
-                handler: getIdsOfWorklogsModifiedSince,
+                handler: IdsOfWorklogsModifiedSince,
             },
         
 
@@ -2053,7 +2053,7 @@ id: z.string()}),
                 schema: z.object({
                   'addonKey': z.string(),
 addonKey: z.string()}),
-                handler: AddonPropertiesResource.getAddonProperties_get,
+                handler: AddonPropertiesResource.AddonProperties_get,
             },
         
 
@@ -2063,13 +2063,13 @@ addonKey: z.string()}),
 'propertyKey': z.string(),
 addonKey: z.string(),
 propertyKey: z.string()}),
-                handler: AddonPropertiesResource.getAddonProperty_get,
+                handler: AddonPropertiesResource.AddonProperty_get,
             },
         
 
              'jira.DynamicModulesResource.Modules_get/sync': {
                 schema: z.object({}),
-                handler: DynamicModulesResource.getModules_get,
+                handler: DynamicModulesResource.Modules_get,
             },
         }
     return this.events;

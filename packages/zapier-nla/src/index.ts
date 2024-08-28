@@ -3,7 +3,7 @@ import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import type openapi from './openapi'
-import { get_execution_log_endpoint } from './events/get_execution_log_endpoint'
+import { _execution_log_endpoint } from './events/_execution_log_endpoint'
 import { list_exposed_actions } from './events/list_exposed_actions'
 
 type Zapier-nlaConfig = {
@@ -34,7 +34,7 @@ export class Zapier-nlaIntegration extends Integration {
                 schema: z.object({
                   'execution_log_id': z.string(),
 execution_log_id: z.string()}),
-                handler: get_execution_log_endpoint,
+                handler: _execution_log_endpoint,
             },
         
 

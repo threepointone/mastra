@@ -3,69 +3,69 @@ import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import type openapi from './openapi'
-import { getTopology } from './events/getTopology'
-import { getAllTopologies } from './events/getAllTopologies'
-import { getAllAttachments } from './events/getAllAttachments'
-import { getAttachment } from './events/getAttachment'
-import { getAllCategories } from './events/getAllCategories'
-import { getCategory } from './events/getCategory'
-import { getAllChannels } from './events/getAllChannels'
-import { getChannel } from './events/getChannel'
-import { getAllCommunities } from './events/getAllCommunities'
-import { getCommunity } from './events/getCommunity'
-import { getAllSources } from './events/getAllSources'
-import { getSource } from './events/getSource'
-import { getAllThreads } from './events/getAllThreads'
-import { getThread } from './events/getThread'
+import { Topology } from './events/Topology'
+import { AllTopologies } from './events/AllTopologies'
+import { AllAttachments } from './events/AllAttachments'
+import { Attachment } from './events/Attachment'
+import { AllCategories } from './events/AllCategories'
+import { Category } from './events/Category'
+import { AllChannels } from './events/AllChannels'
+import { Channel } from './events/Channel'
+import { AllCommunities } from './events/AllCommunities'
+import { Community } from './events/Community'
+import { AllSources } from './events/AllSources'
+import { Source } from './events/Source'
+import { AllThreads } from './events/AllThreads'
+import { Thread } from './events/Thread'
 import { openThread } from './events/openThread'
-import { getAllContents } from './events/getAllContents'
-import { getContent } from './events/getContent'
-import { getAllCustomFields } from './events/getAllCustomFields'
-import { getCustomField } from './events/getCustomField'
-import { getAllEvents } from './events/getAllEvents'
-import { getEvent } from './events/getEvent'
-import { getAllFolders } from './events/getAllFolders'
-import { getFolder } from './events/getFolder'
-import { getAllIdentities } from './events/getAllIdentities'
-import { getIdentity } from './events/getIdentity'
-import { getAllIdentityGroups } from './events/getAllIdentityGroups'
-import { getIdentityGroup } from './events/getIdentityGroup'
-import { getAllInterventionComments } from './events/getAllInterventionComments'
-import { getInterventionComment } from './events/getInterventionComment'
-import { getAllInterventions } from './events/getAllInterventions'
-import { getIntervention } from './events/getIntervention'
-import { getAllPresenceStatus } from './events/getAllPresenceStatus'
-import { getPresenceStatus } from './events/getPresenceStatus'
-import { getAllReplyAssistantEntries } from './events/getAllReplyAssistantEntries'
-import { getReplyAssistantEntry } from './events/getReplyAssistantEntry'
-import { getAllReplyAssistantGroups } from './events/getAllReplyAssistantGroups'
-import { getReplyAssistantGroup } from './events/getReplyAssistantGroup'
-import { getAllReplyAssistantVersions } from './events/getAllReplyAssistantVersions'
-import { getReplyAssistantVersion } from './events/getReplyAssistantVersion'
-import { getAllRoles } from './events/getAllRoles'
-import { getRole } from './events/getRole'
-import { getAllSettings } from './events/getAllSettings'
-import { getAllSurveys } from './events/getAllSurveys'
-import { getSurvey } from './events/getSurvey'
-import { getSurveyResponse } from './events/getSurveyResponse'
-import { getAgentStatus } from './events/getAgentStatus'
-import { getAllTags } from './events/getAllTags'
-import { getTag } from './events/getTag'
-import { getAllTasks } from './events/getAllTasks'
-import { getTask } from './events/getTask'
-import { getAllTeams } from './events/getAllTeams'
-import { getTeam } from './events/getTeam'
-import { getAllTimeSheets } from './events/getAllTimeSheets'
-import { getTimeSheet } from './events/getTimeSheet'
-import { getAllUserCapacities } from './events/getAllUserCapacities'
-import { getUserCapacity } from './events/getUserCapacity'
-import { getAllUsers } from './events/getAllUsers'
-import { getUser } from './events/getUser'
-import { getUserSourcesPermissions } from './events/getUserSourcesPermissions'
-import { getAllUserSignatures } from './events/getAllUserSignatures'
-import { getUserSignature } from './events/getUserSignature'
-import { getAllWebhooks } from './events/getAllWebhooks'
-import { getWebhook } from './events/getWebhook'
+import { AllContents } from './events/AllContents'
+import { Content } from './events/Content'
+import { AllCustomFields } from './events/AllCustomFields'
+import { CustomField } from './events/CustomField'
+import { AllEvents } from './events/AllEvents'
+import { Event } from './events/Event'
+import { AllFolders } from './events/AllFolders'
+import { Folder } from './events/Folder'
+import { AllIdentities } from './events/AllIdentities'
+import { Identity } from './events/Identity'
+import { AllIdentityGroups } from './events/AllIdentityGroups'
+import { IdentityGroup } from './events/IdentityGroup'
+import { AllInterventionComments } from './events/AllInterventionComments'
+import { InterventionComment } from './events/InterventionComment'
+import { AllInterventions } from './events/AllInterventions'
+import { Intervention } from './events/Intervention'
+import { AllPresenceStatus } from './events/AllPresenceStatus'
+import { PresenceStatus } from './events/PresenceStatus'
+import { AllReplyAssistantEntries } from './events/AllReplyAssistantEntries'
+import { ReplyAssistantEntry } from './events/ReplyAssistantEntry'
+import { AllReplyAssistantGroups } from './events/AllReplyAssistantGroups'
+import { ReplyAssistantGroup } from './events/ReplyAssistantGroup'
+import { AllReplyAssistantVersions } from './events/AllReplyAssistantVersions'
+import { ReplyAssistantVersion } from './events/ReplyAssistantVersion'
+import { AllRoles } from './events/AllRoles'
+import { Role } from './events/Role'
+import { AllSettings } from './events/AllSettings'
+import { AllSurveys } from './events/AllSurveys'
+import { Survey } from './events/Survey'
+import { SurveyResponse } from './events/SurveyResponse'
+import { AgentStatus } from './events/AgentStatus'
+import { AllTags } from './events/AllTags'
+import { Tag } from './events/Tag'
+import { AllTasks } from './events/AllTasks'
+import { Task } from './events/Task'
+import { AllTeams } from './events/AllTeams'
+import { Team } from './events/Team'
+import { AllTimeSheets } from './events/AllTimeSheets'
+import { TimeSheet } from './events/TimeSheet'
+import { AllUserCapacities } from './events/AllUserCapacities'
+import { UserCapacity } from './events/UserCapacity'
+import { AllUsers } from './events/AllUsers'
+import { User } from './events/User'
+import { UserSourcesPermissions } from './events/UserSourcesPermissions'
+import { AllUserSignatures } from './events/AllUserSignatures'
+import { UserSignature } from './events/UserSignature'
+import { AllWebhooks } from './events/AllWebhooks'
+import { Webhook } from './events/Webhook'
 
 type Ring-centralConfig = {
   CLIENT_ID: string;
@@ -95,13 +95,13 @@ export class Ring-centralIntegration extends Integration {
                 schema: z.object({
                   'topologyId': z.string(),
 topologyId: z.string()}),
-                handler: getTopology,
+                handler: Topology,
             },
         
 
              'ring-central.AllTopologies/sync': {
                 schema: z.object({}),
-                handler: getAllTopologies,
+                handler: AllTopologies,
             },
         
 
@@ -112,7 +112,7 @@ topologyId: z.string()}),
 'extension': z.string(),
 'created_before': z.string(),
 'created_after': z.string()}),
-                handler: getAllAttachments,
+                handler: AllAttachments,
             },
         
 
@@ -120,7 +120,7 @@ topologyId: z.string()}),
                 schema: z.object({
                   'attachmentId': z.string(),
 attachmentId: z.string()}),
-                handler: getAttachment,
+                handler: Attachment,
             },
         
 
@@ -130,7 +130,7 @@ attachmentId: z.string()}),
 'parent_id': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllCategories,
+                handler: AllCategories,
             },
         
 
@@ -138,7 +138,7 @@ attachmentId: z.string()}),
                 schema: z.object({
                   'categoryId': z.string(),
 categoryId: z.string()}),
-                handler: getCategory,
+                handler: Category,
             },
         
 
@@ -146,7 +146,7 @@ categoryId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllChannels,
+                handler: AllChannels,
             },
         
 
@@ -154,7 +154,7 @@ categoryId: z.string()}),
                 schema: z.object({
                   'channelId': z.string(),
 channelId: z.string()}),
-                handler: getChannel,
+                handler: Channel,
             },
         
 
@@ -162,7 +162,7 @@ channelId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllCommunities,
+                handler: AllCommunities,
             },
         
 
@@ -170,7 +170,7 @@ channelId: z.string()}),
                 schema: z.object({
                   'communityId': z.string(),
 communityId: z.string()}),
-                handler: getCommunity,
+                handler: Community,
             },
         
 
@@ -180,7 +180,7 @@ communityId: z.string()}),
 'offset': z.number(),
 'active': z.boolean(),
 'limit': z.number()}),
-                handler: getAllSources,
+                handler: AllSources,
             },
         
 
@@ -188,7 +188,7 @@ communityId: z.string()}),
                 schema: z.object({
                   'sourceId': z.string(),
 sourceId: z.string()}),
-                handler: getSource,
+                handler: Source,
             },
         
 
@@ -197,7 +197,7 @@ sourceId: z.string()}),
                   'q': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllThreads,
+                handler: AllThreads,
             },
         
 
@@ -205,7 +205,7 @@ sourceId: z.string()}),
                 schema: z.object({
                   'threadId': z.string(),
 threadId: z.string()}),
-                handler: getThread,
+                handler: Thread,
             },
         
 
@@ -222,7 +222,7 @@ threadId: z.string()}),
                   'q': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllContents,
+                handler: AllContents,
             },
         
 
@@ -230,7 +230,7 @@ threadId: z.string()}),
                 schema: z.object({
                   'contentId': z.string(),
 contentId: z.string()}),
-                handler: getContent,
+                handler: Content,
             },
         
 
@@ -238,7 +238,7 @@ contentId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllCustomFields,
+                handler: AllCustomFields,
             },
         
 
@@ -246,7 +246,7 @@ contentId: z.string()}),
                 schema: z.object({
                   'customFieldId': z.string(),
 customFieldId: z.string()}),
-                handler: getCustomField,
+                handler: CustomField,
             },
         
 
@@ -255,7 +255,7 @@ customFieldId: z.string()}),
                   'q': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllEvents,
+                handler: AllEvents,
             },
         
 
@@ -263,7 +263,7 @@ customFieldId: z.string()}),
                 schema: z.object({
                   'eventId': z.string(),
 eventId: z.string()}),
-                handler: getEvent,
+                handler: Event,
             },
         
 
@@ -271,7 +271,7 @@ eventId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllFolders,
+                handler: AllFolders,
             },
         
 
@@ -279,7 +279,7 @@ eventId: z.string()}),
                 schema: z.object({
                   'folderId': z.string(),
 folderId: z.string()}),
-                handler: getFolder,
+                handler: Folder,
             },
         
 
@@ -295,7 +295,7 @@ folderId: z.string()}),
 'uuid': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllIdentities,
+                handler: AllIdentities,
             },
         
 
@@ -303,7 +303,7 @@ folderId: z.string()}),
                 schema: z.object({
                   'identityId': z.string(),
 identityId: z.string()}),
-                handler: getIdentity,
+                handler: Identity,
             },
         
 
@@ -317,7 +317,7 @@ identityId: z.string()}),
 'sort': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllIdentityGroups,
+                handler: AllIdentityGroups,
             },
         
 
@@ -325,7 +325,7 @@ identityId: z.string()}),
                 schema: z.object({
                   'identityGroupId': z.string(),
 identityGroupId: z.string()}),
-                handler: getIdentityGroup,
+                handler: IdentityGroup,
             },
         
 
@@ -337,7 +337,7 @@ identityGroupId: z.string()}),
 'identity_id': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllInterventionComments,
+                handler: AllInterventionComments,
             },
         
 
@@ -345,7 +345,7 @@ identityGroupId: z.string()}),
                 schema: z.object({
                   'interventionCommentId': z.string(),
 interventionCommentId: z.string()}),
-                handler: getInterventionComment,
+                handler: InterventionComment,
             },
         
 
@@ -359,7 +359,7 @@ interventionCommentId: z.string()}),
 'sort': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllInterventions,
+                handler: AllInterventions,
             },
         
 
@@ -367,7 +367,7 @@ interventionCommentId: z.string()}),
                 schema: z.object({
                   'interventionId': z.string(),
 interventionId: z.string()}),
-                handler: getIntervention,
+                handler: Intervention,
             },
         
 
@@ -375,7 +375,7 @@ interventionId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllPresenceStatus,
+                handler: AllPresenceStatus,
             },
         
 
@@ -383,7 +383,7 @@ interventionId: z.string()}),
                 schema: z.object({
                   'presenceStatusId': z.string(),
 presenceStatusId: z.string()}),
-                handler: getPresenceStatus,
+                handler: PresenceStatus,
             },
         
 
@@ -391,7 +391,7 @@ presenceStatusId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllReplyAssistantEntries,
+                handler: AllReplyAssistantEntries,
             },
         
 
@@ -399,7 +399,7 @@ presenceStatusId: z.string()}),
                 schema: z.object({
                   'replyAssistantEntryId': z.string(),
 replyAssistantEntryId: z.string()}),
-                handler: getReplyAssistantEntry,
+                handler: ReplyAssistantEntry,
             },
         
 
@@ -407,7 +407,7 @@ replyAssistantEntryId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllReplyAssistantGroups,
+                handler: AllReplyAssistantGroups,
             },
         
 
@@ -415,7 +415,7 @@ replyAssistantEntryId: z.string()}),
                 schema: z.object({
                   'replyAssistantGroupId': z.string(),
 replyAssistantGroupId: z.string()}),
-                handler: getReplyAssistantGroup,
+                handler: ReplyAssistantGroup,
             },
         
 
@@ -423,7 +423,7 @@ replyAssistantGroupId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllReplyAssistantVersions,
+                handler: AllReplyAssistantVersions,
             },
         
 
@@ -431,7 +431,7 @@ replyAssistantGroupId: z.string()}),
                 schema: z.object({
                   'replyAssistantVersionId': z.string(),
 replyAssistantVersionId: z.string()}),
-                handler: getReplyAssistantVersion,
+                handler: ReplyAssistantVersion,
             },
         
 
@@ -439,7 +439,7 @@ replyAssistantVersionId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllRoles,
+                handler: AllRoles,
             },
         
 
@@ -447,19 +447,19 @@ replyAssistantVersionId: z.string()}),
                 schema: z.object({
                   'roleId': z.string(),
 roleId: z.string()}),
-                handler: getRole,
+                handler: Role,
             },
         
 
              'ring-central.AllSettings/sync': {
                 schema: z.object({}),
-                handler: getAllSettings,
+                handler: AllSettings,
             },
         
 
              'ring-central.AllSurveys/sync': {
                 schema: z.object({}),
-                handler: getAllSurveys,
+                handler: AllSurveys,
             },
         
 
@@ -467,7 +467,7 @@ roleId: z.string()}),
                 schema: z.object({
                   'surveyId': z.string(),
 surveyId: z.string()}),
-                handler: getSurvey,
+                handler: Survey,
             },
         
 
@@ -475,7 +475,7 @@ surveyId: z.string()}),
                 schema: z.object({
                   'surveyResponseId': z.string(),
 surveyResponseId: z.string()}),
-                handler: getSurveyResponse,
+                handler: SurveyResponse,
             },
         
 
@@ -483,7 +483,7 @@ surveyResponseId: z.string()}),
                 schema: z.object({
                   'agentId': z.string(),
 agentId: z.string()}),
-                handler: getAgentStatus,
+                handler: AgentStatus,
             },
         
 
@@ -492,7 +492,7 @@ agentId: z.string()}),
                   'ids': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllTags,
+                handler: AllTags,
             },
         
 
@@ -500,7 +500,7 @@ agentId: z.string()}),
                 schema: z.object({
                   'tagId': z.string(),
 tagId: z.string()}),
-                handler: getTag,
+                handler: Tag,
             },
         
 
@@ -511,7 +511,7 @@ tagId: z.string()}),
 'step': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllTasks,
+                handler: AllTasks,
             },
         
 
@@ -519,7 +519,7 @@ tagId: z.string()}),
                 schema: z.object({
                   'taskId': z.string(),
 taskId: z.string()}),
-                handler: getTask,
+                handler: Task,
             },
         
 
@@ -527,7 +527,7 @@ taskId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllTeams,
+                handler: AllTeams,
             },
         
 
@@ -535,7 +535,7 @@ taskId: z.string()}),
                 schema: z.object({
                   'teamId': z.string(),
 teamId: z.string()}),
-                handler: getTeam,
+                handler: Team,
             },
         
 
@@ -543,7 +543,7 @@ teamId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllTimeSheets,
+                handler: AllTimeSheets,
             },
         
 
@@ -551,7 +551,7 @@ teamId: z.string()}),
                 schema: z.object({
                   'timeSheetId': z.string(),
 timeSheetId: z.string()}),
-                handler: getTimeSheet,
+                handler: TimeSheet,
             },
         
 
@@ -559,7 +559,7 @@ timeSheetId: z.string()}),
                 schema: z.object({
                   'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllUserCapacities,
+                handler: AllUserCapacities,
             },
         
 
@@ -567,7 +567,7 @@ timeSheetId: z.string()}),
                 schema: z.object({
                   'userCapacityId': z.string(),
 userCapacityId: z.string()}),
-                handler: getUserCapacity,
+                handler: UserCapacity,
             },
         
 
@@ -581,7 +581,7 @@ userCapacityId: z.string()}),
 'team_id': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllUsers,
+                handler: AllUsers,
             },
         
 
@@ -589,7 +589,7 @@ userCapacityId: z.string()}),
                 schema: z.object({
                   'userId': z.string(),
 userId: z.string()}),
-                handler: getUser,
+                handler: User,
             },
         
 
@@ -597,7 +597,7 @@ userId: z.string()}),
                 schema: z.object({
                   'userId': z.string(),
 userId: z.string()}),
-                handler: getUserSourcesPermissions,
+                handler: UserSourcesPermissions,
             },
         
 
@@ -605,7 +605,7 @@ userId: z.string()}),
                 schema: z.object({
                   'userId': z.string(),
 userId: z.string()}),
-                handler: getAllUserSignatures,
+                handler: AllUserSignatures,
             },
         
 
@@ -615,7 +615,7 @@ userId: z.string()}),
 'signatureId': z.string(),
 userId: z.string(),
 signatureId: z.string()}),
-                handler: getUserSignature,
+                handler: UserSignature,
             },
         
 
@@ -624,7 +624,7 @@ signatureId: z.string()}),
                   'access_token': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: getAllWebhooks,
+                handler: AllWebhooks,
             },
         
 
@@ -633,7 +633,7 @@ signatureId: z.string()}),
                   'webhookId': z.string(),
 'access_token': z.string(),
 webhookId: z.string()}),
-                handler: getWebhook,
+                handler: Webhook,
             },
         }
     return this.events;

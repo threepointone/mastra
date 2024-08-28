@@ -1,0 +1,44 @@
+
+                    import { EventHandler } from '@arkw/core';
+                    import { reviewFields } from '../constants';
+                    import { StripeIntegration } from '..';
+
+                    export const GetReviewsReview: EventHandler<StripeIntegration> = ({
+  eventKey,
+  integrationInstance: { name, dataLayer, getProxy },
+  makeWebhookUrl,
+}) => ({        
+                        id: `${name}-sync-review`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { expand,review, review,  } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
+
+                         
+                            const response = await proxy['/v1/reviews/{review}'].get({
+                                query: {expand,review,},
+                                params: {review,} })
+
+                            if (!response.ok) {
+                            return
+                            }
+
+                            const d = await response.json()
+
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `review`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `review`,
+                                properties: reviewFields,
+                            });
+                        },
+                })
+                

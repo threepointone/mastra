@@ -3,105 +3,105 @@ import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import type openapi from './openapi'
-import { get_collaboration_whitelist_entries } from './events/get_collaboration_whitelist_entries'
-import { get_collaboration_whitelist_entries_id } from './events/get_collaboration_whitelist_entries_id'
-import { get_collaboration_whitelist_exempt_targets } from './events/get_collaboration_whitelist_exempt_targets'
-import { get_collaboration_whitelist_exempt_targets_id } from './events/get_collaboration_whitelist_exempt_targets_id'
-import { get_collaborations } from './events/get_collaborations'
-import { get_collaborations_id } from './events/get_collaborations_id'
-import { get_collections } from './events/get_collections'
-import { get_collections_id_items } from './events/get_collections_id_items'
-import { get_comments_id } from './events/get_comments_id'
-import { get_device_pinners_id } from './events/get_device_pinners_id'
-import { get_enterprises_id_device_pinners } from './events/get_enterprises_id_device_pinners'
-import { get_events } from './events/get_events'
-import { get_file_requests_id } from './events/get_file_requests_id'
-import { get_file_version_legal_holds } from './events/get_file_version_legal_holds'
-import { get_file_version_legal_holds_id } from './events/get_file_version_legal_holds_id'
-import { get_file_version_retentions } from './events/get_file_version_retentions'
-import { get_file_version_retentions_id } from './events/get_file_version_retentions_id'
-import { get_files_upload_sessions_id } from './events/get_files_upload_sessions_id'
-import { get_files_upload_sessions_id_parts } from './events/get_files_upload_sessions_id_parts'
-import { get_files_id } from './events/get_files_id'
-import { get_files_id#get_shared_link } from './events/get_files_id#get_shared_link'
-import { get_files_id_collaborations } from './events/get_files_id_collaborations'
-import { get_files_id_comments } from './events/get_files_id_comments'
-import { get_files_id_metadata } from './events/get_files_id_metadata'
-import { get_files_id_metadata_global_boxSkillsCards } from './events/get_files_id_metadata_global_boxSkillsCards'
-import { get_files_id_tasks } from './events/get_files_id_tasks'
-import { get_files_id_trash } from './events/get_files_id_trash'
-import { get_files_id_versions } from './events/get_files_id_versions'
-import { get_files_id_versions_id } from './events/get_files_id_versions_id'
-import { get_files_id_watermark } from './events/get_files_id_watermark'
-import { get_folder_locks } from './events/get_folder_locks'
-import { get_folders_trash_items } from './events/get_folders_trash_items'
-import { get_folders_id } from './events/get_folders_id'
-import { get_folders_id#get_shared_link } from './events/get_folders_id#get_shared_link'
-import { get_folders_id_collaborations } from './events/get_folders_id_collaborations'
-import { get_folders_id_items } from './events/get_folders_id_items'
-import { get_folders_id_metadata } from './events/get_folders_id_metadata'
-import { get_folders_id_trash } from './events/get_folders_id_trash'
-import { get_folders_id_watermark } from './events/get_folders_id_watermark'
-import { get_group_memberships_id } from './events/get_group_memberships_id'
-import { get_groups } from './events/get_groups'
-import { get_groups_id } from './events/get_groups_id'
-import { get_groups_id_collaborations } from './events/get_groups_id_collaborations'
-import { get_groups_id_memberships } from './events/get_groups_id_memberships'
-import { get_invites_id } from './events/get_invites_id'
-import { get_legal_hold_policies } from './events/get_legal_hold_policies'
-import { get_legal_hold_policies_id } from './events/get_legal_hold_policies_id'
-import { get_legal_hold_policy_assignments } from './events/get_legal_hold_policy_assignments'
-import { get_legal_hold_policy_assignments_id } from './events/get_legal_hold_policy_assignments_id'
-import { get_legal_hold_policy_assignments_id_file_versions_on_hold } from './events/get_legal_hold_policy_assignments_id_file_versions_on_hold'
-import { get_legal_hold_policy_assignments_id_files_on_hold } from './events/get_legal_hold_policy_assignments_id_files_on_hold'
-import { get_metadata_cascade_policies } from './events/get_metadata_cascade_policies'
-import { get_metadata_cascade_policies_id } from './events/get_metadata_cascade_policies_id'
-import { get_metadata_query_indices } from './events/get_metadata_query_indices'
-import { get_metadata_templates } from './events/get_metadata_templates'
-import { get_metadata_templates_enterprise } from './events/get_metadata_templates_enterprise'
-import { get_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema } from './events/get_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema'
-import { get_metadata_templates_global } from './events/get_metadata_templates_global'
-import { get_metadata_templates_id_id_schema } from './events/get_metadata_templates_id_id_schema'
-import { get_metadata_templates_id } from './events/get_metadata_templates_id'
-import { get_recent_items } from './events/get_recent_items'
-import { get_retention_policies } from './events/get_retention_policies'
-import { get_retention_policies_id } from './events/get_retention_policies_id'
-import { get_retention_policies_id_assignments } from './events/get_retention_policies_id_assignments'
-import { get_retention_policy_assignments_id } from './events/get_retention_policy_assignments_id'
-import { get_retention_policy_assignments_id_file_versions_under_retention } from './events/get_retention_policy_assignments_id_file_versions_under_retention'
-import { get_retention_policy_assignments_id_files_under_retention } from './events/get_retention_policy_assignments_id_files_under_retention'
-import { get_shared_items } from './events/get_shared_items'
-import { get_shared_items#folders } from './events/get_shared_items#folders'
-import { get_shared_items#web_links } from './events/get_shared_items#web_links'
-import { get_shield_information_barrier_reports_id } from './events/get_shield_information_barrier_reports_id'
-import { get_shield_information_barrier_segment_members_id } from './events/get_shield_information_barrier_segment_members_id'
-import { get_shield_information_barrier_segment_restrictions_id } from './events/get_shield_information_barrier_segment_restrictions_id'
-import { get_shield_information_barrier_segments_id } from './events/get_shield_information_barrier_segments_id'
-import { get_shield_information_barriers_id } from './events/get_shield_information_barriers_id'
-import { get_sign_requests } from './events/get_sign_requests'
-import { get_sign_requests_id } from './events/get_sign_requests_id'
-import { get_storage_policies } from './events/get_storage_policies'
-import { get_storage_policies_id } from './events/get_storage_policies_id'
-import { get_storage_policy_assignments } from './events/get_storage_policy_assignments'
-import { get_storage_policy_assignments_id } from './events/get_storage_policy_assignments_id'
-import { get_task_assignments_id } from './events/get_task_assignments_id'
-import { get_tasks_id } from './events/get_tasks_id'
-import { get_tasks_id_assignments } from './events/get_tasks_id_assignments'
-import { get_terms_of_service_user_statuses } from './events/get_terms_of_service_user_statuses'
-import { get_terms_of_services } from './events/get_terms_of_services'
-import { get_terms_of_services_id } from './events/get_terms_of_services_id'
-import { get_users } from './events/get_users'
-import { get_users_me } from './events/get_users_me'
-import { get_users_id } from './events/get_users_id'
-import { get_users_id_email_aliases } from './events/get_users_id_email_aliases'
-import { get_users_id_memberships } from './events/get_users_id_memberships'
-import { get_web_links_id } from './events/get_web_links_id'
-import { get_web_links_id#get_shared_link } from './events/get_web_links_id#get_shared_link'
-import { get_web_links_id_trash } from './events/get_web_links_id_trash'
-import { get_webhooks } from './events/get_webhooks'
-import { get_webhooks_id } from './events/get_webhooks_id'
-import { get_workflows } from './events/get_workflows'
-import { get_zip_downloads_id_status } from './events/get_zip_downloads_id_status'
+import { _collaboration_whitelist_entries } from './events/_collaboration_whitelist_entries'
+import { _collaboration_whitelist_entries_id } from './events/_collaboration_whitelist_entries_id'
+import { _collaboration_whitelist_exempt_targets } from './events/_collaboration_whitelist_exempt_targets'
+import { _collaboration_whitelist_exempt_targets_id } from './events/_collaboration_whitelist_exempt_targets_id'
+import { _collaborations } from './events/_collaborations'
+import { _collaborations_id } from './events/_collaborations_id'
+import { _collections } from './events/_collections'
+import { _collections_id_items } from './events/_collections_id_items'
+import { _comments_id } from './events/_comments_id'
+import { _device_pinners_id } from './events/_device_pinners_id'
+import { _enterprises_id_device_pinners } from './events/_enterprises_id_device_pinners'
+import { _events } from './events/_events'
+import { _file_requests_id } from './events/_file_requests_id'
+import { _file_version_legal_holds } from './events/_file_version_legal_holds'
+import { _file_version_legal_holds_id } from './events/_file_version_legal_holds_id'
+import { _file_version_retentions } from './events/_file_version_retentions'
+import { _file_version_retentions_id } from './events/_file_version_retentions_id'
+import { _files_upload_sessions_id } from './events/_files_upload_sessions_id'
+import { _files_upload_sessions_id_parts } from './events/_files_upload_sessions_id_parts'
+import { _files_id } from './events/_files_id'
+import { _files_id#get_shared_link } from './events/_files_id#get_shared_link'
+import { _files_id_collaborations } from './events/_files_id_collaborations'
+import { _files_id_comments } from './events/_files_id_comments'
+import { _files_id_metadata } from './events/_files_id_metadata'
+import { _files_id_metadata_global_boxSkillsCards } from './events/_files_id_metadata_global_boxSkillsCards'
+import { _files_id_tasks } from './events/_files_id_tasks'
+import { _files_id_trash } from './events/_files_id_trash'
+import { _files_id_versions } from './events/_files_id_versions'
+import { _files_id_versions_id } from './events/_files_id_versions_id'
+import { _files_id_watermark } from './events/_files_id_watermark'
+import { _folder_locks } from './events/_folder_locks'
+import { _folders_trash_items } from './events/_folders_trash_items'
+import { _folders_id } from './events/_folders_id'
+import { _folders_id#get_shared_link } from './events/_folders_id#get_shared_link'
+import { _folders_id_collaborations } from './events/_folders_id_collaborations'
+import { _folders_id_items } from './events/_folders_id_items'
+import { _folders_id_metadata } from './events/_folders_id_metadata'
+import { _folders_id_trash } from './events/_folders_id_trash'
+import { _folders_id_watermark } from './events/_folders_id_watermark'
+import { _group_memberships_id } from './events/_group_memberships_id'
+import { _groups } from './events/_groups'
+import { _groups_id } from './events/_groups_id'
+import { _groups_id_collaborations } from './events/_groups_id_collaborations'
+import { _groups_id_memberships } from './events/_groups_id_memberships'
+import { _invites_id } from './events/_invites_id'
+import { _legal_hold_policies } from './events/_legal_hold_policies'
+import { _legal_hold_policies_id } from './events/_legal_hold_policies_id'
+import { _legal_hold_policy_assignments } from './events/_legal_hold_policy_assignments'
+import { _legal_hold_policy_assignments_id } from './events/_legal_hold_policy_assignments_id'
+import { _legal_hold_policy_assignments_id_file_versions_on_hold } from './events/_legal_hold_policy_assignments_id_file_versions_on_hold'
+import { _legal_hold_policy_assignments_id_files_on_hold } from './events/_legal_hold_policy_assignments_id_files_on_hold'
+import { _metadata_cascade_policies } from './events/_metadata_cascade_policies'
+import { _metadata_cascade_policies_id } from './events/_metadata_cascade_policies_id'
+import { _metadata_query_indices } from './events/_metadata_query_indices'
+import { _metadata_templates } from './events/_metadata_templates'
+import { _metadata_templates_enterprise } from './events/_metadata_templates_enterprise'
+import { _metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema } from './events/_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema'
+import { _metadata_templates_global } from './events/_metadata_templates_global'
+import { _metadata_templates_id_id_schema } from './events/_metadata_templates_id_id_schema'
+import { _metadata_templates_id } from './events/_metadata_templates_id'
+import { _recent_items } from './events/_recent_items'
+import { _retention_policies } from './events/_retention_policies'
+import { _retention_policies_id } from './events/_retention_policies_id'
+import { _retention_policies_id_assignments } from './events/_retention_policies_id_assignments'
+import { _retention_policy_assignments_id } from './events/_retention_policy_assignments_id'
+import { _retention_policy_assignments_id_file_versions_under_retention } from './events/_retention_policy_assignments_id_file_versions_under_retention'
+import { _retention_policy_assignments_id_files_under_retention } from './events/_retention_policy_assignments_id_files_under_retention'
+import { _shared_items } from './events/_shared_items'
+import { _shared_items#folders } from './events/_shared_items#folders'
+import { _shared_items#web_links } from './events/_shared_items#web_links'
+import { _shield_information_barrier_reports_id } from './events/_shield_information_barrier_reports_id'
+import { _shield_information_barrier_segment_members_id } from './events/_shield_information_barrier_segment_members_id'
+import { _shield_information_barrier_segment_restrictions_id } from './events/_shield_information_barrier_segment_restrictions_id'
+import { _shield_information_barrier_segments_id } from './events/_shield_information_barrier_segments_id'
+import { _shield_information_barriers_id } from './events/_shield_information_barriers_id'
+import { _sign_requests } from './events/_sign_requests'
+import { _sign_requests_id } from './events/_sign_requests_id'
+import { _storage_policies } from './events/_storage_policies'
+import { _storage_policies_id } from './events/_storage_policies_id'
+import { _storage_policy_assignments } from './events/_storage_policy_assignments'
+import { _storage_policy_assignments_id } from './events/_storage_policy_assignments_id'
+import { _task_assignments_id } from './events/_task_assignments_id'
+import { _tasks_id } from './events/_tasks_id'
+import { _tasks_id_assignments } from './events/_tasks_id_assignments'
+import { _terms_of_service_user_statuses } from './events/_terms_of_service_user_statuses'
+import { _terms_of_services } from './events/_terms_of_services'
+import { _terms_of_services_id } from './events/_terms_of_services_id'
+import { _users } from './events/_users'
+import { _users_me } from './events/_users_me'
+import { _users_id } from './events/_users_id'
+import { _users_id_email_aliases } from './events/_users_id_email_aliases'
+import { _users_id_memberships } from './events/_users_id_memberships'
+import { _web_links_id } from './events/_web_links_id'
+import { _web_links_id#get_shared_link } from './events/_web_links_id#get_shared_link'
+import { _web_links_id_trash } from './events/_web_links_id_trash'
+import { _webhooks } from './events/_webhooks'
+import { _webhooks_id } from './events/_webhooks_id'
+import { _workflows } from './events/_workflows'
+import { _zip_downloads_id_status } from './events/_zip_downloads_id_status'
 
 type BoxConfig = {
   CLIENT_ID: string;
@@ -131,7 +131,7 @@ export class BoxIntegration extends Integration {
                 schema: z.object({
                   'marker': z.string(),
 'limit': z.number()}),
-                handler: get_collaboration_whitelist_entries,
+                handler: _collaboration_whitelist_entries,
             },
         
 
@@ -139,7 +139,7 @@ export class BoxIntegration extends Integration {
                 schema: z.object({
                   'collaboration_whitelist_entry_id': z.string(),
 collaboration_whitelist_entry_id: z.string()}),
-                handler: get_collaboration_whitelist_entries_id,
+                handler: _collaboration_whitelist_entries_id,
             },
         
 
@@ -147,7 +147,7 @@ collaboration_whitelist_entry_id: z.string()}),
                 schema: z.object({
                   'marker': z.string(),
 'limit': z.number()}),
-                handler: get_collaboration_whitelist_exempt_targets,
+                handler: _collaboration_whitelist_exempt_targets,
             },
         
 
@@ -155,7 +155,7 @@ collaboration_whitelist_entry_id: z.string()}),
                 schema: z.object({
                   'collaboration_whitelist_exempt_target_id': z.string(),
 collaboration_whitelist_exempt_target_id: z.string()}),
-                handler: get_collaboration_whitelist_exempt_targets_id,
+                handler: _collaboration_whitelist_exempt_targets_id,
             },
         
 
@@ -165,7 +165,7 @@ collaboration_whitelist_exempt_target_id: z.string()}),
 'fields': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: get_collaborations,
+                handler: _collaborations,
             },
         
 
@@ -174,7 +174,7 @@ collaboration_whitelist_exempt_target_id: z.string()}),
                   'collaboration_id': z.string(),
 'fields': z.string(),
 collaboration_id: z.string()}),
-                handler: get_collaborations_id,
+                handler: _collaborations_id,
             },
         
 
@@ -183,7 +183,7 @@ collaboration_id: z.string()}),
                   'fields': z.string(),
 'offset': z.number(),
 'limit': z.number()}),
-                handler: get_collections,
+                handler: _collections,
             },
         
 
@@ -194,7 +194,7 @@ collaboration_id: z.string()}),
 'offset': z.number(),
 'limit': z.number(),
 collection_id: z.string()}),
-                handler: get_collections_id_items,
+                handler: _collections_id_items,
             },
         
 
@@ -203,7 +203,7 @@ collection_id: z.string()}),
                   'comment_id': z.string(),
 'fields': z.string(),
 comment_id: z.string()}),
-                handler: get_comments_id,
+                handler: _comments_id,
             },
         
 
@@ -211,7 +211,7 @@ comment_id: z.string()}),
                 schema: z.object({
                   'device_pinner_id': z.string(),
 device_pinner_id: z.string()}),
-                handler: get_device_pinners_id,
+                handler: _device_pinners_id,
             },
         
 
@@ -222,7 +222,7 @@ device_pinner_id: z.string()}),
 'limit': z.number(),
 'direction': z.string(),
 enterprise_id: z.string()}),
-                handler: get_enterprises_id_device_pinners,
+                handler: _enterprises_id_device_pinners,
             },
         
 
@@ -234,7 +234,7 @@ enterprise_id: z.string()}),
 'event_type': z.string(),
 'created_after': z.string(),
 'created_before': z.string()}),
-                handler: get_events,
+                handler: _events,
             },
         
 
@@ -242,7 +242,7 @@ enterprise_id: z.string()}),
                 schema: z.object({
                   'file_request_id': z.string(),
 file_request_id: z.string()}),
-                handler: get_file_requests_id,
+                handler: _file_requests_id,
             },
         
 
@@ -251,7 +251,7 @@ file_request_id: z.string()}),
                   'policy_id': z.string(),
 'marker': z.string(),
 'limit': z.number()}),
-                handler: get_file_version_legal_holds,
+                handler: _file_version_legal_holds,
             },
         
 
@@ -259,7 +259,7 @@ file_request_id: z.string()}),
                 schema: z.object({
                   'file_version_legal_hold_id': z.string(),
 file_version_legal_hold_id: z.string()}),
-                handler: get_file_version_legal_holds_id,
+                handler: _file_version_legal_holds_id,
             },
         
 
@@ -273,7 +273,7 @@ file_version_legal_hold_id: z.string()}),
 'disposition_after': z.string(),
 'limit': z.number(),
 'marker': z.string()}),
-                handler: get_file_version_retentions,
+                handler: _file_version_retentions,
             },
         
 
@@ -281,7 +281,7 @@ file_version_legal_hold_id: z.string()}),
                 schema: z.object({
                   'file_version_retention_id': z.string(),
 file_version_retention_id: z.string()}),
-                handler: get_file_version_retentions_id,
+                handler: _file_version_retentions_id,
             },
         
 
@@ -289,7 +289,7 @@ file_version_retention_id: z.string()}),
                 schema: z.object({
                   'upload_session_id': z.string(),
 upload_session_id: z.string()}),
-                handler: get_files_upload_sessions_id,
+                handler: _files_upload_sessions_id,
             },
         
 
@@ -299,7 +299,7 @@ upload_session_id: z.string()}),
 'offset': z.number(),
 'limit': z.number(),
 upload_session_id: z.string()}),
-                handler: get_files_upload_sessions_id_parts,
+                handler: _files_upload_sessions_id_parts,
             },
         
 
@@ -311,7 +311,7 @@ upload_session_id: z.string()}),
 'boxapi': z.string(),
 'x-rep-hints': z.string(),
 file_id: z.string()}),
-                handler: get_files_id,
+                handler: _files_id,
             },
         
 
@@ -320,7 +320,7 @@ file_id: z.string()}),
                   'file_id': z.string(),
 'fields': z.string(),
 file_id: z.string()}),
-                handler: get_files_id#get_shared_link,
+                handler: _files_id#get_shared_link,
             },
         
 
@@ -331,7 +331,7 @@ file_id: z.string()}),
 'limit': z.number(),
 'marker': z.string(),
 file_id: z.string()}),
-                handler: get_files_id_collaborations,
+                handler: _files_id_collaborations,
             },
         
 
@@ -342,7 +342,7 @@ file_id: z.string()}),
 'limit': z.number(),
 'offset': z.number(),
 file_id: z.string()}),
-                handler: get_files_id_comments,
+                handler: _files_id_comments,
             },
         
 
@@ -350,7 +350,7 @@ file_id: z.string()}),
                 schema: z.object({
                   'file_id': z.string(),
 file_id: z.string()}),
-                handler: get_files_id_metadata,
+                handler: _files_id_metadata,
             },
         
 
@@ -358,7 +358,7 @@ file_id: z.string()}),
                 schema: z.object({
                   'file_id': z.string(),
 file_id: z.string()}),
-                handler: get_files_id_metadata_global_boxSkillsCards,
+                handler: _files_id_metadata_global_boxSkillsCards,
             },
         
 
@@ -366,7 +366,7 @@ file_id: z.string()}),
                 schema: z.object({
                   'file_id': z.string(),
 file_id: z.string()}),
-                handler: get_files_id_tasks,
+                handler: _files_id_tasks,
             },
         
 
@@ -375,7 +375,7 @@ file_id: z.string()}),
                   'file_id': z.string(),
 'fields': z.string(),
 file_id: z.string()}),
-                handler: get_files_id_trash,
+                handler: _files_id_trash,
             },
         
 
@@ -386,7 +386,7 @@ file_id: z.string()}),
 'limit': z.number(),
 'offset': z.number(),
 file_id: z.string()}),
-                handler: get_files_id_versions,
+                handler: _files_id_versions,
             },
         
 
@@ -397,7 +397,7 @@ file_id: z.string()}),
 'file_version_id': z.string(),
 file_id: z.string(),
 file_version_id: z.string()}),
-                handler: get_files_id_versions_id,
+                handler: _files_id_versions_id,
             },
         
 
@@ -405,14 +405,14 @@ file_version_id: z.string()}),
                 schema: z.object({
                   'file_id': z.string(),
 file_id: z.string()}),
-                handler: get_files_id_watermark,
+                handler: _files_id_watermark,
             },
         
 
              'box._folder_locks/sync': {
                 schema: z.object({
                   'folder_id': z.string()}),
-                handler: get_folder_locks,
+                handler: _folder_locks,
             },
         
 
@@ -425,7 +425,7 @@ file_id: z.string()}),
 'marker': z.string(),
 'direction': z.string(),
 'sort': z.string()}),
-                handler: get_folders_trash_items,
+                handler: _folders_trash_items,
             },
         
 
@@ -436,7 +436,7 @@ file_id: z.string()}),
 'if-none-match': z.string(),
 'boxapi': z.string(),
 folder_id: z.string()}),
-                handler: get_folders_id,
+                handler: _folders_id,
             },
         
 
@@ -445,7 +445,7 @@ folder_id: z.string()}),
                   'folder_id': z.string(),
 'fields': z.string(),
 folder_id: z.string()}),
-                handler: get_folders_id#get_shared_link,
+                handler: _folders_id#get_shared_link,
             },
         
 
@@ -454,7 +454,7 @@ folder_id: z.string()}),
                   'folder_id': z.string(),
 'fields': z.string(),
 folder_id: z.string()}),
-                handler: get_folders_id_collaborations,
+                handler: _folders_id_collaborations,
             },
         
 
@@ -470,7 +470,7 @@ folder_id: z.string()}),
 'sort': z.string(),
 'direction': z.string(),
 folder_id: z.string()}),
-                handler: get_folders_id_items,
+                handler: _folders_id_items,
             },
         
 
@@ -478,7 +478,7 @@ folder_id: z.string()}),
                 schema: z.object({
                   'folder_id': z.string(),
 folder_id: z.string()}),
-                handler: get_folders_id_metadata,
+                handler: _folders_id_metadata,
             },
         
 
@@ -487,7 +487,7 @@ folder_id: z.string()}),
                   'folder_id': z.string(),
 'fields': z.string(),
 folder_id: z.string()}),
-                handler: get_folders_id_trash,
+                handler: _folders_id_trash,
             },
         
 
@@ -495,7 +495,7 @@ folder_id: z.string()}),
                 schema: z.object({
                   'folder_id': z.string(),
 folder_id: z.string()}),
-                handler: get_folders_id_watermark,
+                handler: _folders_id_watermark,
             },
         
 
@@ -504,7 +504,7 @@ folder_id: z.string()}),
                   'group_membership_id': z.string(),
 'fields': z.string(),
 group_membership_id: z.string()}),
-                handler: get_group_memberships_id,
+                handler: _group_memberships_id,
             },
         
 
@@ -514,7 +514,7 @@ group_membership_id: z.string()}),
 'fields': z.string(),
 'limit': z.number(),
 'offset': z.number()}),
-                handler: get_groups,
+                handler: _groups,
             },
         
 
@@ -523,7 +523,7 @@ group_membership_id: z.string()}),
                   'group_id': z.string(),
 'fields': z.string(),
 group_id: z.string()}),
-                handler: get_groups_id,
+                handler: _groups_id,
             },
         
 
@@ -533,7 +533,7 @@ group_id: z.string()}),
 'limit': z.number(),
 'offset': z.number(),
 group_id: z.string()}),
-                handler: get_groups_id_collaborations,
+                handler: _groups_id_collaborations,
             },
         
 
@@ -543,7 +543,7 @@ group_id: z.string()}),
 'limit': z.number(),
 'offset': z.number(),
 group_id: z.string()}),
-                handler: get_groups_id_memberships,
+                handler: _groups_id_memberships,
             },
         
 
@@ -552,7 +552,7 @@ group_id: z.string()}),
                   'invite_id': z.string(),
 'fields': z.string(),
 invite_id: z.string()}),
-                handler: get_invites_id,
+                handler: _invites_id,
             },
         
 
@@ -562,7 +562,7 @@ invite_id: z.string()}),
 'fields': z.string(),
 'marker': z.string(),
 'limit': z.number()}),
-                handler: get_legal_hold_policies,
+                handler: _legal_hold_policies,
             },
         
 
@@ -570,7 +570,7 @@ invite_id: z.string()}),
                 schema: z.object({
                   'legal_hold_policy_id': z.string(),
 legal_hold_policy_id: z.string()}),
-                handler: get_legal_hold_policies_id,
+                handler: _legal_hold_policies_id,
             },
         
 
@@ -582,7 +582,7 @@ legal_hold_policy_id: z.string()}),
 'marker': z.string(),
 'limit': z.number(),
 'fields': z.string()}),
-                handler: get_legal_hold_policy_assignments,
+                handler: _legal_hold_policy_assignments,
             },
         
 
@@ -590,7 +590,7 @@ legal_hold_policy_id: z.string()}),
                 schema: z.object({
                   'legal_hold_policy_assignment_id': z.string(),
 legal_hold_policy_assignment_id: z.string()}),
-                handler: get_legal_hold_policy_assignments_id,
+                handler: _legal_hold_policy_assignments_id,
             },
         
 
@@ -601,7 +601,7 @@ legal_hold_policy_assignment_id: z.string()}),
 'limit': z.number(),
 'fields': z.string(),
 legal_hold_policy_assignment_id: z.string()}),
-                handler: get_legal_hold_policy_assignments_id_file_versions_on_hold,
+                handler: _legal_hold_policy_assignments_id_file_versions_on_hold,
             },
         
 
@@ -612,7 +612,7 @@ legal_hold_policy_assignment_id: z.string()}),
 'limit': z.number(),
 'fields': z.string(),
 legal_hold_policy_assignment_id: z.string()}),
-                handler: get_legal_hold_policy_assignments_id_files_on_hold,
+                handler: _legal_hold_policy_assignments_id_files_on_hold,
             },
         
 
@@ -622,7 +622,7 @@ legal_hold_policy_assignment_id: z.string()}),
 'owner_enterprise_id': z.string(),
 'marker': z.string(),
 'offset': z.number()}),
-                handler: get_metadata_cascade_policies,
+                handler: _metadata_cascade_policies,
             },
         
 
@@ -630,7 +630,7 @@ legal_hold_policy_assignment_id: z.string()}),
                 schema: z.object({
                   'metadata_cascade_policy_id': z.string(),
 metadata_cascade_policy_id: z.string()}),
-                handler: get_metadata_cascade_policies_id,
+                handler: _metadata_cascade_policies_id,
             },
         
 
@@ -638,14 +638,14 @@ metadata_cascade_policy_id: z.string()}),
                 schema: z.object({
                   'scope': z.string(),
 'template_key': z.string()}),
-                handler: get_metadata_query_indices,
+                handler: _metadata_query_indices,
             },
         
 
              'box._metadata_templates/sync': {
                 schema: z.object({
                   'metadata_instance_id': z.string()}),
-                handler: get_metadata_templates,
+                handler: _metadata_templates,
             },
         
 
@@ -653,13 +653,13 @@ metadata_cascade_policy_id: z.string()}),
                 schema: z.object({
                   'marker': z.string(),
 'limit': z.number()}),
-                handler: get_metadata_templates_enterprise,
+                handler: _metadata_templates_enterprise,
             },
         
 
              'box._metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema/sync': {
                 schema: z.object({}),
-                handler: get_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema,
+                handler: _metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema,
             },
         
 
@@ -667,7 +667,7 @@ metadata_cascade_policy_id: z.string()}),
                 schema: z.object({
                   'marker': z.string(),
 'limit': z.number()}),
-                handler: get_metadata_templates_global,
+                handler: _metadata_templates_global,
             },
         
 
@@ -677,7 +677,7 @@ metadata_cascade_policy_id: z.string()}),
 'template_key': z.string(),
 scope: z.string(),
 template_key: z.string()}),
-                handler: get_metadata_templates_id_id_schema,
+                handler: _metadata_templates_id_id_schema,
             },
         
 
@@ -685,7 +685,7 @@ template_key: z.string()}),
                 schema: z.object({
                   'template_id': z.string(),
 template_id: z.string()}),
-                handler: get_metadata_templates_id,
+                handler: _metadata_templates_id,
             },
         
 
@@ -694,7 +694,7 @@ template_id: z.string()}),
                   'fields': z.string(),
 'limit': z.number(),
 'marker': z.string()}),
-                handler: get_recent_items,
+                handler: _recent_items,
             },
         
 
@@ -706,7 +706,7 @@ template_id: z.string()}),
 'fields': z.string(),
 'limit': z.number(),
 'marker': z.string()}),
-                handler: get_retention_policies,
+                handler: _retention_policies,
             },
         
 
@@ -715,7 +715,7 @@ template_id: z.string()}),
                   'retention_policy_id': z.string(),
 'fields': z.string(),
 retention_policy_id: z.string()}),
-                handler: get_retention_policies_id,
+                handler: _retention_policies_id,
             },
         
 
@@ -727,7 +727,7 @@ retention_policy_id: z.string()}),
 'marker': z.string(),
 'limit': z.number(),
 retention_policy_id: z.string()}),
-                handler: get_retention_policies_id_assignments,
+                handler: _retention_policies_id_assignments,
             },
         
 
@@ -736,7 +736,7 @@ retention_policy_id: z.string()}),
                   'retention_policy_assignment_id': z.string(),
 'fields': z.string(),
 retention_policy_assignment_id: z.string()}),
-                handler: get_retention_policy_assignments_id,
+                handler: _retention_policy_assignments_id,
             },
         
 
@@ -746,7 +746,7 @@ retention_policy_assignment_id: z.string()}),
 'marker': z.string(),
 'limit': z.number(),
 retention_policy_assignment_id: z.string()}),
-                handler: get_retention_policy_assignments_id_file_versions_under_retention,
+                handler: _retention_policy_assignments_id_file_versions_under_retention,
             },
         
 
@@ -756,7 +756,7 @@ retention_policy_assignment_id: z.string()}),
 'marker': z.string(),
 'limit': z.number(),
 retention_policy_assignment_id: z.string()}),
-                handler: get_retention_policy_assignments_id_files_under_retention,
+                handler: _retention_policy_assignments_id_files_under_retention,
             },
         
 
@@ -765,7 +765,7 @@ retention_policy_assignment_id: z.string()}),
                   'if-none-match': z.string(),
 'fields': z.string(),
 'boxapi': z.string()}),
-                handler: get_shared_items,
+                handler: _shared_items,
             },
         
 
@@ -774,7 +774,7 @@ retention_policy_assignment_id: z.string()}),
                   'if-none-match': z.string(),
 'fields': z.string(),
 'boxapi': z.string()}),
-                handler: get_shared_items#folders,
+                handler: _shared_items#folders,
             },
         
 
@@ -783,7 +783,7 @@ retention_policy_assignment_id: z.string()}),
                   'if-none-match': z.string(),
 'fields': z.string(),
 'boxapi': z.string()}),
-                handler: get_shared_items#web_links,
+                handler: _shared_items#web_links,
             },
         
 
@@ -791,7 +791,7 @@ retention_policy_assignment_id: z.string()}),
                 schema: z.object({
                   'shield_information_barrier_report_id': z.string(),
 shield_information_barrier_report_id: z.string()}),
-                handler: get_shield_information_barrier_reports_id,
+                handler: _shield_information_barrier_reports_id,
             },
         
 
@@ -799,7 +799,7 @@ shield_information_barrier_report_id: z.string()}),
                 schema: z.object({
                   'shield_information_barrier_segment_member_id': z.string(),
 shield_information_barrier_segment_member_id: z.string()}),
-                handler: get_shield_information_barrier_segment_members_id,
+                handler: _shield_information_barrier_segment_members_id,
             },
         
 
@@ -807,7 +807,7 @@ shield_information_barrier_segment_member_id: z.string()}),
                 schema: z.object({
                   'shield_information_barrier_segment_restriction_id': z.string(),
 shield_information_barrier_segment_restriction_id: z.string()}),
-                handler: get_shield_information_barrier_segment_restrictions_id,
+                handler: _shield_information_barrier_segment_restrictions_id,
             },
         
 
@@ -815,7 +815,7 @@ shield_information_barrier_segment_restriction_id: z.string()}),
                 schema: z.object({
                   'shield_information_barrier_segment_id': z.string(),
 shield_information_barrier_segment_id: z.string()}),
-                handler: get_shield_information_barrier_segments_id,
+                handler: _shield_information_barrier_segments_id,
             },
         
 
@@ -823,7 +823,7 @@ shield_information_barrier_segment_id: z.string()}),
                 schema: z.object({
                   'shield_information_barrier_id': z.string(),
 shield_information_barrier_id: z.string()}),
-                handler: get_shield_information_barriers_id,
+                handler: _shield_information_barriers_id,
             },
         
 
@@ -831,7 +831,7 @@ shield_information_barrier_id: z.string()}),
                 schema: z.object({
                   'marker': z.string(),
 'limit': z.number()}),
-                handler: get_sign_requests,
+                handler: _sign_requests,
             },
         
 
@@ -839,7 +839,7 @@ shield_information_barrier_id: z.string()}),
                 schema: z.object({
                   'sign_request_id': z.string(),
 sign_request_id: z.string()}),
-                handler: get_sign_requests_id,
+                handler: _sign_requests_id,
             },
         
 
@@ -848,7 +848,7 @@ sign_request_id: z.string()}),
                   'fields': z.string(),
 'marker': z.string(),
 'limit': z.number()}),
-                handler: get_storage_policies,
+                handler: _storage_policies,
             },
         
 
@@ -856,7 +856,7 @@ sign_request_id: z.string()}),
                 schema: z.object({
                   'storage_policy_id': z.string(),
 storage_policy_id: z.string()}),
-                handler: get_storage_policies_id,
+                handler: _storage_policies_id,
             },
         
 
@@ -865,7 +865,7 @@ storage_policy_id: z.string()}),
                   'marker': z.string(),
 'resolved_for_type': z.string(),
 'resolved_for_id': z.string()}),
-                handler: get_storage_policy_assignments,
+                handler: _storage_policy_assignments,
             },
         
 
@@ -873,7 +873,7 @@ storage_policy_id: z.string()}),
                 schema: z.object({
                   'storage_policy_assignment_id': z.string(),
 storage_policy_assignment_id: z.string()}),
-                handler: get_storage_policy_assignments_id,
+                handler: _storage_policy_assignments_id,
             },
         
 
@@ -881,7 +881,7 @@ storage_policy_assignment_id: z.string()}),
                 schema: z.object({
                   'task_assignment_id': z.string(),
 task_assignment_id: z.string()}),
-                handler: get_task_assignments_id,
+                handler: _task_assignments_id,
             },
         
 
@@ -889,7 +889,7 @@ task_assignment_id: z.string()}),
                 schema: z.object({
                   'task_id': z.string(),
 task_id: z.string()}),
-                handler: get_tasks_id,
+                handler: _tasks_id,
             },
         
 
@@ -897,7 +897,7 @@ task_id: z.string()}),
                 schema: z.object({
                   'task_id': z.string(),
 task_id: z.string()}),
-                handler: get_tasks_id_assignments,
+                handler: _tasks_id_assignments,
             },
         
 
@@ -905,14 +905,14 @@ task_id: z.string()}),
                 schema: z.object({
                   'tos_id': z.string(),
 'user_id': z.string()}),
-                handler: get_terms_of_service_user_statuses,
+                handler: _terms_of_service_user_statuses,
             },
         
 
              'box._terms_of_services/sync': {
                 schema: z.object({
                   'tos_type': z.string()}),
-                handler: get_terms_of_services,
+                handler: _terms_of_services,
             },
         
 
@@ -920,7 +920,7 @@ task_id: z.string()}),
                 schema: z.object({
                   'terms_of_service_id': z.string(),
 terms_of_service_id: z.string()}),
-                handler: get_terms_of_services_id,
+                handler: _terms_of_services_id,
             },
         
 
@@ -934,14 +934,14 @@ terms_of_service_id: z.string()}),
 'limit': z.number(),
 'usemarker': z.boolean(),
 'marker': z.string()}),
-                handler: get_users,
+                handler: _users,
             },
         
 
              'box._users_me/sync': {
                 schema: z.object({
                   'fields': z.string()}),
-                handler: get_users_me,
+                handler: _users_me,
             },
         
 
@@ -950,7 +950,7 @@ terms_of_service_id: z.string()}),
                   'user_id': z.string(),
 'fields': z.string(),
 user_id: z.string()}),
-                handler: get_users_id,
+                handler: _users_id,
             },
         
 
@@ -958,7 +958,7 @@ user_id: z.string()}),
                 schema: z.object({
                   'user_id': z.string(),
 user_id: z.string()}),
-                handler: get_users_id_email_aliases,
+                handler: _users_id_email_aliases,
             },
         
 
@@ -968,7 +968,7 @@ user_id: z.string()}),
 'limit': z.number(),
 'offset': z.number(),
 user_id: z.string()}),
-                handler: get_users_id_memberships,
+                handler: _users_id_memberships,
             },
         
 
@@ -977,7 +977,7 @@ user_id: z.string()}),
                   'web_link_id': z.string(),
 'boxapi': z.string(),
 web_link_id: z.string()}),
-                handler: get_web_links_id,
+                handler: _web_links_id,
             },
         
 
@@ -986,7 +986,7 @@ web_link_id: z.string()}),
                   'web_link_id': z.string(),
 'fields': z.string(),
 web_link_id: z.string()}),
-                handler: get_web_links_id#get_shared_link,
+                handler: _web_links_id#get_shared_link,
             },
         
 
@@ -995,7 +995,7 @@ web_link_id: z.string()}),
                   'web_link_id': z.string(),
 'fields': z.string(),
 web_link_id: z.string()}),
-                handler: get_web_links_id_trash,
+                handler: _web_links_id_trash,
             },
         
 
@@ -1003,7 +1003,7 @@ web_link_id: z.string()}),
                 schema: z.object({
                   'marker': z.string(),
 'limit': z.number()}),
-                handler: get_webhooks,
+                handler: _webhooks,
             },
         
 
@@ -1011,7 +1011,7 @@ web_link_id: z.string()}),
                 schema: z.object({
                   'webhook_id': z.string(),
 webhook_id: z.string()}),
-                handler: get_webhooks_id,
+                handler: _webhooks_id,
             },
         
 
@@ -1021,7 +1021,7 @@ webhook_id: z.string()}),
 'trigger_type': z.string(),
 'limit': z.number(),
 'marker': z.string()}),
-                handler: get_workflows,
+                handler: _workflows,
             },
         
 
@@ -1029,7 +1029,7 @@ webhook_id: z.string()}),
                 schema: z.object({
                   'zip_download_id': z.string(),
 zip_download_id: z.string()}),
-                handler: get_zip_downloads_id_status,
+                handler: _zip_downloads_id_status,
             },
         }
     return this.events;

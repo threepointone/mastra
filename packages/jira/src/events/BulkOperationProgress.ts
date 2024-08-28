@@ -1,0 +1,44 @@
+
+                    import { EventHandler } from '@arkw/core';
+                    import { BulkOperationProgressFields } from '../constants';
+                    import { JiraIntegration } from '..';
+
+                    export const BulkOperationProgress: EventHandler<JiraIntegration> = ({
+  eventKey,
+  integrationInstance: { name, dataLayer, getProxy },
+  makeWebhookUrl,
+}) => ({        
+                        id: `${name}-sync-BulkOperationProgress`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { taskId, taskId,  } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
+
+                         
+                            const response = await proxy['/rest/api/3/bulk/queue/{taskId}'].get({
+                                query: {taskId,},
+                                params: {taskId,} })
+
+                            if (!response.ok) {
+                            return
+                            }
+
+                            const d = await response.json()
+
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `BulkOperationProgress`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `BulkOperationProgress`,
+                                properties: BulkOperationProgressFields,
+                            });
+                        },
+                })
+                

@@ -1,0 +1,44 @@
+
+                    import { EventHandler } from '@arkw/core';
+                    import { pageImagesFields } from '../constants';
+                    import { DocusignIntegration } from '..';
+
+                    export const Pages_GetTemplatePageImages: EventHandler<DocusignIntegration> = ({
+  eventKey,
+  integrationInstance: { name, dataLayer, getProxy },
+  makeWebhookUrl,
+}) => ({        
+                        id: `${name}-sync-pageImages`,
+                        event: eventKey,
+                        executor: async ({ event, step }: any) => {
+                            const { accountId,documentId,templateId,count,dpi,max_height,max_width,nocache,show_changes,start_position, accountId,templateId,documentId,  } = event.data;
+                            const { referenceId } = event.user;
+                            const proxy = await getProxy({ referenceId })
+
+                         
+                            const response = await proxy['/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages'].get({
+                                query: {accountId,documentId,templateId,count,dpi,max_height,max_width,nocache,show_changes,start_position,},
+                                params: {accountId,templateId,documentId,} })
+
+                            if (!response.ok) {
+                            return
+                            }
+
+                            const d = await response.json()
+
+                            const records = d?.data?.map(({ _externalId, ...d2 }) => ({
+                                externalId: _externalId,
+                                data: d2,
+                                entityType: `pageImages`,
+                            }));
+
+                            await dataLayer?.syncData({
+                                name,
+                                referenceId,
+                                data: records,
+                                type: `pageImages`,
+                                properties: pageImagesFields,
+                            });
+                        },
+                })
+                

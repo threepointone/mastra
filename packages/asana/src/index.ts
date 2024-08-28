@@ -1,58 +1,58 @@
-import { Integration, IntegrationAuth } from '@arkw/core';
-import { createClient, type NormalizeOAS } from 'fets';
-import { z } from 'zod';
 
-import { getAttachmentsForObject } from './events/getAttachmentsForObject';
-import { getAuditLogEvents } from './events/getAuditLogEvents';
-import { getCustomFieldSettingsForPortfolio } from './events/getCustomFieldSettingsForPortfolio';
-import { getCustomFieldSettingsForProject } from './events/getCustomFieldSettingsForProject';
-import { getCustomFieldsForWorkspace } from './events/getCustomFieldsForWorkspace';
-import { getDependenciesForTask } from './events/getDependenciesForTask';
-import { getDependentsForTask } from './events/getDependentsForTask';
-import { getEvents } from './events/getEvents';
-import { getFavoritesForUser } from './events/getFavoritesForUser';
-import { getGoalRelationships } from './events/getGoalRelationships';
-import { getGoals } from './events/getGoals';
-import { getItemsForPortfolio } from './events/getItemsForPortfolio';
-import { getParentGoalsForGoal } from './events/getParentGoalsForGoal';
-import { getPortfolioMemberships } from './events/getPortfolioMemberships';
-import { getPortfolioMembershipsForPortfolio } from './events/getPortfolioMembershipsForPortfolio';
-import { getPortfolios } from './events/getPortfolios';
-import { getProjectMembershipsForProject } from './events/getProjectMembershipsForProject';
-import { getProjectStatusesForProject } from './events/getProjectStatusesForProject';
-import { getProjectTemplates } from './events/getProjectTemplates';
-import { getProjectTemplatesForTeam } from './events/getProjectTemplatesForTeam';
-import { getProjects } from './events/getProjects';
-import { getProjectsForTask } from './events/getProjectsForTask';
-import { getProjectsForTeam } from './events/getProjectsForTeam';
-import { getProjectsForWorkspace } from './events/getProjectsForWorkspace';
-import { getSectionsForProject } from './events/getSectionsForProject';
-import { getStatusesForObject } from './events/getStatusesForObject';
-import { getSubtasksForTask } from './events/getSubtasksForTask';
-import { getTags } from './events/getTags';
-import { getTagsForTask } from './events/getTagsForTask';
-import { getTagsForWorkspace } from './events/getTagsForWorkspace';
-import { getTasks } from './events/getTasks';
-import { getTasksForProject } from './events/getTasksForProject';
-import { getTasksForSection } from './events/getTasksForSection';
-import { getTasksForTag } from './events/getTasksForTag';
-import { getTasksForUserTaskList } from './events/getTasksForUserTaskList';
-import { getTeamMemberships } from './events/getTeamMemberships';
-import { getTeamMembershipsForTeam } from './events/getTeamMembershipsForTeam';
-import { getTeamMembershipsForUser } from './events/getTeamMembershipsForUser';
-import { getTeamsForUser } from './events/getTeamsForUser';
-import { getTeamsForWorkspace } from './events/getTeamsForWorkspace';
-import { getTimePeriods } from './events/getTimePeriods';
-import { getUsers } from './events/getUsers';
-import { getUsersForTeam } from './events/getUsersForTeam';
-import { getUsersForWorkspace } from './events/getUsersForWorkspace';
-import { getWebhooks } from './events/getWebhooks';
-import { getWorkspaceMembershipsForUser } from './events/getWorkspaceMembershipsForUser';
-import { getWorkspaceMembershipsForWorkspace } from './events/getWorkspaceMembershipsForWorkspace';
-import { getWorkspaces } from './events/getWorkspaces';
-import { searchTasksForWorkspace } from './events/searchTasksForWorkspace';
-import { typeaheadForWorkspace } from './events/typeaheadForWorkspace';
-import type openapi from './openapi';
+import { Integration, IntegrationAuth } from '@arkw/core';
+import { createClient, type NormalizeOAS } from 'fets'
+import { z } from 'zod'
+import type openapi from './openapi'
+import { AttachmentsForObject } from './events/AttachmentsForObject'
+import { Events } from './events/Events'
+import { GoalRelationships } from './events/GoalRelationships'
+import { Goals } from './events/Goals'
+import { ParentGoalsForGoal } from './events/ParentGoalsForGoal'
+import { PortfolioMemberships } from './events/PortfolioMemberships'
+import { Portfolios } from './events/Portfolios'
+import { CustomFieldSettingsForPortfolio } from './events/CustomFieldSettingsForPortfolio'
+import { ItemsForPortfolio } from './events/ItemsForPortfolio'
+import { PortfolioMembershipsForPortfolio } from './events/PortfolioMembershipsForPortfolio'
+import { ProjectTemplates } from './events/ProjectTemplates'
+import { Projects } from './events/Projects'
+import { CustomFieldSettingsForProject } from './events/CustomFieldSettingsForProject'
+import { ProjectMembershipsForProject } from './events/ProjectMembershipsForProject'
+import { ProjectStatusesForProject } from './events/ProjectStatusesForProject'
+import { SectionsForProject } from './events/SectionsForProject'
+import { TasksForProject } from './events/TasksForProject'
+import { TasksForSection } from './events/TasksForSection'
+import { StatusesForObject } from './events/StatusesForObject'
+import { Tags } from './events/Tags'
+import { TasksForTag } from './events/TasksForTag'
+import { Tasks } from './events/Tasks'
+import { DependenciesForTask } from './events/DependenciesForTask'
+import { DependentsForTask } from './events/DependentsForTask'
+import { ProjectsForTask } from './events/ProjectsForTask'
+import { SubtasksForTask } from './events/SubtasksForTask'
+import { TagsForTask } from './events/TagsForTask'
+import { TeamMemberships } from './events/TeamMemberships'
+import { ProjectTemplatesForTeam } from './events/ProjectTemplatesForTeam'
+import { ProjectsForTeam } from './events/ProjectsForTeam'
+import { TeamMembershipsForTeam } from './events/TeamMembershipsForTeam'
+import { UsersForTeam } from './events/UsersForTeam'
+import { TimePeriods } from './events/TimePeriods'
+import { TasksForUserTaskList } from './events/TasksForUserTaskList'
+import { Users } from './events/Users'
+import { FavoritesForUser } from './events/FavoritesForUser'
+import { TeamMembershipsForUser } from './events/TeamMembershipsForUser'
+import { TeamsForUser } from './events/TeamsForUser'
+import { WorkspaceMembershipsForUser } from './events/WorkspaceMembershipsForUser'
+import { Webhooks } from './events/Webhooks'
+import { Workspaces } from './events/Workspaces'
+import { AuditLogEvents } from './events/AuditLogEvents'
+import { CustomFieldsForWorkspace } from './events/CustomFieldsForWorkspace'
+import { ProjectsForWorkspace } from './events/ProjectsForWorkspace'
+import { TagsForWorkspace } from './events/TagsForWorkspace'
+import { searchTasksForWorkspace } from './events/searchTasksForWorkspace'
+import { TeamsForWorkspace } from './events/TeamsForWorkspace'
+import { typeaheadForWorkspace } from './events/typeaheadForWorkspace'
+import { UsersForWorkspace } from './events/UsersForWorkspace'
+import { WorkspaceMembershipsForWorkspace } from './events/WorkspaceMembershipsForWorkspace'
 
 type AsanaConfig = {
   CLIENT_ID: string;
@@ -70,7 +70,7 @@ export class AsanaIntegration extends Integration {
     super({
       ...config,
       name: 'ASANA',
-      logoUrl: 'TODO',
+      logoUrl: "TODO",
     });
 
     this.config = config;
@@ -78,428 +78,432 @@ export class AsanaIntegration extends Integration {
 
   registerEvents() {
     this.events = {
-      'asana.AttachmentsForObject/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          parent: z.string(),
-        }),
-        handler: getAttachmentsForObject,
-      },
+             'asana.AttachmentsForObject/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'parent': z.string()}),
+                handler: AttachmentsForObject,
+            },
+        
 
-      'asana.Events/sync': {
-        schema: z.object({}),
-        handler: getEvents,
-      },
+             'asana.Events/sync': {
+                schema: z.object({}),
+                handler: Events,
+            },
+        
 
-      'asana.GoalRelationships/sync': {
-        schema: z.object({
-          pretty: z.string(),
-          fields: z.string(),
-          supported_goal: z.string(),
-          resource_subtype: z.string(),
-        }),
-        handler: getGoalRelationships,
-      },
+             'asana.GoalRelationships/sync': {
+                schema: z.object({
+                  'pretty': z.string(),
+'fields': z.string(),
+'supported_goal': z.string(),
+'resource_subtype': z.string()}),
+                handler: GoalRelationships,
+            },
+        
 
-      'asana.Goals/sync': {
-        schema: z.object({
-          portfolio: z.string(),
-          project: z.string(),
-          is_workspace_level: z.boolean(),
-          team: z.string(),
-          workspace: z.string(),
-          time_periods: z.string(),
-        }),
-        handler: getGoals,
-      },
+             'asana.Goals/sync': {
+                schema: z.object({
+                  'portfolio': z.string(),
+'project': z.string(),
+'is_workspace_level': z.boolean(),
+'team': z.string(),
+'workspace': z.string(),
+'time_periods': z.string()}),
+                handler: Goals,
+            },
+        
 
-      'asana.ParentGoalsForGoal/sync': {
-        schema: z.object({
-          goal_gid: z.string(),
-        }),
-        handler: getParentGoalsForGoal,
-      },
+             'asana.ParentGoalsForGoal/sync': {
+                schema: z.object({
+                  goal_gid: z.string()}),
+                handler: ParentGoalsForGoal,
+            },
+        
 
-      'asana.PortfolioMemberships/sync': {
-        schema: z.object({}),
-        handler: getPortfolioMemberships,
-      },
+             'asana.PortfolioMemberships/sync': {
+                schema: z.object({}),
+                handler: PortfolioMemberships,
+            },
+        
 
-      'asana.Portfolios/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          workspace: z.string(),
-          owner: z.string(),
-        }),
-        handler: getPortfolios,
-      },
+             'asana.Portfolios/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'workspace': z.string(),
+'owner': z.string()}),
+                handler: Portfolios,
+            },
+        
 
-      'asana.CustomFieldSettingsForPortfolio/sync': {
-        schema: z.object({
-          portfolio_gid: z.string(),
-        }),
-        handler: getCustomFieldSettingsForPortfolio,
-      },
+             'asana.CustomFieldSettingsForPortfolio/sync': {
+                schema: z.object({
+                  portfolio_gid: z.string()}),
+                handler: CustomFieldSettingsForPortfolio,
+            },
+        
 
-      'asana.ItemsForPortfolio/sync': {
-        schema: z.object({
-          portfolio_gid: z.string(),
-        }),
-        handler: getItemsForPortfolio,
-      },
+             'asana.ItemsForPortfolio/sync': {
+                schema: z.object({
+                  portfolio_gid: z.string()}),
+                handler: ItemsForPortfolio,
+            },
+        
 
-      'asana.PortfolioMembershipsForPortfolio/sync': {
-        schema: z.object({
-          portfolio_gid: z.string(),
-        }),
-        handler: getPortfolioMembershipsForPortfolio,
-      },
+             'asana.PortfolioMembershipsForPortfolio/sync': {
+                schema: z.object({
+                  portfolio_gid: z.string()}),
+                handler: PortfolioMembershipsForPortfolio,
+            },
+        
 
-      'asana.ProjectTemplates/sync': {
-        schema: z.object({
-          workspace_query_param: z.string(),
-          team_query_param: z.string(),
-          limit: z.string(),
-          offset: z.string(),
-        }),
-        handler: getProjectTemplates,
-      },
+             'asana.ProjectTemplates/sync': {
+                schema: z.object({
+                  'workspace_query_param': z.string(),
+'team_query_param': z.string(),
+'limit': z.string(),
+'offset': z.string()}),
+                handler: ProjectTemplates,
+            },
+        
 
-      'asana.Projects/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          workspace: z.string(),
-          team: z.string(),
-          archived_query_param: z.string(),
-        }),
-        handler: getProjects,
-      },
+             'asana.Projects/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'workspace': z.string(),
+'team': z.string(),
+'archived_query_param': z.string()}),
+                handler: Projects,
+            },
+        
 
-      'asana.CustomFieldSettingsForProject/sync': {
-        schema: z.object({
-          project_gid: z.string(),
-        }),
-        handler: getCustomFieldSettingsForProject,
-      },
+             'asana.CustomFieldSettingsForProject/sync': {
+                schema: z.object({
+                  project_gid: z.string()}),
+                handler: CustomFieldSettingsForProject,
+            },
+        
 
-      'asana.ProjectMembershipsForProject/sync': {
-        schema: z.object({
-          project_gid: z.string(),
-        }),
-        handler: getProjectMembershipsForProject,
-      },
+             'asana.ProjectMembershipsForProject/sync': {
+                schema: z.object({
+                  project_gid: z.string()}),
+                handler: ProjectMembershipsForProject,
+            },
+        
 
-      'asana.ProjectStatusesForProject/sync': {
-        schema: z.object({
-          project_path_gid: z.string(),
-          pretty: z.string(),
-          fields: z.string(),
-          limit: z.string(),
-          offset: z.string(),
-          project_gid: z.string(),
-        }),
-        handler: getProjectStatusesForProject,
-      },
+             'asana.ProjectStatusesForProject/sync': {
+                schema: z.object({
+                  'project_path_gid': z.string(),
+'pretty': z.string(),
+'fields': z.string(),
+'limit': z.string(),
+'offset': z.string(),
+project_gid: z.string()}),
+                handler: ProjectStatusesForProject,
+            },
+        
 
-      'asana.SectionsForProject/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          project_gid: z.string(),
-        }),
-        handler: getSectionsForProject,
-      },
+             'asana.SectionsForProject/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+project_gid: z.string()}),
+                handler: SectionsForProject,
+            },
+        
 
-      'asana.TasksForProject/sync': {
-        schema: z.object({
-          project_gid: z.string(),
-        }),
-        handler: getTasksForProject,
-      },
+             'asana.TasksForProject/sync': {
+                schema: z.object({
+                  project_gid: z.string()}),
+                handler: TasksForProject,
+            },
+        
 
-      'asana.TasksForSection/sync': {
-        schema: z.object({
-          section_gid: z.string(),
-        }),
-        handler: getTasksForSection,
-      },
+             'asana.TasksForSection/sync': {
+                schema: z.object({
+                  section_gid: z.string()}),
+                handler: TasksForSection,
+            },
+        
 
-      'asana.StatusesForObject/sync': {
-        schema: z.object({
-          parent: z.string(),
-          created_since: z.string(),
-        }),
-        handler: getStatusesForObject,
-      },
+             'asana.StatusesForObject/sync': {
+                schema: z.object({
+                  'parent': z.string(),
+'created_since': z.string()}),
+                handler: StatusesForObject,
+            },
+        
 
-      'asana.Tags/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          workspace: z.string(),
-        }),
-        handler: getTags,
-      },
+             'asana.Tags/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'workspace': z.string()}),
+                handler: Tags,
+            },
+        
 
-      'asana.TasksForTag/sync': {
-        schema: z.object({
-          tag_gid: z.string(),
-        }),
-        handler: getTasksForTag,
-      },
+             'asana.TasksForTag/sync': {
+                schema: z.object({
+                  tag_gid: z.string()}),
+                handler: TasksForTag,
+            },
+        
 
-      'asana.Tasks/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          assignee: z.string(),
-          project: z.string(),
-          section: z.string(),
-          workspace: z.string(),
-          completed_since: z.string(),
-          modified_since: z.string(),
-        }),
-        handler: getTasks,
-      },
+             'asana.Tasks/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'assignee': z.string(),
+'project': z.string(),
+'section': z.string(),
+'workspace': z.string(),
+'completed_since': z.string(),
+'modified_since': z.string()}),
+                handler: Tasks,
+            },
+        
 
-      'asana.DependenciesForTask/sync': {
-        schema: z.object({
-          task_gid: z.string(),
-        }),
-        handler: getDependenciesForTask,
-      },
+             'asana.DependenciesForTask/sync': {
+                schema: z.object({
+                  task_gid: z.string()}),
+                handler: DependenciesForTask,
+            },
+        
 
-      'asana.DependentsForTask/sync': {
-        schema: z.object({
-          task_gid: z.string(),
-        }),
-        handler: getDependentsForTask,
-      },
+             'asana.DependentsForTask/sync': {
+                schema: z.object({
+                  task_gid: z.string()}),
+                handler: DependentsForTask,
+            },
+        
 
-      'asana.ProjectsForTask/sync': {
-        schema: z.object({
-          task_gid: z.string(),
-        }),
-        handler: getProjectsForTask,
-      },
+             'asana.ProjectsForTask/sync': {
+                schema: z.object({
+                  task_gid: z.string()}),
+                handler: ProjectsForTask,
+            },
+        
 
-      'asana.SubtasksForTask/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          task_gid: z.string(),
-        }),
-        handler: getSubtasksForTask,
-      },
+             'asana.SubtasksForTask/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+task_gid: z.string()}),
+                handler: SubtasksForTask,
+            },
+        
 
-      'asana.TagsForTask/sync': {
-        schema: z.object({
-          task_gid: z.string(),
-        }),
-        handler: getTagsForTask,
-      },
+             'asana.TagsForTask/sync': {
+                schema: z.object({
+                  task_gid: z.string()}),
+                handler: TagsForTask,
+            },
+        
 
-      'asana.TeamMemberships/sync': {
-        schema: z.object({
-          team: z.string(),
-          user: z.string(),
-          workspace: z.string(),
-        }),
-        handler: getTeamMemberships,
-      },
+             'asana.TeamMemberships/sync': {
+                schema: z.object({
+                  'team': z.string(),
+'user': z.string(),
+'workspace': z.string()}),
+                handler: TeamMemberships,
+            },
+        
 
-      'asana.ProjectTemplatesForTeam/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          team_gid: z.string(),
-        }),
-        handler: getProjectTemplatesForTeam,
-      },
+             'asana.ProjectTemplatesForTeam/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+team_gid: z.string()}),
+                handler: ProjectTemplatesForTeam,
+            },
+        
 
-      'asana.ProjectsForTeam/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          archived_query_param: z.string(),
-          team_gid: z.string(),
-        }),
-        handler: getProjectsForTeam,
-      },
+             'asana.ProjectsForTeam/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'archived_query_param': z.string(),
+team_gid: z.string()}),
+                handler: ProjectsForTeam,
+            },
+        
 
-      'asana.TeamMembershipsForTeam/sync': {
-        schema: z.object({
-          team_gid: z.string(),
-        }),
-        handler: getTeamMembershipsForTeam,
-      },
+             'asana.TeamMembershipsForTeam/sync': {
+                schema: z.object({
+                  team_gid: z.string()}),
+                handler: TeamMembershipsForTeam,
+            },
+        
 
-      'asana.UsersForTeam/sync': {
-        schema: z.object({
-          team_gid: z.string(),
-        }),
-        handler: getUsersForTeam,
-      },
+             'asana.UsersForTeam/sync': {
+                schema: z.object({
+                  team_gid: z.string()}),
+                handler: UsersForTeam,
+            },
+        
 
-      'asana.TimePeriods/sync': {
-        schema: z.object({
-          start_on: z.string(),
-          end_on: z.string(),
-          workspace: z.string(),
-        }),
-        handler: getTimePeriods,
-      },
+             'asana.TimePeriods/sync': {
+                schema: z.object({
+                  'start_on': z.string(),
+'end_on': z.string(),
+'workspace': z.string()}),
+                handler: TimePeriods,
+            },
+        
 
-      'asana.TasksForUserTaskList/sync': {
-        schema: z.object({
-          user_task_list_gid: z.string(),
-        }),
-        handler: getTasksForUserTaskList,
-      },
+             'asana.TasksForUserTaskList/sync': {
+                schema: z.object({
+                  user_task_list_gid: z.string()}),
+                handler: TasksForUserTaskList,
+            },
+        
 
-      'asana.Users/sync': {
-        schema: z.object({}),
-        handler: getUsers,
-      },
+             'asana.Users/sync': {
+                schema: z.object({}),
+                handler: Users,
+            },
+        
 
-      'asana.FavoritesForUser/sync': {
-        schema: z.object({
-          user_gid: z.string(),
-        }),
-        handler: getFavoritesForUser,
-      },
+             'asana.FavoritesForUser/sync': {
+                schema: z.object({
+                  user_gid: z.string()}),
+                handler: FavoritesForUser,
+            },
+        
 
-      'asana.TeamMembershipsForUser/sync': {
-        schema: z.object({
-          workspace: z.string(),
-          user_gid: z.string(),
-        }),
-        handler: getTeamMembershipsForUser,
-      },
+             'asana.TeamMembershipsForUser/sync': {
+                schema: z.object({
+                  'workspace': z.string(),
+user_gid: z.string()}),
+                handler: TeamMembershipsForUser,
+            },
+        
 
-      'asana.TeamsForUser/sync': {
-        schema: z.object({
-          user_gid: z.string(),
-        }),
-        handler: getTeamsForUser,
-      },
+             'asana.TeamsForUser/sync': {
+                schema: z.object({
+                  user_gid: z.string()}),
+                handler: TeamsForUser,
+            },
+        
 
-      'asana.WorkspaceMembershipsForUser/sync': {
-        schema: z.object({
-          user_gid: z.string(),
-        }),
-        handler: getWorkspaceMembershipsForUser,
-      },
+             'asana.WorkspaceMembershipsForUser/sync': {
+                schema: z.object({
+                  user_gid: z.string()}),
+                handler: WorkspaceMembershipsForUser,
+            },
+        
 
-      'asana.Webhooks/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          workspace: z.string(),
-          resource: z.string(),
-        }),
-        handler: getWebhooks,
-      },
+             'asana.Webhooks/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'workspace': z.string(),
+'resource': z.string()}),
+                handler: Webhooks,
+            },
+        
 
-      'asana.Workspaces/sync': {
-        schema: z.object({}),
-        handler: getWorkspaces,
-      },
+             'asana.Workspaces/sync': {
+                schema: z.object({}),
+                handler: Workspaces,
+            },
+        
 
-      'asana.AuditLogEvents/sync': {
-        schema: z.object({
-          workspace_gid: z.string(),
-        }),
-        handler: getAuditLogEvents,
-      },
+             'asana.AuditLogEvents/sync': {
+                schema: z.object({
+                  workspace_gid: z.string()}),
+                handler: AuditLogEvents,
+            },
+        
 
-      'asana.CustomFieldsForWorkspace/sync': {
-        schema: z.object({
-          workspace_gid: z.string(),
-        }),
-        handler: getCustomFieldsForWorkspace,
-      },
+             'asana.CustomFieldsForWorkspace/sync': {
+                schema: z.object({
+                  workspace_gid: z.string()}),
+                handler: CustomFieldsForWorkspace,
+            },
+        
 
-      'asana.ProjectsForWorkspace/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          archived_query_param: z.string(),
-          workspace_gid: z.string(),
-        }),
-        handler: getProjectsForWorkspace,
-      },
+             'asana.ProjectsForWorkspace/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+'archived_query_param': z.string(),
+workspace_gid: z.string()}),
+                handler: ProjectsForWorkspace,
+            },
+        
 
-      'asana.TagsForWorkspace/sync': {
-        schema: z.object({
-          limit: z.string(),
-          offset: z.string(),
-          workspace_gid: z.string(),
-        }),
-        handler: getTagsForWorkspace,
-      },
+             'asana.TagsForWorkspace/sync': {
+                schema: z.object({
+                  'limit': z.string(),
+'offset': z.string(),
+workspace_gid: z.string()}),
+                handler: TagsForWorkspace,
+            },
+        
 
-      'asana.searchTasksForWorkspace/sync': {
-        schema: z.object({
-          workspace_gid: z.string(),
-        }),
-        handler: searchTasksForWorkspace,
-      },
+             'asana.searchTasksForWorkspace/sync': {
+                schema: z.object({
+                  workspace_gid: z.string()}),
+                handler: searchTasksForWorkspace,
+            },
+        
 
-      'asana.TeamsForWorkspace/sync': {
-        schema: z.object({
-          workspace_gid: z.string(),
-        }),
-        handler: getTeamsForWorkspace,
-      },
+             'asana.TeamsForWorkspace/sync': {
+                schema: z.object({
+                  workspace_gid: z.string()}),
+                handler: TeamsForWorkspace,
+            },
+        
 
-      'asana.typeaheadForWorkspace/sync': {
-        schema: z.object({
-          workspace_gid: z.string(),
-        }),
-        handler: typeaheadForWorkspace,
-      },
+             'asana.typeaheadForWorkspace/sync': {
+                schema: z.object({
+                  workspace_gid: z.string()}),
+                handler: typeaheadForWorkspace,
+            },
+        
 
-      'asana.UsersForWorkspace/sync': {
-        schema: z.object({
-          workspace_gid: z.string(),
-        }),
-        handler: getUsersForWorkspace,
-      },
+             'asana.UsersForWorkspace/sync': {
+                schema: z.object({
+                  workspace_gid: z.string()}),
+                handler: UsersForWorkspace,
+            },
+        
 
-      'asana.WorkspaceMembershipsForWorkspace/sync': {
-        schema: z.object({
-          workspace_gid: z.string(),
-        }),
-        handler: getWorkspaceMembershipsForWorkspace,
-      },
-    };
+             'asana.WorkspaceMembershipsForWorkspace/sync': {
+                schema: z.object({
+                  workspace_gid: z.string()}),
+                handler: WorkspaceMembershipsForWorkspace,
+            },
+        }
     return this.events;
   }
 
+
   async getProxy({ referenceId }: { referenceId: string }) {
-    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId });
+    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId })
 
     if (!connection) {
-      throw new Error(`Connection not found for referenceId: ${referenceId}`);
+      throw new Error(`Connection not found for referenceId: ${referenceId}`)
     }
 
     // TODO: HANDLE REFRESH TOKEN IF EXPIRED
-    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id);
+    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
 
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: '',
+      endpoint: "",
       globalParams: {
         headers: {
-          Authorization: `Bearer ${credential?.value}`,
-        },
-      },
-    });
-
-    return client;
+          Authorization: `Bearer ${credential?.value}`
+        }
+      }
+    })
+    
+    return client
   }
 
   getAuthenticator() {
@@ -522,3 +526,5 @@ export class AsanaIntegration extends Integration {
     });
   }
 }
+    
+    
