@@ -119,8 +119,9 @@ function buildSyncFunc({ name, paths, schemas }) {
         content?.schema?.$ref?.replace('#/components/schemas/', '').replace('#/components/responses/', '') ||
         content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
 
-      const operationId = method.operationId?.replace('get', '') || content?.schema?.$ref.replace('#/components/responses/', '')
+      const operationId = method.operationId?.replace('get', '').replaceAll('/', '') || content?.schema?.$ref.replace('#/components/responses/', '')
 
+      console.log(method?.operationId, operationId)
       return {
         path,
         entityType,
@@ -194,7 +195,7 @@ function buildFieldDefs(schemas) {
 async function main() {
   for (const source of sources) {
     const name = source['Integration Name'];
-    // if (name !== 'zoho') {
+    // if (name !== 'pinterest') {
     //   continue;
     // }
     const authorization_url = source['Authorization URL'];
@@ -288,6 +289,7 @@ async function main() {
       syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 
       funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
+        console.log({ funcName })
         fs.writeFileSync(
           path.join(srcPath, 'events', `${funcName}.ts`),
           `
