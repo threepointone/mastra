@@ -11,7 +11,7 @@
                         id: `${name}-sync-IssueFieldOption`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { fieldKey,optionId, fieldKey,optionId,  } = event.data;
+                            const { fieldKey,optionId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

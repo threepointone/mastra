@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_repositories`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { role,q,sort, workspace,repo_slug,  } = event.data;
+                            const { role,q,sort,workspace,repo_slug, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

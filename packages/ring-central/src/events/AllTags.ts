@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetAllTagsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ids,offset,limit,   } = event.data;
+                            const { ids,offset,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

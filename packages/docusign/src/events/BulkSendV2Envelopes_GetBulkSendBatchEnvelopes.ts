@@ -11,7 +11,7 @@
                         id: `${name}-sync-envelopesInformation`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,bulkSendBatchId,count,include,order,order_by,search_text,start_position,status, accountId,bulkSendBatchId,  } = event.data;
+                            const { accountId,bulkSendBatchId,count,include,order,order_by,search_text,start_position,status, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

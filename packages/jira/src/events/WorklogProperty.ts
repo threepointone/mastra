@@ -11,7 +11,7 @@
                         id: `${name}-sync-EntityProperty`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueIdOrKey,worklogId,propertyKey, issueIdOrKey,worklogId,propertyKey,  } = event.data;
+                            const { issueIdOrKey,worklogId,propertyKey, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

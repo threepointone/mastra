@@ -11,7 +11,7 @@
                         id: `${name}-sync-reputation_changes`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ids,fromdate,todate,pagesize,page,filter,callback,site, ids,  } = event.data;
+                            const { ids,fromdate,todate,pagesize,page,filter,callback,site, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-tag_synonyms`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { tags,order,max,min,sort,fromdate,todate,pagesize,page,filter,callback,site, tags,  } = event.data;
+                            const { tags,order,max,min,sort,fromdate,todate,pagesize,page,filter,callback,site, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

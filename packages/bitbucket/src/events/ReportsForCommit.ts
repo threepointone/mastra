@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_reports`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace,repo_slug,commit, workspace,repo_slug,commit,  } = event.data;
+                            const { workspace,repo_slug,commit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

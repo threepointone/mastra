@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetAllSourcesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { permission,offset,active,limit,   } = event.data;
+                            const { permission,offset,active,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

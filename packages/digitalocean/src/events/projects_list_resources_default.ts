@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1projects~1%7Bproject_id%7D~1resources/get/responses/200`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {    } = event.data;
+                            const {  } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

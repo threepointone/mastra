@@ -11,7 +11,7 @@
                         id: `${name}-sync-scheduled_query_run`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,scheduled_query_run, scheduled_query_run,  } = event.data;
+                            const { expand,scheduled_query_run, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-filters`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { filters, filters,  } = event.data;
+                            const { filters, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

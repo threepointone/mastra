@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetTerminalRefundResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { terminal_refund_id, terminal_refund_id,  } = event.data;
+                            const { terminal_refund_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

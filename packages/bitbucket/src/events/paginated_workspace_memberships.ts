@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_workspace_memberships`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { q, workspace,  } = event.data;
+                            const { q,workspace, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

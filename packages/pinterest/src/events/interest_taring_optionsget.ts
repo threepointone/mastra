@@ -11,7 +11,7 @@
                         id: `${name}-sync-SingleInterestTargetingOptionResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_interest_id, interest_id,  } = event.data;
+                            const { path_interest_id,interest_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

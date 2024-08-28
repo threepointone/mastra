@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveInventoryCountResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { catalog_object_id,location_ids,cursor, catalog_object_id,  } = event.data;
+                            const { catalog_object_id,location_ids,cursor, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

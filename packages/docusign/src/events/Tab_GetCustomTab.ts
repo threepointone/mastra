@@ -11,7 +11,7 @@
                         id: `${name}-sync-tabMetadata`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,customTabId, accountId,customTabId,  } = event.data;
+                            const { accountId,customTabId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

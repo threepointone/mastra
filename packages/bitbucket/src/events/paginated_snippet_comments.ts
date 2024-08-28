@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_snippet_comments`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  workspace,encoded_id,  } = event.data;
+                            const { workspace,encoded_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

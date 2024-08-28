@@ -3,63 +3,63 @@ import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type OASClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import openapi from './openapi'
-import { -multiple-albums } from './events/-multiple-albums'
-import { -an-album } from './events/-an-album'
-import { -an-albums-tracks } from './events/-an-albums-tracks'
-import { -multiple-artists } from './events/-multiple-artists'
-import { -an-artist } from './events/-an-artist'
-import { -an-artists-albums } from './events/-an-artists-albums'
-import { -an-artists-related-artists } from './events/-an-artists-related-artists'
-import { -an-artists-top-tracks } from './events/-an-artists-top-tracks'
-import { -audio-analysis } from './events/-audio-analysis'
-import { -several-audio-features } from './events/-several-audio-features'
-import { -audio-features } from './events/-audio-features'
-import { -multiple-audiobooks } from './events/-multiple-audiobooks'
-import { -an-audiobook } from './events/-an-audiobook'
-import { -audiobook-chapters } from './events/-audiobook-chapters'
-import { -categories } from './events/-categories'
-import { -a-category } from './events/-a-category'
-import { -a-categories-playlists } from './events/-a-categories-playlists'
-import { -featured-playlists } from './events/-featured-playlists'
-import { -new-releases } from './events/-new-releases'
-import { -several-chapters } from './events/-several-chapters'
-import { -a-chapter } from './events/-a-chapter'
-import { -multiple-episodes } from './events/-multiple-episodes'
-import { -an-episode } from './events/-an-episode'
-import { -current-users-profile } from './events/-current-users-profile'
-import { -users-saved-albums } from './events/-users-saved-albums'
-import { check-users-saved-albums } from './events/check-users-saved-albums'
-import { -users-saved-audiobooks } from './events/-users-saved-audiobooks'
-import { check-users-saved-audiobooks } from './events/check-users-saved-audiobooks'
-import { -users-saved-episodes } from './events/-users-saved-episodes'
-import { check-users-saved-episodes } from './events/check-users-saved-episodes'
-import { -followed } from './events/-followed'
-import { check-current-user-follows } from './events/check-current-user-follows'
-import { -information-about-the-users-current-playback } from './events/-information-about-the-users-current-playback'
-import { -the-users-currently-playing-track } from './events/-the-users-currently-playing-track'
-import { -a-users-available-devices } from './events/-a-users-available-devices'
-import { -queue } from './events/-queue'
-import { -recently-played } from './events/-recently-played'
-import { -a-list-of-current-users-playlists } from './events/-a-list-of-current-users-playlists'
-import { -users-saved-shows } from './events/-users-saved-shows'
-import { check-users-saved-shows } from './events/check-users-saved-shows'
-import { -users-top-artists-and-tracks } from './events/-users-top-artists-and-tracks'
-import { -users-saved-tracks } from './events/-users-saved-tracks'
-import { check-users-saved-tracks } from './events/check-users-saved-tracks'
-import { -playlist } from './events/-playlist'
-import { check-if-user-follows-playlist } from './events/check-if-user-follows-playlist'
-import { -playlist-cover } from './events/-playlist-cover'
-import { -playlists-tracks } from './events/-playlists-tracks'
-import { -recommendations } from './events/-recommendations'
-import { -recommendation-genres } from './events/-recommendation-genres'
+import { _multiple_albums } from './events/_multiple_albums'
+import { _an_album } from './events/_an_album'
+import { _an_albums_tracks } from './events/_an_albums_tracks'
+import { _multiple_artists } from './events/_multiple_artists'
+import { _an_artist } from './events/_an_artist'
+import { _an_artists_albums } from './events/_an_artists_albums'
+import { _an_artists_related_artists } from './events/_an_artists_related_artists'
+import { _an_artists_top_tracks } from './events/_an_artists_top_tracks'
+import { _audio_analysis } from './events/_audio_analysis'
+import { _several_audio_features } from './events/_several_audio_features'
+import { _audio_features } from './events/_audio_features'
+import { _multiple_audiobooks } from './events/_multiple_audiobooks'
+import { _an_audiobook } from './events/_an_audiobook'
+import { _audiobook_chapters } from './events/_audiobook_chapters'
+import { _categories } from './events/_categories'
+import { _a_category } from './events/_a_category'
+import { _a_categories_playlists } from './events/_a_categories_playlists'
+import { _featured_playlists } from './events/_featured_playlists'
+import { _new_releases } from './events/_new_releases'
+import { _several_chapters } from './events/_several_chapters'
+import { _a_chapter } from './events/_a_chapter'
+import { _multiple_episodes } from './events/_multiple_episodes'
+import { _an_episode } from './events/_an_episode'
+import { _current_users_profile } from './events/_current_users_profile'
+import { _users_saved_albums } from './events/_users_saved_albums'
+import { check_users_saved_albums } from './events/check_users_saved_albums'
+import { _users_saved_audiobooks } from './events/_users_saved_audiobooks'
+import { check_users_saved_audiobooks } from './events/check_users_saved_audiobooks'
+import { _users_saved_episodes } from './events/_users_saved_episodes'
+import { check_users_saved_episodes } from './events/check_users_saved_episodes'
+import { _followed } from './events/_followed'
+import { check_current_user_follows } from './events/check_current_user_follows'
+import { _information_about_the_users_current_playback } from './events/_information_about_the_users_current_playback'
+import { _the_users_currently_playing_track } from './events/_the_users_currently_playing_track'
+import { _a_users_available_devices } from './events/_a_users_available_devices'
+import { _queue } from './events/_queue'
+import { _recently_played } from './events/_recently_played'
+import { _a_list_of_current_users_playlists } from './events/_a_list_of_current_users_playlists'
+import { _users_saved_shows } from './events/_users_saved_shows'
+import { check_users_saved_shows } from './events/check_users_saved_shows'
+import { _users_top_artists_and_tracks } from './events/_users_top_artists_and_tracks'
+import { _users_saved_tracks } from './events/_users_saved_tracks'
+import { check_users_saved_tracks } from './events/check_users_saved_tracks'
+import { _playlist } from './events/_playlist'
+import { check_if_user_follows_playlist } from './events/check_if_user_follows_playlist'
+import { _playlist_cover } from './events/_playlist_cover'
+import { _playlists_tracks } from './events/_playlists_tracks'
+import { _recommendations } from './events/_recommendations'
+import { _recommendation_genres } from './events/_recommendation_genres'
 import { search } from './events/search'
-import { -multiple-shows } from './events/-multiple-shows'
-import { -a-show } from './events/-a-show'
-import { -a-shows-episodes } from './events/-a-shows-episodes'
-import { -several-tracks } from './events/-several-tracks'
-import { -track } from './events/-track'
-import { -users-profile } from './events/-users-profile'
-import { -list-users-playlists } from './events/-list-users-playlists'
+import { _multiple_shows } from './events/_multiple_shows'
+import { _a_show } from './events/_a_show'
+import { _a_shows_episodes } from './events/_a_shows_episodes'
+import { _several_tracks } from './events/_several_tracks'
+import { _track } from './events/_track'
+import { _users_profile } from './events/_users_profile'
+import { _list_users_playlists } from './events/_list_users_playlists'
 
 type SpotifyConfig = {
   CLIENT_ID: string;
@@ -85,50 +85,50 @@ export class SpotifyIntegration extends Integration {
 
   registerEvents() {
     this.events = {
-             'spotify.-multiple-albums/sync': {
+             'spotify._multiple_albums/sync': {
                 schema: z.object({
                   'QueryAlbumIds': z.string(),
 'QueryMarket': z.string()}),
-                handler: -multiple-albums,
+                handler: _multiple_albums,
             },
         
 
-             'spotify.-an-album/sync': {
+             'spotify._an_album/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathAlbumId': z.string(),
 'QueryMarket': z.string()}),
-                handler: -an-album,
+                handler: _an_album,
             },
         
 
-             'spotify.-an-albums-tracks/sync': {
+             'spotify._an_albums_tracks/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathAlbumId': z.string(),
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -an-albums-tracks,
+                handler: _an_albums_tracks,
             },
         
 
-             'spotify.-multiple-artists/sync': {
+             'spotify._multiple_artists/sync': {
                 schema: z.object({
                   'ids': z.string()}),
-                handler: -multiple-artists,
+                handler: _multiple_artists,
             },
         
 
-             'spotify.-an-artist/sync': {
+             'spotify._an_artist/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathArtistId': z.string()}),
-                handler: -an-artist,
+                handler: _an_artist,
             },
         
 
-             'spotify.-an-artists-albums/sync': {
+             'spotify._an_artists_albums/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathArtistId': z.string(),
@@ -136,343 +136,343 @@ export class SpotifyIntegration extends Integration {
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -an-artists-albums,
+                handler: _an_artists_albums,
             },
         
 
-             'spotify.-an-artists-related-artists/sync': {
+             'spotify._an_artists_related_artists/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathArtistId': z.string()}),
-                handler: -an-artists-related-artists,
+                handler: _an_artists_related_artists,
             },
         
 
-             'spotify.-an-artists-top-tracks/sync': {
+             'spotify._an_artists_top_tracks/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathArtistId': z.string(),
 'QueryMarket': z.string()}),
-                handler: -an-artists-top-tracks,
+                handler: _an_artists_top_tracks,
             },
         
 
-             'spotify.-audio-analysis/sync': {
+             'spotify._audio_analysis/sync': {
                 schema: z.object({
                   'id': z.string()}),
-                handler: -audio-analysis,
+                handler: _audio_analysis,
             },
         
 
-             'spotify.-several-audio-features/sync': {
+             'spotify._several_audio_features/sync': {
                 schema: z.object({
                   'ids': z.string()}),
-                handler: -several-audio-features,
+                handler: _several_audio_features,
             },
         
 
-             'spotify.-audio-features/sync': {
+             'spotify._audio_features/sync': {
                 schema: z.object({
                   'id': z.string()}),
-                handler: -audio-features,
+                handler: _audio_features,
             },
         
 
-             'spotify.-multiple-audiobooks/sync': {
+             'spotify._multiple_audiobooks/sync': {
                 schema: z.object({
                   'QueryAudiobookIds': z.string(),
 'QueryMarket': z.string()}),
-                handler: -multiple-audiobooks,
+                handler: _multiple_audiobooks,
             },
         
 
-             'spotify.-an-audiobook/sync': {
+             'spotify._an_audiobook/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathAudiobookId': z.string(),
 'QueryMarket': z.string()}),
-                handler: -an-audiobook,
+                handler: _an_audiobook,
             },
         
 
-             'spotify.-audiobook-chapters/sync': {
+             'spotify._audiobook_chapters/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathAudiobookId': z.string(),
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -audiobook-chapters,
+                handler: _audiobook_chapters,
             },
         
 
-             'spotify.-categories/sync': {
+             'spotify._categories/sync': {
                 schema: z.object({
                   'country': z.string(),
 'locale': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -categories,
+                handler: _categories,
             },
         
 
-             'spotify.-a-category/sync': {
+             'spotify._a_category/sync': {
                 schema: z.object({
                   'category_id': z.string(),
 'country': z.string(),
 'locale': z.string()}),
-                handler: -a-category,
+                handler: _a_category,
             },
         
 
-             'spotify.-a-categories-playlists/sync': {
+             'spotify._a_categories_playlists/sync': {
                 schema: z.object({
                   'category_id': z.string(),
 'country': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -a-categories-playlists,
+                handler: _a_categories_playlists,
             },
         
 
-             'spotify.-featured-playlists/sync': {
+             'spotify._featured_playlists/sync': {
                 schema: z.object({
                   'country': z.string(),
 'locale': z.string(),
 'timestamp': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -featured-playlists,
+                handler: _featured_playlists,
             },
         
 
-             'spotify.-new-releases/sync': {
+             'spotify._new_releases/sync': {
                 schema: z.object({
                   'country': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -new-releases,
+                handler: _new_releases,
             },
         
 
-             'spotify.-several-chapters/sync': {
+             'spotify._several_chapters/sync': {
                 schema: z.object({
                   'QueryChapterIds': z.string(),
 'QueryMarket': z.string()}),
-                handler: -several-chapters,
+                handler: _several_chapters,
             },
         
 
-             'spotify.-a-chapter/sync': {
+             'spotify._a_chapter/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathChapterId': z.string(),
 'QueryMarket': z.string()}),
-                handler: -a-chapter,
+                handler: _a_chapter,
             },
         
 
-             'spotify.-multiple-episodes/sync': {
+             'spotify._multiple_episodes/sync': {
                 schema: z.object({
                   'ids': z.string(),
 'QueryMarket': z.string()}),
-                handler: -multiple-episodes,
+                handler: _multiple_episodes,
             },
         
 
-             'spotify.-an-episode/sync': {
+             'spotify._an_episode/sync': {
                 schema: z.object({
                   'id': z.string(),
 'QueryMarket': z.string()}),
-                handler: -an-episode,
+                handler: _an_episode,
             },
         
 
-             'spotify.-current-users-profile/sync': {
+             'spotify._current_users_profile/sync': {
                 schema: z.object({}),
-                handler: -current-users-profile,
+                handler: _current_users_profile,
             },
         
 
-             'spotify.-users-saved-albums/sync': {
+             'spotify._users_saved_albums/sync': {
                 schema: z.object({
                   'QueryLimit': z.string(),
 'QueryOffset': z.string(),
 'QueryMarket': z.string()}),
-                handler: -users-saved-albums,
+                handler: _users_saved_albums,
             },
         
 
-             'spotify.check-users-saved-albums/sync': {
+             'spotify.check_users_saved_albums/sync': {
                 schema: z.object({
                   'QueryAlbumIds': z.string()}),
-                handler: check-users-saved-albums,
+                handler: check_users_saved_albums,
             },
         
 
-             'spotify.-users-saved-audiobooks/sync': {
+             'spotify._users_saved_audiobooks/sync': {
                 schema: z.object({
                   'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -users-saved-audiobooks,
+                handler: _users_saved_audiobooks,
             },
         
 
-             'spotify.check-users-saved-audiobooks/sync': {
+             'spotify.check_users_saved_audiobooks/sync': {
                 schema: z.object({
                   'QueryAudiobookIds': z.string()}),
-                handler: check-users-saved-audiobooks,
+                handler: check_users_saved_audiobooks,
             },
         
 
-             'spotify.-users-saved-episodes/sync': {
+             'spotify._users_saved_episodes/sync': {
                 schema: z.object({
                   'QueryMarket': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -users-saved-episodes,
+                handler: _users_saved_episodes,
             },
         
 
-             'spotify.check-users-saved-episodes/sync': {
+             'spotify.check_users_saved_episodes/sync': {
                 schema: z.object({
                   'ids': z.string()}),
-                handler: check-users-saved-episodes,
+                handler: check_users_saved_episodes,
             },
         
 
-             'spotify.-followed/sync': {
+             'spotify._followed/sync': {
                 schema: z.object({
                   'type': z.string(),
 'after': z.string(),
 'limit': z.number()}),
-                handler: -followed,
+                handler: _followed,
             },
         
 
-             'spotify.check-current-user-follows/sync': {
+             'spotify.check_current_user_follows/sync': {
                 schema: z.object({
                   'type': z.string(),
 'ids': z.string()}),
-                handler: check-current-user-follows,
+                handler: check_current_user_follows,
             },
         
 
-             'spotify.-information-about-the-users-current-playback/sync': {
+             'spotify._information_about_the_users_current_playback/sync': {
                 schema: z.object({
                   'QueryMarket': z.string(),
 'QueryAdditionalTypes': z.string()}),
-                handler: -information-about-the-users-current-playback,
+                handler: _information_about_the_users_current_playback,
             },
         
 
-             'spotify.-the-users-currently-playing-track/sync': {
+             'spotify._the_users_currently_playing_track/sync': {
                 schema: z.object({
                   'QueryMarket': z.string(),
 'QueryAdditionalTypes': z.string()}),
-                handler: -the-users-currently-playing-track,
+                handler: _the_users_currently_playing_track,
             },
         
 
-             'spotify.-a-users-available-devices/sync': {
+             'spotify._a_users_available_devices/sync': {
                 schema: z.object({}),
-                handler: -a-users-available-devices,
+                handler: _a_users_available_devices,
             },
         
 
-             'spotify.-queue/sync': {
+             'spotify._queue/sync': {
                 schema: z.object({}),
-                handler: -queue,
+                handler: _queue,
             },
         
 
-             'spotify.-recently-played/sync': {
+             'spotify._recently_played/sync': {
                 schema: z.object({
                   'limit': z.number(),
 'after': z.number(),
 'before': z.number()}),
-                handler: -recently-played,
+                handler: _recently_played,
             },
         
 
-             'spotify.-a-list-of-current-users-playlists/sync': {
+             'spotify._a_list_of_current_users_playlists/sync': {
                 schema: z.object({
                   'QueryLimit': z.string(),
 'offset': z.number()}),
-                handler: -a-list-of-current-users-playlists,
+                handler: _a_list_of_current_users_playlists,
             },
         
 
-             'spotify.-users-saved-shows/sync': {
+             'spotify._users_saved_shows/sync': {
                 schema: z.object({
                   'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -users-saved-shows,
+                handler: _users_saved_shows,
             },
         
 
-             'spotify.check-users-saved-shows/sync': {
+             'spotify.check_users_saved_shows/sync': {
                 schema: z.object({
                   'QueryShowIds': z.string()}),
-                handler: check-users-saved-shows,
+                handler: check_users_saved_shows,
             },
         
 
-             'spotify.-users-top-artists-and-tracks/sync': {
+             'spotify._users_top_artists_and_tracks/sync': {
                 schema: z.object({
                   'type': z.string(),
 'time_range': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -users-top-artists-and-tracks,
+                handler: _users_top_artists_and_tracks,
             },
         
 
-             'spotify.-users-saved-tracks/sync': {
+             'spotify._users_saved_tracks/sync': {
                 schema: z.object({
                   'QueryMarket': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -users-saved-tracks,
+                handler: _users_saved_tracks,
             },
         
 
-             'spotify.check-users-saved-tracks/sync': {
+             'spotify.check_users_saved_tracks/sync': {
                 schema: z.object({
                   'QueryTrackIds': z.string()}),
-                handler: check-users-saved-tracks,
+                handler: check_users_saved_tracks,
             },
         
 
-             'spotify.-playlist/sync': {
+             'spotify._playlist/sync': {
                 schema: z.object({
                   'playlist_id': z.string(),
 'PathPlaylistId': z.string(),
 'QueryMarket': z.string(),
 'fields': z.string(),
 'QueryAdditionalTypes': z.string()}),
-                handler: -playlist,
+                handler: _playlist,
             },
         
 
-             'spotify.check-if-user-follows-playlist/sync': {
+             'spotify.check_if_user_follows_playlist/sync': {
                 schema: z.object({
                   'playlist_id': z.string(),
 'PathPlaylistId': z.string(),
 'ids': z.string()}),
-                handler: check-if-user-follows-playlist,
+                handler: check_if_user_follows_playlist,
             },
         
 
-             'spotify.-playlist-cover/sync': {
+             'spotify._playlist_cover/sync': {
                 schema: z.object({
                   'playlist_id': z.string(),
 'PathPlaylistId': z.string()}),
-                handler: -playlist-cover,
+                handler: _playlist_cover,
             },
         
 
-             'spotify.-playlists-tracks/sync': {
+             'spotify._playlists_tracks/sync': {
                 schema: z.object({
                   'playlist_id': z.string(),
 'PathPlaylistId': z.string(),
@@ -481,11 +481,11 @@ export class SpotifyIntegration extends Integration {
 'QueryLimit': z.string(),
 'QueryOffset': z.string(),
 'QueryAdditionalTypes': z.string()}),
-                handler: -playlists-tracks,
+                handler: _playlists_tracks,
             },
         
 
-             'spotify.-recommendations/sync': {
+             'spotify._recommendations/sync': {
                 schema: z.object({
                   'limit': z.number(),
 'QueryMarket': z.string(),
@@ -534,13 +534,13 @@ export class SpotifyIntegration extends Integration {
 'min_valence': z.string(),
 'max_valence': z.string(),
 'target_valence': z.string()}),
-                handler: -recommendations,
+                handler: _recommendations,
             },
         
 
-             'spotify.-recommendation-genres/sync': {
+             'spotify._recommendation_genres/sync': {
                 schema: z.object({}),
-                handler: -recommendation-genres,
+                handler: _recommendation_genres,
             },
         
 
@@ -556,65 +556,65 @@ export class SpotifyIntegration extends Integration {
             },
         
 
-             'spotify.-multiple-shows/sync': {
+             'spotify._multiple_shows/sync': {
                 schema: z.object({
                   'QueryMarket': z.string(),
 'QueryShowIds': z.string()}),
-                handler: -multiple-shows,
+                handler: _multiple_shows,
             },
         
 
-             'spotify.-a-show/sync': {
+             'spotify._a_show/sync': {
                 schema: z.object({
                   'id': z.string(),
 'QueryMarket': z.string(),
 'PathShowId': z.string()}),
-                handler: -a-show,
+                handler: _a_show,
             },
         
 
-             'spotify.-a-shows-episodes/sync': {
+             'spotify._a_shows_episodes/sync': {
                 schema: z.object({
                   'id': z.string(),
 'PathShowId': z.string(),
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string()}),
-                handler: -a-shows-episodes,
+                handler: _a_shows_episodes,
             },
         
 
-             'spotify.-several-tracks/sync': {
+             'spotify._several_tracks/sync': {
                 schema: z.object({
                   'QueryMarket': z.string(),
 'QueryTrackIds': z.string()}),
-                handler: -several-tracks,
+                handler: _several_tracks,
             },
         
 
-             'spotify.-track/sync': {
+             'spotify._track/sync': {
                 schema: z.object({
                   'id': z.string(),
 'QueryMarket': z.string()}),
-                handler: -track,
+                handler: _track,
             },
         
 
-             'spotify.-users-profile/sync': {
+             'spotify._users_profile/sync': {
                 schema: z.object({
                   'user_id': z.string(),
 'PathUserId': z.string()}),
-                handler: -users-profile,
+                handler: _users_profile,
             },
         
 
-             'spotify.-list-users-playlists/sync': {
+             'spotify._list_users_playlists/sync': {
                 schema: z.object({
                   'user_id': z.string(),
 'PathUserId': z.string(),
 'QueryLimit': z.string(),
 'offset': z.number()}),
-                handler: -list-users-playlists,
+                handler: _list_users_playlists,
             },
         }
     return this.events;

@@ -11,7 +11,7 @@
                         id: `${name}-sync-payment_method`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { customer,ending_before,expand,limit,starting_after,type, customer,  } = event.data;
+                            const { customer,ending_before,expand,limit,starting_after,type, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

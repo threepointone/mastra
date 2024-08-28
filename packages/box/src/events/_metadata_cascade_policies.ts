@@ -11,7 +11,7 @@
                         id: `${name}-sync-MetadataCascadePolicies`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { folder_id,owner_enterprise_id,marker,offset,   } = event.data;
+                            const { folder_id,owner_enterprise_id,marker,offset, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

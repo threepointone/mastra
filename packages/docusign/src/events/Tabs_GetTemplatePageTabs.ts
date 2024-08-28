@@ -11,7 +11,7 @@
                         id: `${name}-sync-TemplateDocumentTabs`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,documentId,pageNumber,templateId, accountId,templateId,documentId,pageNumber,  } = event.data;
+                            const { accountId,documentId,pageNumber,templateId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

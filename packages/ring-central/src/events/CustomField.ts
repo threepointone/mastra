@@ -11,7 +11,7 @@
                         id: `${name}-sync-CustomField`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { customFieldId, customFieldId,  } = event.data;
+                            const { customFieldId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

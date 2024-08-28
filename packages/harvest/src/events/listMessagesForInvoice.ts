@@ -11,7 +11,7 @@
                         id: `${name}-sync-InvoiceMessages`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { invoiceId,updated_since,page,cursor,per_page, invoiceId,  } = event.data;
+                            const { invoiceId,updated_since,page,cursor,per_page, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

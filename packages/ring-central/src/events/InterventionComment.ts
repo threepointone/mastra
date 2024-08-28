@@ -11,7 +11,7 @@
                         id: `${name}-sync-InterventionComment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { interventionCommentId, interventionCommentId,  } = event.data;
+                            const { interventionCommentId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

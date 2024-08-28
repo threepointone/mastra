@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListCustomersResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cursor,limit,sort_field,sort_order,   } = event.data;
+                            const { cursor,limit,sort_field,sort_order, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

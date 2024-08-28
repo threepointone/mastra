@@ -11,7 +11,7 @@
                         id: `${name}-sync-IntegrationMetadata`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_external_business_id, external_business_id,  } = event.data;
+                            const { path_external_business_id,external_business_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

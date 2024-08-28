@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_snippets`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { role, workspace,  } = event.data;
+                            const { role,workspace, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-setup_intent`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { attach_to_self,created,customer,ending_before,expand,limit,payment_method,starting_after,   } = event.data;
+                            const { attach_to_self,created,customer,ending_before,expand,limit,payment_method,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

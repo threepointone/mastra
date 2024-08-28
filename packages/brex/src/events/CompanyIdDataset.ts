@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1api~1v1~1company~1deepsearch~1lei~1%7Bnumber%7D/get/responses/200/content/application~1json/schema/properties/company`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { id,check_stock_listing,dataset,lang, id,dataset,  } = event.data;
+                            const { id,check_stock_listing,dataset,lang, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-Collaboration`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { collaboration_id,fields, collaboration_id,  } = event.data;
+                            const { collaboration_id,fields, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

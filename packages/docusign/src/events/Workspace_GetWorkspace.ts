@@ -11,7 +11,7 @@
                         id: `${name}-sync-workspace`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,workspaceId, accountId,workspaceId,  } = event.data;
+                            const { accountId,workspaceId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

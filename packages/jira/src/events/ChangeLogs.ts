@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanChangelog`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueIdOrKey,startAt,maxResults, issueIdOrKey,  } = event.data;
+                            const { issueIdOrKey,startAt,maxResults, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

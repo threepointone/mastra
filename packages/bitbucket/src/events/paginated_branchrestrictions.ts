@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_branchrestrictions`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { kind,pattern, workspace,repo_slug,  } = event.data;
+                            const { kind,pattern,workspace,repo_slug, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

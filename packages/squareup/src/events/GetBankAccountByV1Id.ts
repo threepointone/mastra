@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetBankAccountByV1IdResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { v1_bank_account_id, v1_bank_account_id,  } = event.data;
+                            const { v1_bank_account_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

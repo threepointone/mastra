@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_treeentries`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { format,q,sort,max_depth, workspace,repo_slug,commit,path,  } = event.data;
+                            const { format,q,sort,max_depth,workspace,repo_slug,commit,path, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

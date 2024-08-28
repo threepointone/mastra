@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListCatalogResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cursor,types,catalog_version,   } = event.data;
+                            const { cursor,types,catalog_version, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

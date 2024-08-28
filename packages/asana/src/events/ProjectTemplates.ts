@@ -11,7 +11,7 @@
                         id: `${name}-sync-ProjectTemplateCompact`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace_query_param,team_query_param,limit,offset,   } = event.data;
+                            const { workspace_query_param,team_query_param,limit,offset, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

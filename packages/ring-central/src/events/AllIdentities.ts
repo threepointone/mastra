@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetAllIdentitiesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { community_id,source_id,identity_group_id,identity_group_ids,user_id,sort,foreign_id,uuid,offset,limit,   } = event.data;
+                            const { community_id,source_id,identity_group_id,identity_group_ids,user_id,sort,foreign_id,uuid,offset,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

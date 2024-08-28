@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1monitoring~1metrics~1droplet~1filesystem_free/get/responses/200`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { #/paths/~1v2~1monitoring~1metrics~1droplet~1bandwidth/get/parameters/0,#/paths/~1v2~1monitoring~1metrics~1droplet~1bandwidth/get/parameters/3,#/paths/~1v2~1monitoring~1metrics~1droplet~1bandwidth/get/parameters/4,   } = event.data;
+                            const { #/paths/~1v2~1monitoring~1metrics~1droplet~1bandwidth/get/parameters/0,#/paths/~1v2~1monitoring~1metrics~1droplet~1bandwidth/get/parameters/3,#/paths/~1v2~1monitoring~1metrics~1droplet~1bandwidth/get/parameters/4, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-IssueTypeWorkflowMapping`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { id,issueType, id,issueType,  } = event.data;
+                            const { id,issueType, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

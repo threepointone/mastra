@@ -11,7 +11,7 @@
                         id: `${name}-sync-webhook_endpoint`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,webhook_endpoint, webhook_endpoint,  } = event.data;
+                            const { expand,webhook_endpoint, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

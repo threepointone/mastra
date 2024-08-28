@@ -11,7 +11,7 @@
                         id: `${name}-sync-apps.secret`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ending_before,expand,limit,scope,starting_after,   } = event.data;
+                            const { ending_before,expand,limit,scope,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-topup`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,topup, topup,  } = event.data;
+                            const { expand,topup, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

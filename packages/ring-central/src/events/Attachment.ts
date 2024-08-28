@@ -11,7 +11,7 @@
                         id: `${name}-sync-Attachment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { attachmentId, attachmentId,  } = event.data;
+                            const { attachmentId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

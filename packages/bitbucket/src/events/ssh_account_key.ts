@@ -11,7 +11,7 @@
                         id: `${name}-sync-ssh_account_key`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  selected_user,key_id,  } = event.data;
+                            const { selected_user,key_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

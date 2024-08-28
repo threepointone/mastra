@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2UsersResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ids,UserFieldsParameter,UserExpansionsParameter,TweetFieldsParameter,   } = event.data;
+                            const { ids,UserFieldsParameter,UserExpansionsParameter,TweetFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

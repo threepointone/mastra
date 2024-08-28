@@ -11,7 +11,7 @@
                         id: `${name}-sync-WebhookEventPageResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { count,page,since,to,type,http_status_code,error,   } = event.data;
+                            const { count,page,since,to,type,http_status_code,error, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

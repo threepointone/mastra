@@ -11,7 +11,7 @@
                         id: `${name}-sync-MetadataQueryIndices`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { scope,template_key,   } = event.data;
+                            const { scope,template_key, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

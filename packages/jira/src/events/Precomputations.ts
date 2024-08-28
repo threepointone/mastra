@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanJqlFunctionPrecomputationBean`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { functionKey,startAt,maxResults,orderBy,   } = event.data;
+                            const { functionKey,startAt,maxResults,orderBy, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

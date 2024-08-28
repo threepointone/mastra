@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2TweetsCountsAllResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { query,start_time,end_time,since_id,until_id,next_token,pagination_token,granularity,SearchCountFieldsParameter,   } = event.data;
+                            const { query,start_time,end_time,since_id,until_id,next_token,pagination_token,granularity,SearchCountFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

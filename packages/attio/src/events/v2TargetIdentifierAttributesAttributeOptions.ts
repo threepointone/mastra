@@ -11,7 +11,7 @@
                         id: `${name}-sync-select-option`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { target,identifier,attribute,show_archived, target,identifier,attribute,  } = event.data;
+                            const { target,identifier,attribute,show_archived, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-workspaceFolderContents`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,folderId,workspaceId,count,include_files,include_sub_folders,include_thumbnails,include_user_detail,start_position,workspace_user_id, accountId,workspaceId,folderId,  } = event.data;
+                            const { accountId,folderId,workspaceId,count,include_files,include_sub_folders,include_thumbnails,include_user_detail,start_position,workspace_user_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-TimeReportsResults`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { from,to,include_fixed_fee,page,per_page,   } = event.data;
+                            const { from,to,include_fixed_fee,page,per_page, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

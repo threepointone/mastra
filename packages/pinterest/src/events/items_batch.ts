@@ -11,7 +11,7 @@
                         id: `${name}-sync-CatalogsItemsBatch`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_catalogs_items_batch_id,query_ad_account_id, batch_id,  } = event.data;
+                            const { path_catalogs_items_batch_id,query_ad_account_id,batch_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

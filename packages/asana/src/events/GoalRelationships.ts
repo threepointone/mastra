@@ -11,7 +11,7 @@
                         id: `${name}-sync-GoalRelationshipCompact`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { pretty,fields,supported_goal,resource_subtype,   } = event.data;
+                            const { pretty,fields,supported_goal,resource_subtype, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

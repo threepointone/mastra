@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListRefundsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { location_id,begin_time,end_time,sort_order,cursor, location_id,  } = event.data;
+                            const { location_id,begin_time,end_time,sort_order,cursor, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

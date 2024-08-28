@@ -11,7 +11,7 @@
                         id: `${name}-sync-Dataset`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { datasetId, datasetId,  } = event.data;
+                            const { datasetId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

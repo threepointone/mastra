@@ -11,7 +11,7 @@
                         id: `${name}-sync-UploadParts`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { upload_session_id,offset,limit, upload_session_id,  } = event.data;
+                            const { upload_session_id,offset,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

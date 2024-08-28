@@ -11,7 +11,7 @@
                         id: `${name}-sync-ContentLibraryItemListResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { q,id,deleted,folder_uuid,count,page,tag,   } = event.data;
+                            const { q,id,deleted,folder_uuid,count,page,tag, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

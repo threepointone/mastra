@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2DmConversationsWithParticipantIdDmEventsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { participant_id,max_results,pagination_token,event_types,DmEventFieldsParameter,DmEventExpansionsParameter,MediaFieldsParameter,UserFieldsParameter,TweetFieldsParameter, participant_id,  } = event.data;
+                            const { participant_id,max_results,pagination_token,event_types,DmEventFieldsParameter,DmEventExpansionsParameter,MediaFieldsParameter,UserFieldsParameter,TweetFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

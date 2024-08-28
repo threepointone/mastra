@@ -11,7 +11,7 @@
                         id: `${name}-sync-discount`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { customer,expand, customer,  } = event.data;
+                            const { customer,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

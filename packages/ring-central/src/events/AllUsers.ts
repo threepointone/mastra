@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetAllUsersResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { email,category_id,identity_id,external_id,role_id,team_id,offset,limit,   } = event.data;
+                            const { email,category_id,identity_id,external_id,role_id,team_id,offset,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

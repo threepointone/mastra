@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1apps/post/responses/200/content/application~1json/schema`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { #/paths/~1v2~1apps~1%7Bid%7D/delete/parameters/0,name, id,  } = event.data;
+                            const { #/paths/~1v2~1apps~1%7Bid%7D/delete/parameters/0,name,id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

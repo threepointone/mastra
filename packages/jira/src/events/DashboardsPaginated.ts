@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanDashboard`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { dashboardName,accountId,owner,groupname,groupId,projectId,orderBy,startAt,maxResults,status,expand,   } = event.data;
+                            const { dashboardName,accountId,owner,groupname,groupId,projectId,orderBy,startAt,maxResults,status,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

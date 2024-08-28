@@ -11,7 +11,7 @@
                         id: `${name}-sync-ShieldInformationBarrier`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { shield_information_barrier_id, shield_information_barrier_id,  } = event.data;
+                            const { shield_information_barrier_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

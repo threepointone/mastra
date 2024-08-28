@@ -11,7 +11,7 @@
                         id: `${name}-sync-ProjectIssueSecurityLevels`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectKeyOrId, projectKeyOrId,  } = event.data;
+                            const { projectKeyOrId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

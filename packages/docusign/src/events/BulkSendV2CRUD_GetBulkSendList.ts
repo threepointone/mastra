@@ -11,7 +11,7 @@
                         id: `${name}-sync-bulkSendingList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,bulkSendListId, accountId,bulkSendListId,  } = event.data;
+                            const { accountId,bulkSendListId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

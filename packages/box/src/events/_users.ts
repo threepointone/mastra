@@ -11,7 +11,7 @@
                         id: `${name}-sync-Users`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { filter_term,user_type,external_app_user_id,fields,offset,limit,usemarker,marker,   } = event.data;
+                            const { filter_term,user_type,external_app_user_id,fields,offset,limit,usemarker,marker, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

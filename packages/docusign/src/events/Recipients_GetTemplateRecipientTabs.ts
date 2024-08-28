@@ -11,7 +11,7 @@
                         id: `${name}-sync-tabs`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,recipientId,templateId,include_anchor_tab_locations,include_metadata, accountId,templateId,recipientId,  } = event.data;
+                            const { accountId,recipientId,templateId,include_anchor_tab_locations,include_metadata, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

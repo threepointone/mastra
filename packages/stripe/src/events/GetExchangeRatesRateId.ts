@@ -11,7 +11,7 @@
                         id: `${name}-sync-exchange_rate`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,rate_id, rate_id,  } = event.data;
+                            const { expand,rate_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

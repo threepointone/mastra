@@ -11,7 +11,7 @@
                         id: `${name}-sync-ExecuteResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { execution_log_id, execution_log_id,  } = event.data;
+                            const { execution_log_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

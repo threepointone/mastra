@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanContextualConfiguration`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { fieldIdOrKey,id,fieldContextId,issueId,projectKeyOrId,issueTypeId,startAt,maxResults, fieldIdOrKey,  } = event.data;
+                            const { fieldIdOrKey,id,fieldContextId,issueId,projectKeyOrId,issueTypeId,startAt,maxResults, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

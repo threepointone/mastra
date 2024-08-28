@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetAllCategoriesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ids,parent_id,offset,limit,   } = event.data;
+                            const { ids,parent_id,offset,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

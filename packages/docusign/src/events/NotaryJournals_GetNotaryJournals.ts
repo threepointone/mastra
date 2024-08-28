@@ -11,7 +11,7 @@
                         id: `${name}-sync-notaryJournalList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { count,search_text,start_position,   } = event.data;
+                            const { count,search_text,start_position, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

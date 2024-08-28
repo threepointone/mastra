@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListDeviceCodesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cursor,location_id,product_type,status,   } = event.data;
+                            const { cursor,location_id,product_type,status, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

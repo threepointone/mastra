@@ -11,7 +11,7 @@
                         id: `${name}-sync-tax_rate`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { active,created,ending_before,expand,inclusive,limit,starting_after,   } = event.data;
+                            const { active,created,ending_before,expand,inclusive,limit,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

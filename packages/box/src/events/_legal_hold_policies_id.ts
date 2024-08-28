@@ -11,7 +11,7 @@
                         id: `${name}-sync-LegalHoldPolicy`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { legal_hold_policy_id, legal_hold_policy_id,  } = event.data;
+                            const { legal_hold_policy_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

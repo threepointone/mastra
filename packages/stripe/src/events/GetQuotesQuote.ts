@@ -11,7 +11,7 @@
                         id: `${name}-sync-quote`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,quote, quote,  } = event.data;
+                            const { expand,quote, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

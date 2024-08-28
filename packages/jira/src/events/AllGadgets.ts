@@ -11,7 +11,7 @@
                         id: `${name}-sync-DashboardGadgetResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { dashboardId,moduleKey,uri,gadgetId, dashboardId,  } = event.data;
+                            const { dashboardId,moduleKey,uri,gadgetId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

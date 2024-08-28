@@ -11,7 +11,7 @@
                         id: `${name}-sync-UserSignature`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { userId,signatureId, userId,signatureId,  } = event.data;
+                            const { userId,signatureId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

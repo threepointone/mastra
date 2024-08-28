@@ -11,7 +11,7 @@
                         id: `${name}-sync-ContactListResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { email,   } = event.data;
+                            const { email, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

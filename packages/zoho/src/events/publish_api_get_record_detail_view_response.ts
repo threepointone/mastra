@@ -11,7 +11,7 @@
                         id: `${name}-sync-publish_api_get_record_detail_view_response`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { account_owner_name,app_link_name,report_link_name,record_ID,privatelink, account_owner_name,app_link_name,report_link_name,record_ID,  } = event.data;
+                            const { account_owner_name,app_link_name,report_link_name,record_ID,privatelink, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

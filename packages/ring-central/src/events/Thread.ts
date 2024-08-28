@@ -11,7 +11,7 @@
                         id: `${name}-sync-Thread`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { threadId, threadId,  } = event.data;
+                            const { threadId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

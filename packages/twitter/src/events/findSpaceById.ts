@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2SpacesIdResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { id,SpaceFieldsParameter,SpaceExpansionsParameter,UserFieldsParameter,TopicFieldsParameter, id,  } = event.data;
+                            const { id,SpaceFieldsParameter,SpaceExpansionsParameter,UserFieldsParameter,TopicFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

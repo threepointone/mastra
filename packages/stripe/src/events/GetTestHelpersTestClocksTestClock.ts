@@ -11,7 +11,7 @@
                         id: `${name}-sync-test_helpers.test_clock`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,test_clock, test_clock,  } = event.data;
+                            const { expand,test_clock, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

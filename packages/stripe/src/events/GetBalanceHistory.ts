@@ -11,7 +11,7 @@
                         id: `${name}-sync-balance_transaction`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { created,currency,ending_before,expand,limit,payout,source,starting_after,type,   } = event.data;
+                            const { created,currency,ending_before,expand,limit,payout,source,starting_after,type, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

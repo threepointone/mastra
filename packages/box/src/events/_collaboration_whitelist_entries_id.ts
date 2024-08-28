@@ -11,7 +11,7 @@
                         id: `${name}-sync-CollaborationAllowlistEntry`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { collaboration_whitelist_entry_id, collaboration_whitelist_entry_id,  } = event.data;
+                            const { collaboration_whitelist_entry_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

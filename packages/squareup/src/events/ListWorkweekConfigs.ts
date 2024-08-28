@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListWorkweekConfigsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { limit,cursor,   } = event.data;
+                            const { limit,cursor, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

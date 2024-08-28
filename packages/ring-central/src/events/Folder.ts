@@ -11,7 +11,7 @@
                         id: `${name}-sync-Folder`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { folderId, folderId,  } = event.data;
+                            const { folderId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

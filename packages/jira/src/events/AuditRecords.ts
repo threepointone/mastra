@@ -11,7 +11,7 @@
                         id: `${name}-sync-AuditRecords`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { offset,limit,filter,from,to,   } = event.data;
+                            const { offset,limit,filter,from,to, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

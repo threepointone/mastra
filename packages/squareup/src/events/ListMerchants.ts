@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListMerchantsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cursor,   } = event.data;
+                            const { cursor, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

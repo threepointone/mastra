@@ -11,7 +11,7 @@
                         id: `${name}-sync-tax.transaction`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,transaction, transaction,  } = event.data;
+                            const { expand,transaction, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

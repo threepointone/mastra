@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanWorkflow`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { startAt,maxResults,workflowName,expand,queryString,orderBy,isActive,   } = event.data;
+                            const { startAt,maxResults,workflowName,expand,queryString,orderBy,isActive, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

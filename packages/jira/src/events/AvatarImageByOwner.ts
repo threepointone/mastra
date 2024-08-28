@@ -11,7 +11,7 @@
                         id: `${name}-sync-StreamingResponseBody`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { type,entityId,size,format, type,entityId,  } = event.data;
+                            const { type,entityId,size,format, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

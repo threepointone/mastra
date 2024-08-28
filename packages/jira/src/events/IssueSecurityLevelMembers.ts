@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanIssueSecurityLevelMember`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueSecuritySchemeId,startAt,maxResults,issueSecurityLevelId,expand, issueSecuritySchemeId,  } = event.data;
+                            const { issueSecuritySchemeId,startAt,maxResults,issueSecurityLevelId,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveOrderResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { order_id, order_id,  } = event.data;
+                            const { order_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-ProjectBudgetReportResults`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { page,per_page,is_active,   } = event.data;
+                            const { page,per_page,is_active, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

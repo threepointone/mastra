@@ -11,7 +11,7 @@
                         id: `${name}-sync-ActivityHistory`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { per_page,page,include_paging_counts,sort_by,sort_direction,type,_resource,occurred_at,pinned,resource_type,resource_id,updated_at,user_guid,   } = event.data;
+                            const { per_page,page,include_paging_counts,sort_by,sort_direction,type,_resource,occurred_at,pinned,resource_type,resource_id,updated_at,user_guid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

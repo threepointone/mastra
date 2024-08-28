@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2ComplianceJobsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { type,status,ComplianceJobFieldsParameter,   } = event.data;
+                            const { type,status,ComplianceJobFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

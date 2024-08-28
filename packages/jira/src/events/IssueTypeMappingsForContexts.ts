@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanIssueTypeToContextMapping`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { fieldId,contextId,startAt,maxResults, fieldId,  } = event.data;
+                            const { fieldId,contextId,startAt,maxResults, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

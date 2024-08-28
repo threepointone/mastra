@@ -11,7 +11,7 @@
                         id: `${name}-sync-issue`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { owner,repo,issue-number, owner,repo,issue_number,  } = event.data;
+                            const { owner,repo,issue-number,issue_number, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

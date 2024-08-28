@@ -11,7 +11,7 @@
                         id: `${name}-sync-check-run`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { owner,repo,check-run-id, owner,repo,check_run_id,  } = event.data;
+                            const { owner,repo,check-run-id,check_run_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-invoice`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,invoice, invoice,  } = event.data;
+                            const { expand,invoice, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

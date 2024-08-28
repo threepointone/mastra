@@ -11,7 +11,7 @@
                         id: `${name}-sync-TimeEntries`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { user_id,client_id,project_id,task_id,external_reference_id,is_billed,is_running,updated_since,from,to,page,per_page,   } = event.data;
+                            const { user_id,client_id,project_id,task_id,external_reference_id,is_billed,is_running,updated_since,from,to,page,per_page, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

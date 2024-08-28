@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveCatalogObjectResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { object_id,include_related_objects,catalog_version, object_id,  } = event.data;
+                            const { object_id,include_related_objects,catalog_version, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

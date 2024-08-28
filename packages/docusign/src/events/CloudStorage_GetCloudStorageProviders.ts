@@ -11,7 +11,7 @@
                         id: `${name}-sync-cloudStorageProviders`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,userId,redirectUrl, accountId,userId,  } = event.data;
+                            const { accountId,userId,redirectUrl, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_pipeline_variables`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace, workspace,  } = event.data;
+                            const { workspace, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

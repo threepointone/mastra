@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1databases/post/responses/201`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { database_cluster_uuid, database_cluster_uuid,  } = event.data;
+                            const { database_cluster_uuid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

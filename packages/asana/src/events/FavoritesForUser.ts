@@ -11,7 +11,7 @@
                         id: `${name}-sync-AsanaNamedResource`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  user_gid,  } = event.data;
+                            const { user_gid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

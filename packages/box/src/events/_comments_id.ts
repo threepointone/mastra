@@ -11,7 +11,7 @@
                         id: `${name}-sync-Comment--Full`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { comment_id,fields, comment_id,  } = event.data;
+                            const { comment_id,fields, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

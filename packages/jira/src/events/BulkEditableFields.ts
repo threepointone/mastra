@@ -11,7 +11,7 @@
                         id: `${name}-sync-BulkEditGetFields`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueIdsOrKeys,searchText,endingBefore,startingAfter,   } = event.data;
+                            const { issueIdsOrKeys,searchText,endingBefore,startingAfter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

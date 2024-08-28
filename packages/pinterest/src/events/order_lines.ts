@@ -11,7 +11,7 @@
                         id: `${name}-sync-OrderLine`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_ad_account_id,path_order_line_id, ad_account_id,order_line_id,  } = event.data;
+                            const { path_ad_account_id,path_order_line_id,ad_account_id,order_line_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1registry~1%7Bregistry_name%7D~1garbage-collection/post/responses/201`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { #/paths/~1v2~1registry~1%7Bregistry_name%7D~1repositories/get/parameters/2, registry_name,  } = event.data;
+                            const { #/paths/~1v2~1registry~1%7Bregistry_name%7D~1repositories/get/parameters/2,registry_name, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

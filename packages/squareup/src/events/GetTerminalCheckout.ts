@@ -11,7 +11,7 @@
                         id: `${name}-sync-GetTerminalCheckoutResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { checkout_id, checkout_id,  } = event.data;
+                            const { checkout_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

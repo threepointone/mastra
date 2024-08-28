@@ -11,7 +11,7 @@
                         id: `${name}-sync-terminal.reader`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { device_type,ending_before,expand,limit,location,starting_after,status,   } = event.data;
+                            const { device_type,ending_before,expand,limit,location,starting_after,status, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

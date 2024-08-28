@@ -11,7 +11,7 @@
                         id: `${name}-sync-PortfolioMembershipCompact`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  portfolio_gid,  } = event.data;
+                            const { portfolio_gid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

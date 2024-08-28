@@ -11,7 +11,7 @@
                         id: `${name}-sync-EmailAliases`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { user_id, user_id,  } = event.data;
+                            const { user_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2UsersIdMentionsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { id,since_id,until_id,max_results,pagination_token,start_time,end_time,TweetFieldsParameter,TweetExpansionsParameter,MediaFieldsParameter,PollFieldsParameter,UserFieldsParameter,PlaceFieldsParameter, id,  } = event.data;
+                            const { id,since_id,until_id,max_results,pagination_token,start_time,end_time,TweetFieldsParameter,TweetExpansionsParameter,MediaFieldsParameter,PollFieldsParameter,UserFieldsParameter,PlaceFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

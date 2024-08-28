@@ -11,7 +11,7 @@
                         id: `${name}-sync-source_transaction`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,source,source_transaction, source,source_transaction,  } = event.data;
+                            const { expand,source,source_transaction, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

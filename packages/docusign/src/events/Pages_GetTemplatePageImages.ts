@@ -11,7 +11,7 @@
                         id: `${name}-sync-pageImages`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,documentId,templateId,count,dpi,max_height,max_width,nocache,show_changes,start_position, accountId,templateId,documentId,  } = event.data;
+                            const { accountId,documentId,templateId,count,dpi,max_height,max_width,nocache,show_changes,start_position, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

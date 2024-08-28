@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListTeamMemberBookingProfilesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { bookable_only,limit,cursor,location_id,   } = event.data;
+                            const { bookable_only,limit,cursor,location_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

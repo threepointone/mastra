@@ -11,7 +11,7 @@
                         id: `${name}-sync-treasury.transaction_entry`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,id, id,  } = event.data;
+                            const { expand,id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

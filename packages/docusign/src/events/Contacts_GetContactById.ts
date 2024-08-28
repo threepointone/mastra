@@ -11,7 +11,7 @@
                         id: `${name}-sync-contactGetResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,contactId,cloud_provider, accountId,contactId,  } = event.data;
+                            const { accountId,contactId,cloud_provider, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

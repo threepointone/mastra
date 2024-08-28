@@ -11,7 +11,7 @@
                         id: `${name}-sync-documentFieldsInformation`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,documentId,templateId, accountId,templateId,documentId,  } = event.data;
+                            const { accountId,documentId,templateId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-task`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { limit,offset,sort,linked_object,linked_record_id,assignee,is_completed,   } = event.data;
+                            const { limit,offset,sort,linked_object,linked_record_id,assignee,is_completed, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-TermsOfService`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { terms_of_service_id, terms_of_service_id,  } = event.data;
+                            const { terms_of_service_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

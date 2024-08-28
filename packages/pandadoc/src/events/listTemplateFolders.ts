@@ -11,7 +11,7 @@
                         id: `${name}-sync-TemplatesFolderListResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { parent_uuid,count,page,   } = event.data;
+                            const { parent_uuid,count,page, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

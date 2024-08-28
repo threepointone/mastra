@@ -11,7 +11,7 @@
                         id: `${name}-sync-powerFormsFormDataResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,powerFormId,data_layout,from_date,to_date, accountId,powerFormId,  } = event.data;
+                            const { accountId,powerFormId,data_layout,from_date,to_date, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

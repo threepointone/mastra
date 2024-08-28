@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveDisputeResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { dispute_id, dispute_id,  } = event.data;
+                            const { dispute_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

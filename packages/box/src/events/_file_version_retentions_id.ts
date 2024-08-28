@@ -11,7 +11,7 @@
                         id: `${name}-sync-FileVersionRetention`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { file_version_retention_id, file_version_retention_id,  } = event.data;
+                            const { file_version_retention_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

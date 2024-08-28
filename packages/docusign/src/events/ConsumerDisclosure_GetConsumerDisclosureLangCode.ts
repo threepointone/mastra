@@ -11,7 +11,7 @@
                         id: `${name}-sync-AccountConsumerDisclosures`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,langCode, accountId,langCode,  } = event.data;
+                            const { accountId,langCode, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

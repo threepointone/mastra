@@ -11,7 +11,7 @@
                         id: `${name}-sync-SignRequests`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { marker,limit,   } = event.data;
+                            const { marker,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

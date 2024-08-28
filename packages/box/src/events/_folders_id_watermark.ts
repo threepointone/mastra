@@ -11,7 +11,7 @@
                         id: `${name}-sync-Watermark`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { folder_id, folder_id,  } = event.data;
+                            const { folder_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

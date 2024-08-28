@@ -11,7 +11,7 @@
                         id: `${name}-sync-FileVersionLegalHolds`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { policy_id,marker,limit,   } = event.data;
+                            const { policy_id,marker,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

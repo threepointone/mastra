@@ -11,7 +11,7 @@
                         id: `${name}-sync-ProjectRole`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectIdOrKey,id,excludeInactiveUsers, projectIdOrKey,id,  } = event.data;
+                            const { projectIdOrKey,id,excludeInactiveUsers, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-TransitionExecution`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { transitionId,executionId, transitionId,executionId,  } = event.data;
+                            const { transitionId,executionId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

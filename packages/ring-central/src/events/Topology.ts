@@ -11,7 +11,7 @@
                         id: `${name}-sync-Topology`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { topologyId, topologyId,  } = event.data;
+                            const { topologyId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

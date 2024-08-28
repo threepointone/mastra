@@ -3,53 +3,53 @@ import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type OASClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import openapi from './openapi'
-import { -v1-employees } from './events/-v1-employees'
-import { -v1-companies } from './events/-v1-companies'
-import { -v1-company-onboarding-status } from './events/-v1-company-onboarding-status'
-import { -v1-companies-company_id-employees } from './events/-v1-companies-company_id-employees'
-import { -v1-jobs-job_id } from './events/-v1-jobs-job_id'
-import { -v1-employees-employee_id-jobs } from './events/-v1-employees-employee_id-jobs'
-import { -v1-companies-company_id-locations } from './events/-v1-companies-company_id-locations'
-import { -v1-locations-location_id } from './events/-v1-locations-location_id'
-import { -v1-contractors-contractor_id } from './events/-v1-contractors-contractor_id'
-import { -v1-companies-company_id-contractors } from './events/-v1-companies-company_id-contractors'
-import { -v1-companies-company_id-contractor_payments } from './events/-v1-companies-company_id-contractor_payments'
-import { -v1-companies-company_id-contractor_payment-contractor-payment } from './events/-v1-companies-company_id-contractor_payment-contractor-payment'
-import { -v1-compensations-compensation_id } from './events/-v1-compensations-compensation_id'
-import { -v1-jobs-job_id-compensations } from './events/-v1-jobs-job_id-compensations'
-import { -v1-employees-employee_id-garnishments } from './events/-v1-employees-employee_id-garnishments'
-import { -v1-garnishments-garnishment_id } from './events/-v1-garnishments-garnishment_id'
-import { -v1-employees-employee_id-terminations } from './events/-v1-employees-employee_id-terminations'
-import { -v1-companies-company_id-time_off_requests } from './events/-v1-companies-company_id-time_off_requests'
-import { -v1-me } from './events/-v1-me'
-import { -v1-employees-employee_id-federal_taxes } from './events/-v1-employees-employee_id-federal_taxes'
-import { -v1-employees-employee_id-state_taxes } from './events/-v1-employees-employee_id-state_taxes'
-import { -v1-employees-employee_id-home_address } from './events/-v1-employees-employee_id-home_address'
-import { -v1-company-payment-configs } from './events/-v1-company-payment-configs'
-import { -v1-companies-company_id-pay_schedules } from './events/-v1-companies-company_id-pay_schedules'
-import { -v1-company-industry } from './events/-v1-company-industry'
-import { -v1-companies-company_id-pay_schedules-pay_schedule_id } from './events/-v1-companies-company_id-pay_schedules-pay_schedule_id'
-import { -v1-companies-company_id-bank-accounts } from './events/-v1-companies-company_id-bank-accounts'
-import { -v1-benefits } from './events/-v1-benefits'
-import { -v1-benefits-benefit_id } from './events/-v1-benefits-benefit_id'
-import { -v1-companies-company_id-company_benefits } from './events/-v1-companies-company_id-company_benefits'
-import { -v1-company_benefits-company_benefit_id } from './events/-v1-company_benefits-company_benefit_id'
-import { -v1-companies-company_id-earning_types } from './events/-v1-companies-company_id-earning_types'
-import { -v1-employees-employee_id-employee_benefits } from './events/-v1-employees-employee_id-employee_benefits'
-import { -v1-employee_benefits-employee_benefit_id } from './events/-v1-employee_benefits-employee_benefit_id'
-import { -v1-companies-company_id-payrolls } from './events/-v1-companies-company_id-payrolls'
-import { -v1-companies-company_id-payrolls-payroll_id } from './events/-v1-companies-company_id-payrolls-payroll_id'
-import { -v1-companies-company_id-time_off_requests-time_off_request_id } from './events/-v1-companies-company_id-time_off_requests-time_off_request_id'
-import { -v1-companies-company_id-admins } from './events/-v1-companies-company_id-admins'
-import { -v1-companies-company_id_or_uuid-federal_tax_details } from './events/-v1-companies-company_id_or_uuid-federal_tax_details'
-import { -v1-employees-employee_id-bank_accounts } from './events/-v1-employees-employee_id-bank_accounts'
-import { -v1-employees-employee_id-payment_method } from './events/-v1-employees-employee_id-payment_method'
-import { -v1-companies-company_uuid-signatories } from './events/-v1-companies-company_uuid-signatories'
-import { -v1-company-forms } from './events/-v1-company-forms'
-import { -v1-company-form } from './events/-v1-company-form'
-import { -v1-employee-forms } from './events/-v1-employee-forms'
-import { -v1-employee-form } from './events/-v1-employee-form'
-import { -v1-employees-employee_id_or_uuid-onboarding_status } from './events/-v1-employees-employee_id_or_uuid-onboarding_status'
+import { _v1_employees } from './events/_v1_employees'
+import { _v1_companies } from './events/_v1_companies'
+import { _v1_company_onboarding_status } from './events/_v1_company_onboarding_status'
+import { _v1_companies_company_id_employees } from './events/_v1_companies_company_id_employees'
+import { _v1_jobs_job_id } from './events/_v1_jobs_job_id'
+import { _v1_employees_employee_id_jobs } from './events/_v1_employees_employee_id_jobs'
+import { _v1_companies_company_id_locations } from './events/_v1_companies_company_id_locations'
+import { _v1_locations_location_id } from './events/_v1_locations_location_id'
+import { _v1_contractors_contractor_id } from './events/_v1_contractors_contractor_id'
+import { _v1_companies_company_id_contractors } from './events/_v1_companies_company_id_contractors'
+import { _v1_companies_company_id_contractor_payments } from './events/_v1_companies_company_id_contractor_payments'
+import { _v1_companies_company_id_contractor_payment_contractor_payment } from './events/_v1_companies_company_id_contractor_payment_contractor_payment'
+import { _v1_compensations_compensation_id } from './events/_v1_compensations_compensation_id'
+import { _v1_jobs_job_id_compensations } from './events/_v1_jobs_job_id_compensations'
+import { _v1_employees_employee_id_garnishments } from './events/_v1_employees_employee_id_garnishments'
+import { _v1_garnishments_garnishment_id } from './events/_v1_garnishments_garnishment_id'
+import { _v1_employees_employee_id_terminations } from './events/_v1_employees_employee_id_terminations'
+import { _v1_companies_company_id_time_off_requests } from './events/_v1_companies_company_id_time_off_requests'
+import { _v1_me } from './events/_v1_me'
+import { _v1_employees_employee_id_federal_taxes } from './events/_v1_employees_employee_id_federal_taxes'
+import { _v1_employees_employee_id_state_taxes } from './events/_v1_employees_employee_id_state_taxes'
+import { _v1_employees_employee_id_home_address } from './events/_v1_employees_employee_id_home_address'
+import { _v1_company_payment_configs } from './events/_v1_company_payment_configs'
+import { _v1_companies_company_id_pay_schedules } from './events/_v1_companies_company_id_pay_schedules'
+import { _v1_company_industry } from './events/_v1_company_industry'
+import { _v1_companies_company_id_pay_schedules_pay_schedule_id } from './events/_v1_companies_company_id_pay_schedules_pay_schedule_id'
+import { _v1_companies_company_id_bank_accounts } from './events/_v1_companies_company_id_bank_accounts'
+import { _v1_benefits } from './events/_v1_benefits'
+import { _v1_benefits_benefit_id } from './events/_v1_benefits_benefit_id'
+import { _v1_companies_company_id_company_benefits } from './events/_v1_companies_company_id_company_benefits'
+import { _v1_company_benefits_company_benefit_id } from './events/_v1_company_benefits_company_benefit_id'
+import { _v1_companies_company_id_earning_types } from './events/_v1_companies_company_id_earning_types'
+import { _v1_employees_employee_id_employee_benefits } from './events/_v1_employees_employee_id_employee_benefits'
+import { _v1_employee_benefits_employee_benefit_id } from './events/_v1_employee_benefits_employee_benefit_id'
+import { _v1_companies_company_id_payrolls } from './events/_v1_companies_company_id_payrolls'
+import { _v1_companies_company_id_payrolls_payroll_id } from './events/_v1_companies_company_id_payrolls_payroll_id'
+import { _v1_companies_company_id_time_off_requests_time_off_request_id } from './events/_v1_companies_company_id_time_off_requests_time_off_request_id'
+import { _v1_companies_company_id_admins } from './events/_v1_companies_company_id_admins'
+import { _v1_companies_company_id_or_uuid_federal_tax_details } from './events/_v1_companies_company_id_or_uuid_federal_tax_details'
+import { _v1_employees_employee_id_bank_accounts } from './events/_v1_employees_employee_id_bank_accounts'
+import { _v1_employees_employee_id_payment_method } from './events/_v1_employees_employee_id_payment_method'
+import { _v1_companies_company_uuid_signatories } from './events/_v1_companies_company_uuid_signatories'
+import { _v1_company_forms } from './events/_v1_company_forms'
+import { _v1_company_form } from './events/_v1_company_form'
+import { _v1_employee_forms } from './events/_v1_employee_forms'
+import { _v1_employee_form } from './events/_v1_employee_form'
+import { _v1_employees_employee_id_or_uuid_onboarding_status } from './events/_v1_employees_employee_id_or_uuid_onboarding_status'
 
 type GustoConfig = {
   CLIENT_ID: string;
@@ -75,274 +75,274 @@ export class GustoIntegration extends Integration {
 
   registerEvents() {
     this.events = {
-             'gusto.-v1-employees/sync': {
+             'gusto._v1_employees/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string(),
 'include': z.string()}),
-                handler: -v1-employees,
+                handler: _v1_employees,
             },
         
 
-             'gusto.-v1-companies/sync': {
+             'gusto._v1_companies/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string()}),
-                handler: -v1-companies,
+                handler: _v1_companies,
             },
         
 
-             'gusto.-v1-company-onboarding-status/sync': {
+             'gusto._v1_company_onboarding_status/sync': {
                 schema: z.object({
                   'company_uuid': z.string()}),
-                handler: -v1-company-onboarding-status,
+                handler: _v1_company_onboarding_status,
             },
         
 
-             'gusto.-v1-companies-company_id-employees/sync': {
+             'gusto._v1_companies_company_id_employees/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'terminated': z.boolean(),
 'include': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-employees,
+                handler: _v1_companies_company_id_employees,
             },
         
 
-             'gusto.-v1-jobs-job_id/sync': {
+             'gusto._v1_jobs_job_id/sync': {
                 schema: z.object({
                   'job_id_or_uuid': z.string()}),
-                handler: -v1-jobs-job_id,
+                handler: _v1_jobs_job_id,
             },
         
 
-             'gusto.-v1-employees-employee_id-jobs/sync': {
+             'gusto._v1_employees_employee_id_jobs/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-employees-employee_id-jobs,
+                handler: _v1_employees_employee_id_jobs,
             },
         
 
-             'gusto.-v1-companies-company_id-locations/sync': {
+             'gusto._v1_companies_company_id_locations/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-locations,
+                handler: _v1_companies_company_id_locations,
             },
         
 
-             'gusto.-v1-locations-location_id/sync': {
+             'gusto._v1_locations_location_id/sync': {
                 schema: z.object({
                   'location_id': z.string()}),
-                handler: -v1-locations-location_id,
+                handler: _v1_locations_location_id,
             },
         
 
-             'gusto.-v1-contractors-contractor_id/sync': {
+             'gusto._v1_contractors_contractor_id/sync': {
                 schema: z.object({
                   'contractor_id_or_uuid': z.string()}),
-                handler: -v1-contractors-contractor_id,
+                handler: _v1_contractors_contractor_id,
             },
         
 
-             'gusto.-v1-companies-company_id-contractors/sync': {
+             'gusto._v1_companies_company_id_contractors/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-contractors,
+                handler: _v1_companies_company_id_contractors,
             },
         
 
-             'gusto.-v1-companies-company_id-contractor_payments/sync': {
+             'gusto._v1_companies_company_id_contractor_payments/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'start_date': z.string(),
 'end_date': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-contractor_payments,
+                handler: _v1_companies_company_id_contractor_payments,
             },
         
 
-             'gusto.-v1-companies-company_id-contractor_payment-contractor-payment/sync': {
+             'gusto._v1_companies_company_id_contractor_payment_contractor_payment/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'contractor_payment_id_or_uuid': z.string()}),
-                handler: -v1-companies-company_id-contractor_payment-contractor-payment,
+                handler: _v1_companies_company_id_contractor_payment_contractor_payment,
             },
         
 
-             'gusto.-v1-compensations-compensation_id/sync': {
+             'gusto._v1_compensations_compensation_id/sync': {
                 schema: z.object({
                   'compensation_id_or_uuid': z.string()}),
-                handler: -v1-compensations-compensation_id,
+                handler: _v1_compensations_compensation_id,
             },
         
 
-             'gusto.-v1-jobs-job_id-compensations/sync': {
+             'gusto._v1_jobs_job_id_compensations/sync': {
                 schema: z.object({
                   'job_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-jobs-job_id-compensations,
+                handler: _v1_jobs_job_id_compensations,
             },
         
 
-             'gusto.-v1-employees-employee_id-garnishments/sync': {
+             'gusto._v1_employees_employee_id_garnishments/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-employees-employee_id-garnishments,
+                handler: _v1_employees_employee_id_garnishments,
             },
         
 
-             'gusto.-v1-garnishments-garnishment_id/sync': {
+             'gusto._v1_garnishments_garnishment_id/sync': {
                 schema: z.object({
                   'garnishment_id_or_uuid': z.string()}),
-                handler: -v1-garnishments-garnishment_id,
+                handler: _v1_garnishments_garnishment_id,
             },
         
 
-             'gusto.-v1-employees-employee_id-terminations/sync': {
+             'gusto._v1_employees_employee_id_terminations/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string()}),
-                handler: -v1-employees-employee_id-terminations,
+                handler: _v1_employees_employee_id_terminations,
             },
         
 
-             'gusto.-v1-companies-company_id-time_off_requests/sync': {
+             'gusto._v1_companies_company_id_time_off_requests/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'start_date': z.string(),
 'end_date': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-time_off_requests,
+                handler: _v1_companies_company_id_time_off_requests,
             },
         
 
-             'gusto.-v1-me/sync': {
+             'gusto._v1_me/sync': {
                 schema: z.object({}),
-                handler: -v1-me,
+                handler: _v1_me,
             },
         
 
-             'gusto.-v1-employees-employee_id-federal_taxes/sync': {
+             'gusto._v1_employees_employee_id_federal_taxes/sync': {
                 schema: z.object({
                   'employee_uuid': z.string()}),
-                handler: -v1-employees-employee_id-federal_taxes,
+                handler: _v1_employees_employee_id_federal_taxes,
             },
         
 
-             'gusto.-v1-employees-employee_id-state_taxes/sync': {
+             'gusto._v1_employees_employee_id_state_taxes/sync': {
                 schema: z.object({
                   'employee_uuid': z.string()}),
-                handler: -v1-employees-employee_id-state_taxes,
+                handler: _v1_employees_employee_id_state_taxes,
             },
         
 
-             'gusto.-v1-employees-employee_id-home_address/sync': {
+             'gusto._v1_employees_employee_id_home_address/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string()}),
-                handler: -v1-employees-employee_id-home_address,
+                handler: _v1_employees_employee_id_home_address,
             },
         
 
-             'gusto.-v1-company-payment-configs/sync': {
+             'gusto._v1_company_payment_configs/sync': {
                 schema: z.object({
                   'company_uuid': z.string()}),
-                handler: -v1-company-payment-configs,
+                handler: _v1_company_payment_configs,
             },
         
 
-             'gusto.-v1-companies-company_id-pay_schedules/sync': {
+             'gusto._v1_companies_company_id_pay_schedules/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-pay_schedules,
+                handler: _v1_companies_company_id_pay_schedules,
             },
         
 
-             'gusto.-v1-company-industry/sync': {
+             'gusto._v1_company_industry/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string()}),
-                handler: -v1-company-industry,
+                handler: _v1_company_industry,
             },
         
 
-             'gusto.-v1-companies-company_id-pay_schedules-pay_schedule_id/sync': {
+             'gusto._v1_companies_company_id_pay_schedules_pay_schedule_id/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'pay_schedule_id_or_uuid': z.string()}),
-                handler: -v1-companies-company_id-pay_schedules-pay_schedule_id,
+                handler: _v1_companies_company_id_pay_schedules_pay_schedule_id,
             },
         
 
-             'gusto.-v1-companies-company_id-bank-accounts/sync': {
+             'gusto._v1_companies_company_id_bank_accounts/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-bank-accounts,
+                handler: _v1_companies_company_id_bank_accounts,
             },
         
 
-             'gusto.-v1-benefits/sync': {
+             'gusto._v1_benefits/sync': {
                 schema: z.object({}),
-                handler: -v1-benefits,
+                handler: _v1_benefits,
             },
         
 
-             'gusto.-v1-benefits-benefit_id/sync': {
+             'gusto._v1_benefits_benefit_id/sync': {
                 schema: z.object({
                   'benefit_id': z.string()}),
-                handler: -v1-benefits-benefit_id,
+                handler: _v1_benefits_benefit_id,
             },
         
 
-             'gusto.-v1-companies-company_id-company_benefits/sync': {
+             'gusto._v1_companies_company_id_company_benefits/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string()}),
-                handler: -v1-companies-company_id-company_benefits,
+                handler: _v1_companies_company_id_company_benefits,
             },
         
 
-             'gusto.-v1-company_benefits-company_benefit_id/sync': {
+             'gusto._v1_company_benefits_company_benefit_id/sync': {
                 schema: z.object({
                   'company_benefit_id': z.string()}),
-                handler: -v1-company_benefits-company_benefit_id,
+                handler: _v1_company_benefits_company_benefit_id,
             },
         
 
-             'gusto.-v1-companies-company_id-earning_types/sync': {
+             'gusto._v1_companies_company_id_earning_types/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string()}),
-                handler: -v1-companies-company_id-earning_types,
+                handler: _v1_companies_company_id_earning_types,
             },
         
 
-             'gusto.-v1-employees-employee_id-employee_benefits/sync': {
+             'gusto._v1_employees_employee_id_employee_benefits/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-employees-employee_id-employee_benefits,
+                handler: _v1_employees_employee_id_employee_benefits,
             },
         
 
-             'gusto.-v1-employee_benefits-employee_benefit_id/sync': {
+             'gusto._v1_employee_benefits_employee_benefit_id/sync': {
                 schema: z.object({
                   'employee_benefit_id': z.string()}),
-                handler: -v1-employee_benefits-employee_benefit_id,
+                handler: _v1_employee_benefits_employee_benefit_id,
             },
         
 
-             'gusto.-v1-companies-company_id-payrolls/sync': {
+             'gusto._v1_companies_company_id_payrolls/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'processed': z.boolean(),
@@ -350,100 +350,100 @@ export class GustoIntegration extends Integration {
 'include': z.string(),
 'start_date': z.string(),
 'end_date': z.string()}),
-                handler: -v1-companies-company_id-payrolls,
+                handler: _v1_companies_company_id_payrolls,
             },
         
 
-             'gusto.-v1-companies-company_id-payrolls-payroll_id/sync': {
+             'gusto._v1_companies_company_id_payrolls_payroll_id/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'payroll_id_or_uuid': z.string(),
 'include': z.string(),
 'show_calculation': z.string()}),
-                handler: -v1-companies-company_id-payrolls-payroll_id,
+                handler: _v1_companies_company_id_payrolls_payroll_id,
             },
         
 
-             'gusto.-v1-companies-company_id-time_off_requests-time_off_request_id/sync': {
+             'gusto._v1_companies_company_id_time_off_requests_time_off_request_id/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'time_off_request_id': z.string()}),
-                handler: -v1-companies-company_id-time_off_requests-time_off_request_id,
+                handler: _v1_companies_company_id_time_off_requests_time_off_request_id,
             },
         
 
-             'gusto.-v1-companies-company_id-admins/sync': {
+             'gusto._v1_companies_company_id_admins/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-companies-company_id-admins,
+                handler: _v1_companies_company_id_admins,
             },
         
 
-             'gusto.-v1-companies-company_id_or_uuid-federal_tax_details/sync': {
+             'gusto._v1_companies_company_id_or_uuid_federal_tax_details/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string()}),
-                handler: -v1-companies-company_id_or_uuid-federal_tax_details,
+                handler: _v1_companies_company_id_or_uuid_federal_tax_details,
             },
         
 
-             'gusto.-v1-employees-employee_id-bank_accounts/sync': {
+             'gusto._v1_employees_employee_id_bank_accounts/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string(),
 'pageParam': z.string(),
 'perParam': z.string()}),
-                handler: -v1-employees-employee_id-bank_accounts,
+                handler: _v1_employees_employee_id_bank_accounts,
             },
         
 
-             'gusto.-v1-employees-employee_id-payment_method/sync': {
+             'gusto._v1_employees_employee_id_payment_method/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string()}),
-                handler: -v1-employees-employee_id-payment_method,
+                handler: _v1_employees_employee_id_payment_method,
             },
         
 
-             'gusto.-v1-companies-company_uuid-signatories/sync': {
+             'gusto._v1_companies_company_uuid_signatories/sync': {
                 schema: z.object({
                   'company_uuid': z.string()}),
-                handler: -v1-companies-company_uuid-signatories,
+                handler: _v1_companies_company_uuid_signatories,
             },
         
 
-             'gusto.-v1-company-forms/sync': {
+             'gusto._v1_company_forms/sync': {
                 schema: z.object({
                   'company_id_or_uuid': z.string()}),
-                handler: -v1-company-forms,
+                handler: _v1_company_forms,
             },
         
 
-             'gusto.-v1-company-form/sync': {
+             'gusto._v1_company_form/sync': {
                 schema: z.object({
                   'id_or_uuid': z.string()}),
-                handler: -v1-company-form,
+                handler: _v1_company_form,
             },
         
 
-             'gusto.-v1-employee-forms/sync': {
+             'gusto._v1_employee_forms/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string()}),
-                handler: -v1-employee-forms,
+                handler: _v1_employee_forms,
             },
         
 
-             'gusto.-v1-employee-form/sync': {
+             'gusto._v1_employee_form/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string(),
 'id_or_uuid': z.string()}),
-                handler: -v1-employee-form,
+                handler: _v1_employee_form,
             },
         
 
-             'gusto.-v1-employees-employee_id_or_uuid-onboarding_status/sync': {
+             'gusto._v1_employees_employee_id_or_uuid_onboarding_status/sync': {
                 schema: z.object({
                   'employee_id_or_uuid': z.string()}),
-                handler: -v1-employees-employee_id_or_uuid-onboarding_status,
+                handler: _v1_employees_employee_id_or_uuid_onboarding_status,
             },
         }
     return this.events;

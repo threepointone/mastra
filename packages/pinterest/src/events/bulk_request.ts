@@ -11,7 +11,7 @@
                         id: `${name}-sync-BulkUpsertStatusResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_ad_account_id,path_bulk_request_id,include_details, ad_account_id,bulk_request_id,  } = event.data;
+                            const { path_ad_account_id,path_bulk_request_id,include_details,ad_account_id,bulk_request_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

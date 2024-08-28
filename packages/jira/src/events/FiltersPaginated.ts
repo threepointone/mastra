@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanFilterDetails`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { filterName,accountId,owner,groupname,groupId,projectId,id,orderBy,startAt,maxResults,expand,overrideSharePermissions,   } = event.data;
+                            const { filterName,accountId,owner,groupname,groupId,projectId,id,orderBy,startAt,maxResults,expand,overrideSharePermissions, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-permissionProfile`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,permissionProfileId,include, accountId,permissionProfileId,  } = event.data;
+                            const { accountId,permissionProfileId,include, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

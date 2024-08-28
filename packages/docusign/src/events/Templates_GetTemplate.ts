@@ -11,7 +11,7 @@
                         id: `${name}-sync-envelopeTemplate`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,templateId,include, accountId,templateId,  } = event.data;
+                            const { accountId,templateId,include, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-AccountBrands`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,exclude_distributor_brand,include_logos, accountId,  } = event.data;
+                            const { accountId,exclude_distributor_brand,include_logos, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

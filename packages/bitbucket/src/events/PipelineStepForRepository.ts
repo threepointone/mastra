@@ -11,7 +11,7 @@
                         id: `${name}-sync-pipeline_step`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace,repo_slug,pipeline_uuid,step_uuid, workspace,repo_slug,pipeline_uuid,step_uuid,  } = event.data;
+                            const { workspace,repo_slug,pipeline_uuid,step_uuid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

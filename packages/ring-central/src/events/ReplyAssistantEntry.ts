@@ -11,7 +11,7 @@
                         id: `${name}-sync-ReplyAssistantEntry`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { replyAssistantEntryId, replyAssistantEntryId,  } = event.data;
+                            const { replyAssistantEntryId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-AnalyticsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { query_start_date,query_end_date,query_from_claimed_content,query_pin_format,query_app_types,query_content_type,query_source,query_metric_types,query_split_field_user_account,query_ad_account_id,   } = event.data;
+                            const { query_start_date,query_end_date,query_from_claimed_content,query_pin_format,query_app_types,query_content_type,query_source,query_metric_types,query_split_field_user_account,query_ad_account_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

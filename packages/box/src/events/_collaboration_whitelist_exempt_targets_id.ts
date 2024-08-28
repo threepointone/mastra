@@ -11,7 +11,7 @@
                         id: `${name}-sync-CollaborationAllowlistExemptTarget`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { collaboration_whitelist_exempt_target_id, collaboration_whitelist_exempt_target_id,  } = event.data;
+                            const { collaboration_whitelist_exempt_target_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

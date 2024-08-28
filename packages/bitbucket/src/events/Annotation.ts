@@ -11,7 +11,7 @@
                         id: `${name}-sync-report_annotation`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace,repo_slug,commit,reportId,annotationId, workspace,repo_slug,commit,reportId,annotationId,  } = event.data;
+                            const { workspace,repo_slug,commit,reportId,annotationId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

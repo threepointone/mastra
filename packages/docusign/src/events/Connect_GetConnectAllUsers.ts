@@ -11,7 +11,7 @@
                         id: `${name}-sync-integratedConnectUserInfoList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,connectId,count,domain_users_only,email_substring,start_position,status,user_name_substring, accountId,connectId,  } = event.data;
+                            const { accountId,connectId,count,domain_users_only,email_substring,start_position,status,user_name_substring, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

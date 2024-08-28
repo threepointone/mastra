@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetentionPolicies`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { policy_name,policy_type,created_by_user_id,fields,limit,marker,   } = event.data;
+                            const { policy_name,policy_type,created_by_user_id,fields,limit,marker, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-Channel`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { channelId, channelId,  } = event.data;
+                            const { channelId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

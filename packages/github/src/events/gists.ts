@@ -11,7 +11,7 @@
                         id: `${name}-sync-gist-simple`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { gist-id, gist_id,  } = event.data;
+                            const { gist-id,gist_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { startAt,maxResults,priorityId,schemeId,schemeName,onlyDefault,orderBy,expand,   } = event.data;
+                            const { startAt,maxResults,priorityId,schemeId,schemeName,onlyDefault,orderBy,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

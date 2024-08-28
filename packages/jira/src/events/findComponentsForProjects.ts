@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBean2ComponentJsonBean`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectIdsOrKeys,startAt,maxResults,orderBy,query,   } = event.data;
+                            const { projectIdsOrKeys,startAt,maxResults,orderBy,query, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

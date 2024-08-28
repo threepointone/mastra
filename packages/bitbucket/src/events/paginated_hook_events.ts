@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_hook_events`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  subject_type,  } = event.data;
+                            const { subject_type, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

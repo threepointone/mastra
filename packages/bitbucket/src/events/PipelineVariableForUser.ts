@@ -11,7 +11,7 @@
                         id: `${name}-sync-pipeline_variable`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { selected_user,variable_uuid, selected_user,variable_uuid,  } = event.data;
+                            const { selected_user,variable_uuid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

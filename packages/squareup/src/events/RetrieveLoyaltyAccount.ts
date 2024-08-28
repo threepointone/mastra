@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveLoyaltyAccountResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { account_id, account_id,  } = event.data;
+                            const { account_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

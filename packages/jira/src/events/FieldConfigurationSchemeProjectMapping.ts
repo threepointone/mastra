@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanFieldConfigurationSchemeProjects`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { startAt,maxResults,projectId,   } = event.data;
+                            const { startAt,maxResults,projectId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

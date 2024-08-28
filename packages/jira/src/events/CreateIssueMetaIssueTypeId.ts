@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageOfCreateMetaIssueTypeWithField`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectIdOrKey,issueTypeId,startAt,maxResults, projectIdOrKey,issueTypeId,  } = event.data;
+                            const { projectIdOrKey,issueTypeId,startAt,maxResults, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

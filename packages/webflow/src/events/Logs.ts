@@ -11,7 +11,7 @@
                         id: `${name}-sync-Logs`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workflowId,nextToken,order,transitionExecutionId,transitionId,maxResults,workflowExecutionId,   } = event.data;
+                            const { workflowId,nextToken,order,transitionExecutionId,transitionId,maxResults,workflowExecutionId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

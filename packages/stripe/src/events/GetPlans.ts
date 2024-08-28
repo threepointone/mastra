@@ -11,7 +11,7 @@
                         id: `${name}-sync-plan`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { active,created,ending_before,expand,limit,product,starting_after,   } = event.data;
+                            const { active,created,ending_before,expand,limit,product,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

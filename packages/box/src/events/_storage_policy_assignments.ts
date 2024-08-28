@@ -11,7 +11,7 @@
                         id: `${name}-sync-StoragePolicyAssignments`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { marker,resolved_for_type,resolved_for_id,   } = event.data;
+                            const { marker,resolved_for_type,resolved_for_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

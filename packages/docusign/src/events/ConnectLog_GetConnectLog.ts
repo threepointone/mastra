@@ -11,7 +11,7 @@
                         id: `${name}-sync-connectLog`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,logId,additional_info, accountId,logId,  } = event.data;
+                            const { accountId,logId,additional_info, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-billingChargeResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,include_charges, accountId,  } = event.data;
+                            const { accountId,include_charges, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

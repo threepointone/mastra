@@ -11,7 +11,7 @@
                         id: `${name}-sync-treasury.credit_reversal`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { credit_reversal,expand, credit_reversal,  } = event.data;
+                            const { credit_reversal,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

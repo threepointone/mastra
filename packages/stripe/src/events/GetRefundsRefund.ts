@@ -11,7 +11,7 @@
                         id: `${name}-sync-refund`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,refund, refund,  } = event.data;
+                            const { expand,refund, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveSnippetResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { site_id, site_id,  } = event.data;
+                            const { site_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

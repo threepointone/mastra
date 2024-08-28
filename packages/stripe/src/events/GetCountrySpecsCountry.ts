@@ -11,7 +11,7 @@
                         id: `${name}-sync-country_spec`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { country,expand, country,  } = event.data;
+                            const { country,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

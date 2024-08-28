@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1api~1v1~1company~1notification~1list~1%7Bid%7D/get/responses/200`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {    } = event.data;
+                            const {  } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

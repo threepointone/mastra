@@ -11,7 +11,7 @@
                         id: `${name}-sync-externalFolder`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,serviceId,userId,cloud_storage_folder_path,count,order,order_by,search_text,start_position, accountId,userId,serviceId,  } = event.data;
+                            const { accountId,serviceId,userId,cloud_storage_folder_path,count,order,order_by,search_text,start_position, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-commit`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  workspace,repo_slug,revspec,  } = event.data;
+                            const { workspace,repo_slug,revspec, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

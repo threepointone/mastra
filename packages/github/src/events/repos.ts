@@ -11,7 +11,7 @@
                         id: `${name}-sync-full-repository`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { owner,repo, owner,repo,  } = event.data;
+                            const { owner,repo, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

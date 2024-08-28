@@ -11,7 +11,7 @@
                         id: `${name}-sync-subscription_schedule`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { canceled_at,completed_at,created,customer,ending_before,expand,limit,released_at,scheduled,starting_after,   } = event.data;
+                            const { canceled_at,completed_at,created,customer,ending_before,expand,limit,released_at,scheduled,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

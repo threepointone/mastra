@@ -11,7 +11,7 @@
                         id: `${name}-sync-TeamMembershipCompact`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace, user_gid,  } = event.data;
+                            const { workspace,user_gid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

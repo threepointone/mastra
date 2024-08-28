@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListTeamMemberWagesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { team_member_id,limit,cursor,   } = event.data;
+                            const { team_member_id,limit,cursor, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

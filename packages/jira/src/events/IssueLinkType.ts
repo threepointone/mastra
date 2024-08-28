@@ -11,7 +11,7 @@
                         id: `${name}-sync-IssueLinkType`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueLinkTypeId, issueLinkTypeId,  } = event.data;
+                            const { issueLinkTypeId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

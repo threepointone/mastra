@@ -11,7 +11,7 @@
                         id: `${name}-sync-financial_connections.account_owner`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { account,ending_before,expand,limit,ownership,starting_after, account,  } = event.data;
+                            const { account,ending_before,expand,limit,ownership,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

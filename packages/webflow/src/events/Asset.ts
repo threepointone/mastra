@@ -11,7 +11,7 @@
                         id: `${name}-sync-Asset`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { assetId, assetId,  } = event.data;
+                            const { assetId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

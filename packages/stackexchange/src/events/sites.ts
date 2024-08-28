@@ -11,7 +11,7 @@
                         id: `${name}-sync-sites`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { pagesize,page,filter,callback,   } = event.data;
+                            const { pagesize,page,filter,callback, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

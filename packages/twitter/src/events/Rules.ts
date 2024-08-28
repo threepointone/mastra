@@ -11,7 +11,7 @@
                         id: `${name}-sync-RulesLookupResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ids,max_results,pagination_token,   } = event.data;
+                            const { ids,max_results,pagination_token, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

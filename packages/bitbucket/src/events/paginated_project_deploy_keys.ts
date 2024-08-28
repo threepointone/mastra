@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_project_deploy_keys`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  workspace,project_key,  } = event.data;
+                            const { workspace,project_key, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

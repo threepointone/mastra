@@ -11,7 +11,7 @@
                         id: `${name}-sync-repository_user_permission`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  workspace,repo_slug,selected_user_id,  } = event.data;
+                            const { workspace,repo_slug,selected_user_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

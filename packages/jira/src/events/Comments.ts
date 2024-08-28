@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageOfComments`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueIdOrKey,startAt,maxResults,orderBy,expand, issueIdOrKey,  } = event.data;
+                            const { issueIdOrKey,startAt,maxResults,orderBy,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

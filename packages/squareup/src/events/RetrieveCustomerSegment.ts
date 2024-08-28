@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveCustomerSegmentResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { segment_id, segment_id,  } = event.data;
+                            const { segment_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

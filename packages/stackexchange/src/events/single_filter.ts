@@ -11,7 +11,7 @@
                         id: `${name}-sync-single_filter`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { base,exclude,include,unsafe,   } = event.data;
+                            const { base,exclude,include,unsafe, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

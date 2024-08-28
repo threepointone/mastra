@@ -11,7 +11,7 @@
                         id: `${name}-sync-transfer`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,transfer, transfer,  } = event.data;
+                            const { expand,transfer, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

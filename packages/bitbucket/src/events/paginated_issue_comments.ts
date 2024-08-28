@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_issue_comments`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { q, workspace,repo_slug,issue_id,  } = event.data;
+                            const { q,workspace,repo_slug,issue_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

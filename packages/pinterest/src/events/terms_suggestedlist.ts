@@ -11,7 +11,7 @@
                         id: `${name}-sync-TermsSuggestedResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { query_input_term,query_term_limit,   } = event.data;
+                            const { query_input_term,query_term_limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

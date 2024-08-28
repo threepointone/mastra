@@ -11,7 +11,7 @@
                         id: `${name}-sync-FileVersion--Full`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { file_id,fields,file_version_id, file_id,file_version_id,  } = event.data;
+                            const { file_id,fields,file_version_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

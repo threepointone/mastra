@@ -11,7 +11,7 @@
                         id: `${name}-sync-StatusCategory`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { idOrKey, idOrKey,  } = event.data;
+                            const { idOrKey, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

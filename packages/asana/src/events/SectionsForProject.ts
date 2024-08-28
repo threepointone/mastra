@@ -11,7 +11,7 @@
                         id: `${name}-sync-SectionCompact`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { limit,offset, project_gid,  } = event.data;
+                            const { limit,offset,project_gid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

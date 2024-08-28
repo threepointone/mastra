@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListCardsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cursor,customer_id,include_disabled,reference_id,sort_order,   } = event.data;
+                            const { cursor,customer_id,include_disabled,reference_id,sort_order, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1functions~1namespaces/post/responses/200`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { namespace_id, namespace_id,  } = event.data;
+                            const { namespace_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

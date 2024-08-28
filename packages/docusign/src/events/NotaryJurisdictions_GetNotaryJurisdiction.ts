@@ -11,7 +11,7 @@
                         id: `${name}-sync-notaryJurisdiction`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { jurisdictionId, jurisdictionId,  } = event.data;
+                            const { jurisdictionId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

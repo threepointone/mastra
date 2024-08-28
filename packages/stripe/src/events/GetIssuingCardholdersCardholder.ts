@@ -11,7 +11,7 @@
                         id: `${name}-sync-issuing.cardholder`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cardholder,expand, cardholder,  } = event.data;
+                            const { cardholder,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

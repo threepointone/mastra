@@ -11,7 +11,7 @@
                         id: `${name}-sync-Documents`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { datasetId,nextToken,order,documentId,consentId,maxResults,sortBy,   } = event.data;
+                            const { datasetId,nextToken,order,documentId,consentId,maxResults,sortBy, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

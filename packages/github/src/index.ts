@@ -4,179 +4,179 @@ import { createClient, type OASClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import openapi from './openapi'
 import { metaroot } from './events/metaroot'
-import { apps-authenticated } from './events/apps-authenticated'
-import { apps-webhook-config-for-app } from './events/apps-webhook-config-for-app'
-import { apps-webhook-delivery } from './events/apps-webhook-delivery'
-import { apps-installation } from './events/apps-installation'
-import { apps-by-slug } from './events/apps-by-slug'
-import { codes-of-conduct-conduct-code } from './events/codes-of-conduct-conduct-code'
-import { activity-feeds } from './events/activity-feeds'
+import { apps_authenticated } from './events/apps_authenticated'
+import { apps_webhook_config_for_app } from './events/apps_webhook_config_for_app'
+import { apps_webhook_delivery } from './events/apps_webhook_delivery'
+import { apps_installation } from './events/apps_installation'
+import { apps_by_slug } from './events/apps_by_slug'
+import { codes_of_conduct_conduct_code } from './events/codes_of_conduct_conduct_code'
+import { activity_feeds } from './events/activity_feeds'
 import { gists } from './events/gists'
-import { gists-comment } from './events/gists-comment'
-import { gists-revision } from './events/gists-revision'
-import { gitignore-template } from './events/gitignore-template'
+import { gists_comment } from './events/gists_comment'
+import { gists_revision } from './events/gists_revision'
+import { gitignore_template } from './events/gitignore_template'
 import { licenses } from './events/licenses'
-import { apps-subscription-plan-for-account } from './events/apps-subscription-plan-for-account'
-import { apps-subscription-plan-for-account-stubbed } from './events/apps-subscription-plan-for-account-stubbed'
+import { apps_subscription_plan_for_account } from './events/apps_subscription_plan_for_account'
+import { apps_subscription_plan_for_account_stubbed } from './events/apps_subscription_plan_for_account_stubbed'
 import { meta } from './events/meta'
-import { activity-thread } from './events/activity-thread'
-import { activity-thread-subscription-for-authenticated-user } from './events/activity-thread-subscription-for-authenticated-user'
+import { activity_thread } from './events/activity_thread'
+import { activity_thread_subscription_for_authenticated_user } from './events/activity_thread_subscription_for_authenticated_user'
 import { orgs } from './events/orgs'
-import { actions-actions-cache-usage-for-org } from './events/actions-actions-cache-usage-for-org'
-import { oidc-oidc-custom-sub-template-for-org } from './events/oidc-oidc-custom-sub-template-for-org'
-import { actions-github-actions-permissions-organization } from './events/actions-github-actions-permissions-organization'
-import { actions-allowed-actions-organization } from './events/actions-allowed-actions-organization'
-import { actions-github-actions-default-workflow-permissions-organization } from './events/actions-github-actions-default-workflow-permissions-organization'
-import { actions-required-workflow } from './events/actions-required-workflow'
-import { actions-self-hosted-runner-for-org } from './events/actions-self-hosted-runner-for-org'
-import { actionslist-labels-for-self-hosted-runner-for-org } from './events/actionslist-labels-for-self-hosted-runner-for-org'
-import { actions-org-public-key } from './events/actions-org-public-key'
-import { actions-org-secret } from './events/actions-org-secret'
-import { actions-org-variable } from './events/actions-org-variable'
-import { codespaces-org-public-key } from './events/codespaces-org-public-key'
-import { codespaces-org-secret } from './events/codespaces-org-secret'
-import { dependabot-org-public-key } from './events/dependabot-org-public-key'
-import { dependabot-org-secret } from './events/dependabot-org-secret'
-import { orgs-webhook } from './events/orgs-webhook'
-import { orgs-webhook-config-for-org } from './events/orgs-webhook-config-for-org'
-import { orgs-webhook-delivery } from './events/orgs-webhook-delivery'
-import { apps-org-installation } from './events/apps-org-installation'
-import { orgs-membership-for-user } from './events/orgs-membership-for-user'
-import { migrations-status-for-org } from './events/migrations-status-for-org'
-import { packages-package-for-organization } from './events/packages-package-for-organization'
-import { packages-package-version-for-organization } from './events/packages-package-version-for-organization'
-import { billing-github-actions-billing-org } from './events/billing-github-actions-billing-org'
-import { billing-github-packages-billing-org } from './events/billing-github-packages-billing-org'
-import { billing-shared-storage-billing-org } from './events/billing-shared-storage-billing-org'
-import { teams-by-name } from './events/teams-by-name'
-import { teams-discussion-in-org } from './events/teams-discussion-in-org'
-import { teams-discussion-comment-in-org } from './events/teams-discussion-comment-in-org'
-import { teams-membership-for-user-in-org } from './events/teams-membership-for-user-in-org'
-import { teamscheck-permissions-for-project-in-org } from './events/teamscheck-permissions-for-project-in-org'
-import { teamscheck-permissions-for-repo-in-org } from './events/teamscheck-permissions-for-repo-in-org'
-import { projects-card } from './events/projects-card'
-import { projects-column } from './events/projects-column'
+import { actions_actions_cache_usage_for_org } from './events/actions_actions_cache_usage_for_org'
+import { oidc_oidc_custom_sub_template_for_org } from './events/oidc_oidc_custom_sub_template_for_org'
+import { actions_github_actions_permissions_organization } from './events/actions_github_actions_permissions_organization'
+import { actions_allowed_actions_organization } from './events/actions_allowed_actions_organization'
+import { actions_github_actions_default_workflow_permissions_organization } from './events/actions_github_actions_default_workflow_permissions_organization'
+import { actions_required_workflow } from './events/actions_required_workflow'
+import { actions_self_hosted_runner_for_org } from './events/actions_self_hosted_runner_for_org'
+import { actionslist_labels_for_self_hosted_runner_for_org } from './events/actionslist_labels_for_self_hosted_runner_for_org'
+import { actions_org_public_key } from './events/actions_org_public_key'
+import { actions_org_secret } from './events/actions_org_secret'
+import { actions_org_variable } from './events/actions_org_variable'
+import { codespaces_org_public_key } from './events/codespaces_org_public_key'
+import { codespaces_org_secret } from './events/codespaces_org_secret'
+import { dependabot_org_public_key } from './events/dependabot_org_public_key'
+import { dependabot_org_secret } from './events/dependabot_org_secret'
+import { orgs_webhook } from './events/orgs_webhook'
+import { orgs_webhook_config_for_org } from './events/orgs_webhook_config_for_org'
+import { orgs_webhook_delivery } from './events/orgs_webhook_delivery'
+import { apps_org_installation } from './events/apps_org_installation'
+import { orgs_membership_for_user } from './events/orgs_membership_for_user'
+import { migrations_status_for_org } from './events/migrations_status_for_org'
+import { packages_package_for_organization } from './events/packages_package_for_organization'
+import { packages_package_version_for_organization } from './events/packages_package_version_for_organization'
+import { billing_github_actions_billing_org } from './events/billing_github_actions_billing_org'
+import { billing_github_packages_billing_org } from './events/billing_github_packages_billing_org'
+import { billing_shared_storage_billing_org } from './events/billing_shared_storage_billing_org'
+import { teams_by_name } from './events/teams_by_name'
+import { teams_discussion_in_org } from './events/teams_discussion_in_org'
+import { teams_discussion_comment_in_org } from './events/teams_discussion_comment_in_org'
+import { teams_membership_for_user_in_org } from './events/teams_membership_for_user_in_org'
+import { teamscheck_permissions_for_project_in_org } from './events/teamscheck_permissions_for_project_in_org'
+import { teamscheck_permissions_for_repo_in_org } from './events/teamscheck_permissions_for_repo_in_org'
+import { projects_card } from './events/projects_card'
+import { projects_column } from './events/projects_column'
 import { projects } from './events/projects'
-import { projects-permission-for-user } from './events/projects-permission-for-user'
-import { rate-limit } from './events/rate-limit'
-import { actions-repo-required-workflow } from './events/actions-repo-required-workflow'
-import { actions-repo-required-workflow-usage } from './events/actions-repo-required-workflow-usage'
+import { projects_permission_for_user } from './events/projects_permission_for_user'
+import { rate_limit } from './events/rate_limit'
+import { actions_repo_required_workflow } from './events/actions_repo_required_workflow'
+import { actions_repo_required_workflow_usage } from './events/actions_repo_required_workflow_usage'
 import { repos } from './events/repos'
-import { actions-artifact } from './events/actions-artifact'
-import { actions-actions-cache-usage } from './events/actions-actions-cache-usage'
-import { actions-actions-cache-list } from './events/actions-actions-cache-list'
-import { actions-job-for-workflow-run } from './events/actions-job-for-workflow-run'
-import { actions-custom-oidc-sub-claim-for-repo } from './events/actions-custom-oidc-sub-claim-for-repo'
-import { actions-github-actions-permissions-repository } from './events/actions-github-actions-permissions-repository'
-import { actions-workflow-access-to-repository } from './events/actions-workflow-access-to-repository'
-import { actions-allowed-actions-repository } from './events/actions-allowed-actions-repository'
-import { actions-github-actions-default-workflow-permissions-repository } from './events/actions-github-actions-default-workflow-permissions-repository'
-import { actions-self-hosted-runner-for-repo } from './events/actions-self-hosted-runner-for-repo'
-import { actionslist-labels-for-self-hosted-runner-for-repo } from './events/actionslist-labels-for-self-hosted-runner-for-repo'
-import { actions-workflow-run } from './events/actions-workflow-run'
-import { actions-workflow-run-attempt } from './events/actions-workflow-run-attempt'
-import { actions-workflow-run-usage } from './events/actions-workflow-run-usage'
-import { actions-repo-public-key } from './events/actions-repo-public-key'
-import { actions-repo-secret } from './events/actions-repo-secret'
-import { actions-repo-variable } from './events/actions-repo-variable'
-import { actions-workflow } from './events/actions-workflow'
-import { actions-workflow-usage } from './events/actions-workflow-usage'
-import { repos-autolink } from './events/repos-autolink'
-import { repos-branch } from './events/repos-branch'
-import { repos-branch-protection } from './events/repos-branch-protection'
-import { repos-admin-branch-protection } from './events/repos-admin-branch-protection'
-import { repos-pull-request-review-protection } from './events/repos-pull-request-review-protection'
-import { repos-commit-signature-protection } from './events/repos-commit-signature-protection'
-import { repos-status-checks-protection } from './events/repos-status-checks-protection'
-import { repos-access-restrictions } from './events/repos-access-restrictions'
+import { actions_artifact } from './events/actions_artifact'
+import { actions_actions_cache_usage } from './events/actions_actions_cache_usage'
+import { actions_actions_cache_list } from './events/actions_actions_cache_list'
+import { actions_job_for_workflow_run } from './events/actions_job_for_workflow_run'
+import { actions_custom_oidc_sub_claim_for_repo } from './events/actions_custom_oidc_sub_claim_for_repo'
+import { actions_github_actions_permissions_repository } from './events/actions_github_actions_permissions_repository'
+import { actions_workflow_access_to_repository } from './events/actions_workflow_access_to_repository'
+import { actions_allowed_actions_repository } from './events/actions_allowed_actions_repository'
+import { actions_github_actions_default_workflow_permissions_repository } from './events/actions_github_actions_default_workflow_permissions_repository'
+import { actions_self_hosted_runner_for_repo } from './events/actions_self_hosted_runner_for_repo'
+import { actionslist_labels_for_self_hosted_runner_for_repo } from './events/actionslist_labels_for_self_hosted_runner_for_repo'
+import { actions_workflow_run } from './events/actions_workflow_run'
+import { actions_workflow_run_attempt } from './events/actions_workflow_run_attempt'
+import { actions_workflow_run_usage } from './events/actions_workflow_run_usage'
+import { actions_repo_public_key } from './events/actions_repo_public_key'
+import { actions_repo_secret } from './events/actions_repo_secret'
+import { actions_repo_variable } from './events/actions_repo_variable'
+import { actions_workflow } from './events/actions_workflow'
+import { actions_workflow_usage } from './events/actions_workflow_usage'
+import { repos_autolink } from './events/repos_autolink'
+import { repos_branch } from './events/repos_branch'
+import { repos_branch_protection } from './events/repos_branch_protection'
+import { repos_admin_branch_protection } from './events/repos_admin_branch_protection'
+import { repos_pull_request_review_protection } from './events/repos_pull_request_review_protection'
+import { repos_commit_signature_protection } from './events/repos_commit_signature_protection'
+import { repos_status_checks_protection } from './events/repos_status_checks_protection'
+import { repos_access_restrictions } from './events/repos_access_restrictions'
 import { checks } from './events/checks'
-import { checks-suite } from './events/checks-suite'
-import { code-scanning-alert } from './events/code-scanning-alert'
-import { code-scanning-analysis } from './events/code-scanning-analysis'
-import { code-scanning-codeql-database } from './events/code-scanning-codeql-database'
-import { code-scanning-sarif } from './events/code-scanning-sarif'
-import { reposcodeowners-errors } from './events/reposcodeowners-errors'
-import { codespaces-repo-public-key } from './events/codespaces-repo-public-key'
-import { codespaces-repo-secret } from './events/codespaces-repo-secret'
-import { repos-collaborator-permission-level } from './events/repos-collaborator-permission-level'
-import { repos-commit-comment } from './events/repos-commit-comment'
-import { repos-commit } from './events/repos-commit'
-import { repos-combined-status-for-ref } from './events/repos-combined-status-for-ref'
-import { repos-community-profile-metrics } from './events/repos-community-profile-metrics'
-import { reposcompare-commits } from './events/reposcompare-commits'
-import { dependabot-alert } from './events/dependabot-alert'
-import { dependabot-repo-public-key } from './events/dependabot-repo-public-key'
-import { dependabot-repo-secret } from './events/dependabot-repo-secret'
-import { dependency-graphdiff-range } from './events/dependency-graphdiff-range'
-import { repos-deployment } from './events/repos-deployment'
-import { repos-deployment-status } from './events/repos-deployment-status'
-import { repos-environment } from './events/repos-environment'
-import { repos-deployment-branch-policy } from './events/repos-deployment-branch-policy'
-import { git-blob } from './events/git-blob'
-import { git-commit } from './events/git-commit'
-import { git-ref } from './events/git-ref'
-import { git-tag } from './events/git-tag'
-import { git-tree } from './events/git-tree'
-import { repos-webhook } from './events/repos-webhook'
-import { repos-webhook-config-for-repo } from './events/repos-webhook-config-for-repo'
-import { repos-webhook-delivery } from './events/repos-webhook-delivery'
-import { migrations-import-status } from './events/migrations-import-status'
-import { apps-repo-installation } from './events/apps-repo-installation'
-import { issues-comment } from './events/issues-comment'
-import { issues-event } from './events/issues-event'
+import { checks_suite } from './events/checks_suite'
+import { code_scanning_alert } from './events/code_scanning_alert'
+import { code_scanning_analysis } from './events/code_scanning_analysis'
+import { code_scanning_codeql_database } from './events/code_scanning_codeql_database'
+import { code_scanning_sarif } from './events/code_scanning_sarif'
+import { reposcodeowners_errors } from './events/reposcodeowners_errors'
+import { codespaces_repo_public_key } from './events/codespaces_repo_public_key'
+import { codespaces_repo_secret } from './events/codespaces_repo_secret'
+import { repos_collaborator_permission_level } from './events/repos_collaborator_permission_level'
+import { repos_commit_comment } from './events/repos_commit_comment'
+import { repos_commit } from './events/repos_commit'
+import { repos_combined_status_for_ref } from './events/repos_combined_status_for_ref'
+import { repos_community_profile_metrics } from './events/repos_community_profile_metrics'
+import { reposcompare_commits } from './events/reposcompare_commits'
+import { dependabot_alert } from './events/dependabot_alert'
+import { dependabot_repo_public_key } from './events/dependabot_repo_public_key'
+import { dependabot_repo_secret } from './events/dependabot_repo_secret'
+import { dependency_graphdiff_range } from './events/dependency_graphdiff_range'
+import { repos_deployment } from './events/repos_deployment'
+import { repos_deployment_status } from './events/repos_deployment_status'
+import { repos_environment } from './events/repos_environment'
+import { repos_deployment_branch_policy } from './events/repos_deployment_branch_policy'
+import { git_blob } from './events/git_blob'
+import { git_commit } from './events/git_commit'
+import { git_ref } from './events/git_ref'
+import { git_tag } from './events/git_tag'
+import { git_tree } from './events/git_tree'
+import { repos_webhook } from './events/repos_webhook'
+import { repos_webhook_config_for_repo } from './events/repos_webhook_config_for_repo'
+import { repos_webhook_delivery } from './events/repos_webhook_delivery'
+import { migrations_import_status } from './events/migrations_import_status'
+import { apps_repo_installation } from './events/apps_repo_installation'
+import { issues_comment } from './events/issues_comment'
+import { issues_event } from './events/issues_event'
 import { issues } from './events/issues'
-import { repos-deploy-key } from './events/repos-deploy-key'
-import { issues-label } from './events/issues-label'
-import { reposlist-languages } from './events/reposlist-languages'
-import { licenses-for-repo } from './events/licenses-for-repo'
-import { issues-milestone } from './events/issues-milestone'
-import { repos-pages } from './events/repos-pages'
-import { repos-latest-pages-build } from './events/repos-latest-pages-build'
-import { repos-pages-build } from './events/repos-pages-build'
-import { repos-pages-health-check } from './events/repos-pages-health-check'
-import { pulls-review-comment } from './events/pulls-review-comment'
+import { repos_deploy_key } from './events/repos_deploy_key'
+import { issues_label } from './events/issues_label'
+import { reposlist_languages } from './events/reposlist_languages'
+import { licenses_for_repo } from './events/licenses_for_repo'
+import { issues_milestone } from './events/issues_milestone'
+import { repos_pages } from './events/repos_pages'
+import { repos_latest_pages_build } from './events/repos_latest_pages_build'
+import { repos_pages_build } from './events/repos_pages_build'
+import { repos_pages_health_check } from './events/repos_pages_health_check'
+import { pulls_review_comment } from './events/pulls_review_comment'
 import { pulls } from './events/pulls'
-import { pullslist-requested-reviewers } from './events/pullslist-requested-reviewers'
-import { pulls-review } from './events/pulls-review'
-import { repos-readme } from './events/repos-readme'
-import { repos-readme-in-directory } from './events/repos-readme-in-directory'
-import { repos-release-asset } from './events/repos-release-asset'
-import { repos-latest-release } from './events/repos-latest-release'
-import { repos-release-by-tag } from './events/repos-release-by-tag'
-import { repos-release } from './events/repos-release'
-import { secret-scanning-alert } from './events/secret-scanning-alert'
-import { repos-participation-stats } from './events/repos-participation-stats'
-import { activity-repo-subscription } from './events/activity-repo-subscription'
-import { repos-all-topics } from './events/repos-all-topics'
-import { repos-clones } from './events/repos-clones'
-import { repos-views } from './events/repos-views'
-import { actions-environment-public-key } from './events/actions-environment-public-key'
-import { actions-environment-secret } from './events/actions-environment-secret'
-import { actions-environment-variable } from './events/actions-environment-variable'
-import { teams-legacy } from './events/teams-legacy'
-import { teams-discussion-legacy } from './events/teams-discussion-legacy'
-import { teams-discussion-comment-legacy } from './events/teams-discussion-comment-legacy'
-import { teams-membership-for-user-legacy } from './events/teams-membership-for-user-legacy'
-import { teamscheck-permissions-for-project-legacy } from './events/teamscheck-permissions-for-project-legacy'
-import { teamscheck-permissions-for-repo-legacy } from './events/teamscheck-permissions-for-repo-legacy'
-import { codespaces-public-key-for-authenticated-user } from './events/codespaces-public-key-for-authenticated-user'
-import { codespaces-secret-for-authenticated-user } from './events/codespaces-secret-for-authenticated-user'
-import { codespaces-for-authenticated-user } from './events/codespaces-for-authenticated-user'
-import { codespaces-export-details-for-authenticated-user } from './events/codespaces-export-details-for-authenticated-user'
-import { users-gpg-key-for-authenticated-user } from './events/users-gpg-key-for-authenticated-user'
-import { users-public-ssh-key-for-authenticated-user } from './events/users-public-ssh-key-for-authenticated-user'
-import { orgs-membership-for-authenticated-user } from './events/orgs-membership-for-authenticated-user'
-import { migrations-status-for-authenticated-user } from './events/migrations-status-for-authenticated-user'
-import { packages-package-for-authenticated-user } from './events/packages-package-for-authenticated-user'
-import { packages-package-version-for-authenticated-user } from './events/packages-package-version-for-authenticated-user'
-import { users-ssh-signing-key-for-authenticated-user } from './events/users-ssh-signing-key-for-authenticated-user'
-import { users-context-for-user } from './events/users-context-for-user'
-import { apps-user-installation } from './events/apps-user-installation'
-import { packages-package-for-user } from './events/packages-package-for-user'
-import { packages-package-version-for-user } from './events/packages-package-version-for-user'
-import { billing-github-actions-billing-user } from './events/billing-github-actions-billing-user'
-import { billing-github-packages-billing-user } from './events/billing-github-packages-billing-user'
-import { billing-shared-storage-billing-user } from './events/billing-shared-storage-billing-user'
+import { pullslist_requested_reviewers } from './events/pullslist_requested_reviewers'
+import { pulls_review } from './events/pulls_review'
+import { repos_readme } from './events/repos_readme'
+import { repos_readme_in_directory } from './events/repos_readme_in_directory'
+import { repos_release_asset } from './events/repos_release_asset'
+import { repos_latest_release } from './events/repos_latest_release'
+import { repos_release_by_tag } from './events/repos_release_by_tag'
+import { repos_release } from './events/repos_release'
+import { secret_scanning_alert } from './events/secret_scanning_alert'
+import { repos_participation_stats } from './events/repos_participation_stats'
+import { activity_repo_subscription } from './events/activity_repo_subscription'
+import { repos_all_topics } from './events/repos_all_topics'
+import { repos_clones } from './events/repos_clones'
+import { repos_views } from './events/repos_views'
+import { actions_environment_public_key } from './events/actions_environment_public_key'
+import { actions_environment_secret } from './events/actions_environment_secret'
+import { actions_environment_variable } from './events/actions_environment_variable'
+import { teams_legacy } from './events/teams_legacy'
+import { teams_discussion_legacy } from './events/teams_discussion_legacy'
+import { teams_discussion_comment_legacy } from './events/teams_discussion_comment_legacy'
+import { teams_membership_for_user_legacy } from './events/teams_membership_for_user_legacy'
+import { teamscheck_permissions_for_project_legacy } from './events/teamscheck_permissions_for_project_legacy'
+import { teamscheck_permissions_for_repo_legacy } from './events/teamscheck_permissions_for_repo_legacy'
+import { codespaces_public_key_for_authenticated_user } from './events/codespaces_public_key_for_authenticated_user'
+import { codespaces_secret_for_authenticated_user } from './events/codespaces_secret_for_authenticated_user'
+import { codespaces_for_authenticated_user } from './events/codespaces_for_authenticated_user'
+import { codespaces_export_details_for_authenticated_user } from './events/codespaces_export_details_for_authenticated_user'
+import { users_gpg_key_for_authenticated_user } from './events/users_gpg_key_for_authenticated_user'
+import { users_public_ssh_key_for_authenticated_user } from './events/users_public_ssh_key_for_authenticated_user'
+import { orgs_membership_for_authenticated_user } from './events/orgs_membership_for_authenticated_user'
+import { migrations_status_for_authenticated_user } from './events/migrations_status_for_authenticated_user'
+import { packages_package_for_authenticated_user } from './events/packages_package_for_authenticated_user'
+import { packages_package_version_for_authenticated_user } from './events/packages_package_version_for_authenticated_user'
+import { users_ssh_signing_key_for_authenticated_user } from './events/users_ssh_signing_key_for_authenticated_user'
+import { users_context_for_user } from './events/users_context_for_user'
+import { apps_user_installation } from './events/apps_user_installation'
+import { packages_package_for_user } from './events/packages_package_for_user'
+import { packages_package_version_for_user } from './events/packages_package_version_for_user'
+import { billing_github_actions_billing_user } from './events/billing_github_actions_billing_user'
+import { billing_github_packages_billing_user } from './events/billing_github_packages_billing_user'
+import { billing_shared_storage_billing_user } from './events/billing_shared_storage_billing_user'
 
 type GithubConfig = {
   CLIENT_ID: string;
@@ -208,52 +208,52 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.apps-authenticated/sync': {
+             'github.apps_authenticated/sync': {
                 schema: z.object({}),
-                handler: apps-authenticated,
+                handler: apps_authenticated,
             },
         
 
-             'github.apps-webhook-config-for-app/sync': {
+             'github.apps_webhook_config_for_app/sync': {
                 schema: z.object({}),
-                handler: apps-webhook-config-for-app,
+                handler: apps_webhook_config_for_app,
             },
         
 
-             'github.apps-webhook-delivery/sync': {
+             'github.apps_webhook_delivery/sync': {
                 schema: z.object({
                   'delivery_id': z.string(),
 'delivery-id': z.string()}),
-                handler: apps-webhook-delivery,
+                handler: apps_webhook_delivery,
             },
         
 
-             'github.apps-installation/sync': {
+             'github.apps_installation/sync': {
                 schema: z.object({
                   'installation_id': z.string(),
 'installation-id': z.string()}),
-                handler: apps-installation,
+                handler: apps_installation,
             },
         
 
-             'github.apps-by-slug/sync': {
+             'github.apps_by_slug/sync': {
                 schema: z.object({
                   'app_slug': z.string(),
 'app-slug': z.string()}),
-                handler: apps-by-slug,
+                handler: apps_by_slug,
             },
         
 
-             'github.codes-of-conduct-conduct-code/sync': {
+             'github.codes_of_conduct_conduct_code/sync': {
                 schema: z.object({
                   'key': z.string()}),
-                handler: codes-of-conduct-conduct-code,
+                handler: codes_of_conduct_conduct_code,
             },
         
 
-             'github.activity-feeds/sync': {
+             'github.activity_feeds/sync': {
                 schema: z.object({}),
-                handler: activity-feeds,
+                handler: activity_feeds,
             },
         
 
@@ -265,29 +265,29 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.gists-comment/sync': {
+             'github.gists_comment/sync': {
                 schema: z.object({
                   'gist_id': z.string(),
 'comment_id': z.string(),
 'gist-id': z.string(),
 'comment-id': z.string()}),
-                handler: gists-comment,
+                handler: gists_comment,
             },
         
 
-             'github.gists-revision/sync': {
+             'github.gists_revision/sync': {
                 schema: z.object({
                   'gist_id': z.string(),
 'sha': z.string(),
 'gist-id': z.string()}),
-                handler: gists-revision,
+                handler: gists_revision,
             },
         
 
-             'github.gitignore-template/sync': {
+             'github.gitignore_template/sync': {
                 schema: z.object({
                   'name': z.string()}),
-                handler: gitignore-template,
+                handler: gitignore_template,
             },
         
 
@@ -298,19 +298,19 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.apps-subscription-plan-for-account/sync': {
+             'github.apps_subscription_plan_for_account/sync': {
                 schema: z.object({
                   'account_id': z.string(),
 'account-id': z.string()}),
-                handler: apps-subscription-plan-for-account,
+                handler: apps_subscription_plan_for_account,
             },
         
 
-             'github.apps-subscription-plan-for-account-stubbed/sync': {
+             'github.apps_subscription_plan_for_account_stubbed/sync': {
                 schema: z.object({
                   'account_id': z.string(),
 'account-id': z.string()}),
-                handler: apps-subscription-plan-for-account-stubbed,
+                handler: apps_subscription_plan_for_account_stubbed,
             },
         
 
@@ -320,19 +320,19 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.activity-thread/sync': {
+             'github.activity_thread/sync': {
                 schema: z.object({
                   'thread_id': z.string(),
 'thread-id': z.string()}),
-                handler: activity-thread,
+                handler: activity_thread,
             },
         
 
-             'github.activity-thread-subscription-for-authenticated-user/sync': {
+             'github.activity_thread_subscription_for_authenticated_user/sync': {
                 schema: z.object({
                   'thread_id': z.string(),
 'thread-id': z.string()}),
-                handler: activity-thread-subscription-for-authenticated-user,
+                handler: activity_thread_subscription_for_authenticated_user,
             },
         
 
@@ -343,191 +343,191 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.actions-actions-cache-usage-for-org/sync': {
+             'github.actions_actions_cache_usage_for_org/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: actions-actions-cache-usage-for-org,
+                handler: actions_actions_cache_usage_for_org,
             },
         
 
-             'github.oidc-oidc-custom-sub-template-for-org/sync': {
+             'github.oidc_oidc_custom_sub_template_for_org/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: oidc-oidc-custom-sub-template-for-org,
+                handler: oidc_oidc_custom_sub_template_for_org,
             },
         
 
-             'github.actions-github-actions-permissions-organization/sync': {
+             'github.actions_github_actions_permissions_organization/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: actions-github-actions-permissions-organization,
+                handler: actions_github_actions_permissions_organization,
             },
         
 
-             'github.actions-allowed-actions-organization/sync': {
+             'github.actions_allowed_actions_organization/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: actions-allowed-actions-organization,
+                handler: actions_allowed_actions_organization,
             },
         
 
-             'github.actions-github-actions-default-workflow-permissions-organization/sync': {
+             'github.actions_github_actions_default_workflow_permissions_organization/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: actions-github-actions-default-workflow-permissions-organization,
+                handler: actions_github_actions_default_workflow_permissions_organization,
             },
         
 
-             'github.actions-required-workflow/sync': {
+             'github.actions_required_workflow/sync': {
                 schema: z.object({
                   'org': z.string(),
 'required_workflow_id': z.string(),
 'required-workflow-id': z.string()}),
-                handler: actions-required-workflow,
+                handler: actions_required_workflow,
             },
         
 
-             'github.actions-self-hosted-runner-for-org/sync': {
+             'github.actions_self_hosted_runner_for_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'runner_id': z.string(),
 'runner-id': z.string()}),
-                handler: actions-self-hosted-runner-for-org,
+                handler: actions_self_hosted_runner_for_org,
             },
         
 
-             'github.actionslist-labels-for-self-hosted-runner-for-org/sync': {
+             'github.actionslist_labels_for_self_hosted_runner_for_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'runner_id': z.string(),
 'runner-id': z.string()}),
-                handler: actionslist-labels-for-self-hosted-runner-for-org,
+                handler: actionslist_labels_for_self_hosted_runner_for_org,
             },
         
 
-             'github.actions-org-public-key/sync': {
+             'github.actions_org_public_key/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: actions-org-public-key,
+                handler: actions_org_public_key,
             },
         
 
-             'github.actions-org-secret/sync': {
+             'github.actions_org_secret/sync': {
                 schema: z.object({
                   'org': z.string(),
 'secret_name': z.string(),
 'secret-name': z.string()}),
-                handler: actions-org-secret,
+                handler: actions_org_secret,
             },
         
 
-             'github.actions-org-variable/sync': {
+             'github.actions_org_variable/sync': {
                 schema: z.object({
                   'org': z.string(),
 'name': z.string(),
 'variable-name': z.string()}),
-                handler: actions-org-variable,
+                handler: actions_org_variable,
             },
         
 
-             'github.codespaces-org-public-key/sync': {
+             'github.codespaces_org_public_key/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: codespaces-org-public-key,
+                handler: codespaces_org_public_key,
             },
         
 
-             'github.codespaces-org-secret/sync': {
+             'github.codespaces_org_secret/sync': {
                 schema: z.object({
                   'org': z.string(),
 'secret_name': z.string(),
 'secret-name': z.string()}),
-                handler: codespaces-org-secret,
+                handler: codespaces_org_secret,
             },
         
 
-             'github.dependabot-org-public-key/sync': {
+             'github.dependabot_org_public_key/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: dependabot-org-public-key,
+                handler: dependabot_org_public_key,
             },
         
 
-             'github.dependabot-org-secret/sync': {
+             'github.dependabot_org_secret/sync': {
                 schema: z.object({
                   'org': z.string(),
 'secret_name': z.string(),
 'secret-name': z.string()}),
-                handler: dependabot-org-secret,
+                handler: dependabot_org_secret,
             },
         
 
-             'github.orgs-webhook/sync': {
+             'github.orgs_webhook/sync': {
                 schema: z.object({
                   'org': z.string(),
 'hook_id': z.string(),
 'hook-id': z.string()}),
-                handler: orgs-webhook,
+                handler: orgs_webhook,
             },
         
 
-             'github.orgs-webhook-config-for-org/sync': {
+             'github.orgs_webhook_config_for_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'hook_id': z.string(),
 'hook-id': z.string()}),
-                handler: orgs-webhook-config-for-org,
+                handler: orgs_webhook_config_for_org,
             },
         
 
-             'github.orgs-webhook-delivery/sync': {
+             'github.orgs_webhook_delivery/sync': {
                 schema: z.object({
                   'org': z.string(),
 'hook_id': z.string(),
 'delivery_id': z.string(),
 'hook-id': z.string(),
 'delivery-id': z.string()}),
-                handler: orgs-webhook-delivery,
+                handler: orgs_webhook_delivery,
             },
         
 
-             'github.apps-org-installation/sync': {
+             'github.apps_org_installation/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: apps-org-installation,
+                handler: apps_org_installation,
             },
         
 
-             'github.orgs-membership-for-user/sync': {
+             'github.orgs_membership_for_user/sync': {
                 schema: z.object({
                   'org': z.string(),
 'username': z.string()}),
-                handler: orgs-membership-for-user,
+                handler: orgs_membership_for_user,
             },
         
 
-             'github.migrations-status-for-org/sync': {
+             'github.migrations_status_for_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'migration_id': z.string(),
 'migration-id': z.string(),
 'exclude': z.string()}),
-                handler: migrations-status-for-org,
+                handler: migrations_status_for_org,
             },
         
 
-             'github.packages-package-for-organization/sync': {
+             'github.packages_package_for_organization/sync': {
                 schema: z.object({
                   'org': z.string(),
 'package_type': z.string(),
 'package_name': z.string(),
 'package-type': z.string(),
 'package-name': z.string()}),
-                handler: packages-package-for-organization,
+                handler: packages_package_for_organization,
             },
         
 
-             'github.packages-package-version-for-organization/sync': {
+             'github.packages_package_version_for_organization/sync': {
                 schema: z.object({
                   'org': z.string(),
 'package_type': z.string(),
@@ -536,52 +536,52 @@ export class GithubIntegration extends Integration {
 'package-type': z.string(),
 'package-name': z.string(),
 'package-version-id': z.string()}),
-                handler: packages-package-version-for-organization,
+                handler: packages_package_version_for_organization,
             },
         
 
-             'github.billing-github-actions-billing-org/sync': {
+             'github.billing_github_actions_billing_org/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: billing-github-actions-billing-org,
+                handler: billing_github_actions_billing_org,
             },
         
 
-             'github.billing-github-packages-billing-org/sync': {
+             'github.billing_github_packages_billing_org/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: billing-github-packages-billing-org,
+                handler: billing_github_packages_billing_org,
             },
         
 
-             'github.billing-shared-storage-billing-org/sync': {
+             'github.billing_shared_storage_billing_org/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: billing-shared-storage-billing-org,
+                handler: billing_shared_storage_billing_org,
             },
         
 
-             'github.teams-by-name/sync': {
+             'github.teams_by_name/sync': {
                 schema: z.object({
                   'org': z.string(),
 'team_slug': z.string(),
 'team-slug': z.string()}),
-                handler: teams-by-name,
+                handler: teams_by_name,
             },
         
 
-             'github.teams-discussion-in-org/sync': {
+             'github.teams_discussion_in_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'team_slug': z.string(),
 'discussion_number': z.string(),
 'team-slug': z.string(),
 'discussion-number': z.string()}),
-                handler: teams-discussion-in-org,
+                handler: teams_discussion_in_org,
             },
         
 
-             'github.teams-discussion-comment-in-org/sync': {
+             'github.teams_discussion_comment_in_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'team_slug': z.string(),
@@ -590,55 +590,55 @@ export class GithubIntegration extends Integration {
 'team-slug': z.string(),
 'discussion-number': z.string(),
 'comment-number': z.string()}),
-                handler: teams-discussion-comment-in-org,
+                handler: teams_discussion_comment_in_org,
             },
         
 
-             'github.teams-membership-for-user-in-org/sync': {
+             'github.teams_membership_for_user_in_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'team_slug': z.string(),
 'username': z.string(),
 'team-slug': z.string()}),
-                handler: teams-membership-for-user-in-org,
+                handler: teams_membership_for_user_in_org,
             },
         
 
-             'github.teamscheck-permissions-for-project-in-org/sync': {
+             'github.teamscheck_permissions_for_project_in_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'team_slug': z.string(),
 'project_id': z.string(),
 'team-slug': z.string(),
 'project-id': z.string()}),
-                handler: teamscheck-permissions-for-project-in-org,
+                handler: teamscheck_permissions_for_project_in_org,
             },
         
 
-             'github.teamscheck-permissions-for-repo-in-org/sync': {
+             'github.teamscheck_permissions_for_repo_in_org/sync': {
                 schema: z.object({
                   'org': z.string(),
 'team_slug': z.string(),
 'owner': z.string(),
 'repo': z.string(),
 'team-slug': z.string()}),
-                handler: teamscheck-permissions-for-repo-in-org,
+                handler: teamscheck_permissions_for_repo_in_org,
             },
         
 
-             'github.projects-card/sync': {
+             'github.projects_card/sync': {
                 schema: z.object({
                   'card_id': z.string(),
 'card-id': z.string()}),
-                handler: projects-card,
+                handler: projects_card,
             },
         
 
-             'github.projects-column/sync': {
+             'github.projects_column/sync': {
                 schema: z.object({
                   'column_id': z.string(),
 'column-id': z.string()}),
-                handler: projects-column,
+                handler: projects_column,
             },
         
 
@@ -650,38 +650,38 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.projects-permission-for-user/sync': {
+             'github.projects_permission_for_user/sync': {
                 schema: z.object({
                   'project_id': z.string(),
 'username': z.string(),
 'project-id': z.string()}),
-                handler: projects-permission-for-user,
+                handler: projects_permission_for_user,
             },
         
 
-             'github.rate-limit/sync': {
+             'github.rate_limit/sync': {
                 schema: z.object({}),
-                handler: rate-limit,
+                handler: rate_limit,
             },
         
 
-             'github.actions-repo-required-workflow/sync': {
+             'github.actions_repo_required_workflow/sync': {
                 schema: z.object({
                   'org': z.string(),
 'repo': z.string(),
 'required_workflow_id_for_repo': z.string(),
 'repo-required-workflow-id': z.string()}),
-                handler: actions-repo-required-workflow,
+                handler: actions_repo_required_workflow,
             },
         
 
-             'github.actions-repo-required-workflow-usage/sync': {
+             'github.actions_repo_required_workflow_usage/sync': {
                 schema: z.object({
                   'org': z.string(),
 'repo': z.string(),
 'required_workflow_id_for_repo': z.string(),
 'repo-required-workflow-id': z.string()}),
-                handler: actions-repo-required-workflow-usage,
+                handler: actions_repo_required_workflow_usage,
             },
         
 
@@ -693,25 +693,25 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.actions-artifact/sync': {
+             'github.actions_artifact/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'artifact_id': z.string(),
 'artifact-id': z.string()}),
-                handler: actions-artifact,
+                handler: actions_artifact,
             },
         
 
-             'github.actions-actions-cache-usage/sync': {
+             'github.actions_actions_cache_usage/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: actions-actions-cache-usage,
+                handler: actions_actions_cache_usage,
             },
         
 
-             'github.actions-actions-cache-list/sync': {
+             'github.actions_actions_cache_list/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
@@ -721,92 +721,92 @@ export class GithubIntegration extends Integration {
 'actions-cache-key': z.string(),
 'actions-cache-list-sort': z.string(),
 'direction': z.string()}),
-                handler: actions-actions-cache-list,
+                handler: actions_actions_cache_list,
             },
         
 
-             'github.actions-job-for-workflow-run/sync': {
+             'github.actions_job_for_workflow_run/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'job_id': z.string(),
 'job-id': z.string()}),
-                handler: actions-job-for-workflow-run,
+                handler: actions_job_for_workflow_run,
             },
         
 
-             'github.actions-custom-oidc-sub-claim-for-repo/sync': {
+             'github.actions_custom_oidc_sub_claim_for_repo/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: actions-custom-oidc-sub-claim-for-repo,
+                handler: actions_custom_oidc_sub_claim_for_repo,
             },
         
 
-             'github.actions-github-actions-permissions-repository/sync': {
+             'github.actions_github_actions_permissions_repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: actions-github-actions-permissions-repository,
+                handler: actions_github_actions_permissions_repository,
             },
         
 
-             'github.actions-workflow-access-to-repository/sync': {
+             'github.actions_workflow_access_to_repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: actions-workflow-access-to-repository,
+                handler: actions_workflow_access_to_repository,
             },
         
 
-             'github.actions-allowed-actions-repository/sync': {
+             'github.actions_allowed_actions_repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: actions-allowed-actions-repository,
+                handler: actions_allowed_actions_repository,
             },
         
 
-             'github.actions-github-actions-default-workflow-permissions-repository/sync': {
+             'github.actions_github_actions_default_workflow_permissions_repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: actions-github-actions-default-workflow-permissions-repository,
+                handler: actions_github_actions_default_workflow_permissions_repository,
             },
         
 
-             'github.actions-self-hosted-runner-for-repo/sync': {
+             'github.actions_self_hosted_runner_for_repo/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'runner_id': z.string(),
 'runner-id': z.string()}),
-                handler: actions-self-hosted-runner-for-repo,
+                handler: actions_self_hosted_runner_for_repo,
             },
         
 
-             'github.actionslist-labels-for-self-hosted-runner-for-repo/sync': {
+             'github.actionslist_labels_for_self_hosted_runner_for_repo/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'runner_id': z.string(),
 'runner-id': z.string()}),
-                handler: actionslist-labels-for-self-hosted-runner-for-repo,
+                handler: actionslist_labels_for_self_hosted_runner_for_repo,
             },
         
 
-             'github.actions-workflow-run/sync': {
+             'github.actions_workflow_run/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'run_id': z.string(),
 'run-id': z.string(),
 'exclude-pull-requests': z.string()}),
-                handler: actions-workflow-run,
+                handler: actions_workflow_run,
             },
         
 
-             'github.actions-workflow-run-attempt/sync': {
+             'github.actions_workflow_run_attempt/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
@@ -815,138 +815,138 @@ export class GithubIntegration extends Integration {
 'run-id': z.string(),
 'attempt-number': z.string(),
 'exclude-pull-requests': z.string()}),
-                handler: actions-workflow-run-attempt,
+                handler: actions_workflow_run_attempt,
             },
         
 
-             'github.actions-workflow-run-usage/sync': {
+             'github.actions_workflow_run_usage/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'run_id': z.string(),
 'run-id': z.string()}),
-                handler: actions-workflow-run-usage,
+                handler: actions_workflow_run_usage,
             },
         
 
-             'github.actions-repo-public-key/sync': {
+             'github.actions_repo_public_key/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: actions-repo-public-key,
+                handler: actions_repo_public_key,
             },
         
 
-             'github.actions-repo-secret/sync': {
+             'github.actions_repo_secret/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'secret_name': z.string(),
 'secret-name': z.string()}),
-                handler: actions-repo-secret,
+                handler: actions_repo_secret,
             },
         
 
-             'github.actions-repo-variable/sync': {
+             'github.actions_repo_variable/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'name': z.string(),
 'variable-name': z.string()}),
-                handler: actions-repo-variable,
+                handler: actions_repo_variable,
             },
         
 
-             'github.actions-workflow/sync': {
+             'github.actions_workflow/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'workflow_id': z.string(),
 'workflow-id': z.string()}),
-                handler: actions-workflow,
+                handler: actions_workflow,
             },
         
 
-             'github.actions-workflow-usage/sync': {
+             'github.actions_workflow_usage/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'workflow_id': z.string(),
 'workflow-id': z.string()}),
-                handler: actions-workflow-usage,
+                handler: actions_workflow_usage,
             },
         
 
-             'github.repos-autolink/sync': {
+             'github.repos_autolink/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'autolink_id': z.string(),
 'autolink-id': z.string()}),
-                handler: repos-autolink,
+                handler: repos_autolink,
             },
         
 
-             'github.repos-branch/sync': {
+             'github.repos_branch/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'branch': z.string()}),
-                handler: repos-branch,
+                handler: repos_branch,
             },
         
 
-             'github.repos-branch-protection/sync': {
+             'github.repos_branch_protection/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'branch': z.string()}),
-                handler: repos-branch-protection,
+                handler: repos_branch_protection,
             },
         
 
-             'github.repos-admin-branch-protection/sync': {
+             'github.repos_admin_branch_protection/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'branch': z.string()}),
-                handler: repos-admin-branch-protection,
+                handler: repos_admin_branch_protection,
             },
         
 
-             'github.repos-pull-request-review-protection/sync': {
+             'github.repos_pull_request_review_protection/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'branch': z.string()}),
-                handler: repos-pull-request-review-protection,
+                handler: repos_pull_request_review_protection,
             },
         
 
-             'github.repos-commit-signature-protection/sync': {
+             'github.repos_commit_signature_protection/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'branch': z.string()}),
-                handler: repos-commit-signature-protection,
+                handler: repos_commit_signature_protection,
             },
         
 
-             'github.repos-status-checks-protection/sync': {
+             'github.repos_status_checks_protection/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'branch': z.string()}),
-                handler: repos-status-checks-protection,
+                handler: repos_status_checks_protection,
             },
         
 
-             'github.repos-access-restrictions/sync': {
+             'github.repos_access_restrictions/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'branch': z.string()}),
-                handler: repos-access-restrictions,
+                handler: repos_access_restrictions,
             },
         
 
@@ -960,190 +960,190 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.checks-suite/sync': {
+             'github.checks_suite/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'check_suite_id': z.string(),
 'check-suite-id': z.string()}),
-                handler: checks-suite,
+                handler: checks_suite,
             },
         
 
-             'github.code-scanning-alert/sync': {
+             'github.code_scanning_alert/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'alert_number': z.string(),
 'alert-number': z.string()}),
-                handler: code-scanning-alert,
+                handler: code_scanning_alert,
             },
         
 
-             'github.code-scanning-analysis/sync': {
+             'github.code_scanning_analysis/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'analysis_id': z.string(),
 'analysis_id': z.number()}),
-                handler: code-scanning-analysis,
+                handler: code_scanning_analysis,
             },
         
 
-             'github.code-scanning-codeql-database/sync': {
+             'github.code_scanning_codeql_database/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'language': z.string()}),
-                handler: code-scanning-codeql-database,
+                handler: code_scanning_codeql_database,
             },
         
 
-             'github.code-scanning-sarif/sync': {
+             'github.code_scanning_sarif/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'sarif_id': z.string()}),
-                handler: code-scanning-sarif,
+                handler: code_scanning_sarif,
             },
         
 
-             'github.reposcodeowners-errors/sync': {
+             'github.reposcodeowners_errors/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'ref': z.string()}),
-                handler: reposcodeowners-errors,
+                handler: reposcodeowners_errors,
             },
         
 
-             'github.codespaces-repo-public-key/sync': {
+             'github.codespaces_repo_public_key/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: codespaces-repo-public-key,
+                handler: codespaces_repo_public_key,
             },
         
 
-             'github.codespaces-repo-secret/sync': {
+             'github.codespaces_repo_secret/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'secret_name': z.string(),
 'secret-name': z.string()}),
-                handler: codespaces-repo-secret,
+                handler: codespaces_repo_secret,
             },
         
 
-             'github.repos-collaborator-permission-level/sync': {
+             'github.repos_collaborator_permission_level/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'username': z.string()}),
-                handler: repos-collaborator-permission-level,
+                handler: repos_collaborator_permission_level,
             },
         
 
-             'github.repos-commit-comment/sync': {
+             'github.repos_commit_comment/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'comment_id': z.string(),
 'comment-id': z.string()}),
-                handler: repos-commit-comment,
+                handler: repos_commit_comment,
             },
         
 
-             'github.repos-commit/sync': {
+             'github.repos_commit/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'ref': z.string(),
 'page': z.string(),
 'per-page': z.string()}),
-                handler: repos-commit,
+                handler: repos_commit,
             },
         
 
-             'github.repos-combined-status-for-ref/sync': {
+             'github.repos_combined_status_for_ref/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'ref': z.string(),
 'per-page': z.string(),
 'page': z.string()}),
-                handler: repos-combined-status-for-ref,
+                handler: repos_combined_status_for_ref,
             },
         
 
-             'github.repos-community-profile-metrics/sync': {
+             'github.repos_community_profile_metrics/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: repos-community-profile-metrics,
+                handler: repos_community_profile_metrics,
             },
         
 
-             'github.reposcompare-commits/sync': {
+             'github.reposcompare_commits/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'basehead': z.string(),
 'page': z.string(),
 'per-page': z.string()}),
-                handler: reposcompare-commits,
+                handler: reposcompare_commits,
             },
         
 
-             'github.dependabot-alert/sync': {
+             'github.dependabot_alert/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'alert_number': z.string(),
 'dependabot-alert-number': z.string()}),
-                handler: dependabot-alert,
+                handler: dependabot_alert,
             },
         
 
-             'github.dependabot-repo-public-key/sync': {
+             'github.dependabot_repo_public_key/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: dependabot-repo-public-key,
+                handler: dependabot_repo_public_key,
             },
         
 
-             'github.dependabot-repo-secret/sync': {
+             'github.dependabot_repo_secret/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'secret_name': z.string(),
 'secret-name': z.string()}),
-                handler: dependabot-repo-secret,
+                handler: dependabot_repo_secret,
             },
         
 
-             'github.dependency-graphdiff-range/sync': {
+             'github.dependency_graphdiff_range/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'basehead': z.string(),
 'manifest-path': z.string()}),
-                handler: dependency-graphdiff-range,
+                handler: dependency_graphdiff_range,
             },
         
 
-             'github.repos-deployment/sync': {
+             'github.repos_deployment/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'deployment_id': z.string(),
 'deployment-id': z.string()}),
-                handler: repos-deployment,
+                handler: repos_deployment,
             },
         
 
-             'github.repos-deployment-status/sync': {
+             'github.repos_deployment_status/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
@@ -1151,21 +1151,21 @@ export class GithubIntegration extends Integration {
 'status_id': z.string(),
 'deployment-id': z.string(),
 'status_id': z.number()}),
-                handler: repos-deployment-status,
+                handler: repos_deployment_status,
             },
         
 
-             'github.repos-environment/sync': {
+             'github.repos_environment/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'environment_name': z.string(),
 'environment-name': z.string()}),
-                handler: repos-environment,
+                handler: repos_environment,
             },
         
 
-             'github.repos-deployment-branch-policy/sync': {
+             'github.repos_deployment_branch_policy/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
@@ -1173,78 +1173,78 @@ export class GithubIntegration extends Integration {
 'branch_policy_id': z.string(),
 'environment-name': z.string(),
 'branch-policy-id': z.string()}),
-                handler: repos-deployment-branch-policy,
+                handler: repos_deployment_branch_policy,
             },
         
 
-             'github.git-blob/sync': {
+             'github.git_blob/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'file_sha': z.string()}),
-                handler: git-blob,
+                handler: git_blob,
             },
         
 
-             'github.git-commit/sync': {
+             'github.git_commit/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'commit_sha': z.string(),
 'commit-sha': z.string()}),
-                handler: git-commit,
+                handler: git_commit,
             },
         
 
-             'github.git-ref/sync': {
+             'github.git_ref/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'ref': z.string()}),
-                handler: git-ref,
+                handler: git_ref,
             },
         
 
-             'github.git-tag/sync': {
+             'github.git_tag/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'tag_sha': z.string()}),
-                handler: git-tag,
+                handler: git_tag,
             },
         
 
-             'github.git-tree/sync': {
+             'github.git_tree/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'tree_sha': z.string(),
 'recursive': z.string()}),
-                handler: git-tree,
+                handler: git_tree,
             },
         
 
-             'github.repos-webhook/sync': {
+             'github.repos_webhook/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'hook_id': z.string(),
 'hook-id': z.string()}),
-                handler: repos-webhook,
+                handler: repos_webhook,
             },
         
 
-             'github.repos-webhook-config-for-repo/sync': {
+             'github.repos_webhook_config_for_repo/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'hook_id': z.string(),
 'hook-id': z.string()}),
-                handler: repos-webhook-config-for-repo,
+                handler: repos_webhook_config_for_repo,
             },
         
 
-             'github.repos-webhook-delivery/sync': {
+             'github.repos_webhook_delivery/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
@@ -1252,43 +1252,43 @@ export class GithubIntegration extends Integration {
 'delivery_id': z.string(),
 'hook-id': z.string(),
 'delivery-id': z.string()}),
-                handler: repos-webhook-delivery,
+                handler: repos_webhook_delivery,
             },
         
 
-             'github.migrations-import-status/sync': {
+             'github.migrations_import_status/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: migrations-import-status,
+                handler: migrations_import_status,
             },
         
 
-             'github.apps-repo-installation/sync': {
+             'github.apps_repo_installation/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: apps-repo-installation,
+                handler: apps_repo_installation,
             },
         
 
-             'github.issues-comment/sync': {
+             'github.issues_comment/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'comment_id': z.string(),
 'comment-id': z.string()}),
-                handler: issues-comment,
+                handler: issues_comment,
             },
         
 
-             'github.issues-event/sync': {
+             'github.issues_event/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'event_id': z.string(),
 'event_id': z.number()}),
-                handler: issues-event,
+                handler: issues_event,
             },
         
 
@@ -1302,92 +1302,92 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.repos-deploy-key/sync': {
+             'github.repos_deploy_key/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'key_id': z.string(),
 'key-id': z.string()}),
-                handler: repos-deploy-key,
+                handler: repos_deploy_key,
             },
         
 
-             'github.issues-label/sync': {
+             'github.issues_label/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'name': z.string()}),
-                handler: issues-label,
+                handler: issues_label,
             },
         
 
-             'github.reposlist-languages/sync': {
+             'github.reposlist_languages/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: reposlist-languages,
+                handler: reposlist_languages,
             },
         
 
-             'github.licenses-for-repo/sync': {
+             'github.licenses_for_repo/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: licenses-for-repo,
+                handler: licenses_for_repo,
             },
         
 
-             'github.issues-milestone/sync': {
+             'github.issues_milestone/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'milestone_number': z.string(),
 'milestone-number': z.string()}),
-                handler: issues-milestone,
+                handler: issues_milestone,
             },
         
 
-             'github.repos-pages/sync': {
+             'github.repos_pages/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: repos-pages,
+                handler: repos_pages,
             },
         
 
-             'github.repos-latest-pages-build/sync': {
+             'github.repos_latest_pages_build/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: repos-latest-pages-build,
+                handler: repos_latest_pages_build,
             },
         
 
-             'github.repos-pages-build/sync': {
+             'github.repos_pages_build/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'build_id': z.string(),
 'build_id': z.number()}),
-                handler: repos-pages-build,
+                handler: repos_pages_build,
             },
         
 
-             'github.repos-pages-health-check/sync': {
+             'github.repos_pages_health_check/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: repos-pages-health-check,
+                handler: repos_pages_health_check,
             },
         
 
-             'github.pulls-review-comment/sync': {
+             'github.pulls_review_comment/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'comment_id': z.string(),
 'comment-id': z.string()}),
-                handler: pulls-review-comment,
+                handler: pulls_review_comment,
             },
         
 
@@ -1401,17 +1401,17 @@ export class GithubIntegration extends Integration {
             },
         
 
-             'github.pullslist-requested-reviewers/sync': {
+             'github.pullslist_requested_reviewers/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'pull_number': z.string(),
 'pull-number': z.string()}),
-                handler: pullslist-requested-reviewers,
+                handler: pullslist_requested_reviewers,
             },
         
 
-             'github.pulls-review/sync': {
+             'github.pulls_review/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
@@ -1419,131 +1419,131 @@ export class GithubIntegration extends Integration {
 'review_id': z.string(),
 'pull-number': z.string(),
 'review-id': z.string()}),
-                handler: pulls-review,
+                handler: pulls_review,
             },
         
 
-             'github.repos-readme/sync': {
+             'github.repos_readme/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'ref': z.string()}),
-                handler: repos-readme,
+                handler: repos_readme,
             },
         
 
-             'github.repos-readme-in-directory/sync': {
+             'github.repos_readme_in_directory/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'dir': z.string(),
 'ref': z.string()}),
-                handler: repos-readme-in-directory,
+                handler: repos_readme_in_directory,
             },
         
 
-             'github.repos-release-asset/sync': {
+             'github.repos_release_asset/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'asset_id': z.string(),
 'asset-id': z.string()}),
-                handler: repos-release-asset,
+                handler: repos_release_asset,
             },
         
 
-             'github.repos-latest-release/sync': {
+             'github.repos_latest_release/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: repos-latest-release,
+                handler: repos_latest_release,
             },
         
 
-             'github.repos-release-by-tag/sync': {
+             'github.repos_release_by_tag/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'tag': z.string()}),
-                handler: repos-release-by-tag,
+                handler: repos_release_by_tag,
             },
         
 
-             'github.repos-release/sync': {
+             'github.repos_release/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'release_id': z.string(),
 'release-id': z.string()}),
-                handler: repos-release,
+                handler: repos_release,
             },
         
 
-             'github.secret-scanning-alert/sync': {
+             'github.secret_scanning_alert/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'alert_number': z.string(),
 'alert-number': z.string()}),
-                handler: secret-scanning-alert,
+                handler: secret_scanning_alert,
             },
         
 
-             'github.repos-participation-stats/sync': {
+             'github.repos_participation_stats/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: repos-participation-stats,
+                handler: repos_participation_stats,
             },
         
 
-             'github.activity-repo-subscription/sync': {
+             'github.activity_repo_subscription/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string()}),
-                handler: activity-repo-subscription,
+                handler: activity_repo_subscription,
             },
         
 
-             'github.repos-all-topics/sync': {
+             'github.repos_all_topics/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'page': z.string(),
 'per-page': z.string()}),
-                handler: repos-all-topics,
+                handler: repos_all_topics,
             },
         
 
-             'github.repos-clones/sync': {
+             'github.repos_clones/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'per': z.string()}),
-                handler: repos-clones,
+                handler: repos_clones,
             },
         
 
-             'github.repos-views/sync': {
+             'github.repos_views/sync': {
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
 'per': z.string()}),
-                handler: repos-views,
+                handler: repos_views,
             },
         
 
-             'github.actions-environment-public-key/sync': {
+             'github.actions_environment_public_key/sync': {
                 schema: z.object({
                   'repository_id': z.string(),
 'environment_name': z.string(),
 'repository-id': z.string(),
 'environment-name': z.string()}),
-                handler: actions-environment-public-key,
+                handler: actions_environment_public_key,
             },
         
 
-             'github.actions-environment-secret/sync': {
+             'github.actions_environment_secret/sync': {
                 schema: z.object({
                   'repository_id': z.string(),
 'environment_name': z.string(),
@@ -1551,11 +1551,11 @@ export class GithubIntegration extends Integration {
 'repository-id': z.string(),
 'environment-name': z.string(),
 'secret-name': z.string()}),
-                handler: actions-environment-secret,
+                handler: actions_environment_secret,
             },
         
 
-             'github.actions-environment-variable/sync': {
+             'github.actions_environment_variable/sync': {
                 schema: z.object({
                   'repository_id': z.string(),
 'environment_name': z.string(),
@@ -1563,29 +1563,29 @@ export class GithubIntegration extends Integration {
 'repository-id': z.string(),
 'environment-name': z.string(),
 'variable-name': z.string()}),
-                handler: actions-environment-variable,
+                handler: actions_environment_variable,
             },
         
 
-             'github.teams-legacy/sync': {
+             'github.teams_legacy/sync': {
                 schema: z.object({
                   'team_id': z.string(),
 'team-id': z.string()}),
-                handler: teams-legacy,
+                handler: teams_legacy,
             },
         
 
-             'github.teams-discussion-legacy/sync': {
+             'github.teams_discussion_legacy/sync': {
                 schema: z.object({
                   'team_id': z.string(),
 'discussion_number': z.string(),
 'team-id': z.string(),
 'discussion-number': z.string()}),
-                handler: teams-discussion-legacy,
+                handler: teams_discussion_legacy,
             },
         
 
-             'github.teams-discussion-comment-legacy/sync': {
+             'github.teams_discussion_comment_legacy/sync': {
                 schema: z.object({
                   'team_id': z.string(),
 'discussion_number': z.string(),
@@ -1593,114 +1593,114 @@ export class GithubIntegration extends Integration {
 'team-id': z.string(),
 'discussion-number': z.string(),
 'comment-number': z.string()}),
-                handler: teams-discussion-comment-legacy,
+                handler: teams_discussion_comment_legacy,
             },
         
 
-             'github.teams-membership-for-user-legacy/sync': {
+             'github.teams_membership_for_user_legacy/sync': {
                 schema: z.object({
                   'team_id': z.string(),
 'username': z.string(),
 'team-id': z.string()}),
-                handler: teams-membership-for-user-legacy,
+                handler: teams_membership_for_user_legacy,
             },
         
 
-             'github.teamscheck-permissions-for-project-legacy/sync': {
+             'github.teamscheck_permissions_for_project_legacy/sync': {
                 schema: z.object({
                   'team_id': z.string(),
 'project_id': z.string(),
 'team-id': z.string(),
 'project-id': z.string()}),
-                handler: teamscheck-permissions-for-project-legacy,
+                handler: teamscheck_permissions_for_project_legacy,
             },
         
 
-             'github.teamscheck-permissions-for-repo-legacy/sync': {
+             'github.teamscheck_permissions_for_repo_legacy/sync': {
                 schema: z.object({
                   'team_id': z.string(),
 'owner': z.string(),
 'repo': z.string(),
 'team-id': z.string()}),
-                handler: teamscheck-permissions-for-repo-legacy,
+                handler: teamscheck_permissions_for_repo_legacy,
             },
         
 
-             'github.codespaces-public-key-for-authenticated-user/sync': {
+             'github.codespaces_public_key_for_authenticated_user/sync': {
                 schema: z.object({}),
-                handler: codespaces-public-key-for-authenticated-user,
+                handler: codespaces_public_key_for_authenticated_user,
             },
         
 
-             'github.codespaces-secret-for-authenticated-user/sync': {
+             'github.codespaces_secret_for_authenticated_user/sync': {
                 schema: z.object({
                   'secret_name': z.string(),
 'secret-name': z.string()}),
-                handler: codespaces-secret-for-authenticated-user,
+                handler: codespaces_secret_for_authenticated_user,
             },
         
 
-             'github.codespaces-for-authenticated-user/sync': {
+             'github.codespaces_for_authenticated_user/sync': {
                 schema: z.object({
                   'codespace_name': z.string(),
 'codespace-name': z.string()}),
-                handler: codespaces-for-authenticated-user,
+                handler: codespaces_for_authenticated_user,
             },
         
 
-             'github.codespaces-export-details-for-authenticated-user/sync': {
+             'github.codespaces_export_details_for_authenticated_user/sync': {
                 schema: z.object({
                   'codespace_name': z.string(),
 'export_id': z.string(),
 'codespace-name': z.string(),
 'export-id': z.string()}),
-                handler: codespaces-export-details-for-authenticated-user,
+                handler: codespaces_export_details_for_authenticated_user,
             },
         
 
-             'github.users-gpg-key-for-authenticated-user/sync': {
+             'github.users_gpg_key_for_authenticated_user/sync': {
                 schema: z.object({
                   'gpg_key_id': z.string(),
 'gpg-key-id': z.string()}),
-                handler: users-gpg-key-for-authenticated-user,
+                handler: users_gpg_key_for_authenticated_user,
             },
         
 
-             'github.users-public-ssh-key-for-authenticated-user/sync': {
+             'github.users_public_ssh_key_for_authenticated_user/sync': {
                 schema: z.object({
                   'key_id': z.string(),
 'key-id': z.string()}),
-                handler: users-public-ssh-key-for-authenticated-user,
+                handler: users_public_ssh_key_for_authenticated_user,
             },
         
 
-             'github.orgs-membership-for-authenticated-user/sync': {
+             'github.orgs_membership_for_authenticated_user/sync': {
                 schema: z.object({
                   'org': z.string()}),
-                handler: orgs-membership-for-authenticated-user,
+                handler: orgs_membership_for_authenticated_user,
             },
         
 
-             'github.migrations-status-for-authenticated-user/sync': {
+             'github.migrations_status_for_authenticated_user/sync': {
                 schema: z.object({
                   'migration_id': z.string(),
 'migration-id': z.string(),
 'exclude': z.string()}),
-                handler: migrations-status-for-authenticated-user,
+                handler: migrations_status_for_authenticated_user,
             },
         
 
-             'github.packages-package-for-authenticated-user/sync': {
+             'github.packages_package_for_authenticated_user/sync': {
                 schema: z.object({
                   'package_type': z.string(),
 'package_name': z.string(),
 'package-type': z.string(),
 'package-name': z.string()}),
-                handler: packages-package-for-authenticated-user,
+                handler: packages_package_for_authenticated_user,
             },
         
 
-             'github.packages-package-version-for-authenticated-user/sync': {
+             'github.packages_package_version_for_authenticated_user/sync': {
                 schema: z.object({
                   'package_type': z.string(),
 'package_name': z.string(),
@@ -1708,46 +1708,46 @@ export class GithubIntegration extends Integration {
 'package-type': z.string(),
 'package-name': z.string(),
 'package-version-id': z.string()}),
-                handler: packages-package-version-for-authenticated-user,
+                handler: packages_package_version_for_authenticated_user,
             },
         
 
-             'github.users-ssh-signing-key-for-authenticated-user/sync': {
+             'github.users_ssh_signing_key_for_authenticated_user/sync': {
                 schema: z.object({
                   'ssh_signing_key_id': z.string(),
 'ssh-signing-key-id': z.string()}),
-                handler: users-ssh-signing-key-for-authenticated-user,
+                handler: users_ssh_signing_key_for_authenticated_user,
             },
         
 
-             'github.users-context-for-user/sync': {
+             'github.users_context_for_user/sync': {
                 schema: z.object({
                   'username': z.string(),
 'subject_type': z.string(),
 'subject_id': z.string()}),
-                handler: users-context-for-user,
+                handler: users_context_for_user,
             },
         
 
-             'github.apps-user-installation/sync': {
+             'github.apps_user_installation/sync': {
                 schema: z.object({
                   'username': z.string()}),
-                handler: apps-user-installation,
+                handler: apps_user_installation,
             },
         
 
-             'github.packages-package-for-user/sync': {
+             'github.packages_package_for_user/sync': {
                 schema: z.object({
                   'username': z.string(),
 'package_type': z.string(),
 'package_name': z.string(),
 'package-type': z.string(),
 'package-name': z.string()}),
-                handler: packages-package-for-user,
+                handler: packages_package_for_user,
             },
         
 
-             'github.packages-package-version-for-user/sync': {
+             'github.packages_package_version_for_user/sync': {
                 schema: z.object({
                   'username': z.string(),
 'package_type': z.string(),
@@ -1756,28 +1756,28 @@ export class GithubIntegration extends Integration {
 'package-type': z.string(),
 'package-name': z.string(),
 'package-version-id': z.string()}),
-                handler: packages-package-version-for-user,
+                handler: packages_package_version_for_user,
             },
         
 
-             'github.billing-github-actions-billing-user/sync': {
+             'github.billing_github_actions_billing_user/sync': {
                 schema: z.object({
                   'username': z.string()}),
-                handler: billing-github-actions-billing-user,
+                handler: billing_github_actions_billing_user,
             },
         
 
-             'github.billing-github-packages-billing-user/sync': {
+             'github.billing_github_packages_billing_user/sync': {
                 schema: z.object({
                   'username': z.string()}),
-                handler: billing-github-packages-billing-user,
+                handler: billing_github_packages_billing_user,
             },
         
 
-             'github.billing-shared-storage-billing-user/sync': {
+             'github.billing_shared_storage_billing_user/sync': {
                 schema: z.object({
                   'username': z.string()}),
-                handler: billing-shared-storage-billing-user,
+                handler: billing_shared_storage_billing_user,
             },
         }
     return this.events;

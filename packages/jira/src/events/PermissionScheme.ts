@@ -11,7 +11,7 @@
                         id: `${name}-sync-PermissionScheme`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { schemeId,expand, schemeId,  } = event.data;
+                            const { schemeId,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

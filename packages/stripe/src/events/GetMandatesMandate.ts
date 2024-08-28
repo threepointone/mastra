@@ -11,7 +11,7 @@
                         id: `${name}-sync-mandate`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,mandate, mandate,  } = event.data;
+                            const { expand,mandate, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

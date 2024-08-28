@@ -11,7 +11,7 @@
                         id: `${name}-sync-line_item`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ending_before,expand,invoice,limit,starting_after, invoice,  } = event.data;
+                            const { ending_before,expand,invoice,limit,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

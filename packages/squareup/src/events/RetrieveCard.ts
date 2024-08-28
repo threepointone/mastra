@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveCardResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { card_id, card_id,  } = event.data;
+                            const { card_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

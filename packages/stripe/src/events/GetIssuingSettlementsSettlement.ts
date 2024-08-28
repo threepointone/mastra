@@ -11,7 +11,7 @@
                         id: `${name}-sync-issuing.settlement`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,settlement, settlement,  } = event.data;
+                            const { expand,settlement, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

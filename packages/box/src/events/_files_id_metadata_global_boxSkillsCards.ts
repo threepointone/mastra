@@ -11,7 +11,7 @@
                         id: `${name}-sync-SkillCardsMetadata`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { file_id, file_id,  } = event.data;
+                            const { file_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

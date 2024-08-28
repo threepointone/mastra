@@ -11,7 +11,7 @@
                         id: `${name}-sync-documentVisibilityList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,recipientId,templateId, accountId,templateId,recipientId,  } = event.data;
+                            const { accountId,recipientId,templateId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

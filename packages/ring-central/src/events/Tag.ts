@@ -11,7 +11,7 @@
                         id: `${name}-sync-Tag`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { tagId, tagId,  } = event.data;
+                            const { tagId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

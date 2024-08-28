@@ -119,7 +119,7 @@ function buildSyncFunc({ name, paths, schemas }) {
         content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
 
       const operationId =
-        method.operationId?.replace('get', '').replaceAll('/', '') ||
+        method.operationId?.replace('get', '')?.replaceAll('/', '')?.replaceAll('#', '_').replaceAll('-', '_') ||
         content?.schema?.$ref?.replace('#/components/responses/', '')?.replace('#/components/schemas/', '') ||
         pathToFunctionName(path);
 
@@ -290,6 +290,7 @@ async function main() {
       syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 
       funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
+        const fullParams = Array.from(new Set([...(queryParams || []), ...(requestParams || [])]));
         fs.writeFileSync(
           path.join(srcPath, 'events', `${funcName}.ts`),
           `
@@ -307,9 +308,7 @@ async function main() {
                         id: \`\${name}-sync-${entityType}\`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ${queryParams.length ? queryParams?.join('') : ''} ${
-            requestParams.length ? requestParams?.join('') : ``
-          }  } = event.data;
+                            const { ${fullParams.length ? fullParams?.join('') : ''} } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

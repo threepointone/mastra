@@ -11,7 +11,7 @@
                         id: `${name}-sync-network_users`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ids,pagesize,page,filter,callback, ids,  } = event.data;
+                            const { ids,pagesize,page,filter,callback, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

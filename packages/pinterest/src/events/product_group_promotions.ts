@@ -11,7 +11,7 @@
                         id: `${name}-sync-ProductGroupPromotionResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_ad_account_id,path_product_group_promotion_id, ad_account_id,product_group_promotion_id,  } = event.data;
+                            const { path_ad_account_id,path_product_group_promotion_id,ad_account_id,product_group_promotion_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

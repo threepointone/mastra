@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2SpacesIdBuyersResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { id,pagination_token,max_results,UserFieldsParameter,UserExpansionsParameter,TweetFieldsParameter, id,  } = event.data;
+                            const { id,pagination_token,max_results,UserFieldsParameter,UserExpansionsParameter,TweetFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

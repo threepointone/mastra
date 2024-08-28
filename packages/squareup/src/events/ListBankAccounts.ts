@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListBankAccountsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cursor,limit,location_id,   } = event.data;
+                            const { cursor,limit,location_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

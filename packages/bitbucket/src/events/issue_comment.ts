@@ -11,7 +11,7 @@
                         id: `${name}-sync-issue_comment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  workspace,repo_slug,issue_id,comment_id,  } = event.data;
+                            const { workspace,repo_slug,issue_id,comment_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

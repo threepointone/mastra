@@ -11,7 +11,7 @@
                         id: `${name}-sync-folderItemsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,folderId,from_date,include_items,owner_email,owner_name,search_text,start_position,status,to_date, accountId,folderId,  } = event.data;
+                            const { accountId,folderId,from_date,include_items,owner_email,owner_name,search_text,start_position,status,to_date, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

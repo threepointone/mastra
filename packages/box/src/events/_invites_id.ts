@@ -11,7 +11,7 @@
                         id: `${name}-sync-Invite`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { invite_id,fields, invite_id,  } = event.data;
+                            const { invite_id,fields, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

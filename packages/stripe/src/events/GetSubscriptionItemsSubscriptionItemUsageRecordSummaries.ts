@@ -11,7 +11,7 @@
                         id: `${name}-sync-usage_record_summary`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ending_before,expand,limit,starting_after,subscription_item, subscription_item,  } = event.data;
+                            const { ending_before,expand,limit,starting_after,subscription_item, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

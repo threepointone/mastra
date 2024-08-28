@@ -11,7 +11,7 @@
                         id: `${name}-sync-charge`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { created,customer,ending_before,expand,limit,payment_intent,starting_after,transfer_group,   } = event.data;
+                            const { created,customer,ending_before,expand,limit,payment_intent,starting_after,transfer_group, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

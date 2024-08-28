@@ -11,7 +11,7 @@
                         id: `${name}-sync-radar.value_list`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { alias,contains,created,ending_before,expand,limit,starting_after,   } = event.data;
+                            const { alias,contains,created,ending_before,expand,limit,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

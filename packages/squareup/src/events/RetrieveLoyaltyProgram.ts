@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveLoyaltyProgramResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { program_id, program_id,  } = event.data;
+                            const { program_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

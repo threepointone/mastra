@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveBookingResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { booking_id, booking_id,  } = event.data;
+                            const { booking_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

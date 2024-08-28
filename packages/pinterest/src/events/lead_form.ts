@@ -11,7 +11,7 @@
                         id: `${name}-sync-LeadFormResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_ad_account_id,path_lead_form_id, ad_account_id,lead_form_id,  } = event.data;
+                            const { path_ad_account_id,path_lead_form_id,ad_account_id,lead_form_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

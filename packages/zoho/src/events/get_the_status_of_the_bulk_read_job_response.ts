@@ -11,7 +11,7 @@
                         id: `${name}-sync-get_the_status_of_the_bulk_read_job_response`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { account_owner_name,app_link_name,report_link_name,job_ID, account_owner_name,app_link_name,report_link_name,job_ID,  } = event.data;
+                            const { account_owner_name,app_link_name,report_link_name,job_ID, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

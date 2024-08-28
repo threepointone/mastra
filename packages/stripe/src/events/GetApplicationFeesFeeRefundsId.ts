@@ -11,7 +11,7 @@
                         id: `${name}-sync-fee_refund`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,fee,id, fee,id,  } = event.data;
+                            const { expand,fee,id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-templateDocumentsResult`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,templateId,include_tabs, accountId,templateId,  } = event.data;
+                            const { accountId,templateId,include_tabs, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

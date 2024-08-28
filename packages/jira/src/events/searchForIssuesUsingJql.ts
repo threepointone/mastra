@@ -11,7 +11,7 @@
                         id: `${name}-sync-SearchResults`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { jql,startAt,maxResults,validateQuery,fields,expand,properties,fieldsByKeys,failFast,   } = event.data;
+                            const { jql,startAt,maxResults,validateQuery,fields,expand,properties,fieldsByKeys,failFast, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

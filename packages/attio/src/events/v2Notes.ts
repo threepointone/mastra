@@ -11,7 +11,7 @@
                         id: `${name}-sync-note`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { limit,offset,parent_object,parent_record_id,   } = event.data;
+                            const { limit,offset,parent_object,parent_record_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-TemplateListResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { q,shared,deleted,count,page,id,folder_uuid,tag,   } = event.data;
+                            const { q,shared,deleted,count,page,id,folder_uuid,tag, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

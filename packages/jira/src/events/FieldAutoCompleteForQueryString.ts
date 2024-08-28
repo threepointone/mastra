@@ -11,7 +11,7 @@
                         id: `${name}-sync-AutoCompleteSuggestions`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { fieldName,fieldValue,predicateName,predicateValue,   } = event.data;
+                            const { fieldName,fieldValue,predicateName,predicateValue, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

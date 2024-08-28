@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_tags`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { q,sort, workspace,repo_slug,  } = event.data;
+                            const { q,sort,workspace,repo_slug, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

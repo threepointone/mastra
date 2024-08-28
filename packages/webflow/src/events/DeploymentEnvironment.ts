@@ -11,7 +11,7 @@
                         id: `${name}-sync-DeploymentEnvironment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { deploymentEnvironmentId, deploymentEnvironmentId,  } = event.data;
+                            const { deploymentEnvironmentId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

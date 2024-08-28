@@ -11,7 +11,7 @@
                         id: `${name}-sync-PinAnalyticsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_pin_id,query_start_date,query_end_date,query_app_types,query_pin_analytics_metric_types,query_split_field_pins,query_ad_account_id, pin_id,  } = event.data;
+                            const { path_pin_id,query_start_date,query_end_date,query_app_types,query_pin_analytics_metric_types,query_split_field_pins,query_ad_account_id,pin_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

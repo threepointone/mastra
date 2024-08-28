@@ -11,7 +11,7 @@
                         id: `${name}-sync-WebLink`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { web_link_id,boxapi, web_link_id,  } = event.data;
+                            const { web_link_id,boxapi, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

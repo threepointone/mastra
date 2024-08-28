@@ -11,7 +11,7 @@
                         id: `${name}-sync-DocumentListResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { completed_from,completed_to,contact_id,count,created_from,created_to,deleted,id,folder_uuid,form_id,membership_id,metadata,modified_from,modified_to,order_by,page,q,status,status__ne,tag,template_id,   } = event.data;
+                            const { completed_from,completed_to,contact_id,count,created_from,created_to,deleted,id,folder_uuid,form_id,membership_id,metadata,modified_from,modified_to,order_by,page,q,status,status__ne,tag,template_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

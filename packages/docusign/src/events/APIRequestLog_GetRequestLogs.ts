@@ -11,7 +11,7 @@
                         id: `${name}-sync-apiRequestLogsResult`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { encoding,   } = event.data;
+                            const { encoding, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

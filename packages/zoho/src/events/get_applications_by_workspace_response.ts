@@ -11,7 +11,7 @@
                         id: `${name}-sync-get_applications_by_workspace_response`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { account_owner_name, account_owner_name,  } = event.data;
+                            const { account_owner_name, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

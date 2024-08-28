@@ -11,7 +11,7 @@
                         id: `${name}-sync-IssueUpdateMetadata`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueIdOrKey,overrideScreenSecurity,overrideEditableFlag, issueIdOrKey,  } = event.data;
+                            const { issueIdOrKey,overrideScreenSecurity,overrideEditableFlag, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageOfDashboards`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { filter,startAt,maxResults,   } = event.data;
+                            const { filter,startAt,maxResults, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

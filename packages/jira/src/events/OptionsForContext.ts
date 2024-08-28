@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanCustomFieldContextOption`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { fieldId,contextId,optionId,onlyOptions,startAt,maxResults, fieldId,contextId,  } = event.data;
+                            const { fieldId,contextId,optionId,onlyOptions,startAt,maxResults, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

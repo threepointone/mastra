@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanIssueFieldOption`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { startAt,maxResults,fieldKey, fieldKey,  } = event.data;
+                            const { startAt,maxResults,fieldKey, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

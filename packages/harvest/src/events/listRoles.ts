@@ -11,7 +11,7 @@
                         id: `${name}-sync-Roles`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { page,cursor,per_page,   } = event.data;
+                            const { page,cursor,per_page, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

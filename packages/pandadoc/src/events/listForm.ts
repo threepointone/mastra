@@ -11,7 +11,7 @@
                         id: `${name}-sync-FormListResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { count,page,status,order_by,asc,name,   } = event.data;
+                            const { count,page,status,order_by,asc,name, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

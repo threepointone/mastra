@@ -11,7 +11,7 @@
                         id: `${name}-sync-GroupMemberships`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { group_id,limit,offset, group_id,  } = event.data;
+                            const { group_id,limit,offset, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

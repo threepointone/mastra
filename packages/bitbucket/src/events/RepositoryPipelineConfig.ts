@@ -11,7 +11,7 @@
                         id: `${name}-sync-pipelines_config`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace,repo_slug, workspace,repo_slug,  } = event.data;
+                            const { workspace,repo_slug, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

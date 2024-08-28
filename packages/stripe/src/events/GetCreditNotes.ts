@@ -11,7 +11,7 @@
                         id: `${name}-sync-credit_note`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { customer,ending_before,expand,invoice,limit,starting_after,   } = event.data;
+                            const { customer,ending_before,expand,invoice,limit,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

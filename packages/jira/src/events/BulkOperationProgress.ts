@@ -11,7 +11,7 @@
                         id: `${name}-sync-BulkOperationProgress`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { taskId, taskId,  } = event.data;
+                            const { taskId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

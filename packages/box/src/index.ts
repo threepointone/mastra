@@ -23,7 +23,7 @@ import { _file_version_retentions_id } from './events/_file_version_retentions_i
 import { _files_upload_sessions_id } from './events/_files_upload_sessions_id'
 import { _files_upload_sessions_id_parts } from './events/_files_upload_sessions_id_parts'
 import { _files_id } from './events/_files_id'
-import { _files_id#get_shared_link } from './events/_files_id#get_shared_link'
+import { _files_id_get_shared_link } from './events/_files_id_get_shared_link'
 import { _files_id_collaborations } from './events/_files_id_collaborations'
 import { _files_id_comments } from './events/_files_id_comments'
 import { _files_id_metadata } from './events/_files_id_metadata'
@@ -36,7 +36,7 @@ import { _files_id_watermark } from './events/_files_id_watermark'
 import { _folder_locks } from './events/_folder_locks'
 import { _folders_trash_items } from './events/_folders_trash_items'
 import { _folders_id } from './events/_folders_id'
-import { _folders_id#get_shared_link } from './events/_folders_id#get_shared_link'
+import { _folders_id_get_shared_link } from './events/_folders_id_get_shared_link'
 import { _folders_id_collaborations } from './events/_folders_id_collaborations'
 import { _folders_id_items } from './events/_folders_id_items'
 import { _folders_id_metadata } from './events/_folders_id_metadata'
@@ -59,7 +59,7 @@ import { _metadata_cascade_policies_id } from './events/_metadata_cascade_polici
 import { _metadata_query_indices } from './events/_metadata_query_indices'
 import { _metadata_templates } from './events/_metadata_templates'
 import { _metadata_templates_enterprise } from './events/_metadata_templates_enterprise'
-import { _metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema } from './events/_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema'
+import { _metadata_templates_enterprise_securityClassification_6VMVochwUWo_schema } from './events/_metadata_templates_enterprise_securityClassification_6VMVochwUWo_schema'
 import { _metadata_templates_global } from './events/_metadata_templates_global'
 import { _metadata_templates_id_id_schema } from './events/_metadata_templates_id_id_schema'
 import { _metadata_templates_id } from './events/_metadata_templates_id'
@@ -71,8 +71,8 @@ import { _retention_policy_assignments_id } from './events/_retention_policy_ass
 import { _retention_policy_assignments_id_file_versions_under_retention } from './events/_retention_policy_assignments_id_file_versions_under_retention'
 import { _retention_policy_assignments_id_files_under_retention } from './events/_retention_policy_assignments_id_files_under_retention'
 import { _shared_items } from './events/_shared_items'
-import { _shared_items#folders } from './events/_shared_items#folders'
-import { _shared_items#web_links } from './events/_shared_items#web_links'
+import { _shared_items_folders } from './events/_shared_items_folders'
+import { _shared_items_web_links } from './events/_shared_items_web_links'
 import { _shield_information_barrier_reports_id } from './events/_shield_information_barrier_reports_id'
 import { _shield_information_barrier_segment_members_id } from './events/_shield_information_barrier_segment_members_id'
 import { _shield_information_barrier_segment_restrictions_id } from './events/_shield_information_barrier_segment_restrictions_id'
@@ -96,7 +96,7 @@ import { _users_id } from './events/_users_id'
 import { _users_id_email_aliases } from './events/_users_id_email_aliases'
 import { _users_id_memberships } from './events/_users_id_memberships'
 import { _web_links_id } from './events/_web_links_id'
-import { _web_links_id#get_shared_link } from './events/_web_links_id#get_shared_link'
+import { _web_links_id_get_shared_link } from './events/_web_links_id_get_shared_link'
 import { _web_links_id_trash } from './events/_web_links_id_trash'
 import { _webhooks } from './events/_webhooks'
 import { _webhooks_id } from './events/_webhooks_id'
@@ -302,11 +302,11 @@ export class BoxIntegration extends Integration {
             },
         
 
-             'box._files_id#get_shared_link/sync': {
+             'box._files_id_get_shared_link/sync': {
                 schema: z.object({
                   'file_id': z.string(),
 'fields': z.string()}),
-                handler: _files_id#get_shared_link,
+                handler: _files_id_get_shared_link,
             },
         
 
@@ -415,11 +415,11 @@ export class BoxIntegration extends Integration {
             },
         
 
-             'box._folders_id#get_shared_link/sync': {
+             'box._folders_id_get_shared_link/sync': {
                 schema: z.object({
                   'folder_id': z.string(),
 'fields': z.string()}),
-                handler: _folders_id#get_shared_link,
+                handler: _folders_id_get_shared_link,
             },
         
 
@@ -616,9 +616,9 @@ export class BoxIntegration extends Integration {
             },
         
 
-             'box._metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema/sync': {
+             'box._metadata_templates_enterprise_securityClassification_6VMVochwUWo_schema/sync': {
                 schema: z.object({}),
-                handler: _metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema,
+                handler: _metadata_templates_enterprise_securityClassification_6VMVochwUWo_schema,
             },
         
 
@@ -720,21 +720,21 @@ export class BoxIntegration extends Integration {
             },
         
 
-             'box._shared_items#folders/sync': {
+             'box._shared_items_folders/sync': {
                 schema: z.object({
                   'if-none-match': z.string(),
 'fields': z.string(),
 'boxapi': z.string()}),
-                handler: _shared_items#folders,
+                handler: _shared_items_folders,
             },
         
 
-             'box._shared_items#web_links/sync': {
+             'box._shared_items_web_links/sync': {
                 schema: z.object({
                   'if-none-match': z.string(),
 'fields': z.string(),
 'boxapi': z.string()}),
-                handler: _shared_items#web_links,
+                handler: _shared_items_web_links,
             },
         
 
@@ -916,11 +916,11 @@ export class BoxIntegration extends Integration {
             },
         
 
-             'box._web_links_id#get_shared_link/sync': {
+             'box._web_links_id_get_shared_link/sync': {
                 schema: z.object({
                   'web_link_id': z.string(),
 'fields': z.string()}),
-                handler: _web_links_id#get_shared_link,
+                handler: _web_links_id_get_shared_link,
             },
         
 

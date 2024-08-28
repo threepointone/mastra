@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_diffstats`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  workspace,repo_slug,spec,  } = event.data;
+                            const { workspace,repo_slug,spec, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

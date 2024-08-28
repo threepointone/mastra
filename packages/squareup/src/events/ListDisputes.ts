@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListDisputesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { cursor,states,location_id,   } = event.data;
+                            const { cursor,states,location_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-signingGroupUsers`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,signingGroupId, accountId,signingGroupId,  } = event.data;
+                            const { accountId,signingGroupId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

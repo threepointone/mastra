@@ -11,7 +11,7 @@
                         id: `${name}-sync-refund`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { charge,ending_before,expand,limit,starting_after, charge,  } = event.data;
+                            const { charge,ending_before,expand,limit,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanScreen`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { startAt,maxResults,id,queryString,scope,orderBy,   } = event.data;
+                            const { startAt,maxResults,id,queryString,scope,orderBy, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

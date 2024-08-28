@@ -11,7 +11,7 @@
                         id: `${name}-sync-ContainerOfWorkflowSchemeAssociations`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectId,   } = event.data;
+                            const { projectId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

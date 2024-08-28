@@ -11,7 +11,7 @@
                         id: `${name}-sync-CustomerList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_ad_account_id,path_customer_list_id, ad_account_id,customer_list_id,  } = event.data;
+                            const { path_ad_account_id,path_customer_list_id,ad_account_id,customer_list_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

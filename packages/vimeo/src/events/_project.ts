@@ -11,7 +11,7 @@
                         id: `${name}-sync-project`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { project_id,user_id, user_id,project_id,  } = event.data;
+                            const { project_id,user_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

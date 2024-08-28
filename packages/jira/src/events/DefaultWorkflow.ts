@@ -11,7 +11,7 @@
                         id: `${name}-sync-DefaultWorkflow`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { id,returnDraftIfExists, id,  } = event.data;
+                            const { id,returnDraftIfExists, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

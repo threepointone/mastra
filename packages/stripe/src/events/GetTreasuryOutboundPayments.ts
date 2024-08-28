@@ -11,7 +11,7 @@
                         id: `${name}-sync-treasury.outbound_payment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { customer,ending_before,expand,financial_account,limit,starting_after,status,   } = event.data;
+                            const { customer,ending_before,expand,financial_account,limit,starting_after,status, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-subscription`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,subscription_exposed_id, subscription_exposed_id,  } = event.data;
+                            const { expand,subscription_exposed_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

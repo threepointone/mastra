@@ -11,7 +11,7 @@
                         id: `${name}-sync-Get2TweetsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ids,TweetFieldsParameter,TweetExpansionsParameter,MediaFieldsParameter,PollFieldsParameter,UserFieldsParameter,PlaceFieldsParameter,   } = event.data;
+                            const { ids,TweetFieldsParameter,TweetExpansionsParameter,MediaFieldsParameter,PollFieldsParameter,UserFieldsParameter,PlaceFieldsParameter, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

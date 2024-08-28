@@ -11,7 +11,7 @@
                         id: `${name}-sync-review`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,review, review,  } = event.data;
+                            const { expand,review, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

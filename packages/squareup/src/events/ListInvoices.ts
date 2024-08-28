@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListInvoicesResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { location_id,cursor,limit,   } = event.data;
+                            const { location_id,cursor,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

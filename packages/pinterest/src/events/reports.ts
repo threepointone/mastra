@@ -11,7 +11,7 @@
                         id: `${name}-sync-CatalogsReport`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { query_ad_account_id,query_catalogs_report_token,   } = event.data;
+                            const { query_ad_account_id,query_catalogs_report_token, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

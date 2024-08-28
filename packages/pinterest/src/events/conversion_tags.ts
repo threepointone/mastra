@@ -11,7 +11,7 @@
                         id: `${name}-sync-ConversionTagResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_ad_account_id,path_conversion_tag_id, ad_account_id,conversion_tag_id,  } = event.data;
+                            const { path_ad_account_id,path_conversion_tag_id,ad_account_id,conversion_tag_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-pipeline_cache_content_uri`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace,repo_slug,cache_uuid, workspace,repo_slug,cache_uuid,  } = event.data;
+                            const { workspace,repo_slug,cache_uuid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1volumes/post/responses/201`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { volume_id, volume_id,  } = event.data;
+                            const { volume_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

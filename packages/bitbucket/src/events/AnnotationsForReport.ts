@@ -11,7 +11,7 @@
                         id: `${name}-sync-paginated_annotations`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace,repo_slug,commit,reportId, workspace,repo_slug,commit,reportId,  } = event.data;
+                            const { workspace,repo_slug,commit,reportId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

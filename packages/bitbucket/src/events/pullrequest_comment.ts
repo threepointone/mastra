@@ -11,7 +11,7 @@
                         id: `${name}-sync-pullrequest_comment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const {  workspace,repo_slug,pull_request_id,comment_id,  } = event.data;
+                            const { workspace,repo_slug,pull_request_id,comment_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

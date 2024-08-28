@@ -11,7 +11,7 @@
                         id: `${name}-sync-ListPaymentsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { begin_time,end_time,sort_order,cursor,location_id,total,last_4,card_brand,limit,   } = event.data;
+                            const { begin_time,end_time,sort_order,cursor,location_id,total,last_4,card_brand,limit, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

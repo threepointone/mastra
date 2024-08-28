@@ -11,7 +11,7 @@
                         id: `${name}-sync-apple_pay_domain`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { domain,expand, domain,  } = event.data;
+                            const { domain,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

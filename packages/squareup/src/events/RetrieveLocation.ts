@@ -11,7 +11,7 @@
                         id: `${name}-sync-RetrieveLocationResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { location_id, location_id,  } = event.data;
+                            const { location_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

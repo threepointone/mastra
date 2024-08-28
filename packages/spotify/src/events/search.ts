@@ -11,7 +11,7 @@
                         id: `${name}-sync-SearchItems`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { q,type,QueryMarket,limit,offset,include_external,   } = event.data;
+                            const { q,type,QueryMarket,limit,offset,include_external, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

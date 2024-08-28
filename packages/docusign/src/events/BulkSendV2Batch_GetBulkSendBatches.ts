@@ -11,7 +11,7 @@
                         id: `${name}-sync-bulkSendBatchSummaries`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,batch_ids,count,from_date,search_text,start_position,status,to_date,user_id, accountId,  } = event.data;
+                            const { accountId,batch_ids,count,from_date,search_text,start_position,status,to_date,user_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

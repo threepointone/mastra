@@ -11,7 +11,7 @@
                         id: `${name}-sync-#/paths/~1v2~1monitoring~1alerts/post/responses/200`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { alert_uuid, alert_uuid,  } = event.data;
+                            const { alert_uuid, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

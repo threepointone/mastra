@@ -11,7 +11,7 @@
                         id: `${name}-sync-billing_portal.configuration`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { configuration,expand, configuration,  } = event.data;
+                            const { configuration,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

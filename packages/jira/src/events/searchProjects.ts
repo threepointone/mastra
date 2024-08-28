@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanProject`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { startAt,maxResults,orderBy,id,keys,query,typeKey,categoryId,action,expand,status,properties,propertyQuery,   } = event.data;
+                            const { startAt,maxResults,orderBy,id,keys,query,typeKey,categoryId,action,expand,status,properties,propertyQuery, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

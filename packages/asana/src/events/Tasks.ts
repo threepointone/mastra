@@ -11,7 +11,7 @@
                         id: `${name}-sync-TaskCompact`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { limit,offset,assignee,project,section,workspace,completed_since,modified_since,   } = event.data;
+                            const { limit,offset,assignee,project,section,workspace,completed_since,modified_since, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

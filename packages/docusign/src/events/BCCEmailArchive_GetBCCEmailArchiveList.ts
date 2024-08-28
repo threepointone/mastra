@@ -11,7 +11,7 @@
                         id: `${name}-sync-bccEmailArchiveList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { accountId,count,start_position, accountId,  } = event.data;
+                            const { accountId,count,start_position, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

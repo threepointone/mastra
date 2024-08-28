@@ -11,7 +11,7 @@
                         id: `${name}-sync-MetricsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_ad_account_id,query_campaign_ids_required,query_start_date,query_end_date,query_campaign_targeting_types,query_columns,query_granularity,query_conversion_attribution_click_window_days,query_conversion_attribution_engagement_window_days,query_conversion_attribution_view_window_days,query_conversion_attribution_conversion_report_time,query_attribution_types, ad_account_id,  } = event.data;
+                            const { path_ad_account_id,query_campaign_ids_required,query_start_date,query_end_date,query_campaign_targeting_types,query_columns,query_granularity,query_conversion_attribution_click_window_days,query_conversion_attribution_engagement_window_days,query_conversion_attribution_view_window_days,query_conversion_attribution_conversion_report_time,query_attribution_types,ad_account_id, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

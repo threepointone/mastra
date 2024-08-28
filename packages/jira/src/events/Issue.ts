@@ -11,7 +11,7 @@
                         id: `${name}-sync-IssueBean`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { issueIdOrKey,fields,fieldsByKeys,expand,properties,updateHistory,failFast, issueIdOrKey,  } = event.data;
+                            const { issueIdOrKey,fields,fieldsByKeys,expand,properties,updateHistory,failFast, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

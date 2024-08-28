@@ -11,7 +11,7 @@
                         id: `${name}-sync-IssueCreateMetadata`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectIds,projectKeys,issuetypeIds,issuetypeNames,expand,   } = event.data;
+                            const { projectIds,projectKeys,issuetypeIds,issuetypeNames,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

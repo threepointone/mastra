@@ -11,7 +11,7 @@
                         id: `${name}-sync-TaskAssignments`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectId,is_active,updated_since,page,per_page, projectId,  } = event.data;
+                            const { projectId,is_active,updated_since,page,per_page, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

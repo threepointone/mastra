@@ -11,7 +11,7 @@
                         id: `${name}-sync-payout`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { arrival_date,created,destination,ending_before,expand,limit,starting_after,status,   } = event.data;
+                            const { arrival_date,created,destination,ending_before,expand,limit,starting_after,status, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

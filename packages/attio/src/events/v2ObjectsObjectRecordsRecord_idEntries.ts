@@ -11,7 +11,7 @@
                         id: `${name}-sync-undefined`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { object,record_id,limit,offset, object,record_id,  } = event.data;
+                            const { object,record_id,limit,offset, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

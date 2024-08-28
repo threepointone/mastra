@@ -11,7 +11,7 @@
                         id: `${name}-sync-reporting.report_run`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { expand,report_run, report_run,  } = event.data;
+                            const { expand,report_run, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-application_property`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { selected_user,app_key,property_name, selected_user,app_key,property_name,  } = event.data;
+                            const { selected_user,app_key,property_name, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

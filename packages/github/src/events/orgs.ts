@@ -11,7 +11,7 @@
                         id: `${name}-sync-organization-full`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { org, org,  } = event.data;
+                            const { org, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-TargetingOptionResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { path_targeting_type,query_client_id,query_oauth_signature,query_timestamp,query_ad_account_id, targeting_type,  } = event.data;
+                            const { path_targeting_type,query_client_id,query_oauth_signature,query_timestamp,query_ad_account_id,targeting_type, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

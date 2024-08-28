@@ -11,7 +11,7 @@
                         id: `${name}-sync-shipping_rate`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { active,created,currency,ending_before,expand,limit,starting_after,   } = event.data;
+                            const { active,created,currency,ending_before,expand,limit,starting_after, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

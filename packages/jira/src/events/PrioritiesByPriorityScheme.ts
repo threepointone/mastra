@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanPriorityWithSequence`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { startAt,maxResults,schemeId, schemeId,  } = event.data;
+                            const { startAt,maxResults,schemeId, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

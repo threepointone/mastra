@@ -11,7 +11,7 @@
                         id: `${name}-sync-PageBeanComponentWithIssueCount`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { projectIdOrKey,startAt,maxResults,orderBy,componentSource,query, projectIdOrKey,  } = event.data;
+                            const { projectIdOrKey,startAt,maxResults,orderBy,componentSource,query, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

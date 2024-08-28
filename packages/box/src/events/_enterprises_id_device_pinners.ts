@@ -11,7 +11,7 @@
                         id: `${name}-sync-DevicePinners`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { enterprise_id,marker,limit,direction, enterprise_id,  } = event.data;
+                            const { enterprise_id,marker,limit,direction, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

@@ -11,7 +11,7 @@
                         id: `${name}-sync-application_property`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { workspace,repo_slug,pullrequest_id,app_key,property_name, workspace,repo_slug,pullrequest_id,app_key,property_name,  } = event.data;
+                            const { workspace,repo_slug,pullrequest_id,app_key,property_name, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

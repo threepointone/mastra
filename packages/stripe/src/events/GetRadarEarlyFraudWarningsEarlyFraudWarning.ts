@@ -11,7 +11,7 @@
                         id: `${name}-sync-radar.early_fraud_warning`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { early_fraud_warning,expand, early_fraud_warning,  } = event.data;
+                            const { early_fraud_warning,expand, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 

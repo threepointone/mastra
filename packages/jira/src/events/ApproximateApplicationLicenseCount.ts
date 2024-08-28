@@ -11,7 +11,7 @@
                         id: `${name}-sync-LicenseMetric`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { applicationKey, applicationKey,  } = event.data;
+                            const { applicationKey, } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
