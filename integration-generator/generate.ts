@@ -280,6 +280,9 @@ async function main() {
 
       if (!fs.existsSync(path.join(srcPath, 'events'))) {
         fs.mkdirSync(path.join(srcPath, 'events'));
+      } else {
+        fs.rmSync(path.join(srcPath, 'events'), { recursive: true });
+        fs.mkdirSync(path.join(srcPath, 'events'));
       }
 
       const funcMap = buildSyncFunc({ name, paths, schemas });
