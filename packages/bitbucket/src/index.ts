@@ -7,7 +7,6 @@ import { subject_types } from './events/subject_types'
 import { paginated_hook_events } from './events/paginated_hook_events'
 import { paginated_pullrequests } from './events/paginated_pullrequests'
 import { paginated_repositories } from './events/paginated_repositories'
-import { paginated_repositories } from './events/paginated_repositories'
 import { repository } from './events/repository'
 import { paginated_branchrestrictions } from './events/paginated_branchrestrictions'
 import { branchrestriction } from './events/branchrestriction'
@@ -25,7 +24,6 @@ import { Annotation } from './events/Annotation'
 import { paginated_commitstatuses } from './events/paginated_commitstatuses'
 import { commitstatus } from './events/commitstatus'
 import { paginated_changeset } from './events/paginated_changeset'
-import { paginated_changeset } from './events/paginated_changeset'
 import { paginated_components } from './events/paginated_components'
 import { component } from './events/component'
 import { paginated_accounts } from './events/paginated_accounts'
@@ -41,7 +39,6 @@ import { paginated_default_reviewer_and_type } from './events/paginated_default_
 import { EnvironmentsForRepository } from './events/EnvironmentsForRepository'
 import { EnvironmentForRepository } from './events/EnvironmentForRepository'
 import { paginated_files } from './events/paginated_files'
-import { paginated_repositories } from './events/paginated_repositories'
 import { paginated_webhook_subscriptions } from './events/paginated_webhook_subscriptions'
 import { webhook_subscription } from './events/webhook_subscription'
 import { paginated_issues } from './events/paginated_issues'
@@ -52,7 +49,6 @@ import { paginated_log_entries } from './events/paginated_log_entries'
 import { issue_change } from './events/issue_change'
 import { paginated_issue_comments } from './events/paginated_issue_comments'
 import { issue_comment } from './events/issue_comment'
-import { commit } from './events/commit'
 import { paginated_milestones } from './events/paginated_milestones'
 import { milestone } from './events/milestone'
 import { repository_inheritance_state } from './events/repository_inheritance_state'
@@ -76,11 +72,9 @@ import { RepositoryPipelineKnownHost } from './events/RepositoryPipelineKnownHos
 import { RepositoryPipelineVariables } from './events/RepositoryPipelineVariables'
 import { RepositoryPipelineVariable } from './events/RepositoryPipelineVariable'
 import { RepositoryHostedPropertyValue } from './events/RepositoryHostedPropertyValue'
-import { paginated_pullrequests } from './events/paginated_pullrequests'
 import { pullrequest } from './events/pullrequest'
 import { paginated_pullrequest_comments } from './events/paginated_pullrequest_comments'
 import { pullrequest_comment } from './events/pullrequest_comment'
-import { paginated_commitstatuses } from './events/paginated_commitstatuses'
 import { PullRequestHostedPropertyValue } from './events/PullRequestHostedPropertyValue'
 import { paginated_refs } from './events/paginated_refs'
 import { paginated_branches } from './events/paginated_branches'
@@ -88,26 +82,19 @@ import { branch } from './events/branch'
 import { paginated_tags } from './events/paginated_tags'
 import { tag } from './events/tag'
 import { paginated_treeentries } from './events/paginated_treeentries'
-import { paginated_treeentries } from './events/paginated_treeentries'
 import { paginated_versions } from './events/paginated_versions'
 import { version } from './events/version'
-import { paginated_accounts } from './events/paginated_accounts'
-import { paginated_snippets } from './events/paginated_snippets'
 import { paginated_snippets } from './events/paginated_snippets'
 import { snippet } from './events/snippet'
 import { paginated_snippet_comments } from './events/paginated_snippet_comments'
 import { snippet_comment } from './events/snippet_comment'
 import { paginated_snippet_commit } from './events/paginated_snippet_commit'
 import { snippet_commit } from './events/snippet_commit'
-import { paginated_accounts } from './events/paginated_accounts'
-import { snippet } from './events/snippet'
 import { PipelineVariablesForTeam } from './events/PipelineVariablesForTeam'
 import { PipelineVariableForTeam } from './events/PipelineVariableForTeam'
 import { searchTeam } from './events/searchTeam'
-import { account } from './events/account'
 import { paginated_repository_permissions } from './events/paginated_repository_permissions'
 import { paginated_workspace_memberships } from './events/paginated_workspace_memberships'
-import { account } from './events/account'
 import { PipelineVariablesForUser } from './events/PipelineVariablesForUser'
 import { PipelineVariableForUser } from './events/PipelineVariableForUser'
 import { retrieveUserHostedPropertyValue } from './events/retrieveUserHostedPropertyValue'
@@ -116,20 +103,12 @@ import { paginated_ssh_user_keys } from './events/paginated_ssh_user_keys'
 import { ssh_account_key } from './events/ssh_account_key'
 import { paginated_workspaces } from './events/paginated_workspaces'
 import { workspace } from './events/workspace'
-import { paginated_webhook_subscriptions } from './events/paginated_webhook_subscriptions'
-import { webhook_subscription } from './events/webhook_subscription'
-import { paginated_workspace_memberships } from './events/paginated_workspace_memberships'
 import { workspace_membership } from './events/workspace_membership'
-import { paginated_workspace_memberships } from './events/paginated_workspace_memberships'
-import { paginated_repository_permissions } from './events/paginated_repository_permissions'
-import { paginated_repository_permissions } from './events/paginated_repository_permissions'
 import { PipelineVariablesForWorkspace } from './events/PipelineVariablesForWorkspace'
 import { PipelineVariableForWorkspace } from './events/PipelineVariableForWorkspace'
 import { paginated_projects } from './events/paginated_projects'
 import { project } from './events/project'
 import { project_branching_model } from './events/project_branching_model'
-import { branching_model_settings } from './events/branching_model_settings'
-import { paginated_default_reviewer_and_type } from './events/paginated_default_reviewer_and_type'
 import { user } from './events/user'
 import { paginated_project_deploy_keys } from './events/paginated_project_deploy_keys'
 import { project_deploy_key } from './events/project_deploy_key'
@@ -174,7 +153,8 @@ export class BitbucketIntegration extends Integration {
 
              'bitbucket.paginated_pullrequests/sync': {
                 schema: z.object({
-                  'selected_user': z.string(),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
 'state': z.string()}),
                 handler: paginated_pullrequests,
             },
@@ -182,17 +162,8 @@ export class BitbucketIntegration extends Integration {
 
              'bitbucket.paginated_repositories/sync': {
                 schema: z.object({
-                  'after': z.string(),
-'role': z.string(),
-'q': z.string(),
-'sort': z.string()}),
-                handler: paginated_repositories,
-            },
-        
-
-             'bitbucket.paginated_repositories/sync': {
-                schema: z.object({
                   'workspace': z.string(),
+'repo_slug': z.string(),
 'role': z.string(),
 'q': z.string(),
 'sort': z.string()}),
@@ -238,7 +209,7 @@ export class BitbucketIntegration extends Integration {
              'bitbucket.branching_model_settings/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string()}),
+'project_key': z.string()}),
                 handler: branching_model_settings,
             },
         
@@ -247,7 +218,7 @@ export class BitbucketIntegration extends Integration {
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'commit': z.string()}),
+'revspec': z.string()}),
                 handler: commit,
             },
         
@@ -339,7 +310,7 @@ export class BitbucketIntegration extends Integration {
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'commit': z.string(),
+'pull_request_id': z.string(),
 'q': z.string(),
 'sort': z.string()}),
                 handler: paginated_commitstatuses,
@@ -353,14 +324,6 @@ export class BitbucketIntegration extends Integration {
 'commit': z.string(),
 'key': z.string()}),
                 handler: commitstatus,
-            },
-        
-
-             'bitbucket.paginated_changeset/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string()}),
-                handler: paginated_changeset,
             },
         
 
@@ -393,16 +356,14 @@ export class BitbucketIntegration extends Integration {
              'bitbucket.paginated_accounts/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string()}),
+'encoded_id': z.string()}),
                 handler: paginated_accounts,
             },
         
 
              'bitbucket.account/sync': {
                 schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string(),
-'target_username': z.string()}),
+                  'selected_user': z.string()}),
                 handler: account,
             },
         
@@ -470,7 +431,7 @@ export class BitbucketIntegration extends Integration {
              'bitbucket.paginated_default_reviewer_and_type/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string()}),
+'project_key': z.string()}),
                 handler: paginated_default_reviewer_and_type,
             },
         
@@ -505,21 +466,9 @@ export class BitbucketIntegration extends Integration {
             },
         
 
-             'bitbucket.paginated_repositories/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string(),
-'role': z.string(),
-'q': z.string(),
-'sort': z.string()}),
-                handler: paginated_repositories,
-            },
-        
-
              'bitbucket.paginated_webhook_subscriptions/sync': {
                 schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string()}),
+                  'workspace': z.string()}),
                 handler: paginated_webhook_subscriptions,
             },
         
@@ -527,7 +476,6 @@ export class BitbucketIntegration extends Integration {
              'bitbucket.webhook_subscription/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
 'uid': z.string()}),
                 handler: webhook_subscription,
             },
@@ -605,15 +553,6 @@ export class BitbucketIntegration extends Integration {
 'issue_id': z.string(),
 'comment_id': z.string()}),
                 handler: issue_comment,
-            },
-        
-
-             'bitbucket.commit/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string(),
-'revspec': z.string()}),
-                handler: commit,
             },
         
 
@@ -815,15 +754,6 @@ export class BitbucketIntegration extends Integration {
             },
         
 
-             'bitbucket.paginated_pullrequests/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string(),
-'state': z.string()}),
-                handler: paginated_pullrequests,
-            },
-        
-
              'bitbucket.pullrequest/sync': {
                 schema: z.object({
                   'workspace': z.string(),
@@ -849,17 +779,6 @@ export class BitbucketIntegration extends Integration {
 'pull_request_id': z.string(),
 'comment_id': z.string()}),
                 handler: pullrequest_comment,
-            },
-        
-
-             'bitbucket.paginated_commitstatuses/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string(),
-'pull_request_id': z.string(),
-'q': z.string(),
-'sort': z.string()}),
-                handler: paginated_commitstatuses,
             },
         
 
@@ -926,15 +845,6 @@ export class BitbucketIntegration extends Integration {
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'format': z.string()}),
-                handler: paginated_treeentries,
-            },
-        
-
-             'bitbucket.paginated_treeentries/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string(),
 'commit': z.string(),
 'path': z.string(),
 'format': z.string(),
@@ -962,21 +872,6 @@ export class BitbucketIntegration extends Integration {
             },
         
 
-             'bitbucket.paginated_accounts/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string()}),
-                handler: paginated_accounts,
-            },
-        
-
-             'bitbucket.paginated_snippets/sync': {
-                schema: z.object({
-                  'role': z.string()}),
-                handler: paginated_snippets,
-            },
-        
-
              'bitbucket.paginated_snippets/sync': {
                 schema: z.object({
                   'workspace': z.string(),
@@ -988,7 +883,8 @@ export class BitbucketIntegration extends Integration {
              'bitbucket.snippet/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'encoded_id': z.string()}),
+'encoded_id': z.string(),
+'node_id': z.string()}),
                 handler: snippet,
             },
         
@@ -1027,23 +923,6 @@ export class BitbucketIntegration extends Integration {
             },
         
 
-             'bitbucket.paginated_accounts/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'encoded_id': z.string()}),
-                handler: paginated_accounts,
-            },
-        
-
-             'bitbucket.snippet/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'encoded_id': z.string(),
-'node_id': z.string()}),
-                handler: snippet,
-            },
-        
-
              'bitbucket.PipelineVariablesForTeam/sync': {
                 schema: z.object({
                   'username': z.string()}),
@@ -1069,15 +948,11 @@ export class BitbucketIntegration extends Integration {
             },
         
 
-             'bitbucket.account/sync': {
-                schema: z.object({}),
-                handler: account,
-            },
-        
-
              'bitbucket.paginated_repository_permissions/sync': {
                 schema: z.object({
-                  'q': z.string(),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'q': z.string(),
 'sort': z.string()}),
                 handler: paginated_repository_permissions,
             },
@@ -1085,16 +960,9 @@ export class BitbucketIntegration extends Integration {
 
              'bitbucket.paginated_workspace_memberships/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string()}),
+                  'workspace': z.string(),
+'q': z.string()}),
                 handler: paginated_workspace_memberships,
-            },
-        
-
-             'bitbucket.account/sync': {
-                schema: z.object({
-                  'selected_user': z.string()}),
-                handler: account,
             },
         
 
@@ -1163,60 +1031,11 @@ export class BitbucketIntegration extends Integration {
             },
         
 
-             'bitbucket.paginated_webhook_subscriptions/sync': {
-                schema: z.object({
-                  'workspace': z.string()}),
-                handler: paginated_webhook_subscriptions,
-            },
-        
-
-             'bitbucket.webhook_subscription/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'uid': z.string()}),
-                handler: webhook_subscription,
-            },
-        
-
-             'bitbucket.paginated_workspace_memberships/sync': {
-                schema: z.object({
-                  'workspace': z.string()}),
-                handler: paginated_workspace_memberships,
-            },
-        
-
              'bitbucket.workspace_membership/sync': {
                 schema: z.object({
                   'workspace': z.string(),
 'member': z.string()}),
                 handler: workspace_membership,
-            },
-        
-
-             'bitbucket.paginated_workspace_memberships/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'q': z.string()}),
-                handler: paginated_workspace_memberships,
-            },
-        
-
-             'bitbucket.paginated_repository_permissions/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'q': z.string(),
-'sort': z.string()}),
-                handler: paginated_repository_permissions,
-            },
-        
-
-             'bitbucket.paginated_repository_permissions/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'repo_slug': z.string(),
-'q': z.string(),
-'sort': z.string()}),
-                handler: paginated_repository_permissions,
             },
         
 
@@ -1255,22 +1074,6 @@ export class BitbucketIntegration extends Integration {
                   'workspace': z.string(),
 'project_key': z.string()}),
                 handler: project_branching_model,
-            },
-        
-
-             'bitbucket.branching_model_settings/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'project_key': z.string()}),
-                handler: branching_model_settings,
-            },
-        
-
-             'bitbucket.paginated_default_reviewer_and_type/sync': {
-                schema: z.object({
-                  'workspace': z.string(),
-'project_key': z.string()}),
-                handler: paginated_default_reviewer_and_type,
             },
         
 

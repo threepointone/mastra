@@ -31,10 +31,8 @@ import { PhoneNumberAssignment } from './events/PhoneNumberAssignment'
 import { RecordingSetting } from './events/RecordingSetting'
 import { SavedListView } from './events/SavedListView'
 import { Step } from './events/Step'
-import { Step } from './events/Step'
 import { Team } from './events/Team'
 import { TeamTemplate } from './events/TeamTemplate'
-import { User } from './events/User'
 import { Subscription } from './events/Subscription'
 
 type SalesloftConfig = {
@@ -209,7 +207,8 @@ export class SalesloftIntegration extends Integration {
         
 
              'salesloft.User/sync': {
-                schema: z.object({}),
+                schema: z.object({
+                  'id': z.string()}),
                 handler: User,
             },
         
@@ -270,13 +269,6 @@ export class SalesloftIntegration extends Integration {
             },
         
 
-             'salesloft.Step/sync': {
-                schema: z.object({
-                  'id': z.string()}),
-                handler: Step,
-            },
-        
-
              'salesloft.Team/sync': {
                 schema: z.object({}),
                 handler: Team,
@@ -288,13 +280,6 @@ export class SalesloftIntegration extends Integration {
                   'id': z.string(),
 'include_signature': z.boolean()}),
                 handler: TeamTemplate,
-            },
-        
-
-             'salesloft.User/sync': {
-                schema: z.object({
-                  'id': z.string()}),
-                handler: User,
             },
         
 

@@ -286,10 +286,17 @@ async function main() {
       }
 
       const funcMap = buildSyncFunc({ name, paths, schemas });
+      const funcNameToFuncMap = funcMap.reduce((acc, curr) => {
+        acc[curr.funcName] = curr;
+        return acc;
+      }, {});
 
-      syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
+      const uniqueFuncKeys = Object.keys(funcNameToFuncMap);
+      const uniqueFuncs = uniqueFuncKeys.map((funcName) => funcNameToFuncMap[funcName]);
 
-      funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
+      syncFuncImports = uniqueFuncKeys.map((funcName) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
+
+      uniqueFuncs.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
         const fullParams = Array.from(new Set([...(queryParams || []), ...(requestParams || [])]));
         fs.writeFileSync(
           path.join(srcPath, 'events', `${funcName}.ts`),
@@ -342,7 +349,7 @@ async function main() {
         );
       });
 
-      syncFuncs = `this.events = {${funcMap.map(({ eventDef }) => eventDef).join('\n')}}`;
+      syncFuncs = `this.events = {${uniqueFuncs.map(({ eventDef }) => eventDef).join('\n')}}`;
 
       fs.writeFileSync(
         path.join(srcPath, 'openapi.ts'),
