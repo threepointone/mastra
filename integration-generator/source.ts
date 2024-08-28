@@ -368,8 +368,7 @@ export const sources = [
     'Proxy URL': 'https://api.pagerduty.com',
     'Authorization URL': 'https://app.pagerduty.com/oauth/authorize',
     Category: 'dev-tools',
-    'OpenAPI integration':
-      'https://raw.githubusercontent.com/PagerDuty/api-schema/main/reference/REST/openapiv3.json',
+    'OpenAPI integration': 'https://raw.githubusercontent.com/PagerDuty/api-schema/main/reference/REST/openapiv3.json',
   },
   {
     'Integration Name': 'pandadoc',
@@ -472,7 +471,7 @@ export const sources = [
     'Proxy URL': 'https://quickbooks.api.intuit.com',
     'Authorization URL': 'https://appcenter.intuit.com/connect/oauth2',
     Category: 'accounting',
-    'OpenAPI integration': 'https://gist.github.com/kinlane/8b67e8bb101500cbc1bce2a7ca49fffc',
+    'OpenAPI integration': 'https://gist.githubusercontent.com/kinlane/8b67e8bb101500cbc1bce2a7ca49fffc/raw/ed304dd2ccf1142ae49266bb5f1bde7516378495/QuickBooks%2520Online%2520V3%2520API%2520OpenAPI.json',
   },
   {
     'Integration Name': 'ring-central',

@@ -10,19 +10,18 @@ function getSchemas(openApiObject) {
   const schemas = openApiObject?.components?.schemas;
 
   if (schemas) {
-    return schemas
+    return schemas;
   }
 
   const responses = openApiObject?.components?.responses;
 
   if (responses) {
     return Object.entries(responses || {}).reduce((memo, [k, v]) => {
-
       if (v.content['application/json']?.schema) {
-        memo[k] = v.content['application/json']?.schema
+        memo[k] = v.content['application/json']?.schema;
       }
-      return memo
-    }, {})
+      return memo;
+    }, {});
   }
 }
 
@@ -65,7 +64,7 @@ function buildSyncFunc({ name, paths, schemas }) {
     .filter(({ method, path }) => {
       const jsonContent = method?.responses?.['200']?.content?.['application/json'];
       const allContent = method?.responses?.['200']?.content?.['*/*'];
-      const responseContent = { schema: { $ref: method?.responses?.['200']?.$ref } }
+      const responseContent = { schema: { $ref: method?.responses?.['200']?.$ref } };
       const content = jsonContent || allContent || responseContent;
 
       return content?.schema?.properties?.data?.type === 'array' || content?.schema?.$ref;
@@ -73,7 +72,7 @@ function buildSyncFunc({ name, paths, schemas }) {
     ?.map(({ method, path }) => {
       const jsonContent = method?.responses?.['200']?.content?.['application/json'];
       const allContent = method?.responses?.['200']?.content?.['*/*'];
-      const responseContent = { schema: { $ref: method?.responses?.['200']?.$ref } }
+      const responseContent = { schema: { $ref: method?.responses?.['200']?.$ref } };
       const content = jsonContent || allContent || responseContent;
 
       const params = method?.parameters;
@@ -119,7 +118,10 @@ function buildSyncFunc({ name, paths, schemas }) {
         content?.schema?.$ref?.replace('#/components/schemas/', '').replace('#/components/responses/', '') ||
         content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
 
-      const operationId = method.operationId?.replace('get', '').replaceAll('/', '') || content?.schema?.$ref?.replace('#/components/responses/', '')?.replace('#/components/schemas/', '') || pathToFunctionName(path)
+      const operationId =
+        method.operationId?.replace('get', '').replaceAll('/', '') ||
+        content?.schema?.$ref?.replace('#/components/responses/', '')?.replace('#/components/schemas/', '') ||
+        pathToFunctionName(path);
 
       return {
         path,
@@ -261,7 +263,7 @@ async function main() {
         apiobj = JSON.parse(apiobj);
       }
 
-      const schemas = getSchemas((apiobj as any))
+      const schemas = getSchemas(apiobj as any);
 
       const paths = (apiobj as any)?.paths || {};
 
@@ -274,8 +276,6 @@ async function main() {
                     ${fieldDefs}
                     `,
         );
-
-
       }
 
       if (!fs.existsSync(path.join(srcPath, 'events'))) {
@@ -400,9 +400,9 @@ function pathToFunctionName(path: string): string {
 
   // Convert segments to camelCase
   const camelCaseSegments = segments.map((segment, index) => {
-      // Capitalize first letter of each segment except the first one
-      const formattedSegment = index === 0 ? segment.toLowerCase() : segment.charAt(0).toUpperCase() + segment.slice(1);
-      return formattedSegment;
+    // Capitalize first letter of each segment except the first one
+    const formattedSegment = index === 0 ? segment.toLowerCase() : segment.charAt(0).toUpperCase() + segment.slice(1);
+    return formattedSegment;
   });
 
   // Join segments into a single camelCase string
