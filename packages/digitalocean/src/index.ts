@@ -66,170 +66,160 @@ export class DigitaloceanIntegration extends Integration {
     this.events = {
              'digitalocean.apps__deployment/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string(),
+                  'app_id': z.string(),
 'deployment_id': z.string(),
-app_id: z.string(),
-deployment_id: z.string()}),
+'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string()}),
                 handler: apps__deployment,
             },
         
 
              'digitalocean.apps__logs/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string(),
+                  'app_id': z.string(),
+'deployment_id': z.string(),
+'component_name': z.string(),
+'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1deployments~1%7Bdeployment_id%7D/get/parameters/1': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/1': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/2': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/3': z.string(),
-'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/4': z.string(),
-app_id: z.string(),
-deployment_id: z.string(),
-component_name: z.string()}),
+'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/4': z.string()}),
                 handler: apps__logs,
             },
         
 
              'digitalocean.apps__logs_aggregate/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string(),
+                  'app_id': z.string(),
+'deployment_id': z.string(),
+'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1deployments~1%7Bdeployment_id%7D/get/parameters/1': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/2': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/3': z.string(),
-'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/4': z.string(),
-app_id: z.string(),
-deployment_id: z.string()}),
+'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/4': z.string()}),
                 handler: apps__logs_aggregate,
             },
         
 
              'digitalocean.apps__logs_active_deployment_aggregate/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string(),
+                  'app_id': z.string(),
+'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/0': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/2': z.string(),
 '#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/3': z.string(),
-'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/4': z.string(),
-app_id: z.string()}),
+'#/paths/~1v2~1apps~1%7Bapp_id%7D~1components~1%7Bcomponent_name%7D~1logs/get/parameters/4': z.string()}),
                 handler: apps__logs_active_deployment_aggregate,
             },
         
 
              'digitalocean.apps_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1apps~1%7Bid%7D/delete/parameters/0': z.string(),
-'name': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'#/paths/~1v2~1apps~1%7Bid%7D/delete/parameters/0': z.string(),
+'name': z.string()}),
                 handler: apps_,
             },
         
 
              'digitalocean.cdn__endpoint/sync': {
                 schema: z.object({
-                  'cdn_id': z.string(),
-cdn_id: z.string()}),
+                  'cdn_id': z.string()}),
                 handler: cdn__endpoint,
             },
         
 
              'digitalocean.databases__cluster/sync': {
                 schema: z.object({
-                  'database_cluster_uuid': z.string(),
-database_cluster_uuid: z.string()}),
+                  'database_cluster_uuid': z.string()}),
                 handler: databases__cluster,
             },
         
 
              'digitalocean.databases_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string(),
+                  'database_cluster_uuid': z.string(),
 'database_name': z.string(),
-database_cluster_uuid: z.string(),
-database_name: z.string()}),
+'#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string()}),
                 handler: databases_,
             },
         
 
              'digitalocean.databases__connectionPool/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string(),
+                  'database_cluster_uuid': z.string(),
 'pool_name': z.string(),
-database_cluster_uuid: z.string(),
-pool_name: z.string()}),
+'#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string()}),
                 handler: databases__connectionPool,
             },
         
 
              'digitalocean.databases__replica/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string(),
+                  'database_cluster_uuid': z.string(),
 'replica_name': z.string(),
-database_cluster_uuid: z.string(),
-replica_name: z.string()}),
+'#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string()}),
                 handler: databases__replica,
             },
         
 
              'digitalocean.databases__user/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string(),
+                  'database_cluster_uuid': z.string(),
 'username': z.string(),
-database_cluster_uuid: z.string(),
-username: z.string()}),
+'#/paths/~1v2~1databases~1%7Bdatabase_cluster_uuid%7D/get/parameters/0': z.string()}),
                 handler: databases__user,
             },
         
 
              'digitalocean.dropletActions_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1droplets~1%7Bdroplet_id%7D/get/parameters/0': z.string(),
-'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string(),
-droplet_id: z.string(),
-action_id: z.string()}),
+                  'droplet_id': z.string(),
+'action_id': z.string(),
+'#/paths/~1v2~1droplets~1%7Bdroplet_id%7D/get/parameters/0': z.string(),
+'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string()}),
                 handler: dropletActions_,
             },
         
 
              'digitalocean.floatingIPsAction_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1floating_ips~1%7Bfloating_ip%7D/get/parameters/0': z.string(),
-'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string(),
-floating_ip: z.string(),
-action_id: z.string()}),
+                  'floating_ip': z.string(),
+'action_id': z.string(),
+'#/paths/~1v2~1floating_ips~1%7Bfloating_ip%7D/get/parameters/0': z.string(),
+'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string()}),
                 handler: floatingIPsAction_,
             },
         
 
              'digitalocean.functions__namespace/sync': {
                 schema: z.object({
-                  'namespace_id': z.string(),
-namespace_id: z.string()}),
+                  'namespace_id': z.string()}),
                 handler: functions__namespace,
             },
         
 
              'digitalocean.functions__trigger/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1functions~1namespaces~1%7Bnamespace_id%7D/get/parameters/0': z.string(),
+                  'namespace_id': z.string(),
 'trigger_name': z.string(),
-namespace_id: z.string(),
-trigger_name: z.string()}),
+'#/paths/~1v2~1functions~1namespaces~1%7Bnamespace_id%7D/get/parameters/0': z.string()}),
                 handler: functions__trigger,
             },
         
 
              'digitalocean.imageActions_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1images~1%7Bimage_id%7D/put/parameters/0': z.string(),
-'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string(),
-image_id: z.string(),
-action_id: z.string()}),
+                  'image_id': z.string(),
+'action_id': z.string(),
+'#/paths/~1v2~1images~1%7Bimage_id%7D/put/parameters/0': z.string(),
+'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string()}),
                 handler: imageActions_,
             },
         
 
              'digitalocean.monitoring__alertPolicy/sync': {
                 schema: z.object({
-                  'alert_uuid': z.string(),
-alert_uuid: z.string()}),
+                  'alert_uuid': z.string()}),
                 handler: monitoring__alertPolicy,
             },
         
@@ -332,72 +322,67 @@ alert_uuid: z.string()}),
 
              'digitalocean.projects_/sync': {
                 schema: z.object({
-                  'project_id': z.string(),
-project_id: z.string()}),
+                  'project_id': z.string()}),
                 handler: projects_,
             },
         
 
              'digitalocean.registry__garbageCollection/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1registry~1%7Bregistry_name%7D~1repositories/get/parameters/2': z.string(),
-registry_name: z.string()}),
+                  'registry_name': z.string(),
+'#/paths/~1v2~1registry~1%7Bregistry_name%7D~1repositories/get/parameters/2': z.string()}),
                 handler: registry__garbageCollection,
             },
         
 
              'digitalocean.reservedIPsActions_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1reserved_ips~1%7Breserved_ip%7D/get/parameters/0': z.string(),
-'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string(),
-reserved_ip: z.string(),
-action_id: z.string()}),
+                  'reserved_ip': z.string(),
+'action_id': z.string(),
+'#/paths/~1v2~1reserved_ips~1%7Breserved_ip%7D/get/parameters/0': z.string(),
+'#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string()}),
                 handler: reservedIPsActions_,
             },
         
 
              'digitalocean.uptime_check_/sync': {
                 schema: z.object({
-                  'check_id': z.string(),
-check_id: z.string()}),
+                  'check_id': z.string()}),
                 handler: uptime_check_,
             },
         
 
              'digitalocean.uptime_alert_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1uptime~1checks~1%7Bcheck_id%7D/get/parameters/0': z.string(),
+                  'check_id': z.string(),
 'alert_id': z.string(),
-check_id: z.string(),
-alert_id: z.string()}),
+'#/paths/~1v2~1uptime~1checks~1%7Bcheck_id%7D/get/parameters/0': z.string()}),
                 handler: uptime_alert_,
             },
         
 
              'digitalocean.volumes_/sync': {
                 schema: z.object({
-                  'volume_id': z.string(),
-volume_id: z.string()}),
+                  'volume_id': z.string()}),
                 handler: volumes_,
             },
         
 
              'digitalocean.volumeActions_/sync': {
                 schema: z.object({
-                  '#/paths/~1v2~1volumes~1%7Bvolume_id%7D/get/parameters/0': z.string(),
+                  'volume_id': z.string(),
+'action_id': z.string(),
+'#/paths/~1v2~1volumes~1%7Bvolume_id%7D/get/parameters/0': z.string(),
 '#/paths/~1v2~1actions~1%7Baction_id%7D/get/parameters/0': z.string(),
 '#/paths/~1v2~1account~1keys/get/parameters/0': z.string(),
-'#/paths/~1v2~1account~1keys/get/parameters/1': z.string(),
-volume_id: z.string(),
-action_id: z.string()}),
+'#/paths/~1v2~1account~1keys/get/parameters/1': z.string()}),
                 handler: volumeActions_,
             },
         
 
              'digitalocean.vpcs_/sync': {
                 schema: z.object({
-                  'vpc_id': z.string(),
-vpc_id: z.string()}),
+                  'vpc_id': z.string()}),
                 handler: vpcs_,
             },
         }

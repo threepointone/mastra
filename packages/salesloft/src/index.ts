@@ -63,56 +63,49 @@ export class SalesloftIntegration extends Integration {
     this.events = {
              'salesloft.AccountStage/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: AccountStage,
             },
         
 
              'salesloft.AccountTier/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: AccountTier,
             },
         
 
              'salesloft.Account/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Account,
             },
         
 
              'salesloft.CallInstruction/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CallInstruction,
             },
         
 
              'salesloft.Action/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Action,
             },
         
 
              'salesloft.Call/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Call,
             },
         
 
              'salesloft.Email/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Email,
             },
         
@@ -138,64 +131,57 @@ id: z.string()}),
 
              'salesloft.BulkJob/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: BulkJob,
             },
         
 
              'salesloft.CadenceExport/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CadenceExport,
             },
         
 
              'salesloft.CadenceMembership/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CadenceMembership,
             },
         
 
              'salesloft.Cadence/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Cadence,
             },
         
 
              'salesloft.CallDataRecord/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CallDataRecord,
             },
         
 
              'salesloft.CrmActivity/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CrmActivity,
             },
         
 
              'salesloft.CustomField/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CustomField,
             },
         
 
              'salesloft.CustomRole/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CustomRole,
             },
         
@@ -203,24 +189,21 @@ id: z.string()}),
              'salesloft.EmailTemplate/sync': {
                 schema: z.object({
                   'id': z.string(),
-'include_signature': z.boolean(),
-id: z.string()}),
+'include_signature': z.boolean()}),
                 handler: EmailTemplate,
             },
         
 
              'salesloft.Group/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Group,
             },
         
 
              'salesloft.Import/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Import,
             },
         
@@ -233,72 +216,63 @@ id: z.string()}),
 
              'salesloft.MimeEmailPayload/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: MimeEmailPayload,
             },
         
 
              'salesloft.Note/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Note,
             },
         
 
              'salesloft.Person/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Person,
             },
         
 
              'salesloft.PersonStage/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: PersonStage,
             },
         
 
              'salesloft.PhoneNumberAssignment/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: PhoneNumberAssignment,
             },
         
 
              'salesloft.RecordingSetting/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: RecordingSetting,
             },
         
 
              'salesloft.SavedListView/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: SavedListView,
             },
         
 
              'salesloft.Step/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Step,
             },
         
 
              'salesloft.Step/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Step,
             },
         
@@ -312,24 +286,22 @@ id: z.string()}),
              'salesloft.TeamTemplate/sync': {
                 schema: z.object({
                   'id': z.string(),
-'include_signature': z.boolean(),
-id: z.string()}),
+'include_signature': z.boolean()}),
                 handler: TeamTemplate,
             },
         
 
              'salesloft.User/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: User,
             },
         
 
              'salesloft.Subscription/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: Subscription,
             },
         }

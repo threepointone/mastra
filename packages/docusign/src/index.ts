@@ -196,8 +196,7 @@ export class DocusignIntegration extends Integration {
              'docusign.Accounts_GetAccount/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'include_account_settings': z.string(),
-accountId: z.string()}),
+'include_account_settings': z.string()}),
                 handler: Accounts_GetAccount,
             },
         
@@ -205,8 +204,7 @@ accountId: z.string()}),
              'docusign.BillingCharges_GetAccountBillingCharges/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'include_charges': z.string(),
-accountId: z.string()}),
+'include_charges': z.string()}),
                 handler: BillingCharges_GetAccountBillingCharges,
             },
         
@@ -215,8 +213,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'from_date': z.string(),
-'to_date': z.string(),
-accountId: z.string()}),
+'to_date': z.string()}),
                 handler: BillingInvoices_GetBillingInvoices,
             },
         
@@ -224,17 +221,14 @@ accountId: z.string()}),
              'docusign.BillingInvoices_GetBillingInvoice/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'invoiceId': z.string(),
-accountId: z.string(),
-invoiceId: z.string()}),
+'invoiceId': z.string()}),
                 handler: BillingInvoices_GetBillingInvoice,
             },
         
 
              'docusign.BillingInvoices_GetBillingInvoicesPastDue/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: BillingInvoices_GetBillingInvoicesPastDue,
             },
         
@@ -243,8 +237,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'from_date': z.string(),
-'to_date': z.string(),
-accountId: z.string()}),
+'to_date': z.string()}),
                 handler: BillingPayments_GetPaymentList,
             },
         
@@ -252,9 +245,7 @@ accountId: z.string()}),
              'docusign.BillingPayments_GetPayment/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'paymentId': z.string(),
-accountId: z.string(),
-paymentId: z.string()}),
+'paymentId': z.string()}),
                 handler: BillingPayments_GetPayment,
             },
         
@@ -266,24 +257,21 @@ paymentId: z.string()}),
 'include_downgrade_information': z.string(),
 'include_metadata': z.string(),
 'include_successor_plans': z.string(),
-'include_tax_exempt_id': z.string(),
-accountId: z.string()}),
+'include_tax_exempt_id': z.string()}),
                 handler: BillingPlan_GetBillingPlan,
             },
         
 
              'docusign.BillingPlan_GetCreditCardInfo/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: BillingPlan_GetCreditCardInfo,
             },
         
 
              'docusign.BillingPlan_GetDowngradeRequestBillingInfo/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: BillingPlan_GetDowngradeRequestBillingInfo,
             },
         
@@ -292,8 +280,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'exclude_distributor_brand': z.string(),
-'include_logos': z.string(),
-accountId: z.string()}),
+'include_logos': z.string()}),
                 handler: Brands_GetBrands,
             },
         
@@ -303,9 +290,7 @@ accountId: z.string()}),
                   'accountId': z.string(),
 'brandId': z.string(),
 'include_external_references': z.string(),
-'include_logos': z.string(),
-accountId: z.string(),
-brandId: z.string()}),
+'include_logos': z.string()}),
                 handler: Brand_GetBrand,
             },
         
@@ -313,9 +298,7 @@ brandId: z.string()}),
              'docusign.BrandResources_GetBrandResourcesList/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'brandId': z.string(),
-accountId: z.string(),
-brandId: z.string()}),
+'brandId': z.string()}),
                 handler: BrandResources_GetBrandResourcesList,
             },
         
@@ -330,8 +313,7 @@ brandId: z.string()}),
 'start_position': z.string(),
 'status': z.string(),
 'to_date': z.string(),
-'user_id': z.string(),
-accountId: z.string()}),
+'user_id': z.string()}),
                 handler: BulkSendV2Batch_GetBulkSendBatches,
             },
         
@@ -339,9 +321,7 @@ accountId: z.string()}),
              'docusign.BulkSendV2Batch_GetBulkSendBatchStatus/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'bulkSendBatchId': z.string(),
-accountId: z.string(),
-bulkSendBatchId: z.string()}),
+'bulkSendBatchId': z.string()}),
                 handler: BulkSendV2Batch_GetBulkSendBatchStatus,
             },
         
@@ -356,17 +336,14 @@ bulkSendBatchId: z.string()}),
 'order_by': z.string(),
 'search_text': z.string(),
 'start_position': z.string(),
-'status': z.string(),
-accountId: z.string(),
-bulkSendBatchId: z.string()}),
+'status': z.string()}),
                 handler: BulkSendV2Envelopes_GetBulkSendBatchEnvelopes,
             },
         
 
              'docusign.BulkSendV2CRUD_GetBulkSendLists/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: BulkSendV2CRUD_GetBulkSendLists,
             },
         
@@ -374,9 +351,7 @@ accountId: z.string()}),
              'docusign.BulkSendV2CRUD_GetBulkSendList/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'bulkSendListId': z.string(),
-accountId: z.string(),
-bulkSendListId: z.string()}),
+'bulkSendListId': z.string()}),
                 handler: BulkSendV2CRUD_GetBulkSendList,
             },
         
@@ -385,17 +360,14 @@ bulkSendListId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'chunkedUploadId': z.string(),
-'include': z.string(),
-accountId: z.string(),
-chunkedUploadId: z.string()}),
+'include': z.string()}),
                 handler: ChunkedUploads_GetChunkedUpload,
             },
         
 
              'docusign.Connect_GetConnectConfigs/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: Connect_GetConnectConfigs,
             },
         
@@ -404,8 +376,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'from_date': z.string(),
-'to_date': z.string(),
-accountId: z.string()}),
+'to_date': z.string()}),
                 handler: ConnectFailures_GetConnectLogs,
             },
         
@@ -414,8 +385,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'from_date': z.string(),
-'to_date': z.string(),
-accountId: z.string()}),
+'to_date': z.string()}),
                 handler: ConnectLog_GetConnectLogs,
             },
         
@@ -424,17 +394,14 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'logId': z.string(),
-'additional_info': z.string(),
-accountId: z.string(),
-logId: z.string()}),
+'additional_info': z.string()}),
                 handler: ConnectLog_GetConnectLog,
             },
         
 
              'docusign.ConnectOAuthConfig_GetConnectOAuthConfig/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: ConnectOAuthConfig_GetConnectOAuthConfig,
             },
         
@@ -442,9 +409,7 @@ accountId: z.string()}),
              'docusign.Connect_GetConnectConfig/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'connectId': z.string(),
-accountId: z.string(),
-connectId: z.string()}),
+'connectId': z.string()}),
                 handler: Connect_GetConnectConfig,
             },
         
@@ -458,9 +423,7 @@ connectId: z.string()}),
 'email_substring': z.string(),
 'start_position': z.string(),
 'status': z.string(),
-'user_name_substring': z.string(),
-accountId: z.string(),
-connectId: z.string()}),
+'user_name_substring': z.string()}),
                 handler: Connect_GetConnectAllUsers,
             },
         
@@ -474,9 +437,7 @@ connectId: z.string()}),
 'list_included_users': z.string(),
 'start_position': z.string(),
 'status': z.string(),
-'user_name_substring': z.string(),
-accountId: z.string(),
-connectId: z.string()}),
+'user_name_substring': z.string()}),
                 handler: Connect_GetConnectUsers,
             },
         
@@ -484,8 +445,7 @@ connectId: z.string()}),
              'docusign.ConsumerDisclosure_GetConsumerDisclosure/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'langCode': z.string(),
-accountId: z.string()}),
+'langCode': z.string()}),
                 handler: ConsumerDisclosure_GetConsumerDisclosure,
             },
         
@@ -493,9 +453,7 @@ accountId: z.string()}),
              'docusign.ConsumerDisclosure_GetConsumerDisclosureLangCode/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'langCode': z.string(),
-accountId: z.string(),
-langCode: z.string()}),
+'langCode': z.string()}),
                 handler: ConsumerDisclosure_GetConsumerDisclosureLangCode,
             },
         
@@ -504,17 +462,14 @@ langCode: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'contactId': z.string(),
-'cloud_provider': z.string(),
-accountId: z.string(),
-contactId: z.string()}),
+'cloud_provider': z.string()}),
                 handler: Contacts_GetContactById,
             },
         
 
              'docusign.AccountCustomFields_GetAccountCustomFields/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: AccountCustomFields_GetAccountCustomFields,
             },
         
@@ -551,8 +506,7 @@ accountId: z.string()}),
 'transaction_ids': z.string(),
 'user_filter': z.string(),
 'user_id': z.string(),
-'user_name': z.string(),
-accountId: z.string()}),
+'user_name': z.string()}),
                 handler: Envelopes_GetEnvelopes,
             },
         
@@ -561,8 +515,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'count': z.string(),
-'start_position': z.string(),
-accountId: z.string()}),
+'start_position': z.string()}),
                 handler: EnvelopeTransferRules_GetEnvelopeTransferRules,
             },
         
@@ -572,9 +525,7 @@ accountId: z.string()}),
                   'accountId': z.string(),
 'envelopeId': z.string(),
 'advanced_update': z.string(),
-'include': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'include': z.string()}),
                 handler: Envelopes_GetEnvelope,
             },
         
@@ -582,9 +533,7 @@ envelopeId: z.string()}),
              'docusign.Attachments_GetAttachments/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: Attachments_GetAttachments,
             },
         
@@ -592,9 +541,7 @@ envelopeId: z.string()}),
              'docusign.AuditEvents_GetAuditEvents/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: AuditEvents_GetAuditEvents,
             },
         
@@ -602,9 +549,7 @@ envelopeId: z.string()}),
              'docusign.CustomFields_GetCustomFields/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: CustomFields_GetCustomFields,
             },
         
@@ -612,9 +557,7 @@ envelopeId: z.string()}),
              'docusign.DocGenFormFields_GetEnvelopeDocGenFormFields/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: DocGenFormFields_GetEnvelopeDocGenFormFields,
             },
         
@@ -628,9 +571,7 @@ envelopeId: z.string()}),
 'include_metadata': z.string(),
 'include_tabs': z.string(),
 'recipient_id': z.string(),
-'shared_user_id': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'shared_user_id': z.string()}),
                 handler: Documents_GetDocuments,
             },
         
@@ -638,11 +579,8 @@ envelopeId: z.string()}),
              'docusign.DocumentFields_GetDocumentFields/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-documentId: z.string()}),
+'documentId': z.string()}),
                 handler: DocumentFields_GetDocumentFields,
             },
         
@@ -650,11 +588,8 @@ documentId: z.string()}),
              'docusign.ResponsiveHtml_GetEnvelopeDocumentHtmlDefinitions/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-documentId: z.string()}),
+'documentId': z.string()}),
                 handler: ResponsiveHtml_GetEnvelopeDocumentHtmlDefinitions,
             },
         
@@ -662,18 +597,15 @@ documentId: z.string()}),
              'docusign.Pages_GetPageImages/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'envelopeId': z.string(),
+'documentId': z.string(),
 'count': z.string(),
 'dpi': z.string(),
 'max_height': z.string(),
 'max_width': z.string(),
 'nocache': z.string(),
 'show_changes': z.string(),
-'start_position': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-documentId: z.string()}),
+'start_position': z.string()}),
                 handler: Pages_GetPageImages,
             },
         
@@ -681,13 +613,9 @@ documentId: z.string()}),
              'docusign.Tabs_GetPageTabs/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'envelopeId': z.string(),
-'pageNumber': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-documentId: z.string(),
-pageNumber: z.string()}),
+'documentId': z.string(),
+'pageNumber': z.string()}),
                 handler: Tabs_GetPageTabs,
             },
         
@@ -695,13 +623,10 @@ pageNumber: z.string()}),
              'docusign.Tabs_GetDocumentTabs/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'envelopeId': z.string(),
+'documentId': z.string(),
 'include_metadata': z.string(),
-'page_numbers': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-documentId: z.string()}),
+'page_numbers': z.string()}),
                 handler: Tabs_GetDocumentTabs,
             },
         
@@ -709,12 +634,9 @@ documentId: z.string()}),
              'docusign.Templates_GetDocumentTemplates/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'envelopeId': z.string(),
-'include': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-documentId: z.string()}),
+'documentId': z.string(),
+'include': z.string()}),
                 handler: Templates_GetDocumentTemplates,
             },
         
@@ -722,9 +644,7 @@ documentId: z.string()}),
              'docusign.EmailSettings_GetEmailSettings/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: EmailSettings_GetEmailSettings,
             },
         
@@ -732,9 +652,7 @@ envelopeId: z.string()}),
              'docusign.FormData_GetFormData/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: FormData_GetFormData,
             },
         
@@ -742,9 +660,7 @@ envelopeId: z.string()}),
              'docusign.ResponsiveHtml_GetEnvelopeHtmlDefinitions/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: ResponsiveHtml_GetEnvelopeHtmlDefinitions,
             },
         
@@ -752,9 +668,7 @@ envelopeId: z.string()}),
              'docusign.Lock_GetEnvelopeLock/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: Lock_GetEnvelopeLock,
             },
         
@@ -762,9 +676,7 @@ envelopeId: z.string()}),
              'docusign.Notification_GetEnvelopesEnvelopeIdNotification/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: Notification_GetEnvelopesEnvelopeIdNotification,
             },
         
@@ -776,9 +688,7 @@ envelopeId: z.string()}),
 'include_anchor_tab_locations': z.string(),
 'include_extended': z.string(),
 'include_metadata': z.string(),
-'include_tabs': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'include_tabs': z.string()}),
                 handler: Recipients_GetRecipients,
             },
         
@@ -788,10 +698,7 @@ envelopeId: z.string()}),
                   'accountId': z.string(),
 'envelopeId': z.string(),
 'recipientId': z.string(),
-'langCode': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-recipientId: z.string()}),
+'langCode': z.string()}),
                 handler: ConsumerDisclosure_GetConsumerDisclosureEnvelopeIdRecipientId,
             },
         
@@ -800,13 +707,8 @@ recipientId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'envelopeId': z.string(),
-'langCode': z.string(),
 'recipientId': z.string(),
-'langCode': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-recipientId: z.string(),
-langCode: z.string()}),
+'langCode': z.string()}),
                 handler: ConsumerDisclosure_GetConsumerDisclosureEnvelopeIdRecipientIdLangCode,
             },
         
@@ -815,10 +717,7 @@ langCode: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'envelopeId': z.string(),
-'recipientId': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-recipientId: z.string()}),
+'recipientId': z.string()}),
                 handler: Recipients_GetRecipientDocumentVisibility,
             },
         
@@ -827,10 +726,7 @@ recipientId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'envelopeId': z.string(),
-'recipientId': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-recipientId: z.string()}),
+'recipientId': z.string()}),
                 handler: Recipients_GetRecipientSignature,
             },
         
@@ -841,10 +737,7 @@ recipientId: z.string()}),
 'envelopeId': z.string(),
 'recipientId': z.string(),
 'include_anchor_tab_locations': z.string(),
-'include_metadata': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-recipientId: z.string()}),
+'include_metadata': z.string()}),
                 handler: Recipients_GetRecipientTabs,
             },
         
@@ -853,9 +746,7 @@ recipientId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'envelopeId': z.string(),
-'include': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'include': z.string()}),
                 handler: Templates_GetEnvelopeTemplates,
             },
         
@@ -863,9 +754,7 @@ envelopeId: z.string()}),
              'docusign.EnvelopeWorkflowDefinitionV2_GetEnvelopeWorkflowDefinition/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: EnvelopeWorkflowDefinitionV2_GetEnvelopeWorkflowDefinition,
             },
         
@@ -873,9 +762,7 @@ envelopeId: z.string()}),
              'docusign.EnvelopeWorkflowScheduledSending_GetEnvelopeScheduledSendingDefinition/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'envelopeId': z.string(),
-accountId: z.string(),
-envelopeId: z.string()}),
+'envelopeId': z.string()}),
                 handler: EnvelopeWorkflowScheduledSending_GetEnvelopeScheduledSendingDefinition,
             },
         
@@ -884,10 +771,7 @@ envelopeId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'envelopeId': z.string(),
-'workflowStepId': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-workflowStepId: z.string()}),
+'workflowStepId': z.string()}),
                 handler: EnvelopeWorkflowStep_GetEnvelopeWorkflowStepDefinition,
             },
         
@@ -896,18 +780,14 @@ workflowStepId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'envelopeId': z.string(),
-'workflowStepId': z.string(),
-accountId: z.string(),
-envelopeId: z.string(),
-workflowStepId: z.string()}),
+'workflowStepId': z.string()}),
                 handler: EnvelopeWorkflowDelayedRouting_GetEnvelopeDelayedRoutingDefinition,
             },
         
 
              'docusign.FavoriteTemplates_GetFavoriteTemplates/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: FavoriteTemplates_GetFavoriteTemplates,
             },
         
@@ -921,8 +801,7 @@ accountId: z.string()}),
 'start_position': z.string(),
 'sub_folder_depth': z.string(),
 'template': z.string(),
-'user_filter': z.string(),
-accountId: z.string()}),
+'user_filter': z.string()}),
                 handler: Folders_GetFolders,
             },
         
@@ -938,9 +817,7 @@ accountId: z.string()}),
 'search_text': z.string(),
 'start_position': z.string(),
 'status': z.string(),
-'to_date': z.string(),
-accountId: z.string(),
-folderId: z.string()}),
+'to_date': z.string()}),
                 handler: Folders_GetFolderItems,
             },
         
@@ -952,8 +829,7 @@ folderId: z.string()}),
 'group_type': z.string(),
 'include_usercount': z.string(),
 'search_text': z.string(),
-'start_position': z.string(),
-accountId: z.string()}),
+'start_position': z.string()}),
                 handler: Groups_GetGroups,
             },
         
@@ -961,9 +837,7 @@ accountId: z.string()}),
              'docusign.Brands_GetGroupBrands/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'groupId': z.string(),
-accountId: z.string(),
-groupId: z.string()}),
+'groupId': z.string()}),
                 handler: Brands_GetGroupBrands,
             },
         
@@ -973,25 +847,21 @@ groupId: z.string()}),
                   'accountId': z.string(),
 'groupId': z.string(),
 'count': z.string(),
-'start_position': z.string(),
-accountId: z.string(),
-groupId: z.string()}),
+'start_position': z.string()}),
                 handler: Groups_GetGroupUsers,
             },
         
 
              'docusign.AccountIdentityVerification_GetAccountIdentityVerification/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: AccountIdentityVerification_GetAccountIdentityVerification,
             },
         
 
              'docusign.PaymentGatewayAccounts_GetAllPaymentGatewayAccounts/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: PaymentGatewayAccounts_GetAllPaymentGatewayAccounts,
             },
         
@@ -999,8 +869,7 @@ accountId: z.string()}),
              'docusign.PermissionProfiles_GetPermissionProfiles/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'include': z.string(),
-accountId: z.string()}),
+'include': z.string()}),
                 handler: PermissionProfiles_GetPermissionProfiles,
             },
         
@@ -1009,9 +878,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'permissionProfileId': z.string(),
-'include': z.string(),
-accountId: z.string(),
-permissionProfileId: z.string()}),
+'include': z.string()}),
                 handler: PermissionProfiles_GetPermissionProfile,
             },
         
@@ -1024,8 +891,7 @@ permissionProfileId: z.string()}),
 'order_by': z.string(),
 'search_fields': z.string(),
 'search_text': z.string(),
-'to_date': z.string(),
-accountId: z.string()}),
+'to_date': z.string()}),
                 handler: PowerForms_GetPowerFormsList,
             },
         
@@ -1033,8 +899,7 @@ accountId: z.string()}),
              'docusign.PowerForms_GetPowerFormsSenders/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'start_position': z.string(),
-accountId: z.string()}),
+'start_position': z.string()}),
                 handler: PowerForms_GetPowerFormsSenders,
             },
         
@@ -1042,9 +907,7 @@ accountId: z.string()}),
              'docusign.PowerForms_GetPowerForm/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'powerFormId': z.string(),
-accountId: z.string(),
-powerFormId: z.string()}),
+'powerFormId': z.string()}),
                 handler: PowerForms_GetPowerForm,
             },
         
@@ -1055,9 +918,7 @@ powerFormId: z.string()}),
 'powerFormId': z.string(),
 'data_layout': z.string(),
 'from_date': z.string(),
-'to_date': z.string(),
-accountId: z.string(),
-powerFormId: z.string()}),
+'to_date': z.string()}),
                 handler: PowerForms_GetPowerFormFormData,
             },
         
@@ -1065,16 +926,14 @@ powerFormId: z.string()}),
              'docusign.RecipientNames_GetRecipientNames/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'email': z.string(),
-accountId: z.string()}),
+'email': z.string()}),
                 handler: RecipientNames_GetRecipientNames,
             },
         
 
              'docusign.AccountSignatureProviders_GetSealProviders/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: AccountSignatureProviders_GetSealProviders,
             },
         
@@ -1090,17 +949,14 @@ accountId: z.string()}),
 'order': z.string(),
 'order_by': z.string(),
 'start_position': z.string(),
-'to_date': z.string(),
-accountId: z.string(),
-searchFolderId: z.string()}),
+'to_date': z.string()}),
                 handler: SearchFolders_GetSearchFolderContents,
             },
         
 
              'docusign.Settings_GetSettings/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: Settings_GetSettings,
             },
         
@@ -1109,8 +965,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'count': z.string(),
-'start_position': z.string(),
-accountId: z.string()}),
+'start_position': z.string()}),
                 handler: BCCEmailArchive_GetBCCEmailArchiveList,
             },
         
@@ -1120,49 +975,42 @@ accountId: z.string()}),
                   'accountId': z.string(),
 'bccEmailArchiveId': z.string(),
 'count': z.string(),
-'start_position': z.string(),
-accountId: z.string(),
-bccEmailArchiveId: z.string()}),
+'start_position': z.string()}),
                 handler: BCCEmailArchive_GetBCCEmailArchiveHistoryList,
             },
         
 
              'docusign.ENoteConfiguration_GetENoteConfiguration/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: ENoteConfiguration_GetENoteConfiguration,
             },
         
 
              'docusign.EnvelopePurgeConfiguration_GetEnvelopePurgeConfiguration/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: EnvelopePurgeConfiguration_GetEnvelopePurgeConfiguration,
             },
         
 
              'docusign.NotificationDefaults_GetNotificationDefaults/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: NotificationDefaults_GetNotificationDefaults,
             },
         
 
              'docusign.AccountPasswordRules_GetAccountPasswordRules/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: AccountPasswordRules_GetAccountPasswordRules,
             },
         
 
              'docusign.TabSettings_GetTabSettings/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: TabSettings_GetTabSettings,
             },
         
@@ -1177,16 +1025,14 @@ accountId: z.string()}),
 'search_text': z.string(),
 'shared': z.string(),
 'start_position': z.string(),
-'user_ids': z.string(),
-accountId: z.string()}),
+'user_ids': z.string()}),
                 handler: SharedAccess_GetSharedAccess,
             },
         
 
              'docusign.AccountSignatureProviders_GetSignatureProviders/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: AccountSignatureProviders_GetSignatureProviders,
             },
         
@@ -1196,8 +1042,7 @@ accountId: z.string()}),
                   'accountId': z.string(),
 'stamp_format': z.string(),
 'stamp_name': z.string(),
-'stamp_type': z.string(),
-accountId: z.string()}),
+'stamp_type': z.string()}),
                 handler: AccountSignatures_GetAccountSignatures,
             },
         
@@ -1205,9 +1050,7 @@ accountId: z.string()}),
              'docusign.AccountSignatures_GetAccountSignature/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'signatureId': z.string(),
-accountId: z.string(),
-signatureId: z.string()}),
+'signatureId': z.string()}),
                 handler: AccountSignatures_GetAccountSignature,
             },
         
@@ -1216,8 +1059,7 @@ signatureId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'group_type': z.string(),
-'include_users': z.string(),
-accountId: z.string()}),
+'include_users': z.string()}),
                 handler: SigningGroups_GetSigningGroups,
             },
         
@@ -1225,9 +1067,7 @@ accountId: z.string()}),
              'docusign.SigningGroups_GetSigningGroup/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'signingGroupId': z.string(),
-accountId: z.string(),
-signingGroupId: z.string()}),
+'signingGroupId': z.string()}),
                 handler: SigningGroups_GetSigningGroup,
             },
         
@@ -1235,17 +1075,14 @@ signingGroupId: z.string()}),
              'docusign.SigningGroups_GetSigningGroupUsers/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'signingGroupId': z.string(),
-accountId: z.string(),
-signingGroupId: z.string()}),
+'signingGroupId': z.string()}),
                 handler: SigningGroups_GetSigningGroupUsers,
             },
         
 
              'docusign.SupportedLanguages_GetSupportedLanguages/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: SupportedLanguages_GetSupportedLanguages,
             },
         
@@ -1253,8 +1090,7 @@ accountId: z.string()}),
              'docusign.Tabs_GetTabDefinitions/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'custom_tab_only': z.string(),
-accountId: z.string()}),
+'custom_tab_only': z.string()}),
                 handler: Tabs_GetTabDefinitions,
             },
         
@@ -1262,9 +1098,7 @@ accountId: z.string()}),
              'docusign.Tab_GetCustomTab/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'customTabId': z.string(),
-accountId: z.string(),
-customTabId: z.string()}),
+'customTabId': z.string()}),
                 handler: Tab_GetCustomTab,
             },
         
@@ -1294,8 +1128,7 @@ customTabId: z.string()}),
 'used_from_date': z.string(),
 'used_to_date': z.string(),
 'user_filter': z.string(),
-'user_id': z.string(),
-accountId: z.string()}),
+'user_id': z.string()}),
                 handler: Templates_GetTemplates,
             },
         
@@ -1304,9 +1137,7 @@ accountId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'templateId': z.string(),
-'include': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'include': z.string()}),
                 handler: Templates_GetTemplate,
             },
         
@@ -1314,9 +1145,7 @@ templateId: z.string()}),
              'docusign.CustomFields_GetTemplateCustomFields/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'templateId': z.string()}),
                 handler: CustomFields_GetTemplateCustomFields,
             },
         
@@ -1325,9 +1154,7 @@ templateId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'templateId': z.string(),
-'include_tabs': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'include_tabs': z.string()}),
                 handler: Documents_GetTemplateDocuments,
             },
         
@@ -1335,11 +1162,8 @@ templateId: z.string()}),
              'docusign.DocumentFields_GetTemplateDocumentFields/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-documentId: z.string()}),
+'documentId': z.string()}),
                 handler: DocumentFields_GetTemplateDocumentFields,
             },
         
@@ -1347,11 +1171,8 @@ documentId: z.string()}),
              'docusign.ResponsiveHtml_GetTemplateDocumentHtmlDefinitions/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-documentId: z.string()}),
+'documentId': z.string()}),
                 handler: ResponsiveHtml_GetTemplateDocumentHtmlDefinitions,
             },
         
@@ -1359,18 +1180,15 @@ documentId: z.string()}),
              'docusign.Pages_GetTemplatePageImages/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'templateId': z.string(),
+'documentId': z.string(),
 'count': z.string(),
 'dpi': z.string(),
 'max_height': z.string(),
 'max_width': z.string(),
 'nocache': z.string(),
 'show_changes': z.string(),
-'start_position': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-documentId: z.string()}),
+'start_position': z.string()}),
                 handler: Pages_GetTemplatePageImages,
             },
         
@@ -1378,13 +1196,9 @@ documentId: z.string()}),
              'docusign.Tabs_GetTemplatePageTabs/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
-'pageNumber': z.string(),
 'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-documentId: z.string(),
-pageNumber: z.string()}),
+'documentId': z.string(),
+'pageNumber': z.string()}),
                 handler: Tabs_GetTemplatePageTabs,
             },
         
@@ -1392,12 +1206,9 @@ pageNumber: z.string()}),
              'docusign.Tabs_GetTemplateDocumentTabs/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'documentId': z.string(),
 'templateId': z.string(),
-'page_numbers': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-documentId: z.string()}),
+'documentId': z.string(),
+'page_numbers': z.string()}),
                 handler: Tabs_GetTemplateDocumentTabs,
             },
         
@@ -1405,9 +1216,7 @@ documentId: z.string()}),
              'docusign.ResponsiveHtml_GetTemplateHtmlDefinitions/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'templateId': z.string()}),
                 handler: ResponsiveHtml_GetTemplateHtmlDefinitions,
             },
         
@@ -1415,9 +1224,7 @@ templateId: z.string()}),
              'docusign.Lock_GetTemplateLock/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'templateId': z.string()}),
                 handler: Lock_GetTemplateLock,
             },
         
@@ -1425,9 +1232,7 @@ templateId: z.string()}),
              'docusign.Notification_GetTemplatesTemplateIdNotification/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'templateId': z.string()}),
                 handler: Notification_GetTemplatesTemplateIdNotification,
             },
         
@@ -1438,9 +1243,7 @@ templateId: z.string()}),
 'templateId': z.string(),
 'include_anchor_tab_locations': z.string(),
 'include_extended': z.string(),
-'include_tabs': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'include_tabs': z.string()}),
                 handler: Recipients_GetTemplateRecipients,
             },
         
@@ -1448,11 +1251,8 @@ templateId: z.string()}),
              'docusign.Recipients_GetTemplateRecipientDocumentVisibility/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'recipientId': z.string(),
 'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-recipientId: z.string()}),
+'recipientId': z.string()}),
                 handler: Recipients_GetTemplateRecipientDocumentVisibility,
             },
         
@@ -1460,13 +1260,10 @@ recipientId: z.string()}),
              'docusign.Recipients_GetTemplateRecipientTabs/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'recipientId': z.string(),
 'templateId': z.string(),
+'recipientId': z.string(),
 'include_anchor_tab_locations': z.string(),
-'include_metadata': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-recipientId: z.string()}),
+'include_metadata': z.string()}),
                 handler: Recipients_GetTemplateRecipientTabs,
             },
         
@@ -1474,9 +1271,7 @@ recipientId: z.string()}),
              'docusign.TemplateWorkflowDefinition_GetTemplateWorkflowDefinition/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'templateId': z.string()}),
                 handler: TemplateWorkflowDefinition_GetTemplateWorkflowDefinition,
             },
         
@@ -1484,9 +1279,7 @@ templateId: z.string()}),
              'docusign.TemplateWorkflowScheduledSending_GetTemplateScheduledSendingDefinition/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'templateId': z.string(),
-accountId: z.string(),
-templateId: z.string()}),
+'templateId': z.string()}),
                 handler: TemplateWorkflowScheduledSending_GetTemplateScheduledSendingDefinition,
             },
         
@@ -1495,10 +1288,7 @@ templateId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'templateId': z.string(),
-'workflowStepId': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-workflowStepId: z.string()}),
+'workflowStepId': z.string()}),
                 handler: TemplateWorkflowStep_GetTemplateWorkflowStepDefinition,
             },
         
@@ -1507,18 +1297,14 @@ workflowStepId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'templateId': z.string(),
-'workflowStepId': z.string(),
-accountId: z.string(),
-templateId: z.string(),
-workflowStepId: z.string()}),
+'workflowStepId': z.string()}),
                 handler: TemplateWorkflowDelayedRouting_GetTemplateDelayedRoutingDefinition,
             },
         
 
              'docusign.UnsupportedFileTypes_GetUnsupportedFileTypes/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: UnsupportedFileTypes_GetUnsupportedFileTypes,
             },
         
@@ -1538,8 +1324,7 @@ accountId: z.string()}),
 'not_group_id': z.string(),
 'start_position': z.string(),
 'status': z.string(),
-'user_name_substring': z.string(),
-accountId: z.string()}),
+'user_name_substring': z.string()}),
                 handler: Users_GetUsers,
             },
         
@@ -1549,9 +1334,7 @@ accountId: z.string()}),
                   'accountId': z.string(),
 'userId': z.string(),
 'additional_info': z.string(),
-'email': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'email': z.string()}),
                 handler: User_GetUser,
             },
         
@@ -1559,11 +1342,8 @@ userId: z.string()}),
              'docusign.UserAuthorization_GetUserAuthorization/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'authorizationId': z.string(),
 'userId': z.string(),
-accountId: z.string(),
-userId: z.string(),
-authorizationId: z.string()}),
+'authorizationId': z.string()}),
                 handler: UserAuthorization_GetUserAuthorization,
             },
         
@@ -1577,9 +1357,7 @@ authorizationId: z.string()}),
 'email_substring': z.string(),
 'permissions': z.string(),
 'start_position': z.string(),
-'user_name_substring': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'user_name_substring': z.string()}),
                 handler: UserAuthorizations_GetPrincipalUserAuthorizations,
             },
         
@@ -1593,9 +1371,7 @@ userId: z.string()}),
 'email_substring': z.string(),
 'permissions': z.string(),
 'start_position': z.string(),
-'user_name_substring': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'user_name_substring': z.string()}),
                 handler: UserAgentAuthorizations_GetAgentUserAuthorizations,
             },
         
@@ -1604,9 +1380,7 @@ userId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'userId': z.string(),
-'redirectUrl': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'redirectUrl': z.string()}),
                 handler: CloudStorage_GetCloudStorageProviders,
             },
         
@@ -1614,12 +1388,9 @@ userId: z.string()}),
              'docusign.CloudStorage_GetCloudStorage/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'serviceId': z.string(),
 'userId': z.string(),
-'redirectUrl': z.string(),
-accountId: z.string(),
-userId: z.string(),
-serviceId: z.string()}),
+'serviceId': z.string(),
+'redirectUrl': z.string()}),
                 handler: CloudStorage_GetCloudStorage,
             },
         
@@ -1627,17 +1398,14 @@ serviceId: z.string()}),
              'docusign.CloudStorageFolder_GetCloudStorageFolderAll/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'serviceId': z.string(),
 'userId': z.string(),
+'serviceId': z.string(),
 'cloud_storage_folder_path': z.string(),
 'count': z.string(),
 'order': z.string(),
 'order_by': z.string(),
 'search_text': z.string(),
-'start_position': z.string(),
-accountId: z.string(),
-userId: z.string(),
-serviceId: z.string()}),
+'start_position': z.string()}),
                 handler: CloudStorageFolder_GetCloudStorageFolderAll,
             },
         
@@ -1645,20 +1413,16 @@ serviceId: z.string()}),
              'docusign.CloudStorageFolder_GetCloudStorageFolder/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'folderId': z.string(),
-'serviceId': z.string(),
 'userId': z.string(),
+'serviceId': z.string(),
+'folderId': z.string(),
 'cloud_storage_folder_path': z.string(),
 'cloud_storage_folderid_plain': z.string(),
 'count': z.string(),
 'order': z.string(),
 'order_by': z.string(),
 'search_text': z.string(),
-'start_position': z.string(),
-accountId: z.string(),
-userId: z.string(),
-serviceId: z.string(),
-folderId: z.string()}),
+'start_position': z.string()}),
                 handler: CloudStorageFolder_GetCloudStorageFolder,
             },
         
@@ -1666,9 +1430,7 @@ folderId: z.string()}),
              'docusign.UserCustomSettings_GetCustomSettings/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'userId': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'userId': z.string()}),
                 handler: UserCustomSettings_GetCustomSettings,
             },
         
@@ -1676,9 +1438,7 @@ userId: z.string()}),
              'docusign.UserProfile_GetProfile/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'userId': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'userId': z.string()}),
                 handler: UserProfile_GetProfile,
             },
         
@@ -1686,9 +1446,7 @@ userId: z.string()}),
              'docusign.UserSettings_GetUserSettings/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'userId': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'userId': z.string()}),
                 handler: UserSettings_GetUserSettings,
             },
         
@@ -1697,9 +1455,7 @@ userId: z.string()}),
                 schema: z.object({
                   'accountId': z.string(),
 'userId': z.string(),
-'stamp_type': z.string(),
-accountId: z.string(),
-userId: z.string()}),
+'stamp_type': z.string()}),
                 handler: UserSignatures_GetUserSignatures,
             },
         
@@ -1707,27 +1463,22 @@ userId: z.string()}),
              'docusign.UserSignatures_GetUserSignature/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'signatureId': z.string(),
 'userId': z.string(),
-accountId: z.string(),
-userId: z.string(),
-signatureId: z.string()}),
+'signatureId': z.string()}),
                 handler: UserSignatures_GetUserSignature,
             },
         
 
              'docusign.Watermark_GetWatermark/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: Watermark_GetWatermark,
             },
         
 
              'docusign.Workspace_GetWorkspaces/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
-accountId: z.string()}),
+                  'accountId': z.string()}),
                 handler: Workspace_GetWorkspaces,
             },
         
@@ -1735,9 +1486,7 @@ accountId: z.string()}),
              'docusign.Workspace_GetWorkspace/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'workspaceId': z.string(),
-accountId: z.string(),
-workspaceId: z.string()}),
+'workspaceId': z.string()}),
                 handler: Workspace_GetWorkspace,
             },
         
@@ -1745,18 +1494,15 @@ workspaceId: z.string()}),
              'docusign.WorkspaceFolder_GetWorkspaceFolder/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'folderId': z.string(),
 'workspaceId': z.string(),
+'folderId': z.string(),
 'count': z.string(),
 'include_files': z.string(),
 'include_sub_folders': z.string(),
 'include_thumbnails': z.string(),
 'include_user_detail': z.string(),
 'start_position': z.string(),
-'workspace_user_id': z.string(),
-accountId: z.string(),
-workspaceId: z.string(),
-folderId: z.string()}),
+'workspace_user_id': z.string()}),
                 handler: WorkspaceFolder_GetWorkspaceFolder,
             },
         
@@ -1764,18 +1510,14 @@ folderId: z.string()}),
              'docusign.WorkspaceFilePages_GetWorkspaceFilePages/sync': {
                 schema: z.object({
                   'accountId': z.string(),
-'fileId': z.string(),
-'folderId': z.string(),
 'workspaceId': z.string(),
+'folderId': z.string(),
+'fileId': z.string(),
 'count': z.string(),
 'dpi': z.string(),
 'max_height': z.string(),
 'max_width': z.string(),
-'start_position': z.string(),
-accountId: z.string(),
-workspaceId: z.string(),
-folderId: z.string(),
-fileId: z.string()}),
+'start_position': z.string()}),
                 handler: WorkspaceFilePages_GetWorkspaceFilePages,
             },
         
@@ -1788,8 +1530,7 @@ fileId: z.string()}),
 
              'docusign.BillingPlans_GetBillingPlan/sync': {
                 schema: z.object({
-                  'billingPlanId': z.string(),
-billingPlanId: z.string()}),
+                  'billingPlanId': z.string()}),
                 handler: BillingPlans_GetBillingPlan,
             },
         
@@ -1818,8 +1559,7 @@ billingPlanId: z.string()}),
 
              'docusign.NotaryJurisdictions_GetNotaryJurisdiction/sync': {
                 schema: z.object({
-                  'jurisdictionId': z.string(),
-jurisdictionId: z.string()}),
+                  'jurisdictionId': z.string()}),
                 handler: NotaryJurisdictions_GetNotaryJurisdiction,
             },
         

@@ -80,7 +80,7 @@ function buildSyncFunc({ name, paths, schemas }) {
       const apiParams = extractParams(path, path);
 
       const apiParamsZod = Object.entries(apiParams || {}).map(([k, v]) => {
-        return `${k}: z.string()`;
+        return `'${k}': z.string()`;
       });
 
       // console.log(apiParams, params)
@@ -101,7 +101,7 @@ function buildSyncFunc({ name, paths, schemas }) {
           })
           .filter(Boolean) || [];
 
-      const totalZodParams = [...zodParams, ...apiParamsZod];
+      const totalZodParams = Array.from(new Set([...apiParamsZod, ...zodParams]));
 
       const queryParams =
         params?.map(p => {

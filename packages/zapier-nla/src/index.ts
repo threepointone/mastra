@@ -32,8 +32,7 @@ export class Zapier-nlaIntegration extends Integration {
     this.events = {
              'zapier-nla._execution_log_endpoint/sync': {
                 schema: z.object({
-                  'execution_log_id': z.string(),
-execution_log_id: z.string()}),
+                  'execution_log_id': z.string()}),
                 handler: _execution_log_endpoint,
             },
         

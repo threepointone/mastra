@@ -108,16 +108,14 @@ export class SquareupIntegration extends Integration {
     this.events = {
              'squareup.RetrieveEmployee/sync': {
                 schema: z.object({
-                  'employee_id': z.string(),
-employee_id: z.string()}),
+                  'employee_id': z.string()}),
                 handler: RetrieveEmployee,
             },
         
 
              'squareup.RetrieveEmployeeRole/sync': {
                 schema: z.object({
-                  'role_id': z.string(),
-role_id: z.string()}),
+                  'role_id': z.string()}),
                 handler: RetrieveEmployeeRole,
             },
         
@@ -125,9 +123,7 @@ role_id: z.string()}),
              'squareup.RetrieveOrder/sync': {
                 schema: z.object({
                   'location_id': z.string(),
-'order_id': z.string(),
-location_id: z.string(),
-order_id: z.string()}),
+'order_id': z.string()}),
                 handler: RetrieveOrder,
             },
         
@@ -135,9 +131,7 @@ order_id: z.string()}),
              'squareup.RetrievePayment/sync': {
                 schema: z.object({
                   'location_id': z.string(),
-'payment_id': z.string(),
-location_id: z.string(),
-payment_id: z.string()}),
+'payment_id': z.string()}),
                 handler: RetrievePayment,
             },
         
@@ -145,9 +139,7 @@ payment_id: z.string()}),
              'squareup.RetrieveSettlement/sync': {
                 schema: z.object({
                   'location_id': z.string(),
-'settlement_id': z.string(),
-location_id: z.string(),
-settlement_id: z.string()}),
+'settlement_id': z.string()}),
                 handler: RetrieveSettlement,
             },
         
@@ -163,16 +155,14 @@ settlement_id: z.string()}),
 
              'squareup.GetBankAccountByV1Id/sync': {
                 schema: z.object({
-                  'v1_bank_account_id': z.string(),
-v1_bank_account_id: z.string()}),
+                  'v1_bank_account_id': z.string()}),
                 handler: GetBankAccountByV1Id,
             },
         
 
              'squareup.GetBankAccount/sync': {
                 schema: z.object({
-                  'bank_account_id': z.string(),
-bank_account_id: z.string()}),
+                  'bank_account_id': z.string()}),
                 handler: GetBankAccount,
             },
         
@@ -195,16 +185,14 @@ bank_account_id: z.string()}),
 
              'squareup.RetrieveTeamMemberBookingProfile/sync': {
                 schema: z.object({
-                  'team_member_id': z.string(),
-team_member_id: z.string()}),
+                  'team_member_id': z.string()}),
                 handler: RetrieveTeamMemberBookingProfile,
             },
         
 
              'squareup.RetrieveBooking/sync': {
                 schema: z.object({
-                  'booking_id': z.string(),
-booking_id: z.string()}),
+                  'booking_id': z.string()}),
                 handler: RetrieveBooking,
             },
         
@@ -222,8 +210,7 @@ booking_id: z.string()}),
 
              'squareup.RetrieveCard/sync': {
                 schema: z.object({
-                  'card_id': z.string(),
-card_id: z.string()}),
+                  'card_id': z.string()}),
                 handler: RetrieveCard,
             },
         
@@ -242,20 +229,18 @@ card_id: z.string()}),
 
              'squareup.RetrieveCashDrawerShift/sync': {
                 schema: z.object({
-                  'location_id': z.string(),
-'shift_id': z.string(),
-shift_id: z.string()}),
+                  'shift_id': z.string(),
+'location_id': z.string()}),
                 handler: RetrieveCashDrawerShift,
             },
         
 
              'squareup.ListCashDrawerShiftEvents/sync': {
                 schema: z.object({
-                  'location_id': z.string(),
-'shift_id': z.string(),
+                  'shift_id': z.string(),
+'location_id': z.string(),
 'limit': z.number(),
-'cursor': z.string(),
-shift_id: z.string()}),
+'cursor': z.string()}),
                 handler: ListCashDrawerShiftEvents,
             },
         
@@ -279,8 +264,7 @@ shift_id: z.string()}),
                 schema: z.object({
                   'object_id': z.string(),
 'include_related_objects': z.boolean(),
-'catalog_version': z.number(),
-object_id: z.string()}),
+'catalog_version': z.number()}),
                 handler: RetrieveCatalogObject,
             },
         
@@ -305,8 +289,7 @@ object_id: z.string()}),
 
              'squareup.RetrieveCustomerGroup/sync': {
                 schema: z.object({
-                  'group_id': z.string(),
-group_id: z.string()}),
+                  'group_id': z.string()}),
                 handler: RetrieveCustomerGroup,
             },
         
@@ -321,16 +304,14 @@ group_id: z.string()}),
 
              'squareup.RetrieveCustomerSegment/sync': {
                 schema: z.object({
-                  'segment_id': z.string(),
-segment_id: z.string()}),
+                  'segment_id': z.string()}),
                 handler: RetrieveCustomerSegment,
             },
         
 
              'squareup.RetrieveCustomer/sync': {
                 schema: z.object({
-                  'customer_id': z.string(),
-customer_id: z.string()}),
+                  'customer_id': z.string()}),
                 handler: RetrieveCustomer,
             },
         
@@ -347,8 +328,7 @@ customer_id: z.string()}),
 
              'squareup.GetDeviceCode/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: GetDeviceCode,
             },
         
@@ -364,8 +344,7 @@ id: z.string()}),
 
              'squareup.RetrieveDispute/sync': {
                 schema: z.object({
-                  'dispute_id': z.string(),
-dispute_id: z.string()}),
+                  'dispute_id': z.string()}),
                 handler: RetrieveDispute,
             },
         
@@ -373,8 +352,7 @@ dispute_id: z.string()}),
              'squareup.ListDisputeEvidence/sync': {
                 schema: z.object({
                   'dispute_id': z.string(),
-'cursor': z.string(),
-dispute_id: z.string()}),
+'cursor': z.string()}),
                 handler: ListDisputeEvidence,
             },
         
@@ -382,9 +360,7 @@ dispute_id: z.string()}),
              'squareup.RetrieveDisputeEvidence/sync': {
                 schema: z.object({
                   'dispute_id': z.string(),
-'evidence_id': z.string(),
-dispute_id: z.string(),
-evidence_id: z.string()}),
+'evidence_id': z.string()}),
                 handler: RetrieveDisputeEvidence,
             },
         
@@ -401,8 +377,7 @@ evidence_id: z.string()}),
 
              'squareup.RetrieveEmployeeResponse/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: RetrieveEmployeeResponse,
             },
         
@@ -434,48 +409,42 @@ id: z.string()}),
 
              'squareup.RetrieveGiftCard/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: RetrieveGiftCard,
             },
         
 
              'squareup.DeprecatedRetrieveInventoryAdjustment/sync': {
                 schema: z.object({
-                  'adjustment_id': z.string(),
-adjustment_id: z.string()}),
+                  'adjustment_id': z.string()}),
                 handler: DeprecatedRetrieveInventoryAdjustment,
             },
         
 
              'squareup.RetrieveInventoryAdjustment/sync': {
                 schema: z.object({
-                  'adjustment_id': z.string(),
-adjustment_id: z.string()}),
+                  'adjustment_id': z.string()}),
                 handler: RetrieveInventoryAdjustment,
             },
         
 
              'squareup.DeprecatedRetrieveInventoryPhysicalCount/sync': {
                 schema: z.object({
-                  'physical_count_id': z.string(),
-physical_count_id: z.string()}),
+                  'physical_count_id': z.string()}),
                 handler: DeprecatedRetrieveInventoryPhysicalCount,
             },
         
 
              'squareup.RetrieveInventoryPhysicalCount/sync': {
                 schema: z.object({
-                  'physical_count_id': z.string(),
-physical_count_id: z.string()}),
+                  'physical_count_id': z.string()}),
                 handler: RetrieveInventoryPhysicalCount,
             },
         
 
              'squareup.RetrieveInventoryTransfer/sync': {
                 schema: z.object({
-                  'transfer_id': z.string(),
-transfer_id: z.string()}),
+                  'transfer_id': z.string()}),
                 handler: RetrieveInventoryTransfer,
             },
         
@@ -484,8 +453,7 @@ transfer_id: z.string()}),
                 schema: z.object({
                   'catalog_object_id': z.string(),
 'location_ids': z.string(),
-'cursor': z.string(),
-catalog_object_id: z.string()}),
+'cursor': z.string()}),
                 handler: RetrieveInventoryCount,
             },
         
@@ -494,8 +462,7 @@ catalog_object_id: z.string()}),
                 schema: z.object({
                   'catalog_object_id': z.string(),
 'location_ids': z.string(),
-'cursor': z.string(),
-catalog_object_id: z.string()}),
+'cursor': z.string()}),
                 handler: RetrieveInventoryChanges,
             },
         
@@ -511,8 +478,7 @@ catalog_object_id: z.string()}),
 
              'squareup.GetInvoice/sync': {
                 schema: z.object({
-                  'invoice_id': z.string(),
-invoice_id: z.string()}),
+                  'invoice_id': z.string()}),
                 handler: GetInvoice,
             },
         
@@ -528,8 +494,7 @@ invoice_id: z.string()}),
 
              'squareup.GetBreakType/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: GetBreakType,
             },
         
@@ -545,16 +510,14 @@ id: z.string()}),
 
              'squareup.GetEmployeeWage/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: GetEmployeeWage,
             },
         
 
              'squareup.GetShift/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: GetShift,
             },
         
@@ -570,8 +533,7 @@ id: z.string()}),
 
              'squareup.GetTeamMemberWage/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: GetTeamMemberWage,
             },
         
@@ -592,8 +554,7 @@ id: z.string()}),
 
              'squareup.RetrieveLocation/sync': {
                 schema: z.object({
-                  'location_id': z.string(),
-location_id: z.string()}),
+                  'location_id': z.string()}),
                 handler: RetrieveLocation,
             },
         
@@ -604,8 +565,7 @@ location_id: z.string()}),
 'begin_time': z.string(),
 'end_time': z.string(),
 'sort_order': z.string(),
-'cursor': z.string(),
-location_id: z.string()}),
+'cursor': z.string()}),
                 handler: ListRefundsResponse,
             },
         
@@ -616,8 +576,7 @@ location_id: z.string()}),
 'begin_time': z.string(),
 'end_time': z.string(),
 'sort_order': z.string(),
-'cursor': z.string(),
-location_id: z.string()}),
+'cursor': z.string()}),
                 handler: ListTransactions,
             },
         
@@ -625,17 +584,14 @@ location_id: z.string()}),
              'squareup.RetrieveTransaction/sync': {
                 schema: z.object({
                   'location_id': z.string(),
-'transaction_id': z.string(),
-location_id: z.string(),
-transaction_id: z.string()}),
+'transaction_id': z.string()}),
                 handler: RetrieveTransaction,
             },
         
 
              'squareup.RetrieveLoyaltyAccount/sync': {
                 schema: z.object({
-                  'account_id': z.string(),
-account_id: z.string()}),
+                  'account_id': z.string()}),
                 handler: RetrieveLoyaltyAccount,
             },
         
@@ -648,16 +604,14 @@ account_id: z.string()}),
 
              'squareup.RetrieveLoyaltyProgram/sync': {
                 schema: z.object({
-                  'program_id': z.string(),
-program_id: z.string()}),
+                  'program_id': z.string()}),
                 handler: RetrieveLoyaltyProgram,
             },
         
 
              'squareup.RetrieveLoyaltyReward/sync': {
                 schema: z.object({
-                  'reward_id': z.string(),
-reward_id: z.string()}),
+                  'reward_id': z.string()}),
                 handler: RetrieveLoyaltyReward,
             },
         
@@ -671,16 +625,14 @@ reward_id: z.string()}),
 
              'squareup.RetrieveMerchant/sync': {
                 schema: z.object({
-                  'merchant_id': z.string(),
-merchant_id: z.string()}),
+                  'merchant_id': z.string()}),
                 handler: RetrieveMerchant,
             },
         
 
              'squareup.RetrieveOrderResponse/sync': {
                 schema: z.object({
-                  'order_id': z.string(),
-order_id: z.string()}),
+                  'order_id': z.string()}),
                 handler: RetrieveOrderResponse,
             },
         
@@ -702,8 +654,7 @@ order_id: z.string()}),
 
              'squareup.GetPayment/sync': {
                 schema: z.object({
-                  'payment_id': z.string(),
-payment_id: z.string()}),
+                  'payment_id': z.string()}),
                 handler: GetPayment,
             },
         
@@ -724,8 +675,7 @@ payment_id: z.string()}),
 
              'squareup.GetPaymentRefund/sync': {
                 schema: z.object({
-                  'refund_id': z.string(),
-refund_id: z.string()}),
+                  'refund_id': z.string()}),
                 handler: GetPaymentRefund,
             },
         
@@ -738,16 +688,14 @@ refund_id: z.string()}),
 
              'squareup.RetrieveSnippet/sync': {
                 schema: z.object({
-                  'site_id': z.string(),
-site_id: z.string()}),
+                  'site_id': z.string()}),
                 handler: RetrieveSnippet,
             },
         
 
              'squareup.RetrieveSubscription/sync': {
                 schema: z.object({
-                  'subscription_id': z.string(),
-subscription_id: z.string()}),
+                  'subscription_id': z.string()}),
                 handler: RetrieveSubscription,
             },
         
@@ -756,40 +704,35 @@ subscription_id: z.string()}),
                 schema: z.object({
                   'subscription_id': z.string(),
 'cursor': z.string(),
-'limit': z.number(),
-subscription_id: z.string()}),
+'limit': z.number()}),
                 handler: ListSubscriptionEvents,
             },
         
 
              'squareup.RetrieveTeamMember/sync': {
                 schema: z.object({
-                  'team_member_id': z.string(),
-team_member_id: z.string()}),
+                  'team_member_id': z.string()}),
                 handler: RetrieveTeamMember,
             },
         
 
              'squareup.RetrieveWageSetting/sync': {
                 schema: z.object({
-                  'team_member_id': z.string(),
-team_member_id: z.string()}),
+                  'team_member_id': z.string()}),
                 handler: RetrieveWageSetting,
             },
         
 
              'squareup.GetTerminalCheckout/sync': {
                 schema: z.object({
-                  'checkout_id': z.string(),
-checkout_id: z.string()}),
+                  'checkout_id': z.string()}),
                 handler: GetTerminalCheckout,
             },
         
 
              'squareup.GetTerminalRefund/sync': {
                 schema: z.object({
-                  'terminal_refund_id': z.string(),
-terminal_refund_id: z.string()}),
+                  'terminal_refund_id': z.string()}),
                 handler: GetTerminalRefund,
             },
         }

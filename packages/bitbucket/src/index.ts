@@ -167,15 +167,15 @@ export class BitbucketIntegration extends Integration {
 
              'bitbucket.paginated_hook_events/sync': {
                 schema: z.object({
-                  subject_type: z.string()}),
+                  'subject_type': z.string()}),
                 handler: paginated_hook_events,
             },
         
 
              'bitbucket.paginated_pullrequests/sync': {
                 schema: z.object({
-                  'state': z.string(),
-selected_user: z.string()}),
+                  'selected_user': z.string(),
+'state': z.string()}),
                 handler: paginated_pullrequests,
             },
         
@@ -192,83 +192,83 @@ selected_user: z.string()}),
 
              'bitbucket.paginated_repositories/sync': {
                 schema: z.object({
-                  'role': z.string(),
+                  'workspace': z.string(),
+'role': z.string(),
 'q': z.string(),
-'sort': z.string(),
-workspace: z.string()}),
+'sort': z.string()}),
                 handler: paginated_repositories,
             },
         
 
              'bitbucket.repository/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: repository,
             },
         
 
              'bitbucket.paginated_branchrestrictions/sync': {
                 schema: z.object({
-                  'kind': z.string(),
-'pattern': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'kind': z.string(),
+'pattern': z.string()}),
                 handler: paginated_branchrestrictions,
             },
         
 
              'bitbucket.branchrestriction/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'id': z.string()}),
                 handler: branchrestriction,
             },
         
 
              'bitbucket.branching_model/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: branching_model,
             },
         
 
              'bitbucket.branching_model_settings/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: branching_model_settings,
             },
         
 
              'bitbucket.commit/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'commit': z.string()}),
                 handler: commit,
             },
         
 
              'bitbucket.paginated_commit_comments/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'commit': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_commit_comments,
             },
         
 
              'bitbucket.commit_comment/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-comment_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'commit': z.string(),
+'comment_id': z.string()}),
                 handler: commit_comment,
             },
         
@@ -279,12 +279,7 @@ comment_id: z.string()}),
 'repo_slug': z.string(),
 'commit': z.string(),
 'app_key': z.string(),
-'property_name': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-app_key: z.string(),
-property_name: z.string()}),
+'property_name': z.string()}),
                 handler: CommitHostedPropertyValue,
             },
         
@@ -295,10 +290,7 @@ property_name: z.string()}),
 'repo_slug': z.string(),
 'commit': z.string(),
 'page': z.number(),
-'pagelen': z.number(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string()}),
+'pagelen': z.number()}),
                 handler: PullrequestsForCommit,
             },
         
@@ -307,10 +299,7 @@ commit: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'commit': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string()}),
+'commit': z.string()}),
                 handler: ReportsForCommit,
             },
         
@@ -320,11 +309,7 @@ commit: z.string()}),
                   'workspace': z.string(),
 'repo_slug': z.string(),
 'commit': z.string(),
-'reportId': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-reportId: z.string()}),
+'reportId': z.string()}),
                 handler: Report,
             },
         
@@ -334,11 +319,7 @@ reportId: z.string()}),
                   'workspace': z.string(),
 'repo_slug': z.string(),
 'commit': z.string(),
-'reportId': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-reportId: z.string()}),
+'reportId': z.string()}),
                 handler: AnnotationsForReport,
             },
         
@@ -349,101 +330,96 @@ reportId: z.string()}),
 'repo_slug': z.string(),
 'commit': z.string(),
 'reportId': z.string(),
-'annotationId': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-reportId: z.string(),
-annotationId: z.string()}),
+'annotationId': z.string()}),
                 handler: Annotation,
             },
         
 
              'bitbucket.paginated_commitstatuses/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'commit': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_commitstatuses,
             },
         
 
              'bitbucket.commitstatus/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-key: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'commit': z.string(),
+'key': z.string()}),
                 handler: commitstatus,
             },
         
 
              'bitbucket.paginated_changeset/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_changeset,
             },
         
 
              'bitbucket.paginated_changeset/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-revision: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'revision': z.string()}),
                 handler: paginated_changeset,
             },
         
 
              'bitbucket.paginated_components/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_components,
             },
         
 
              'bitbucket.component/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-component_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'component_id': z.string()}),
                 handler: component,
             },
         
 
              'bitbucket.paginated_accounts/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_accounts,
             },
         
 
              'bitbucket.account/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-target_username: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'target_username': z.string()}),
                 handler: account,
             },
         
 
              'bitbucket.paginated_deploy_keys/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_deploy_keys,
             },
         
 
              'bitbucket.deploy_key/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-key_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'key_id': z.string()}),
                 handler: deploy_key,
             },
         
@@ -451,9 +427,7 @@ key_id: z.string()}),
              'bitbucket.DeploymentsForRepository/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: DeploymentsForRepository,
             },
         
@@ -462,10 +436,7 @@ repo_slug: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'deployment_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-deployment_uuid: z.string()}),
+'deployment_uuid': z.string()}),
                 handler: DeploymentForRepository,
             },
         
@@ -474,35 +445,32 @@ deployment_uuid: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'environment_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-environment_uuid: z.string()}),
+'environment_uuid': z.string()}),
                 handler: DeploymentVariables,
             },
         
 
              'bitbucket.paginated_diffstats/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-spec: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'spec': z.string()}),
                 handler: paginated_diffstats,
             },
         
 
              'bitbucket.effective_repo_branching_model/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: effective_repo_branching_model,
             },
         
 
              'bitbucket.paginated_default_reviewer_and_type/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_default_reviewer_and_type,
             },
         
@@ -510,9 +478,7 @@ repo_slug: z.string()}),
              'bitbucket.EnvironmentsForRepository/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: EnvironmentsForRepository,
             },
         
@@ -521,194 +487,191 @@ repo_slug: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'environment_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-environment_uuid: z.string()}),
+'environment_uuid': z.string()}),
                 handler: EnvironmentForRepository,
             },
         
 
              'bitbucket.paginated_files/sync': {
                 schema: z.object({
-                  'renames': z.string(),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'commit': z.string(),
+'path': z.string(),
+'renames': z.string(),
 'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-path: z.string()}),
+'sort': z.string()}),
                 handler: paginated_files,
             },
         
 
              'bitbucket.paginated_repositories/sync': {
                 schema: z.object({
-                  'role': z.string(),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'role': z.string(),
 'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'sort': z.string()}),
                 handler: paginated_repositories,
             },
         
 
              'bitbucket.paginated_webhook_subscriptions/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_webhook_subscriptions,
             },
         
 
              'bitbucket.webhook_subscription/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-uid: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'uid': z.string()}),
                 handler: webhook_subscription,
             },
         
 
              'bitbucket.paginated_issues/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_issues,
             },
         
 
              'bitbucket.issue_job_status/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: issue_job_status,
             },
         
 
              'bitbucket.issue/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-issue_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'issue_id': z.string()}),
                 handler: issue,
             },
         
 
              'bitbucket.paginated_issue_attachments/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-issue_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'issue_id': z.string()}),
                 handler: paginated_issue_attachments,
             },
         
 
              'bitbucket.paginated_log_entries/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-issue_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'issue_id': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_log_entries,
             },
         
 
              'bitbucket.issue_change/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-issue_id: z.string(),
-change_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'issue_id': z.string(),
+'change_id': z.string()}),
                 handler: issue_change,
             },
         
 
              'bitbucket.paginated_issue_comments/sync': {
                 schema: z.object({
-                  'q': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-issue_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'issue_id': z.string(),
+'q': z.string()}),
                 handler: paginated_issue_comments,
             },
         
 
              'bitbucket.issue_comment/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-issue_id: z.string(),
-comment_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'issue_id': z.string(),
+'comment_id': z.string()}),
                 handler: issue_comment,
             },
         
 
              'bitbucket.commit/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-revspec: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'revspec': z.string()}),
                 handler: commit,
             },
         
 
              'bitbucket.paginated_milestones/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_milestones,
             },
         
 
              'bitbucket.milestone/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-milestone_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'milestone_id': z.string()}),
                 handler: milestone,
             },
         
 
              'bitbucket.repository_inheritance_state/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: repository_inheritance_state,
             },
         
 
              'bitbucket.paginated_repository_group_permissions/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_repository_group_permissions,
             },
         
 
              'bitbucket.repository_group_permission/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-group_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'group_slug': z.string()}),
                 handler: repository_group_permission,
             },
         
 
              'bitbucket.paginated_repository_user_permissions/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_repository_user_permissions,
             },
         
 
              'bitbucket.repository_user_permission/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-selected_user_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'selected_user_id': z.string()}),
                 handler: repository_user_permission,
             },
         
@@ -716,9 +679,7 @@ selected_user_id: z.string()}),
              'bitbucket.PipelinesForRepository/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: PipelinesForRepository,
             },
         
@@ -726,9 +687,7 @@ repo_slug: z.string()}),
              'bitbucket.RepositoryPipelineCaches/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: RepositoryPipelineCaches,
             },
         
@@ -737,10 +696,7 @@ repo_slug: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'cache_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-cache_uuid: z.string()}),
+'cache_uuid': z.string()}),
                 handler: RepositoryPipelineCacheContentURI,
             },
         
@@ -749,10 +705,7 @@ cache_uuid: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'pipeline_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-pipeline_uuid: z.string()}),
+'pipeline_uuid': z.string()}),
                 handler: PipelineForRepository,
             },
         
@@ -761,10 +714,7 @@ pipeline_uuid: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'pipeline_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-pipeline_uuid: z.string()}),
+'pipeline_uuid': z.string()}),
                 handler: PipelineStepsForRepository,
             },
         
@@ -774,11 +724,7 @@ pipeline_uuid: z.string()}),
                   'workspace': z.string(),
 'repo_slug': z.string(),
 'pipeline_uuid': z.string(),
-'step_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-pipeline_uuid: z.string(),
-step_uuid: z.string()}),
+'step_uuid': z.string()}),
                 handler: PipelineStepForRepository,
             },
         
@@ -786,9 +732,7 @@ step_uuid: z.string()}),
              'bitbucket.RepositoryPipelineConfig/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: RepositoryPipelineConfig,
             },
         
@@ -796,9 +740,7 @@ repo_slug: z.string()}),
              'bitbucket.RepositoryPipelineSchedules/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: RepositoryPipelineSchedules,
             },
         
@@ -807,10 +749,7 @@ repo_slug: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'schedule_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-schedule_uuid: z.string()}),
+'schedule_uuid': z.string()}),
                 handler: RepositoryPipelineSchedule,
             },
         
@@ -819,10 +758,7 @@ schedule_uuid: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'schedule_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-schedule_uuid: z.string()}),
+'schedule_uuid': z.string()}),
                 handler: RepositoryPipelineScheduleExecutions,
             },
         
@@ -830,9 +766,7 @@ schedule_uuid: z.string()}),
              'bitbucket.RepositoryPipelineSshKeyPair/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: RepositoryPipelineSshKeyPair,
             },
         
@@ -840,9 +774,7 @@ repo_slug: z.string()}),
              'bitbucket.RepositoryPipelineKnownHosts/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: RepositoryPipelineKnownHosts,
             },
         
@@ -851,10 +783,7 @@ repo_slug: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'known_host_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-known_host_uuid: z.string()}),
+'known_host_uuid': z.string()}),
                 handler: RepositoryPipelineKnownHost,
             },
         
@@ -862,9 +791,7 @@ known_host_uuid: z.string()}),
              'bitbucket.RepositoryPipelineVariables/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'repo_slug': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+'repo_slug': z.string()}),
                 handler: RepositoryPipelineVariables,
             },
         
@@ -873,10 +800,7 @@ repo_slug: z.string()}),
                 schema: z.object({
                   'workspace': z.string(),
 'repo_slug': z.string(),
-'variable_uuid': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-variable_uuid: z.string()}),
+'variable_uuid': z.string()}),
                 handler: RepositoryPipelineVariable,
             },
         
@@ -886,59 +810,55 @@ variable_uuid: z.string()}),
                   'workspace': z.string(),
 'repo_slug': z.string(),
 'app_key': z.string(),
-'property_name': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-app_key: z.string(),
-property_name: z.string()}),
+'property_name': z.string()}),
                 handler: RepositoryHostedPropertyValue,
             },
         
 
              'bitbucket.paginated_pullrequests/sync': {
                 schema: z.object({
-                  'state': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'state': z.string()}),
                 handler: paginated_pullrequests,
             },
         
 
              'bitbucket.pullrequest/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-pull_request_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'pull_request_id': z.string()}),
                 handler: pullrequest,
             },
         
 
              'bitbucket.paginated_pullrequest_comments/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-pull_request_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'pull_request_id': z.string()}),
                 handler: paginated_pullrequest_comments,
             },
         
 
              'bitbucket.pullrequest_comment/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-pull_request_id: z.string(),
-comment_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'pull_request_id': z.string(),
+'comment_id': z.string()}),
                 handler: pullrequest_comment,
             },
         
 
              'bitbucket.paginated_commitstatuses/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-pull_request_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'pull_request_id': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_commitstatuses,
             },
         
@@ -949,108 +869,103 @@ pull_request_id: z.string()}),
 'repo_slug': z.string(),
 'pullrequest_id': z.string(),
 'app_key': z.string(),
-'property_name': z.string(),
-workspace: z.string(),
-repo_slug: z.string(),
-pullrequest_id: z.string(),
-app_key: z.string(),
-property_name: z.string()}),
+'property_name': z.string()}),
                 handler: PullRequestHostedPropertyValue,
             },
         
 
              'bitbucket.paginated_refs/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_refs,
             },
         
 
              'bitbucket.paginated_branches/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_branches,
             },
         
 
              'bitbucket.branch/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-name: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'name': z.string()}),
                 handler: branch,
             },
         
 
              'bitbucket.paginated_tags/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_tags,
             },
         
 
              'bitbucket.tag/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-name: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'name': z.string()}),
                 handler: tag,
             },
         
 
              'bitbucket.paginated_treeentries/sync': {
                 schema: z.object({
-                  'format': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'format': z.string()}),
                 handler: paginated_treeentries,
             },
         
 
              'bitbucket.paginated_treeentries/sync': {
                 schema: z.object({
-                  'format': z.string(),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'commit': z.string(),
+'path': z.string(),
+'format': z.string(),
 'q': z.string(),
 'sort': z.string(),
-'max_depth': z.number(),
-workspace: z.string(),
-repo_slug: z.string(),
-commit: z.string(),
-path: z.string()}),
+'max_depth': z.number()}),
                 handler: paginated_treeentries,
             },
         
 
              'bitbucket.paginated_versions/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_versions,
             },
         
 
              'bitbucket.version/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string(),
-version_id: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'version_id': z.string()}),
                 handler: version,
             },
         
 
              'bitbucket.paginated_accounts/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string()}),
                 handler: paginated_accounts,
             },
         
@@ -1064,75 +979,74 @@ repo_slug: z.string()}),
 
              'bitbucket.paginated_snippets/sync': {
                 schema: z.object({
-                  'role': z.string(),
-workspace: z.string()}),
+                  'workspace': z.string(),
+'role': z.string()}),
                 handler: paginated_snippets,
             },
         
 
              'bitbucket.snippet/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-encoded_id: z.string()}),
+                  'workspace': z.string(),
+'encoded_id': z.string()}),
                 handler: snippet,
             },
         
 
              'bitbucket.paginated_snippet_comments/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-encoded_id: z.string()}),
+                  'workspace': z.string(),
+'encoded_id': z.string()}),
                 handler: paginated_snippet_comments,
             },
         
 
              'bitbucket.snippet_comment/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-encoded_id: z.string(),
-comment_id: z.string()}),
+                  'workspace': z.string(),
+'encoded_id': z.string(),
+'comment_id': z.string()}),
                 handler: snippet_comment,
             },
         
 
              'bitbucket.paginated_snippet_commit/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-encoded_id: z.string()}),
+                  'workspace': z.string(),
+'encoded_id': z.string()}),
                 handler: paginated_snippet_commit,
             },
         
 
              'bitbucket.snippet_commit/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-encoded_id: z.string(),
-revision: z.string()}),
+                  'workspace': z.string(),
+'encoded_id': z.string(),
+'revision': z.string()}),
                 handler: snippet_commit,
             },
         
 
              'bitbucket.paginated_accounts/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-encoded_id: z.string()}),
+                  'workspace': z.string(),
+'encoded_id': z.string()}),
                 handler: paginated_accounts,
             },
         
 
              'bitbucket.snippet/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-encoded_id: z.string(),
-node_id: z.string()}),
+                  'workspace': z.string(),
+'encoded_id': z.string(),
+'node_id': z.string()}),
                 handler: snippet,
             },
         
 
              'bitbucket.PipelineVariablesForTeam/sync': {
                 schema: z.object({
-                  'username': z.string(),
-username: z.string()}),
+                  'username': z.string()}),
                 handler: PipelineVariablesForTeam,
             },
         
@@ -1140,9 +1054,7 @@ username: z.string()}),
              'bitbucket.PipelineVariableForTeam/sync': {
                 schema: z.object({
                   'username': z.string(),
-'variable_uuid': z.string(),
-username: z.string(),
-variable_uuid: z.string()}),
+'variable_uuid': z.string()}),
                 handler: PipelineVariableForTeam,
             },
         
@@ -1152,8 +1064,7 @@ variable_uuid: z.string()}),
                   'username': z.string(),
 'search_query': z.string(),
 'page': z.number(),
-'pagelen': z.number(),
-username: z.string()}),
+'pagelen': z.number()}),
                 handler: searchTeam,
             },
         
@@ -1182,15 +1093,14 @@ username: z.string()}),
 
              'bitbucket.account/sync': {
                 schema: z.object({
-                  selected_user: z.string()}),
+                  'selected_user': z.string()}),
                 handler: account,
             },
         
 
              'bitbucket.PipelineVariablesForUser/sync': {
                 schema: z.object({
-                  'selected_user': z.string(),
-selected_user: z.string()}),
+                  'selected_user': z.string()}),
                 handler: PipelineVariablesForUser,
             },
         
@@ -1198,9 +1108,7 @@ selected_user: z.string()}),
              'bitbucket.PipelineVariableForUser/sync': {
                 schema: z.object({
                   'selected_user': z.string(),
-'variable_uuid': z.string(),
-selected_user: z.string(),
-variable_uuid: z.string()}),
+'variable_uuid': z.string()}),
                 handler: PipelineVariableForUser,
             },
         
@@ -1209,10 +1117,7 @@ variable_uuid: z.string()}),
                 schema: z.object({
                   'selected_user': z.string(),
 'app_key': z.string(),
-'property_name': z.string(),
-selected_user: z.string(),
-app_key: z.string(),
-property_name: z.string()}),
+'property_name': z.string()}),
                 handler: retrieveUserHostedPropertyValue,
             },
         
@@ -1222,23 +1127,22 @@ property_name: z.string()}),
                   'selected_user': z.string(),
 'search_query': z.string(),
 'page': z.number(),
-'pagelen': z.number(),
-selected_user: z.string()}),
+'pagelen': z.number()}),
                 handler: searchAccount,
             },
         
 
              'bitbucket.paginated_ssh_user_keys/sync': {
                 schema: z.object({
-                  selected_user: z.string()}),
+                  'selected_user': z.string()}),
                 handler: paginated_ssh_user_keys,
             },
         
 
              'bitbucket.ssh_account_key/sync': {
                 schema: z.object({
-                  selected_user: z.string(),
-key_id: z.string()}),
+                  'selected_user': z.string(),
+'key_id': z.string()}),
                 handler: ssh_account_key,
             },
         
@@ -1254,72 +1158,71 @@ key_id: z.string()}),
 
              'bitbucket.workspace/sync': {
                 schema: z.object({
-                  workspace: z.string()}),
+                  'workspace': z.string()}),
                 handler: workspace,
             },
         
 
              'bitbucket.paginated_webhook_subscriptions/sync': {
                 schema: z.object({
-                  workspace: z.string()}),
+                  'workspace': z.string()}),
                 handler: paginated_webhook_subscriptions,
             },
         
 
              'bitbucket.webhook_subscription/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-uid: z.string()}),
+                  'workspace': z.string(),
+'uid': z.string()}),
                 handler: webhook_subscription,
             },
         
 
              'bitbucket.paginated_workspace_memberships/sync': {
                 schema: z.object({
-                  workspace: z.string()}),
+                  'workspace': z.string()}),
                 handler: paginated_workspace_memberships,
             },
         
 
              'bitbucket.workspace_membership/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-member: z.string()}),
+                  'workspace': z.string(),
+'member': z.string()}),
                 handler: workspace_membership,
             },
         
 
              'bitbucket.paginated_workspace_memberships/sync': {
                 schema: z.object({
-                  'q': z.string(),
-workspace: z.string()}),
+                  'workspace': z.string(),
+'q': z.string()}),
                 handler: paginated_workspace_memberships,
             },
         
 
              'bitbucket.paginated_repository_permissions/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string()}),
+                  'workspace': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_repository_permissions,
             },
         
 
              'bitbucket.paginated_repository_permissions/sync': {
                 schema: z.object({
-                  'q': z.string(),
-'sort': z.string(),
-workspace: z.string(),
-repo_slug: z.string()}),
+                  'workspace': z.string(),
+'repo_slug': z.string(),
+'q': z.string(),
+'sort': z.string()}),
                 handler: paginated_repository_permissions,
             },
         
 
              'bitbucket.PipelineVariablesForWorkspace/sync': {
                 schema: z.object({
-                  'workspace': z.string(),
-workspace: z.string()}),
+                  'workspace': z.string()}),
                 handler: PipelineVariablesForWorkspace,
             },
         
@@ -1327,74 +1230,72 @@ workspace: z.string()}),
              'bitbucket.PipelineVariableForWorkspace/sync': {
                 schema: z.object({
                   'workspace': z.string(),
-'variable_uuid': z.string(),
-workspace: z.string(),
-variable_uuid: z.string()}),
+'variable_uuid': z.string()}),
                 handler: PipelineVariableForWorkspace,
             },
         
 
              'bitbucket.paginated_projects/sync': {
                 schema: z.object({
-                  workspace: z.string()}),
+                  'workspace': z.string()}),
                 handler: paginated_projects,
             },
         
 
              'bitbucket.project/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-project_key: z.string()}),
+                  'workspace': z.string(),
+'project_key': z.string()}),
                 handler: project,
             },
         
 
              'bitbucket.project_branching_model/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-project_key: z.string()}),
+                  'workspace': z.string(),
+'project_key': z.string()}),
                 handler: project_branching_model,
             },
         
 
              'bitbucket.branching_model_settings/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-project_key: z.string()}),
+                  'workspace': z.string(),
+'project_key': z.string()}),
                 handler: branching_model_settings,
             },
         
 
              'bitbucket.paginated_default_reviewer_and_type/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-project_key: z.string()}),
+                  'workspace': z.string(),
+'project_key': z.string()}),
                 handler: paginated_default_reviewer_and_type,
             },
         
 
              'bitbucket.user/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-project_key: z.string(),
-selected_user: z.string()}),
+                  'workspace': z.string(),
+'project_key': z.string(),
+'selected_user': z.string()}),
                 handler: user,
             },
         
 
              'bitbucket.paginated_project_deploy_keys/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-project_key: z.string()}),
+                  'workspace': z.string(),
+'project_key': z.string()}),
                 handler: paginated_project_deploy_keys,
             },
         
 
              'bitbucket.project_deploy_key/sync': {
                 schema: z.object({
-                  workspace: z.string(),
-project_key: z.string(),
-key_id: z.string()}),
+                  'workspace': z.string(),
+'project_key': z.string(),
+'key_id': z.string()}),
                 handler: project_deploy_key,
             },
         
@@ -1404,8 +1305,7 @@ key_id: z.string()}),
                   'workspace': z.string(),
 'search_query': z.string(),
 'page': z.number(),
-'pagelen': z.number(),
-workspace: z.string()}),
+'pagelen': z.number()}),
                 handler: searchWorkspace,
             },
         }

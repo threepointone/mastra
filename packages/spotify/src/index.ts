@@ -95,20 +95,20 @@ export class SpotifyIntegration extends Integration {
 
              'spotify.-an-album/sync': {
                 schema: z.object({
-                  'PathAlbumId': z.string(),
-'QueryMarket': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'PathAlbumId': z.string(),
+'QueryMarket': z.string()}),
                 handler: -an-album,
             },
         
 
              'spotify.-an-albums-tracks/sync': {
                 schema: z.object({
-                  'PathAlbumId': z.string(),
+                  'id': z.string(),
+'PathAlbumId': z.string(),
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
-'QueryOffset': z.string(),
-id: z.string()}),
+'QueryOffset': z.string()}),
                 handler: -an-albums-tracks,
             },
         
@@ -122,45 +122,44 @@ id: z.string()}),
 
              'spotify.-an-artist/sync': {
                 schema: z.object({
-                  'PathArtistId': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'PathArtistId': z.string()}),
                 handler: -an-artist,
             },
         
 
              'spotify.-an-artists-albums/sync': {
                 schema: z.object({
-                  'PathArtistId': z.string(),
+                  'id': z.string(),
+'PathArtistId': z.string(),
 'QueryIncludeGroups': z.string(),
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
-'QueryOffset': z.string(),
-id: z.string()}),
+'QueryOffset': z.string()}),
                 handler: -an-artists-albums,
             },
         
 
              'spotify.-an-artists-related-artists/sync': {
                 schema: z.object({
-                  'PathArtistId': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'PathArtistId': z.string()}),
                 handler: -an-artists-related-artists,
             },
         
 
              'spotify.-an-artists-top-tracks/sync': {
                 schema: z.object({
-                  'PathArtistId': z.string(),
-'QueryMarket': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'PathArtistId': z.string(),
+'QueryMarket': z.string()}),
                 handler: -an-artists-top-tracks,
             },
         
 
              'spotify.-audio-analysis/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: -audio-analysis,
             },
         
@@ -174,8 +173,7 @@ id: z.string()}),
 
              'spotify.-audio-features/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: -audio-features,
             },
         
@@ -190,20 +188,20 @@ id: z.string()}),
 
              'spotify.-an-audiobook/sync': {
                 schema: z.object({
-                  'PathAudiobookId': z.string(),
-'QueryMarket': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'PathAudiobookId': z.string(),
+'QueryMarket': z.string()}),
                 handler: -an-audiobook,
             },
         
 
              'spotify.-audiobook-chapters/sync': {
                 schema: z.object({
-                  'PathAudiobookId': z.string(),
+                  'id': z.string(),
+'PathAudiobookId': z.string(),
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
-'QueryOffset': z.string(),
-id: z.string()}),
+'QueryOffset': z.string()}),
                 handler: -audiobook-chapters,
             },
         
@@ -222,8 +220,7 @@ id: z.string()}),
                 schema: z.object({
                   'category_id': z.string(),
 'country': z.string(),
-'locale': z.string(),
-category_id: z.string()}),
+'locale': z.string()}),
                 handler: -a-category,
             },
         
@@ -233,8 +230,7 @@ category_id: z.string()}),
                   'category_id': z.string(),
 'country': z.string(),
 'QueryLimit': z.string(),
-'QueryOffset': z.string(),
-category_id: z.string()}),
+'QueryOffset': z.string()}),
                 handler: -a-categories-playlists,
             },
         
@@ -269,9 +265,9 @@ category_id: z.string()}),
 
              'spotify.-a-chapter/sync': {
                 schema: z.object({
-                  'PathChapterId': z.string(),
-'QueryMarket': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'PathChapterId': z.string(),
+'QueryMarket': z.string()}),
                 handler: -a-chapter,
             },
         
@@ -287,8 +283,7 @@ id: z.string()}),
              'spotify.-an-episode/sync': {
                 schema: z.object({
                   'id': z.string(),
-'QueryMarket': z.string(),
-id: z.string()}),
+'QueryMarket': z.string()}),
                 handler: -an-episode,
             },
         
@@ -428,8 +423,7 @@ id: z.string()}),
                   'type': z.string(),
 'time_range': z.string(),
 'QueryLimit': z.string(),
-'QueryOffset': z.string(),
-type: z.string()}),
+'QueryOffset': z.string()}),
                 handler: -users-top-artists-and-tracks,
             },
         
@@ -452,41 +446,41 @@ type: z.string()}),
 
              'spotify.-playlist/sync': {
                 schema: z.object({
-                  'PathPlaylistId': z.string(),
+                  'playlist_id': z.string(),
+'PathPlaylistId': z.string(),
 'QueryMarket': z.string(),
 'fields': z.string(),
-'QueryAdditionalTypes': z.string(),
-playlist_id: z.string()}),
+'QueryAdditionalTypes': z.string()}),
                 handler: -playlist,
             },
         
 
              'spotify.check-if-user-follows-playlist/sync': {
                 schema: z.object({
-                  'PathPlaylistId': z.string(),
-'ids': z.string(),
-playlist_id: z.string()}),
+                  'playlist_id': z.string(),
+'PathPlaylistId': z.string(),
+'ids': z.string()}),
                 handler: check-if-user-follows-playlist,
             },
         
 
              'spotify.-playlist-cover/sync': {
                 schema: z.object({
-                  'PathPlaylistId': z.string(),
-playlist_id: z.string()}),
+                  'playlist_id': z.string(),
+'PathPlaylistId': z.string()}),
                 handler: -playlist-cover,
             },
         
 
              'spotify.-playlists-tracks/sync': {
                 schema: z.object({
-                  'PathPlaylistId': z.string(),
+                  'playlist_id': z.string(),
+'PathPlaylistId': z.string(),
 'QueryMarket': z.string(),
 'fields': z.string(),
 'QueryLimit': z.string(),
 'QueryOffset': z.string(),
-'QueryAdditionalTypes': z.string(),
-playlist_id: z.string()}),
+'QueryAdditionalTypes': z.string()}),
                 handler: -playlists-tracks,
             },
         
@@ -572,20 +566,20 @@ playlist_id: z.string()}),
 
              'spotify.-a-show/sync': {
                 schema: z.object({
-                  'QueryMarket': z.string(),
-'PathShowId': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'QueryMarket': z.string(),
+'PathShowId': z.string()}),
                 handler: -a-show,
             },
         
 
              'spotify.-a-shows-episodes/sync': {
                 schema: z.object({
-                  'PathShowId': z.string(),
+                  'id': z.string(),
+'PathShowId': z.string(),
 'QueryMarket': z.string(),
 'QueryLimit': z.string(),
-'QueryOffset': z.string(),
-id: z.string()}),
+'QueryOffset': z.string()}),
                 handler: -a-shows-episodes,
             },
         
@@ -601,26 +595,25 @@ id: z.string()}),
              'spotify.-track/sync': {
                 schema: z.object({
                   'id': z.string(),
-'QueryMarket': z.string(),
-id: z.string()}),
+'QueryMarket': z.string()}),
                 handler: -track,
             },
         
 
              'spotify.-users-profile/sync': {
                 schema: z.object({
-                  'PathUserId': z.string(),
-user_id: z.string()}),
+                  'user_id': z.string(),
+'PathUserId': z.string()}),
                 handler: -users-profile,
             },
         
 
              'spotify.-list-users-playlists/sync': {
                 schema: z.object({
-                  'PathUserId': z.string(),
+                  'user_id': z.string(),
+'PathUserId': z.string(),
 'QueryLimit': z.string(),
-'offset': z.number(),
-user_id: z.string()}),
+'offset': z.number()}),
                 handler: -list-users-playlists,
             },
         }

@@ -137,8 +137,7 @@ export class BoxIntegration extends Integration {
 
              'box._collaboration_whitelist_entries_id/sync': {
                 schema: z.object({
-                  'collaboration_whitelist_entry_id': z.string(),
-collaboration_whitelist_entry_id: z.string()}),
+                  'collaboration_whitelist_entry_id': z.string()}),
                 handler: _collaboration_whitelist_entries_id,
             },
         
@@ -153,8 +152,7 @@ collaboration_whitelist_entry_id: z.string()}),
 
              'box._collaboration_whitelist_exempt_targets_id/sync': {
                 schema: z.object({
-                  'collaboration_whitelist_exempt_target_id': z.string(),
-collaboration_whitelist_exempt_target_id: z.string()}),
+                  'collaboration_whitelist_exempt_target_id': z.string()}),
                 handler: _collaboration_whitelist_exempt_targets_id,
             },
         
@@ -172,8 +170,7 @@ collaboration_whitelist_exempt_target_id: z.string()}),
              'box._collaborations_id/sync': {
                 schema: z.object({
                   'collaboration_id': z.string(),
-'fields': z.string(),
-collaboration_id: z.string()}),
+'fields': z.string()}),
                 handler: _collaborations_id,
             },
         
@@ -192,8 +189,7 @@ collaboration_id: z.string()}),
                   'collection_id': z.string(),
 'fields': z.string(),
 'offset': z.number(),
-'limit': z.number(),
-collection_id: z.string()}),
+'limit': z.number()}),
                 handler: _collections_id_items,
             },
         
@@ -201,16 +197,14 @@ collection_id: z.string()}),
              'box._comments_id/sync': {
                 schema: z.object({
                   'comment_id': z.string(),
-'fields': z.string(),
-comment_id: z.string()}),
+'fields': z.string()}),
                 handler: _comments_id,
             },
         
 
              'box._device_pinners_id/sync': {
                 schema: z.object({
-                  'device_pinner_id': z.string(),
-device_pinner_id: z.string()}),
+                  'device_pinner_id': z.string()}),
                 handler: _device_pinners_id,
             },
         
@@ -220,8 +214,7 @@ device_pinner_id: z.string()}),
                   'enterprise_id': z.string(),
 'marker': z.string(),
 'limit': z.number(),
-'direction': z.string(),
-enterprise_id: z.string()}),
+'direction': z.string()}),
                 handler: _enterprises_id_device_pinners,
             },
         
@@ -240,8 +233,7 @@ enterprise_id: z.string()}),
 
              'box._file_requests_id/sync': {
                 schema: z.object({
-                  'file_request_id': z.string(),
-file_request_id: z.string()}),
+                  'file_request_id': z.string()}),
                 handler: _file_requests_id,
             },
         
@@ -257,8 +249,7 @@ file_request_id: z.string()}),
 
              'box._file_version_legal_holds_id/sync': {
                 schema: z.object({
-                  'file_version_legal_hold_id': z.string(),
-file_version_legal_hold_id: z.string()}),
+                  'file_version_legal_hold_id': z.string()}),
                 handler: _file_version_legal_holds_id,
             },
         
@@ -279,16 +270,14 @@ file_version_legal_hold_id: z.string()}),
 
              'box._file_version_retentions_id/sync': {
                 schema: z.object({
-                  'file_version_retention_id': z.string(),
-file_version_retention_id: z.string()}),
+                  'file_version_retention_id': z.string()}),
                 handler: _file_version_retentions_id,
             },
         
 
              'box._files_upload_sessions_id/sync': {
                 schema: z.object({
-                  'upload_session_id': z.string(),
-upload_session_id: z.string()}),
+                  'upload_session_id': z.string()}),
                 handler: _files_upload_sessions_id,
             },
         
@@ -297,8 +286,7 @@ upload_session_id: z.string()}),
                 schema: z.object({
                   'upload_session_id': z.string(),
 'offset': z.number(),
-'limit': z.number(),
-upload_session_id: z.string()}),
+'limit': z.number()}),
                 handler: _files_upload_sessions_id_parts,
             },
         
@@ -309,8 +297,7 @@ upload_session_id: z.string()}),
 'fields': z.string(),
 'if-none-match': z.string(),
 'boxapi': z.string(),
-'x-rep-hints': z.string(),
-file_id: z.string()}),
+'x-rep-hints': z.string()}),
                 handler: _files_id,
             },
         
@@ -318,8 +305,7 @@ file_id: z.string()}),
              'box._files_id#get_shared_link/sync': {
                 schema: z.object({
                   'file_id': z.string(),
-'fields': z.string(),
-file_id: z.string()}),
+'fields': z.string()}),
                 handler: _files_id#get_shared_link,
             },
         
@@ -329,8 +315,7 @@ file_id: z.string()}),
                   'file_id': z.string(),
 'fields': z.string(),
 'limit': z.number(),
-'marker': z.string(),
-file_id: z.string()}),
+'marker': z.string()}),
                 handler: _files_id_collaborations,
             },
         
@@ -340,32 +325,28 @@ file_id: z.string()}),
                   'file_id': z.string(),
 'fields': z.string(),
 'limit': z.number(),
-'offset': z.number(),
-file_id: z.string()}),
+'offset': z.number()}),
                 handler: _files_id_comments,
             },
         
 
              'box._files_id_metadata/sync': {
                 schema: z.object({
-                  'file_id': z.string(),
-file_id: z.string()}),
+                  'file_id': z.string()}),
                 handler: _files_id_metadata,
             },
         
 
              'box._files_id_metadata_global_boxSkillsCards/sync': {
                 schema: z.object({
-                  'file_id': z.string(),
-file_id: z.string()}),
+                  'file_id': z.string()}),
                 handler: _files_id_metadata_global_boxSkillsCards,
             },
         
 
              'box._files_id_tasks/sync': {
                 schema: z.object({
-                  'file_id': z.string(),
-file_id: z.string()}),
+                  'file_id': z.string()}),
                 handler: _files_id_tasks,
             },
         
@@ -373,8 +354,7 @@ file_id: z.string()}),
              'box._files_id_trash/sync': {
                 schema: z.object({
                   'file_id': z.string(),
-'fields': z.string(),
-file_id: z.string()}),
+'fields': z.string()}),
                 handler: _files_id_trash,
             },
         
@@ -384,8 +364,7 @@ file_id: z.string()}),
                   'file_id': z.string(),
 'fields': z.string(),
 'limit': z.number(),
-'offset': z.number(),
-file_id: z.string()}),
+'offset': z.number()}),
                 handler: _files_id_versions,
             },
         
@@ -393,18 +372,15 @@ file_id: z.string()}),
              'box._files_id_versions_id/sync': {
                 schema: z.object({
                   'file_id': z.string(),
-'fields': z.string(),
 'file_version_id': z.string(),
-file_id: z.string(),
-file_version_id: z.string()}),
+'fields': z.string()}),
                 handler: _files_id_versions_id,
             },
         
 
              'box._files_id_watermark/sync': {
                 schema: z.object({
-                  'file_id': z.string(),
-file_id: z.string()}),
+                  'file_id': z.string()}),
                 handler: _files_id_watermark,
             },
         
@@ -434,8 +410,7 @@ file_id: z.string()}),
                   'folder_id': z.string(),
 'fields': z.string(),
 'if-none-match': z.string(),
-'boxapi': z.string(),
-folder_id: z.string()}),
+'boxapi': z.string()}),
                 handler: _folders_id,
             },
         
@@ -443,8 +418,7 @@ folder_id: z.string()}),
              'box._folders_id#get_shared_link/sync': {
                 schema: z.object({
                   'folder_id': z.string(),
-'fields': z.string(),
-folder_id: z.string()}),
+'fields': z.string()}),
                 handler: _folders_id#get_shared_link,
             },
         
@@ -452,8 +426,7 @@ folder_id: z.string()}),
              'box._folders_id_collaborations/sync': {
                 schema: z.object({
                   'folder_id': z.string(),
-'fields': z.string(),
-folder_id: z.string()}),
+'fields': z.string()}),
                 handler: _folders_id_collaborations,
             },
         
@@ -468,16 +441,14 @@ folder_id: z.string()}),
 'limit': z.number(),
 'boxapi': z.string(),
 'sort': z.string(),
-'direction': z.string(),
-folder_id: z.string()}),
+'direction': z.string()}),
                 handler: _folders_id_items,
             },
         
 
              'box._folders_id_metadata/sync': {
                 schema: z.object({
-                  'folder_id': z.string(),
-folder_id: z.string()}),
+                  'folder_id': z.string()}),
                 handler: _folders_id_metadata,
             },
         
@@ -485,16 +456,14 @@ folder_id: z.string()}),
              'box._folders_id_trash/sync': {
                 schema: z.object({
                   'folder_id': z.string(),
-'fields': z.string(),
-folder_id: z.string()}),
+'fields': z.string()}),
                 handler: _folders_id_trash,
             },
         
 
              'box._folders_id_watermark/sync': {
                 schema: z.object({
-                  'folder_id': z.string(),
-folder_id: z.string()}),
+                  'folder_id': z.string()}),
                 handler: _folders_id_watermark,
             },
         
@@ -502,8 +471,7 @@ folder_id: z.string()}),
              'box._group_memberships_id/sync': {
                 schema: z.object({
                   'group_membership_id': z.string(),
-'fields': z.string(),
-group_membership_id: z.string()}),
+'fields': z.string()}),
                 handler: _group_memberships_id,
             },
         
@@ -521,8 +489,7 @@ group_membership_id: z.string()}),
              'box._groups_id/sync': {
                 schema: z.object({
                   'group_id': z.string(),
-'fields': z.string(),
-group_id: z.string()}),
+'fields': z.string()}),
                 handler: _groups_id,
             },
         
@@ -531,8 +498,7 @@ group_id: z.string()}),
                 schema: z.object({
                   'group_id': z.string(),
 'limit': z.number(),
-'offset': z.number(),
-group_id: z.string()}),
+'offset': z.number()}),
                 handler: _groups_id_collaborations,
             },
         
@@ -541,8 +507,7 @@ group_id: z.string()}),
                 schema: z.object({
                   'group_id': z.string(),
 'limit': z.number(),
-'offset': z.number(),
-group_id: z.string()}),
+'offset': z.number()}),
                 handler: _groups_id_memberships,
             },
         
@@ -550,8 +515,7 @@ group_id: z.string()}),
              'box._invites_id/sync': {
                 schema: z.object({
                   'invite_id': z.string(),
-'fields': z.string(),
-invite_id: z.string()}),
+'fields': z.string()}),
                 handler: _invites_id,
             },
         
@@ -568,8 +532,7 @@ invite_id: z.string()}),
 
              'box._legal_hold_policies_id/sync': {
                 schema: z.object({
-                  'legal_hold_policy_id': z.string(),
-legal_hold_policy_id: z.string()}),
+                  'legal_hold_policy_id': z.string()}),
                 handler: _legal_hold_policies_id,
             },
         
@@ -588,8 +551,7 @@ legal_hold_policy_id: z.string()}),
 
              'box._legal_hold_policy_assignments_id/sync': {
                 schema: z.object({
-                  'legal_hold_policy_assignment_id': z.string(),
-legal_hold_policy_assignment_id: z.string()}),
+                  'legal_hold_policy_assignment_id': z.string()}),
                 handler: _legal_hold_policy_assignments_id,
             },
         
@@ -599,8 +561,7 @@ legal_hold_policy_assignment_id: z.string()}),
                   'legal_hold_policy_assignment_id': z.string(),
 'marker': z.string(),
 'limit': z.number(),
-'fields': z.string(),
-legal_hold_policy_assignment_id: z.string()}),
+'fields': z.string()}),
                 handler: _legal_hold_policy_assignments_id_file_versions_on_hold,
             },
         
@@ -610,8 +571,7 @@ legal_hold_policy_assignment_id: z.string()}),
                   'legal_hold_policy_assignment_id': z.string(),
 'marker': z.string(),
 'limit': z.number(),
-'fields': z.string(),
-legal_hold_policy_assignment_id: z.string()}),
+'fields': z.string()}),
                 handler: _legal_hold_policy_assignments_id_files_on_hold,
             },
         
@@ -628,8 +588,7 @@ legal_hold_policy_assignment_id: z.string()}),
 
              'box._metadata_cascade_policies_id/sync': {
                 schema: z.object({
-                  'metadata_cascade_policy_id': z.string(),
-metadata_cascade_policy_id: z.string()}),
+                  'metadata_cascade_policy_id': z.string()}),
                 handler: _metadata_cascade_policies_id,
             },
         
@@ -674,17 +633,14 @@ metadata_cascade_policy_id: z.string()}),
              'box._metadata_templates_id_id_schema/sync': {
                 schema: z.object({
                   'scope': z.string(),
-'template_key': z.string(),
-scope: z.string(),
-template_key: z.string()}),
+'template_key': z.string()}),
                 handler: _metadata_templates_id_id_schema,
             },
         
 
              'box._metadata_templates_id/sync': {
                 schema: z.object({
-                  'template_id': z.string(),
-template_id: z.string()}),
+                  'template_id': z.string()}),
                 handler: _metadata_templates_id,
             },
         
@@ -713,8 +669,7 @@ template_id: z.string()}),
              'box._retention_policies_id/sync': {
                 schema: z.object({
                   'retention_policy_id': z.string(),
-'fields': z.string(),
-retention_policy_id: z.string()}),
+'fields': z.string()}),
                 handler: _retention_policies_id,
             },
         
@@ -725,8 +680,7 @@ retention_policy_id: z.string()}),
 'type': z.string(),
 'fields': z.string(),
 'marker': z.string(),
-'limit': z.number(),
-retention_policy_id: z.string()}),
+'limit': z.number()}),
                 handler: _retention_policies_id_assignments,
             },
         
@@ -734,8 +688,7 @@ retention_policy_id: z.string()}),
              'box._retention_policy_assignments_id/sync': {
                 schema: z.object({
                   'retention_policy_assignment_id': z.string(),
-'fields': z.string(),
-retention_policy_assignment_id: z.string()}),
+'fields': z.string()}),
                 handler: _retention_policy_assignments_id,
             },
         
@@ -744,8 +697,7 @@ retention_policy_assignment_id: z.string()}),
                 schema: z.object({
                   'retention_policy_assignment_id': z.string(),
 'marker': z.string(),
-'limit': z.number(),
-retention_policy_assignment_id: z.string()}),
+'limit': z.number()}),
                 handler: _retention_policy_assignments_id_file_versions_under_retention,
             },
         
@@ -754,8 +706,7 @@ retention_policy_assignment_id: z.string()}),
                 schema: z.object({
                   'retention_policy_assignment_id': z.string(),
 'marker': z.string(),
-'limit': z.number(),
-retention_policy_assignment_id: z.string()}),
+'limit': z.number()}),
                 handler: _retention_policy_assignments_id_files_under_retention,
             },
         
@@ -789,40 +740,35 @@ retention_policy_assignment_id: z.string()}),
 
              'box._shield_information_barrier_reports_id/sync': {
                 schema: z.object({
-                  'shield_information_barrier_report_id': z.string(),
-shield_information_barrier_report_id: z.string()}),
+                  'shield_information_barrier_report_id': z.string()}),
                 handler: _shield_information_barrier_reports_id,
             },
         
 
              'box._shield_information_barrier_segment_members_id/sync': {
                 schema: z.object({
-                  'shield_information_barrier_segment_member_id': z.string(),
-shield_information_barrier_segment_member_id: z.string()}),
+                  'shield_information_barrier_segment_member_id': z.string()}),
                 handler: _shield_information_barrier_segment_members_id,
             },
         
 
              'box._shield_information_barrier_segment_restrictions_id/sync': {
                 schema: z.object({
-                  'shield_information_barrier_segment_restriction_id': z.string(),
-shield_information_barrier_segment_restriction_id: z.string()}),
+                  'shield_information_barrier_segment_restriction_id': z.string()}),
                 handler: _shield_information_barrier_segment_restrictions_id,
             },
         
 
              'box._shield_information_barrier_segments_id/sync': {
                 schema: z.object({
-                  'shield_information_barrier_segment_id': z.string(),
-shield_information_barrier_segment_id: z.string()}),
+                  'shield_information_barrier_segment_id': z.string()}),
                 handler: _shield_information_barrier_segments_id,
             },
         
 
              'box._shield_information_barriers_id/sync': {
                 schema: z.object({
-                  'shield_information_barrier_id': z.string(),
-shield_information_barrier_id: z.string()}),
+                  'shield_information_barrier_id': z.string()}),
                 handler: _shield_information_barriers_id,
             },
         
@@ -837,8 +783,7 @@ shield_information_barrier_id: z.string()}),
 
              'box._sign_requests_id/sync': {
                 schema: z.object({
-                  'sign_request_id': z.string(),
-sign_request_id: z.string()}),
+                  'sign_request_id': z.string()}),
                 handler: _sign_requests_id,
             },
         
@@ -854,8 +799,7 @@ sign_request_id: z.string()}),
 
              'box._storage_policies_id/sync': {
                 schema: z.object({
-                  'storage_policy_id': z.string(),
-storage_policy_id: z.string()}),
+                  'storage_policy_id': z.string()}),
                 handler: _storage_policies_id,
             },
         
@@ -871,32 +815,28 @@ storage_policy_id: z.string()}),
 
              'box._storage_policy_assignments_id/sync': {
                 schema: z.object({
-                  'storage_policy_assignment_id': z.string(),
-storage_policy_assignment_id: z.string()}),
+                  'storage_policy_assignment_id': z.string()}),
                 handler: _storage_policy_assignments_id,
             },
         
 
              'box._task_assignments_id/sync': {
                 schema: z.object({
-                  'task_assignment_id': z.string(),
-task_assignment_id: z.string()}),
+                  'task_assignment_id': z.string()}),
                 handler: _task_assignments_id,
             },
         
 
              'box._tasks_id/sync': {
                 schema: z.object({
-                  'task_id': z.string(),
-task_id: z.string()}),
+                  'task_id': z.string()}),
                 handler: _tasks_id,
             },
         
 
              'box._tasks_id_assignments/sync': {
                 schema: z.object({
-                  'task_id': z.string(),
-task_id: z.string()}),
+                  'task_id': z.string()}),
                 handler: _tasks_id_assignments,
             },
         
@@ -918,8 +858,7 @@ task_id: z.string()}),
 
              'box._terms_of_services_id/sync': {
                 schema: z.object({
-                  'terms_of_service_id': z.string(),
-terms_of_service_id: z.string()}),
+                  'terms_of_service_id': z.string()}),
                 handler: _terms_of_services_id,
             },
         
@@ -948,16 +887,14 @@ terms_of_service_id: z.string()}),
              'box._users_id/sync': {
                 schema: z.object({
                   'user_id': z.string(),
-'fields': z.string(),
-user_id: z.string()}),
+'fields': z.string()}),
                 handler: _users_id,
             },
         
 
              'box._users_id_email_aliases/sync': {
                 schema: z.object({
-                  'user_id': z.string(),
-user_id: z.string()}),
+                  'user_id': z.string()}),
                 handler: _users_id_email_aliases,
             },
         
@@ -966,8 +903,7 @@ user_id: z.string()}),
                 schema: z.object({
                   'user_id': z.string(),
 'limit': z.number(),
-'offset': z.number(),
-user_id: z.string()}),
+'offset': z.number()}),
                 handler: _users_id_memberships,
             },
         
@@ -975,8 +911,7 @@ user_id: z.string()}),
              'box._web_links_id/sync': {
                 schema: z.object({
                   'web_link_id': z.string(),
-'boxapi': z.string(),
-web_link_id: z.string()}),
+'boxapi': z.string()}),
                 handler: _web_links_id,
             },
         
@@ -984,8 +919,7 @@ web_link_id: z.string()}),
              'box._web_links_id#get_shared_link/sync': {
                 schema: z.object({
                   'web_link_id': z.string(),
-'fields': z.string(),
-web_link_id: z.string()}),
+'fields': z.string()}),
                 handler: _web_links_id#get_shared_link,
             },
         
@@ -993,8 +927,7 @@ web_link_id: z.string()}),
              'box._web_links_id_trash/sync': {
                 schema: z.object({
                   'web_link_id': z.string(),
-'fields': z.string(),
-web_link_id: z.string()}),
+'fields': z.string()}),
                 handler: _web_links_id_trash,
             },
         
@@ -1009,8 +942,7 @@ web_link_id: z.string()}),
 
              'box._webhooks_id/sync': {
                 schema: z.object({
-                  'webhook_id': z.string(),
-webhook_id: z.string()}),
+                  'webhook_id': z.string()}),
                 handler: _webhooks_id,
             },
         
@@ -1027,8 +959,7 @@ webhook_id: z.string()}),
 
              'box._zip_downloads_id_status/sync': {
                 schema: z.object({
-                  'zip_download_id': z.string(),
-zip_download_id: z.string()}),
+                  'zip_download_id': z.string()}),
                 handler: _zip_downloads_id_status,
             },
         }

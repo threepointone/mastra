@@ -93,8 +93,7 @@ export class Ring-centralIntegration extends Integration {
     this.events = {
              'ring-central.Topology/sync': {
                 schema: z.object({
-                  'topologyId': z.string(),
-topologyId: z.string()}),
+                  'topologyId': z.string()}),
                 handler: Topology,
             },
         
@@ -118,8 +117,7 @@ topologyId: z.string()}),
 
              'ring-central.Attachment/sync': {
                 schema: z.object({
-                  'attachmentId': z.string(),
-attachmentId: z.string()}),
+                  'attachmentId': z.string()}),
                 handler: Attachment,
             },
         
@@ -136,8 +134,7 @@ attachmentId: z.string()}),
 
              'ring-central.Category/sync': {
                 schema: z.object({
-                  'categoryId': z.string(),
-categoryId: z.string()}),
+                  'categoryId': z.string()}),
                 handler: Category,
             },
         
@@ -152,8 +149,7 @@ categoryId: z.string()}),
 
              'ring-central.Channel/sync': {
                 schema: z.object({
-                  'channelId': z.string(),
-channelId: z.string()}),
+                  'channelId': z.string()}),
                 handler: Channel,
             },
         
@@ -168,8 +164,7 @@ channelId: z.string()}),
 
              'ring-central.Community/sync': {
                 schema: z.object({
-                  'communityId': z.string(),
-communityId: z.string()}),
+                  'communityId': z.string()}),
                 handler: Community,
             },
         
@@ -186,8 +181,7 @@ communityId: z.string()}),
 
              'ring-central.Source/sync': {
                 schema: z.object({
-                  'sourceId': z.string(),
-sourceId: z.string()}),
+                  'sourceId': z.string()}),
                 handler: Source,
             },
         
@@ -203,16 +197,14 @@ sourceId: z.string()}),
 
              'ring-central.Thread/sync': {
                 schema: z.object({
-                  'threadId': z.string(),
-threadId: z.string()}),
+                  'threadId': z.string()}),
                 handler: Thread,
             },
         
 
              'ring-central.openThread/sync': {
                 schema: z.object({
-                  'threadId': z.string(),
-threadId: z.string()}),
+                  'threadId': z.string()}),
                 handler: openThread,
             },
         
@@ -228,8 +220,7 @@ threadId: z.string()}),
 
              'ring-central.Content/sync': {
                 schema: z.object({
-                  'contentId': z.string(),
-contentId: z.string()}),
+                  'contentId': z.string()}),
                 handler: Content,
             },
         
@@ -244,8 +235,7 @@ contentId: z.string()}),
 
              'ring-central.CustomField/sync': {
                 schema: z.object({
-                  'customFieldId': z.string(),
-customFieldId: z.string()}),
+                  'customFieldId': z.string()}),
                 handler: CustomField,
             },
         
@@ -261,8 +251,7 @@ customFieldId: z.string()}),
 
              'ring-central.Event/sync': {
                 schema: z.object({
-                  'eventId': z.string(),
-eventId: z.string()}),
+                  'eventId': z.string()}),
                 handler: Event,
             },
         
@@ -277,8 +266,7 @@ eventId: z.string()}),
 
              'ring-central.Folder/sync': {
                 schema: z.object({
-                  'folderId': z.string(),
-folderId: z.string()}),
+                  'folderId': z.string()}),
                 handler: Folder,
             },
         
@@ -301,8 +289,7 @@ folderId: z.string()}),
 
              'ring-central.Identity/sync': {
                 schema: z.object({
-                  'identityId': z.string(),
-identityId: z.string()}),
+                  'identityId': z.string()}),
                 handler: Identity,
             },
         
@@ -323,8 +310,7 @@ identityId: z.string()}),
 
              'ring-central.IdentityGroup/sync': {
                 schema: z.object({
-                  'identityGroupId': z.string(),
-identityGroupId: z.string()}),
+                  'identityGroupId': z.string()}),
                 handler: IdentityGroup,
             },
         
@@ -343,8 +329,7 @@ identityGroupId: z.string()}),
 
              'ring-central.InterventionComment/sync': {
                 schema: z.object({
-                  'interventionCommentId': z.string(),
-interventionCommentId: z.string()}),
+                  'interventionCommentId': z.string()}),
                 handler: InterventionComment,
             },
         
@@ -365,8 +350,7 @@ interventionCommentId: z.string()}),
 
              'ring-central.Intervention/sync': {
                 schema: z.object({
-                  'interventionId': z.string(),
-interventionId: z.string()}),
+                  'interventionId': z.string()}),
                 handler: Intervention,
             },
         
@@ -381,8 +365,7 @@ interventionId: z.string()}),
 
              'ring-central.PresenceStatus/sync': {
                 schema: z.object({
-                  'presenceStatusId': z.string(),
-presenceStatusId: z.string()}),
+                  'presenceStatusId': z.string()}),
                 handler: PresenceStatus,
             },
         
@@ -397,8 +380,7 @@ presenceStatusId: z.string()}),
 
              'ring-central.ReplyAssistantEntry/sync': {
                 schema: z.object({
-                  'replyAssistantEntryId': z.string(),
-replyAssistantEntryId: z.string()}),
+                  'replyAssistantEntryId': z.string()}),
                 handler: ReplyAssistantEntry,
             },
         
@@ -413,8 +395,7 @@ replyAssistantEntryId: z.string()}),
 
              'ring-central.ReplyAssistantGroup/sync': {
                 schema: z.object({
-                  'replyAssistantGroupId': z.string(),
-replyAssistantGroupId: z.string()}),
+                  'replyAssistantGroupId': z.string()}),
                 handler: ReplyAssistantGroup,
             },
         
@@ -429,8 +410,7 @@ replyAssistantGroupId: z.string()}),
 
              'ring-central.ReplyAssistantVersion/sync': {
                 schema: z.object({
-                  'replyAssistantVersionId': z.string(),
-replyAssistantVersionId: z.string()}),
+                  'replyAssistantVersionId': z.string()}),
                 handler: ReplyAssistantVersion,
             },
         
@@ -445,8 +425,7 @@ replyAssistantVersionId: z.string()}),
 
              'ring-central.Role/sync': {
                 schema: z.object({
-                  'roleId': z.string(),
-roleId: z.string()}),
+                  'roleId': z.string()}),
                 handler: Role,
             },
         
@@ -465,24 +444,21 @@ roleId: z.string()}),
 
              'ring-central.Survey/sync': {
                 schema: z.object({
-                  'surveyId': z.string(),
-surveyId: z.string()}),
+                  'surveyId': z.string()}),
                 handler: Survey,
             },
         
 
              'ring-central.SurveyResponse/sync': {
                 schema: z.object({
-                  'surveyResponseId': z.string(),
-surveyResponseId: z.string()}),
+                  'surveyResponseId': z.string()}),
                 handler: SurveyResponse,
             },
         
 
              'ring-central.AgentStatus/sync': {
                 schema: z.object({
-                  'agentId': z.string(),
-agentId: z.string()}),
+                  'agentId': z.string()}),
                 handler: AgentStatus,
             },
         
@@ -498,8 +474,7 @@ agentId: z.string()}),
 
              'ring-central.Tag/sync': {
                 schema: z.object({
-                  'tagId': z.string(),
-tagId: z.string()}),
+                  'tagId': z.string()}),
                 handler: Tag,
             },
         
@@ -517,8 +492,7 @@ tagId: z.string()}),
 
              'ring-central.Task/sync': {
                 schema: z.object({
-                  'taskId': z.string(),
-taskId: z.string()}),
+                  'taskId': z.string()}),
                 handler: Task,
             },
         
@@ -533,8 +507,7 @@ taskId: z.string()}),
 
              'ring-central.Team/sync': {
                 schema: z.object({
-                  'teamId': z.string(),
-teamId: z.string()}),
+                  'teamId': z.string()}),
                 handler: Team,
             },
         
@@ -549,8 +522,7 @@ teamId: z.string()}),
 
              'ring-central.TimeSheet/sync': {
                 schema: z.object({
-                  'timeSheetId': z.string(),
-timeSheetId: z.string()}),
+                  'timeSheetId': z.string()}),
                 handler: TimeSheet,
             },
         
@@ -565,8 +537,7 @@ timeSheetId: z.string()}),
 
              'ring-central.UserCapacity/sync': {
                 schema: z.object({
-                  'userCapacityId': z.string(),
-userCapacityId: z.string()}),
+                  'userCapacityId': z.string()}),
                 handler: UserCapacity,
             },
         
@@ -587,24 +558,21 @@ userCapacityId: z.string()}),
 
              'ring-central.User/sync': {
                 schema: z.object({
-                  'userId': z.string(),
-userId: z.string()}),
+                  'userId': z.string()}),
                 handler: User,
             },
         
 
              'ring-central.UserSourcesPermissions/sync': {
                 schema: z.object({
-                  'userId': z.string(),
-userId: z.string()}),
+                  'userId': z.string()}),
                 handler: UserSourcesPermissions,
             },
         
 
              'ring-central.AllUserSignatures/sync': {
                 schema: z.object({
-                  'userId': z.string(),
-userId: z.string()}),
+                  'userId': z.string()}),
                 handler: AllUserSignatures,
             },
         
@@ -612,9 +580,7 @@ userId: z.string()}),
              'ring-central.UserSignature/sync': {
                 schema: z.object({
                   'userId': z.string(),
-'signatureId': z.string(),
-userId: z.string(),
-signatureId: z.string()}),
+'signatureId': z.string()}),
                 handler: UserSignature,
             },
         
@@ -631,8 +597,7 @@ signatureId: z.string()}),
              'ring-central.Webhook/sync': {
                 schema: z.object({
                   'webhookId': z.string(),
-'access_token': z.string(),
-webhookId: z.string()}),
+'access_token': z.string()}),
                 handler: Webhook,
             },
         }

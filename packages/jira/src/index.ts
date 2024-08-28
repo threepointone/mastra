@@ -235,16 +235,14 @@ export class JiraIntegration extends Integration {
 'projectKeyOrId': z.string(),
 'issueTypeId': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-fieldIdOrKey: z.string()}),
+'maxResults': z.number()}),
                 handler: CustomFieldConfiguration,
             },
         
 
              'jira.ApplicationRole/sync': {
                 schema: z.object({
-                  'key': z.string(),
-key: z.string()}),
+                  'key': z.string()}),
                 handler: ApplicationRole,
             },
         
@@ -257,24 +255,21 @@ key: z.string()}),
 
              'jira.Attachment/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Attachment,
             },
         
 
              'jira.expandAttachmentForHumans/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: expandAttachmentForHumans,
             },
         
 
              'jira.expandAttachmentForMachines/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: expandAttachmentForMachines,
             },
         
@@ -292,8 +287,7 @@ id: z.string()}),
 
              'jira.AllSystemAvatars/sync': {
                 schema: z.object({
-                  'type': z.string(),
-type: z.string()}),
+                  'type': z.string()}),
                 handler: AllSystemAvatars,
             },
         
@@ -310,8 +304,7 @@ type: z.string()}),
 
              'jira.BulkOperationProgress/sync': {
                 schema: z.object({
-                  'taskId': z.string(),
-taskId: z.string()}),
+                  'taskId': z.string()}),
                 handler: BulkOperationProgress,
             },
         
@@ -326,8 +319,7 @@ taskId: z.string()}),
 
              'jira.CommentPropertyKeys/sync': {
                 schema: z.object({
-                  'commentId': z.string(),
-commentId: z.string()}),
+                  'commentId': z.string()}),
                 handler: CommentPropertyKeys,
             },
         
@@ -335,9 +327,7 @@ commentId: z.string()}),
              'jira.CommentProperty/sync': {
                 schema: z.object({
                   'commentId': z.string(),
-'propertyKey': z.string(),
-commentId: z.string(),
-propertyKey: z.string()}),
+'propertyKey': z.string()}),
                 handler: CommentProperty,
             },
         
@@ -355,16 +345,14 @@ propertyKey: z.string()}),
 
              'jira.Component/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Component,
             },
         
 
              'jira.ComponentRelatedIssues/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: ComponentRelatedIssues,
             },
         
@@ -389,8 +377,7 @@ id: z.string()}),
 
              'jira.CustomFieldOption/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CustomFieldOption,
             },
         
@@ -429,11 +416,11 @@ id: z.string()}),
 
              'jira.AllGadgets/sync': {
                 schema: z.object({
-                  'dashboardId': z.number(),
+                  'dashboardId': z.string(),
+'dashboardId': z.number(),
 'moduleKey': z.string(),
 'uri': z.string(),
-'gadgetId': z.string(),
-dashboardId: z.string()}),
+'gadgetId': z.string()}),
                 handler: AllGadgets,
             },
         
@@ -441,9 +428,7 @@ dashboardId: z.string()}),
              'jira.DashboardItemPropertyKeys/sync': {
                 schema: z.object({
                   'dashboardId': z.string(),
-'itemId': z.string(),
-dashboardId: z.string(),
-itemId: z.string()}),
+'itemId': z.string()}),
                 handler: DashboardItemPropertyKeys,
             },
         
@@ -452,18 +437,14 @@ itemId: z.string()}),
                 schema: z.object({
                   'dashboardId': z.string(),
 'itemId': z.string(),
-'propertyKey': z.string(),
-dashboardId: z.string(),
-itemId: z.string(),
-propertyKey: z.string()}),
+'propertyKey': z.string()}),
                 handler: DashboardItemProperty,
             },
         
 
              'jira.Dashboard/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Dashboard,
             },
         
@@ -513,8 +494,7 @@ id: z.string()}),
 'isGlobalContext': z.boolean(),
 'contextId': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-fieldId: z.string()}),
+'maxResults': z.number()}),
                 handler: ContextsForField,
             },
         
@@ -524,8 +504,7 @@ fieldId: z.string()}),
                   'fieldId': z.string(),
 'contextId': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-fieldId: z.string()}),
+'maxResults': z.number()}),
                 handler: DefaultValues,
             },
         
@@ -535,8 +514,7 @@ fieldId: z.string()}),
                   'fieldId': z.string(),
 'contextId': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-fieldId: z.string()}),
+'maxResults': z.number()}),
                 handler: IssueTypeMappingsForContexts,
             },
         
@@ -546,8 +524,7 @@ fieldId: z.string()}),
                   'fieldId': z.string(),
 'contextId': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-fieldId: z.string()}),
+'maxResults': z.number()}),
                 handler: ProjectContextMapping,
             },
         
@@ -555,13 +532,12 @@ fieldId: z.string()}),
              'jira.OptionsForContext/sync': {
                 schema: z.object({
                   'fieldId': z.string(),
+'contextId': z.string(),
 'contextId': z.number(),
 'optionId': z.number(),
 'onlyOptions': z.boolean(),
 'startAt': z.number(),
-'maxResults': z.number(),
-fieldId: z.string(),
-contextId: z.string()}),
+'maxResults': z.number()}),
                 handler: OptionsForContext,
             },
         
@@ -570,8 +546,7 @@ contextId: z.string()}),
                 schema: z.object({
                   'fieldId': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-fieldId: z.string()}),
+'maxResults': z.number()}),
                 handler: ContextsForFieldDeprecated,
             },
         
@@ -581,40 +556,36 @@ fieldId: z.string()}),
                   'fieldId': z.string(),
 'startAt': z.number(),
 'maxResults': z.number(),
-'expand': z.string(),
-fieldId: z.string()}),
+'expand': z.string()}),
                 handler: ScreensForField,
             },
         
 
              'jira.AllIssueFieldOptions/sync': {
                 schema: z.object({
-                  'startAt': z.number(),
-'maxResults': z.number(),
-'fieldKey': z.string(),
-fieldKey: z.string()}),
+                  'fieldKey': z.string(),
+'startAt': z.number(),
+'maxResults': z.number()}),
                 handler: AllIssueFieldOptions,
             },
         
 
              'jira.SelectableIssueFieldOptions/sync': {
                 schema: z.object({
-                  'startAt': z.number(),
+                  'fieldKey': z.string(),
+'startAt': z.number(),
 'maxResults': z.number(),
-'projectId': z.number(),
-'fieldKey': z.string(),
-fieldKey: z.string()}),
+'projectId': z.number()}),
                 handler: SelectableIssueFieldOptions,
             },
         
 
              'jira.VisibleIssueFieldOptions/sync': {
                 schema: z.object({
-                  'startAt': z.number(),
+                  'fieldKey': z.string(),
+'startAt': z.number(),
 'maxResults': z.number(),
-'projectId': z.number(),
-'fieldKey': z.string(),
-fieldKey: z.string()}),
+'projectId': z.number()}),
                 handler: VisibleIssueFieldOptions,
             },
         
@@ -622,9 +593,8 @@ fieldKey: z.string()}),
              'jira.IssueFieldOption/sync': {
                 schema: z.object({
                   'fieldKey': z.string(),
-'optionId': z.number(),
-fieldKey: z.string(),
-optionId: z.string()}),
+'optionId': z.string(),
+'optionId': z.number()}),
                 handler: IssueFieldOption,
             },
         
@@ -642,10 +612,10 @@ optionId: z.string()}),
 
              'jira.FieldConfigurationItems/sync': {
                 schema: z.object({
-                  'id': z.number(),
+                  'id': z.string(),
+'id': z.number(),
 'startAt': z.number(),
-'maxResults': z.number(),
-id: z.string()}),
+'maxResults': z.number()}),
                 handler: FieldConfigurationItems,
             },
         
@@ -703,20 +673,20 @@ id: z.string()}),
 
              'jira.Filter/sync': {
                 schema: z.object({
-                  'id': z.number(),
+                  'id': z.string(),
+'id': z.number(),
 'expand': z.string(),
-'overrideSharePermissions': z.boolean(),
-id: z.string()}),
+'overrideSharePermissions': z.boolean()}),
                 handler: Filter,
             },
         
 
              'jira.SharePermission/sync': {
                 schema: z.object({
-                  'id': z.number(),
-'permissionId': z.number(),
-id: z.string(),
-permissionId: z.string()}),
+                  'id': z.string(),
+'permissionId': z.string(),
+'id': z.number(),
+'permissionId': z.number()}),
                 handler: SharePermission,
             },
         
@@ -802,8 +772,7 @@ permissionId: z.string()}),
                 schema: z.object({
                   'projectIdOrKey': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-projectIdOrKey: z.string()}),
+'maxResults': z.number()}),
                 handler: CreateIssueMetaIssueTypes,
             },
         
@@ -813,9 +782,7 @@ projectIdOrKey: z.string()}),
                   'projectIdOrKey': z.string(),
 'issueTypeId': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-projectIdOrKey: z.string(),
-issueTypeId: z.string()}),
+'maxResults': z.number()}),
                 handler: CreateIssueMetaIssueTypeId,
             },
         
@@ -847,8 +814,7 @@ issueTypeId: z.string()}),
 'expand': z.string(),
 'properties': z.string(),
 'updateHistory': z.boolean(),
-'failFast': z.boolean(),
-issueIdOrKey: z.string()}),
+'failFast': z.boolean()}),
                 handler: Issue,
             },
         
@@ -857,8 +823,7 @@ issueIdOrKey: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 'startAt': z.number(),
-'maxResults': z.number(),
-issueIdOrKey: z.string()}),
+'maxResults': z.number()}),
                 handler: ChangeLogs,
             },
         
@@ -869,8 +834,7 @@ issueIdOrKey: z.string()}),
 'startAt': z.number(),
 'maxResults': z.number(),
 'orderBy': z.string(),
-'expand': z.string(),
-issueIdOrKey: z.string()}),
+'expand': z.string()}),
                 handler: Comments,
             },
         
@@ -879,9 +843,7 @@ issueIdOrKey: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 'id': z.string(),
-'expand': z.string(),
-issueIdOrKey: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: Comment,
             },
         
@@ -890,16 +852,14 @@ id: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 'overrideScreenSecurity': z.boolean(),
-'overrideEditableFlag': z.boolean(),
-issueIdOrKey: z.string()}),
+'overrideEditableFlag': z.boolean()}),
                 handler: EditIssueMeta,
             },
         
 
              'jira.IssuePropertyKeys/sync': {
                 schema: z.object({
-                  'issueIdOrKey': z.string(),
-issueIdOrKey: z.string()}),
+                  'issueIdOrKey': z.string()}),
                 handler: IssuePropertyKeys,
             },
         
@@ -907,9 +867,7 @@ issueIdOrKey: z.string()}),
              'jira.IssueProperty/sync': {
                 schema: z.object({
                   'issueIdOrKey': z.string(),
-'propertyKey': z.string(),
-issueIdOrKey: z.string(),
-propertyKey: z.string()}),
+'propertyKey': z.string()}),
                 handler: IssueProperty,
             },
         
@@ -917,8 +875,7 @@ propertyKey: z.string()}),
              'jira.RemoteIssueLinks/sync': {
                 schema: z.object({
                   'issueIdOrKey': z.string(),
-'globalId': z.string(),
-issueIdOrKey: z.string()}),
+'globalId': z.string()}),
                 handler: RemoteIssueLinks,
             },
         
@@ -926,9 +883,7 @@ issueIdOrKey: z.string()}),
              'jira.RemoteIssueLinkById/sync': {
                 schema: z.object({
                   'issueIdOrKey': z.string(),
-'linkId': z.string(),
-issueIdOrKey: z.string(),
-linkId: z.string()}),
+'linkId': z.string()}),
                 handler: RemoteIssueLinkById,
             },
         
@@ -940,24 +895,21 @@ linkId: z.string()}),
 'transitionId': z.string(),
 'skipRemoteOnlyCondition': z.boolean(),
 'includeUnavailableTransitions': z.boolean(),
-'sortByOpsBarAndStatus': z.boolean(),
-issueIdOrKey: z.string()}),
+'sortByOpsBarAndStatus': z.boolean()}),
                 handler: Transitions,
             },
         
 
              'jira.Votes/sync': {
                 schema: z.object({
-                  'issueIdOrKey': z.string(),
-issueIdOrKey: z.string()}),
+                  'issueIdOrKey': z.string()}),
                 handler: Votes,
             },
         
 
              'jira.IssueWatchers/sync': {
                 schema: z.object({
-                  'issueIdOrKey': z.string(),
-issueIdOrKey: z.string()}),
+                  'issueIdOrKey': z.string()}),
                 handler: IssueWatchers,
             },
         
@@ -969,8 +921,7 @@ issueIdOrKey: z.string()}),
 'maxResults': z.number(),
 'startedAfter': z.number(),
 'startedBefore': z.number(),
-'expand': z.string(),
-issueIdOrKey: z.string()}),
+'expand': z.string()}),
                 handler: IssueWorklog,
             },
         
@@ -979,9 +930,7 @@ issueIdOrKey: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 'id': z.string(),
-'expand': z.string(),
-issueIdOrKey: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: Worklog,
             },
         
@@ -989,9 +938,7 @@ id: z.string()}),
              'jira.WorklogPropertyKeys/sync': {
                 schema: z.object({
                   'issueIdOrKey': z.string(),
-'worklogId': z.string(),
-issueIdOrKey: z.string(),
-worklogId: z.string()}),
+'worklogId': z.string()}),
                 handler: WorklogPropertyKeys,
             },
         
@@ -1000,18 +947,14 @@ worklogId: z.string()}),
                 schema: z.object({
                   'issueIdOrKey': z.string(),
 'worklogId': z.string(),
-'propertyKey': z.string(),
-issueIdOrKey: z.string(),
-worklogId: z.string(),
-propertyKey: z.string()}),
+'propertyKey': z.string()}),
                 handler: WorklogProperty,
             },
         
 
              'jira.IssueLink/sync': {
                 schema: z.object({
-                  'linkId': z.string(),
-linkId: z.string()}),
+                  'linkId': z.string()}),
                 handler: IssueLink,
             },
         
@@ -1024,8 +967,7 @@ linkId: z.string()}),
 
              'jira.IssueLinkType/sync': {
                 schema: z.object({
-                  'issueLinkTypeId': z.string(),
-issueLinkTypeId: z.string()}),
+                  'issueLinkTypeId': z.string()}),
                 handler: IssueLinkType,
             },
         
@@ -1081,36 +1023,34 @@ issueLinkTypeId: z.string()}),
 
              'jira.IssueSecurityScheme/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: IssueSecurityScheme,
             },
         
 
              'jira.IssueSecurityLevelMembers/sync': {
                 schema: z.object({
-                  'issueSecuritySchemeId': z.number(),
+                  'issueSecuritySchemeId': z.string(),
+'issueSecuritySchemeId': z.number(),
 'startAt': z.number(),
 'maxResults': z.number(),
 'issueSecurityLevelId': z.string(),
-'expand': z.string(),
-issueSecuritySchemeId: z.string()}),
+'expand': z.string()}),
                 handler: IssueSecurityLevelMembers,
             },
         
 
              'jira.IssueType/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: IssueType,
             },
         
 
              'jira.IssueTypePropertyKeys/sync': {
                 schema: z.object({
-                  'issueTypeId': z.string(),
-issueTypeId: z.string()}),
+                  'issueTypeId': z.string()}),
                 handler: IssueTypePropertyKeys,
             },
         
@@ -1118,9 +1058,7 @@ issueTypeId: z.string()}),
              'jira.IssueTypeProperty/sync': {
                 schema: z.object({
                   'issueTypeId': z.string(),
-'propertyKey': z.string(),
-issueTypeId: z.string(),
-propertyKey: z.string()}),
+'propertyKey': z.string()}),
                 handler: IssueTypeProperty,
             },
         
@@ -1187,11 +1125,11 @@ propertyKey: z.string()}),
 
              'jira.ProjectsForIssueTypeScreenScheme/sync': {
                 schema: z.object({
-                  'issueTypeScreenSchemeId': z.number(),
+                  'issueTypeScreenSchemeId': z.string(),
+'issueTypeScreenSchemeId': z.number(),
 'startAt': z.number(),
 'maxResults': z.number(),
-'query': z.string(),
-issueTypeScreenSchemeId: z.string()}),
+'query': z.string()}),
                 handler: ProjectsForIssueTypeScreenScheme,
             },
         
@@ -1238,8 +1176,7 @@ issueTypeScreenSchemeId: z.string()}),
 
              'jira.ApproximateApplicationLicenseCount/sync': {
                 schema: z.object({
-                  'applicationKey': z.string(),
-applicationKey: z.string()}),
+                  'applicationKey': z.string()}),
                 handler: ApproximateApplicationLicenseCount,
             },
         
@@ -1295,9 +1232,9 @@ applicationKey: z.string()}),
 
              'jira.NotificationScheme/sync': {
                 schema: z.object({
-                  'id': z.number(),
-'expand': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number(),
+'expand': z.string()}),
                 handler: NotificationScheme,
             },
         
@@ -1317,29 +1254,29 @@ id: z.string()}),
 
              'jira.PermissionScheme/sync': {
                 schema: z.object({
-                  'schemeId': z.number(),
-'expand': z.string(),
-schemeId: z.string()}),
+                  'schemeId': z.string(),
+'schemeId': z.number(),
+'expand': z.string()}),
                 handler: PermissionScheme,
             },
         
 
              'jira.PermissionSchemeGrants/sync': {
                 schema: z.object({
-                  'schemeId': z.number(),
-'expand': z.string(),
-schemeId: z.string()}),
+                  'schemeId': z.string(),
+'schemeId': z.number(),
+'expand': z.string()}),
                 handler: PermissionSchemeGrants,
             },
         
 
              'jira.PermissionSchemeGrant/sync': {
                 schema: z.object({
-                  'schemeId': z.number(),
+                  'schemeId': z.string(),
+'permissionId': z.string(),
+'schemeId': z.number(),
 'permissionId': z.number(),
-'expand': z.string(),
-schemeId: z.string(),
-permissionId: z.string()}),
+'expand': z.string()}),
                 handler: PermissionSchemeGrant,
             },
         
@@ -1359,8 +1296,7 @@ permissionId: z.string()}),
 
              'jira.Priority/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Priority,
             },
         
@@ -1392,22 +1328,20 @@ id: z.string()}),
 
              'jira.PrioritiesByPriorityScheme/sync': {
                 schema: z.object({
-                  'startAt': z.string(),
-'maxResults': z.string(),
-'schemeId': z.string(),
-schemeId: z.string()}),
+                  'schemeId': z.string(),
+'startAt': z.string(),
+'maxResults': z.string()}),
                 handler: PrioritiesByPriorityScheme,
             },
         
 
              'jira.ProjectsByPriorityScheme/sync': {
                 schema: z.object({
-                  'startAt': z.string(),
+                  'schemeId': z.string(),
+'startAt': z.string(),
 'maxResults': z.string(),
 'projectId': z.string(),
-'schemeId': z.string(),
-'query': z.string(),
-schemeId: z.string()}),
+'query': z.string()}),
                 handler: ProjectsByPriorityScheme,
             },
         
@@ -1433,16 +1367,14 @@ schemeId: z.string()}),
 
              'jira.ProjectTypeByKey/sync': {
                 schema: z.object({
-                  'projectTypeKey': z.string(),
-projectTypeKey: z.string()}),
+                  'projectTypeKey': z.string()}),
                 handler: ProjectTypeByKey,
             },
         
 
              'jira.AccessibleProjectTypeByKey/sync': {
                 schema: z.object({
-                  'projectTypeKey': z.string(),
-projectTypeKey: z.string()}),
+                  'projectTypeKey': z.string()}),
                 handler: AccessibleProjectTypeByKey,
             },
         
@@ -1451,16 +1383,14 @@ projectTypeKey: z.string()}),
                 schema: z.object({
                   'projectIdOrKey': z.string(),
 'expand': z.string(),
-'properties': z.string(),
-projectIdOrKey: z.string()}),
+'properties': z.string()}),
                 handler: Project,
             },
         
 
              'jira.AllProjectAvatars/sync': {
                 schema: z.object({
-                  'projectIdOrKey': z.string(),
-projectIdOrKey: z.string()}),
+                  'projectIdOrKey': z.string()}),
                 handler: AllProjectAvatars,
             },
         
@@ -1472,24 +1402,21 @@ projectIdOrKey: z.string()}),
 'maxResults': z.number(),
 'orderBy': z.string(),
 'componentSource': z.string(),
-'query': z.string(),
-projectIdOrKey: z.string()}),
+'query': z.string()}),
                 handler: ProjectComponentsPaginated,
             },
         
 
              'jira.FeaturesForProject/sync': {
                 schema: z.object({
-                  'projectIdOrKey': z.string(),
-projectIdOrKey: z.string()}),
+                  'projectIdOrKey': z.string()}),
                 handler: FeaturesForProject,
             },
         
 
              'jira.ProjectPropertyKeys/sync': {
                 schema: z.object({
-                  'projectIdOrKey': z.string(),
-projectIdOrKey: z.string()}),
+                  'projectIdOrKey': z.string()}),
                 handler: ProjectPropertyKeys,
             },
         
@@ -1497,9 +1424,7 @@ projectIdOrKey: z.string()}),
              'jira.ProjectProperty/sync': {
                 schema: z.object({
                   'projectIdOrKey': z.string(),
-'propertyKey': z.string(),
-projectIdOrKey: z.string(),
-propertyKey: z.string()}),
+'propertyKey': z.string()}),
                 handler: ProjectProperty,
             },
         
@@ -1507,10 +1432,9 @@ propertyKey: z.string()}),
              'jira.ProjectRole/sync': {
                 schema: z.object({
                   'projectIdOrKey': z.string(),
+'id': z.string(),
 'id': z.number(),
-'excludeInactiveUsers': z.boolean(),
-projectIdOrKey: z.string(),
-id: z.string()}),
+'excludeInactiveUsers': z.boolean()}),
                 handler: ProjectRole,
             },
         
@@ -1523,32 +1447,30 @@ id: z.string()}),
 'orderBy': z.string(),
 'query': z.string(),
 'status': z.string(),
-'expand': z.string(),
-projectIdOrKey: z.string()}),
+'expand': z.string()}),
                 handler: ProjectVersionsPaginated,
             },
         
 
              'jira.ProjectEmail/sync': {
                 schema: z.object({
-                  'projectId': z.number(),
-projectId: z.string()}),
+                  'projectId': z.string(),
+'projectId': z.number()}),
                 handler: ProjectEmail,
             },
         
 
              'jira.Hierarchy/sync': {
                 schema: z.object({
-                  'projectId': z.number(),
-projectId: z.string()}),
+                  'projectId': z.string(),
+'projectId': z.number()}),
                 handler: Hierarchy,
             },
         
 
              'jira.ProjectIssueSecurityScheme/sync': {
                 schema: z.object({
-                  'projectKeyOrId': z.string(),
-projectKeyOrId: z.string()}),
+                  'projectKeyOrId': z.string()}),
                 handler: ProjectIssueSecurityScheme,
             },
         
@@ -1556,8 +1478,7 @@ projectKeyOrId: z.string()}),
              'jira.NotificationSchemeForProject/sync': {
                 schema: z.object({
                   'projectKeyOrId': z.string(),
-'expand': z.string(),
-projectKeyOrId: z.string()}),
+'expand': z.string()}),
                 handler: NotificationSchemeForProject,
             },
         
@@ -1565,24 +1486,22 @@ projectKeyOrId: z.string()}),
              'jira.AssignedPermissionScheme/sync': {
                 schema: z.object({
                   'projectKeyOrId': z.string(),
-'expand': z.string(),
-projectKeyOrId: z.string()}),
+'expand': z.string()}),
                 handler: AssignedPermissionScheme,
             },
         
 
              'jira.SecurityLevelsForProject/sync': {
                 schema: z.object({
-                  'projectKeyOrId': z.string(),
-projectKeyOrId: z.string()}),
+                  'projectKeyOrId': z.string()}),
                 handler: SecurityLevelsForProject,
             },
         
 
              'jira.ProjectCategoryById/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: ProjectCategoryById,
             },
         
@@ -1606,24 +1525,23 @@ id: z.string()}),
 
              'jira.Resolution/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: Resolution,
             },
         
 
              'jira.ProjectRoleById/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: ProjectRoleById,
             },
         
 
              'jira.ProjectRoleActorsForRole/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: ProjectRoleActorsForRole,
             },
         
@@ -1669,8 +1587,7 @@ id: z.string()}),
 
              'jira.IssueSecurityLevel/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: IssueSecurityLevel,
             },
         
@@ -1683,16 +1600,14 @@ id: z.string()}),
 
              'jira.Status/sync': {
                 schema: z.object({
-                  'idOrName': z.string(),
-idOrName: z.string()}),
+                  'idOrName': z.string()}),
                 handler: Status,
             },
         
 
              'jira.StatusCategory/sync': {
                 schema: z.object({
-                  'idOrKey': z.string(),
-idOrKey: z.string()}),
+                  'idOrKey': z.string()}),
                 handler: StatusCategory,
             },
         
@@ -1711,8 +1626,7 @@ idOrKey: z.string()}),
 
              'jira.Task/sync': {
                 schema: z.object({
-                  'taskId': z.string(),
-taskId: z.string()}),
+                  'taskId': z.string()}),
                 handler: Task,
             },
         
@@ -1729,9 +1643,7 @@ taskId: z.string()}),
              'jira.Avatars/sync': {
                 schema: z.object({
                   'type': z.string(),
-'entityId': z.string(),
-type: z.string(),
-entityId: z.string()}),
+'entityId': z.string()}),
                 handler: Avatars,
             },
         
@@ -1740,8 +1652,7 @@ entityId: z.string()}),
                 schema: z.object({
                   'type': z.string(),
 'size': z.string(),
-'format': z.string(),
-type: z.string()}),
+'format': z.string()}),
                 handler: AvatarImageByType,
             },
         
@@ -1749,11 +1660,10 @@ type: z.string()}),
              'jira.AvatarImageByID/sync': {
                 schema: z.object({
                   'type': z.string(),
+'id': z.string(),
 'id': z.number(),
 'size': z.string(),
-'format': z.string(),
-type: z.string(),
-id: z.string()}),
+'format': z.string()}),
                 handler: AvatarImageByID,
             },
         
@@ -1763,9 +1673,7 @@ id: z.string()}),
                   'type': z.string(),
 'entityId': z.string(),
 'size': z.string(),
-'format': z.string(),
-type: z.string(),
-entityId: z.string()}),
+'format': z.string()}),
                 handler: AvatarImageByOwner,
             },
         
@@ -1829,11 +1737,10 @@ entityId: z.string()}),
 
              'jira.UserProperty/sync': {
                 schema: z.object({
-                  'accountId': z.string(),
+                  'propertyKey': z.string(),
+'accountId': z.string(),
 'userKey': z.string(),
-'username': z.string(),
-'propertyKey': z.string(),
-propertyKey: z.string()}),
+'username': z.string()}),
                 handler: UserProperty,
             },
         
@@ -1859,24 +1766,21 @@ propertyKey: z.string()}),
              'jira.Version/sync': {
                 schema: z.object({
                   'id': z.string(),
-'expand': z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: Version,
             },
         
 
              'jira.VersionRelatedIssues/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: VersionRelatedIssues,
             },
         
 
              'jira.VersionUnresolvedIssues/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: VersionUnresolvedIssues,
             },
         
@@ -1926,12 +1830,12 @@ id: z.string()}),
 
              'jira.WorkflowTransitionProperties/sync': {
                 schema: z.object({
-                  'transitionId': z.number(),
+                  'transitionId': z.string(),
+'transitionId': z.number(),
 'includeReservedKeys': z.boolean(),
 'key': z.string(),
 'workflowName': z.string(),
-'workflowMode': z.string(),
-transitionId: z.string()}),
+'workflowMode': z.string()}),
                 handler: WorkflowTransitionProperties,
             },
         
@@ -1962,74 +1866,72 @@ transitionId: z.string()}),
 
              'jira.WorkflowScheme/sync': {
                 schema: z.object({
-                  'id': z.number(),
-'returnDraftIfExists': z.boolean(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number(),
+'returnDraftIfExists': z.boolean()}),
                 handler: WorkflowScheme,
             },
         
 
              'jira.DefaultWorkflow/sync': {
                 schema: z.object({
-                  'id': z.number(),
-'returnDraftIfExists': z.boolean(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number(),
+'returnDraftIfExists': z.boolean()}),
                 handler: DefaultWorkflow,
             },
         
 
              'jira.WorkflowSchemeDraft/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: WorkflowSchemeDraft,
             },
         
 
              'jira.DraftDefaultWorkflow/sync': {
                 schema: z.object({
-                  'id': z.number(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number()}),
                 handler: DraftDefaultWorkflow,
             },
         
 
              'jira.WorkflowSchemeDraftIssueType/sync': {
                 schema: z.object({
-                  'id': z.number(),
+                  'id': z.string(),
 'issueType': z.string(),
-id: z.string(),
-issueType: z.string()}),
+'id': z.number()}),
                 handler: WorkflowSchemeDraftIssueType,
             },
         
 
              'jira.DraftWorkflow/sync': {
                 schema: z.object({
-                  'id': z.number(),
-'workflowName': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'id': z.number(),
+'workflowName': z.string()}),
                 handler: DraftWorkflow,
             },
         
 
              'jira.WorkflowSchemeIssueType/sync': {
                 schema: z.object({
-                  'id': z.number(),
+                  'id': z.string(),
 'issueType': z.string(),
-'returnDraftIfExists': z.boolean(),
-id: z.string(),
-issueType: z.string()}),
+'id': z.number(),
+'returnDraftIfExists': z.boolean()}),
                 handler: WorkflowSchemeIssueType,
             },
         
 
              'jira.Workflow/sync': {
                 schema: z.object({
-                  'id': z.number(),
+                  'id': z.string(),
+'id': z.number(),
 'workflowName': z.string(),
-'returnDraftIfExists': z.boolean(),
-id: z.string()}),
+'returnDraftIfExists': z.boolean()}),
                 handler: Workflow,
             },
         
@@ -2051,8 +1953,7 @@ id: z.string()}),
 
              'jira.AddonPropertiesResource.AddonProperties_get/sync': {
                 schema: z.object({
-                  'addonKey': z.string(),
-addonKey: z.string()}),
+                  'addonKey': z.string()}),
                 handler: AddonPropertiesResource.AddonProperties_get,
             },
         
@@ -2060,9 +1961,7 @@ addonKey: z.string()}),
              'jira.AddonPropertiesResource.AddonProperty_get/sync': {
                 schema: z.object({
                   'addonKey': z.string(),
-'propertyKey': z.string(),
-addonKey: z.string(),
-propertyKey: z.string()}),
+'propertyKey': z.string()}),
                 handler: AddonPropertiesResource.AddonProperty_get,
             },
         

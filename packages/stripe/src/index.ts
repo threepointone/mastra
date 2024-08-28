@@ -257,8 +257,7 @@ export class StripeIntegration extends Integration {
              'stripe.GetAccountsAccount/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
-account: z.string()}),
+'expand': z.string()}),
                 handler: GetAccountsAccount,
             },
         
@@ -266,10 +265,8 @@ account: z.string()}),
              'stripe.GetAccountsAccountBankAccountsId/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
 'id': z.string(),
-account: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetAccountsAccountBankAccountsId,
             },
         
@@ -277,8 +274,7 @@ id: z.string()}),
              'stripe.GetAccountsAccountCapabilities/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
-account: z.string()}),
+'expand': z.string()}),
                 handler: GetAccountsAccountCapabilities,
             },
         
@@ -287,9 +283,7 @@ account: z.string()}),
                 schema: z.object({
                   'account': z.string(),
 'capability': z.string(),
-'expand': z.string(),
-account: z.string(),
-capability: z.string()}),
+'expand': z.string()}),
                 handler: GetAccountsAccountCapabilitiesCapability,
             },
         
@@ -300,8 +294,7 @@ capability: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-account: z.string()}),
+'starting_after': z.string()}),
                 handler: GetAccountsAccountExternalAccounts,
             },
         
@@ -309,10 +302,8 @@ account: z.string()}),
              'stripe.GetAccountsAccountExternalAccountsId/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
 'id': z.string(),
-account: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetAccountsAccountExternalAccountsId,
             },
         
@@ -324,8 +315,7 @@ id: z.string()}),
 'expand': z.string(),
 'limit': z.number(),
 'relationship': z.string(),
-'starting_after': z.string(),
-account: z.string()}),
+'starting_after': z.string()}),
                 handler: GetAccountsAccountPeople,
             },
         
@@ -333,10 +323,8 @@ account: z.string()}),
              'stripe.GetAccountsAccountPeoplePerson/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
 'person': z.string(),
-account: z.string(),
-person: z.string()}),
+'expand': z.string()}),
                 handler: GetAccountsAccountPeoplePerson,
             },
         
@@ -348,8 +336,7 @@ person: z.string()}),
 'expand': z.string(),
 'limit': z.number(),
 'relationship': z.string(),
-'starting_after': z.string(),
-account: z.string()}),
+'starting_after': z.string()}),
                 handler: GetAccountsAccountPersons,
             },
         
@@ -357,10 +344,8 @@ account: z.string()}),
              'stripe.GetAccountsAccountPersonsPerson/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
 'person': z.string(),
-account: z.string(),
-person: z.string()}),
+'expand': z.string()}),
                 handler: GetAccountsAccountPersonsPerson,
             },
         
@@ -379,8 +364,7 @@ person: z.string()}),
              'stripe.GetApplePayDomainsDomain/sync': {
                 schema: z.object({
                   'domain': z.string(),
-'expand': z.string(),
-domain: z.string()}),
+'expand': z.string()}),
                 handler: GetApplePayDomainsDomain,
             },
         
@@ -399,32 +383,28 @@ domain: z.string()}),
 
              'stripe.GetApplicationFeesFeeRefundsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'fee': z.string(),
+                  'fee': z.string(),
 'id': z.string(),
-fee: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetApplicationFeesFeeRefundsId,
             },
         
 
              'stripe.GetApplicationFeesId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetApplicationFeesId,
             },
         
 
              'stripe.GetApplicationFeesIdRefunds/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'id': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
-'id': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-id: z.string()}),
+'starting_after': z.string()}),
                 handler: GetApplicationFeesIdRefunds,
             },
         
@@ -473,9 +453,8 @@ id: z.string()}),
 
              'stripe.GetBalanceHistoryId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetBalanceHistoryId,
             },
         
@@ -497,9 +476,8 @@ id: z.string()}),
 
              'stripe.GetBalanceTransactionsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetBalanceTransactionsId,
             },
         
@@ -519,8 +497,7 @@ id: z.string()}),
              'stripe.GetBillingPortalConfigurationsConfiguration/sync': {
                 schema: z.object({
                   'configuration': z.string(),
-'expand': z.string(),
-configuration: z.string()}),
+'expand': z.string()}),
                 handler: GetBillingPortalConfigurationsConfiguration,
             },
         
@@ -552,8 +529,7 @@ configuration: z.string()}),
              'stripe.GetChargesCharge/sync': {
                 schema: z.object({
                   'charge': z.string(),
-'expand': z.string(),
-charge: z.string()}),
+'expand': z.string()}),
                 handler: GetChargesCharge,
             },
         
@@ -561,8 +537,7 @@ charge: z.string()}),
              'stripe.GetChargesChargeDispute/sync': {
                 schema: z.object({
                   'charge': z.string(),
-'expand': z.string(),
-charge: z.string()}),
+'expand': z.string()}),
                 handler: GetChargesChargeDispute,
             },
         
@@ -573,8 +548,7 @@ charge: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-charge: z.string()}),
+'starting_after': z.string()}),
                 handler: GetChargesChargeRefunds,
             },
         
@@ -582,10 +556,8 @@ charge: z.string()}),
              'stripe.GetChargesChargeRefundsRefund/sync': {
                 schema: z.object({
                   'charge': z.string(),
-'expand': z.string(),
 'refund': z.string(),
-charge: z.string(),
-refund: z.string()}),
+'expand': z.string()}),
                 handler: GetChargesChargeRefundsRefund,
             },
         
@@ -607,21 +579,19 @@ refund: z.string()}),
 
              'stripe.GetCheckoutSessionsSession/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'session': z.string(),
-session: z.string()}),
+                  'session': z.string(),
+'expand': z.string()}),
                 handler: GetCheckoutSessionsSession,
             },
         
 
              'stripe.GetCheckoutSessionsSessionLineItems/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'session': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'session': z.string(),
-'starting_after': z.string(),
-session: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCheckoutSessionsSessionLineItems,
             },
         
@@ -639,8 +609,7 @@ session: z.string()}),
              'stripe.GetCountrySpecsCountry/sync': {
                 schema: z.object({
                   'country': z.string(),
-'expand': z.string(),
-country: z.string()}),
+'expand': z.string()}),
                 handler: GetCountrySpecsCountry,
             },
         
@@ -659,8 +628,7 @@ country: z.string()}),
              'stripe.GetCouponsCoupon/sync': {
                 schema: z.object({
                   'coupon': z.string(),
-'expand': z.string(),
-coupon: z.string()}),
+'expand': z.string()}),
                 handler: GetCouponsCoupon,
             },
         
@@ -722,17 +690,15 @@ coupon: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-credit_note: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCreditNotesCreditNoteLines,
             },
         
 
              'stripe.GetCreditNotesId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetCreditNotesId,
             },
         
@@ -766,8 +732,7 @@ id: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-customer: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCustomersCustomerBalanceTransactions,
             },
         
@@ -775,10 +740,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerBalanceTransactionsTransaction/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'transaction': z.string(),
-customer: z.string(),
-transaction: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerBalanceTransactionsTransaction,
             },
         
@@ -789,8 +752,7 @@ transaction: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-customer: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCustomersCustomerBankAccounts,
             },
         
@@ -798,10 +760,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerBankAccountsId/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'id': z.string(),
-customer: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerBankAccountsId,
             },
         
@@ -812,8 +772,7 @@ id: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-customer: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCustomersCustomerCards,
             },
         
@@ -821,10 +780,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerCardsId/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'id': z.string(),
-customer: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerCardsId,
             },
         
@@ -832,8 +789,7 @@ id: z.string()}),
              'stripe.GetCustomersCustomerCashBalance/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
-customer: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerCashBalance,
             },
         
@@ -844,8 +800,7 @@ customer: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-customer: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCustomersCustomerCashBalanceTransactions,
             },
         
@@ -853,10 +808,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerCashBalanceTransactionsTransaction/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'transaction': z.string(),
-customer: z.string(),
-transaction: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerCashBalanceTransactionsTransaction,
             },
         
@@ -864,8 +817,7 @@ transaction: z.string()}),
              'stripe.GetCustomersCustomerDiscount/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
-customer: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerDiscount,
             },
         
@@ -877,8 +829,7 @@ customer: z.string()}),
 'expand': z.string(),
 'limit': z.number(),
 'starting_after': z.string(),
-'type': z.string(),
-customer: z.string()}),
+'type': z.string()}),
                 handler: GetCustomersCustomerPaymentMethods,
             },
         
@@ -886,10 +837,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerPaymentMethodsPaymentMethod/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'payment_method': z.string(),
-customer: z.string(),
-payment_method: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerPaymentMethodsPaymentMethod,
             },
         
@@ -901,8 +850,7 @@ payment_method: z.string()}),
 'expand': z.string(),
 'limit': z.number(),
 'object': z.string(),
-'starting_after': z.string(),
-customer: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCustomersCustomerSources,
             },
         
@@ -910,10 +858,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerSourcesId/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'id': z.string(),
-customer: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerSourcesId,
             },
         
@@ -924,8 +870,7 @@ id: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-customer: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCustomersCustomerSubscriptions,
             },
         
@@ -933,10 +878,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerSubscriptionsSubscriptionExposedId/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'subscription_exposed_id': z.string(),
-customer: z.string(),
-subscription_exposed_id: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerSubscriptionsSubscriptionExposedId,
             },
         
@@ -944,10 +887,8 @@ subscription_exposed_id: z.string()}),
              'stripe.GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'subscription_exposed_id': z.string(),
-customer: z.string(),
-subscription_exposed_id: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount,
             },
         
@@ -958,8 +899,7 @@ subscription_exposed_id: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-customer: z.string()}),
+'starting_after': z.string()}),
                 handler: GetCustomersCustomerTaxIds,
             },
         
@@ -967,10 +907,8 @@ customer: z.string()}),
              'stripe.GetCustomersCustomerTaxIdsId/sync': {
                 schema: z.object({
                   'customer': z.string(),
-'expand': z.string(),
 'id': z.string(),
-customer: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetCustomersCustomerTaxIdsId,
             },
         
@@ -991,8 +929,7 @@ id: z.string()}),
              'stripe.GetDisputesDispute/sync': {
                 schema: z.object({
                   'dispute': z.string(),
-'expand': z.string(),
-dispute: z.string()}),
+'expand': z.string()}),
                 handler: GetDisputesDispute,
             },
         
@@ -1013,9 +950,8 @@ dispute: z.string()}),
 
              'stripe.GetEventsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetEventsId,
             },
         
@@ -1032,9 +968,8 @@ id: z.string()}),
 
              'stripe.GetExchangeRatesRateId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'rate_id': z.string(),
-rate_id: z.string()}),
+                  'rate_id': z.string(),
+'expand': z.string()}),
                 handler: GetExchangeRatesRateId,
             },
         
@@ -1054,9 +989,8 @@ rate_id: z.string()}),
 
              'stripe.GetFileLinksLink/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'link': z.string(),
-link: z.string()}),
+                  'link': z.string(),
+'expand': z.string()}),
                 handler: GetFileLinksLink,
             },
         
@@ -1075,9 +1009,8 @@ link: z.string()}),
 
              'stripe.GetFilesFile/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'file': z.string(),
-file: z.string()}),
+                  'file': z.string(),
+'expand': z.string()}),
                 handler: GetFilesFile,
             },
         
@@ -1097,8 +1030,7 @@ file: z.string()}),
              'stripe.GetFinancialConnectionsAccountsAccount/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
-account: z.string()}),
+'expand': z.string()}),
                 handler: GetFinancialConnectionsAccountsAccount,
             },
         
@@ -1110,17 +1042,15 @@ account: z.string()}),
 'expand': z.string(),
 'limit': z.number(),
 'ownership': z.string(),
-'starting_after': z.string(),
-account: z.string()}),
+'starting_after': z.string()}),
                 handler: GetFinancialConnectionsAccountsAccountOwners,
             },
         
 
              'stripe.GetFinancialConnectionsSessionsSession/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'session': z.string(),
-session: z.string()}),
+                  'session': z.string(),
+'expand': z.string()}),
                 handler: GetFinancialConnectionsSessionsSession,
             },
         
@@ -1140,9 +1070,8 @@ session: z.string()}),
 
              'stripe.GetIdentityVerificationReportsReport/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'report': z.string(),
-report: z.string()}),
+                  'report': z.string(),
+'expand': z.string()}),
                 handler: GetIdentityVerificationReportsReport,
             },
         
@@ -1161,9 +1090,8 @@ report: z.string()}),
 
              'stripe.GetIdentityVerificationSessionsSession/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'session': z.string(),
-session: z.string()}),
+                  'session': z.string(),
+'expand': z.string()}),
                 handler: GetIdentityVerificationSessionsSession,
             },
         
@@ -1184,9 +1112,8 @@ session: z.string()}),
 
              'stripe.GetInvoiceitemsInvoiceitem/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'invoiceitem': z.string(),
-invoiceitem: z.string()}),
+                  'invoiceitem': z.string(),
+'expand': z.string()}),
                 handler: GetInvoiceitemsInvoiceitem,
             },
         
@@ -1278,21 +1205,19 @@ invoiceitem: z.string()}),
 
              'stripe.GetInvoicesInvoice/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'invoice': z.string(),
-invoice: z.string()}),
+                  'invoice': z.string(),
+'expand': z.string()}),
                 handler: GetInvoicesInvoice,
             },
         
 
              'stripe.GetInvoicesInvoiceLines/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'invoice': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
-'invoice': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-invoice: z.string()}),
+'starting_after': z.string()}),
                 handler: GetInvoicesInvoiceLines,
             },
         
@@ -1314,8 +1239,7 @@ invoice: z.string()}),
              'stripe.GetIssuingAuthorizationsAuthorization/sync': {
                 schema: z.object({
                   'authorization': z.string(),
-'expand': z.string(),
-authorization: z.string()}),
+'expand': z.string()}),
                 handler: GetIssuingAuthorizationsAuthorization,
             },
         
@@ -1338,8 +1262,7 @@ authorization: z.string()}),
              'stripe.GetIssuingCardholdersCardholder/sync': {
                 schema: z.object({
                   'cardholder': z.string(),
-'expand': z.string(),
-cardholder: z.string()}),
+'expand': z.string()}),
                 handler: GetIssuingCardholdersCardholder,
             },
         
@@ -1364,8 +1287,7 @@ cardholder: z.string()}),
              'stripe.GetIssuingCardsCard/sync': {
                 schema: z.object({
                   'card': z.string(),
-'expand': z.string(),
-card: z.string()}),
+'expand': z.string()}),
                 handler: GetIssuingCardsCard,
             },
         
@@ -1386,8 +1308,7 @@ card: z.string()}),
              'stripe.GetIssuingDisputesDispute/sync': {
                 schema: z.object({
                   'dispute': z.string(),
-'expand': z.string(),
-dispute: z.string()}),
+'expand': z.string()}),
                 handler: GetIssuingDisputesDispute,
             },
         
@@ -1405,9 +1326,8 @@ dispute: z.string()}),
 
              'stripe.GetIssuingSettlementsSettlement/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'settlement': z.string(),
-settlement: z.string()}),
+                  'settlement': z.string(),
+'expand': z.string()}),
                 handler: GetIssuingSettlementsSettlement,
             },
         
@@ -1428,18 +1348,16 @@ settlement: z.string()}),
 
              'stripe.GetIssuingTransactionsTransaction/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'transaction': z.string(),
-transaction: z.string()}),
+                  'transaction': z.string(),
+'expand': z.string()}),
                 handler: GetIssuingTransactionsTransaction,
             },
         
 
              'stripe.GetLinkAccountSessionsSession/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'session': z.string(),
-session: z.string()}),
+                  'session': z.string(),
+'expand': z.string()}),
                 handler: GetLinkAccountSessionsSession,
             },
         
@@ -1459,8 +1377,7 @@ session: z.string()}),
              'stripe.GetLinkedAccountsAccount/sync': {
                 schema: z.object({
                   'account': z.string(),
-'expand': z.string(),
-account: z.string()}),
+'expand': z.string()}),
                 handler: GetLinkedAccountsAccount,
             },
         
@@ -1472,17 +1389,15 @@ account: z.string()}),
 'expand': z.string(),
 'limit': z.number(),
 'ownership': z.string(),
-'starting_after': z.string(),
-account: z.string()}),
+'starting_after': z.string()}),
                 handler: GetLinkedAccountsAccountOwners,
             },
         
 
              'stripe.GetMandatesMandate/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'mandate': z.string(),
-mandate: z.string()}),
+                  'mandate': z.string(),
+'expand': z.string()}),
                 handler: GetMandatesMandate,
             },
         
@@ -1511,10 +1426,9 @@ mandate: z.string()}),
 
              'stripe.GetPaymentIntentsIntent/sync': {
                 schema: z.object({
-                  'client_secret': z.string(),
-'expand': z.string(),
-'intent': z.string(),
-intent: z.string()}),
+                  'intent': z.string(),
+'client_secret': z.string(),
+'expand': z.string()}),
                 handler: GetPaymentIntentsIntent,
             },
         
@@ -1532,21 +1446,19 @@ intent: z.string()}),
 
              'stripe.GetPaymentLinksPaymentLink/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'payment_link': z.string(),
-payment_link: z.string()}),
+                  'payment_link': z.string(),
+'expand': z.string()}),
                 handler: GetPaymentLinksPaymentLink,
             },
         
 
              'stripe.GetPaymentLinksPaymentLinkLineItems/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'payment_link': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'payment_link': z.string(),
-'starting_after': z.string(),
-payment_link: z.string()}),
+'starting_after': z.string()}),
                 handler: GetPaymentLinksPaymentLinkLineItems,
             },
         
@@ -1565,9 +1477,8 @@ payment_link: z.string()}),
 
              'stripe.GetPaymentMethodsPaymentMethod/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'payment_method': z.string(),
-payment_method: z.string()}),
+                  'payment_method': z.string(),
+'expand': z.string()}),
                 handler: GetPaymentMethodsPaymentMethod,
             },
         
@@ -1588,9 +1499,8 @@ payment_method: z.string()}),
 
              'stripe.GetPayoutsPayout/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'payout': z.string(),
-payout: z.string()}),
+                  'payout': z.string(),
+'expand': z.string()}),
                 handler: GetPayoutsPayout,
             },
         
@@ -1610,9 +1520,8 @@ payout: z.string()}),
 
              'stripe.GetPlansPlan/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'plan': z.string(),
-plan: z.string()}),
+                  'plan': z.string(),
+'expand': z.string()}),
                 handler: GetPlansPlan,
             },
         
@@ -1646,9 +1555,8 @@ plan: z.string()}),
 
              'stripe.GetPricesPrice/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'price': z.string(),
-price: z.string()}),
+                  'price': z.string(),
+'expand': z.string()}),
                 handler: GetPricesPrice,
             },
         
@@ -1680,9 +1588,8 @@ price: z.string()}),
 
              'stripe.GetProductsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetProductsId,
             },
         
@@ -1704,9 +1611,8 @@ id: z.string()}),
 
              'stripe.GetPromotionCodesPromotionCode/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'promotion_code': z.string(),
-promotion_code: z.string()}),
+                  'promotion_code': z.string(),
+'expand': z.string()}),
                 handler: GetPromotionCodesPromotionCode,
             },
         
@@ -1726,33 +1632,30 @@ promotion_code: z.string()}),
 
              'stripe.GetQuotesQuote/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'quote': z.string(),
-quote: z.string()}),
+                  'quote': z.string(),
+'expand': z.string()}),
                 handler: GetQuotesQuote,
             },
         
 
              'stripe.GetQuotesQuoteComputedUpfrontLineItems/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'quote': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'quote': z.string(),
-'starting_after': z.string(),
-quote: z.string()}),
+'starting_after': z.string()}),
                 handler: GetQuotesQuoteComputedUpfrontLineItems,
             },
         
 
              'stripe.GetQuotesQuoteLineItems/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'quote': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'quote': z.string(),
-'starting_after': z.string(),
-quote: z.string()}),
+'starting_after': z.string()}),
                 handler: GetQuotesQuoteLineItems,
             },
         
@@ -1772,8 +1675,7 @@ quote: z.string()}),
              'stripe.GetRadarEarlyFraudWarningsEarlyFraudWarning/sync': {
                 schema: z.object({
                   'early_fraud_warning': z.string(),
-'expand': z.string(),
-early_fraud_warning: z.string()}),
+'expand': z.string()}),
                 handler: GetRadarEarlyFraudWarningsEarlyFraudWarning,
             },
         
@@ -1793,9 +1695,8 @@ early_fraud_warning: z.string()}),
 
              'stripe.GetRadarValueListItemsItem/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'item': z.string(),
-item: z.string()}),
+                  'item': z.string(),
+'expand': z.string()}),
                 handler: GetRadarValueListItemsItem,
             },
         
@@ -1815,9 +1716,8 @@ item: z.string()}),
 
              'stripe.GetRadarValueListsValueList/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'value_list': z.string(),
-value_list: z.string()}),
+                  'value_list': z.string(),
+'expand': z.string()}),
                 handler: GetRadarValueListsValueList,
             },
         
@@ -1837,9 +1737,8 @@ value_list: z.string()}),
 
              'stripe.GetRefundsRefund/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'refund': z.string(),
-refund: z.string()}),
+                  'refund': z.string(),
+'expand': z.string()}),
                 handler: GetRefundsRefund,
             },
         
@@ -1857,9 +1756,8 @@ refund: z.string()}),
 
              'stripe.GetReportingReportRunsReportRun/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'report_run': z.string(),
-report_run: z.string()}),
+                  'report_run': z.string(),
+'expand': z.string()}),
                 handler: GetReportingReportRunsReportRun,
             },
         
@@ -1873,9 +1771,8 @@ report_run: z.string()}),
 
              'stripe.GetReportingReportTypesReportType/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'report_type': z.string(),
-report_type: z.string()}),
+                  'report_type': z.string(),
+'expand': z.string()}),
                 handler: GetReportingReportTypesReportType,
             },
         
@@ -1893,9 +1790,8 @@ report_type: z.string()}),
 
              'stripe.GetReviewsReview/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'review': z.string(),
-review: z.string()}),
+                  'review': z.string(),
+'expand': z.string()}),
                 handler: GetReviewsReview,
             },
         
@@ -1928,10 +1824,9 @@ review: z.string()}),
 
              'stripe.GetSetupIntentsIntent/sync': {
                 schema: z.object({
-                  'client_secret': z.string(),
-'expand': z.string(),
-'intent': z.string(),
-intent: z.string()}),
+                  'intent': z.string(),
+'client_secret': z.string(),
+'expand': z.string()}),
                 handler: GetSetupIntentsIntent,
             },
         
@@ -1951,9 +1846,8 @@ intent: z.string()}),
 
              'stripe.GetShippingRatesShippingRateToken/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'shipping_rate_token': z.string(),
-shipping_rate_token: z.string()}),
+                  'shipping_rate_token': z.string(),
+'expand': z.string()}),
                 handler: GetShippingRatesShippingRateToken,
             },
         
@@ -1970,53 +1864,46 @@ shipping_rate_token: z.string()}),
 
              'stripe.GetSigmaScheduledQueryRunsScheduledQueryRun/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'scheduled_query_run': z.string(),
-scheduled_query_run: z.string()}),
+                  'scheduled_query_run': z.string(),
+'expand': z.string()}),
                 handler: GetSigmaScheduledQueryRunsScheduledQueryRun,
             },
         
 
              'stripe.GetSourcesSource/sync': {
                 schema: z.object({
-                  'client_secret': z.string(),
-'expand': z.string(),
-'source': z.string(),
-source: z.string()}),
+                  'source': z.string(),
+'client_secret': z.string(),
+'expand': z.string()}),
                 handler: GetSourcesSource,
             },
         
 
              'stripe.GetSourcesSourceMandateNotificationsMandateNotification/sync': {
                 schema: z.object({
-                  'expand': z.string(),
+                  'source': z.string(),
 'mandate_notification': z.string(),
-'source': z.string(),
-source: z.string(),
-mandate_notification: z.string()}),
+'expand': z.string()}),
                 handler: GetSourcesSourceMandateNotificationsMandateNotification,
             },
         
 
              'stripe.GetSourcesSourceSourceTransactions/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'source': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'source': z.string(),
-'starting_after': z.string(),
-source: z.string()}),
+'starting_after': z.string()}),
                 handler: GetSourcesSourceSourceTransactions,
             },
         
 
              'stripe.GetSourcesSourceSourceTransactionsSourceTransaction/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'source': z.string(),
+                  'source': z.string(),
 'source_transaction': z.string(),
-source: z.string(),
-source_transaction: z.string()}),
+'expand': z.string()}),
                 handler: GetSourcesSourceSourceTransactionsSourceTransaction,
             },
         
@@ -2034,21 +1921,19 @@ source_transaction: z.string()}),
 
              'stripe.GetSubscriptionItemsItem/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'item': z.string(),
-item: z.string()}),
+                  'item': z.string(),
+'expand': z.string()}),
                 handler: GetSubscriptionItemsItem,
             },
         
 
              'stripe.GetSubscriptionItemsSubscriptionItemUsageRecordSummaries/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'subscription_item': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-'subscription_item': z.string(),
-subscription_item: z.string()}),
+'starting_after': z.string()}),
                 handler: GetSubscriptionItemsSubscriptionItemUsageRecordSummaries,
             },
         
@@ -2071,9 +1956,8 @@ subscription_item: z.string()}),
 
              'stripe.GetSubscriptionSchedulesSchedule/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'schedule': z.string(),
-schedule: z.string()}),
+                  'schedule': z.string(),
+'expand': z.string()}),
                 handler: GetSubscriptionSchedulesSchedule,
             },
         
@@ -2108,9 +1992,8 @@ schedule: z.string()}),
 
              'stripe.GetSubscriptionsSubscriptionExposedId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'subscription_exposed_id': z.string(),
-subscription_exposed_id: z.string()}),
+                  'subscription_exposed_id': z.string(),
+'expand': z.string()}),
                 handler: GetSubscriptionsSubscriptionExposedId,
             },
         
@@ -2121,29 +2004,26 @@ subscription_exposed_id: z.string()}),
 'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-calculation: z.string()}),
+'starting_after': z.string()}),
                 handler: GetTaxCalculationsCalculationLineItems,
             },
         
 
              'stripe.GetTaxTransactionsTransaction/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'transaction': z.string(),
-transaction: z.string()}),
+                  'transaction': z.string(),
+'expand': z.string()}),
                 handler: GetTaxTransactionsTransaction,
             },
         
 
              'stripe.GetTaxTransactionsTransactionLineItems/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'transaction': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-'transaction': z.string(),
-transaction: z.string()}),
+'starting_after': z.string()}),
                 handler: GetTaxTransactionsTransactionLineItems,
             },
         
@@ -2160,9 +2040,8 @@ transaction: z.string()}),
 
              'stripe.GetTaxCodesId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetTaxCodesId,
             },
         
@@ -2182,9 +2061,8 @@ id: z.string()}),
 
              'stripe.GetTaxRatesTaxRate/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'tax_rate': z.string(),
-tax_rate: z.string()}),
+                  'tax_rate': z.string(),
+'expand': z.string()}),
                 handler: GetTaxRatesTaxRate,
             },
         
@@ -2235,18 +2113,16 @@ tax_rate: z.string()}),
 
              'stripe.GetTestHelpersTestClocksTestClock/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'test_clock': z.string(),
-test_clock: z.string()}),
+                  'test_clock': z.string(),
+'expand': z.string()}),
                 handler: GetTestHelpersTestClocksTestClock,
             },
         
 
              'stripe.GetTokensToken/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'token': z.string(),
-token: z.string()}),
+                  'token': z.string(),
+'expand': z.string()}),
                 handler: GetTokensToken,
             },
         
@@ -2266,9 +2142,8 @@ token: z.string()}),
 
              'stripe.GetTopupsTopup/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'topup': z.string(),
-topup: z.string()}),
+                  'topup': z.string(),
+'expand': z.string()}),
                 handler: GetTopupsTopup,
             },
         
@@ -2288,32 +2163,28 @@ topup: z.string()}),
 
              'stripe.GetTransfersIdReversals/sync': {
                 schema: z.object({
-                  'ending_before': z.string(),
+                  'id': z.string(),
+'ending_before': z.string(),
 'expand': z.string(),
-'id': z.string(),
 'limit': z.number(),
-'starting_after': z.string(),
-id: z.string()}),
+'starting_after': z.string()}),
                 handler: GetTransfersIdReversals,
             },
         
 
              'stripe.GetTransfersTransfer/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'transfer': z.string(),
-transfer: z.string()}),
+                  'transfer': z.string(),
+'expand': z.string()}),
                 handler: GetTransfersTransfer,
             },
         
 
              'stripe.GetTransfersTransferReversalsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
+                  'transfer': z.string(),
 'id': z.string(),
-'transfer': z.string(),
-transfer: z.string(),
-id: z.string()}),
+'expand': z.string()}),
                 handler: GetTransfersTransferReversalsId,
             },
         
@@ -2334,8 +2205,7 @@ id: z.string()}),
              'stripe.GetTreasuryCreditReversalsCreditReversal/sync': {
                 schema: z.object({
                   'credit_reversal': z.string(),
-'expand': z.string(),
-credit_reversal: z.string()}),
+'expand': z.string()}),
                 handler: GetTreasuryCreditReversalsCreditReversal,
             },
         
@@ -2357,8 +2227,7 @@ credit_reversal: z.string()}),
              'stripe.GetTreasuryDebitReversalsDebitReversal/sync': {
                 schema: z.object({
                   'debit_reversal': z.string(),
-'expand': z.string(),
-debit_reversal: z.string()}),
+'expand': z.string()}),
                 handler: GetTreasuryDebitReversalsDebitReversal,
             },
         
@@ -2376,18 +2245,16 @@ debit_reversal: z.string()}),
 
              'stripe.GetTreasuryFinancialAccountsFinancialAccount/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'financial_account': z.string(),
-financial_account: z.string()}),
+                  'financial_account': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryFinancialAccountsFinancialAccount,
             },
         
 
              'stripe.GetTreasuryFinancialAccountsFinancialAccountFeatures/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'financial_account': z.string(),
-financial_account: z.string()}),
+                  'financial_account': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryFinancialAccountsFinancialAccountFeatures,
             },
         
@@ -2406,9 +2273,8 @@ financial_account: z.string()}),
 
              'stripe.GetTreasuryInboundTransfersId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryInboundTransfersId,
             },
         
@@ -2428,9 +2294,8 @@ id: z.string()}),
 
              'stripe.GetTreasuryOutboundPaymentsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryOutboundPaymentsId,
             },
         
@@ -2449,9 +2314,8 @@ id: z.string()}),
 
              'stripe.GetTreasuryOutboundTransfersOutboundTransfer/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'outbound_transfer': z.string(),
-outbound_transfer: z.string()}),
+                  'outbound_transfer': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryOutboundTransfersOutboundTransfer,
             },
         
@@ -2471,9 +2335,8 @@ outbound_transfer: z.string()}),
 
              'stripe.GetTreasuryReceivedCreditsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryReceivedCreditsId,
             },
         
@@ -2492,9 +2355,8 @@ id: z.string()}),
 
              'stripe.GetTreasuryReceivedDebitsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryReceivedDebitsId,
             },
         
@@ -2516,9 +2378,8 @@ id: z.string()}),
 
              'stripe.GetTreasuryTransactionEntriesId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryTransactionEntriesId,
             },
         
@@ -2540,9 +2401,8 @@ id: z.string()}),
 
              'stripe.GetTreasuryTransactionsId/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'id': z.string(),
-id: z.string()}),
+                  'id': z.string(),
+'expand': z.string()}),
                 handler: GetTreasuryTransactionsId,
             },
         
@@ -2559,9 +2419,8 @@ id: z.string()}),
 
              'stripe.GetWebhookEndpointsWebhookEndpoint/sync': {
                 schema: z.object({
-                  'expand': z.string(),
-'webhook_endpoint': z.string(),
-webhook_endpoint: z.string()}),
+                  'webhook_endpoint': z.string(),
+'expand': z.string()}),
                 handler: GetWebhookEndpointsWebhookEndpoint,
             },
         }

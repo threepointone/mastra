@@ -88,15 +88,16 @@ export class PinterestIntegration extends Integration {
     this.events = {
              'pinterest.ad_accounts/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string()}),
                 handler: ad_accounts,
             },
         
 
              'pinterest.ad_groupsanalytics/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
 'query_ad_group_ids_required': z.string(),
@@ -105,15 +106,15 @@ ad_account_id: z.string()}),
 'query_conversion_attribution_click_window_days': z.string(),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
-'query_conversion_attribution_conversion_report_time': z.string(),
-ad_account_id: z.string()}),
+'query_conversion_attribution_conversion_report_time': z.string()}),
                 handler: ad_groupsanalytics,
             },
         
 
              'pinterest.ad_groups_taring_analyticsget/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_ad_group_ids_required': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
@@ -124,25 +125,25 @@ ad_account_id: z.string()}),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
 'query_conversion_attribution_conversion_report_time': z.string(),
-'query_attribution_types': z.string(),
-ad_account_id: z.string()}),
+'query_attribution_types': z.string()}),
                 handler: ad_groups_taring_analyticsget,
             },
         
 
              'pinterest.ad_groups/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_ad_group_id': z.string(),
-ad_account_id: z.string(),
-ad_group_id: z.string()}),
+                  'ad_account_id': z.string(),
+'ad_group_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_ad_group_id': z.string()}),
                 handler: ad_groups,
             },
         
 
              'pinterest.adsanalytics/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
 'query_ad_ids': z.string(),
@@ -153,15 +154,15 @@ ad_group_id: z.string()}),
 'query_conversion_attribution_view_window_days': z.string(),
 'query_conversion_attribution_conversion_report_time': z.string(),
 'pin_ids': z.string(),
-'query_campaign_ids': z.string(),
-ad_account_id: z.string()}),
+'query_campaign_ids': z.string()}),
                 handler: adsanalytics,
             },
         
 
              'pinterest.ad_taring_analyticsget/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_ad_ids_required': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
@@ -172,25 +173,25 @@ ad_account_id: z.string()}),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
 'query_conversion_attribution_conversion_report_time': z.string(),
-'query_attribution_types': z.string(),
-ad_account_id: z.string()}),
+'query_attribution_types': z.string()}),
                 handler: ad_taring_analyticsget,
             },
         
 
              'pinterest.ads/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_ad_id': z.string(),
-ad_account_id: z.string(),
-ad_id: z.string()}),
+                  'ad_account_id': z.string(),
+'ad_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_ad_id': z.string()}),
                 handler: ads,
             },
         
 
              'pinterest.ad_accountanalytics/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
 'query_columns': z.string(),
@@ -198,45 +199,45 @@ ad_id: z.string()}),
 'query_conversion_attribution_click_window_days': z.string(),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
-'query_conversion_attribution_conversion_report_time': z.string(),
-ad_account_id: z.string()}),
+'query_conversion_attribution_conversion_report_time': z.string()}),
                 handler: ad_accountanalytics,
             },
         
 
              'pinterest.audience_insights/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'query_audience_insight_type': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
+'query_audience_insight_type': z.string()}),
                 handler: audience_insights,
             },
         
 
              'pinterest.audiences/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_audience_id': z.string(),
-ad_account_id: z.string(),
-audience_id: z.string()}),
+                  'ad_account_id': z.string(),
+'audience_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_audience_id': z.string()}),
                 handler: audiences,
             },
         
 
              'pinterest.bulk_request/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'bulk_request_id': z.string(),
+'path_ad_account_id': z.string(),
 'path_bulk_request_id': z.string(),
-'include_details': z.string(),
-ad_account_id: z.string(),
-bulk_request_id: z.string()}),
+'include_details': z.string()}),
                 handler: bulk_request,
             },
         
 
              'pinterest.campaignsanalytics/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
 'query_campaign_ids_required': z.string(),
@@ -245,15 +246,15 @@ bulk_request_id: z.string()}),
 'query_conversion_attribution_click_window_days': z.string(),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
-'query_conversion_attribution_conversion_report_time': z.string(),
-ad_account_id: z.string()}),
+'query_conversion_attribution_conversion_report_time': z.string()}),
                 handler: campaignsanalytics,
             },
         
 
              'pinterest.campaign_taring_analyticsget/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_campaign_ids_required': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
@@ -264,139 +265,138 @@ ad_account_id: z.string()}),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
 'query_conversion_attribution_conversion_report_time': z.string(),
-'query_attribution_types': z.string(),
-ad_account_id: z.string()}),
+'query_attribution_types': z.string()}),
                 handler: campaign_taring_analyticsget,
             },
         
 
              'pinterest.campaigns/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_campaign_id': z.string(),
-ad_account_id: z.string(),
-campaign_id: z.string()}),
+                  'ad_account_id': z.string(),
+'campaign_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_campaign_id': z.string()}),
                 handler: campaigns,
             },
         
 
              'pinterest.conversion_tagslist/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'query_filter_deleted': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
+'query_filter_deleted': z.string()}),
                 handler: conversion_tagslist,
             },
         
 
              'pinterest.ocpm_eligible_conversion_tags/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string()}),
                 handler: ocpm_eligible_conversion_tags,
             },
         
 
              'pinterest.conversion_tags/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_conversion_tag_id': z.string(),
-ad_account_id: z.string(),
-conversion_tag_id: z.string()}),
+                  'ad_account_id': z.string(),
+'conversion_tag_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_conversion_tag_id': z.string()}),
                 handler: conversion_tags,
             },
         
 
              'pinterest.customer_lists/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_customer_list_id': z.string(),
-ad_account_id: z.string(),
-customer_list_id: z.string()}),
+                  'ad_account_id': z.string(),
+'customer_list_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_customer_list_id': z.string()}),
                 handler: customer_lists,
             },
         
 
              'pinterest.audience_insights_scope_and_type/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string()}),
                 handler: audience_insights_scope_and_type,
             },
         
 
              'pinterest.country_keywords_metrics/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_country_code': z.string(),
-'query_keywords': z.string(),
-ad_account_id: z.string()}),
+'query_keywords': z.string()}),
                 handler: country_keywords_metrics,
             },
         
 
              'pinterest.lead_form/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_lead_form_id': z.string(),
-ad_account_id: z.string(),
-lead_form_id: z.string()}),
+                  'ad_account_id': z.string(),
+'lead_form_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_lead_form_id': z.string()}),
                 handler: lead_form,
             },
         
 
              'pinterest.ad_accounts_subscriptions_by_id/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_subscription_id': z.string(),
-ad_account_id: z.string(),
-subscription_id: z.string()}),
+                  'ad_account_id': z.string(),
+'subscription_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_subscription_id': z.string()}),
                 handler: ad_accounts_subscriptions_by_id,
             },
         
 
              'pinterest.leads_export/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
 'leads_export_id': z.string(),
-ad_account_id: z.string(),
-leads_export_id: z.string()}),
+'path_ad_account_id': z.string()}),
                 handler: leads_export,
             },
         
 
              'pinterest.analytics_mmm_report/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'query_token_required': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
+'query_token_required': z.string()}),
                 handler: analytics_mmm_report,
             },
         
 
              'pinterest.order_lines/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_order_line_id': z.string(),
-ad_account_id: z.string(),
-order_line_id: z.string()}),
+                  'ad_account_id': z.string(),
+'order_line_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_order_line_id': z.string()}),
                 handler: order_lines,
             },
         
 
              'pinterest.product_group_promotions/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_product_group_promotion_id': z.string(),
-ad_account_id: z.string(),
-product_group_promotion_id: z.string()}),
+                  'ad_account_id': z.string(),
+'product_group_promotion_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_product_group_promotion_id': z.string()}),
                 handler: product_group_promotions,
             },
         
 
              'pinterest.product_groupsanalytics/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
 'query_product_group_ids_required': z.string(),
@@ -405,42 +405,42 @@ product_group_promotion_id: z.string()}),
 'query_conversion_attribution_click_window_days': z.string(),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
-'query_conversion_attribution_conversion_report_time': z.string(),
-ad_account_id: z.string()}),
+'query_conversion_attribution_conversion_report_time': z.string()}),
                 handler: product_groupsanalytics,
             },
         
 
              'pinterest.analytics_report/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'query_token_required': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
+'query_token_required': z.string()}),
                 handler: analytics_report,
             },
         
 
              'pinterest.ssio_accounts/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-ad_account_id: z.string()}),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string()}),
                 handler: ssio_accounts,
             },
         
 
              'pinterest.ssio_insertion_orders_status_by_pin_order_id/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
-'path_pin_order_id': z.string(),
-ad_account_id: z.string(),
-pin_order_id: z.string()}),
+                  'ad_account_id': z.string(),
+'pin_order_id': z.string(),
+'path_ad_account_id': z.string(),
+'path_pin_order_id': z.string()}),
                 handler: ssio_insertion_orders_status_by_pin_order_id,
             },
         
 
              'pinterest.ad_account_taring_analyticsget/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
 'query_targeting_types': z.string(),
@@ -450,36 +450,35 @@ pin_order_id: z.string()}),
 'query_conversion_attribution_engagement_window_days': z.string(),
 'query_conversion_attribution_view_window_days': z.string(),
 'query_conversion_attribution_conversion_report_time': z.string(),
-'query_attribution_types': z.string(),
-ad_account_id: z.string()}),
+'query_attribution_types': z.string()}),
                 handler: ad_account_taring_analyticsget,
             },
         
 
              'pinterest.terms_of_service/sync': {
                 schema: z.object({
-                  'path_ad_account_id': z.string(),
+                  'ad_account_id': z.string(),
+'path_ad_account_id': z.string(),
 'query_include_html': z.string(),
-'query_tos_type': z.string(),
-ad_account_id: z.string()}),
+'query_tos_type': z.string()}),
                 handler: terms_of_service,
             },
         
 
              'pinterest.boards/sync': {
                 schema: z.object({
-                  'path_board_id': z.string(),
-'query_ad_account_id': z.string(),
-board_id: z.string()}),
+                  'board_id': z.string(),
+'path_board_id': z.string(),
+'query_ad_account_id': z.string()}),
                 handler: boards,
             },
         
 
              'pinterest.feeds/sync': {
                 schema: z.object({
-                  'path_catalogs_feed_id': z.string(),
-'query_ad_account_id': z.string(),
-feed_id: z.string()}),
+                  'feed_id': z.string(),
+'path_catalogs_feed_id': z.string(),
+'query_ad_account_id': z.string()}),
                 handler: feeds,
             },
         
@@ -497,27 +496,27 @@ feed_id: z.string()}),
 
              'pinterest.items_batch/sync': {
                 schema: z.object({
-                  'path_catalogs_items_batch_id': z.string(),
-'query_ad_account_id': z.string(),
-batch_id: z.string()}),
+                  'batch_id': z.string(),
+'path_catalogs_items_batch_id': z.string(),
+'query_ad_account_id': z.string()}),
                 handler: items_batch,
             },
         
 
              'pinterest.catalogs_product_groups/sync': {
                 schema: z.object({
-                  'path_catalogs_product_group_id': z.string(),
-'query_ad_account_id': z.string(),
-product_group_id: z.string()}),
+                  'product_group_id': z.string(),
+'path_catalogs_product_group_id': z.string(),
+'query_ad_account_id': z.string()}),
                 handler: catalogs_product_groups,
             },
         
 
              'pinterest.catalogs_product_groupsproduct_counts_/sync': {
                 schema: z.object({
-                  'path_catalogs_product_group_id': z.string(),
-'query_ad_account_id': z.string(),
-product_group_id: z.string()}),
+                  'product_group_id': z.string(),
+'path_catalogs_product_group_id': z.string(),
+'query_ad_account_id': z.string()}),
                 handler: catalogs_product_groupsproduct_counts_,
             },
         
@@ -532,48 +531,47 @@ product_group_id: z.string()}),
 
              'pinterest.integrations_commerce/sync': {
                 schema: z.object({
-                  'path_external_business_id': z.string(),
-external_business_id: z.string()}),
+                  'external_business_id': z.string(),
+'path_external_business_id': z.string()}),
                 handler: integrations_commerce,
             },
         
 
              'pinterest.integrations_by_id/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: integrations_by_id,
             },
         
 
              'pinterest.media/sync': {
                 schema: z.object({
-                  'path_media_id': z.string(),
-media_id: z.string()}),
+                  'media_id': z.string(),
+'path_media_id': z.string()}),
                 handler: media,
             },
         
 
              'pinterest.pins/sync': {
                 schema: z.object({
-                  'path_pin_id': z.string(),
+                  'pin_id': z.string(),
+'path_pin_id': z.string(),
 'query_pin_metrics': z.string(),
-'query_ad_account_id': z.string(),
-pin_id: z.string()}),
+'query_ad_account_id': z.string()}),
                 handler: pins,
             },
         
 
              'pinterest.pinsanalytics/sync': {
                 schema: z.object({
-                  'path_pin_id': z.string(),
+                  'pin_id': z.string(),
+'path_pin_id': z.string(),
 'query_start_date': z.string(),
 'query_end_date': z.string(),
 'query_app_types': z.string(),
 'query_pin_analytics_metric_types': z.string(),
 'query_split_field_pins': z.string(),
-'query_ad_account_id': z.string(),
-pin_id: z.string()}),
+'query_ad_account_id': z.string()}),
                 handler: pinsanalytics,
             },
         
@@ -612,20 +610,20 @@ pin_id: z.string()}),
 
              'pinterest.interest_taring_optionsget/sync': {
                 schema: z.object({
-                  'path_interest_id': z.string(),
-interest_id: z.string()}),
+                  'interest_id': z.string(),
+'path_interest_id': z.string()}),
                 handler: interest_taring_optionsget,
             },
         
 
              'pinterest.taring_optionsget/sync': {
                 schema: z.object({
-                  'path_targeting_type': z.string(),
+                  'targeting_type': z.string(),
+'path_targeting_type': z.string(),
 'query_client_id': z.string(),
 'query_oauth_signature': z.string(),
 'query_timestamp': z.string(),
-'query_ad_account_id': z.string(),
-targeting_type: z.string()}),
+'query_ad_account_id': z.string()}),
                 handler: taring_optionsget,
             },
         
@@ -647,16 +645,16 @@ targeting_type: z.string()}),
 
              'pinterest.trending_keywordslist/sync': {
                 schema: z.object({
-                  'path_trend_region': z.string(),
+                  'region': z.string(),
+'trend_type': z.string(),
+'path_trend_region': z.string(),
 'path_trend_type': z.string(),
 'query_interest_list': z.string(),
 'query_gender_list': z.string(),
 'query_age_bucket_list': z.string(),
 'include_keywords': z.string(),
 'query_normalize_against_group': z.string(),
-'query_trending_keyword_limit': z.string(),
-region: z.string(),
-trend_type: z.string()}),
+'query_trending_keyword_limit': z.string()}),
                 handler: trending_keywordslist,
             },
         

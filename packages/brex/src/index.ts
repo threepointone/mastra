@@ -42,9 +42,7 @@ export class BrexIntegration extends Integration {
              'brex.CompanyDeepsearchName/sync': {
                 schema: z.object({
                   'country': z.string(),
-'name': z.string(),
-country: z.string(),
-name: z.string()}),
+'name': z.string()}),
                 handler: CompanyDeepsearchName,
             },
         
@@ -52,9 +50,7 @@ name: z.string()}),
              'brex.CompanyDeepsearchNumber/sync': {
                 schema: z.object({
                   'country': z.string(),
-'number': z.string(),
-country: z.string(),
-number: z.string()}),
+'number': z.string()}),
                 handler: CompanyDeepsearchNumber,
             },
         
@@ -67,8 +63,7 @@ number: z.string()}),
 
              'brex.CompanyMonitorId/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: CompanyMonitorId,
             },
         
@@ -83,9 +78,7 @@ id: z.string()}),
                 schema: z.object({
                   'country': z.string(),
 'number': z.string(),
-'limit': z.number(),
-country: z.string(),
-number: z.string()}),
+'limit': z.number()}),
                 handler: CompanySearchNumber,
             },
         
@@ -95,8 +88,7 @@ number: z.string()}),
                   'id': z.string(),
 'limit': z.number(),
 'offset': z.number(),
-'data': z.boolean(),
-id: z.string()}),
+'data': z.boolean()}),
                 handler: CompanyIdAnnouncements,
             },
         
@@ -105,9 +97,7 @@ id: z.string()}),
                 schema: z.object({
                   'id': z.string(),
 'country': z.string(),
-'lang': z.string(),
-id: z.string(),
-country: z.string()}),
+'lang': z.string()}),
                 handler: CompanyIdSuper,
             },
         
@@ -115,27 +105,23 @@ country: z.string()}),
              'brex.CompanyIdDataset/sync': {
                 schema: z.object({
                   'id': z.string(),
-'check_stock_listing': z.boolean(),
 'dataset': z.string(),
-'lang': z.string(),
-id: z.string(),
-dataset: z.string()}),
+'check_stock_listing': z.boolean(),
+'lang': z.string()}),
                 handler: CompanyIdDataset,
             },
         
 
              'brex.ProductNotifier/sync': {
                 schema: z.object({
-                  'notifierId': z.string(),
-notifierId: z.string()}),
+                  'notifierId': z.string()}),
                 handler: ProductNotifier,
             },
         
 
              'brex.ProductStatus/sync': {
                 schema: z.object({
-                  'orderId': z.string(),
-orderId: z.string()}),
+                  'orderId': z.string()}),
                 handler: ProductStatus,
             },
         }

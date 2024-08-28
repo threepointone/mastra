@@ -222,32 +222,31 @@ export class GithubIntegration extends Integration {
 
              'github.apps-webhook-delivery/sync': {
                 schema: z.object({
-                  'delivery-id': z.string(),
-delivery_id: z.string()}),
+                  'delivery_id': z.string(),
+'delivery-id': z.string()}),
                 handler: apps-webhook-delivery,
             },
         
 
              'github.apps-installation/sync': {
                 schema: z.object({
-                  'installation-id': z.string(),
-installation_id: z.string()}),
+                  'installation_id': z.string(),
+'installation-id': z.string()}),
                 handler: apps-installation,
             },
         
 
              'github.apps-by-slug/sync': {
                 schema: z.object({
-                  'app-slug': z.string(),
-app_slug: z.string()}),
+                  'app_slug': z.string(),
+'app-slug': z.string()}),
                 handler: apps-by-slug,
             },
         
 
              'github.codes-of-conduct-conduct-code/sync': {
                 schema: z.object({
-                  'key': z.string(),
-key: z.string()}),
+                  'key': z.string()}),
                 handler: codes-of-conduct-conduct-code,
             },
         
@@ -260,60 +259,57 @@ key: z.string()}),
 
              'github.gists/sync': {
                 schema: z.object({
-                  'gist-id': z.string(),
-gist_id: z.string()}),
+                  'gist_id': z.string(),
+'gist-id': z.string()}),
                 handler: gists,
             },
         
 
              'github.gists-comment/sync': {
                 schema: z.object({
-                  'gist-id': z.string(),
-'comment-id': z.string(),
-gist_id: z.string(),
-comment_id: z.string()}),
+                  'gist_id': z.string(),
+'comment_id': z.string(),
+'gist-id': z.string(),
+'comment-id': z.string()}),
                 handler: gists-comment,
             },
         
 
              'github.gists-revision/sync': {
                 schema: z.object({
-                  'gist-id': z.string(),
+                  'gist_id': z.string(),
 'sha': z.string(),
-gist_id: z.string(),
-sha: z.string()}),
+'gist-id': z.string()}),
                 handler: gists-revision,
             },
         
 
              'github.gitignore-template/sync': {
                 schema: z.object({
-                  'name': z.string(),
-name: z.string()}),
+                  'name': z.string()}),
                 handler: gitignore-template,
             },
         
 
              'github.licenses/sync': {
                 schema: z.object({
-                  'license': z.string(),
-license: z.string()}),
+                  'license': z.string()}),
                 handler: licenses,
             },
         
 
              'github.apps-subscription-plan-for-account/sync': {
                 schema: z.object({
-                  'account-id': z.string(),
-account_id: z.string()}),
+                  'account_id': z.string(),
+'account-id': z.string()}),
                 handler: apps-subscription-plan-for-account,
             },
         
 
              'github.apps-subscription-plan-for-account-stubbed/sync': {
                 schema: z.object({
-                  'account-id': z.string(),
-account_id: z.string()}),
+                  'account_id': z.string(),
+'account-id': z.string()}),
                 handler: apps-subscription-plan-for-account-stubbed,
             },
         
@@ -326,64 +322,58 @@ account_id: z.string()}),
 
              'github.activity-thread/sync': {
                 schema: z.object({
-                  'thread-id': z.string(),
-thread_id: z.string()}),
+                  'thread_id': z.string(),
+'thread-id': z.string()}),
                 handler: activity-thread,
             },
         
 
              'github.activity-thread-subscription-for-authenticated-user/sync': {
                 schema: z.object({
-                  'thread-id': z.string(),
-thread_id: z.string()}),
+                  'thread_id': z.string(),
+'thread-id': z.string()}),
                 handler: activity-thread-subscription-for-authenticated-user,
             },
         
 
              'github.orgs/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: orgs,
             },
         
 
              'github.actions-actions-cache-usage-for-org/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: actions-actions-cache-usage-for-org,
             },
         
 
              'github.oidc-oidc-custom-sub-template-for-org/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: oidc-oidc-custom-sub-template-for-org,
             },
         
 
              'github.actions-github-actions-permissions-organization/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: actions-github-actions-permissions-organization,
             },
         
 
              'github.actions-allowed-actions-organization/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: actions-allowed-actions-organization,
             },
         
 
              'github.actions-github-actions-default-workflow-permissions-organization/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: actions-github-actions-default-workflow-permissions-organization,
             },
         
@@ -391,9 +381,8 @@ org: z.string()}),
              'github.actions-required-workflow/sync': {
                 schema: z.object({
                   'org': z.string(),
-'required-workflow-id': z.string(),
-org: z.string(),
-required_workflow_id: z.string()}),
+'required_workflow_id': z.string(),
+'required-workflow-id': z.string()}),
                 handler: actions-required-workflow,
             },
         
@@ -401,9 +390,8 @@ required_workflow_id: z.string()}),
              'github.actions-self-hosted-runner-for-org/sync': {
                 schema: z.object({
                   'org': z.string(),
-'runner-id': z.string(),
-org: z.string(),
-runner_id: z.string()}),
+'runner_id': z.string(),
+'runner-id': z.string()}),
                 handler: actions-self-hosted-runner-for-org,
             },
         
@@ -411,17 +399,15 @@ runner_id: z.string()}),
              'github.actionslist-labels-for-self-hosted-runner-for-org/sync': {
                 schema: z.object({
                   'org': z.string(),
-'runner-id': z.string(),
-org: z.string(),
-runner_id: z.string()}),
+'runner_id': z.string(),
+'runner-id': z.string()}),
                 handler: actionslist-labels-for-self-hosted-runner-for-org,
             },
         
 
              'github.actions-org-public-key/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: actions-org-public-key,
             },
         
@@ -429,9 +415,8 @@ org: z.string()}),
              'github.actions-org-secret/sync': {
                 schema: z.object({
                   'org': z.string(),
-'secret-name': z.string(),
-org: z.string(),
-secret_name: z.string()}),
+'secret_name': z.string(),
+'secret-name': z.string()}),
                 handler: actions-org-secret,
             },
         
@@ -439,17 +424,15 @@ secret_name: z.string()}),
              'github.actions-org-variable/sync': {
                 schema: z.object({
                   'org': z.string(),
-'variable-name': z.string(),
-org: z.string(),
-name: z.string()}),
+'name': z.string(),
+'variable-name': z.string()}),
                 handler: actions-org-variable,
             },
         
 
              'github.codespaces-org-public-key/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: codespaces-org-public-key,
             },
         
@@ -457,17 +440,15 @@ org: z.string()}),
              'github.codespaces-org-secret/sync': {
                 schema: z.object({
                   'org': z.string(),
-'secret-name': z.string(),
-org: z.string(),
-secret_name: z.string()}),
+'secret_name': z.string(),
+'secret-name': z.string()}),
                 handler: codespaces-org-secret,
             },
         
 
              'github.dependabot-org-public-key/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: dependabot-org-public-key,
             },
         
@@ -475,9 +456,8 @@ org: z.string()}),
              'github.dependabot-org-secret/sync': {
                 schema: z.object({
                   'org': z.string(),
-'secret-name': z.string(),
-org: z.string(),
-secret_name: z.string()}),
+'secret_name': z.string(),
+'secret-name': z.string()}),
                 handler: dependabot-org-secret,
             },
         
@@ -485,9 +465,8 @@ secret_name: z.string()}),
              'github.orgs-webhook/sync': {
                 schema: z.object({
                   'org': z.string(),
-'hook-id': z.string(),
-org: z.string(),
-hook_id: z.string()}),
+'hook_id': z.string(),
+'hook-id': z.string()}),
                 handler: orgs-webhook,
             },
         
@@ -495,9 +474,8 @@ hook_id: z.string()}),
              'github.orgs-webhook-config-for-org/sync': {
                 schema: z.object({
                   'org': z.string(),
-'hook-id': z.string(),
-org: z.string(),
-hook_id: z.string()}),
+'hook_id': z.string(),
+'hook-id': z.string()}),
                 handler: orgs-webhook-config-for-org,
             },
         
@@ -505,19 +483,17 @@ hook_id: z.string()}),
              'github.orgs-webhook-delivery/sync': {
                 schema: z.object({
                   'org': z.string(),
+'hook_id': z.string(),
+'delivery_id': z.string(),
 'hook-id': z.string(),
-'delivery-id': z.string(),
-org: z.string(),
-hook_id: z.string(),
-delivery_id: z.string()}),
+'delivery-id': z.string()}),
                 handler: orgs-webhook-delivery,
             },
         
 
              'github.apps-org-installation/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: apps-org-installation,
             },
         
@@ -525,9 +501,7 @@ org: z.string()}),
              'github.orgs-membership-for-user/sync': {
                 schema: z.object({
                   'org': z.string(),
-'username': z.string(),
-org: z.string(),
-username: z.string()}),
+'username': z.string()}),
                 handler: orgs-membership-for-user,
             },
         
@@ -535,60 +509,54 @@ username: z.string()}),
              'github.migrations-status-for-org/sync': {
                 schema: z.object({
                   'org': z.string(),
+'migration_id': z.string(),
 'migration-id': z.string(),
-'exclude': z.string(),
-org: z.string(),
-migration_id: z.string()}),
+'exclude': z.string()}),
                 handler: migrations-status-for-org,
             },
         
 
              'github.packages-package-for-organization/sync': {
                 schema: z.object({
-                  'package-type': z.string(),
-'package-name': z.string(),
-'org': z.string(),
-org: z.string(),
-package_type: z.string(),
-package_name: z.string()}),
+                  'org': z.string(),
+'package_type': z.string(),
+'package_name': z.string(),
+'package-type': z.string(),
+'package-name': z.string()}),
                 handler: packages-package-for-organization,
             },
         
 
              'github.packages-package-version-for-organization/sync': {
                 schema: z.object({
-                  'package-type': z.string(),
+                  'org': z.string(),
+'package_type': z.string(),
+'package_name': z.string(),
+'package_version_id': z.string(),
+'package-type': z.string(),
 'package-name': z.string(),
-'org': z.string(),
-'package-version-id': z.string(),
-org: z.string(),
-package_type: z.string(),
-package_name: z.string(),
-package_version_id: z.string()}),
+'package-version-id': z.string()}),
                 handler: packages-package-version-for-organization,
             },
         
 
              'github.billing-github-actions-billing-org/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: billing-github-actions-billing-org,
             },
         
 
              'github.billing-github-packages-billing-org/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: billing-github-packages-billing-org,
             },
         
 
              'github.billing-shared-storage-billing-org/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: billing-shared-storage-billing-org,
             },
         
@@ -596,9 +564,8 @@ org: z.string()}),
              'github.teams-by-name/sync': {
                 schema: z.object({
                   'org': z.string(),
-'team-slug': z.string(),
-org: z.string(),
-team_slug: z.string()}),
+'team_slug': z.string(),
+'team-slug': z.string()}),
                 handler: teams-by-name,
             },
         
@@ -606,11 +573,10 @@ team_slug: z.string()}),
              'github.teams-discussion-in-org/sync': {
                 schema: z.object({
                   'org': z.string(),
+'team_slug': z.string(),
+'discussion_number': z.string(),
 'team-slug': z.string(),
-'discussion-number': z.string(),
-org: z.string(),
-team_slug: z.string(),
-discussion_number: z.string()}),
+'discussion-number': z.string()}),
                 handler: teams-discussion-in-org,
             },
         
@@ -618,13 +584,12 @@ discussion_number: z.string()}),
              'github.teams-discussion-comment-in-org/sync': {
                 schema: z.object({
                   'org': z.string(),
+'team_slug': z.string(),
+'discussion_number': z.string(),
+'comment_number': z.string(),
 'team-slug': z.string(),
 'discussion-number': z.string(),
-'comment-number': z.string(),
-org: z.string(),
-team_slug: z.string(),
-discussion_number: z.string(),
-comment_number: z.string()}),
+'comment-number': z.string()}),
                 handler: teams-discussion-comment-in-org,
             },
         
@@ -632,11 +597,9 @@ comment_number: z.string()}),
              'github.teams-membership-for-user-in-org/sync': {
                 schema: z.object({
                   'org': z.string(),
-'team-slug': z.string(),
+'team_slug': z.string(),
 'username': z.string(),
-org: z.string(),
-team_slug: z.string(),
-username: z.string()}),
+'team-slug': z.string()}),
                 handler: teams-membership-for-user-in-org,
             },
         
@@ -644,11 +607,10 @@ username: z.string()}),
              'github.teamscheck-permissions-for-project-in-org/sync': {
                 schema: z.object({
                   'org': z.string(),
+'team_slug': z.string(),
+'project_id': z.string(),
 'team-slug': z.string(),
-'project-id': z.string(),
-org: z.string(),
-team_slug: z.string(),
-project_id: z.string()}),
+'project-id': z.string()}),
                 handler: teamscheck-permissions-for-project-in-org,
             },
         
@@ -656,47 +618,43 @@ project_id: z.string()}),
              'github.teamscheck-permissions-for-repo-in-org/sync': {
                 schema: z.object({
                   'org': z.string(),
-'team-slug': z.string(),
+'team_slug': z.string(),
 'owner': z.string(),
 'repo': z.string(),
-org: z.string(),
-team_slug: z.string(),
-owner: z.string(),
-repo: z.string()}),
+'team-slug': z.string()}),
                 handler: teamscheck-permissions-for-repo-in-org,
             },
         
 
              'github.projects-card/sync': {
                 schema: z.object({
-                  'card-id': z.string(),
-card_id: z.string()}),
+                  'card_id': z.string(),
+'card-id': z.string()}),
                 handler: projects-card,
             },
         
 
              'github.projects-column/sync': {
                 schema: z.object({
-                  'column-id': z.string(),
-column_id: z.string()}),
+                  'column_id': z.string(),
+'column-id': z.string()}),
                 handler: projects-column,
             },
         
 
              'github.projects/sync': {
                 schema: z.object({
-                  'project-id': z.string(),
-project_id: z.string()}),
+                  'project_id': z.string(),
+'project-id': z.string()}),
                 handler: projects,
             },
         
 
              'github.projects-permission-for-user/sync': {
                 schema: z.object({
-                  'project-id': z.string(),
+                  'project_id': z.string(),
 'username': z.string(),
-project_id: z.string(),
-username: z.string()}),
+'project-id': z.string()}),
                 handler: projects-permission-for-user,
             },
         
@@ -711,10 +669,8 @@ username: z.string()}),
                 schema: z.object({
                   'org': z.string(),
 'repo': z.string(),
-'repo-required-workflow-id': z.string(),
-org: z.string(),
-repo: z.string(),
-required_workflow_id_for_repo: z.string()}),
+'required_workflow_id_for_repo': z.string(),
+'repo-required-workflow-id': z.string()}),
                 handler: actions-repo-required-workflow,
             },
         
@@ -723,10 +679,8 @@ required_workflow_id_for_repo: z.string()}),
                 schema: z.object({
                   'org': z.string(),
 'repo': z.string(),
-'repo-required-workflow-id': z.string(),
-org: z.string(),
-repo: z.string(),
-required_workflow_id_for_repo: z.string()}),
+'required_workflow_id_for_repo': z.string(),
+'repo-required-workflow-id': z.string()}),
                 handler: actions-repo-required-workflow-usage,
             },
         
@@ -734,9 +688,7 @@ required_workflow_id_for_repo: z.string()}),
              'github.repos/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: repos,
             },
         
@@ -745,10 +697,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'artifact-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-artifact_id: z.string()}),
+'artifact_id': z.string(),
+'artifact-id': z.string()}),
                 handler: actions-artifact,
             },
         
@@ -756,9 +706,7 @@ artifact_id: z.string()}),
              'github.actions-actions-cache-usage/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: actions-actions-cache-usage,
             },
         
@@ -772,9 +720,7 @@ repo: z.string()}),
 'git-ref': z.string(),
 'actions-cache-key': z.string(),
 'actions-cache-list-sort': z.string(),
-'direction': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'direction': z.string()}),
                 handler: actions-actions-cache-list,
             },
         
@@ -783,10 +729,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'job-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-job_id: z.string()}),
+'job_id': z.string(),
+'job-id': z.string()}),
                 handler: actions-job-for-workflow-run,
             },
         
@@ -794,9 +738,7 @@ job_id: z.string()}),
              'github.actions-custom-oidc-sub-claim-for-repo/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: actions-custom-oidc-sub-claim-for-repo,
             },
         
@@ -804,9 +746,7 @@ repo: z.string()}),
              'github.actions-github-actions-permissions-repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: actions-github-actions-permissions-repository,
             },
         
@@ -814,9 +754,7 @@ repo: z.string()}),
              'github.actions-workflow-access-to-repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: actions-workflow-access-to-repository,
             },
         
@@ -824,9 +762,7 @@ repo: z.string()}),
              'github.actions-allowed-actions-repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: actions-allowed-actions-repository,
             },
         
@@ -834,9 +770,7 @@ repo: z.string()}),
              'github.actions-github-actions-default-workflow-permissions-repository/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: actions-github-actions-default-workflow-permissions-repository,
             },
         
@@ -845,10 +779,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'runner-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-runner_id: z.string()}),
+'runner_id': z.string(),
+'runner-id': z.string()}),
                 handler: actions-self-hosted-runner-for-repo,
             },
         
@@ -857,10 +789,8 @@ runner_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'runner-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-runner_id: z.string()}),
+'runner_id': z.string(),
+'runner-id': z.string()}),
                 handler: actionslist-labels-for-self-hosted-runner-for-repo,
             },
         
@@ -869,11 +799,9 @@ runner_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
+'run_id': z.string(),
 'run-id': z.string(),
-'exclude-pull-requests': z.string(),
-owner: z.string(),
-repo: z.string(),
-run_id: z.string()}),
+'exclude-pull-requests': z.string()}),
                 handler: actions-workflow-run,
             },
         
@@ -882,13 +810,11 @@ run_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
+'run_id': z.string(),
+'attempt_number': z.string(),
 'run-id': z.string(),
 'attempt-number': z.string(),
-'exclude-pull-requests': z.string(),
-owner: z.string(),
-repo: z.string(),
-run_id: z.string(),
-attempt_number: z.string()}),
+'exclude-pull-requests': z.string()}),
                 handler: actions-workflow-run-attempt,
             },
         
@@ -897,10 +823,8 @@ attempt_number: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'run-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-run_id: z.string()}),
+'run_id': z.string(),
+'run-id': z.string()}),
                 handler: actions-workflow-run-usage,
             },
         
@@ -908,9 +832,7 @@ run_id: z.string()}),
              'github.actions-repo-public-key/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: actions-repo-public-key,
             },
         
@@ -919,10 +841,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'secret-name': z.string(),
-owner: z.string(),
-repo: z.string(),
-secret_name: z.string()}),
+'secret_name': z.string(),
+'secret-name': z.string()}),
                 handler: actions-repo-secret,
             },
         
@@ -931,10 +851,8 @@ secret_name: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'variable-name': z.string(),
-owner: z.string(),
-repo: z.string(),
-name: z.string()}),
+'name': z.string(),
+'variable-name': z.string()}),
                 handler: actions-repo-variable,
             },
         
@@ -943,10 +861,8 @@ name: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'workflow-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-workflow_id: z.string()}),
+'workflow_id': z.string(),
+'workflow-id': z.string()}),
                 handler: actions-workflow,
             },
         
@@ -955,10 +871,8 @@ workflow_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'workflow-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-workflow_id: z.string()}),
+'workflow_id': z.string(),
+'workflow-id': z.string()}),
                 handler: actions-workflow-usage,
             },
         
@@ -967,10 +881,8 @@ workflow_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'autolink-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-autolink_id: z.string()}),
+'autolink_id': z.string(),
+'autolink-id': z.string()}),
                 handler: repos-autolink,
             },
         
@@ -979,10 +891,7 @@ autolink_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'branch': z.string(),
-owner: z.string(),
-repo: z.string(),
-branch: z.string()}),
+'branch': z.string()}),
                 handler: repos-branch,
             },
         
@@ -991,10 +900,7 @@ branch: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'branch': z.string(),
-owner: z.string(),
-repo: z.string(),
-branch: z.string()}),
+'branch': z.string()}),
                 handler: repos-branch-protection,
             },
         
@@ -1003,10 +909,7 @@ branch: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'branch': z.string(),
-owner: z.string(),
-repo: z.string(),
-branch: z.string()}),
+'branch': z.string()}),
                 handler: repos-admin-branch-protection,
             },
         
@@ -1015,10 +918,7 @@ branch: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'branch': z.string(),
-owner: z.string(),
-repo: z.string(),
-branch: z.string()}),
+'branch': z.string()}),
                 handler: repos-pull-request-review-protection,
             },
         
@@ -1027,10 +927,7 @@ branch: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'branch': z.string(),
-owner: z.string(),
-repo: z.string(),
-branch: z.string()}),
+'branch': z.string()}),
                 handler: repos-commit-signature-protection,
             },
         
@@ -1039,10 +936,7 @@ branch: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'branch': z.string(),
-owner: z.string(),
-repo: z.string(),
-branch: z.string()}),
+'branch': z.string()}),
                 handler: repos-status-checks-protection,
             },
         
@@ -1051,10 +945,7 @@ branch: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'branch': z.string(),
-owner: z.string(),
-repo: z.string(),
-branch: z.string()}),
+'branch': z.string()}),
                 handler: repos-access-restrictions,
             },
         
@@ -1063,10 +954,8 @@ branch: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'check-run-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-check_run_id: z.string()}),
+'check_run_id': z.string(),
+'check-run-id': z.string()}),
                 handler: checks,
             },
         
@@ -1075,10 +964,8 @@ check_run_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'check-suite-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-check_suite_id: z.string()}),
+'check_suite_id': z.string(),
+'check-suite-id': z.string()}),
                 handler: checks-suite,
             },
         
@@ -1087,10 +974,8 @@ check_suite_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'alert-number': z.string(),
-owner: z.string(),
-repo: z.string(),
-alert_number: z.string()}),
+'alert_number': z.string(),
+'alert-number': z.string()}),
                 handler: code-scanning-alert,
             },
         
@@ -1099,10 +984,8 @@ alert_number: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'analysis_id': z.number(),
-owner: z.string(),
-repo: z.string(),
-analysis_id: z.string()}),
+'analysis_id': z.string(),
+'analysis_id': z.number()}),
                 handler: code-scanning-analysis,
             },
         
@@ -1111,10 +994,7 @@ analysis_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'language': z.string(),
-owner: z.string(),
-repo: z.string(),
-language: z.string()}),
+'language': z.string()}),
                 handler: code-scanning-codeql-database,
             },
         
@@ -1123,10 +1003,7 @@ language: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'sarif_id': z.string(),
-owner: z.string(),
-repo: z.string(),
-sarif_id: z.string()}),
+'sarif_id': z.string()}),
                 handler: code-scanning-sarif,
             },
         
@@ -1135,9 +1012,7 @@ sarif_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'ref': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'ref': z.string()}),
                 handler: reposcodeowners-errors,
             },
         
@@ -1145,9 +1020,7 @@ repo: z.string()}),
              'github.codespaces-repo-public-key/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: codespaces-repo-public-key,
             },
         
@@ -1156,10 +1029,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'secret-name': z.string(),
-owner: z.string(),
-repo: z.string(),
-secret_name: z.string()}),
+'secret_name': z.string(),
+'secret-name': z.string()}),
                 handler: codespaces-repo-secret,
             },
         
@@ -1168,10 +1039,7 @@ secret_name: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'username': z.string(),
-owner: z.string(),
-repo: z.string(),
-username: z.string()}),
+'username': z.string()}),
                 handler: repos-collaborator-permission-level,
             },
         
@@ -1180,10 +1048,8 @@ username: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'comment-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-comment_id: z.string()}),
+'comment_id': z.string(),
+'comment-id': z.string()}),
                 handler: repos-commit-comment,
             },
         
@@ -1192,12 +1058,9 @@ comment_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'page': z.string(),
-'per-page': z.string(),
 'ref': z.string(),
-owner: z.string(),
-repo: z.string(),
-ref: z.string()}),
+'page': z.string(),
+'per-page': z.string()}),
                 handler: repos-commit,
             },
         
@@ -1208,10 +1071,7 @@ ref: z.string()}),
 'repo': z.string(),
 'ref': z.string(),
 'per-page': z.string(),
-'page': z.string(),
-owner: z.string(),
-repo: z.string(),
-ref: z.string()}),
+'page': z.string()}),
                 handler: repos-combined-status-for-ref,
             },
         
@@ -1219,9 +1079,7 @@ ref: z.string()}),
              'github.repos-community-profile-metrics/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: repos-community-profile-metrics,
             },
         
@@ -1230,12 +1088,9 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'page': z.string(),
-'per-page': z.string(),
 'basehead': z.string(),
-owner: z.string(),
-repo: z.string(),
-basehead: z.string()}),
+'page': z.string(),
+'per-page': z.string()}),
                 handler: reposcompare-commits,
             },
         
@@ -1244,10 +1099,8 @@ basehead: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'dependabot-alert-number': z.string(),
-owner: z.string(),
-repo: z.string(),
-alert_number: z.string()}),
+'alert_number': z.string(),
+'dependabot-alert-number': z.string()}),
                 handler: dependabot-alert,
             },
         
@@ -1255,9 +1108,7 @@ alert_number: z.string()}),
              'github.dependabot-repo-public-key/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: dependabot-repo-public-key,
             },
         
@@ -1266,10 +1117,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'secret-name': z.string(),
-owner: z.string(),
-repo: z.string(),
-secret_name: z.string()}),
+'secret_name': z.string(),
+'secret-name': z.string()}),
                 handler: dependabot-repo-secret,
             },
         
@@ -1279,10 +1128,7 @@ secret_name: z.string()}),
                   'owner': z.string(),
 'repo': z.string(),
 'basehead': z.string(),
-'manifest-path': z.string(),
-owner: z.string(),
-repo: z.string(),
-basehead: z.string()}),
+'manifest-path': z.string()}),
                 handler: dependency-graphdiff-range,
             },
         
@@ -1291,10 +1137,8 @@ basehead: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'deployment-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-deployment_id: z.string()}),
+'deployment_id': z.string(),
+'deployment-id': z.string()}),
                 handler: repos-deployment,
             },
         
@@ -1303,12 +1147,10 @@ deployment_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
+'deployment_id': z.string(),
+'status_id': z.string(),
 'deployment-id': z.string(),
-'status_id': z.number(),
-owner: z.string(),
-repo: z.string(),
-deployment_id: z.string(),
-status_id: z.string()}),
+'status_id': z.number()}),
                 handler: repos-deployment-status,
             },
         
@@ -1317,10 +1159,8 @@ status_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'environment-name': z.string(),
-owner: z.string(),
-repo: z.string(),
-environment_name: z.string()}),
+'environment_name': z.string(),
+'environment-name': z.string()}),
                 handler: repos-environment,
             },
         
@@ -1329,12 +1169,10 @@ environment_name: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
+'environment_name': z.string(),
+'branch_policy_id': z.string(),
 'environment-name': z.string(),
-'branch-policy-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-environment_name: z.string(),
-branch_policy_id: z.string()}),
+'branch-policy-id': z.string()}),
                 handler: repos-deployment-branch-policy,
             },
         
@@ -1343,10 +1181,7 @@ branch_policy_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'file_sha': z.string(),
-owner: z.string(),
-repo: z.string(),
-file_sha: z.string()}),
+'file_sha': z.string()}),
                 handler: git-blob,
             },
         
@@ -1355,10 +1190,8 @@ file_sha: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'commit-sha': z.string(),
-owner: z.string(),
-repo: z.string(),
-commit_sha: z.string()}),
+'commit_sha': z.string(),
+'commit-sha': z.string()}),
                 handler: git-commit,
             },
         
@@ -1367,10 +1200,7 @@ commit_sha: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'ref': z.string(),
-owner: z.string(),
-repo: z.string(),
-ref: z.string()}),
+'ref': z.string()}),
                 handler: git-ref,
             },
         
@@ -1379,10 +1209,7 @@ ref: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'tag_sha': z.string(),
-owner: z.string(),
-repo: z.string(),
-tag_sha: z.string()}),
+'tag_sha': z.string()}),
                 handler: git-tag,
             },
         
@@ -1392,10 +1219,7 @@ tag_sha: z.string()}),
                   'owner': z.string(),
 'repo': z.string(),
 'tree_sha': z.string(),
-'recursive': z.string(),
-owner: z.string(),
-repo: z.string(),
-tree_sha: z.string()}),
+'recursive': z.string()}),
                 handler: git-tree,
             },
         
@@ -1404,10 +1228,8 @@ tree_sha: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'hook-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-hook_id: z.string()}),
+'hook_id': z.string(),
+'hook-id': z.string()}),
                 handler: repos-webhook,
             },
         
@@ -1416,10 +1238,8 @@ hook_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'hook-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-hook_id: z.string()}),
+'hook_id': z.string(),
+'hook-id': z.string()}),
                 handler: repos-webhook-config-for-repo,
             },
         
@@ -1428,12 +1248,10 @@ hook_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
+'hook_id': z.string(),
+'delivery_id': z.string(),
 'hook-id': z.string(),
-'delivery-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-hook_id: z.string(),
-delivery_id: z.string()}),
+'delivery-id': z.string()}),
                 handler: repos-webhook-delivery,
             },
         
@@ -1441,9 +1259,7 @@ delivery_id: z.string()}),
              'github.migrations-import-status/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: migrations-import-status,
             },
         
@@ -1451,9 +1267,7 @@ repo: z.string()}),
              'github.apps-repo-installation/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: apps-repo-installation,
             },
         
@@ -1462,10 +1276,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'comment-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-comment_id: z.string()}),
+'comment_id': z.string(),
+'comment-id': z.string()}),
                 handler: issues-comment,
             },
         
@@ -1474,10 +1286,8 @@ comment_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'event_id': z.number(),
-owner: z.string(),
-repo: z.string(),
-event_id: z.string()}),
+'event_id': z.string(),
+'event_id': z.number()}),
                 handler: issues-event,
             },
         
@@ -1486,10 +1296,8 @@ event_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'issue-number': z.string(),
-owner: z.string(),
-repo: z.string(),
-issue_number: z.string()}),
+'issue_number': z.string(),
+'issue-number': z.string()}),
                 handler: issues,
             },
         
@@ -1498,10 +1306,8 @@ issue_number: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'key-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-key_id: z.string()}),
+'key_id': z.string(),
+'key-id': z.string()}),
                 handler: repos-deploy-key,
             },
         
@@ -1510,10 +1316,7 @@ key_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'name': z.string(),
-owner: z.string(),
-repo: z.string(),
-name: z.string()}),
+'name': z.string()}),
                 handler: issues-label,
             },
         
@@ -1521,9 +1324,7 @@ name: z.string()}),
              'github.reposlist-languages/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: reposlist-languages,
             },
         
@@ -1531,9 +1332,7 @@ repo: z.string()}),
              'github.licenses-for-repo/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: licenses-for-repo,
             },
         
@@ -1542,10 +1341,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'milestone-number': z.string(),
-owner: z.string(),
-repo: z.string(),
-milestone_number: z.string()}),
+'milestone_number': z.string(),
+'milestone-number': z.string()}),
                 handler: issues-milestone,
             },
         
@@ -1553,9 +1350,7 @@ milestone_number: z.string()}),
              'github.repos-pages/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: repos-pages,
             },
         
@@ -1563,9 +1358,7 @@ repo: z.string()}),
              'github.repos-latest-pages-build/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: repos-latest-pages-build,
             },
         
@@ -1574,10 +1367,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'build_id': z.number(),
-owner: z.string(),
-repo: z.string(),
-build_id: z.string()}),
+'build_id': z.string(),
+'build_id': z.number()}),
                 handler: repos-pages-build,
             },
         
@@ -1585,9 +1376,7 @@ build_id: z.string()}),
              'github.repos-pages-health-check/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: repos-pages-health-check,
             },
         
@@ -1596,10 +1385,8 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'comment-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-comment_id: z.string()}),
+'comment_id': z.string(),
+'comment-id': z.string()}),
                 handler: pulls-review-comment,
             },
         
@@ -1608,10 +1395,8 @@ comment_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'pull-number': z.string(),
-owner: z.string(),
-repo: z.string(),
-pull_number: z.string()}),
+'pull_number': z.string(),
+'pull-number': z.string()}),
                 handler: pulls,
             },
         
@@ -1620,10 +1405,8 @@ pull_number: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'pull-number': z.string(),
-owner: z.string(),
-repo: z.string(),
-pull_number: z.string()}),
+'pull_number': z.string(),
+'pull-number': z.string()}),
                 handler: pullslist-requested-reviewers,
             },
         
@@ -1632,12 +1415,10 @@ pull_number: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
+'pull_number': z.string(),
+'review_id': z.string(),
 'pull-number': z.string(),
-'review-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-pull_number: z.string(),
-review_id: z.string()}),
+'review-id': z.string()}),
                 handler: pulls-review,
             },
         
@@ -1646,9 +1427,7 @@ review_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'ref': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'ref': z.string()}),
                 handler: repos-readme,
             },
         
@@ -1658,10 +1437,7 @@ repo: z.string()}),
                   'owner': z.string(),
 'repo': z.string(),
 'dir': z.string(),
-'ref': z.string(),
-owner: z.string(),
-repo: z.string(),
-dir: z.string()}),
+'ref': z.string()}),
                 handler: repos-readme-in-directory,
             },
         
@@ -1670,10 +1446,8 @@ dir: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'asset-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-asset_id: z.string()}),
+'asset_id': z.string(),
+'asset-id': z.string()}),
                 handler: repos-release-asset,
             },
         
@@ -1681,9 +1455,7 @@ asset_id: z.string()}),
              'github.repos-latest-release/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: repos-latest-release,
             },
         
@@ -1692,10 +1464,7 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'tag': z.string(),
-owner: z.string(),
-repo: z.string(),
-tag: z.string()}),
+'tag': z.string()}),
                 handler: repos-release-by-tag,
             },
         
@@ -1704,10 +1473,8 @@ tag: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'release-id': z.string(),
-owner: z.string(),
-repo: z.string(),
-release_id: z.string()}),
+'release_id': z.string(),
+'release-id': z.string()}),
                 handler: repos-release,
             },
         
@@ -1716,10 +1483,8 @@ release_id: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'alert-number': z.string(),
-owner: z.string(),
-repo: z.string(),
-alert_number: z.string()}),
+'alert_number': z.string(),
+'alert-number': z.string()}),
                 handler: secret-scanning-alert,
             },
         
@@ -1727,9 +1492,7 @@ alert_number: z.string()}),
              'github.repos-participation-stats/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: repos-participation-stats,
             },
         
@@ -1737,9 +1500,7 @@ repo: z.string()}),
              'github.activity-repo-subscription/sync': {
                 schema: z.object({
                   'owner': z.string(),
-'repo': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'repo': z.string()}),
                 handler: activity-repo-subscription,
             },
         
@@ -1749,9 +1510,7 @@ repo: z.string()}),
                   'owner': z.string(),
 'repo': z.string(),
 'page': z.string(),
-'per-page': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'per-page': z.string()}),
                 handler: repos-all-topics,
             },
         
@@ -1760,9 +1519,7 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'per': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'per': z.string()}),
                 handler: repos-clones,
             },
         
@@ -1771,105 +1528,100 @@ repo: z.string()}),
                 schema: z.object({
                   'owner': z.string(),
 'repo': z.string(),
-'per': z.string(),
-owner: z.string(),
-repo: z.string()}),
+'per': z.string()}),
                 handler: repos-views,
             },
         
 
              'github.actions-environment-public-key/sync': {
                 schema: z.object({
-                  'repository-id': z.string(),
-'environment-name': z.string(),
-repository_id: z.string(),
-environment_name: z.string()}),
+                  'repository_id': z.string(),
+'environment_name': z.string(),
+'repository-id': z.string(),
+'environment-name': z.string()}),
                 handler: actions-environment-public-key,
             },
         
 
              'github.actions-environment-secret/sync': {
                 schema: z.object({
-                  'repository-id': z.string(),
+                  'repository_id': z.string(),
+'environment_name': z.string(),
+'secret_name': z.string(),
+'repository-id': z.string(),
 'environment-name': z.string(),
-'secret-name': z.string(),
-repository_id: z.string(),
-environment_name: z.string(),
-secret_name: z.string()}),
+'secret-name': z.string()}),
                 handler: actions-environment-secret,
             },
         
 
              'github.actions-environment-variable/sync': {
                 schema: z.object({
-                  'repository-id': z.string(),
+                  'repository_id': z.string(),
+'environment_name': z.string(),
+'name': z.string(),
+'repository-id': z.string(),
 'environment-name': z.string(),
-'variable-name': z.string(),
-repository_id: z.string(),
-environment_name: z.string(),
-name: z.string()}),
+'variable-name': z.string()}),
                 handler: actions-environment-variable,
             },
         
 
              'github.teams-legacy/sync': {
                 schema: z.object({
-                  'team-id': z.string(),
-team_id: z.string()}),
+                  'team_id': z.string(),
+'team-id': z.string()}),
                 handler: teams-legacy,
             },
         
 
              'github.teams-discussion-legacy/sync': {
                 schema: z.object({
-                  'team-id': z.string(),
-'discussion-number': z.string(),
-team_id: z.string(),
-discussion_number: z.string()}),
+                  'team_id': z.string(),
+'discussion_number': z.string(),
+'team-id': z.string(),
+'discussion-number': z.string()}),
                 handler: teams-discussion-legacy,
             },
         
 
              'github.teams-discussion-comment-legacy/sync': {
                 schema: z.object({
-                  'team-id': z.string(),
+                  'team_id': z.string(),
+'discussion_number': z.string(),
+'comment_number': z.string(),
+'team-id': z.string(),
 'discussion-number': z.string(),
-'comment-number': z.string(),
-team_id: z.string(),
-discussion_number: z.string(),
-comment_number: z.string()}),
+'comment-number': z.string()}),
                 handler: teams-discussion-comment-legacy,
             },
         
 
              'github.teams-membership-for-user-legacy/sync': {
                 schema: z.object({
-                  'team-id': z.string(),
+                  'team_id': z.string(),
 'username': z.string(),
-team_id: z.string(),
-username: z.string()}),
+'team-id': z.string()}),
                 handler: teams-membership-for-user-legacy,
             },
         
 
              'github.teamscheck-permissions-for-project-legacy/sync': {
                 schema: z.object({
-                  'team-id': z.string(),
-'project-id': z.string(),
-team_id: z.string(),
-project_id: z.string()}),
+                  'team_id': z.string(),
+'project_id': z.string(),
+'team-id': z.string(),
+'project-id': z.string()}),
                 handler: teamscheck-permissions-for-project-legacy,
             },
         
 
              'github.teamscheck-permissions-for-repo-legacy/sync': {
                 schema: z.object({
-                  'team-id': z.string(),
+                  'team_id': z.string(),
 'owner': z.string(),
 'repo': z.string(),
-team_id: z.string(),
-owner: z.string(),
-repo: z.string()}),
+'team-id': z.string()}),
                 handler: teamscheck-permissions-for-repo-legacy,
             },
         
@@ -1882,89 +1634,88 @@ repo: z.string()}),
 
              'github.codespaces-secret-for-authenticated-user/sync': {
                 schema: z.object({
-                  'secret-name': z.string(),
-secret_name: z.string()}),
+                  'secret_name': z.string(),
+'secret-name': z.string()}),
                 handler: codespaces-secret-for-authenticated-user,
             },
         
 
              'github.codespaces-for-authenticated-user/sync': {
                 schema: z.object({
-                  'codespace-name': z.string(),
-codespace_name: z.string()}),
+                  'codespace_name': z.string(),
+'codespace-name': z.string()}),
                 handler: codespaces-for-authenticated-user,
             },
         
 
              'github.codespaces-export-details-for-authenticated-user/sync': {
                 schema: z.object({
-                  'codespace-name': z.string(),
-'export-id': z.string(),
-codespace_name: z.string(),
-export_id: z.string()}),
+                  'codespace_name': z.string(),
+'export_id': z.string(),
+'codespace-name': z.string(),
+'export-id': z.string()}),
                 handler: codespaces-export-details-for-authenticated-user,
             },
         
 
              'github.users-gpg-key-for-authenticated-user/sync': {
                 schema: z.object({
-                  'gpg-key-id': z.string(),
-gpg_key_id: z.string()}),
+                  'gpg_key_id': z.string(),
+'gpg-key-id': z.string()}),
                 handler: users-gpg-key-for-authenticated-user,
             },
         
 
              'github.users-public-ssh-key-for-authenticated-user/sync': {
                 schema: z.object({
-                  'key-id': z.string(),
-key_id: z.string()}),
+                  'key_id': z.string(),
+'key-id': z.string()}),
                 handler: users-public-ssh-key-for-authenticated-user,
             },
         
 
              'github.orgs-membership-for-authenticated-user/sync': {
                 schema: z.object({
-                  'org': z.string(),
-org: z.string()}),
+                  'org': z.string()}),
                 handler: orgs-membership-for-authenticated-user,
             },
         
 
              'github.migrations-status-for-authenticated-user/sync': {
                 schema: z.object({
-                  'migration-id': z.string(),
-'exclude': z.string(),
-migration_id: z.string()}),
+                  'migration_id': z.string(),
+'migration-id': z.string(),
+'exclude': z.string()}),
                 handler: migrations-status-for-authenticated-user,
             },
         
 
              'github.packages-package-for-authenticated-user/sync': {
                 schema: z.object({
-                  'package-type': z.string(),
-'package-name': z.string(),
-package_type: z.string(),
-package_name: z.string()}),
+                  'package_type': z.string(),
+'package_name': z.string(),
+'package-type': z.string(),
+'package-name': z.string()}),
                 handler: packages-package-for-authenticated-user,
             },
         
 
              'github.packages-package-version-for-authenticated-user/sync': {
                 schema: z.object({
-                  'package-type': z.string(),
+                  'package_type': z.string(),
+'package_name': z.string(),
+'package_version_id': z.string(),
+'package-type': z.string(),
 'package-name': z.string(),
-'package-version-id': z.string(),
-package_type: z.string(),
-package_name: z.string(),
-package_version_id: z.string()}),
+'package-version-id': z.string()}),
                 handler: packages-package-version-for-authenticated-user,
             },
         
 
              'github.users-ssh-signing-key-for-authenticated-user/sync': {
                 schema: z.object({
-                  'ssh-signing-key-id': z.string(),
-ssh_signing_key_id: z.string()}),
+                  'ssh_signing_key_id': z.string(),
+'ssh-signing-key-id': z.string()}),
                 handler: users-ssh-signing-key-for-authenticated-user,
             },
         
@@ -1973,66 +1724,59 @@ ssh_signing_key_id: z.string()}),
                 schema: z.object({
                   'username': z.string(),
 'subject_type': z.string(),
-'subject_id': z.string(),
-username: z.string()}),
+'subject_id': z.string()}),
                 handler: users-context-for-user,
             },
         
 
              'github.apps-user-installation/sync': {
                 schema: z.object({
-                  'username': z.string(),
-username: z.string()}),
+                  'username': z.string()}),
                 handler: apps-user-installation,
             },
         
 
              'github.packages-package-for-user/sync': {
                 schema: z.object({
-                  'package-type': z.string(),
-'package-name': z.string(),
-'username': z.string(),
-username: z.string(),
-package_type: z.string(),
-package_name: z.string()}),
+                  'username': z.string(),
+'package_type': z.string(),
+'package_name': z.string(),
+'package-type': z.string(),
+'package-name': z.string()}),
                 handler: packages-package-for-user,
             },
         
 
              'github.packages-package-version-for-user/sync': {
                 schema: z.object({
-                  'package-type': z.string(),
+                  'username': z.string(),
+'package_type': z.string(),
+'package_name': z.string(),
+'package_version_id': z.string(),
+'package-type': z.string(),
 'package-name': z.string(),
-'package-version-id': z.string(),
-'username': z.string(),
-username: z.string(),
-package_type: z.string(),
-package_name: z.string(),
-package_version_id: z.string()}),
+'package-version-id': z.string()}),
                 handler: packages-package-version-for-user,
             },
         
 
              'github.billing-github-actions-billing-user/sync': {
                 schema: z.object({
-                  'username': z.string(),
-username: z.string()}),
+                  'username': z.string()}),
                 handler: billing-github-actions-billing-user,
             },
         
 
              'github.billing-github-packages-billing-user/sync': {
                 schema: z.object({
-                  'username': z.string(),
-username: z.string()}),
+                  'username': z.string()}),
                 handler: billing-github-packages-billing-user,
             },
         
 
              'github.billing-shared-storage-billing-user/sync': {
                 schema: z.object({
-                  'username': z.string(),
-username: z.string()}),
+                  'username': z.string()}),
                 handler: billing-shared-storage-billing-user,
             },
         }

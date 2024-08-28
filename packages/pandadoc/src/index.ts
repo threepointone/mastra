@@ -80,24 +80,21 @@ export class PandadocIntegration extends Integration {
 
              'pandadoc.statusDocument/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: statusDocument,
             },
         
 
              'pandadoc.detailsDocument/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsDocument,
             },
         
 
              'pandadoc.listLinkedObjects/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: listLinkedObjects,
             },
         
@@ -105,9 +102,7 @@ id: z.string()}),
              'pandadoc.detailsDocumentAttachment/sync': {
                 schema: z.object({
                   'id': z.string(),
-'attachment_id': z.string(),
-id: z.string(),
-attachment_id: z.string()}),
+'attachment_id': z.string()}),
                 handler: detailsDocumentAttachment,
             },
         
@@ -127,8 +122,7 @@ attachment_id: z.string()}),
 
              'pandadoc.detailsContentLibraryItem/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsContentLibraryItem,
             },
         
@@ -149,8 +143,7 @@ id: z.string()}),
 
              'pandadoc.detailsTemplate/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsTemplate,
             },
         
@@ -201,8 +194,7 @@ id: z.string()}),
 
              'pandadoc.detailsLog/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsLog,
             },
         
@@ -216,8 +208,7 @@ id: z.string()}),
 
              'pandadoc.detailsContact/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsContact,
             },
         
@@ -236,8 +227,7 @@ id: z.string()}),
 
              'pandadoc.detailsMember/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsMember,
             },
         
@@ -250,8 +240,7 @@ id: z.string()}),
 
              'pandadoc.detailsWebhookSubscription/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsWebhookSubscription,
             },
         
@@ -271,8 +260,7 @@ id: z.string()}),
 
              'pandadoc.detailsWebhookEvent/sync': {
                 schema: z.object({
-                  'id': z.string(),
-id: z.string()}),
+                  'id': z.string()}),
                 handler: detailsWebhookEvent,
             },
         }

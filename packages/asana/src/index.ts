@@ -117,7 +117,7 @@ export class AsanaIntegration extends Integration {
 
              'asana.ParentGoalsForGoal/sync': {
                 schema: z.object({
-                  goal_gid: z.string()}),
+                  'goal_gid': z.string()}),
                 handler: ParentGoalsForGoal,
             },
         
@@ -140,21 +140,21 @@ export class AsanaIntegration extends Integration {
 
              'asana.CustomFieldSettingsForPortfolio/sync': {
                 schema: z.object({
-                  portfolio_gid: z.string()}),
+                  'portfolio_gid': z.string()}),
                 handler: CustomFieldSettingsForPortfolio,
             },
         
 
              'asana.ItemsForPortfolio/sync': {
                 schema: z.object({
-                  portfolio_gid: z.string()}),
+                  'portfolio_gid': z.string()}),
                 handler: ItemsForPortfolio,
             },
         
 
              'asana.PortfolioMembershipsForPortfolio/sync': {
                 schema: z.object({
-                  portfolio_gid: z.string()}),
+                  'portfolio_gid': z.string()}),
                 handler: PortfolioMembershipsForPortfolio,
             },
         
@@ -182,49 +182,49 @@ export class AsanaIntegration extends Integration {
 
              'asana.CustomFieldSettingsForProject/sync': {
                 schema: z.object({
-                  project_gid: z.string()}),
+                  'project_gid': z.string()}),
                 handler: CustomFieldSettingsForProject,
             },
         
 
              'asana.ProjectMembershipsForProject/sync': {
                 schema: z.object({
-                  project_gid: z.string()}),
+                  'project_gid': z.string()}),
                 handler: ProjectMembershipsForProject,
             },
         
 
              'asana.ProjectStatusesForProject/sync': {
                 schema: z.object({
-                  'project_path_gid': z.string(),
+                  'project_gid': z.string(),
+'project_path_gid': z.string(),
 'pretty': z.string(),
 'fields': z.string(),
 'limit': z.string(),
-'offset': z.string(),
-project_gid: z.string()}),
+'offset': z.string()}),
                 handler: ProjectStatusesForProject,
             },
         
 
              'asana.SectionsForProject/sync': {
                 schema: z.object({
-                  'limit': z.string(),
-'offset': z.string(),
-project_gid: z.string()}),
+                  'project_gid': z.string(),
+'limit': z.string(),
+'offset': z.string()}),
                 handler: SectionsForProject,
             },
         
 
              'asana.TasksForProject/sync': {
                 schema: z.object({
-                  project_gid: z.string()}),
+                  'project_gid': z.string()}),
                 handler: TasksForProject,
             },
         
 
              'asana.TasksForSection/sync': {
                 schema: z.object({
-                  section_gid: z.string()}),
+                  'section_gid': z.string()}),
                 handler: TasksForSection,
             },
         
@@ -248,7 +248,7 @@ project_gid: z.string()}),
 
              'asana.TasksForTag/sync': {
                 schema: z.object({
-                  tag_gid: z.string()}),
+                  'tag_gid': z.string()}),
                 handler: TasksForTag,
             },
         
@@ -269,37 +269,37 @@ project_gid: z.string()}),
 
              'asana.DependenciesForTask/sync': {
                 schema: z.object({
-                  task_gid: z.string()}),
+                  'task_gid': z.string()}),
                 handler: DependenciesForTask,
             },
         
 
              'asana.DependentsForTask/sync': {
                 schema: z.object({
-                  task_gid: z.string()}),
+                  'task_gid': z.string()}),
                 handler: DependentsForTask,
             },
         
 
              'asana.ProjectsForTask/sync': {
                 schema: z.object({
-                  task_gid: z.string()}),
+                  'task_gid': z.string()}),
                 handler: ProjectsForTask,
             },
         
 
              'asana.SubtasksForTask/sync': {
                 schema: z.object({
-                  'limit': z.string(),
-'offset': z.string(),
-task_gid: z.string()}),
+                  'task_gid': z.string(),
+'limit': z.string(),
+'offset': z.string()}),
                 handler: SubtasksForTask,
             },
         
 
              'asana.TagsForTask/sync': {
                 schema: z.object({
-                  task_gid: z.string()}),
+                  'task_gid': z.string()}),
                 handler: TagsForTask,
             },
         
@@ -315,33 +315,33 @@ task_gid: z.string()}),
 
              'asana.ProjectTemplatesForTeam/sync': {
                 schema: z.object({
-                  'limit': z.string(),
-'offset': z.string(),
-team_gid: z.string()}),
+                  'team_gid': z.string(),
+'limit': z.string(),
+'offset': z.string()}),
                 handler: ProjectTemplatesForTeam,
             },
         
 
              'asana.ProjectsForTeam/sync': {
                 schema: z.object({
-                  'limit': z.string(),
+                  'team_gid': z.string(),
+'limit': z.string(),
 'offset': z.string(),
-'archived_query_param': z.string(),
-team_gid: z.string()}),
+'archived_query_param': z.string()}),
                 handler: ProjectsForTeam,
             },
         
 
              'asana.TeamMembershipsForTeam/sync': {
                 schema: z.object({
-                  team_gid: z.string()}),
+                  'team_gid': z.string()}),
                 handler: TeamMembershipsForTeam,
             },
         
 
              'asana.UsersForTeam/sync': {
                 schema: z.object({
-                  team_gid: z.string()}),
+                  'team_gid': z.string()}),
                 handler: UsersForTeam,
             },
         
@@ -357,7 +357,7 @@ team_gid: z.string()}),
 
              'asana.TasksForUserTaskList/sync': {
                 schema: z.object({
-                  user_task_list_gid: z.string()}),
+                  'user_task_list_gid': z.string()}),
                 handler: TasksForUserTaskList,
             },
         
@@ -370,29 +370,29 @@ team_gid: z.string()}),
 
              'asana.FavoritesForUser/sync': {
                 schema: z.object({
-                  user_gid: z.string()}),
+                  'user_gid': z.string()}),
                 handler: FavoritesForUser,
             },
         
 
              'asana.TeamMembershipsForUser/sync': {
                 schema: z.object({
-                  'workspace': z.string(),
-user_gid: z.string()}),
+                  'user_gid': z.string(),
+'workspace': z.string()}),
                 handler: TeamMembershipsForUser,
             },
         
 
              'asana.TeamsForUser/sync': {
                 schema: z.object({
-                  user_gid: z.string()}),
+                  'user_gid': z.string()}),
                 handler: TeamsForUser,
             },
         
 
              'asana.WorkspaceMembershipsForUser/sync': {
                 schema: z.object({
-                  user_gid: z.string()}),
+                  'user_gid': z.string()}),
                 handler: WorkspaceMembershipsForUser,
             },
         
@@ -415,68 +415,68 @@ user_gid: z.string()}),
 
              'asana.AuditLogEvents/sync': {
                 schema: z.object({
-                  workspace_gid: z.string()}),
+                  'workspace_gid': z.string()}),
                 handler: AuditLogEvents,
             },
         
 
              'asana.CustomFieldsForWorkspace/sync': {
                 schema: z.object({
-                  workspace_gid: z.string()}),
+                  'workspace_gid': z.string()}),
                 handler: CustomFieldsForWorkspace,
             },
         
 
              'asana.ProjectsForWorkspace/sync': {
                 schema: z.object({
-                  'limit': z.string(),
+                  'workspace_gid': z.string(),
+'limit': z.string(),
 'offset': z.string(),
-'archived_query_param': z.string(),
-workspace_gid: z.string()}),
+'archived_query_param': z.string()}),
                 handler: ProjectsForWorkspace,
             },
         
 
              'asana.TagsForWorkspace/sync': {
                 schema: z.object({
-                  'limit': z.string(),
-'offset': z.string(),
-workspace_gid: z.string()}),
+                  'workspace_gid': z.string(),
+'limit': z.string(),
+'offset': z.string()}),
                 handler: TagsForWorkspace,
             },
         
 
              'asana.searchTasksForWorkspace/sync': {
                 schema: z.object({
-                  workspace_gid: z.string()}),
+                  'workspace_gid': z.string()}),
                 handler: searchTasksForWorkspace,
             },
         
 
              'asana.TeamsForWorkspace/sync': {
                 schema: z.object({
-                  workspace_gid: z.string()}),
+                  'workspace_gid': z.string()}),
                 handler: TeamsForWorkspace,
             },
         
 
              'asana.typeaheadForWorkspace/sync': {
                 schema: z.object({
-                  workspace_gid: z.string()}),
+                  'workspace_gid': z.string()}),
                 handler: typeaheadForWorkspace,
             },
         
 
              'asana.UsersForWorkspace/sync': {
                 schema: z.object({
-                  workspace_gid: z.string()}),
+                  'workspace_gid': z.string()}),
                 handler: UsersForWorkspace,
             },
         
 
              'asana.WorkspaceMembershipsForWorkspace/sync': {
                 schema: z.object({
-                  workspace_gid: z.string()}),
+                  'workspace_gid': z.string()}),
                 handler: WorkspaceMembershipsForWorkspace,
             },
         }

@@ -96,8 +96,7 @@ export class HarvestIntegration extends Integration {
 
              'harvest.retrieveClient/sync': {
                 schema: z.object({
-                  'clientId': z.string(),
-clientId: z.string()}),
+                  'clientId': z.string()}),
                 handler: retrieveClient,
             },
         
@@ -121,8 +120,7 @@ clientId: z.string()}),
 
              'harvest.retrieveContact/sync': {
                 schema: z.object({
-                  'contactId': z.string(),
-contactId: z.string()}),
+                  'contactId': z.string()}),
                 handler: retrieveContact,
             },
         
@@ -139,8 +137,7 @@ contactId: z.string()}),
 
              'harvest.retrieveEstimateItemCategory/sync': {
                 schema: z.object({
-                  'estimateItemCategoryId': z.string(),
-estimateItemCategoryId: z.string()}),
+                  'estimateItemCategoryId': z.string()}),
                 handler: retrieveEstimateItemCategory,
             },
         
@@ -160,8 +157,7 @@ estimateItemCategoryId: z.string()}),
 
              'harvest.retrieveEstimate/sync': {
                 schema: z.object({
-                  'estimateId': z.string(),
-estimateId: z.string()}),
+                  'estimateId': z.string()}),
                 handler: retrieveEstimate,
             },
         
@@ -172,8 +168,7 @@ estimateId: z.string()}),
 'updated_since': z.string(),
 'page': z.number(),
 'cursor': z.string(),
-'per_page': z.number(),
-estimateId: z.string()}),
+'per_page': z.number()}),
                 handler: listMessagesForEstimate,
             },
         
@@ -191,8 +186,7 @@ estimateId: z.string()}),
 
              'harvest.retrieveExpenseCategory/sync': {
                 schema: z.object({
-                  'expenseCategoryId': z.string(),
-expenseCategoryId: z.string()}),
+                  'expenseCategoryId': z.string()}),
                 handler: retrieveExpenseCategory,
             },
         
@@ -214,8 +208,7 @@ expenseCategoryId: z.string()}),
 
              'harvest.retrieveExpense/sync': {
                 schema: z.object({
-                  'expenseId': z.string(),
-expenseId: z.string()}),
+                  'expenseId': z.string()}),
                 handler: retrieveExpense,
             },
         
@@ -232,8 +225,7 @@ expenseId: z.string()}),
 
              'harvest.retrieveInvoiceItemCategory/sync': {
                 schema: z.object({
-                  'invoiceItemCategoryId': z.string(),
-invoiceItemCategoryId: z.string()}),
+                  'invoiceItemCategoryId': z.string()}),
                 handler: retrieveInvoiceItemCategory,
             },
         
@@ -254,8 +246,7 @@ invoiceItemCategoryId: z.string()}),
 
              'harvest.retrieveInvoice/sync': {
                 schema: z.object({
-                  'invoiceId': z.string(),
-invoiceId: z.string()}),
+                  'invoiceId': z.string()}),
                 handler: retrieveInvoice,
             },
         
@@ -266,8 +257,7 @@ invoiceId: z.string()}),
 'updated_since': z.string(),
 'page': z.number(),
 'cursor': z.string(),
-'per_page': z.number(),
-invoiceId: z.string()}),
+'per_page': z.number()}),
                 handler: listMessagesForInvoice,
             },
         
@@ -276,8 +266,7 @@ invoiceId: z.string()}),
                 schema: z.object({
                   'invoiceId': z.string(),
 'thank_you': z.boolean(),
-'reminder': z.boolean(),
-invoiceId: z.string()}),
+'reminder': z.boolean()}),
                 handler: retrieveInvoiceMessageSubjectAndBodyForSpecificInvoice,
             },
         
@@ -288,8 +277,7 @@ invoiceId: z.string()}),
 'updated_since': z.string(),
 'page': z.number(),
 'cursor': z.string(),
-'per_page': z.number(),
-invoiceId: z.string()}),
+'per_page': z.number()}),
                 handler: listPaymentsForInvoice,
             },
         
@@ -308,8 +296,7 @@ invoiceId: z.string()}),
 
              'harvest.retrieveProject/sync': {
                 schema: z.object({
-                  'projectId': z.string(),
-projectId: z.string()}),
+                  'projectId': z.string()}),
                 handler: retrieveProject,
             },
         
@@ -320,8 +307,7 @@ projectId: z.string()}),
 'is_active': z.boolean(),
 'updated_since': z.string(),
 'page': z.number(),
-'per_page': z.number(),
-projectId: z.string()}),
+'per_page': z.number()}),
                 handler: listTaskAssignmentsForSpecificProject,
             },
         
@@ -329,9 +315,7 @@ projectId: z.string()}),
              'harvest.retrieveTaskAssignment/sync': {
                 schema: z.object({
                   'projectId': z.string(),
-'taskAssignmentId': z.string(),
-projectId: z.string(),
-taskAssignmentId: z.string()}),
+'taskAssignmentId': z.string()}),
                 handler: retrieveTaskAssignment,
             },
         
@@ -343,8 +327,7 @@ taskAssignmentId: z.string()}),
 'is_active': z.boolean(),
 'updated_since': z.string(),
 'page': z.number(),
-'per_page': z.number(),
-projectId: z.string()}),
+'per_page': z.number()}),
                 handler: listUserAssignmentsForSpecificProject,
             },
         
@@ -352,9 +335,7 @@ projectId: z.string()}),
              'harvest.retrieveUserAssignment/sync': {
                 schema: z.object({
                   'projectId': z.string(),
-'userAssignmentId': z.string(),
-projectId: z.string(),
-userAssignmentId: z.string()}),
+'userAssignmentId': z.string()}),
                 handler: retrieveUserAssignment,
             },
         
@@ -473,8 +454,7 @@ userAssignmentId: z.string()}),
 
              'harvest.retrieveRole/sync': {
                 schema: z.object({
-                  'roleId': z.string(),
-roleId: z.string()}),
+                  'roleId': z.string()}),
                 handler: retrieveRole,
             },
         
@@ -503,8 +483,7 @@ roleId: z.string()}),
 
              'harvest.retrieveTask/sync': {
                 schema: z.object({
-                  'taskId': z.string(),
-taskId: z.string()}),
+                  'taskId': z.string()}),
                 handler: retrieveTask,
             },
         
@@ -529,8 +508,7 @@ taskId: z.string()}),
 
              'harvest.retrieveTimeEntry/sync': {
                 schema: z.object({
-                  'timeEntryId': z.string(),
-timeEntryId: z.string()}),
+                  'timeEntryId': z.string()}),
                 handler: retrieveTimeEntry,
             },
         
@@ -574,8 +552,7 @@ timeEntryId: z.string()}),
 
              'harvest.retrieveUser/sync': {
                 schema: z.object({
-                  'userId': z.string(),
-userId: z.string()}),
+                  'userId': z.string()}),
                 handler: retrieveUser,
             },
         
@@ -585,8 +562,7 @@ userId: z.string()}),
                   'userId': z.string(),
 'page': z.number(),
 'cursor': z.string(),
-'per_page': z.number(),
-userId: z.string()}),
+'per_page': z.number()}),
                 handler: listBillableRatesForSpecificUser,
             },
         
@@ -594,9 +570,7 @@ userId: z.string()}),
              'harvest.retrieveBillableRate/sync': {
                 schema: z.object({
                   'userId': z.string(),
-'billableRateId': z.string(),
-userId: z.string(),
-billableRateId: z.string()}),
+'billableRateId': z.string()}),
                 handler: retrieveBillableRate,
             },
         
@@ -606,8 +580,7 @@ billableRateId: z.string()}),
                   'userId': z.string(),
 'page': z.number(),
 'cursor': z.string(),
-'per_page': z.number(),
-userId: z.string()}),
+'per_page': z.number()}),
                 handler: listCostRatesForSpecificUser,
             },
         
@@ -615,9 +588,7 @@ userId: z.string()}),
              'harvest.retrieveCostRate/sync': {
                 schema: z.object({
                   'userId': z.string(),
-'costRateId': z.string(),
-userId: z.string(),
-costRateId: z.string()}),
+'costRateId': z.string()}),
                 handler: retrieveCostRate,
             },
         
@@ -628,8 +599,7 @@ costRateId: z.string()}),
 'updated_since': z.string(),
 'page': z.number(),
 'cursor': z.string(),
-'per_page': z.number(),
-userId: z.string()}),
+'per_page': z.number()}),
                 handler: listActiveProjectAssignments,
             },
         
@@ -639,8 +609,7 @@ userId: z.string()}),
                   'userId': z.string(),
 'page': z.number(),
 'cursor': z.string(),
-'per_page': z.number(),
-userId: z.string()}),
+'per_page': z.number()}),
                 handler: listAssignedTeammatesForSpecificUser,
             },
         }

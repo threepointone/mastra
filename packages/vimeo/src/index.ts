@@ -32,18 +32,15 @@ export class VimeoIntegration extends Integration {
     this.events = {
              'vimeo._project_alt1/sync': {
                 schema: z.object({
-                  'project_id': z.string(),
-project_id: z.string()}),
+                  'project_id': z.string()}),
                 handler: _project_alt1,
             },
         
 
              'vimeo._project/sync': {
                 schema: z.object({
-                  'project_id': z.string(),
-'user_id': z.string(),
-user_id: z.string(),
-project_id: z.string()}),
+                  'user_id': z.string(),
+'project_id': z.string()}),
                 handler: _project,
             },
         }

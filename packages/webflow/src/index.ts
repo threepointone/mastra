@@ -80,8 +80,7 @@ export class WebflowIntegration extends Integration {
 
              'webflow.Asset/sync': {
                 schema: z.object({
-                  'assetId': z.string(),
-assetId: z.string()}),
+                  'assetId': z.string()}),
                 handler: Asset,
             },
         
@@ -96,8 +95,7 @@ assetId: z.string()}),
 
              'webflow.Dataset/sync': {
                 schema: z.object({
-                  'datasetId': z.string(),
-datasetId: z.string()}),
+                  'datasetId': z.string()}),
                 handler: Dataset,
             },
         
@@ -113,8 +111,7 @@ datasetId: z.string()}),
 
              'webflow.DeploymentEnvironment/sync': {
                 schema: z.object({
-                  'deploymentEnvironmentId': z.string(),
-deploymentEnvironmentId: z.string()}),
+                  'deploymentEnvironmentId': z.string()}),
                 handler: DeploymentEnvironment,
             },
         
@@ -134,8 +131,7 @@ deploymentEnvironmentId: z.string()}),
 
              'webflow.Document/sync': {
                 schema: z.object({
-                  'documentId': z.string(),
-documentId: z.string()}),
+                  'documentId': z.string()}),
                 handler: Document,
             },
         
@@ -155,8 +151,7 @@ documentId: z.string()}),
 
              'webflow.Log/sync': {
                 schema: z.object({
-                  'logId': z.string(),
-logId: z.string()}),
+                  'logId': z.string()}),
                 handler: Log,
             },
         
@@ -172,8 +167,7 @@ logId: z.string()}),
 
              'webflow.Model/sync': {
                 schema: z.object({
-                  'modelId': z.string(),
-modelId: z.string()}),
+                  'modelId': z.string()}),
                 handler: Model,
             },
         
@@ -183,8 +177,7 @@ modelId: z.string()}),
                   'modelId': z.string(),
 'status': z.string(),
 'nextToken': z.string(),
-'maxResults': z.string(),
-modelId: z.string()}),
+'maxResults': z.string()}),
                 handler: DataBundles,
             },
         
@@ -194,8 +187,7 @@ modelId: z.string()}),
                   'modelId': z.string(),
 'status': z.string(),
 'nextToken': z.string(),
-'maxResults': z.string(),
-modelId: z.string()}),
+'maxResults': z.string()}),
                 handler: Trainings,
             },
         
@@ -210,8 +202,7 @@ modelId: z.string()}),
 
              'webflow.Organization/sync': {
                 schema: z.object({
-                  'organizationId': z.string(),
-organizationId: z.string()}),
+                  'organizationId': z.string()}),
                 handler: Organization,
             },
         
@@ -226,8 +217,7 @@ organizationId: z.string()}),
 
              'webflow.PaymentMethod/sync': {
                 schema: z.object({
-                  'paymentMethodId': z.string(),
-paymentMethodId: z.string()}),
+                  'paymentMethodId': z.string()}),
                 handler: PaymentMethod,
             },
         
@@ -243,8 +233,7 @@ paymentMethodId: z.string()}),
 
              'webflow.Plan/sync': {
                 schema: z.object({
-                  'planId': z.string(),
-planId: z.string()}),
+                  'planId': z.string()}),
                 handler: Plan,
             },
         
@@ -261,8 +250,7 @@ planId: z.string()}),
 
              'webflow.Profile/sync': {
                 schema: z.object({
-                  'profileId': z.string(),
-profileId: z.string()}),
+                  'profileId': z.string()}),
                 handler: Profile,
             },
         
@@ -286,22 +274,20 @@ profileId: z.string()}),
 
              'webflow.Transition/sync': {
                 schema: z.object({
-                  'transitionId': z.string(),
-transitionId: z.string()}),
+                  'transitionId': z.string()}),
                 handler: Transition,
             },
         
 
              'webflow.TransitionExecutions/sync': {
                 schema: z.object({
-                  'nextToken': z.string(),
+                  'transitionId': z.string(),
+'nextToken': z.string(),
 'order': z.string(),
 'executionId': z.string(),
-'transitionId': z.string(),
 'status': z.string(),
 'maxResults': z.string(),
-'sortBy': z.string(),
-transitionId: z.string()}),
+'sortBy': z.string()}),
                 handler: TransitionExecutions,
             },
         
@@ -309,9 +295,7 @@ transitionId: z.string()}),
              'webflow.TransitionExecution/sync': {
                 schema: z.object({
                   'transitionId': z.string(),
-'executionId': z.string(),
-transitionId: z.string(),
-executionId: z.string()}),
+'executionId': z.string()}),
                 handler: TransitionExecution,
             },
         
@@ -326,8 +310,7 @@ executionId: z.string()}),
 
              'webflow.User/sync': {
                 schema: z.object({
-                  'userId': z.string(),
-userId: z.string()}),
+                  'userId': z.string()}),
                 handler: User,
             },
         
@@ -342,33 +325,29 @@ userId: z.string()}),
 
              'webflow.Workflow/sync': {
                 schema: z.object({
-                  'workflowId': z.string(),
-workflowId: z.string()}),
+                  'workflowId': z.string()}),
                 handler: Workflow,
             },
         
 
              'webflow.WorkflowExecutions/sync': {
                 schema: z.object({
-                  'fromStartTime': z.string(),
+                  'workflowId': z.string(),
+'fromStartTime': z.string(),
 'toStartTime': z.string(),
-'workflowId': z.string(),
 'nextToken': z.string(),
 'order': z.string(),
 'status': z.string(),
 'maxResults': z.string(),
-'sortBy': z.string(),
-workflowId: z.string()}),
+'sortBy': z.string()}),
                 handler: WorkflowExecutions,
             },
         
 
              'webflow.WorkflowExecution/sync': {
                 schema: z.object({
-                  'executionId': z.string(),
-'workflowId': z.string(),
-workflowId: z.string(),
-executionId: z.string()}),
+                  'workflowId': z.string(),
+'executionId': z.string()}),
                 handler: WorkflowExecution,
             },
         }
