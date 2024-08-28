@@ -84,7 +84,7 @@ function buildSyncFunc({ name, paths, schemas }) {
         return `${k}: z.string()`;
       });
 
-      console.log(apiParams, params)
+      // console.log(apiParams, params)
 
       const zodParams =
         params
@@ -119,7 +119,7 @@ function buildSyncFunc({ name, paths, schemas }) {
         content?.schema?.$ref?.replace('#/components/schemas/', '').replace('#/components/responses/', '') ||
         content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
 
-      const operationId = method.operationId?.replace('get', '').replaceAll('/', '') || content?.schema?.$ref?.replace('#/components/responses/', '') || pathToFunctionName(path)
+      const operationId = method.operationId?.replace('get', '').replaceAll('/', '') || content?.schema?.$ref?.replace('#/components/responses/', '')?.replace('#/components/schemas/', '') || pathToFunctionName(path)
 
       return {
         path,
@@ -194,7 +194,7 @@ function buildFieldDefs(schemas) {
 async function main() {
   for (const source of sources) {
     const name = source['Integration Name'];
-    // if (name !== 'attio') {
+    // if (name !== 'webflow') {
     //   continue;
     // }
     const authorization_url = source['Authorization URL'];
@@ -261,8 +261,6 @@ async function main() {
         apiobj = JSON.parse(apiobj);
       }
 
-      console.log(apiobj)
-
       const schemas = getSchemas((apiobj as any))
 
       const paths = (apiobj as any)?.paths || {};
@@ -289,7 +287,6 @@ async function main() {
       syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 
       funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
-        console.log({ funcName })
         fs.writeFileSync(
           path.join(srcPath, 'events', `${funcName}.ts`),
           `

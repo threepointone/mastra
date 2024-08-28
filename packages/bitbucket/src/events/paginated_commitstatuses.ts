@@ -1,24 +1,24 @@
 
                     import { EventHandler } from '@arkw/core';
-                    import { projectFields } from '../constants';
-                    import { VimeoIntegration } from '..';
+                    import { paginated_commitstatusesFields } from '../constants';
+                    import { BitbucketIntegration } from '..';
 
-                    export const get_project_alt1: EventHandler<VimeoIntegration> = ({
+                    export const paginated_commitstatuses: EventHandler<BitbucketIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
 }) => ({        
-                        id: `${name}-sync-project`,
+                        id: `${name}-sync-paginated_commitstatuses`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { project_id, project_id,  } = event.data;
+                            const { q,sort, workspace,repo_slug,pull_request_id,  } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
                          
-                            const response = await proxy['/me/projects/{project_id}'].get({
-                                query: {project_id,},
-                                params: {project_id,} })
+                            const response = await proxy['/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses'].get({
+                                query: {q,sort,},
+                                params: {workspace,repo_slug,pull_request_id,} })
 
                             if (!response.ok) {
                             return
@@ -29,15 +29,15 @@
                             const records = d?.data?.map(({ _externalId, ...d2 }) => ({
                                 externalId: _externalId,
                                 data: d2,
-                                entityType: `project`,
+                                entityType: `paginated_commitstatuses`,
                             }));
 
                             await dataLayer?.syncData({
                                 name,
                                 referenceId,
                                 data: records,
-                                type: `project`,
-                                properties: projectFields,
+                                type: `paginated_commitstatuses`,
+                                properties: paginated_commitstatusesFields,
                             });
                         },
                 })

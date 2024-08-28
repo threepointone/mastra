@@ -1,24 +1,24 @@
 
                     import { EventHandler } from '@arkw/core';
-                    import { projectFields } from '../constants';
-                    import { VimeoIntegration } from '..';
+                    import { userFields } from '../constants';
+                    import { BitbucketIntegration } from '..';
 
-                    export const get_project: EventHandler<VimeoIntegration> = ({
+                    export const user: EventHandler<BitbucketIntegration> = ({
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
 }) => ({        
-                        id: `${name}-sync-project`,
+                        id: `${name}-sync-user`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { project_id,user_id, user_id,project_id,  } = event.data;
+                            const {  workspace,project_key,selected_user,  } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
                          
-                            const response = await proxy['/users/{user_id}/projects/{project_id}'].get({
-                                query: {project_id,user_id,},
-                                params: {user_id,project_id,} })
+                            const response = await proxy['/workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user}'].get({
+                                
+                                params: {workspace,project_key,selected_user,} })
 
                             if (!response.ok) {
                             return
@@ -29,15 +29,15 @@
                             const records = d?.data?.map(({ _externalId, ...d2 }) => ({
                                 externalId: _externalId,
                                 data: d2,
-                                entityType: `project`,
+                                entityType: `user`,
                             }));
 
                             await dataLayer?.syncData({
                                 name,
                                 referenceId,
                                 data: records,
-                                type: `project`,
-                                properties: projectFields,
+                                type: `user`,
+                                properties: userFields,
                             });
                         },
                 })
