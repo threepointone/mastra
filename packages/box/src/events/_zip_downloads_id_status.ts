@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-ZipDownloadStatus`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/zip_downloads/{zip_download_id}/status'].get({
                                 query: {zip_download_id,},
                                 params: {zip_download_id,} })

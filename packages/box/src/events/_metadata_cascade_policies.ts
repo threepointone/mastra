@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-MetadataCascadePolicies`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/metadata_cascade_policies'].get({
                                 query: {folder_id,owner_enterprise_id,marker,offset,},
                                  })

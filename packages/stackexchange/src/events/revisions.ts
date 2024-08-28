@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-revisions`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/revisions/{ids}'].get({
                                 query: {ids,fromdate,todate,pagesize,page,filter,callback,site,},
                                 params: {ids,} })

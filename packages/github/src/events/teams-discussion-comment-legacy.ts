@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-team-discussion-comment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}'].get({
                                 query: {team-id,discussion-number,comment-number,},
                                 params: {team_id,discussion_number,comment_number,} })

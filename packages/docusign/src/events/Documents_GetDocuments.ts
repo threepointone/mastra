@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-envelopeDocumentsResult`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents'].get({
                                 query: {accountId,envelopeId,documents_by_userid,include_docgen_formfields,include_metadata,include_tabs,recipient_id,shared_user_id,},
                                 params: {accountId,envelopeId,} })

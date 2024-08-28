@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-workflow-run`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}'].get({
                                 query: {owner,repo,run-id,attempt-number,exclude-pull-requests,},
                                 params: {owner,repo,run_id,attempt_number,} })

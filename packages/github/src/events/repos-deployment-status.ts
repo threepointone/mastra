@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-deployment-status`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}'].get({
                                 query: {owner,repo,deployment-id,status_id,},
                                 params: {owner,repo,deployment_id,status_id,} })

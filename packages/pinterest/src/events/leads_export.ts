@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-LeadsExportResponseData`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/ad_accounts/{ad_account_id}/leads_export/{leads_export_id}'].get({
                                 query: {path_ad_account_id,leads_export_id,},
                                 params: {ad_account_id,leads_export_id,} })

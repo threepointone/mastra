@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-Get2DmConversationsWithParticipantIdDmEventsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/2/dm_conversations/with/{participant_id}/dm_events'].get({
                                 query: {participant_id,max_results,pagination_token,event_types,DmEventFieldsParameter,DmEventExpansionsParameter,MediaFieldsParameter,UserFieldsParameter,TweetFieldsParameter,},
                                 params: {participant_id,} })

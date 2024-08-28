@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-#/paths/~1v2~1registry~1%7Bregistry_name%7D~1garbage-collection/post/responses/201`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2/registry/{registry_name}/garbage-collection'].get({
                                 query: {#/paths/~1v2~1registry~1%7Bregistry_name%7D~1repositories/get/parameters/2,},
                                 params: {registry_name,} })

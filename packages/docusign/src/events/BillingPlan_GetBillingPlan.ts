@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-accountBillingPlanResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/billing_plan'].get({
                                 query: {accountId,include_credit_card_information,include_downgrade_information,include_metadata,include_successor_plans,include_tax_exempt_id,},
                                 params: {accountId,} })

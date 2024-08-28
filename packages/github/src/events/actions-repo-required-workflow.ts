@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-repo-required-workflow`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}'].get({
                                 query: {org,repo,repo-required-workflow-id,},
                                 params: {org,repo,required_workflow_id_for_repo,} })

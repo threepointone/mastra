@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-pipeline_cache_content_uri`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/repositories/{workspace}/{repo_slug}/pipelines-config/caches/{cache_uuid}/content-uri'].get({
                                 query: {workspace,repo_slug,cache_uuid,},
                                 params: {workspace,repo_slug,cache_uuid,} })

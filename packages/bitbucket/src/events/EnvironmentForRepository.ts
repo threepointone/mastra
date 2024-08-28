@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-deployment_environment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}'].get({
                                 query: {workspace,repo_slug,environment_uuid,},
                                 params: {workspace,repo_slug,environment_uuid,} })

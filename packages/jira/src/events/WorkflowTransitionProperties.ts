@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-WorkflowTransitionProperty`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/rest/api/3/workflow/transitions/{transitionId}/properties'].get({
                                 query: {transitionId,includeReservedKeys,key,workflowName,workflowMode,},
                                 params: {transitionId,} })

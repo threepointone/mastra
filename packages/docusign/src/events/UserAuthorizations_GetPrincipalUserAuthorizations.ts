@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-userAuthorizations`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/users/{userId}/authorizations'].get({
                                 query: {accountId,userId,active_only,count,email_substring,permissions,start_position,user_name_substring,},
                                 params: {accountId,userId,} })

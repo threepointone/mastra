@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-#/paths/~1api~1v1~1company~1search~1name~1%7Bcountry%7D~1%7Bname%7D/get/responses/200`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/api/v1/company/{id}/super/{country}'].get({
                                 query: {id,country,lang,},
                                 params: {id,country,} })

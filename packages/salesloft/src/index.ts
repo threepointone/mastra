@@ -1,8 +1,8 @@
 
 import { Integration, IntegrationAuth } from '@arkw/core';
-import { createClient, type NormalizeOAS } from 'fets'
+import { createClient, type OASClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
-import type openapi from './openapi'
+import openapi from './openapi'
 import { AccountStage } from './events/AccountStage'
 import { AccountTier } from './events/AccountTier'
 import { Account } from './events/Account'
@@ -337,7 +337,7 @@ id: z.string()}),
   }
 
 
-  async getProxy({ referenceId }: { referenceId: string }) {
+  async getProxy({ referenceId }: { referenceId: string }): Promise<OASClient<NormalizeOAS<typeof openapi>>> {
     const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId })
 
     if (!connection) {
@@ -348,14 +348,14 @@ id: z.string()}),
     const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
 
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: "",
+      endpoint: openapi.servers[0].url,
       globalParams: {
         headers: {
           Authorization: `Bearer ${credential?.value}`
         }
       }
     })
-    
+
     return client
   }
 
@@ -379,5 +379,5 @@ id: z.string()}),
     });
   }
 }
-    
+
     

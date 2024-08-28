@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-publish_api_get_record_detail_view_response`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/creator/v2/publish/{account_owner_name}/{app_link_name}/report/{report_link_name}/{record_ID}'].get({
                                 query: {account_owner_name,app_link_name,report_link_name,record_ID,privatelink,},
                                 params: {account_owner_name,app_link_name,report_link_name,record_ID,} })

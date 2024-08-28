@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-EntityProperty`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}'].get({
                                 query: {dashboardId,itemId,propertyKey,},
                                 params: {dashboardId,itemId,propertyKey,} })

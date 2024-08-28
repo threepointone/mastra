@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-IssueBean`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/rest/api/3/issue/{issueIdOrKey}'].get({
                                 query: {issueIdOrKey,fields,fieldsByKeys,expand,properties,updateHistory,failFast,},
                                 params: {issueIdOrKey,} })

@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-ShieldInformationBarrierReport`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/shield_information_barrier_reports/{shield_information_barrier_report_id}'].get({
                                 query: {shield_information_barrier_report_id,},
                                 params: {shield_information_barrier_report_id,} })

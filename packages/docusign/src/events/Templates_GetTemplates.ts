@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-envelopeTemplateResults`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/templates'].get({
                                 query: {accountId,count,created_from_date,created_to_date,folder_ids,folder_types,from_date,include,is_deleted_template_only,is_download,modified_from_date,modified_to_date,order,order_by,search_fields,search_text,shared_by_me,start_position,template_ids,to_date,used_from_date,used_to_date,user_filter,user_id,},
                                 params: {accountId,} })

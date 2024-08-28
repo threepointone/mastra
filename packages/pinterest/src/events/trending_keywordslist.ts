@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-TrendingKeywordsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/trends/keywords/{region}/top/{trend_type}'].get({
                                 query: {path_trend_region,path_trend_type,query_interest_list,query_gender_list,query_age_bucket_list,include_keywords,query_normalize_against_group,query_trending_keyword_limit,},
                                 params: {region,trend_type,} })

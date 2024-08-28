@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-EnvelopeRecipients`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients'].get({
                                 query: {accountId,envelopeId,include_anchor_tab_locations,include_extended,include_metadata,include_tabs,},
                                 params: {accountId,envelopeId,} })

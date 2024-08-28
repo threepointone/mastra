@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-tabs`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs'].get({
                                 query: {accountId,recipientId,templateId,include_anchor_tab_locations,include_metadata,},
                                 params: {accountId,templateId,recipientId,} })

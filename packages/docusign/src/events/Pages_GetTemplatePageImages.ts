@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-pageImages`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages'].get({
                                 query: {accountId,documentId,templateId,count,dpi,max_height,max_width,nocache,show_changes,start_position,},
                                 params: {accountId,templateId,documentId,} })

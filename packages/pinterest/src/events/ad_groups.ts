@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-AdGroupResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/ad_accounts/{ad_account_id}/ad_groups/{ad_group_id}'].get({
                                 query: {path_ad_account_id,path_ad_group_id,},
                                 params: {ad_account_id,ad_group_id,} })

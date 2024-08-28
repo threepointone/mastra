@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-AdGroupsAnalyticsResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/ad_accounts/{ad_account_id}/ad_groups/analytics'].get({
                                 query: {path_ad_account_id,query_start_date,query_end_date,query_ad_group_ids_required,query_columns,query_granularity,query_conversion_attribution_click_window_days,query_conversion_attribution_engagement_window_days,query_conversion_attribution_view_window_days,query_conversion_attribution_conversion_report_time,},
                                 params: {ad_account_id,} })

@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-bccEmailArchiveHistoryList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/settings/bcc_email_archives/{bccEmailArchiveId}'].get({
                                 query: {accountId,bccEmailArchiveId,count,start_position,},
                                 params: {accountId,bccEmailArchiveId,} })

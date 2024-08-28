@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-deployment-branch-policy`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}'].get({
                                 query: {owner,repo,environment-name,branch-policy-id,},
                                 params: {owner,repo,environment_name,branch_policy_id,} })

@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-CatalogsProductGroupProductCountsVertical`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/catalogs/product_groups/{product_group_id}/product_counts'].get({
                                 query: {path_catalogs_product_group_id,query_ad_account_id,},
                                 params: {product_group_id,} })

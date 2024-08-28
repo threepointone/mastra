@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-workflowStep`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}'].get({
                                 query: {accountId,envelopeId,workflowStepId,},
                                 params: {accountId,envelopeId,workflowStepId,} })

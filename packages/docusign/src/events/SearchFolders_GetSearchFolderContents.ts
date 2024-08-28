@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-folderItemResponse`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/search_folders/{searchFolderId}'].get({
                                 query: {accountId,searchFolderId,all,count,from_date,include_recipients,order,order_by,start_position,to_date,},
                                 params: {accountId,searchFolderId,} })

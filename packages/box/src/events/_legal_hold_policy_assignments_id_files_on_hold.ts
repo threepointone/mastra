@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-FileVersionLegalHolds`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/legal_hold_policy_assignments/{legal_hold_policy_assignment_id}/files_on_hold'].get({
                                 query: {legal_hold_policy_assignment_id,marker,limit,fields,},
                                 params: {legal_hold_policy_assignment_id,} })

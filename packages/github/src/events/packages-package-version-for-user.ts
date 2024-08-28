@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-package-version`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}'].get({
                                 query: {package-type,package-name,package-version-id,username,},
                                 params: {username,package_type,package_name,package_version_id,} })

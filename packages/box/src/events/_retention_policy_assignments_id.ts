@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-RetentionPolicyAssignment`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/retention_policy_assignments/{retention_policy_assignment_id}'].get({
                                 query: {retention_policy_assignment_id,fields,},
                                 params: {retention_policy_assignment_id,} })

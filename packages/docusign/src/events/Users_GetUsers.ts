@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-userInformationList`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2.1/accounts/{accountId}/users'].get({
                                 query: {accountId,additional_info,alternate_admins_only,count,domain_users_only,email,email_substring,group_id,include_usersettings_for_csv,login_status,not_group_id,start_position,status,user_name_substring,},
                                 params: {accountId,} })

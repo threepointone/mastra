@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-#/paths/~1v2~1uptime~1checks~1%7Bcheck_id%7D~1alerts/post/responses/201`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v2/uptime/checks/{check_id}/alerts/{alert_id}'].get({
                                 query: {#/paths/~1v2~1uptime~1checks~1%7Bcheck_id%7D/get/parameters/0,alert_id,},
                                 params: {check_id,alert_id,} })

@@ -7,7 +7,7 @@
   eventKey,
   integrationInstance: { name, dataLayer, getProxy },
   makeWebhookUrl,
-}) => ({        
+}) => ({
                         id: `${name}-sync-credit_note`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
@@ -15,7 +15,7 @@
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
-                         
+
                             const response = await proxy['/v1/credit_notes/preview'].get({
                                 query: {amount,credit_amount,expand,invoice,lines,memo,metadata,out_of_band_amount,reason,refund,refund_amount,shipping_cost,},
                                  })
