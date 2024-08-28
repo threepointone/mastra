@@ -369,7 +369,7 @@ export const sources = [
     'Authorization URL': 'https://app.pagerduty.com/oauth/authorize',
     Category: 'dev-tools',
     'OpenAPI integration':
-      'https://raw.githubusercontent.com/PagerDuty/api-schema/blob/main/reference/REST/openapiv3.json',
+      'https://raw.githubusercontent.com/PagerDuty/api-schema/main/reference/REST/openapiv3.json',
   },
   {
     'Integration Name': 'pandadoc',

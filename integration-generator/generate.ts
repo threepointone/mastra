@@ -119,9 +119,8 @@ function buildSyncFunc({ name, paths, schemas }) {
         content?.schema?.$ref?.replace('#/components/schemas/', '').replace('#/components/responses/', '') ||
         content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
 
-      const operationId = method.operationId?.replace('get', '').replaceAll('/', '') || content?.schema?.$ref.replace('#/components/responses/', '')
+      const operationId = method.operationId?.replace('get', '').replaceAll('/', '') || content?.schema?.$ref?.replace('#/components/responses/', '') || pathToFunctionName(path)
 
-      console.log(method?.operationId, operationId)
       return {
         path,
         entityType,
@@ -195,7 +194,7 @@ function buildFieldDefs(schemas) {
 async function main() {
   for (const source of sources) {
     const name = source['Integration Name'];
-    // if (name !== 'pinterest') {
+    // if (name !== 'attio') {
     //   continue;
     // }
     const authorization_url = source['Authorization URL'];
@@ -262,9 +261,10 @@ async function main() {
         apiobj = JSON.parse(apiobj);
       }
 
+      console.log(apiobj)
+
       const schemas = getSchemas((apiobj as any))
 
-      
       const paths = (apiobj as any)?.paths || {};
 
       if (schemas) {
@@ -389,6 +389,27 @@ function getPathFromUrl(url: string): string {
     console.error('Invalid URL:', error);
     return '';
   }
+}
+
+function pathToFunctionName(path: string): string {
+  // Remove leading and trailing slashes
+  const cleanedPath = path.replace(/^\/|\/$/g, '');
+
+  // Replace dynamic parameters enclosed in curly braces with their names
+  const parameterizedPath = cleanedPath.replace(/{([^}]+)}/g, '$1');
+
+  // Split the path into segments by '/'
+  const segments = parameterizedPath.split('/');
+
+  // Convert segments to camelCase
+  const camelCaseSegments = segments.map((segment, index) => {
+      // Capitalize first letter of each segment except the first one
+      const formattedSegment = index === 0 ? segment.toLowerCase() : segment.charAt(0).toUpperCase() + segment.slice(1);
+      return formattedSegment;
+  });
+
+  // Join segments into a single camelCase string
+  return camelCaseSegments.join('');
 }
 
 main();
