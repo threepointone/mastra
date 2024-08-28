@@ -208,6 +208,9 @@ async function main() {
       continue;
     }
 
+    // focusing on asana for now
+    if (!['asana'].includes(name)) continue;
+
     if (!authorization_url) {
       console.log(`Skipping ${name} because it does not have an authorization URL`);
       continue;
@@ -292,9 +295,9 @@ async function main() {
       }, {});
 
       const uniqueFuncKeys = Object.keys(funcNameToFuncMap);
-      const uniqueFuncs = uniqueFuncKeys.map((funcName) => funcNameToFuncMap[funcName]);
+      const uniqueFuncs = uniqueFuncKeys.map(funcName => funcNameToFuncMap[funcName]);
 
-      syncFuncImports = uniqueFuncKeys.map((funcName) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
+      syncFuncImports = uniqueFuncKeys.map(funcName => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 
       uniqueFuncs.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
         const fullParams = Array.from(new Set([...(queryParams || []), ...(requestParams || [])]));
@@ -315,13 +318,24 @@ async function main() {
                         id: \`\${name}-sync-${entityType}\`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
-                            const { ${fullParams.length ? fullParams?.join('') : ''} } = event.data;
+                            const { ${
+                              fullParams.length
+                                ? fullParams?.map((fp: string) => fp.replace('_query_param', '')).join('')
+                                : ''
+                            } } = event.data;
                             const { referenceId } = event.user;
                             const proxy = await getProxy({ referenceId })
 
 
+                            // @ts-ignore
                             const response = await proxy['${pathApi}'].get({
-                                ${queryParams?.length ? `query: {${queryParams?.join('')}},` : ''}
+                                ${
+                                  queryParams?.length
+                                    ? `query: {${queryParams
+                                        ?.map((qp: string) => qp.replace('_query_param', ''))
+                                        .join('')}},`
+                                    : ''
+                                }
                                 ${requestParams?.length ? `params: {${requestParams?.join('')}}` : ''} })
 
                             if (!response.ok) {
@@ -330,6 +344,7 @@ async function main() {
 
                             const d = await response.json()
 
+                            // @ts-ignore
                             const records = d?.data?.map(({ _externalId, ...d2 }) => ({
                                 externalId: _externalId,
                                 data: d2,
