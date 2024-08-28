@@ -1,9 +1,9 @@
-
 import { Integration, IntegrationAuth } from '@arkw/core';
-import { createClient, type NormalizeOAS } from 'fets'
-import { z } from 'zod'
-import type openapi from './openapi'
+import { createClient, type NormalizeOAS } from 'fets';
+import { z } from 'zod';
 
+import { CompanyIdDataset } from './events/CompanyIdDataset';
+import type openapi from './openapi';
 
 type BrexConfig = {
   CLIENT_ID: string;
@@ -21,38 +21,49 @@ export class BrexIntegration extends Integration {
     super({
       ...config,
       name: 'BREX',
-      logoUrl: "TODO",
+      logoUrl: 'TODO',
     });
 
     this.config = config;
   }
 
   registerEvents() {
-    this.events = {}
+    this.events = {
+      'brex.CompanyIdDataset/sync': {
+        schema: z.object({
+          id: z.string(),
+          check_stock_listing: z.boolean(),
+          dataset: z.string(),
+          lang: z.string(),
+          id: z.string(),
+          dataset: z.string(),
+        }),
+        handler: CompanyIdDataset,
+      },
+    };
     return this.events;
   }
 
-
   async getProxy({ referenceId }: { referenceId: string }) {
-    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId })
+    const connection = await this.dataLayer?.getConnectionByReferenceId({ name: this.name, referenceId });
 
     if (!connection) {
-      throw new Error(`Connection not found for referenceId: ${referenceId}`)
+      throw new Error(`Connection not found for referenceId: ${referenceId}`);
     }
 
     // TODO: HANDLE REFRESH TOKEN IF EXPIRED
-    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id)
+    const credential = await this.dataLayer?.getCredentialsByConnectionId(connection.id);
 
     const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: "",
+      endpoint: '',
       globalParams: {
         headers: {
-          Authorization: `Bearer ${credential?.value}`
-        }
-      }
-    })
-    
-    return client
+          Authorization: `Bearer ${credential?.value}`,
+        },
+      },
+    });
+
+    return client;
   }
 
   getAuthenticator() {
@@ -75,5 +86,3 @@ export class BrexIntegration extends Integration {
     });
   }
 }
-    
-    

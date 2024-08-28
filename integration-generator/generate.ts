@@ -31,18 +31,31 @@ function extractParams(pattern: string, path: string): Record<string, string | u
   return params;
 }
 
-function buildSyncFunc({ name, paths }) {
-  return Object.entries(paths)
+function buildSyncFunc({ name, paths, schemas }) {
+  const allGetMethods = Object.entries(paths)
+    .filter(([path, methods]) => {
+      return !!(methods as any).get;
+    })
     .map(([path, methods]) => {
       return { path, method: (methods as any).get };
-    })
+    });
+
+  return allGetMethods
     .filter(Boolean)
     .filter(({ method, path }) => {
-      console.log(name, path, method?.responses['200'].content['application/json']);
-      return method?.responses?.['200']?.content?.['application/json']?.schema?.properties?.data?.type === 'array';
+      const jsonContent = method?.responses?.['200']?.content?.['application/json'];
+      const allContent = method?.responses?.['200']?.content?.['*/*'];
+      const content = jsonContent || allContent;
+
+      return content?.schema?.properties?.data?.type === 'array' || content?.schema?.$ref;
     })
     ?.map(({ method, path }) => {
-      console.log(name, path, method);
+      const jsonContent = method?.responses?.['200']?.content?.['application/json'];
+      const allContent = method?.responses?.['200']?.content?.['*/*'];
+      const content = jsonContent || allContent;
+
+      console.log(name, path, method, content?.schema?.$ref);
+
       const params = method?.parameters;
 
       const apiParams = extractParams(path, path);
@@ -60,9 +73,9 @@ function buildSyncFunc({ name, paths }) {
                 integer: 'z.number()',
                 boolean: 'z.boolean()',
               };
-              return `${p.name}: ${typeToSchema[p.schema.type] || 'z.string()'}`;
+              return `'${p.name}': ${typeToSchema[p.schema.type] || 'z.string()'}`;
             } else if (p?.$ref) {
-              return `${p.$ref.replace('#/components/parameters/', '')}: z.string()`;
+              return `'${p.$ref.replace('#/components/parameters/', '')}': z.string()`;
             }
           })
           .filter(Boolean) || [];
@@ -80,9 +93,9 @@ function buildSyncFunc({ name, paths }) {
 
       const requestParams = Object.entries(apiParams || {})?.map(([k]) => `${k},`);
 
-      const entityType = method?.responses?.['200']?.content?.[
-        'application/json'
-      ]?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
+      const entityType =
+        content?.schema?.$ref?.replace('#/components/schemas/', '') ||
+        content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
 
       return {
         path,
@@ -222,7 +235,7 @@ async function main() {
       }
 
       const schemas = (apiobj as any)?.components?.schemas;
-      const paths = (apiobj as any)?.paths || {}
+      const paths = (apiobj as any)?.paths || {};
 
       if (schemas) {
         const fieldDefs = buildFieldDefs(schemas);
@@ -239,7 +252,9 @@ async function main() {
         fs.mkdirSync(path.join(srcPath, 'events'));
       }
 
-      const funcMap = buildSyncFunc({ name, paths });
+      const funcMap = buildSyncFunc({ name, paths, schemas });
+
+      console.log(funcMap);
 
       syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 

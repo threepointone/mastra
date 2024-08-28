@@ -3,7 +3,7 @@ import { Integration, IntegrationAuth } from '@arkw/core';
 import { createClient, type NormalizeOAS } from 'fets'
 import { z } from 'zod'
 import type openapi from './openapi'
-
+import { get-v1-me } from './events/get-v1-me'
 
 type GustoConfig = {
   CLIENT_ID: string;
@@ -28,7 +28,12 @@ export class GustoIntegration extends Integration {
   }
 
   registerEvents() {
-    this.events = {}
+    this.events = {
+             'gusto.-v1-me/sync': {
+                schema: z.object({}),
+                handler: get-v1-me,
+            },
+        }
     return this.events;
   }
 
