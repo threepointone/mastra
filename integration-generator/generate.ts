@@ -9,22 +9,25 @@ import { sources } from './source';
 import { createIntegration, createPackageJson, createTsConfig } from './template';
 
 function getSchemas(openApiObject: any) {
+  let schemaObject: any = {};
   const schemas = openApiObject?.components?.schemas;
 
   if (schemas) {
-    return schemas;
+    schemaObject = { ...schemaObject, ...schemas };
   }
 
   const responses = openApiObject?.components?.responses as [any, any];
 
   if (responses) {
-    return Object.entries(responses || {}).reduce((memo, [k, v]) => {
-      if (v.content['application/json']?.schema) {
+    const responseObject = Object.entries(responses || {}).reduce((memo, [k, v]) => {
+      if (v.content['application/json']?.schema && !schemaObject[k]) {
         memo[k] = v.content['application/json']?.schema;
       }
       return memo;
     }, {} as Record<string, any>);
+    schemaObject = { ...schemaObject, ...responseObject };
   }
+  return schemaObject;
 }
 
 function extractParams(pattern: string, path: string): Record<string, string | undefined> {
