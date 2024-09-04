@@ -11,18 +11,18 @@ export const sources = [
   //   'OpenAPI integration':
   //     'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/apple.com/app-store-connect/1.4.1/openapi.yaml',
   // },
-  {
-    'Integration Name': 'asana',
-    'Docs URL': 'https://docs.nango.dev/integrations/all/asana',
-    'Auth Mode': 'OAUTH2',
-    Status: 'Backlog',
-    'Token URL': 'https://app.asana.com/-/oauth_token',
-    'Proxy URL': 'https://app.asana.com',
-    'Authorization URL': 'https://app.asana.com/-/oauth_authorize',
-    Category: 'productivity, ticketing',
-    'OpenAPI integration':
-      'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/asana.com/1.0/openapi.yaml',
-  },
+  // {
+  //   'Integration Name': 'asana',
+  //   'Docs URL': 'https://docs.nango.dev/integrations/all/asana',
+  //   'Auth Mode': 'OAUTH2',
+  //   Status: 'Backlog',
+  //   'Token URL': 'https://app.asana.com/-/oauth_token',
+  //   'Proxy URL': 'https://app.asana.com',
+  //   'Authorization URL': 'https://app.asana.com/-/oauth_authorize',
+  //   Category: 'productivity, ticketing',
+  //   'OpenAPI integration':
+  //     'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/asana.com/1.0/openapi.yaml',
+  // },
   // {
   //   'Integration Name': 'attio',
   //   'Docs URL': 'https://docs.nango.dev/integrations/all/attio',
@@ -604,17 +604,17 @@ export const sources = [
   //   'OpenAPI integration':
   //     'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/trello.com/1.0/openapi.yaml',
   // },
-  // {
-  //   'Integration Name': 'twilio',
-  //   'Docs URL': '',
-  //   'Auth Mode': '',
-  //   Status: 'Backlog',
-  //   'Token URL': '',
-  //   'Proxy URL': '',
-  //   'Authorization URL': '',
-  //   Category: '',
-  //   'OpenAPI integration': 'https://github.com/APIs-guru/openapi-directory/tree/main/APIs/twilio.com',
-  // },
+  {
+    'Integration Name': 'twilio',
+    'Docs URL': '',
+    'Auth Mode': '',
+    Status: 'Backlog',
+    'Token URL': 'https://${connectionConfig.subdomain}.okta.com/oauth2/v1/token',
+    'Proxy URL': '',
+    'Authorization URL': 'https://${connectionConfig.subdomain}.okta.com/oauth2/v1/authorize',
+    Category: '',
+    'OpenAPI integration': 'https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/yaml/twilio_api_v2010.yaml',
+  },
   // {
   //   'Integration Name': 'twitter',
   //   'Docs URL': 'https://docs.nango.dev/integrations/all/twitter',
