@@ -1,13 +1,11 @@
 // import { execa } from 'execa';
 import fs from 'fs';
+import _ from 'lodash';
 import path from 'path';
 import { parse } from 'yaml';
 
-
-
 import { sources } from './source';
 import { createIntegration, createPackageJson, createTsConfig } from './template';
-
 
 function getSchemas(openApiObject: any) {
   const schemas = openApiObject?.components?.schemas;
@@ -97,7 +95,7 @@ function buildSyncFunc({ name, paths, schemas }: any) {
                 integer: 'z.number()',
                 boolean: 'z.boolean()',
               };
-              return `'${p.name}': ${typeToSchema[(p.schema.type as keyof typeof typeToSchema)] || 'z.string()'}`;
+              return `'${p.name}': ${typeToSchema[p.schema.type as keyof typeof typeToSchema] || 'z.string()'}`;
             } else if (p?.$ref) {
               return `'${p.$ref.replace('#/components/parameters/', '')}': z.string()`;
             }
@@ -121,10 +119,12 @@ function buildSyncFunc({ name, paths, schemas }: any) {
         content?.schema?.$ref?.replace('#/components/schemas/', '').replace('#/components/responses/', '') ||
         content?.schema?.properties?.data?.items?.$ref?.replace('#/components/schemas/', '');
 
-      const operationId =
-        method.operationId?.replace('get', '').replaceAll('/', '') ||
+      const operationIdDash =
+        method.operationId?.replace(/get./, '').replaceAll('/', '') ||
         content?.schema?.$ref?.replace('#/components/responses/', '')?.replace('#/components/schemas/', '') ||
         pathToFunctionName(path);
+
+      const operationId = _.camelCase(operationIdDash);
 
       return {
         path,
