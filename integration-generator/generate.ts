@@ -1,6 +1,7 @@
 // import { execa } from 'execa';
 import fs from 'fs';
 import _ from 'lodash';
+import { uniqBy } from 'lodash';
 import path from 'path';
 import { parse } from 'yaml';
 
@@ -81,7 +82,7 @@ function buildSyncFunc({ name, paths, schemas }: any) {
       const apiParams = extractParams(path, path);
 
       const apiParamsZod = Object.entries(apiParams || {}).map(([k, v]) => {
-        return `${k}: z.string()`;
+        return { pName: k, text: `${k}: z.string()` };
       });
 
       // console.log(apiParams, params)
@@ -95,23 +96,28 @@ function buildSyncFunc({ name, paths, schemas }: any) {
                 integer: 'z.number()',
                 boolean: 'z.boolean()',
               };
-              return `'${p.name}': ${typeToSchema[p.schema.type as keyof typeof typeToSchema] || 'z.string()'}`;
+              return {
+                pName: p.name,
+                text: `'${p.name}': ${typeToSchema[p.schema.type as keyof typeof typeToSchema] || 'z.string()'}`,
+              };
             } else if (p?.$ref) {
-              return `'${p.$ref.replace('#/components/parameters/', '')}': z.string()`;
+              return { pName: p.name, text: `'${p.$ref.replace('#/components/parameters/', '')}': z.string()` };
             }
           })
           .filter(Boolean) || [];
 
-      const totalZodParams = [...zodParams, ...apiParamsZod];
+      const totalZodParams = uniqBy([...zodParams, ...apiParamsZod], 'pName').map(({ text }) => text);
 
       const queryParams =
-        params?.map((p: any) => {
-          if (p?.name) {
-            return `${p.name},`;
-          } else if (p?.$ref) {
-            return `${p.$ref.replace('#/components/parameters/', '')},`;
-          }
-        }) || [];
+        params
+          ?.filter((p: any) => p.in === `query`)
+          .map((p: any) => {
+            if (p?.name) {
+              return `${p.name},`;
+            } else if (p?.$ref) {
+              return `${p.$ref.replace('#/components/parameters/', '')},`;
+            }
+          }) || [];
 
       const requestParams = Object.entries(apiParams || {})?.map(([k]) => `${k},`);
 
@@ -189,8 +195,13 @@ function buildFieldDefs(schemas: any) {
     .map(([name, schema]) => {
       const props = makeProperties({ s: schema });
 
+      const formatName = name
+        .replaceAll('--', '_')
+        .replaceAll('-', '_')
+        .replaceAll(/[\W_.]/g, '_');
+
       return `
-            export const ${name.replaceAll('--', '_').replaceAll('-', '_')}Fields = [${props.join(',\n')}];
+            export const ${formatName}Fields = [${props.join(',\n')}];
             `;
     })
     .join('\n\n');
@@ -294,11 +305,12 @@ async function main() {
       syncFuncImports = funcMap.map(({ funcName }) => `import { ${funcName} } from './events/${funcName}'`).join('\n');
 
       funcMap.forEach(({ funcName, entityType, path: pathApi, queryParams, requestParams }) => {
+        const formatEType = entityType.replaceAll(/[\W_.]/g, '_');
         fs.writeFileSync(
           path.join(srcPath, 'events', `${funcName}.ts`),
           `
                     import { EventHandler } from '@arkw/core';
-                    import { ${entityType}Fields } from '../constants';
+                    import { ${formatEType}Fields } from '../constants';
                     import { ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}Integration } from '..';
 
                     export const ${funcName}: EventHandler<${
@@ -308,7 +320,7 @@ async function main() {
   integrationInstance: { name, dataLayer, getApiClient },
   makeWebhookUrl,
 }) => ({
-                        id: \`\${name}-sync-${entityType}-${funcName}\`,
+                        id: \`\${name}-sync-${formatEType}-${funcName}\`,
                         event: eventKey,
                         executor: async ({ event, step }: any) => {
                             const { ${queryParams.length ? queryParams?.join('') : ''} ${
@@ -344,15 +356,15 @@ async function main() {
                             const records = d?.data?.map(({ _externalId, ...d2 }) => ({
                                 externalId: _externalId,
                                 data: d2,
-                                entityType: \`${entityType}\`,
+                                entityType: \`${formatEType}\`,
                             }));
 
                             await dataLayer?.syncData({
                                 name,
                                 referenceId,
                                 data: records,
-                                type: \`${entityType}\`,
-                                properties: ${entityType}Fields,
+                                type: \`${formatEType}\`,
+                                properties: ${formatEType}Fields,
                             });
                         },
                 })
