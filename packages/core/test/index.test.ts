@@ -1,8 +1,8 @@
 import { describe, expect, it } from '@jest/globals';
-
+import { z } from 'zod';
 import { createFramework } from '../src';
 import { CORE_INTEGRATION_NAME } from '../src/constants';
-import { IntegrationAction, IntegrationEvent } from '../src/types';
+import { IntegrationApi, IntegrationEvent } from '../src/types';
 import { createMockAction, createMockEvent, MockIntegration } from './utils';
 
 const testFrameworkName = 'TEST_FRAMEWORK';
@@ -12,14 +12,14 @@ const testEventKey = 'TEST_EVENT';
 const testIntegrationActionType = 'TEST_INTEGRATION_ACTION';
 const testIntegrationEventKey = 'TEST_INTEGRATION_EVENT';
 
-const mockSystemActions: IntegrationAction[] = [
+const mockSystemActions: IntegrationApi[] = [
   createMockAction({
     type: testActionType,
     integrationName: CORE_INTEGRATION_NAME,
   }),
 ];
 
-const mockIntegrationAction: IntegrationAction = createMockAction({
+const mockIntegrationAction: IntegrationApi = createMockAction({
   type: testIntegrationActionType,
   integrationName: testIntegrationName,
 });
@@ -43,11 +43,20 @@ const integrationFramework = createFramework({
       name: testIntegrationName,
       logoUrl: 'test',
       events: mockIntegrationEvent,
-      actions: { [testIntegrationActionType]: mockIntegrationAction },
+      apis: { [testIntegrationActionType]: mockIntegrationAction },
     }),
   ],
   systemApis: mockSystemActions,
-  systemEvents: mockSystemEvents,
+  systemEvents: {
+    ...mockSystemEvents,
+  },
+  events: {
+    newEvent: {
+      schema: z.object({
+        hello: z.string(),
+      }),
+    },
+  },
   db: {
     provider: 'postgres',
     uri: 'test',
@@ -63,9 +72,9 @@ describe('Integration Framework', () => {
   });
 
   it('Should register system actions', () => {
-    expect(
-      Object.values(integrationFramework.getSystemActions() ?? {})
-    ).toEqual(mockSystemActions);
+    expect(Object.values(integrationFramework.getSystemApis() ?? {})).toEqual(
+      mockSystemActions
+    );
   });
 
   it('Should register system events', () => {
@@ -86,7 +95,7 @@ describe('Integration Framework', () => {
 
     it('Should register integration actions', () => {
       const actions =
-        integrationFramework.getActionsByIntegration(testIntegrationName);
+        integrationFramework.getApisByIntegration(testIntegrationName);
       expect(actions).toBeDefined();
       expect(JSON.stringify(Object.values(actions ?? {}))).toContain(
         JSON.stringify(mockIntegrationAction)
@@ -99,6 +108,15 @@ describe('Integration Framework', () => {
 
       expect(events).toBeDefined();
       expect(events).toEqual(mockIntegrationEvent);
+    });
+
+    it('should have strongly typed events', () => {
+      void integrationFramework.sendEvent({
+        key: 'ok',
+        data: {
+          nello: 'world',
+        },
+      });
     });
   });
 });

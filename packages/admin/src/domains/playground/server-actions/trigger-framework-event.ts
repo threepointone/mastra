@@ -17,7 +17,7 @@ export async function triggerFrameworkEvent({ eventKey, payload, referenceId, in
   await framework.sendEvent({
     integrationName,
     key: eventKey,
-    data: payload,
+    data: payload as never,
     user: {
       referenceId,
     },

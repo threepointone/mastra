@@ -1,4 +1,5 @@
 import { omitBy } from 'lodash';
+import { z } from 'zod';
 import { DataLayer } from './data-access';
 import { Integration } from './integration';
 import {
@@ -17,7 +18,7 @@ import { client } from './utils/inngest';
 import { IntegrationMap } from './generated-types';
 import { Prisma } from '@prisma-app/client';
 
-export class Framework {
+export class Framework<C extends Config> {
   //global events grouped by Integration
   globalEvents: Map<string, Record<string, IntegrationEvent<any>>> = new Map();
   // global event handlers
@@ -28,9 +29,9 @@ export class Framework {
 
   dataLayer: DataLayer;
 
-  config: Config;
+  config: C;
 
-  constructor({ dataLayer, config }: { dataLayer: DataLayer; config: Config }) {
+  constructor({ dataLayer, config }: { dataLayer: DataLayer; config: C }) {
     this.dataLayer = dataLayer;
     this.config = config;
   }
@@ -356,15 +357,15 @@ export class Framework {
     return poll();
   }
 
-  async sendEvent<T = Record<string, any>>({
+  async sendEvent<K extends keyof C['events']>({
     key,
     data,
     user,
     integrationName = this.config.name,
   }: {
     integrationName?: string;
-    key: string;
-    data: T;
+    key: K;
+    data: z.infer<C['events'][K]['schema']>;
     user?: {
       referenceId: string;
       [key: string]: any;
@@ -380,10 +381,12 @@ export class Framework {
       throw new Error(`No events exists for ${integrationName}`);
     }
 
-    const integrationEvent = integrationEvents[key];
+    const integrationEvent = integrationEvents[key as string];
 
     if (!integrationEvent) {
-      throw new Error(`No event exists for ${key} in ${integrationName}`);
+      throw new Error(
+        `No event exists for ${key as string} in ${integrationName}`
+      );
     }
 
     const event = await client.send({

@@ -15,7 +15,14 @@ export interface Config {
   };
   integrations: Integration[];
   systemApis: Omit<IntegrationApi, 'integrationName'>[];
-  systemEvents: Record<string, IntegrationEvent<any>>;
+  systemEvents: {
+    [key: string]: IntegrationEvent<any>;
+  };
+  events: {
+    [key: string]: {
+      schema: ZodSchema;
+    };
+  };
   env?: {
     provider?: 'local' | 'vercel';
     file?: string;
@@ -43,9 +50,7 @@ export interface IntegrationApiExcutorParams<T> {
   data: T;
 }
 
-export type EventSchema =
-  | ZodSchema
-  | (({ ctx }: { ctx: IntegrationContext }) => Promise<ZodSchema>);
+export type EventSchema = ZodSchema;
 
 /**
  * @param T - the type of the Integration Instance
@@ -98,7 +103,7 @@ export type RefinedIntegrationApi<T = unknown> = Omit<
   zodOutputSchema: ZodSchema<T>;
 };
 
-export type RefinedIntegrationEvent<T = unknown> = {
+export type RefinedIntegrationEvent = {
   schema: EventSchema;
   key?: string;
   integrationName?: string;
@@ -109,7 +114,7 @@ export type RefinedIntegrationEvent<T = unknown> = {
   }: {
     ctx: IntegrationContext;
   }) => Promise<Record<string, SchemaFieldOptions>>;
-  zodSchema?: ZodSchema<T>;
+  zodSchema?: ZodSchema;
 };
 
 export enum IntegrationCredentialType {

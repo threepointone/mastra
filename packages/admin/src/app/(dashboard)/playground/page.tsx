@@ -5,13 +5,13 @@ import { sanitizeData } from '@/lib/sanitize-data';
 
 import { ClientLayout } from './client-layout';
 
-function getApis(name: string, framework: Framework | null) {
+function getApis(name: string, framework: Framework<any> | null) {
   if (!framework) return {};
   const apis = framework.getApisByIntegration(name);
   return apis;
 }
 
-function getEventsForIntegration(integrationName: string, framework: Framework | null) {
+function getEventsForIntegration(integrationName: string, framework: Framework<any> | null) {
   if (!framework) return;
 
   const events = framework.getEventsByIntegration(integrationName) || {};
