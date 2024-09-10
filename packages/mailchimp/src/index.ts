@@ -19,6 +19,7 @@ export class MailchimpIntegration extends Integration {
   config: MailchimpConfig;
 
   entityTypes = { CONTACTS: 'CONTACTS' };
+  scopes: string[] = [];
 
   constructor({ config }: { config: MailchimpConfig }) {
     config.authType = `OAUTH`;
@@ -164,6 +165,20 @@ export class MailchimpIntegration extends Integration {
   }
 
   getAuthenticator() {
+    const filteredScopes: string[] = [];
+
+    const isScopesDefined = this.config.SCOPES && this.config.SCOPES.length > 0; // TODO: deprecate falling back to full scopes
+
+    if (isScopesDefined) {
+      this.config.SCOPES.forEach(scope => {
+        if (this.scopes.includes(scope)) {
+          filteredScopes.push(scope);
+        } else {
+          console.warn(`Scope ${scope} is not supported by the Mailchimp integration`);
+        }
+      });
+    }
+
     return new IntegrationAuth({
       dataAccess: this.dataLayer!,
       onConnectionCreated: connection => {
@@ -178,7 +193,7 @@ export class MailchimpIntegration extends Integration {
         SERVER: MAILCHIMP_HOST,
         AUTHORIZATION_ENDPOINT: '/oauth2/authorize',
         TOKEN_ENDPOINT: '/oauth2/token',
-        SCOPES: this.config.SCOPES,
+        SCOPES: isScopesDefined ? filteredScopes : this.scopes, // TODO: deprecate falling back to full scopes
         AUTHENTICATION_METHOD: 'client_secret_post',
       },
     });

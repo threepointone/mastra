@@ -52,6 +52,7 @@ export class Integration<T = unknown> {
   corePresets: CoreIntegrationPresets = {
     redirectURI: '',
   };
+  scopes: string[] = [];
 
   constructor(config: IntegrationConfig) {
     if (!config?.name) {

@@ -16,6 +16,26 @@ type XConfig = {
 
 export class XIntegration extends Integration {
   config: XConfig;
+  scopes = [
+    'tweet.read',
+    'tweet.write',
+    'follows.read',
+    'follows.write',
+    'offline.access',
+    'like.read',
+    'like.write',
+    'bookmark.read',
+    'bookmark.write',
+    'block.read',
+    'block.write',
+    'users.read',
+    'tweet.moderate.write',
+    'mute.write',
+    'mute.read',
+    'list.write',
+    'list.read',
+    'space.read',
+  ];
 
   constructor({ config }: { config: XConfig }) {
     config.authType = `OAUTH`;
@@ -57,27 +77,18 @@ export class XIntegration extends Integration {
   async onDisconnect({ connectionId }: { connectionId: string }) {}
 
   getAuthenticator() {
-    const baseScope = [
-      'tweet.read',
-      'tweet.write',
-      'follows.read',
-      'follows.write',
-      'offline.access',
-      'like.read',
-      'like.write',
-      'bookmark.read',
-      'bookmark.write',
-      'block.read',
-      'block.write',
-      'users.read',
-      'tweet.moderate.write',
-      'mute.write',
-      'mute.read',
-      'list.write',
-      'list.read',
-      'space.read',
-    ];
     const isScopesDefined = this.config.SCOPES && this.config.SCOPES.length > 0; // TODO: remove this once we a document, and we can define the scopes
+    const filteredScopes: string[] = [];
+    if (isScopesDefined) {
+      this.config.SCOPES.forEach(scope => {
+        if (this.scopes.includes(scope)) {
+          filteredScopes.push(scope);
+        } else {
+          console.warn(`Scope ${scope} is not supported by the X integration`);
+        }
+      });
+    }
+
     return new IntegrationAuth({
       dataAccess: this.dataLayer!,
       onConnectionCreated: connection => {
@@ -92,7 +103,7 @@ export class XIntegration extends Integration {
         SERVER: `https://twitter.com`,
         AUTHORIZATION_ENDPOINT: '/i/oauth2/authorize',
         TOKEN_ENDPOINT: 'https://api.twitter.com/2/oauth2/token',
-        SCOPES: isScopesDefined ? this.config.SCOPES : [...baseScope],
+        SCOPES: isScopesDefined ? filteredScopes : this.scopes, // TODO: deprecate falling back to full scopes
         EXTRA_AUTH_PARAMS: {
           code_challenge: 'challenge',
           code_challenge_method: 'plain',
