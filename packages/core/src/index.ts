@@ -1,6 +1,26 @@
 import { DataLayer } from './data-access';
 import { Framework } from './framework';
-import { Config } from './types';
+import { Integration } from './integration';
+import { IntegrationApi, IntegrationEvent } from './types';
+
+export interface Config<T extends Integration = Integration> {
+  name: string;
+  packageManager?: string;
+  systemHostURL: string;
+  routeRegistrationPath: string;
+  blueprintDirPath: string;
+  db: {
+    provider: string;
+    uri: string;
+  };
+  integrations: Integration[];
+  systemApis: Omit<IntegrationApi, 'integrationName'>[];
+  systemEvents: Record<string, IntegrationEvent<T>>;
+  env?: {
+    provider?: 'local' | 'vercel';
+    file?: string;
+  };
+}
 
 export * from './workflows/types';
 export { IntegrationError } from './utils/errors';

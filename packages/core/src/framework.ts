@@ -2,6 +2,8 @@ import { omitBy } from 'lodash';
 import { DataLayer } from './data-access';
 import { Integration } from './integration';
 import {
+  EventHandler,
+  EventHandlerReturnType,
   Config,
   IntegrationApi,
   IntegrationApiExcutorParams,
@@ -10,6 +12,7 @@ import {
   IntegrationEvent,
   Routes,
   ZodeSchemaGenerator,
+  SystemEventHandler,
 } from './types';
 import { blueprintRunner } from './workflows/runner';
 import { Blueprint } from './workflows/types';
@@ -18,13 +21,12 @@ import { makeConnect, makeCallback, makeInngest, makeWebhook } from './next';
 import { client } from './utils/inngest';
 import { IntegrationMap } from './generated-types';
 import { Prisma } from '@prisma-app/client';
+import { SendEventOutput } from 'inngest/types';
+import { isSystemEventHandler } from './utils';
 import { z, ZodSchema } from 'zod';
-
 export class Framework<C extends Config = Config> {
   //global events grouped by Integration
   globalEvents: Map<string, Record<string, IntegrationEvent<any>>> = new Map();
-  // global event handlers
-  globalEventHandlers: any[] = [];
   // global apis grouped by Integration
   globalApis: Map<string, Record<string, IntegrationApi<any>>> = new Map();
   integrations: Map<string, Integration> = new Map();
@@ -160,12 +162,6 @@ export class Framework<C extends Config = Config> {
       apis: Object.values(definition.getApis()),
       integrationName: name,
     });
-
-    this.globalEventHandlers.push(
-      ...definition.getEventHandlers({
-        makeWebhookUrl: this.makeWebhookUrl,
-      })
-    );
   }
 
   registerEvents({
@@ -209,9 +205,11 @@ export class Framework<C extends Config = Config> {
     );
   }
 
-  getIntegration<T extends keyof IntegrationMap>(name: T): IntegrationMap[T] {
+  getIntegration = <T extends keyof IntegrationMap>(
+    name: T
+  ): IntegrationMap[T] => {
     return this.integrations.get(name as string) as IntegrationMap[T];
-  }
+  };
 
   getGlobalEvents() {
     return this.globalEvents;
@@ -227,7 +225,35 @@ export class Framework<C extends Config = Config> {
   }
 
   getGlobalEventHandlers() {
-    return this.globalEventHandlers;
+    return Array.from(this.globalEvents.entries()).flatMap(
+      ([integrationName, events]) => {
+        const groupedHandlers = Object.keys(events)
+          .map((eventKey) => {
+            const eventHandler = events[eventKey]?.handler;
+            if (!eventHandler) return null;
+
+            const isSystemEvent = integrationName === this.config.name;
+
+            if (isSystemEvent) {
+              return (eventHandler as SystemEventHandler)({
+                getIntegration: this.getIntegration,
+                eventKey,
+                makeWebhookUrl: this.makeWebhookUrl,
+              });
+            } else {
+              const integration = this.getIntegration(integrationName);
+              return (eventHandler as EventHandler)({
+                integrationInstance: integration,
+                eventKey,
+                makeWebhookUrl: this.makeWebhookUrl,
+              });
+            }
+          })
+          .filter(Boolean) as EventHandlerReturnType[];
+
+        return groupedHandlers;
+      }
+    );
   }
 
   getApis() {

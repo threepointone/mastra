@@ -59,7 +59,7 @@ export type EventSchema = ZodSchema | ZodeSchemaGenerator;
  * @param T - the type of the Integration Instance
  */
 type IntegrationEventHandler<T extends Integration = Integration> = {
-  handler?: EventHandler<T>;
+  handler?: EventHandler<T> | SystemEventHandler<T>;
 };
 
 export type IntegrationEvent<T extends Integration = Integration> =
@@ -186,6 +186,12 @@ export type EventHandlerReturnType = {
  */
 export type EventHandler<T = unknown> = (params: {
   integrationInstance: T;
+  eventKey: string;
+  makeWebhookUrl: MakeWebhookURL;
+}) => EventHandlerReturnType;
+
+export type SystemEventHandler<T = unknown> = (params: {
+  getIntegration: (integrationName: string) => T;
   eventKey: string;
   makeWebhookUrl: MakeWebhookURL;
 }) => EventHandlerReturnType;

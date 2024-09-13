@@ -2,7 +2,7 @@ import { Prisma } from '@prisma-app/client';
 import { z } from 'zod';
 import _ from 'lodash';
 
-import { SchemaFieldOptions } from '../types';
+import { SchemaFieldOptions, SystemEventHandler } from '../types';
 
 type TypedInstance<T> = {
   type: T;
@@ -74,4 +74,10 @@ function setFieldOptions({
   } else {
     acc[field] = { options: undefined };
   }
+}
+
+export function isSystemEventHandler<T>(
+  handler: any
+): handler is SystemEventHandler<T> {
+  return typeof handler?.getIntegration === 'function';
 }
