@@ -18,7 +18,7 @@ export async function executeFrameworkApi(props: Props): Promise<any> {
   try {
     const res = await framework.executeApi(props);
     return res;
-  } catch (e) {
+  } catch (e: any) {
     //TODO: resend proper api errors
     throw new Error('Could not execute api', e);
   }

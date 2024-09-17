@@ -1,7 +1,5 @@
 export const sources = [
-
   // =============== ### Done ===================
-
   // {
   //   name: 'zendesk',
   //   authType: 'OAUTH',
@@ -19,7 +17,6 @@ export const sources = [
   //   authorizationUrl: '/-/oauth_authorize',
   //   openapiSpec: 'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/asana.com/1.0/openapi.yaml',
   // },
-
   // {
   //   name: 'Twilio',
   //   authType: 'API_KEY',
@@ -31,7 +28,6 @@ export const sources = [
   //   openapiSpec:
   //     'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/twilio.com/api/1.55.0/openapi.yaml',
   // },
-
   // {
   //   name: 'github',
   //   authType: 'API_KEY',
@@ -43,22 +39,19 @@ export const sources = [
   //   openapiSpec:
   //     'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/github.com/api.github.com.2022-11-28/1.1.4/openapi.yaml',
   // },
-
+  {
+    name: 'stripe',
+    'Docs URL': 'https://docs.nango.dev/integrations/all/stripe',
+    authType: 'API_KEY',
+    apiKeys: ['API_KEY'],
+    idKey: 'id',
+    fallbackIdKey: `id`,
+    configIdKey: `API_KEY`,
+    authorization: { type: `Basic`, usernameKey: `API_KEY` },
+    openapiSpec:
+      'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/stripe.com/2022-11-15/openapi.yaml',
+  },
   // ================== ### TODO ======================
-
-
-  // {
-  //   'name': 'stripe',
-  //   'Docs URL': 'https://docs.nango.dev/integrations/all/stripe',
-  //   authType: 'API_KEY',
-  //   configKeys: ['API_KEY'],
-  //   idKey: 'id',
-  //   fallbackIdKey: `id`,
-  //   configIdKey: `API_KEY`,
-  //   authorization: { type: `Basic`, usernameKey: `API_KEY` },
-  //   openapiSpec:
-  //     'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/stripe.com/2022-11-15/openapi.yaml',
-  // },
   // {
   //   'name': 'apple-app-store',
   //   'Docs URL': 'https://docs.nango.dev/integrations/all/apple-app-store',
@@ -628,7 +621,6 @@ export const sources = [
   //   'OpenAPI integration':
   //     'https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/stackexchange.com/2.0/openapi.yaml',
   // },
-
   // {
   //   'name': 'trello',
   //   'Docs URL': 'https://docs.nango.dev/integrations/all/trello',
