@@ -44,31 +44,3 @@ export const GITHUB_PULL_REQUEST_FIELDS = [
     type: PropertyType.BADGE_LIST,
   },
 ];
-
-// const MAILCHIMP_MEMBER_TO_PERSON = {
-//   _externalId: 'unique_email_id',
-//   firstName: 'merge_fields.FNAME',
-//   lastName: 'merge_fields.LNAME',
-//   email: 'email_address',
-//   phone: 'merge_fields.PHONE',
-//   birthday: 'merge_fields.BIRTHDAY',
-//   address: (m: MailchimpMember) => getPath(m, 'merge_fields.ADDRESS.addr1'),
-//   address2: (m: MailchimpMember) => getPath(m, 'merge_fields.ADDRESS.addr2'),
-//   city: (m: MailchimpMember) => getPath(m, 'merge_fields.ADDRESS.city'),
-//   state: (m: MailchimpMember) => getPath(m, 'merge_fields.ADDRESS.state'),
-//   zipcode: (m: MailchimpMember) => getPath(m, 'merge_fields.ADDRESS.zip'),
-//   country: (m: MailchimpMember) => getPath(m, 'merge_fields.ADDRESS.country'),
-//   // tags: (m: MailchimpMember) => m.tags?.map((tag: { name: string }) => tag.name).join(', '),
-// };
-
-// export const mapMailchimpMemberToPersonRecord = (member: MailchimpMember) => {
-//   return Object.entries(MAILCHIMP_MEMBER_TO_PERSON).reduce((acc, [key, path]) => {
-//     acc[key] = typeof path === 'function' ? path(member) : getPath(member, path);
-
-//     if (acc[key]) {
-//       acc[key] = acc[key].trim();
-//     }
-
-//     return acc;
-//   }, {} as Record<string, any>);
-// };

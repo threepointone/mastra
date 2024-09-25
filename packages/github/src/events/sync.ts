@@ -14,6 +14,7 @@ export const pullRequestSync: EventHandler<GithubIntegration> = ({ integrationIn
   event: eventKey,
   executor: async ({ event }) => {
     const { connectionId } = event.user;
+    const { owner, repo } = event.data;
 
     const connection = await dataLayer?.getConnection({ connectionId, name });
 
@@ -23,7 +24,7 @@ export const pullRequestSync: EventHandler<GithubIntegration> = ({ integrationIn
 
     const client = await getApiClient({ connectionId });
 
-    const res = await client['/repos/{owner}/{repo}/pulls'].get({ params: { owner: 'kontent-ai', repo: 'kontent-ai' } });
+    const res = await client['/repos/{owner}/{repo}/pulls'].get({ params: { owner, repo } });
     const pullRequests = await res.json();
 
     if (!pullRequests) {
