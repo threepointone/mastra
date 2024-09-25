@@ -31,7 +31,8 @@
     "@kpl/google_calendar": "workspace:*",
     "@kpl/google_docs": "workspace:*",
     "@kpl/notion": "workspace:*",
-    "@kpl/spotify": "workspace:*"
+    "@kpl/spotify": "workspace:*",
+    "@kpl/zoom": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20",

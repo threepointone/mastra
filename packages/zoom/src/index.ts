@@ -1,8 +1,10 @@
 import { Integration, OpenAPI, IntegrationCredentialType, IntegrationAuth } from '@kpl/core';
 import { createClient, type OASClient, type NormalizeOAS } from 'fets';
+import { z } from 'zod';
 
 // @ts-ignore
 import ZoomLogo from './assets/zoom.png';
+import { meetingsSync } from './events/sync';
 import { openapi } from './openapi';
 import { components } from './openapi-components';
 import { paths } from './openapi-paths';
@@ -15,6 +17,8 @@ type ZoomConfig = {
 };
 
 export class ZoomIntegration extends Integration {
+  entityTypes = { MEETINGS: 'MEETINGS' };
+
   constructor({ config }: { config: ZoomConfig }) {
     super({
       ...config,
@@ -28,18 +32,22 @@ export class ZoomIntegration extends Integration {
     return { paths, components } as unknown as OpenAPI;
   }
 
-  getApiClient = async ({ connectionId }: { connectionId: string }): Promise<OASClient<NormalizeOAS<openapi>>> => {
+  getApiClient = async ({
+    connectionId,
+  }: {
+    connectionId: string;
+  }): Promise<OASClient<NormalizeOAS<openapi>, false>> => {
     const connection = await this.dataLayer?.getConnection({ name: this.name, connectionId });
 
     if (!connection) {
-      throw new Error(`Connection not found for connectionId: ${connectionId}`);
+      throw new Error(`Connection not found for connection: ${connectionId}`);
     }
 
     const authenticator = this.getAuthenticator();
     const { accessToken } = await authenticator.getAuthToken({ k_id: connection.id });
 
     const client = createClient<NormalizeOAS<openapi>>({
-      endpoint: 'https://api.zoom.us/v2',
+      endpoint: `https://api.zoom.us/v2`,
       globalParams: {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -51,7 +59,15 @@ export class ZoomIntegration extends Integration {
   };
 
   registerEvents() {
-    this.events = {};
+    this.events = {
+      'zoom/sync.meetings': {
+        schema: z.object({}),
+        handler: meetingsSync,
+        description: 'Sync meetings from Zoom',
+        key: 'zoom/sync.meetings',
+        label: 'Sync Meetings',
+      },
+    };
     return this.events;
   }
 
@@ -71,7 +87,7 @@ export class ZoomIntegration extends Integration {
         SERVER: `https://api.zoom.us/v2`,
         AUTHORIZATION_ENDPOINT: `https://zoom.us/oauth/authorize`,
         TOKEN_ENDPOINT: `https://zoom.us/oauth/token`,
-        SCOPES: [],
+        SCOPES: this.config.SCOPES || [],
       },
     });
   }
