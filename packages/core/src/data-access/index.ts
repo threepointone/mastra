@@ -215,6 +215,23 @@ export class DataLayer {
     });
   }
 
+  async getEntitiesByConnection({
+    k_id,
+    name,
+  }: {
+    k_id: string;
+    name: string;
+  }) {
+    return await this.db.entity.findMany({
+      where: {
+        k_id,
+        connection: {
+          name,
+        },
+      },
+    });
+  }
+
   async updateEntityLastSyncId({
     entityId,
     syncId,
@@ -267,7 +284,9 @@ export class DataLayer {
     }
 
     const uniqueRecords = Array.from(uniqueRecordsMap.values());
-    const externalIds = uniqueRecords.map((record) => String(record.externalId));
+    const externalIds = uniqueRecords.map((record) =>
+      String(record.externalId)
+    );
 
     const existingRecords = await this.db.record.findMany({
       select: {
@@ -286,7 +305,8 @@ export class DataLayer {
 
     uniqueRecords.forEach((record) => {
       const existing = existingRecords.find(
-        (existingRecord) => existingRecord.externalId === String(record.externalId)
+        (existingRecord) =>
+          existingRecord.externalId === String(record.externalId)
       );
 
       if (existing) {

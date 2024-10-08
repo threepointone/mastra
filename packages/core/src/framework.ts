@@ -3,12 +3,15 @@ import { DataLayer } from './data-access';
 import { Integration } from './integration';
 import {
   Config,
+  EventHandler,
+  EventHandlerReturnType,
   IntegrationApi,
   IntegrationApiExcutorParams,
   IntegrationContext,
   IntegrationCredentialType,
   IntegrationEvent,
   Routes,
+  SystemEventHandler,
   ZodeSchemaGenerator,
 } from './types';
 import { blueprintRunner } from './workflows/runner';
@@ -23,13 +26,16 @@ import { z, ZodSchema } from 'zod';
 export class Framework<C extends Config = Config> {
   //global events grouped by Integration
   globalEvents: Map<string, Record<string, IntegrationEvent<any>>> = new Map();
-  // global event handlers
-  globalEventHandlers: any[] = [];
+
   // global apis grouped by Integration
   globalApis: Map<string, Record<string, IntegrationApi<any>>> = new Map();
-  integrations: Map<string, Integration> = new Map();
 
+  integrations: Map<string, Integration> = new Map();
   dataLayer: DataLayer;
+  agentsConfig: Config['agents'] = {
+    agentDirPath: '',
+    vectorProvider: [],
+  };
 
   config: C;
 
@@ -67,6 +73,9 @@ export class Framework<C extends Config = Config> {
     framework.__registerEvents({
       events: config.workflows.systemEvents,
     });
+
+    // Register agent config
+    framework.agentsConfig = config.agents;
 
     return framework as Framework<C>;
   }
@@ -141,12 +150,6 @@ export class Framework<C extends Config = Config> {
       apis: Object.values(definition.getApis()),
       integrationName: name,
     });
-
-    this.globalEventHandlers.push(
-      ...definition.getEventHandlers({
-        makeWebhookUrl: router.makeWebhookUrl,
-      })
-    );
   }
 
   __registerEvents({
@@ -210,7 +213,45 @@ export class Framework<C extends Config = Config> {
   }
 
   getGlobalEventHandlers() {
-    return this.globalEventHandlers;
+    return Array.from(this.globalEvents.entries()).flatMap(
+      ([integrationName, events]) => {
+        const groupedHandlers = Object.keys(events)
+          .map((eventKey) => {
+            const eventHandler = events[eventKey]?.handler;
+            if (!eventHandler) return null;
+
+            const isSystemEvent = integrationName === this.config.name;
+            const { makeWebhookUrl } = this.createRouter();
+
+            if (isSystemEvent) {
+              return (eventHandler as SystemEventHandler)({
+                getIntegration: <T>(name: string) =>
+                  this.getIntegration<typeof name>(name) as T,
+                eventKey,
+                getVectorProvider: <P>(name: string) => {
+                  return this.agentsConfig.vectorProvider.find(
+                    (provider) => provider.name === name
+                  ) as {
+                    name: string;
+                    provider: P;
+                  };
+                },
+                makeWebhookUrl,
+              });
+            } else {
+              const integration = this.getIntegration(integrationName);
+              return (eventHandler as EventHandler)({
+                integrationInstance: integration,
+                eventKey,
+                makeWebhookUrl: makeWebhookUrl,
+              });
+            }
+          })
+          .filter(Boolean) as EventHandlerReturnType[];
+
+        return groupedHandlers;
+      }
+    );
   }
 
   getApis() {

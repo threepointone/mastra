@@ -1,4 +1,4 @@
-import { DragDropContext, Draggable, DraggableStyle, DropResult, Droppable } from '@hello-pangea/dnd';
+cimport { DragDropContext, Draggable, DraggableStyle, DropResult, Droppable } from '@hello-pangea/dnd';
 import { Property } from '@mastra/core';
 
 import useDraggableInPortal from '@/lib/hooks/use-draggable-in-portal';
