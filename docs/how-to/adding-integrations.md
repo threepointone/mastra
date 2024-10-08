@@ -1,8 +1,8 @@
-# Adding an integration
+# Adding your first integration
 
 Before you can use an integration, you need to add it to Mastra. If it's an OAuth-based connection, you will also need to authenticate a user in order to create a connection.
 
-## Adding integrations 
+## Installing an integration 
 
 Mastra's default integrations are packaged as individually installable modules, which you can add to your project. 
 

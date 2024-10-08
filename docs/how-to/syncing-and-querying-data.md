@@ -34,7 +34,7 @@ After syncing, you can query the data using Mastra's query API. Mastra wraps the
 
 Here's an example of how to query synced data:
 
-```js
+```ts
 import { Framework } from '@mastra/core';
 
 import { config } from '../../kepler.config';
