@@ -3,14 +3,15 @@ import { z } from 'zod'
 // @ts-ignore
 import { Config } from '@mastra/core'
 import { vectorQueryEngine } from '@mastra/agent-core'
-import { 
-  getAthletesForTeam, 
-  getScores, 
-  getSportsNews, 
-  getTeams, 
-  reportAnswers, 
-  sendSlackMessage, 
-  syncTeams, 
+import {
+  getAthletesForTeam,
+  getScores,
+  getSportsNews,
+  getTeams,
+  reportAnswers,
+  sendSlackMessage,
+  syncAthletes,
+  syncTeams,
   vectorSync
 } from './lib/mastra/system-apis'
 
@@ -24,7 +25,7 @@ export const config: Config = {
         CLIENT_SECRET: process.env.SLACK_CLIENT_SECRET!,
         REDIRECT_URI: `https://redirectmeto.com/${new URL(
           '/api/mastra/connect/callback',
-          process.env.APP_URL
+          process.env.APP_URL!
         ).toString()}`,
         SCOPES: ['channels:manage', 'users:read', 'chat:write']
       }
@@ -48,7 +49,7 @@ export const config: Config = {
         label: 'Sync vector data',
         description: 'Sync vector data',
         schema: z.object({
-          agentId: z.string(),
+          agentId: z.string()
         }),
         handler: vectorSync
       },
@@ -57,6 +58,22 @@ export const config: Config = {
         description: 'Sync teams',
         schema: z.object({}),
         handler: syncTeams
+      },
+      SYNC_ATHLETES: {
+        label: 'Sync athletes',
+        description: 'Sync athletes',
+        schema: z.object({}),
+        handler: syncAthletes
+      },
+      SYNC_SCORES: {
+        label: 'Sync scores',
+        description: 'Sync scores',
+        schema: z.object({})
+      },
+      SYNC_NEWS: {
+        label: 'Sync news',
+        description: 'Sync news',
+        schema: z.object({})
       }
     },
     systemApis: [
@@ -81,7 +98,11 @@ export const config: Config = {
           content: z.string()
         }),
         executor: async ({ data }) => {
-          const res = await vectorQueryEngine({ indexName: 'teams', content: data.content, entityType: 'teams' })
+          const res = await vectorQueryEngine({
+            indexName: 'teams',
+            content: data.content,
+            entityType: 'teams'
+          })
           console.log(JSON.stringify({ res }, null, 2))
 
           return res
@@ -115,38 +136,25 @@ export const config: Config = {
         description: 'Send message to slack',
         schema: z.object({
           message: z.string(),
-          channelId: z.string(),
+          channelId: z.string()
         }),
-        executor: sendSlackMessage,
+        executor: sendSlackMessage
       },
       {
         type: 'report_answers_to_slack',
         label: 'Triggers a workflow for questions asked to the bot',
         description: 'Triggers a workflow for questions asked to the bot',
         schema: z.object({
-          message: z.string(),
+          message: z.string()
         }),
         executor: reportAnswers
       }
     ]
   },
   systemHostURL: process.env.APP_URL!,
-  routeRegistrationPath: '/api/mastra'
+  routeRegistrationPath: '/api/mastra',
+  agents: {
+    agentDirPath: '/mastra-agents',
+    vectorProvider: []
+  }
 }
-
-
-// {
-//   "name": "athletes",
-//   "fields": ["id", "name", "age", "jersey", "position", "experience", "college"],
-//   "index": "athletes"
-// },
-// {
-//   "name": "scores",
-//   "fields": ["homeTeam", "winner", "score", "team", "id", "name", "shortName", "season", "week"],
-//   "index": "scores"
-// }
-// {
-//   "name": " news",
-//   "fields": ["homeTeam", "winner", "score", "team", "id", "name", "shortName", "season", "week"],
-//   "index": "news"
-// }

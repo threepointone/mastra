@@ -3,7 +3,7 @@
   "status": "PUBLISHED",
   "createdAt": "2024-10-07T21:31:13.677Z",
   "id": "qd5wqe61dmzv6cgepxwkw8yz",
-  "updatedAt": "2024-10-07T21:39:20.129Z",
+  "updatedAt": "2024-10-09T12:04:24.718Z",
   "trigger": {
     "id": "kwmk1whudv1fcclryp0saeor",
     "type": "REPORT_ANSWERS",
@@ -16,7 +16,7 @@
       "payload": {
         "message": "{{message_1728337133328}}",
         "channelId": "C06CRL8187L",
-        "mastraConnectionId": "1234"
+        "mastraConnectionId": "dero"
       },
       "variables": {
         "message": {

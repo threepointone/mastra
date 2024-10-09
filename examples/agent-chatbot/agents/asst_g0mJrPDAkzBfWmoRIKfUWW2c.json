@@ -1,5 +1,5 @@
 {
-  "id": "asst_mFswl3bmGEsWJJxPMaT5mthN",
+  "id": "asst_g0mJrPDAkzBfWmoRIKfUWW2c",
   "name": "NFL Analyst",
   "model": {
     "provider": "OPEN_AI_ASSISTANT",
@@ -44,6 +44,52 @@
             "fields": ["teamId", "name"],
             "index": "teams",
             "syncEvent": "SYNC_TEAMS"
+          },
+          {
+            "name": "athletes",
+            "fields": [
+              "id",
+              "name",
+              "age",
+              "jersey",
+              "position",
+              "experience",
+              "college"
+            ],
+            "index": "athletes",
+            "syncEvent": "SYNC_ATHLETES"
+          },
+          {
+            "name": "scores",
+            "fields": [
+              "homeTeam",
+              "winner",
+              "score",
+              "team",
+              "id",
+              "name",
+              "shortName",
+              "season",
+              "week"
+            ],
+            "index": "scores",
+            "syncEvent": "SYNC_SCORES"
+          },
+          {
+            "name": "news",
+            "fields": [
+              "homeTeam",
+              "winner",
+              "score",
+              "team",
+              "id",
+              "name",
+              "shortName",
+              "season",
+              "week"
+            ],
+            "index": "news",
+            "syncEvent": "SYNC_NEWS"
           }
         ]
       }

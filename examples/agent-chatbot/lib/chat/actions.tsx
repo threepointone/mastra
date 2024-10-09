@@ -148,20 +148,20 @@ async function confirmPurchase(symbol: string, price: number, amount: number) {
 //     // },
 //     ...systemTools,
 //   },
-  // resultTool: {
-  //   description: 'Formatted result: returns information in structured format',
-  //   parameters: z.object({
-  //     week: z.string(),
-  //     outcomes: z.array(z.object({
-  //       message: z.string(),
-  //       home_team: z.string().nullable(),
-  //       away_team: z.string().nullable(),
-  //       score: z.string().nullable(),
-  //       analysis: z.string().nullable(),
-  //       athlete: z.string().nullable(),
-  //     }))
-  //   }),
-  // },
+// resultTool: {
+//   description: 'Formatted result: returns information in structured format',
+//   parameters: z.object({
+//     week: z.string(),
+//     outcomes: z.array(z.object({
+//       message: z.string(),
+//       home_team: z.string().nullable(),
+//       away_team: z.string().nullable(),
+//       score: z.string().nullable(),
+//       analysis: z.string().nullable(),
+//       athlete: z.string().nullable(),
+//     }))
+//   }),
+// },
 // })
 
 async function sendAgentMessage(content: string) {
@@ -181,7 +181,10 @@ async function sendAgentMessage(content: string) {
     ]
   })
 
-  const executor = await agentExecutor({ agentId: 'asst_mFswl3bmGEsWJJxPMaT5mthN', connectionId: '1234' })
+  const executor = await agentExecutor({
+    agentId: 'asst_g0mJrPDAkzBfWmoRIKfUWW2c',
+    connectionId: 'dero'
+  })
 
   if (!executor) {
     throw new Error('Could not create agent executor')
