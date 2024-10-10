@@ -95,6 +95,7 @@ export class Mastra<C extends Config = Config> {
           description: 'Sync vector data',
           schema: z.object({
             agentId: z.string(),
+            syncInterval: z.string(),
           }),
           handler: vectorSyncEvent,
         },
@@ -185,11 +186,14 @@ export class Mastra<C extends Config = Config> {
 
     this.globalApis.set('SYSTEM', {
       ...integrationApis,
-      [name]: {...api, integrationName: 'SYSTEM'},
+      [name]: { ...api, integrationName: 'SYSTEM' },
     });
   }
 
-  registerEvent(name: string, event: Omit<IntegrationEvent<any>, 'integrationName'>) {
+  registerEvent(
+    name: string,
+    event: Omit<IntegrationEvent<any>, 'integrationName'>
+  ) {
     const integrationEvents = this.globalEvents.get('SYSTEM') || {};
 
     this.globalEvents.set('SYSTEM', {
@@ -532,10 +536,10 @@ export class Mastra<C extends Config = Config> {
     integrationName?: string;
     key: KEY;
     data: SYSTEM_EVENT_SCHEMA extends ZodSchema
-    ? z.infer<SYSTEM_EVENT_SCHEMA>
-    : SYSTEM_EVENT_SCHEMA extends ZodeSchemaGenerator
-    ? z.infer<Awaited<ReturnType<SYSTEM_EVENT_SCHEMA>>>
-    : never;
+      ? z.infer<SYSTEM_EVENT_SCHEMA>
+      : SYSTEM_EVENT_SCHEMA extends ZodeSchemaGenerator
+      ? z.infer<Awaited<ReturnType<SYSTEM_EVENT_SCHEMA>>>
+      : never;
     user?: {
       connectionId: string;
       [key: string]: any;
@@ -750,22 +754,28 @@ export class Mastra<C extends Config = Config> {
     });
   };
 
-  async getAgent({ connectionId, agentId }: { agentId: string, connectionId: string }) {
+  async getAgent({
+    connectionId,
+    agentId,
+  }: {
+    agentId: string;
+    connectionId: string;
+  }) {
     const agentBlueprint = await getAgentBlueprint({
       agentDir: this.config.agents.agentDirPath,
       agentId,
     });
 
-    const arrMap = Array.from(this.getApis())
+    const arrMap = Array.from(this.getApis());
 
     const finalApis = arrMap.reduce((acc, [_k, v]) => {
-      return { ...acc, ...v }
+      return { ...acc, ...v };
     }, {});
 
     return getAgent({
       connectionId,
       agent: agentBlueprint,
       apis: finalApis,
-    })
+    });
   }
 }
