@@ -80,7 +80,7 @@ export async function getAgent({
 
     let resultTool = undefined;
 
-    if (agent.outputs.structured) {
+    if (agent.outputs.structured && Object.keys(agent.outputs.structured)?.length) {
       const schema = Object.entries(
         agent.outputs.structured.schema as Record<string, any>
       ).reduce((memo, [k, v]) => {
@@ -104,7 +104,7 @@ export async function getAgent({
 
     if (agent.model.generation_type === 'stream') {
       return createStreamAgent({
-        agent_instructions: agent.agent_instructions,
+        agent_instructions: agent.agentInstructions,
         model: {
           type: keyToModel[agent.model.provider],
           name: agent.model.name,
@@ -116,7 +116,7 @@ export async function getAgent({
     }
 
     return createAgent({
-      agent_instructions: agent.agent_instructions,
+      agent_instructions: agent.agentInstructions,
       model: {
         type: keyToModel[agent.model.provider],
         name: agent.model.name,
