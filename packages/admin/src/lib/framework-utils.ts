@@ -17,11 +17,9 @@ async function loadConfig() {
   await fse.outputFile(outputFilePath, configFileString);
 }
 
-async function getFramework() {
+function getFramework() {
   try {
-    await loadConfig();
-
-    const { config } = require('../../temp-mastra-config.ts');
+    const { config } = require(process.env.CONFIG_PATH!);
 
     const framework = Mastra.init(config);
     return { framework, config };
@@ -31,7 +29,7 @@ async function getFramework() {
   }
 }
 
-export const { framework, config } = await getFramework();
+export const { framework, config } = getFramework();
 
 // @todo: the .env file should be able to be set to .env.local somehow
 // possibly defined in the config file?
