@@ -5,6 +5,7 @@ import { ZodSchema } from 'zod';
 
 import { Integration } from './integration';
 import { LogConfig, LogLevel, LogProvider } from './lib/logger-utils/logger';
+import { TelemetryConfig } from './instrumentation';
 
 export interface WorkflowConfig {
   blueprintDirPath: string;
@@ -35,6 +36,7 @@ export interface Config<T = any> {
     provider: string;
     uri: string;
   };
+  telemetry?: TelemetryConfig
   runner?: {
     provider: string;
     uri: string;

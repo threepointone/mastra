@@ -49,6 +49,7 @@ import { makeCron } from './next/cron';
 
 import { eventTriggerApi, getWorkflowApis } from './workflows/apis';
 import path from 'path';
+import { Telemetry } from './instrumentation';
 
 export class Mastra<C extends Config = Config> {
   //global events grouped by Integration
@@ -76,6 +77,11 @@ export class Mastra<C extends Config = Config> {
     if (!config.db.uri) {
       throw new Error('No database config/provider found');
     }
+
+    if (config.telemetry) {
+      Telemetry.initialize(config.telemetry)
+    }
+ 
 
     const dataLayer = new DataLayer({
       url: config.db.uri,
