@@ -1,3 +1,5 @@
+import 'instrumentation';
+
 export * from './workflows/types';
 export { IntegrationError } from './utils/errors';
 export { DataLayer } from './data-access';
