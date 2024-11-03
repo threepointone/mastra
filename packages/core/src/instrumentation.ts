@@ -1,5 +1,4 @@
 import { NodeSDK } from '@opentelemetry/sdk-node';
-import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
 import { Resource, ResourceAttributes } from '@opentelemetry/resources';
 import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
@@ -34,7 +33,7 @@ export class Telemetry {
     const sdk = new NodeSDK({
       resource,
       traceExporter: new OTLPTraceExporter({
-        url: config.endpoint || 'http://localhost:4318/v1/traces',
+        url: config.endpoint,
       }),
       instrumentations: [],
     });
@@ -44,7 +43,6 @@ export class Telemetry {
       sdk.shutdown()
         .then(() => console.log('OpenTelemetry SDK shut down successfully'))
         .catch((error) => console.error('Error shutting down OpenTelemetry SDK', error))
-        .finally(() => process.exit(0));
     });
 
     // Start the SDK
