@@ -274,11 +274,8 @@ export interface Source {
   description?: string;
 }
 
-export async function generateFromFile(source: {
-  name: string
-  authType: 'API_KEY' | 'OAUTH'
-}) {
-  const preName = source.name?.split('-')?.[0]
+export async function generateFromFile(source: { name: string; authType: 'API_KEY' | 'OAUTH' }) {
+  const preName = source.name?.split('-')?.[0];
   const name = transformName(preName);
   console.log(name);
 
@@ -286,7 +283,6 @@ export async function generateFromFile(source: {
 
   const openapiFile = path.join(modulePath, 'openapi.yaml')
   const openapiString = fs.readFileSync(path.join(modulePath, 'openapi.yaml'), 'utf8');
-
 
   const spec = await getOpenApiSpecFromText({ srcPath, openapiSpec: openapiFile, text: openapiString });
 
