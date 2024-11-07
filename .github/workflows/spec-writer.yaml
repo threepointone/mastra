@@ -11,10 +11,13 @@ on:
   pull_request: # Keep this as backup
     types: [opened, reopened, synchronize]
     branches:
-      - "open-api-spec-writer/**"
+      - "**"
 jobs:
   process-and-commit:
     runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'pull_request' || github.event_name == 'pull_request_target') &&
+      startsWith(github.head_ref, 'open-api-spec-writer/')
     permissions:
       contents: write
       pull-requests: write
