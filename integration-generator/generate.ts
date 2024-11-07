@@ -100,19 +100,11 @@ function generateOpenApiDocs(srcPath: string) {
   fs.writeFileSync(path.join(srcPath, '/client/service-comments.ts'), content);
 }
 
-async function getOpenApiSpec({ openapiSpec, srcPath }: { srcPath: string; openapiSpec: string }) {
-  const openapispecRes = await fetch(openapiSpec);
-  const openapiSpecTest = await openapispecRes.text();
-  let spec;
-  if (openapiSpec.endsWith('.yaml')) {
-    spec = parse(openapiSpecTest);
-  } else {
-    spec = JSON.parse(openapiSpecTest);
-  }
-
+async function getOpenApiSpecFromText({ srcPath, openapiSpec }: { srcPath: string; openapiSpec: string }) {
+  const text = parse(openapiSpec);
   const relativeSrcPath = path.relative(process.cwd(), srcPath);
 
-  const trimmedSpec = omit(spec, ['info', 'tags', 'x-maturity']);
+  const trimmedSpec = omit(text, ['info', 'tags', 'x-maturity']);
 
   await execa('npx', [
     '@hey-api/openapi-ts',
@@ -137,7 +129,20 @@ async function getOpenApiSpec({ openapiSpec, srcPath }: { srcPath: string; opena
 
   // p.stdout?.pipe(process.stdout);
 
-  return trimmedSpec;
+  return trimmedSpec
+}
+
+async function getOpenApiSpec({ openapiSpec, srcPath }: { srcPath: string; openapiSpec: string }) {
+  const openapispecRes = await fetch(openapiSpec);
+  const openapiSpecTest = await openapispecRes.text();
+  let spec;
+  if (openapiSpec.endsWith('.yaml')) {
+    spec = parse(openapiSpecTest);
+  } else {
+    spec = JSON.parse(openapiSpecTest);
+  }
+
+  return getOpenApiSpecFromText({ srcPath, openapiSpec: spec });
 }
 
 function bootstrapAssetsDir(srcPath: string) {
@@ -252,19 +257,19 @@ export interface Source {
   fallbackIdKey?: string;
   configIdKey?: string;
   authorization?:
-    | {
-        type: 'Basic';
-        usernameKey: string;
-        passwordKey?: string;
-      }
-    | {
-        type: 'Custom_Header';
-        headers: {
-          key: string;
-          value: string;
-        }[];
-      }
-    | { type: 'Bearer'; tokenKey: string };
+  | {
+    type: 'Basic';
+    usernameKey: string;
+    passwordKey?: string;
+  }
+  | {
+    type: 'Custom_Header';
+    headers: {
+      key: string;
+      value: string;
+    }[];
+  }
+  | { type: 'Bearer'; tokenKey: string };
   categories?: IntegrationCategories[];
   description?: string;
 }
@@ -277,11 +282,27 @@ export async function generateFromFile(source: {
   const name = transformName(preName);
   console.log(name);
 
-  const modulePath = path.join(process.cwd(), 'packages', name.toLowerCase());
+  const { modulePath, srcPath } = bootstrapDir(name.toLowerCase());
 
   const openapiString = fs.readFileSync(path.join(modulePath, 'openapi.yaml'), 'utf8');
 
-  console.log(openapiString)
+
+  const spec = await getOpenApiSpec({ srcPath, openapiSpec: openapiString });
+
+  const integration = generateIntegration({
+    name,
+    logoFormat: 'svg',
+    authType: source.authType,
+    apiEndpoint: spec.servers?.[0]?.url,
+    // server: source.serverUrl,
+    // scopes,
+    // categories: source?.categories,
+    // description: source?.description,
+  });
+
+  const indexPath = path.join(srcPath, 'index.ts');
+  fs.writeFileSync(indexPath, integration);
+
 }
 
 export async function generate(source: Source) {
