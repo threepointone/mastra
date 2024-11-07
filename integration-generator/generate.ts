@@ -287,7 +287,7 @@ export async function generateFromFile(source: {
   const openapiString = fs.readFileSync(path.join(modulePath, 'openapi.yaml'), 'utf8');
 
 
-  const spec = await getOpenApiSpec({ srcPath, openapiSpec: openapiString });
+  const spec = await getOpenApiSpecFromText({ srcPath, openapiSpec: openapiString });
 
   const integration = generateIntegration({
     name,
