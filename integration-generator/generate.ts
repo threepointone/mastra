@@ -301,7 +301,7 @@ export async function generateFromFile(source: { name: string; authType: 'API_KE
   fs.writeFileSync(indexPath, integration);
 
 
-  const p = execa('pnpm', ['prettier', modulePath, '--cache']);
+  const p = execa('pnpm', ['prettier', indexPath, '--cache']);
   p.stdout?.pipe(process.stdout);
 
 }
