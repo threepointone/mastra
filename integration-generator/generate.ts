@@ -304,6 +304,10 @@ export async function generateFromFile(source: {
   const indexPath = path.join(srcPath, 'index.ts');
   fs.writeFileSync(indexPath, integration);
 
+
+  const p = execa('pnpm', ['prettier', modulePath, '--cache']);
+  p.stdout?.pipe(process.stdout);
+
 }
 
 export async function generate(source: Source) {
