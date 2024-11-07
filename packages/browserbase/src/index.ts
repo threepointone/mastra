@@ -1,10 +1,14 @@
-import { Integration, IntegrationCredentialType, IntegrationAuth } from '@mastra/core';
+import {
+  Integration,
+  IntegrationCredentialType,
+  IntegrationAuth,
+} from "@mastra/core";
+import * as zodSchema from "./client/zodSchema";
+import * as integrationClient from "./client/services.gen";
+import { comments } from "./client/service-comments";
 
 // @ts-ignore
-import BrowserbaseLogo from './assets/browserbase.svg';
-import { comments } from './client/service-comments';
-import * as integrationClient from './client/services.gen';
-import * as zodSchema from './client/zodSchema';
+import BrowserbaseLogo from "./assets/browserbase.svg";
 
 type BrowserbaseConfig = {
   CLIENT_ID: string;
@@ -18,7 +22,7 @@ export class BrowserbaseIntegration extends Integration {
     super({
       ...config,
       authType: IntegrationCredentialType.API_KEY,
-      name: 'BROWSERBASE',
+      name: "BROWSERBASE",
       logoUrl: BrowserbaseLogo,
     });
   }
@@ -39,19 +43,24 @@ export class BrowserbaseIntegration extends Integration {
   }
 
   getApiClient = async ({ connectionId }: { connectionId: string }) => {
-    const connection = await this.dataLayer?.getConnection({ name: this.name, connectionId });
+    const connection = await this.dataLayer?.getConnection({
+      name: this.name,
+      connectionId,
+    });
 
     if (!connection) {
       throw new Error(`Connection not found for connectionId: ${connectionId}`);
     }
 
     const authenticator = this.getAuthenticator();
-    const { accessToken } = await authenticator.getAuthToken({ k_id: connection.id });
+    const { accessToken } = await authenticator.getAuthToken({
+      k_id: connection.id,
+    });
 
     const baseClient = this.getBaseClient();
 
     baseClient.client.interceptors.request.use((request, options) => {
-      request.headers.set('Authorization', `Bearer ${accessToken}`);
+      request.headers.set("Authorization", `Bearer ${accessToken}`);
       return request;
     });
 
