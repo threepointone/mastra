@@ -1,4 +1,5 @@
 import * as parser from '@babel/parser';
+import * as prettier from "prettier";
 import traverse from '@babel/traverse';
 import { execa } from 'execa';
 import fs from 'fs';
@@ -298,12 +299,9 @@ export async function generateFromFile(source: { name: string; authType: 'API_KE
   });
 
   const indexPath = path.join(srcPath, 'index.ts');
-  fs.writeFileSync(indexPath, integration);
 
-
-  const p = execa('pnpm', ['prettier', `./packages/${preName}/src/index.ts`, '--cache']);
-  p.stdout?.pipe(process.stdout);
-
+  const formatted = await prettier.format(integration, { parser: 'typescript' })
+  fs.writeFileSync(indexPath, formatted);
 }
 
 export async function generate(source: Source) {
