@@ -100,11 +100,11 @@ function generateOpenApiDocs(srcPath: string) {
   fs.writeFileSync(path.join(srcPath, '/client/service-comments.ts'), content);
 }
 
-async function getOpenApiSpecFromText({ srcPath, openapiSpec }: { srcPath: string; openapiSpec: string }) {
-  const text = parse(openapiSpec);
+async function getOpenApiSpecFromText({ srcPath, text, openapiSpec }: { openapiSpec: string, srcPath: string; text: string }) {
+  const content = parse(text);
   const relativeSrcPath = path.relative(process.cwd(), srcPath);
 
-  const trimmedSpec = omit(text, ['info', 'tags', 'x-maturity']);
+  const trimmedSpec = omit(content, ['info', 'tags', 'x-maturity']);
 
   await execa('npx', [
     '@hey-api/openapi-ts',
@@ -142,7 +142,7 @@ async function getOpenApiSpec({ openapiSpec, srcPath }: { srcPath: string; opena
     spec = JSON.parse(openapiSpecTest);
   }
 
-  return getOpenApiSpecFromText({ srcPath, openapiSpec: spec });
+  return getOpenApiSpecFromText({ srcPath, text: spec, openapiSpec });
 }
 
 function bootstrapAssetsDir(srcPath: string) {
@@ -284,10 +284,11 @@ export async function generateFromFile(source: {
 
   const { modulePath, srcPath } = bootstrapDir(name.toLowerCase());
 
+  const openapiFile = path.join(modulePath, 'openapi.yaml')
   const openapiString = fs.readFileSync(path.join(modulePath, 'openapi.yaml'), 'utf8');
 
 
-  const spec = await getOpenApiSpecFromText({ srcPath, openapiSpec: openapiString });
+  const spec = await getOpenApiSpecFromText({ srcPath, openapiSpec: openapiFile, text: openapiString });
 
   const integration = generateIntegration({
     name,
