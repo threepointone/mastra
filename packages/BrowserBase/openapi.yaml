@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: Browserbase Connect API
+  version: 1.0.0
+  description: |
+    The Browserbase Connect API allows you to connect or create a Session on-the-fly.
+    It provides both WebSocket and HTTP endpoints for different client libraries.
+
+servers:
+  - url: https://connect.browserbase.com
+    description: WebSocket endpoint
+  - url: http://connect.browserbase.com
+    description: HTTP endpoint for Selenium
+
+paths:
+  /:
+    get:
+      summary: Connect to a Session via WebSocket
+      description: |
+        Connect to a Session using WebSocket for Puppeteer and Playwright.
+      tags:
+        - WebSocket
+      parameters:
+        - in: query
+          name: apiKey
+          required: true
+          schema:
+            type: string
+          description: Your Browserbase API Key for authentication.
+        - in: query
+          name: sessionId
+          schema:
+            type: string
+          description: ID of an already created Session (optional).
+        - in: query
+          name: enableProxy
+          schema:
+            type: boolean
+            default: false
+          description: Enable proxy for the session.
+      responses:
+        '101':
+          description: Switching Protocols
+          
+  /webdriver:
+    get:
+      summary: Connect to a Session via HTTP
+      description: |
+        Connect to a Session using HTTP for Selenium.
+      tags:
+        - HTTP
+      parameters:
+        - in: header
+          name: x-bb-api-key
+          required: true
+          schema:
+            type: string
+          description: Your Browserbase API Key for authentication.
+        - in: header
+          name: session-id
+          required: true
+          schema:
+            type: string
+          description: The Session ID created via the HTTP API.
+        - in: header
+          name: enable-proxy
+          schema:
+            type: string
+            enum: ["true", "false"]
+            default: "false"
+          description: Enable proxy for the session.
+      responses:
+        '200':
+          description: Successful connection
+          
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-bb-api-key
+      
+security:
+  - ApiKeyAuth: []
