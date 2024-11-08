@@ -1,0 +1,369 @@
+openapi: 3.0.0
+info:
+  title: Browserbase API
+  version: 1.0.0
+  description: API for Browserbase - a reliable, high performance serverless developer platform to run, manage, and monitor headless browsers at scale.
+
+servers:
+  - url: https://www.browserbase.com/v1
+  - url: wss://connect.browserbase.com
+  - url: http://connect.browserbase.com/webdriver
+
+paths:
+  /sessions:
+    get:
+      summary: List Sessions
+      description: Retrieve a list of sessions
+      tags:
+        - Sessions
+      parameters:
+        - in: header
+          name: X-BB-API-Key
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: status
+          schema:
+            type: string
+            enum: [RUNNING, ERROR, TIMED_OUT, COMPLETED]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:    
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Session'
+    post:
+      summary: Create a Session
+      description: Create a new browser session
+      tags:
+        - Sessions
+      parameters:
+        - in: header
+          name: X-BB-API-Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSessionRequest'
+      responses:
+        '201':
+          description: Session created successfully
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/CreatedSession'
+        
+  /sessions/{id}:
+    get:
+      summary: Get Session
+      description: Retrieve details of a specific session
+      tags:
+        - Sessions
+      parameters:
+        - in: header
+          name: X-BB-API-Key
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/Session'
+                
+  /sessions/{id}/logs:
+    get:
+      summary: Get Session Logs
+      description: Retrieve logs for a specific session
+      tags:
+        - Sessions
+      parameters:
+        - in: header
+          name: X-BB-API-Key
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:    
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SessionLog'
+        
+  /contexts:
+    post:
+      summary: Create a Context
+      description: Create a new context
+      tags:
+        - Contexts
+      parameters:
+        - in: header
+          name: X-BB-API-Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateContextRequest'
+      responses:
+        '201':
+          description: Context created successfully
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/CreatedContext'
+        
+  /extensions:
+    post:
+      summary: Upload an Extension
+      description: Upload a new browser extension
+      tags:
+        - Extensions
+      parameters:
+        - in: header
+          name: X-BB-API-Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Extension uploaded successfully
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/UploadedExtension'
+
+components:
+  schemas:
+    Session:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        projectId:
+          type: string
+        startedAt:
+          type: string
+          format: date-time
+        endedAt:
+          type: string
+          format: date-time
+        expiresAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [RUNNING, ERROR, TIMED_OUT, COMPLETED]
+        proxyBytes:
+          type: integer
+        avgCpuUsage:
+          type: integer
+        memoryUsage:
+          type: integer
+        keepAlive:
+          type: boolean
+        contextId:
+          type: string
+        region:
+          type: string
+          enum: [us-west-2, us-east-1, eu-central-1, ap-southeast-1]
+          
+    CreateSessionRequest:
+      type: object
+      required:
+        - projectId
+      properties:
+        projectId:
+          type: string
+        extensionId:
+          type: string
+        browserSettings:
+          type: object
+        context:
+          type: object
+          properties:
+            id:
+              type: string
+            persist:
+              type: boolean
+        timeout:
+          type: integer
+        keepAlive:
+          type: boolean
+        proxies:
+          oneOf:
+            - type: boolean
+            - type: array
+              items:
+                type: string
+        region:
+          type: string
+          enum: [us-west-2, us-east-1, eu-central-1, ap-southeast-1]
+          
+    CreatedSession:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        projectId:
+          type: string
+        startedAt:
+          type: string
+          format: date-time
+        endedAt:
+          type: string
+          format: date-time
+        expiresAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+        proxyBytes:
+          type: integer
+        avgCpuUsage:
+          type: integer
+        memoryUsage:
+          type: integer
+        keepAlive:
+          type: boolean
+        contextId:
+          type: string
+        region:
+          type: string
+        connectUrl:
+          type: string
+        seleniumRemoteUrl:
+          type: string
+        signingKey:
+          type: string
+          
+    SessionLog:
+      type: object
+      properties:
+        eventId:
+          type: string
+        method:
+          type: string
+        pageId:
+          type: integer
+        request:
+          type: object
+          properties:
+            timestamp:
+              type: integer
+            params:
+              type: object
+            rawBody:
+              type: string
+        response:
+          type: object
+          properties:
+            timestamp:
+              type: integer
+            result:
+              type: object
+            rawBody:
+              type: string
+        sessionId:
+          type: string
+        timestamp:
+          type: integer
+        frameId:
+          type: string
+        loaderId:
+          type: string
+          
+    CreateContextRequest:
+      type: object
+      required:
+        - projectId
+      properties:
+        projectId:
+          type: string
+          
+    CreatedContext:
+      type: object
+      properties:
+        id:
+          type: string
+        uploadUrl:
+          type: string
+        publicKey:
+          type: string
+        cipherAlgorithm:
+          type: string
+        initializationVectorSize:
+          type: integer
+          
+    UploadedExtension:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        fileName:
+          type: string
+        projectId:
+          type: string
+
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-BB-API-Key
+
+security:
+  - ApiKeyAuth: []
