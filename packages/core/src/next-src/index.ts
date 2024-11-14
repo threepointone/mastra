@@ -20,16 +20,27 @@ type CoreTool = {
 };
 
 export interface IntegrationApiExcutorParams<
-  T extends Record<string, any> = Record<string, any>
+  T extends Record<string, any> = Record<string, any>,
+  TIntegrations extends Integration[] | unknown = unknown
 > {
   data: T;
+  getIntegration: <
+    T extends TIntegrations extends Integration[]
+      ? TIntegrations[number]['name']
+      : never
+  >(
+    name: T
+  ) => TIntegrations extends Integration[]
+    ? Extract<TIntegrations[number], { name: T }>
+    : never;
 }
 
 export type ToolApi<
+  TIntegrations extends Integration[] | unknown = unknown,
   IN extends Record<string, any> = Record<string, any>,
   OUT extends Record<string, any> = Record<string, any>
 > = {
-  // integrationName: string;
+  // integration?: string;
   schema: ZodSchema<IN>;
   // | (({ ctx }: { ctx: IntegrationContext }) => Promise<ZodSchema<IN>>);
   //   outputSchema?:
@@ -46,30 +57,32 @@ export type ToolApi<
   description: string;
   documentation?: string;
   //   category?: string;
-  executor: (params: IntegrationApiExcutorParams<IN>) => Promise<OUT>;
+  executor: (
+    params: IntegrationApiExcutorParams<IN, TIntegrations>
+  ) => Promise<OUT>;
   //   isHidden?: boolean;
   //   source?: string;
 };
 
-type ToolRecord = Record<
+type ToolRecord<TIntegrations extends Integration[] | undefined> = Record<
   string,
-  ToolApi<Record<string, any>, Record<string, any>>
+  ToolApi<TIntegrations, Record<string, any>, Record<string, any>>
 >;
 
-export function createTool(opts: ToolApi): ToolApi {
+// TODO: Passing the In/out generics works but seems to break on plugin to mastra, fix.
+export function createTool<
+  TIntegrations extends Integration[] | undefined = undefined,
+  IN extends Record<string, any> = Record<string, any>,
+  OUT extends Record<string, any> = Record<string, any>
+>(opts: ToolApi<TIntegrations, IN, OUT>): ToolApi<TIntegrations, IN, OUT> {
   return opts;
 }
 
 export abstract class Integration {
   abstract readonly tools: Record<string, ToolApi>;
-  name: string = '';
-  logoUrl: string = '';
+  abstract readonly name: string;
+  abstract readonly logoUrl: string;
   authType: string = 'API_KEY';
-
-  constructor({ logoUrl, name }: { name: string; logoUrl: string }) {
-    this.name = name;
-    this.logoUrl = logoUrl;
-  }
 
   protected get toolSchemas(): any {
     return {};
@@ -119,6 +132,26 @@ export abstract class Integration {
 
     return tools as T;
   }
+
+  public executeTool = <T extends keyof this['tools']>(
+    tool: T,
+    params: Omit<
+      IntegrationApiExcutorParams<
+        Parameters<
+          Awaited<ReturnType<this['getApiClient']>>[T]
+        >[0] extends object
+          ? Parameters<Awaited<ReturnType<this['getApiClient']>>[T]>[0]
+          : {}
+      >,
+      'getIntegration'
+    >
+  ) => {
+    const toolExecutor = this.tools[tool as keyof typeof this.tools];
+    return toolExecutor.executor({
+      ...params,
+      getIntegration: <T extends this>() => this as T,
+    });
+  };
 }
 
 // Helper to extract tools from array of integrations
@@ -137,12 +170,8 @@ type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
   : never;
 
 export class GmailIntegration extends Integration {
-  constructor(config: { apiKey: string }) {
-    super({
-      name: 'Gmail',
-      logoUrl: '',
-    });
-  }
+  readonly name = 'GMAIL';
+  readonly logoUrl = '';
 
   readonly tools = {
     gmailGetProfile: createTool({
@@ -158,9 +187,9 @@ export class GmailIntegration extends Integration {
 
 // Helper to merge custom tools with integration tools
 type AllTools<
-  TTools extends ToolRecord | undefined = undefined,
-  TIntegrations extends Integration[] | undefined = undefined
-> = (TTools extends ToolRecord ? TTools : {}) &
+  TIntegrations extends Integration[] | undefined = undefined,
+  TTools extends ToolRecord<TIntegrations> | undefined = undefined
+> = (TTools extends ToolRecord<TIntegrations> ? TTools : {}) &
   (TIntegrations extends Integration[]
     ? MergeIntegrationTools<TIntegrations>
     : {});
@@ -203,11 +232,11 @@ type ModelConfig =
   | GroqVercelConfig;
 
 export class Agent<
-  TTools extends Record<string, ToolApi> | undefined = undefined,
   TIntegrations extends Integration[] | undefined = undefined,
-  TKeys extends keyof AllTools<TTools, TIntegrations> = keyof AllTools<
-    TTools,
-    TIntegrations
+  TTools extends Record<string, ToolApi<TIntegrations>> | undefined = undefined,
+  TKeys extends keyof AllTools<TIntegrations, TTools> = keyof AllTools<
+    TIntegrations,
+    TTools
   >
 > {
   public name: string;
@@ -514,17 +543,20 @@ export class Agent<
 }
 
 export class Mastra<
-  MastraTools extends Record<string, ToolApi>,
-  TIntegrations extends Integration[]
+  TIntegrations extends Integration[],
+  MastraTools extends Record<
+    string,
+    ToolApi<Record<string, any>, Record<string, any>, TIntegrations>
+  > = {}
 > {
-  private tools: AllTools<MastraTools, TIntegrations>;
-  private agents: Map<string, Agent<MastraTools, TIntegrations>>;
+  private tools: AllTools<TIntegrations, MastraTools>;
+  private agents: Map<string, Agent<TIntegrations, MastraTools>>;
   private integrations: Map<string, Integration>;
   private logger: Map<RegisteredLogger, Logger>;
 
   constructor(config: {
     tools: MastraTools;
-    agents: Agent<MastraTools, TIntegrations>[];
+    agents: Agent<TIntegrations, MastraTools>[];
     integrations: TIntegrations;
     logger?: Logger;
   }) {
@@ -539,17 +571,41 @@ export class Mastra<
     this.setLogger({ key: 'AGENT', logger });
     this.setLogger({ key: 'WORKFLOW', logger });
 
-    // Merge custom tools with integration tools
-    this.tools = {
-      ...(config.tools || {}),
-      ...(config.integrations?.reduce(
+    const integrationTools =
+      config.integrations?.reduce(
         (acc, integration) => ({
           ...acc,
           ...integration.tools,
         }),
         {}
-      ) || {}),
-    } as AllTools<MastraTools, TIntegrations>;
+      ) || {};
+
+    const configuredTools = config?.tools || {};
+
+    // Merge custom tools with integration tools
+    const allTools = {
+      ...configuredTools,
+      ...integrationTools,
+    };
+
+    // Hydrate tools with integration tools
+    const hydratedTools = Object.entries(allTools).reduce<
+      Record<string, ToolApi<any, any, TIntegrations>>
+    >((memo, [key, val]) => {
+      memo[key] = {
+        ...val,
+        executor: (params) => {
+          return val.executor({
+            ...params,
+            getIntegration: <I>(name: TIntegrations[number]['name']) =>
+              this.getIntegration(name) as I,
+          });
+        },
+      };
+      return memo;
+    }, {});
+
+    this.tools = hydratedTools as AllTools<TIntegrations, MastraTools>;
 
     this.agents = new Map();
 
@@ -578,11 +634,19 @@ export class Mastra<
   }
 
   public getAgent(name: string) {
-    return this.agents.get(name);
+    const agent = this.agents.get(name);
+    if (!agent) {
+      throw new Error(`Agent with name ${name} not found`);
+    }
+    return agent;
   }
 
   public getIntegration(name: string) {
-    return this.integrations.get(name);
+    const integration = this.integrations.get(name);
+    if (!integration) {
+      throw new Error(`Integration with name ${name} not found`);
+    }
+    return integration;
   }
 
   public availableIntegrations() {
