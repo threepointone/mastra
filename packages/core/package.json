@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^0.0.51",
+    "@ai-sdk/cohere": "^1.0.2",
     "@ai-sdk/google": "^1.0.1",
     "@ai-sdk/mistral": "^1.0.2",
     "@ai-sdk/openai": "^0.0.66",

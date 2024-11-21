@@ -396,6 +396,14 @@ export type XGrokConfig = {
   toolChoice: 'auto' | 'required';
 };
 
+export type CohereModel = 'command-r-plus';
+
+export type CohereConfig = {
+  provider: 'COHERE_VERCEL';
+  name: CohereModel;
+  toolChoice: 'auto' | 'required';
+};
+
 export type ModelConfig =
   | OpenAIVercelConfig
   | AnthropicVercelConfig
@@ -407,6 +415,7 @@ export type ModelConfig =
   | BaseTenConfig
   | FireworksConfig
   | MistralVercelConfig
-  | XGrokConfig;
+  | XGrokConfig
+  | CohereConfig;
 
 export type LLMProvider = ModelConfig['provider'];

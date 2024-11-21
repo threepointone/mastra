@@ -3,6 +3,7 @@ import { createOpenAI } from '@ai-sdk/openai';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { createMistral } from '@ai-sdk/mistral';
 import { createXai } from '@ai-sdk/xai';
+import { createCohere } from '@ai-sdk/cohere';
 import {
   CoreMessage,
   CoreTool as CT,
@@ -56,6 +57,7 @@ export class LLM<
       GOOGLE_VERCEL: 'google',
       MISTRAL_VERCEL: 'mistral',
       X_GROK_VERCEL: 'grok',
+      COHERE_VERCEL: 'cohere',
     };
     const type = providerToType[model.provider];
 
@@ -236,6 +238,16 @@ export class LLM<
       });
 
       modelDef = xAi(model.name || 'grok-beta');
+    } else if (model.type === 'cohere') {
+      this.logger.info(
+        `Initializing Cohere model ${model.name || 'command-r-plus'}`
+      );
+      const cohere = createCohere({
+        baseURL: 'https://api.cohere.com/v2',
+        apiKey: process.env.COHERE_API_KEY ?? '',
+      });
+
+      modelDef = cohere(model.name || 'command-r-plus');
     } else {
       const error = `Invalid model type: ${model.type}`;
       this.logger.error(error);
