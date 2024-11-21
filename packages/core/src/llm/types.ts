@@ -58,10 +58,12 @@ export type GoogleVercelConfig = {
 } & GoogleGenerativeAISettings;
 
 export type AnthropicModel =
+  | 'claude-3-5-sonnet-20241022'
+  | 'claude-3-5-sonnet-20240620'
+  | 'claude-3-5-haiku-20241022'
   | 'claude-3-opus-20240229'
   | 'claude-3-sonnet-20240229'
-  | 'claude-3-haiku-20240307'
-  | 'claude-3-5-sonnet-20240620';
+  | 'claude-3-haiku-20240307';
 
 export type AnthropicVercelConfig = {
   provider: 'ANTHROPIC_VERCEL';
@@ -273,7 +275,7 @@ export type TogetherAiModel =
   | 'togethercomputer/Koala-13B'
   | 'lmsys/vicuna-7b-v1.5';
 
-export type TogetherAiConfig = {
+export type TogetherAiVercelConfig = {
   provider: 'TOGETHER_AI_VERCEL';
   name: TogetherAiModel;
   toolChoice: 'auto' | 'required';
@@ -317,7 +319,7 @@ export type LMStudioModel =
   | 'phi-3.1-mini-128k'
   | 'deepseek-coder-v2-lite';
 
-export type LMStudioConfig = {
+export type LMStudioVercelConfig = {
   provider: 'LM_STUDIO_VERCEL';
   name: LMStudioModel;
   toolChoice: 'auto' | 'required';
@@ -355,7 +357,7 @@ export type BasetenModel =
   | 'mixtral-8x7b-instruct'
   | 'mixtral-8x22b';
 
-export type BaseTenConfig = {
+export type BaseTenVercelConfig = {
   provider: 'BASETEN_VERCEL';
   name: BasetenModel;
   toolChoice: 'auto' | 'required';
@@ -368,7 +370,7 @@ export type FireworksModel =
   | 'llama-3.1-8b-instruct'
   | 'llama-3.2-3b-instruct';
 
-export type FireworksConfig = {
+export type FireworksVercelConfig = {
   provider: 'FIREWORKS_VERCEL';
   name: FireworksModel | (string & {});
   toolChoice: 'auto' | 'required';
@@ -390,7 +392,7 @@ export type MistralVercelConfig = {
 
 export type XGrokModel = 'grok-beta' | 'grok-vision-beta';
 
-export type XGrokConfig = {
+export type XGrokVercelConfig = {
   provider: 'X_GROK_VERCEL';
   name: XGrokModel;
   toolChoice: 'auto' | 'required';
@@ -398,7 +400,7 @@ export type XGrokConfig = {
 
 export type CohereModel = 'command-r-plus';
 
-export type CohereConfig = {
+export type CohereVercelConfig = {
   provider: 'COHERE_VERCEL';
   name: CohereModel;
   toolChoice: 'auto' | 'required';
@@ -446,19 +448,33 @@ export type AmazonVercelConfig = {
   toolChoice: 'auto' | 'required';
 };
 
+export type AnthropicVertexModel =
+  | 'claude-3-5-sonnet@20240620'
+  | 'claude-3-opus@20240229'
+  | 'claude-3-sonnet@20240229'
+  | 'claude-3-haiku@20240307';
+
+export type AnthropicVertexVercelConfig = {
+  provider: 'ANTHROPIC_VERTEX_VERCEL';
+  name: AnthropicVertexModel;
+  toolChoice: 'auto' | 'required';
+};
+
 export type ModelConfig =
   | OpenAIVercelConfig
   | AnthropicVercelConfig
   | GroqVercelConfig
   | GoogleVercelConfig
   | PerplexityVercelConfig
-  | TogetherAiConfig
-  | LMStudioConfig
-  | BaseTenConfig
-  | FireworksConfig
+  | TogetherAiVercelConfig
+  | LMStudioVercelConfig
+  | BaseTenVercelConfig
+  | FireworksVercelConfig
   | MistralVercelConfig
-  | XGrokConfig
-  | CohereConfig
+  | XGrokVercelConfig
+  | CohereVercelConfig
   | AzureVercelConfig
-  | AmazonVercelConfig;
+  | AmazonVercelConfig
+  | AnthropicVertexVercelConfig;
+
 export type LLMProvider = ModelConfig['provider'];

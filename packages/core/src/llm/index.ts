@@ -6,6 +6,7 @@ import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { createAzure } from '@ai-sdk/azure';
 import { createXai } from '@ai-sdk/xai';
 import { createCohere } from '@ai-sdk/cohere';
+import { createAnthropicVertex } from 'anthropic-vertex-ai';
 import {
   CoreMessage,
   CoreTool as CT,
@@ -62,6 +63,7 @@ export class LLM<
       COHERE_VERCEL: 'cohere',
       AZURE_VERCEL: 'azure',
       AMAZON_VERCEL: 'amazon',
+      ANTHROPIC_VERTEX_VERCEL: 'anthropic-vertex',
     };
     const type = providerToType[model.provider];
 
@@ -272,6 +274,16 @@ export class LLM<
         sessionToken: process.env.AWS_SESSION_TOKEN ?? '',
       });
       modelDef = amazon(model.name || 'amazon-titan-tg1-large');
+    } else if (model.type === 'anthropic-vertex') {
+      this.logger.info(
+        `Initializing Anthropic Vertex model ${model.name || 'claude-3-5-sonnet@20240620'}`
+      );
+      const anthropicVertex = createAnthropicVertex({
+        region: process.env.GOOGLE_VERTEX_REGION,
+        projectId: process.env.GOOGLE_VERTEX_PROJECT_ID,
+        apiKey: process.env.ANTHROPIC_API_KEY ?? '',
+      });
+      modelDef = anthropicVertex(model.name || 'claude-3-5-sonnet@20240620');
     } else {
       const error = `Invalid model type: ${model.type}`;
       this.logger.error(error);
