@@ -404,6 +404,48 @@ export type CohereConfig = {
   toolChoice: 'auto' | 'required';
 };
 
+export type AzureModel = 'gpt-35-turbo-instruct';
+
+export type AzureVercelConfig = {
+  provider: 'AZURE_VERCEL';
+  name: AzureModel & (string | {});
+  toolChoice: 'auto' | 'required';
+};
+
+export type AmazonModelName =
+  | 'amazon-titan-tg1-large'
+  | 'amazon-titan-text-express-v1'
+  | 'anthropic-claude-3-5-sonnet-20241022-v2:0'
+  | 'anthropic-claude-3-5-sonnet-20240620-v1:0'
+  | 'anthropic-claude-3-5-haiku-20241022-v1:0'
+  | 'anthropic-claude-3-opus-20240229-v1:0'
+  | 'anthropic-claude-3-sonnet-20240229-v1:0'
+  | 'anthropic-claude-3-haiku-20240307-v1:0'
+  | 'anthropic-claude-v2:1'
+  | 'cohere-command-r-v1:0'
+  | 'cohere-command-r-plus-v1:0'
+  | 'meta-llama2-13b-chat-v1'
+  | 'meta-llama2-70b-chat-v1'
+  | 'meta-llama3-8b-instruct-v1:0'
+  | 'meta-llama3-70b-instruct-v1:0'
+  | 'meta-llama3-1-8b-instruct-v1:0'
+  | 'meta-llama3-1-70b-instruct-v1:0'
+  | 'meta-llama3-1-405b-instruct-v1:0'
+  | 'meta-llama3-2-1b-instruct-v1:0'
+  | 'meta-llama3-2-3b-instruct-v1:0'
+  | 'meta-llama3-2-11b-instruct-v1:0'
+  | 'meta-llama3-2-90b-instruct-v1:0'
+  | 'mistral-mistral-7b-instruct-v0:2'
+  | 'mistral-mixtral-8x7b-instruct-v0:1'
+  | 'mistral-mistral-large-2402-v1:0'
+  | 'mistral-mistral-small-2402-v1:0';
+
+export type AmazonVercelConfig = {
+  provider: 'AMAZON_VERCEL';
+  name: AmazonModelName;
+  toolChoice: 'auto' | 'required';
+};
+
 export type ModelConfig =
   | OpenAIVercelConfig
   | AnthropicVercelConfig
@@ -416,6 +458,7 @@ export type ModelConfig =
   | FireworksConfig
   | MistralVercelConfig
   | XGrokConfig
-  | CohereConfig;
-
+  | CohereConfig
+  | AzureVercelConfig
+  | AmazonVercelConfig;
 export type LLMProvider = ModelConfig['provider'];
