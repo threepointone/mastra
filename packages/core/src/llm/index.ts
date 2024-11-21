@@ -1,5 +1,7 @@
 import { createAnthropic } from '@ai-sdk/anthropic';
 import { createOpenAI } from '@ai-sdk/openai';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
+import { createMistral } from '@ai-sdk/mistral';
 import {
   CoreMessage,
   CoreTool as CT,
@@ -13,7 +15,7 @@ import { AllTools, CoreTool, ToolApi } from '../tools/types';
 import { delay } from '../utils';
 import { Integration } from '../integration';
 import { createLogger, Logger } from '../logger';
-import { ModelConfig } from './types';
+import { GoogleGenerativeAISettings, LLMProvider, ModelConfig } from './types';
 
 export class LLM<
   TTools,
@@ -41,32 +43,53 @@ export class LLM<
   }
 
   getModelType(model: ModelConfig): string {
-    const providerToType: Record<string, string> = {
-      OPEN_AI_VERCEL: 'openai',
+    const providerToType: Record<LLMProvider, string> = {
+      OPENAI_VERCEL: 'openai',
       ANTHROPIC_VERCEL: 'anthropic',
       GROQ_VERCEL: 'groq',
       PERPLEXITY_VERCEL: 'perplexity',
       FIREWORKS_VERCEL: 'fireworks',
+      TOGETHER_AI_VERCEL: 'togetherai',
+      LM_STUDIO_VERCEL: 'lmstuido',
+      BASETEN_VERCEL: 'baseten',
+      GOOGLE_VERCEL: 'google',
+      MISTRAL_VERCEL: 'mistral',
     };
-    const type = providerToType[model.provider] || 'openai';
-    this.logger.debug(
-      `Model type resolved to ${type} for provider ${model.provider}`
-    );
+    const type = providerToType[model.provider];
+
+    if (!type) {
+      const error = `Invalid provider: ${model.provider}`;
+      this.logger.error(error);
+      throw new Error(error);
+    } else {
+      this.logger.debug(
+        `Model type resolved to ${type} for provider ${model.provider}`
+      );
+    }
+
     return type;
   }
 
-  createOpenAICompatibleModel(
-    baseURL: string,
-    apiKey: string,
-    defaultModelName: string,
-    modelName?: string
-  ): LanguageModelV1 {
+  createOpenAICompatibleModel({
+    baseURL,
+    apiKey,
+    defaultModelName,
+    modelName,
+    fetch,
+  }: {
+    baseURL: string;
+    apiKey: string;
+    defaultModelName: string;
+    modelName?: string;
+    fetch?: typeof globalThis.fetch;
+  }): LanguageModelV1 {
     this.logger.debug(
       `Creating OpenAI compatible model with baseURL: ${baseURL}`
     );
     const client = createOpenAI({
       baseURL,
       apiKey,
+      fetch,
     });
     return client(modelName || defaultModelName);
   }
@@ -74,7 +97,13 @@ export class LLM<
   createModelDef({
     model,
   }: {
-    model: { type: string; name?: string; toolChoice?: 'auto' | 'required' };
+    model: {
+      type: string;
+      name?: string;
+      toolChoice?: 'auto' | 'required';
+      baseURL?: string;
+      fetch?: typeof globalThis.fetch;
+    } & GoogleGenerativeAISettings;
   }): LanguageModelV1 {
     let modelDef: LanguageModelV1;
     if (model.type === 'openai') {
@@ -97,40 +126,104 @@ export class LLM<
         apiKey: process.env.ANTHROPIC_API_KEY,
       });
       modelDef = anthropic(model.name || 'claude-3-5-sonnet-20240620');
+    } else if (model.type === 'google') {
+      this.logger.info(
+        `Initializing Google model ${model.name || 'gemini-1.5-pro-latest'}`
+      );
+      const google = createGoogleGenerativeAI({
+        baseURL: 'https://generativelanguage.googleapis.com/v1beta',
+        apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY ?? '',
+      });
+      modelDef = google(model.name || 'gemini-1.5-pro-latest', {
+        cachedContent: model.cachedContent,
+        safetySettings: model.safetySettings,
+        structuredOutputs: model.structuredOutputs,
+      });
     } else if (model.type === 'groq') {
       this.logger.info(
         `Initializing Groq model ${model.name || 'llama-3.2-90b-text-preview'}`
       );
-      modelDef = this.createOpenAICompatibleModel(
-        'https://api.groq.com/openai/v1',
-        process.env.GROQ_API_KEY ?? '',
-        'llama-3.2-90b-text-preview',
-        model.name
-      );
+      modelDef = this.createOpenAICompatibleModel({
+        baseURL: 'https://api.groq.com/openai/v1',
+        apiKey: process.env.GROQ_API_KEY ?? '',
+        defaultModelName: 'llama-3.2-90b-text-preview',
+        modelName: model.name,
+      });
     } else if (model.type === 'perplexity') {
       this.logger.info(
         `Initializing Perplexity model ${
           model.name || 'llama-3.1-sonar-large-128k-chat'
         }`
       );
-      modelDef = this.createOpenAICompatibleModel(
-        'https://api.perplexity.ai/',
-        process.env.PERPLEXITY_API_KEY ?? '',
-        'llama-3.1-sonar-large-128k-chat',
-        model.name
-      );
+      modelDef = this.createOpenAICompatibleModel({
+        baseURL: 'https://api.perplexity.ai/',
+        apiKey: process.env.PERPLEXITY_API_KEY ?? '',
+        defaultModelName: 'llama-3.1-sonar-large-128k-chat',
+        modelName: model.name,
+      });
     } else if (model.type === 'fireworks') {
       this.logger.info(
         `Initializing Fireworks model ${
           model.name || 'llama-v3p1-70b-instruct'
         }`
       );
-      modelDef = this.createOpenAICompatibleModel(
-        'https://api.fireworks.ai/inference/v1',
-        process.env.FIREWORKS_API_KEY ?? '',
-        'llama-v3p1-70b-instruct',
-        model.name
+      modelDef = this.createOpenAICompatibleModel({
+        baseURL: 'https://api.fireworks.ai/inference/v1',
+        apiKey: process.env.FIREWORKS_API_KEY ?? '',
+        defaultModelName: 'llama-v3p1-70b-instruct',
+        modelName: model.name,
+      });
+    } else if (model.type === 'togetherai') {
+      this.logger.info(
+        `Initializing TogetherAI model ${model.name || 'google/gemma-2-9b-it'}`
       );
+      modelDef = this.createOpenAICompatibleModel({
+        baseURL: 'https://api.together.xyz/v1/',
+        apiKey: process.env.TOGETHER_AI_API_KEY ?? '',
+        defaultModelName: 'google/gemma-2-9b-it',
+        modelName: model.name,
+      });
+    } else if (model.type === 'lmstudio') {
+      this.logger.info(
+        `Initializing LMStudio model ${model.name || 'llama-3.2-1b'}`
+      );
+
+      if (!model?.baseURL) {
+        const error = `LMStudio model requires a baseURL`;
+        this.logger.error(error);
+        throw new Error(error);
+      }
+      modelDef = this.createOpenAICompatibleModel({
+        baseURL: model.baseURL,
+        apiKey: 'not-needed',
+        defaultModelName: 'llama-3.2-1b',
+        modelName: model.name,
+      });
+    } else if (model.type === 'baseten') {
+      this.logger.info(
+        `Initializing BaseTen model ${model.name || 'llama-3.1-70b-instruct'}`
+      );
+      if (model?.fetch) {
+        const error = `Custom fetch is required to use ${model.type}. see https://docs.baseten.co/api-reference/openai for more information`;
+        this.logger.error(error);
+        throw new Error(error);
+      }
+      modelDef = this.createOpenAICompatibleModel({
+        baseURL: 'https://bridge.baseten.co/v1/direct',
+        apiKey: process.env.BASETEN_API_KEY ?? '',
+        defaultModelName: 'llama-3.1-70b-instruct',
+        modelName: model.name,
+      });
+    } else if (model.type === 'mistral') {
+      this.logger.info(
+        `Initializing Mistral model ${model.name || 'pixtral-large-latest'}`
+      );
+      const mistral = createMistral({
+        baseURL: 'https://api.mistral.ai/v1',
+        apiKey: process.env.MISTRAL_API_KEY ?? '',
+      });
+
+      modelDef = mistral(model.name || 'pixtral-large-latest');
     } else {
       const error = `Invalid model type: ${model.type}`;
       this.logger.error(error);
@@ -140,6 +233,17 @@ export class LLM<
     return modelDef;
   }
 
+  private getGoogleSettings(model: ModelConfig) {
+    if (model.provider !== 'GOOGLE_VERCEL') {
+      return undefined;
+    }
+    return {
+      cachedContent: model.cachedContent,
+      safetySettings: model.safetySettings,
+      structuredOutputs: model.structuredOutputs,
+    };
+  }
+
   getParams({
     tools,
     resultTool,
@@ -147,7 +251,13 @@ export class LLM<
   }: {
     tools: Record<string, CoreTool>;
     resultTool?: { description: string; parameters: ZodSchema };
-    model: { type: string; name?: string; toolChoice?: 'auto' | 'required' };
+    model: {
+      type: string;
+      name?: string;
+      toolChoice?: 'auto' | 'required';
+      baseURL?: string;
+      fetch?: typeof globalThis.fetch;
+    } & GoogleGenerativeAISettings;
   }) {
     const toolsConverted = Object.entries(tools).reduce(
       (memo, [key, val]) => {
@@ -218,6 +328,10 @@ export class LLM<
         type: this.getModelType(model),
         name: model.name,
         toolChoice: model.toolChoice,
+        baseURL:
+          model.provider === 'LM_STUDIO_VERCEL' ? model.baseURL : undefined,
+        fetch: model.provider === 'BASETEN_VERCEL' ? model.fetch : undefined,
+        ...this.getGoogleSettings(model),
       },
     });
 
@@ -272,6 +386,10 @@ export class LLM<
         type: this.getModelType(model),
         name: model.name,
         toolChoice: model.toolChoice,
+        baseURL:
+          model.provider === 'LM_STUDIO_VERCEL' ? model.baseURL : undefined,
+        fetch: model.provider === 'BASETEN_VERCEL' ? model.fetch : undefined,
+        ...this.getGoogleSettings(model),
       },
     });
 
