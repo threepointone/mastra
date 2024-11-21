@@ -35,6 +35,7 @@
     "@ai-sdk/google": "^1.0.1",
     "@ai-sdk/mistral": "^1.0.2",
     "@ai-sdk/openai": "^0.0.66",
+    "@ai-sdk/xai": "^1.0.2",
     "@badgateway/oauth2-client": "^2.4.0",
     "@date-fns/utc": "^1.2.0",
     "@pinecone-database/pinecone": "^3.0.3",
